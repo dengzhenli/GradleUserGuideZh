@@ -1,5 +1,3 @@
-﻿ 无标题 <style id="wiz_custom_css">html, .wiz-editor-body {font-size: 12pt;}.wiz-editor-body {font-family: Helvetica, 'Hiragino Sans GB', '微软雅黑', 'Microsoft YaHei UI', SimSun, SimHei, arial, sans-serif;line-height: 1.7;margin: 0 auto;position:relative;padding: 20px 16px;}.wiz-editor-body h1,.wiz-editor-body h2,.wiz-editor-body h3,.wiz-editor-body h4,.wiz-editor-body h5,.wiz-editor-body h6 {margin:20px 0 10px;margin:1.25rem 0 0.625rem;padding: 0;font-weight: bold;}.wiz-editor-body h1 {font-size:20pt;font-size:1.67rem;}.wiz-editor-body h2 {font-size:18pt;font-size:1.5rem;}.wiz-editor-body h3 {font-size:15pt;font-size:1.25rem;}.wiz-editor-body h4 {font-size:14pt;font-size:1.17rem;}.wiz-editor-body h5 {font-size:12pt;font-size:1rem;}.wiz-editor-body h6 {font-size:12pt;font-size:1rem;color: #777777;margin: 1rem 0;}.wiz-editor-body div,.wiz-editor-body p,.wiz-editor-body ul,.wiz-editor-body ol,.wiz-editor-body dl,.wiz-editor-body li {margin:8px 0 0;}.wiz-editor-body blockquote,.wiz-editor-body table,.wiz-editor-body pre,.wiz-editor-body code {margin:8px 0;}.wiz-editor-body .CodeMirror pre {margin:0;}.wiz-editor-body a {word-wrap: break-word;text-decoration-skip-ink: none;}.wiz-editor-body ul,.wiz-editor-body ol {padding-left:32px;padding-left:2rem;}.wiz-editor-body ol.wiz-list-level1 > li {list-style-type:decimal;}.wiz-editor-body ol.wiz-list-level2 > li {list-style-type:lower-latin;}.wiz-editor-body ol.wiz-list-level3 > li {list-style-type:lower-roman;}.wiz-editor-body li.wiz-list-align-style {list-style-position: inside; margin-left: -1em;}.wiz-editor-body blockquote {padding: 0 12px;}.wiz-editor-body blockquote > :first-child {margin-top:0;}.wiz-editor-body blockquote > :last-child {margin-bottom:0;}.wiz-editor-body img {border:0;max-width:100%;height:auto !important;margin:2px 0;padding: 2px;vertical-align:bottom;}.wiz-editor-body table {border-collapse:collapse;border:1px solid #a7afbc;}.wiz-editor-body td,.wiz-editor-body th {padding:4px 8px;border-collapse:collapse;border:1px solid #a7afbc;min-height:28px;word-break:break-word;box-sizing: border-box;}.wiz-editor-body td > div:first-child {margin-top:0;}.wiz-editor-body td > div:last-child {margin-bottom:0;}.wiz-editor-body img.wiz-svg-image {box-shadow:1px 1px 4px #E8E8E8;}.wiz-editor-body .wiz-image-container {margin:0;max-width: 100%;display: inline-flex;flex-direction: column;}.wiz-editor-body .wiz-image-container .wiz-image-title {display:inline-block;text-align: center;color: #a7afbc;line-height: 18px;font-size: 12px;min-height: 18px;width: 100%;white-space: normal;}.wiz-hide {display:none !important;}.wiz-editor-body.wiz-editor-outline {padding-right:0; padding-left:0;}.wiz-editor-body.wiz-editor-outline .outline-container {margin:0; padding:0; line-height:1.5;}.wiz-editor-body.wiz-editor-outline .outline-container div {margin:0;}.wiz-editor-body.wiz-editor-outline .node {margin:0; padding: 0;}.wiz-editor-body.wiz-editor-outline .outline-container > .node {margin-right:24px; margin-left:30px;}.wiz-editor-body.wiz-editor-outline .node.collapsed .children {display:none;}.wiz-editor-body.wiz-editor-outline .node .row {position:relative; padding-left:26px;}.wiz-editor-body.wiz-editor-outline .node .operator-container {width:36px;position:absolute; top:4px; left:-18px;}.wiz-editor-body.wiz-editor-outline .node .operator-bar {position:absolute; top:0; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:center;}.wiz-editor-body.wiz-editor-outline .node .switch {width:18px; height:18px;display:flex;flex-direction: column;align-items: center;overflow: hidden;}.wiz-editor-body.wiz-editor-outline .node .switch i {font-size:20px;position:relative;left:-1px;top:-1px;}.wiz-editor-body.wiz-editor-outline .node .switch.active {cursor:pointer;color:transparent; transition:transform 200ms ease 0s;}.wiz-editor-body.wiz-editor-outline .node.collapsed .switch.active {transform:rotateZ(-90deg);}.wiz-editor-body.wiz-editor-outline .node .row:hover .switch.active {color:#505F79}.wiz-editor-body.wiz-editor-outline .node .dot {display:flex; align-items:center; justify-content:center; border-radius:100%; width:18px; height:18px;}.wiz-editor-body.wiz-editor-outline .node.collapsed .dot {background-color:rgba(80, 95, 121, .15);}.wiz-editor-body.wiz-editor-outline .node .dot-icon {background-color:#505F79; border-radius:100%; width:6px; height:6px;}.wiz-editor-body.wiz-editor-outline .node .child {margin-left:8px; border-left:1px solid #E6E9ED; padding-left:17px;}.wiz-editor-body.wiz-editor-outline .node .content {flex:1;outline:none; padding:4px 0;}.wiz-editor-body.wiz-editor-outline .node div.content {font-size:1rem;}.wiz-editor-body.wiz-editor-outline .node.complete > .row .content {text-decoration:line-through;color:#A7AFBC;}.wiz-editor-body.wiz-editor-outline .node .notes {outline:none; font-size:.8rem; color:#A7AFBC;}.wiz-editor-body.wiz-editor-outline .node .image {outline:none; padding-top:4px; padding-bottom:4px;}.wiz-editor-body.wiz-editor-outline .outline-container h1,.wiz-editor-body.wiz-editor-outline .outline-container h2,.wiz-editor-body.wiz-editor-outline .outline-container h3,.wiz-editor-body.wiz-editor-outline .outline-container h4,.wiz-editor-body.wiz-editor-outline .outline-container h5,.wiz-editor-body.wiz-editor-outline .outline-container h6 {margin:0;}body, .wiz-editor-body { padding-left: 48px; padding-right: 48px;}</style>
-
 # 什么是Gradle？
 
 内容
@@ -25,17 +23,17 @@ Gradle在JVM上运行，您必须安装Java开发工具包（JDK）才能使用�
 
 约定
 
-Gradle从Maven的书中抽出了一片叶子，并通过实现约定使常见类型的项目（例如Java项目）易于构建。应用适当的插件，您可以轻松地为许多项目使用苗条的构建脚本。但是这些约定并没有限制您：Gradle允许您覆盖它们，添加自己的任务以及对基于约定的构建进行许多其他自定义。
+Gradle参考了Maven，通过实现约定使常见类型的项目（例如Java项目）易于构建。应用适当的插件，您可以轻松地为许多项目使用精简的构建脚本。但是这些约定并没有限制您：Gradle允许您覆盖它们，添加自己的任务以及对基于约定的构建进行许多其他自定义操作。
 
 可扩展性
 
-您可以轻松扩展Gradle以提供您自己的任务类型甚至构建模型。有关此示例，请参见Android构建支持：它添加了许多新的构建概念，例如口味和构建类型。
+您可以轻松扩展Gradle以提供您自己的任务类型甚至构建模型。有关此示例，请参见Android构建支持：它添加了许多新的构建概念，例如flavors和构建类型（build types）。
 
 IDE支持
 
 几个主要的IDE允许您导入Gradle构建并与其进行交互：Android Studio，IntelliJ IDEA，Eclipse和NetBeans。Gradle还支持生成将项目加载到Visual Studio所需的解决方案文件。
 
-洞察力
+洞悉
 
 [构建扫描](https://scans.gradle.com/)提供了有关构建运行的广泛信息，可用于识别构建问题。他们特别擅长帮助您确定构建性能的问题。您还可以与其他人共享构建扫描，如果您需要咨询以解决构建问题，这将特别有用。
 
@@ -54,8 +52,9 @@ Gradle允许您构建任何软件，因为它对正在尝试构建的内容或�
 Gradle将其构建模型建模为任务（工作单元）的有向无环图（DAG）。这意味着构建实质上配置了一组任务，并根据它们的依赖关系将它们连接在一起以创建该DAG。创建任务图后，Gradle将确定需要按顺序运行的任务，然后继续执行它们。
 
 此图显示了两个示例任务图，一个是抽象图，另一个是具体图，其中任务之间的依赖性表示为箭头：
+![Gradle任务图的两个示例](https://docs.gradle.org/current/userguide/img/task-dag-examples.png)
 
-图1. Gradle任务图的两个示例
+
 
 这样，几乎所有构建过程都可以建模为任务图，这就是Gradle如此灵活的原因之一。任务图既可以由插件定义，也可以由您自己的构建脚本定义，任务通过[任务依赖机制]()链接在一起。
 
@@ -118,9 +117,8 @@ Gradle提供了多种机制来扩展它，例如：
 ### [](#5_build_scripts_operate_against_an_api)[5.构建脚本针对API运行](#5_build_scripts_operate_against_an_api)
 
 将Gradle的构建脚本视为可执行代码很容易，因为这就是它们。但是，这是一个实现细节：精心设计构建脚本描述_什么_打造的软件，而不是需要的步骤_如何_这些步骤应该做的工作。这是定制任务类型和插件的工作。
-
-<table style="background:none;width:912px;"><tbody><tr><td class="icon" style="color:rgba(0, 0, 0, 0.8);width:80px;"><i class="fa icon-note"></i></td><td class="content" style="font-size:1.0625rem;color:rgba(0, 0, 0, 0.6);"><div class="paragraph"><p style="font-size: 1rem;"><font><font>人们普遍误认为Gradle的功能和灵活性来自其构建脚本是代码这一事实。</font><font>这离事实还远。</font><font>提供功能的是底层模型和API。</font><font>正如我们在最佳实践中建议的那样，您应该</font></font><a href="" style="color:rgb(29, 162, 189);text-decoration:none;"><font><font>避免在构建脚本中放置太多（如果有的话）命令式逻辑</font></font></a><font><font>。</font></font></p></div></td></tr></tbody></table>
+>  人们普遍误认为Gradle的功能和灵活性来自其构建脚本是代码这一事实。这离事实还远。提供功能的是底层模型和API。
+正如我们在最佳实践中建议的那样，您应该[避免在构建脚本中放置太多（如果有的话）命令式逻辑]()
 
 然而，在一个区域中，将构建脚本视为可执行代码很有用：了解构建脚本的语法如何映射到Gradle的API。由[Groovy DSL参考]()和[Javadocs]()组成的API文档列出了方法和属性，并引用了闭包和操作。这些在构建脚本的上下文中是什么意思？查看[Groovy Build Script Primer，]()以了解该问题的答案，以便您可以有效地使用API文档。
-
-<table style="background:none;width:912px;"><tbody><tr><td class="icon" style="color:rgba(0, 0, 0, 0.8);width:80px;"><i class="fa icon-note"></i></td><td class="content" style="font-size:1.0625rem;color:rgba(0, 0, 0, 0.6);"><font><font>由于Gradle在JVM上运行，因此构建脚本也可以使用标准</font></font><a href="https://docs.oracle.com/javase/8/docs/api" style="color:rgb(29, 162, 189);text-decoration:none;"><font><font>Java API</font></font></a><font><font>。</font><font>Groovy构建脚本可以另外使用Groovy API，而Kotlin构建脚本可以使用Kotlin。</font></font></td></tr></tbody></table>
+> 由于Gradle在JVM上运行，因此构建脚本也可以使用标准[Java API](https://docs.oracle.com/javase/8/docs/api)。Groovy构建脚本可以另外使用Groovy API，而Kotlin构建脚本可以使用Kotlin。
