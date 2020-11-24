@@ -23,7 +23,7 @@ Gradle在JVM上运行，您必须安装Java开发工具包（JDK）才能使用�
 
 约定
 
-Gradle参考了Maven，通过实现约定使常见类型的项目（例如Java项目）易于构建。应用适当的插件，您可以轻松地为许多项目使用精简的构建脚本。但是这些约定并没有限制您：Gradle允许您覆盖它们，添加自己的任务以及对基于约定的构建进行许多其他自定义操作。
+和Maven一样，Gradle通过实现约定使常见类型的项目（例如Java项目）易于构建。应用适当的插件，您可以轻松地为许多项目使用精简的构建脚本。但是这些约定并没有限制您：Gradle允许您覆盖它们，添加自己的任务以及对基于约定的构建进行许多其他自定义操作。
 
 可扩展性
 
@@ -66,7 +66,7 @@ Gradle将其构建模型建模为任务（工作单元）的有向无环图（DA
 
 实际上，以上所有内容都是可选的，具体取决于任务需要执行的操作。有些任务（例如[标准生命周期任务）]()甚至没有任何动作。他们只是为了方便而将多个任务汇总在一起。
 
-<table style="background:none;width:912px;"><tbody><tr><td class="icon" style="color:rgba(0, 0, 0, 0.8);width:80px;"><i class="fa icon-note"></i></td><td class="content" style="font-size:1.0625rem;color:rgba(0, 0, 0, 0.6);"><font><font>您选择要运行的任务。</font><font>通过指定执行所需任务的任务来节省时间，但仅此而已。</font><font>如果您只想运行单元测试，请选择执行该任务的任务-通常为</font></font><code style="font-family:Inconsolata, monospace;font-size:0.9375rem;color:rgba(0, 0, 0, 0.9);background-color:rgb(247, 247, 248);">test</code><font><font>。</font><font>如果您要打包应用程序，则大多数构建都有一个</font></font><code style="font-family:Inconsolata, monospace;font-size:0.9375rem;color:rgba(0, 0, 0, 0.9);background-color:rgb(247, 247, 248);">assemble</code><font><font>任务。</font></font></td></tr></tbody></table>
+> 您选择要运行的任务。通过指定执行所需任务的任务来节省时间，但仅此而已。如果您只想运行单元测试，请选择执行该任务的任务-通常为test。如果您要打包应用程序，则大多数构建都有一个assemble任务。
 
 最后一件事：Gradle的[增量构建]()支持是可靠且可靠的，因此，`clean`除非您确实想执行清理操作，否则避免执行该任务以保持构建快速运行。
 
@@ -116,8 +116,8 @@ Gradle提供了多种机制来扩展它，例如：
 
 ### [](#5_build_scripts_operate_against_an_api)[5.构建脚本针对API运行](#5_build_scripts_operate_against_an_api)
 
-将Gradle的构建脚本视为可执行代码很容易，因为这就是它们。但是，这是一个实现细节：精心设计构建脚本描述_什么_打造的软件，而不是需要的步骤_如何_这些步骤应该做的工作。这是定制任务类型和插件的工作。
->  人们普遍误认为Gradle的功能和灵活性来自其构建脚本是代码这一事实。这离事实还远。提供功能的是底层模型和API。
+将Gradle的构建脚本视为可执行代码很容易，因为它们本来就是。但是，这是一个实现细节：设计良好的构建脚本描述了构建软件需要哪些步骤，而不是这些步骤应该如何完成工作。那是自定义任务类型和插件的工作。
+>  有一个普遍的误解，认为Gradle的强大和灵活性来自于它的构建脚本是代码这一事实。事实并不是这样，提供功能的是底层模型和API。
 正如我们在最佳实践中建议的那样，您应该[避免在构建脚本中放置太多（如果有的话）命令式逻辑]()
 
 然而，在一个区域中，将构建脚本视为可执行代码很有用：了解构建脚本的语法如何映射到Gradle的API。由[Groovy DSL参考]()和[Javadocs]()组成的API文档列出了方法和属性，并引用了闭包和操作。这些在构建脚本的上下文中是什么意思？查看[Groovy Build Script Primer，]()以了解该问题的答案，以便您可以有效地使用API文档。
