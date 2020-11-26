@@ -155,61 +155,38 @@ Gradle使用与Maven相同的依赖项标识符组件：组ID，工件ID和版�
 
 例如，考虑对Log4J的这种Maven风格的依赖关系：
 
-\<dependencies> \<dependency> \<groupId>log4j\</groupId> \<artifactId>log4j\</artifactId> \<version>1.2.12\</version> \</dependency> \</dependencies>
+```JAVA
 
- 
 
-1
+<dependencies>
+    <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.12</version>
+    </dependency>
+</dependencies>
 
-\<dependencies\>
-
-2
-
- \<dependency\>
-
-3
-
- \<groupId\>log4j\</groupId\>
-
-4
-
- \<artifactId\>log4j\</artifactId\>
-
-5
-
- \<version\>1.2.12\</version\>
-
-6
-
- \</dependency\>
-
-7
-
-\</dependencies\>
+```
 
 在Gradle构建脚本中，这种依赖关系如下所示：
 
 例子1.声明一个简单的编译时依赖
-
-`Groovy``Kotlin`
-
+`Groovy`
+```
 build.gradle
 
-dependencies \{ implementation 'log4j:log4j:1.2.12' \}
+dependencies {
+    implementation 'log4j:log4j:1.2.12'  
+}
 
- 
 
-1
+`Kotlin`
 
-dependencies \{
+dependencies {
+    implementation("log4j:log4j:1.2.12")  
+}
 
-2
-
- implementation 'log4j:log4j:1.2.12' 
-
-3
-
-\}
+```
 
 <table style="background:none;"><tbody><tr style="background:none;"><td style="color:rgba(0, 0, 0, 0.8);"><i class="conum" data-value="1" style="background-color: rgba(0, 0, 0, 0.8); font-size: 0.75rem; font-family: Lato, Arial, sans-serif; color: rgb(255, 255, 255) !important;"></i></td><td style="color:rgba(0, 0, 0, 0.8);"><font><font>将Log4J的1.2.12版本附加到</font></font><code style="font-family:Inconsolata, monospace;font-size:0.9375rem;color:rgba(0, 0, 0, 0.9);background-color:rgb(247, 247, 248);">implementation</code><font><font>配置（作用域）</font></font></td></tr></tbody></table>
 
