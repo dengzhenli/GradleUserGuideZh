@@ -145,7 +145,7 @@ Gradle的[`init`任务]()通常用于创建新的骨架项目，但是您也可�
 
 Gradle的依赖项管理系统比Maven的依赖项管理系统更灵活，但它仍支持相同的存储库，声明的依赖项，范围（Gradle中的[依赖项配置]()）和可传递依赖项的概念。实际上，Gradle与兼容Maven的存储库完美配合，这使得迁移依赖关系变得容易。
 
-<table style="background:none;width:912px;"><tbody><tr><td class="icon" style="color:rgba(0, 0, 0, 0.8);width:80px;"><i class="fa icon-note"></i></td><td class="content" style="font-size:1.0625rem;color:rgba(0, 0, 0, 0.6);"><font><font>两种工具之间的显着区别是它们如何管理版本冲突。</font><font>Maven使用“最接近”的匹配算法，而Gradle选择最新的匹配算法。</font><font>不过不要担心，如</font></font><a href="" style="color:rgb(29, 162, 189);text-decoration:none;"><font><font>管理传递依赖项中</font></font></a><font><font>所述，您对选择哪个版本有很多控制</font><font>。</font></font></td></tr></tbody></table>
+> 两种工具之间的显着区别是它们如何管理版本冲突。Maven使用“最接近”的匹配算法，而Gradle选择最新的匹配算法。</font><font>不过不要担心，如</font></font><a href="" style="color:rgb(29, 162, 189);text-decoration:none;"><font><font>管理传递依赖项中</font></font></a><font><font>所述，您对选择哪个版本有很多控制
 
 在以下各节中，我们将向您展示如何迁移Maven构建的依赖管理信息中最常见的元素。
 
@@ -156,8 +156,6 @@ Gradle使用与Maven相同的依赖项标识符组件：组ID，工件ID和版�
 例如，考虑对Log4J的这种Maven风格的依赖关系：
 
 ```JAVA
-
-
 <dependencies>
     <dependency>
         <groupId>log4j</groupId>
@@ -170,25 +168,25 @@ Gradle使用与Maven相同的依赖项标识符组件：组ID，工件ID和版�
 
 在Gradle构建脚本中，这种依赖关系如下所示：
 
-例子1.声明一个简单的编译时依赖
+例子1.声明一个简单的编译时依赖  
 `Groovy`
-```
+```Groovy
 build.gradle
 
 dependencies {
     implementation 'log4j:log4j:1.2.12'  
 }
-
+```
 
 `Kotlin`
-
+```
 dependencies {
     implementation("log4j:log4j:1.2.12")  
 }
 
 ```
 
-<table style="background:none;"><tbody><tr style="background:none;"><td style="color:rgba(0, 0, 0, 0.8);"><i class="conum" data-value="1" style="background-color: rgba(0, 0, 0, 0.8); font-size: 0.75rem; font-family: Lato, Arial, sans-serif; color: rgb(255, 255, 255) !important;"></i></td><td style="color:rgba(0, 0, 0, 0.8);"><font><font>将Log4J的1.2.12版本附加到</font></font><code style="font-family:Inconsolata, monospace;font-size:0.9375rem;color:rgba(0, 0, 0, 0.9);background-color:rgb(247, 247, 248);">implementation</code><font><font>配置（作用域）</font></font></td></tr></tbody></table>
+> 将Log4J的1.2.12版本附加到implementation配置（作用域）
 
 字符串标识符采用的Maven的值`groupId`，`artifactId`并且`version`，虽然摇篮指它们作为`group`，`module`和`version`。
 
@@ -230,27 +228,18 @@ Gradle区分了_编译_项目测试所需的那些依赖项和仅_运行_它们�
 
 示例2.消费仅POM依赖项
 
-`Groovy``Kotlin`
 
+Groovy
+```Groovy
 build.gradle
-
-dependencies \{ testImplementation 'org.codehaus.groovy:groovy-all:2.5.4' \}
-
- 
-
-1
-
-dependencies \{
-
-2
-
+dependencies { testImplementation 'org.codehaus.groovy:groovy-all:2.5.4' }
+```
+Kotlin
+```Kotlin
+dependencies {
  testImplementation 'org.codehaus.groovy:groovy-all:2.5.4'
-
-3
-
-\}
-
-这样的结果将是将POM中的所有`compile`和`runtime`范围依赖项`groovy-all`添加到测试运行时类路径，而仅将`compile`范围依赖项添加到测试编译类路径。与其他作用域的依赖关系将被忽略。
+}
+```
 
 ### [](#migmvn:declaring_repos)[声明存储库](#migmvn:declaring_repos)
 
@@ -258,27 +247,18 @@ Gradle允许您从任何与Maven兼容或与Ivy兼容的存储库中检索已声
 
 例子3.配置构建以使用Maven Central
 
-`Groovy``Kotlin`
 
+Groovy
+```Groovy
 build.gradle
-
-repositories \{ mavenCentral\(\) \}
-
- 
-
-1
-
-repositories \{
-
-2
-
- mavenCentral\(\)
-
-3
-
-\}
-
-您还可以使用该`repositories {}`块来配置自定义存储库，如“[存储库类型”]()一章中所述。
+repositories { mavenCentral() }
+```
+Kotlin
+```Kotlin
+repositories {
+ mavenCentral()
+}
+```
 
 最后，Gradle允许您解决对[本地Maven缓存/存储库的]()依赖关系。这有助于Gradle构建与Maven构建进行互操作，但是如果您不需要这种互操作性，则不应使用该技术。如果要通过文件系统共享已发布的工件，请考虑使用URL配置[自定义Maven存储库]()`file://`。
 
@@ -325,37 +305,21 @@ Gradle可以通过基于[platform（）]()和[forcedPlatform（）]()方法的�
 
 例子4.在Gradle版本中导入BOM
 
-`Groovy``Kotlin`
 
+Groovy
+```Groovy
 build.gradle
+dependencies { implementation platform('org.springframework.boot:spring-boot-dependencies:1.5.8.RELEASE') implementation 'com.google.code.gson:gson' implementation 'dom4j:dom4j' }
+```
+Kotlin
+```Kotlin
+dependencies {
+    implementation(platform("org.springframework.boot:spring-boot-dependencies:1.5.8.RELEASE"))  
 
-dependencies \{ implementation platform\('org.springframework.boot:spring-boot-dependencies:1.5.8.RELEASE'\) implementation 'com.google.code.gson:gson' implementation 'dom4j:dom4j' \}
-
- 
-
-1
-
-dependencies \{
-
-2
-
- implementation platform\('org.springframework.boot:spring-boot-dependencies:1.5.8.RELEASE'\) 
-
-3
-
-4
-
- implementation 'com.google.code.gson:gson' 
-
-5
-
- implementation 'dom4j:dom4j'
-
-6
-
-\}
-
-<table style="background:none;"><tbody><tr style="background:none;"><td style="color:rgba(0, 0, 0, 0.8);"><i class="conum" data-value="1" style="background-color: rgba(0, 0, 0, 0.8); font-size: 0.75rem; font-family: Lato, Arial, sans-serif; color: rgb(255, 255, 255) !important;"></i></td><td style="color:rgba(0, 0, 0, 0.8);"><font><font>应用Spring Boot Dependencies BOM</font></font></td></tr><tr style="background:none;"><td style="color:rgba(0, 0, 0, 0.8);"><i class="conum" data-value="2" style="background-color: rgba(0, 0, 0, 0.8); font-size: 0.75rem; font-family: Lato, Arial, sans-serif; color: rgb(255, 255, 255) !important;"></i></td><td style="color:rgba(0, 0, 0, 0.8);"><font><font>添加依赖项，该依赖项的版本由该BOM表定义</font></font></td></tr></tbody></table>
+    implementation("com.google.code.gson:gson")  
+    implementation("dom4j:dom4j")
+}
+```
 
 您可以了解更多关于此功能之间的差异`platform()`，并`enforcedPlatform()`在上一节[从一个Maven BOM导入版本的建议]()。
 
@@ -370,53 +334,47 @@ Maven的多模块构建与Gradle的[多项目构建]()很好地映射。尝试�
 1.  创建一个与`<modules>`根POM块匹配的设置脚本。  
 
     例如，以下代码`<modules>`块：
-
-    \<modules> \<module>simple-weather\</module> \<module>simple-webapp\</module> \</modules>
-
- 
-
-    1
-
-    \<modules\>
-
-    2
-
- \<module\>simple-weather\</module\>
-
-    3
-
- \<module\>simple-webapp\</module\>
-
-    4
-
-    \</modules\>
-
+    ```xml
+    <modules>
+        <module>simple-weather</module>
+        <module>simple-webapp</module>
+    </modules>
+    ```
+   
     可以通过在设置脚本中添加以下行来迁移：
 
     例子5.声明哪些项目是构建的一部分
 
-    `Groovy``Kotlin`
 
+Groovy
+```Groovy
     settings.gradle
+    rootProject.name = 'simple-multi-module' 
+    include 'simple-weather', 'simple-webapp'
+```
+Kotlin
+```Kotlin
+rootProject.name = "simple-multi-module"  
+include("simple-weather", "simple-webapp")      
+```
 
-    rootProject.name = 'simple-multi-module' include 'simple-weather', 'simple-webapp'1
+①  设置整个项目的名称  
+②  配置两个子项目作为此构建的一部分
 
-    rootProject.name \= 'simple-multi-module' 
+输出
 
-    2
-
-    3
-
-    include 'simple-weather', 'simple-webapp' 
-
-    <table style="background:none;"><tbody><tr style="background:none;"><td style="color:rgba(0, 0, 0, 0.8);"><i class="conum" data-value="1" style="background-color: rgba(0, 0, 0, 0.8); font-size: 0.75rem; font-family: Lato, Arial, sans-serif; color: rgb(255, 255, 255) !important;"></i></td><td style="color:rgba(0, 0, 0, 0.8);"><font><font>设置整个项目的名称</font></font></td></tr><tr style="background:none;"><td style="color:rgba(0, 0, 0, 0.8);"><i class="conum" data-value="2" style="background-color: rgba(0, 0, 0, 0.8); font-size: 0.75rem; font-family: Lato, Arial, sans-serif; color: rgb(255, 255, 255) !important;"></i></td><td style="color:rgba(0, 0, 0, 0.8);"><font><font>配置两个子项目作为此构建的一部分</font></font></td></tr></tbody></table>
-
-    输出**`gradle projects`**
-
-    \> gradle项目
- -------------------------------------------------- ---------- 根项目 -------------------------------------------------- ----------
- 根项目“简单多模块” + ---项目'：simple-weather' \\-项目'：simple-webapp'
- 要查看项目任务列表，请运行gradle \<project-path>：tasks 例如，尝试运行gradle：simple-weather：tasks
+    > gradle projects
+    
+    ------------------------------------------------------------
+    Root project
+    ------------------------------------------------------------
+    
+    Root project 'simple-multi-module'
+    +--- Project ':simple-weather'
+    \--- Project ':simple-webapp'
+    
+    To see a list of the tasks of a project, run gradle <project-path>:tasks
+    For example, try running gradle :simple-weather:tasks
 2.  将跨模块依赖项替换为[项目依赖项]()。
 3.  使用[约定插件]()复制项目继承。  
 
@@ -448,75 +406,84 @@ Gradle具有类似的项目属性系统，尽管它可以区分项目属性和�
 
 例子6.模仿Gradle中的Maven配置文件的行为
 
-`Groovy``Kotlin`
+Groovy
 
-build.gradle
 
-if \(\!hasProperty\('buildProfile'\)\) ext.buildProfile = 'default' apply from: "profile-\$\{buildProfile\}.gradle" task greeting \{ doLast \{ println message \} \}
+```Groovy
+// build.gradle
+if (!hasProperty('buildProfile')) ext.buildProfile = 'default'  
 
- 
+apply from: "profile-${buildProfile}.gradle"  
 
-1
+task greeting {
+    doLast {
+        println message  
+    }
+}
 
-if \(\!hasProperty\('buildProfile'\)\) ext.buildProfile \= 'default' 
 
-2
+// profile-default.gradle
 
-3
+ext.message = 'foobar'  
 
-apply from: "profile-\$\{buildProfile\}.gradle" 
+// profile-test.gradle
 
-4
+ext.message = 'testing 1 2 3'  
 
-5
+// profile-prod.gradle
 
-task greeting \{
+ext.message = 'Hello, world!'
+```
+Kotlin
+```Kotlin
 
-6
+// build.gradle.kts
 
- doLast \{
+val buildProfile: String? by project  
 
-7
+apply(from = "profile-${buildProfile ?: "default"}.gradle.kts")  
 
- println message 
+tasks.register("greeting") {
+    val message: String by project.extra
+    doLast {
+        println(message)  
+    }
+}
 
-8
+// profile-default.gradle.kts
 
- \}
+val message by extra("foobar")  
 
-9
+// profile-test.gradle.kts
 
-\}
+val message by extra("testing 1 2 3")  
 
-profile-default.gradle
+// profile-prod.gradle.kts
 
-ext.message = 'foobar'1
+val message by extra("Hello, world!")  
+```
 
-ext.message \= 'foobar' 
 
-profile-test.gradle
 
-ext.message = 'testing 1 2 3'1
+①、 Checks for the existence of (Groovy) or binds (Kotlin) the buildProfile project property
 
-ext.message \= 'testing 1 2 3' 
+②、 Applies the appropriate profile script, using the value of buildProfile in the script filename
 
-profile-prod.gradle
+③、 Prints out the value of the message extra project property
 
-ext.message = 'Hello, world\!'1
-
-ext.message \= 'Hello, world\!' 
-
-<table style="background:none;"><tbody><tr style="background:none;"><td style="color:rgba(0, 0, 0, 0.8);"><i class="conum" data-value="1" style="background-color: rgba(0, 0, 0, 0.8); font-size: 0.75rem; font-family: Lato, Arial, sans-serif; color: rgb(255, 255, 255) !important;"></i></td><td style="color:rgba(0, 0, 0, 0.8);"><font><font>检查（Groovy）是否存在或绑定（Kotlin）</font></font><code style="font-family:Inconsolata, monospace;font-size:0.9375rem;color:rgba(0, 0, 0, 0.9);background-color:rgb(247, 247, 248);">buildProfile</code><font><font>项目属性</font></font></td></tr><tr style="background:none;"><td style="color:rgba(0, 0, 0, 0.8);"><i class="conum" data-value="2" style="background-color: rgba(0, 0, 0, 0.8); font-size: 0.75rem; font-family: Lato, Arial, sans-serif; color: rgb(255, 255, 255) !important;"></i></td><td style="color:rgba(0, 0, 0, 0.8);"><font><font>使用</font></font><code style="font-family:Inconsolata, monospace;font-size:0.9375rem;color:rgba(0, 0, 0, 0.9);background-color:rgb(247, 247, 248);">buildProfile</code><font><font>脚本文件名中</font><font>的值应用适当的配置文件脚本</font></font></td></tr><tr style="background:none;"><td style="color:rgba(0, 0, 0, 0.8);"><i class="conum" data-value="3" style="background-color: rgba(0, 0, 0, 0.8); font-size: 0.75rem; font-family: Lato, Arial, sans-serif; color: rgb(255, 255, 255) !important;"></i></td><td style="color:rgba(0, 0, 0, 0.8);"><font><font>打印出</font></font><code style="font-family:Inconsolata, monospace;font-size:0.9375rem;color:rgba(0, 0, 0, 0.9);background-color:rgb(247, 247, 248);">message</code><font><font>额外项目属性</font><font>的值</font></font></td></tr><tr style="background:none;"><td style="color:rgba(0, 0, 0, 0.8);"><i class="conum" data-value="4" style="background-color: rgba(0, 0, 0, 0.8); font-size: 0.75rem; font-family: Lato, Arial, sans-serif; color: rgb(255, 255, 255) !important;"></i></td><td style="color:rgba(0, 0, 0, 0.8);"><font><font>初始化</font></font><code style="font-family:Inconsolata, monospace;font-size:0.9375rem;color:rgba(0, 0, 0, 0.9);background-color:rgb(247, 247, 248);">message</code><font><font>额外的项目属性，然后可以在主构建脚本中使用其值</font></font></td></tr></tbody></table>
+④、 Initializes the message extra project property, whose value can then be used in the main build script
 
 使用此设置后，您可以通过传递所用项目属性的值来激活其中一个配置文件- `buildProfile`在这种情况下：
 
-输出**`gradle greeting`**
+**`gradle greeting`**输出
 
-\> gradle问候 foobar
+    > gradle greeting
+    foobar
 
-输出**`gradle -PbuildProfile=test greeting`**
+**`gradle -PbuildProfile=test greeting`**输出
 
-\> gradle -PbuildProfile =测试问候 测试1 2 3
+    > gradle -PbuildProfile=test greeting
+    testing 1 2 3
 
 您不仅限于检查项目属性。您还可以检查环境变量，JDK版本，运行内部版本的OS或您可以想象的任何其他内容。
 
@@ -534,27 +501,24 @@ Gradle的Java插件提供了`processResources`执行相同操作的任务。这�
 
 例子7.通过`processResources`任务过滤资源的内容
 
-`Groovy``Kotlin`
 
+Groovy
+```Groovy
 build.gradle
+processResources { expand(version: version, buildNumber: currentBuildNumber) }
+```
+Kotlin
+```Kotlin
 
-processResources \{ expand\(version: version, buildNumber: currentBuildNumber\) \}
 
- 
+tasks {
+    processResources {
+        expand("version" to version, "buildNumber" to currentBuildNumber)
+    }
+}
 
-1
 
-processResources \{
-
-2
-
- expand\(version: version, buildNumber: currentBuildNumber\)
-
-3
-
-\}
-
-请参阅[CopySpec]()的API文档以查看所有可用选项。
+```
 
 ## [](#migmvn:integration_tests)[配置集成测试](#migmvn:integration_tests)
 
@@ -578,189 +542,102 @@ Maven和Gradle共享一种通过插件扩展构建的通用方法。尽管表面
 
 为什么这么重要？由于许多插件都依赖于标准Java约定，因此迁移仅是在Gradle中复制Maven插件的配置即可。例如，这是一个简单的Maven Checkstyle插件配置：
 
-... \<plugin> \<groupId>org.apache.maven.plugins\</groupId> \<artifactId>maven-checkstyle-plugin\</artifactId> \<version>2.17\</version> \<executions> \<execution> \<id>validate\</id> \<phase>validate\</phase> \<configuration> \<configLocation>checkstyle.xml\</configLocation> \<encoding>UTF-8\</encoding> \<consoleOutput>true\</consoleOutput> \<failsOnError>true\</failsOnError> \<linkXRef>false\</linkXRef> \</configuration> \<goals> \<goal>check\</goal> \</goals> \</execution> \</executions> \</plugin> ...
-
- 
-
-1
+```xml
 
 ...
-
-2
-
-\<plugin\>
-
-3
-
- \<groupId\>org.apache.maven.plugins\</groupId\>
-
-4
-
- \<artifactId\>maven-checkstyle-plugin\</artifactId\>
-
-5
-
- \<version\>2.17\</version\>
-
-6
-
- \<executions\>
-
-7
-
- \<execution\>
-
-8
-
- \<id\>validate\</id\>
-
-9
-
- \<phase\>validate\</phase\>
-
-10
-
- \<configuration\>
-
-11
-
- \<configLocation\>checkstyle.xml\</configLocation\>
-
-12
-
- \<encoding\>UTF-8\</encoding\>
-
-13
-
- \<consoleOutput\>true\</consoleOutput\>
-
-14
-
- \<failsOnError\>true\</failsOnError\>
-
-15
-
- \<linkXRef\>false\</linkXRef\>
-
-16
-
- \</configuration\>
-
-17
-
- \<goals\>
-
-18
-
- \<goal\>check\</goal\>
-
-19
-
- \</goals\>
-
-20
-
- \</execution\>
-
-21
-
- \</executions\>
-
-22
-
-\</plugin\>
-
-23
-
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-checkstyle-plugin</artifactId>
+  <version>2.17</version>
+  <executions>
+    <execution>
+      <id>validate</id>
+      <phase>validate</phase>
+      <configuration>
+        <configLocation>checkstyle.xml</configLocation>
+        <encoding>UTF-8</encoding>
+        <consoleOutput>true</consoleOutput>
+        <failsOnError>true</failsOnError>
+        <linkXRef>false</linkXRef>
+      </configuration>
+      <goals>
+        <goal>check</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
 ...
 
+
+```
 迁移到Gradle时，可以安全地忽略配置块之外的所有内容。在这种情况下，相应的Gradle配置如下所示：
 
 例子8.配置Gradle Checkstyle插件
 
-`Groovy``Kotlin`
 
+Groovy
+```Groovy
 build.gradle
-
-checkstyle \{ config = resources.text.fromFile\('checkstyle.xml', 'UTF-8'\) showViolations = true ignoreFailures = false \}
-
- 
-
-1
-
-checkstyle \{
-
-2
-
- config \= resources.text.fromFile\('checkstyle.xml', 'UTF-8'\)
-
-3
-
- showViolations \= true
-
-4
-
- ignoreFailures \= false
-
-5
-
-\}
-
-Checkstyle任务会自动添加为`check`任务的依赖项，其中还包括`test`。如果要确保Checkstyle在测试之前运行，则只需使用mustRunAfter（）方法指定一个顺序即可：
+checkstyle { config = resources.text.fromFile('checkstyle.xml', 'UTF-8') showViolations = true ignoreFailures = false }
+```
+Kotlin
+```Kotlin
+checkstyle {
+ config = resources.text.fromFile('checkstyle.xml', 'UTF-8')
+ showViolations = true
+ ignoreFailures = false
+}
+```
 
 例子9.控制`checkstyle`任务何时运行
 
-`Groovy``Kotlin`
 
+Groovy
+```Groovy
 build.gradle
-
 test.mustRunAfter checkstyleMain, checkstyleTest
+```
+Kotlin
+```Kotlin
 
- 
 
-1
+tasks {
+    test {
+        mustRunAfter(checkstyleMain, checkstyleTest)
+    }
+}
 
-test.mustRunAfter checkstyleMain, checkstyleTest
 
-如您所见，Gradle配置通常比Maven等效配置短得多。您还拥有一个更加灵活的执行模型，因为您不再受Maven固定阶段的约束。
+```
 
 从Maven迁移项目时，请不要忘记源集。与Maven相比，它们通常为处理集成测试或生成的源提供了更优雅的解决方案，因此您应将它们纳入迁移计划中。
 
-### [](#ant_goals)[蚂蚁目标](#ant_goals)
+### [](#ant_goals)[Ant goals](#ant_goals)
 
 许多Maven构建依赖于AntRun插件来自定义构建，而无需实现自定义Maven插件的开销。Gradle没有等效的插件，因为Ant通过该`ant`对象是Gradle构建中的一等公民。例如，您可以使用Ant的Echo任务，如下所示：
 
 例子10.调用Ant任务
 
-`Groovy``Kotlin`
 
+Groovy
+```Groovy
 build.gradle
+task sayHello { doLast { ant.echo message: 'Hello!' } }
+```
+Kotlin
+```Kotlin
 
-task sayHello \{ doLast \{ ant.echo message: 'Hello\!' \} \}
 
- 
+tasks.register("sayHello") {
+    doLast {
+        ant.withGroovyBuilder {
+            "echo"("message" to "Hello!")
+        }
+    }
+}
 
-1
 
-task sayHello \{
-
-2
-
- doLast \{
-
-3
-
- ant.echo message: 'Hello\!'
-
-4
-
- \}
-
-5
-
-\}
-
-本机还支持Ant属性和文件集。要了解更多信息，请参阅《[从Gradle中使用Ant》]()。
+```
 
 <table style="background:none;width:912px;"><tbody><tr><td class="icon" style="color:rgba(0, 0, 0, 0.8);width:80px;"><i class="fa icon-tip"></i></td><td class="content" style="font-size:1.0625rem;color:rgba(0, 0, 0, 0.6);"><div class="paragraph"><p style="font-size: 1rem;"><font><font>仅</font></font><a href="" style="color:rgb(29, 162, 189);text-decoration:none;"><font><font>创建自定义任务类型</font></font></a><font><font>来替换Ant为您所做的工作</font><font>可能更简单，更简洁</font><font>。</font><font>然后，您可以更轻松地从</font></font><a href="" style="color:rgb(29, 162, 189);text-decoration:none;"><font><font>增量构建</font></font></a><font><font>和其他有用的Gradle功能中</font><font>受益</font><font>。</font></font></p></div></td></tr></tbody></table>
 
