@@ -15,7 +15,7 @@
 我们建议所有用户执行以下步骤：
 
 1.  尝试运行`gradle help --scan`并查看生成的构建扫描的[弃用视图](https://gradle.com/enterprise/releases/2018.4/#identify-usages-of-deprecated-gradle-functionality)。  
-
+    ![](../../img/deprecations.png)
     这样一来，您就可以看到适用于您的构建的所有弃用警告。
 
     或者，您可以运行`gradle help \--warning-mode=all`在控制台中查看弃用项，尽管它可能不会报告太多详细信息。
@@ -52,32 +52,19 @@
 #### [](#using_a_configuration_directly_as_a_dependency)[直接使用配置作为依赖项](#using_a_configuration_directly_as_a_dependency)
 
 Gradle允许将的实例`Configuration`直接用作依赖项：
+```java
+dependencies {
+    implementation(configurations.myConfiguration)
+}
 
-dependencies \{ implementation\(configurations.myConfiguration\) \}
+```
 
- 
+现在不赞成使用此行为，因为它令人困惑：有时候期待 "依赖性配置 "首先被解析，并将解析结果作为依赖性添加到包括配置中，但事实并非如此。不推荐使用的版本可以替换为实际行为，即配置继承：
 
-1
+```java
+configurations.implementation.extendsFrom(configurations.myConfiguration)
+```
 
-dependencies \{
-
-2
-
- implementation\(configurations.myConfiguration\)
-
-3
-
-\}
-
-现在不赞成使用此行为，因为它令人困惑：可以期望先解决“从属配置”，然后将解析结果作为从属关系添加到包含的配置中，事实并非如此。不推荐使用的版本可以替换为实际行为，即配置继承：
-
-configurations.implementation.extendsFrom\(configurations.myConfiguration\)
-
- 
-
-1
-
-configurations.implementation.extendsFrom\(configurations.myConfiguration\)
 
 ## [](#changes_6.6)[从6.5升级](#changes_6.6)
 
@@ -97,8 +84,8 @@ configurations.implementation.extendsFrom\(configurations.myConfiguration\)
 如果发生以下情况，您可能会受到此更改的影响：
 
 * 对平台有依赖性，例如`implementation platform("org:platform:1.0")`
-* _或者，_如果您指定依赖项的属性，
-* _并_在这些依赖项上使用[解析规则]()。
+* 指定依赖项的属性，
+* 在这些依赖项上使用[解析规则]()。
 
 如果您受到影响，请参阅[文档]()以解决问题。
 
@@ -136,42 +123,30 @@ Gradle 6.6中未弃用。
 #### [](#upgrade:pmd_expects_6)[PMD插件默认需要PMD 6.0.0或更高版本](#upgrade:pmd_expects_6)
 
 Gradle 6.4默认情况下启用了增量分析。增量分析仅在PMD 6.0.0或更高版本中可用。如果要使用较旧的PMD版本，则需要禁用增量分析：
+```java
 
-pmd \{ incrementalAnalysis = false \}
 
- 
+pmd {
+    incrementalAnalysis = false
+}
 
-1
 
-pmd \{
+```
 
-2
-
- incrementalAnalysis \= false
-
-3
-
-\}
 
 #### [](#changes_in_dependency_locking)[依赖项锁定的更改](#changes_in_dependency_locking)
 
 使用Gradle 6.4，用于[依赖项锁定`LockMode`]()的孵化API已更改。现在通过a设置值，`Property<LockMode>`而不是直接设置器。这意味着必须为Kotlin DSL更新设置值的表示法：
+```java
 
-dependencyLocking \{ lockMode.set\(LockMode.STRICT\) \}
 
- 
+dependencyLocking {
+    lockMode.set(LockMode.STRICT)
+}
 
-1
 
-dependencyLocking \{
+```
 
-2
-
- lockMode.set\(LockMode.STRICT\)
-
-3
-
-\}
 
 Groovy DSL的用户不会受到影响，因为该符号`lockMode = LockMode.STRICT`仍然有效。
 
@@ -262,64 +237,27 @@ Gradle 6.1和6.2之间没有弃用。
 在任务完成之前查询映射的输出属性的值可能会导致奇怪的构建失败，因为这表明过时或不存在的输出可能会被错误使用。此行为已弃用，并将发出弃用警告。这将成为Gradle 7.0中的错误。
 
 下面的示例演示了此问题，其中在生产者执行之前分析了生产者的输出文件：
+```java
 
-class Consumer extends DefaultTask \{ \@Input final Property\<Integer> threadPoolSize = ... \} class Producer extends DefaultTask \{ \@OutputFile final RegularFileProperty outputFile = ... \} // threadPoolSize is read from the producer's outputFile consumer.threadPoolSize = producer.outputFile.map \{ it.text.toInteger\(\) \} // Emits deprecation warning println\("thread pool size = " + consumer.threadPoolSize.get\(\)\)
 
- 
+class Consumer extends DefaultTask {
+    @Input
+    final Property<Integer> threadPoolSize = ...
+}
 
-1
-
-class Consumer extends DefaultTask \{
-
-2
-
- \@Input
-
-3
-
- final Property\<Integer\> threadPoolSize \= ...
-
-4
-
-\}
-
-5
-
-6
-
-class Producer extends DefaultTask \{
-
-7
-
- \@OutputFile
-
-8
-
- final RegularFileProperty outputFile \= ...
-
-9
-
-\}
-
-10
-
-11
+class Producer extends DefaultTask {
+    @OutputFile
+    final RegularFileProperty outputFile = ...
+}
 
 // threadPoolSize is read from the producer's outputFile
-
-12
-
-consumer.threadPoolSize \= producer.outputFile.map \{ it.text.toInteger\(\) \}
-
-13
-
-14
+consumer.threadPoolSize = producer.outputFile.map { it.text.toInteger() }
 
 // Emits deprecation warning
+println("thread pool size = " + consumer.threadPoolSize.get())
 
-15
 
-println\("thread pool size = " + consumer.threadPoolSize.get\(\)\)
+```
 
 `consumer.threadPoolSize`如果在完成之前进行查询，则查询的值将产生弃用警告`producer`，因为尚未生成输出文件。
 
@@ -357,13 +295,14 @@ Gradle 2.x中引入了一组用于Java和Scala开发的替代插件，作为基�
 
 从Gradle 6.2开始，Gradle会在上传之前执行健全性检查，以确保您没有上传陈旧的文件（由另一个构建生成的文件）。这会导致使用该`components.java`组件上传的Spring Boot应用程序出现问题：
 
+
+```java
+
+
 Artifact my-application-0.0.1-SNAPSHOT.jar wasn't produced by this build.
 
- 
 
-1
-
-Artifact my\-application\-0.0.1\-SNAPSHOT.jar wasn't produced by this build.
+```
 
 这是由于主要`jar`任务已被Spring Boot应用程序禁用，并且组件希望该任务存在。因为默认情况下该`bootJar`任务使用_与_主`jar`任务_相同的文件_，所以Gradle的早期版本将：
 
@@ -371,63 +310,30 @@ Artifact my\-application\-0.0.1\-SNAPSHOT.jar wasn't produced by this build.
 * 或如果`bootJar`以前未调用过任务则失败
 
 一种解决方法是告诉Gradle上传什么。如果要上传`bootJar`，则需要配置传出配置以执行此操作：
+```java
 
-configurations \{ \[apiElements, runtimeElements\].each \{ it.outgoing.artifacts.removeIf \{ it.buildDependencies.getDependencies\(null\).contains\(jar\) \} it.outgoing.artifact\(bootJar\) \} \}
 
- 
+configurations {
+   [apiElements, runtimeElements].each {
+       it.outgoing.artifacts.removeIf { it.buildDependencies.getDependencies(null).contains(jar) }
+       it.outgoing.artifact(bootJar)
+   }
+}
 
-1
 
-configurations \{
+```
 
-2
 
- \[apiElements, runtimeElements\].each \{
-
-3
-
- it.outgoing.artifacts.removeIf \{ it.buildDependencies.getDependencies\(null\).contains\(jar\) \}
-
-4
-
- it.outgoing.artifact\(bootJar\)
-
-5
-
- \}
-
-6
-
-\}
 
 或者，您可能想重新启用`jar`任务，并`bootJar`使用其他分类器添加。
+```java
 
-jar \{ enabled = true \} bootJar \{ classifier = 'application' \}
+jar {
+   enabled = true
+}
 
- 
+bootJar {
+   classifier = 'application'
+}
 
-1
-
-jar \{
-
-2
-
- enabled \= true
-
-3
-
-\}
-
-4
-
-5
-
-bootJar \{
-
-6
-
- classifier \= 'application'
-
-7
-
-\}
+```

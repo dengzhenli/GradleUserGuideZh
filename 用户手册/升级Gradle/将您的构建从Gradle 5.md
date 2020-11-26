@@ -15,7 +15,7 @@
 我们建议所有用户执行以下步骤：
 
 1.  尝试运行`gradle help --scan`并查看生成的构建扫描的[弃用视图](https://gradle.com/enterprise/releases/2018.4/#identify-usages-of-deprecated-gradle-functionality)。  
-
+    ![](../../img/deprecations.png)
     这样一来，您就可以看到适用于您的构建的所有弃用警告。
 
     或者，您可以运行`gradle help \--warning-mode=all`在控制台中查看弃用项，尽管它可能不会报告太多详细信息。
@@ -46,42 +46,24 @@
 #### [](#problems_with_tasks_emit_deprecation_warnings)[任务问题会发出弃用警告](#problems_with_tasks_emit_deprecation_warnings)
 
 当Gradle检测到任务定义问题（例如错误定义的输入或输出）时，它将在控制台上显示以下消息：
-
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0. Use '--warning-mode all' to show the individual deprecation warnings. See https://docs.gradle.org/6.0/userguide/command\_line\_interface.html#sec:command\_line\_warnings
-
- 
-
-1
+```java
 
 Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
-
-2
-
 Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.0/userguide/command_line_interface.html#sec:command_line_warnings
 
-3
-
-See https://docs.gradle.org/6.0/userguide/command\_line\_interface.html#sec:command\_line\_warnings
+```
 
 无论使用哪个命令行开关，都将在每个版本的[构建扫描中](https://scans.gradle.com/s/txrptciitl2ha/deprecations)显示不赞成使用警告。
 
 当使用构建执行时`--warning-mode all`，将显示单个警告：
+```java
 
-\> Task :myTask Property 'inputDirectory' is declared without normalization specified. Properties of cacheable work must declare their normalization via \@PathSensitive, \@Classpath or \@CompileClasspath. Defaulting to PathSensitivity.ABSOLUTE. This behaviour has been deprecated and is scheduled to be removed in Gradle 7.0. Property 'outputFile' is not annotated with an input or output annotation. This behaviour has been deprecated and is scheduled to be removed in Gradle 7.0.
-
- 
-
-1
-
-\> Task :myTask
-
-2
-
-Property 'inputDirectory' is declared without normalization specified. Properties of cacheable work must declare their normalization via \@PathSensitive, \@Classpath or \@CompileClasspath. Defaulting to PathSensitivity.ABSOLUTE. This behaviour has been deprecated and is scheduled to be removed in Gradle 7.0.
-
-3
-
+> Task :myTask
+Property 'inputDirectory' is declared without normalization specified. Properties of cacheable work must declare their normalization via @PathSensitive, @Classpath or @CompileClasspath. Defaulting to PathSensitivity.ABSOLUTE. This behaviour has been deprecated and is scheduled to be removed in Gradle 7.0.
 Property 'outputFile' is not annotated with an input or output annotation. This behaviour has been deprecated and is scheduled to be removed in Gradle 7.0.
+
+```
 
 如果您拥有相关任务的代码，则可以[按照建议]()进行修复。您还可以`--stacktrace`用来查看每个警告的源代码。
 
@@ -119,25 +101,12 @@ Property 'outputFile' is not annotated with an input or output annotation. This 
 
 如果要允许重复，则可以明确指定：
 
-task archive\(type: Zip\) \{ duplicatesStrategy = DuplicatesStrategy.INCLUDE // allow duplicates ... \}
-
- 
-
-1
-
-task archive\(type: Zip\) \{
-
-2
-
- duplicatesStrategy \= DuplicatesStrategy.INCLUDE // allow duplicates
-
-3
-
- ...
-
-4
-
-\}
+```java
+task archive(type: Zip) {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE // allow duplicates
+    ...
+}
+```
 
 #### [](#executing_gradle_without_a_settings_file_has_been_deprecated)[在不使用设置文件的情况下执行Gradle已被弃用](#executing_gradle_without_a_settings_file_has_been_deprecated)
 
@@ -187,23 +156,11 @@ Gradle 6.0支持Android Gradle插件版本3.4及更高版本。
 #### [](#changes_to_build_and_task_names_in_composite_builds)[复合构建中对构建和任务名称的更改](#changes_to_build_and_task_names_in_composite_builds)
 
 以前，Gradle使用根项目的名称作为所包含构建的构建名称。现在，将使用构建的根目录名称，并且如果不相同，则不考虑根项目名称。如果通过设置文件包含构建，则可以为构建指定其他名称。
-
-includeBuild\("some-other-build"\) \{ name = "another-name" \}
-
- 
-
-1
-
-includeBuild\("some-other-build"\) \{
-
-2
-
- name \= "another-name"
-
-3
-
-\}
-
+```java
+includeBuild("some-other-build") {
+    name = "another-name"
+}
+```
 先前的行为是有问题的，因为它导致在构建期间的不同时间使用不同的名称。
 
 #### [](#buildsrc_is_now_reserved_as_a_project_and_subproject_build_name)[现在，将buildSrc保留为项目和子项目的内部版本名称](#buildsrc_is_now_reserved_as_a_project_and_subproject_build_name)
@@ -219,22 +176,11 @@ Zinc编译器已升级到版本1.3.0。Gradle不再支持为Scala 2.9构建。
 Gradle支持的最小Zinc编译器为1.2.0，最大测试版本为1.3.0。
 
 为了使选择Zinc编译器的版本更加容易，您现在可以配置一个`zincVersion`属性：
-
-scala \{ zincVersion = "1.2.1" \}
-
- 
-
-1
-
-scala \{
-
-2
-
- zincVersion \= "1.2.1"
-
-3
-
-\}
+```java
+scala {
+    zincVersion = "1.2.1"
+}
+```
 
 请删除您添加到`zinc`配置中的所有显式依赖项，并改用此属性。如果您尝试使用`com.typesafe.zinc:zinc`依赖项，Gradle将切换到新的Zinc实现。
 
@@ -351,36 +297,19 @@ scala \{
 #### [](#using_the_embedded_kotlin_plugin_now_requires_a_repository)[`embedded-kotlin`现在使用插件需要一个存储库](#using_the_embedded_kotlin_plugin_now_requires_a_repository)
 
 就像使用`kotlin-dsl`插件时一样，现在需要声明一个存储库，如果您应用该`embedded-kotlin`插件，则可以在其中找到Kotlin依赖项。
+```java
 
-plugins \{ \`embedded-kotlin\` \} repositories \{ jcenter\(\) \}
 
- 
+plugins {
+    `embedded-kotlin`
+}
 
-1
+repositories {
+    jcenter()
+}
 
-plugins \{
 
-2
-
- \`embedded-kotlin\`
-
-3
-
-\}
-
-4
-
-5
-
-repositories \{
-
-6
-
- jcenter\(\)
-
-7
-
-\}
+```
 
 #### [](#kotlin_dsl_ide_support_now_requires_kotlin_intellij_plugin_1_3_50)[Kotlin DSL IDE支持现在需要> = 1.3.50的Kotlin IntelliJ插件](#kotlin_dsl_ide_support_now_requires_kotlin_intellij_plugin_1_3_50)
 
@@ -590,23 +519,11 @@ Gradle 5.6不再在Eclipse模型中提供自定义类路径属性。相反，它
 #### [](#automatic_capability_conflict_resolution)[自动能力冲突解决](#automatic_capability_conflict_resolution)
 
 如果发生功能冲突，Gradle的早期版本将自动选择具有最高功能版本的模块。从5.6开始，这是一种可以选择使用以下行为激活的行为：
-
-configurations.all \{ resolutionStrategy.capabilitiesResolution.all \{ selectHighestVersion\(\) \} \}
-
- 
-
-1
-
-configurations.all \{
-
-2
-
- resolutionStrategy.capabilitiesResolution.all \{ selectHighestVersion\(\) \}
-
-3
-
-\}
-
+```java
+configurations.all {
+   resolutionStrategy.capabilitiesResolution.all { selectHighestVersion() }
+}
+```
 有关更多选项，请参见[文档的功能部分]()。
 
 #### [](#file_removal_operations_dont_follow_symlinked_directories)[文件删除操作不遵循符号链接目录](#file_removal_operations_dont_follow_symlinked_directories)
@@ -625,13 +542,13 @@ Gradle不再支持使用Scala 2.9构建应用程序。
 
 ### [](#deprecations_3)[弃用](#deprecations_3)
 
-#### [](#play)[玩](#play)
+#### [](#play)[play](#play)
 
 内置的[Play插件]()已被弃用，将由插件门户提供的新的[Play Framework插件](https://gradle.github.io/playframework)代替。
 
-#### [](#build_comparison)[构建比较](#build_comparison)
+#### [](#build_comparison)[build_comparison](#build_comparison)
 
-该_构造比较_插件已经被弃用，并将在摇篮的下一个主要版本中删除。
+该_构build_comparison_插件已经被弃用，并将在Gradle的下一个主要版本中删除。
 
 [构建扫描](https://gradle.com/build-scans)显示了对[构建的](https://gradle.com/build-scans)更深入了解，您可以使用[Gradle Enterprise](https://gradle.com/)直接比较两个构建的构建扫描。
 
@@ -695,63 +612,29 @@ Gradle不再支持使用Scala 2.9构建应用程序。
 
 如果您使用任何Java插件，Gradle现在将尽力选择与正在编译的模块的目标兼容性相匹配的依赖项。实际上，这意味着如果您具有为Java 8构建的模块A和为Java 8构建的模块B，则没有任何变化。但是，如果B是为Java 9+构建的，则它不再与二进制兼容，并且Gradle会抱怨如下错误消息：
 
-Unable to find a matching variant of project :producer: - Variant 'apiElements' capability test:producer:unspecified: - Provides org.gradle.dependency.bundling 'external' - Required org.gradle.jvm.version '8' and found incompatible value '9'. - Required org.gradle.usage 'java-api' and found value 'java-api-jars'. - Variant 'runtimeElements' capability test:producer:unspecified: - Provides org.gradle.dependency.bundling 'external' - Required org.gradle.jvm.version '8' and found incompatible value '9'. - Required org.gradle.usage 'java-api' and found value 'java-runtime-jars'.
+```java
 
- 
-
-1
 
 Unable to find a matching variant of project :producer:
+  - Variant 'apiElements' capability test:producer:unspecified:
+      - Provides org.gradle.dependency.bundling 'external'
+      - Required org.gradle.jvm.version '8' and found incompatible value '9'.
+      - Required org.gradle.usage 'java-api' and found value 'java-api-jars'.
+  - Variant 'runtimeElements' capability test:producer:unspecified:
+      - Provides org.gradle.dependency.bundling 'external'
+      - Required org.gradle.jvm.version '8' and found incompatible value '9'.
+      - Required org.gradle.usage 'java-api' and found value 'java-runtime-jars'.
 
-2
 
- \- Variant 'apiElements' capability test:producer:unspecified:
-
-3
-
- \- Provides org.gradle.dependency.bundling 'external'
-
-4
-
- \- Required org.gradle.jvm.version '8' and found incompatible value '9'.
-
-5
-
- \- Required org.gradle.usage 'java-api' and found value 'java-api-jars'.
-
-6
-
- \- Variant 'runtimeElements' capability test:producer:unspecified:
-
-7
-
- \- Provides org.gradle.dependency.bundling 'external'
-
-8
-
- \- Required org.gradle.jvm.version '8' and found incompatible value '9'.
-
-9
-
- \- Required org.gradle.usage 'java-api' and found value 'java-runtime-jars'.
+```
 
 通常，这表明您的项目配置错误并且您的依赖项不兼容。但是，在某些情况下，您仍然可能想要这样做，例如，当模块的仅一_小类_类实际上需要Java 9依赖项，并且不打算在早期版本中使用时。Java通常不鼓励您这样做（您应该拆分模块），但是如果遇到此问题，可以通过在使用者方面禁用此新行为来解决：
+```java
+java {
+   disableAutoTargetJvm()
+}
 
-java \{ disableAutoTargetJvm\(\) \}
-
- 
-
-1
-
-java \{
-
-2
-
- disableAutoTargetJvm\(\)
-
-3
-
-\}
+```
 
 #### [](#bug_fix_in_maven_ivy_interoperability_with_dependency_substitution)[通过依赖替换在Maven / Ivy互操作性中的错误修复](#bug_fix_in_maven_ivy_interoperability_with_dependency_substitution)
 
@@ -773,7 +656,7 @@ java \{
 
 ### [](#potential_breaking_changes_6)[潜在的重大变化](#potential_breaking_changes_6)
 
-没有
+none
 
 ## [](#changes_5.1)[从5.0或更早版本升级](#changes_5.1)
 
@@ -783,8 +666,10 @@ java \{
 
 * setter方法`classes`和`classpath`上[`ValidateTaskProperties`]()
 * 不应设置诸如的惰性属性的设置器[`ConfigurableFileCollection`]()。使用`setFrom`代替。例如，
-
- validateTaskProperties.getClasses（）。setFrom（fileCollection） validateTaskProperties.getClasspath（）。setFrom（fileCollection）
+```java
+    validateTaskProperties.getClasses().setFrom(fileCollection)
+    validateTaskProperties.getClasspath().setFrom(fileCollection)
+```
 
 ### [](#potential_breaking_changes_7)[潜在的重大变化](#potential_breaking_changes_7)
 
