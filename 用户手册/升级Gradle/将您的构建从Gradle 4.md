@@ -17,14 +17,13 @@
 * [细节变化](#changes_in_detail)
 
 本章提供了将较早的Gradle 4.x构建迁移到Gradle 5.0所需的信息。在大多数情况下，您将需要应用升级版本之后的所有版本中的更改。例如，如果您是从Gradle 4.3升级到5.0，则还需要应用4.4、4.5等（直到5.0）的更改。
-
-<table style="background:none;width:912px;"><tbody><tr><td class="icon" style="color:rgba(0, 0, 0, 0.8);width:80px;"><i class="fa icon-tip"></i></td><td class="content" style="font-size:1.0625rem;color:rgba(0, 0, 0, 0.6);"><font><font>如果您使用的是Android Gradle，则需要同时升级到Android Gradle插件和Android Studio的3.3版或更高版本。</font></font></td></tr></tbody></table>
+> 如果您使用的是Android Gradle，则需要同时升级到Android Gradle插件和Android Studio的3.3版或更高版本。
 
 ## [](#for_all_users)[对于所有用户](#for_all_users)
 
 1.  如果尚未使用最新的4.10.x版本，请阅读以下各节[，](#changes_4.10)以帮助您将项目升级到最新的4.10.x版本。我们建议升级到最新的4.10.x版本以获取最有用的警告和弃用信息，然后再升级到5.0。避免同时升级Gradle并迁移到Kotlin DSL，以便在出现潜在问题时简化故障排除。
-2.  尝试运行`gradle help --scan`并查看生成的构建扫描的[弃用视图](https://gradle.com/enterprise/releases/2018.4/#identify-usages-of-deprecated-gradle-functionality)。如果没有警告，则不会出现“弃用”选项卡。  
-
+2.  尝试运行`gradle help --scan`并查看生成的构建扫描的[弃用视图](https://gradle.com/enterprise/releases/2018.4/#identify-usages-of-deprecated-gradle-functionality)。如果没有警告，则不会出现“Deprecations”选项卡。  
+    ![](file://Users/dxs/temp/gradle-6.7.1/docs/userguide/img/deprecations.png)
     这样一来，您就可以看到适用于您的构建的所有弃用警告。如果您尝试直接升级到Gradle 5.x，它将生成（可能不太明显）错误。
 
     或者，您可以运行`gradle help \--warning-mode=all`在控制台中查看弃用项，尽管它可能不会报告太多详细信息。
