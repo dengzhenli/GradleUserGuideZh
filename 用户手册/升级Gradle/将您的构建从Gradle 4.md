@@ -23,7 +23,7 @@
 
 1.  如果尚未使用最新的4.10.x版本，请阅读以下各节[，](#changes_4.10)以帮助您将项目升级到最新的4.10.x版本。我们建议升级到最新的4.10.x版本以获取最有用的警告和弃用信息，然后再升级到5.0。避免同时升级Gradle并迁移到Kotlin DSL，以便在出现潜在问题时简化故障排除。
 2.  尝试运行`gradle help --scan`并查看生成的构建扫描的[弃用视图](https://gradle.com/enterprise/releases/2018.4/#identify-usages-of-deprecated-gradle-functionality)。如果没有警告，则不会出现“Deprecations”选项卡。  
-    ![](file://Users/dxs/temp/gradle-6.7.1/docs/userguide/img/deprecations.png)
+    ![](../../img/deprecations.png)
     这样一来，您就可以看到适用于您的构建的所有弃用警告。如果您尝试直接升级到Gradle 5.x，它将生成（可能不太明显）错误。
 
     或者，您可以运行`gradle help \--warning-mode=all`在控制台中查看弃用项，尽管它可能不会报告太多详细信息。
@@ -89,7 +89,13 @@
 
   改用[Task.doLast（）]()方法，如下所示：
 
-  任务myTask \{ doLast \{ ... \} \}
+  ```java
+  task myTask {
+    doLast {
+        ...
+    }
+  }
+  ```
 * 您不能再在域对象名称中使用以下任何字符，例如项目和任务名称：\<space>`/ \ : < > " ? * |`。您也不应将其`.`用作前导或尾随字符。
 
 运行Gradle和构建环境
@@ -158,9 +164,9 @@ Java构建
 * 现在，覆盖[4.8](#deprecations_4.8)中[弃用的](#deprecations_4.8)内置任务会产生错误。  
 
   尝试替换内置任务将产生类似于以下错误：
-
-  \>无法添加任务“包装器”，因为该名称的任务已经存在。
-
+```java
+  Cannot add task 'wrapper' as a task with that name already exists.
+```
 Scala和Play
 
 * 不再支持Play 2.2-请升级您使用的Play版本。
@@ -426,7 +432,7 @@ Gradle现在为导入物料清单（BOM）文件提供支持，该文件是有�
 
 ### [](#rel5.0:changes_to_default_task)[\[5.0\]对属性工厂方法的更改`DefaultTask`](#rel5.0:changes_to_default_task)
 
-#### [](#property_factory_methods_on_defaulttask_are_now_final)[物业工厂方法`DefaultTask`现已确定](#property_factory_methods_on_defaulttask_are_now_final)
+#### [](#property_factory_methods_on_defaulttask_are_now_final)[属性工厂方法`DefaultTask`现已最终确定](#property_factory_methods_on_defaulttask_are_now_final)
 
 诸如此类的属性工厂方法`newInputFile()`旨在从extended类型的构造函数中调用`DefaultTask`。这些方法现在是最终方法，以避免子类覆盖这些方法并使用未初始化的状态。
 
@@ -434,97 +440,73 @@ Gradle现在为导入物料清单（BOM）文件提供支持，该文件是有�
 
 这些方法返回的Property实例不再自动注册为任务的输入或输出。必须以通常的方式将Property实例声明为输入或输出，例如附加注释，例如`@OutputFile`或使用运行时API来注册属性。
 
-例如，您以前可能使用以下语法，并且将两个outputFile实例都注册为声明的输出：
+例如，您以前可能使用以下语法，并且将两个outputFile实例都注册为声明的输出：  
+Groovy
 
-`Groovy``Kotlin`
+```Groovy
+build.gradle
+class MyTask extends DefaultTask {
+    // note: no annotation here
+    final RegularFileProperty outputFile = newOutputFile()
+}
+task myOtherTask {
+    def outputFile = newOutputFile()
+    doLast { ... }
+}
+
+```
+Kotlin
+```Kotlin
+build.gradle.kts
+open class MyTask : DefaultTask() {
+    // note: no annotation here
+    val outputFile: RegularFileProperty = newOutputFile()
+}
+task("myOtherTask") {
+    val outputFile = newOutputFile()
+    doLast { ... }
+}
+
+```
+
+现在，您必须显式注册`outputFile`，如下所示：  
+Groovy
+```Groovy
 
 build.gradle
 
-class MyTask extends DefaultTask \{ // note: no annotation here final RegularFileProperty outputFile = newOutputFile\(\) \} task myOtherTask \{ def outputFile = newOutputFile\(\) doLast \{ ... \} \}
+class MyTask extends DefaultTask {
+    @OutputFile // property needs an annotation
+    final RegularFileProperty outputFile = project.objects.fileProperty()
+}
 
- 
+task myOtherTask {
+    def outputFile = project.objects.fileProperty()
+    outputs.file(outputFile) // or to be registered using the runtime API
+    doLast { ... }
+}
 
-1
 
-class MyTask extends DefaultTask \{
+```
+Kotlin
+```Kotlin
 
-2
+build.gradle.kts
 
- // note: no annotation here
+open class MyTask : DefaultTask() {
+    @OutputFile // property needs an annotation
+    val outputFile: RegularFileProperty = project.objects.fileProperty()
+}
 
-3
+task("myOtherTask") {
+    val outputFile = project.objects.fileProperty()
+    outputs.file(outputFile) // or to be registered using the runtime API
+    doLast { ... }
+}
 
- final RegularFileProperty outputFile \= newOutputFile\(\)
 
-4
+```
 
-\}
-
-5
-
-6
-
-task myOtherTask \{
-
-7
-
- def outputFile \= newOutputFile\(\)
-
-8
-
- doLast \{ ... \}
-
-9
-
-\}
-
-现在，您必须显式注册`outputFile`，如下所示：
-
-`Groovy``Kotlin`
-
-build.gradle
-
-class MyTask extends DefaultTask \{ \@OutputFile // property needs an annotation final RegularFileProperty outputFile = project.objects.fileProperty\(\) \} task myOtherTask \{ def outputFile = project.objects.fileProperty\(\) outputs.file\(outputFile\) // or to be registered using the runtime API doLast \{ ... \} \}
-
- 
-
-1
-
-class MyTask extends DefaultTask \{
-
-2
-
- \@OutputFile // property needs an annotation
-
-3
-
- final RegularFileProperty outputFile \= project.objects.fileProperty\(\)
-
-4
-
-\}
-
-5
-
-6
-
-task myOtherTask \{
-
-7
-
- def outputFile \= project.objects.fileProperty\(\)
-
-8
-
- outputs.file\(outputFile\) // or to be registered using the runtime API
-
-9
-
- doLast \{ ... \}
-
-10
-
-\}
 
 ### [](#rel5.0:jaxb_and_java9)[\[5.0\] Gradle现在捆绑了Java 9及更高版本的JAXB](#rel5.0:jaxb_and_java9)
 
@@ -540,55 +522,39 @@ task myOtherTask \{
 
 在没有POM的情况下发布到Maven存储库的工件应得到修复。如果遇到此类工件，请让插件或库作者发布具有适当元数据的新版本。
 
-如果您遇到了插件问题，可以通过重新启用JAR作为`gradlePluginPortal()`存储库的元数据源来解决：
-
-`Groovy``Kotlin`
+如果您遇到了插件问题，可以通过重新启用JAR作为`gradlePluginPortal()`存储库的元数据源来解决：  
+Groovy
+```Groovy
 
 settings.gradle
 
-pluginManagement \{ repositories \{ gradlePluginPortal\(\).tap \{ metadataSources \{ mavenPom\(\) artifact\(\) \} \} \} \}
+pluginManagement {
+    repositories {
+        gradlePluginPortal().tap {
+            metadataSources {
+                mavenPom()
+                artifact()
+            }
+        }
+    }
+}
 
- 
+```
+Kotlin
+```Kotlin
 
-1
+pluginManagement {
+    repositories {
+        gradlePluginPortal().apply {
+            (this as MavenArtifactRepository).metadataSources {
+                mavenPom()
+                artifact()
+            }
+        }
+    }
+}
 
-pluginManagement \{
-
-2
-
- repositories \{
-
-3
-
- gradlePluginPortal\(\).tap \{
-
-4
-
- metadataSources \{
-
-5
-
- mavenPom\(\)
-
-6
-
- artifact\(\)
-
-7
-
- \}
-
-8
-
- \}
-
-9
-
- \}
-
-10
-
-\}
+```
 
 ### [](#rel5.0:java_library_distribution_plugin)[Java库分发插件利用Java库插件](#rel5.0:java_library_distribution_plugin)
 
@@ -598,51 +564,50 @@ pluginManagement \{
 
 ### [](#rel5.0:configuration_avoidance)[配置回避API禁止常见的配置错误](#rel5.0:configuration_avoidance)
 
-该[配置避免API]()在摇篮4.9推出可以让你避免创建和配置是从未使用过的任务。
+该[配置避免API]()在Gradle 4.9推出可以让你避免创建和配置是从未使用过的任务。
 
-使用现有的API，此示例添加了两个任务（`foo`和`bar`）：
-
-`Groovy``Kotlin`
-
-build.gradle
-
-tasks.create\("foo"\) \{ tasks.create\("bar"\) \}
-
- 
-
-1
-
-tasks.create\("foo"\) \{
-
-2
-
- tasks.create\("bar"\)
-
-3
-
-\}
-
-将其转换为使用新的API时，会发生一些令人惊讶的事情：`bar`不存在。新的API仅在必要时执行配置操作，因此`register()`for任务`bar`仅在`foo`配置时执行。
-
-`Groovy``Kotlin`
+使用现有的API，此示例添加了两个任务（`foo`和`bar`）：  
+Groovy
+```Groovy
 
 build.gradle
 
-tasks.register\("foo"\) \{ tasks.register\("bar"\) // WRONG \}
+tasks.create("foo") {
+    tasks.create("bar")
+}
 
- 
 
-1
+```
+Kotlin
+```Kotlin
 
-tasks.register\("foo"\) \{
+build.gradle.kts
 
-2
+tasks.create("foo") {
+    tasks.create("bar")
+}
 
- tasks.register\("bar"\) // WRONG
+```
 
-3
 
-\}
+将其转换为使用新的API时，会发生一些令人惊讶的事情：`bar`不存在。新的API仅在必要时执行配置操作，因此`register()`for任务`bar`仅在`foo`配置时执行。  
+Groovy
+```Groovy
+build.gradle
+tasks.register("foo") {
+    tasks.register("bar") // WRONG
+}
+
+```
+Kotlin
+```Kotlin
+build.gradle.kts
+tasks.register("foo") {
+    tasks.register("bar") // WRONG
+}
+
+```
+
 
 为了避免这种情况，Gradle现在可以检测到这一点，并在使用新API时防止修改基础容器（通过`create()`或`register()`）。
 
@@ -657,70 +622,25 @@ tasks.register\("foo"\) \{
 ### [](#rel4.10:aws_s3_permissions)[\[4.10\]发布到AWS S3需要新权限](#rel4.10:aws_s3_permissions)
 
 S3存储库传输协议允许Gradle将工件发布到AWS S3存储桶。从此版本开始，每个上传到S3存储桶的工件都将配备`bucket-owner-full-control`罐装ACL。确保用于发布工件的AWS账户具有`s3:PutObjectAcl`和`s3:PutObjectVersionAcl`权限，否则上传将失败。
+```java 
 
-\{ "Version":"2012-10-17", "Statement":\[ // ... \{ "Effect":"Allow", "Action":\[ "s3:PutObject", // necessary for uploading objects "s3:PutObjectAcl", // required starting with this release "s3:PutObjectVersionAcl" // if S3 bucket versioning is enabled \], "Resource":"arn:aws:s3:::myCompanyBucket/\*" \} \] \}
+{
+    "Version":"2012-10-17",
+    "Statement":[
+        // ...
+        {
+            "Effect":"Allow",
+            "Action":[
+                "s3:PutObject", // necessary for uploading objects
+                "s3:PutObjectAcl", // required starting with this release
+                "s3:PutObjectVersionAcl" // if S3 bucket versioning is enabled
+            ],
+            "Resource":"arn:aws:s3:::myCompanyBucket/*"
+        }
+    ]
+}
 
- 
-
-1
-
-\{
-
-2
-
- "Version":"2012-10-17",
-
-3
-
- "Statement":\[
-
-4
-
- // ...
-
-5
-
- \{
-
-6
-
- "Effect":"Allow",
-
-7
-
- "Action":\[
-
-8
-
- "s3:PutObject", // necessary for uploading objects
-
-9
-
- "s3:PutObjectAcl", // required starting with this release
-
-10
-
- "s3:PutObjectVersionAcl" // if S3 bucket versioning is enabled
-
-11
-
- \],
-
-12
-
- "Resource":"arn:aws:s3:::myCompanyBucket/\*"
-
-13
-
- \}
-
-14
-
- \]
-
-15
-
-\}
+```
 
 有关更多信息，请参阅[AWS S3跨账户访问]()。
 
@@ -740,175 +660,162 @@ Gradle 4.9引入了一种新的方式来创建和配置惰性工作的任务。�
 
 在Gradle 4.8之前，该`publishing {}`块被隐式地视为在评估项目后就执行了其中的所有逻辑。这令人困惑，因为它是唯一以这种方式运行的块。作为Gradle 4.8稳定工作的一部分，我们将弃用此行为，并要求所有用户迁移其内部版本。
 
-通过将以下内容添加到设置文件中，可以打开新的稳定行为：
-
-`Groovy``Kotlin`
-
+通过将以下内容添加到设置文件中，可以打开新的稳定行为：  
+Groovy
+```Groovy
 settings.gradle
 
-enableFeaturePreview\('STABLE\_PUBLISHING'\)
+enableFeaturePreview('STABLE_PUBLISHING')
 
- 
+```
+Kotlin
+```Kotlin
+settings.gradle.kts
 
-1
+enableFeaturePreview("STABLE_PUBLISHING")
 
-enableFeaturePreview\('STABLE\_PUBLISHING'\)
+```
+
 
 我们建议对本地存储库进行测试运行，以查看所有工件是否仍具有预期的坐标。在大多数情况下，一切都应该像以前一样工作，您已完成。但是，您的发布块可能依赖于隐式延迟的配置，尤其是如果它依赖于在构建的配置阶段可能更改的值。
 
-例如，在新行为下，以下逻辑假定设置`jar.archiveBaseName`后不会更改`artifactId`：
+例如，在新行为下，以下逻辑假定设置`jar.archiveBaseName`后不会更改`artifactId`：  
 
-`Groovy``Kotlin`
-
-build.gradle
-
-subprojects \{ publishing \{ publications \{ mavenJava \{ from components.java artifactId = jar.archiveBaseName \} \} \} \}
-
- 
-
-1
-
-subprojects \{
-
-2
-
- publishing \{
-
-3
-
- publications \{
-
-4
-
- mavenJava \{
-
-5
-
- from components.java
-
-6
-
- artifactId \= jar.archiveBaseName
-
-7
-
- \}
-
-8
-
- \}
-
-9
-
- \}
-
-10
-
-\}
-
-如果该假设不正确或将来可能不正确，则`artifactId`必须在一个`afterEvaluate {}`块内进行设置，如下所示：
-
-`Groovy``Kotlin`
+Groovy
+```Groovy
 
 build.gradle
 
-subprojects \{ publishing \{ publications \{ mavenJava \{ from components.java afterEvaluate \{ artifactId = jar.archiveBaseName \} \} \} \} \}
+subprojects {
+    publishing {
+        publications {
+            mavenJava {
+                from components.java
+                artifactId = jar.archiveBaseName
+            }
+        }
+    }
+}
 
- 
 
-1
+```
+Kotlin
+```Kotlin
 
-subprojects \{
+build.gradle.kts
 
-2
+subprojects {
+    publishing {
+        publications {
+            named<MavenPublication>("mavenJava") {
+                from(components["java"])
+                artifactId = tasks.jar.get().archiveBaseName.get()
+            }
+        }
+    }
+}
 
- publishing \{
 
-3
+```
 
- publications \{
+如果该假设不正确或将来可能不正确，则`artifactId`必须在一个`afterEvaluate {}`块内进行设置，如下所示：  
 
-4
+Groovy
+```Groovy
 
- mavenJava \{
+build.gradle
 
-5
+subprojects {
+    publishing {
+        publications {
+            mavenJava {
+                from components.java
+                afterEvaluate {
+                    artifactId = jar.archiveBaseName
+                }
+            }
+        }
+    }
+}
 
- from components.java
 
-6
+```
+Kotlin
+```Kotlin
 
- afterEvaluate \{
+build.gradle.kts
 
-7
+subprojects {
+    publishing {
+        publications {
+            named<MavenPublication>("mavenJava") {
+                from(components["java"])
+                afterEvaluate {
+                    artifactId = tasks.jar.get().archiveBbaseName.get()
+                }
+            }
+        }
+    }
+}
 
- artifactId \= jar.archiveBaseName
 
-8
-
- \}
-
-9
-
- \}
-
-10
-
- \}
-
-11
-
- \}
-
-12
-
-\}
+```
 
 ### [](#rel4.8:configure_internal_tasks)[\[4.8\]配置现有`wrapper`和`init`任务](#rel4.8:configure_internal_tasks)
 
-您应该不会再定义自己`wrapper`和`init`任务。而是配置现有任务，例如，通过转换以下内容：
+您应该不会再定义自己`wrapper`和`init`任务。而是配置现有任务，例如，通过转换以下内容：  
 
-`Groovy``Kotlin`
-
-build.gradle
-
-task wrapper\(type: Wrapper\) \{ ... \}
-
- 
-
-1
-
-task wrapper\(type: Wrapper\) \{
-
-2
-
- ...
-
-3
-
-\}
-
-对此：
-
-`Groovy``Kotlin`
+Groovy
+```Groovy
 
 build.gradle
 
-wrapper \{ ... \}
+task wrapper(type: Wrapper) {
+    ...
+}
 
- 
 
-1
+```
+Kotlin
+```Kotlin
 
-wrapper \{
+build.gradle.kts
 
-2
+task<Wrapper>("wrapper") {
+    ...
+}
 
- ...
 
-3
+```
+成  
 
-\}
+Groovy
+```Groovy
+
+
+build.gradle
+
+wrapper {
+    ...
+}
+
+
+
+```
+Kotlin
+```Kotlin
+
+
+build.gradle.kts
+
+tasks.wrapper {
+    ...
+}
+
+
+```
+
+
 
 ### [](#rel4.8:pom_wildcard_exclusions)[\[4.8\] Gradle现在可以在Maven POM排除中使用隐式通配符](#rel4.8:pom_wildcard_exclusions)
 
@@ -974,42 +881,21 @@ wrapper \{
 
 ### [](#rel4.6:visual_studio_single_solution)[\[4.6\] Visual Studio集成仅对构建的所有组件支持单个解决方案文件](#rel4.6:visual_studio_single_solution)
 
-[VisualStudioExtension]()不再具有`solutions`属性。相反，您可以通过根项目中的[VisualStudioRootExtension]()配置单个解决方案，如下所示：
+[VisualStudioExtension]()不再具有`solutions`属性。相反，您可以通过根项目中的[VisualStudioRootExtension]()配置单个解决方案，如下所示：  
 
-build.gradle
+```Groovy
 
-model \{ visualStudio \{ solution \{ solutionFile.location = "vs/\$\{name\}.sln" \} \} \}
 
- 
+model {
+    visualStudio {
+        solution {
+            solutionFile.location = "vs/${name}.sln"
+        }
+    }
+}
 
-1
 
-model \{
-
-2
-
- visualStudio \{
-
-3
-
- solution \{
-
-4
-
- solutionFile.location \= "vs/\$\{name\}.sln"
-
-5
-
- \}
-
-6
-
- \}
-
-7
-
-\}
-
+```
 此外，不再需要为每个组件生成解决方案文件的单个`visualStudio`任务，而可以生成包含构建中所有组件的解决方案文件的单个任务。
 
 ### [](#rel4.5:http_build_cache_no_follow_redirects)[\[4.5\]`HttpBuildCache`不再遵循重定向](#rel4.5:http_build_cache_no_follow_redirects)
