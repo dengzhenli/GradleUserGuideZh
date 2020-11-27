@@ -9,9 +9,8 @@ version 6.7.1
   * [获得帮助](https://docs.gradle.org/6.7.1/userguide/userguide.html#getting_help)
   * [执照](https://docs.gradle.org/6.7.1/userguide/userguide.html#licenses)
 
-__ |  是否想学习顶尖工程团队用来保持构建快速和高性能的提示和技巧？[在此处注册](https://gradle.com/training/build-
-cache-deep-dive/?bid=docs-userguide)以获取我们的构建缓存培训。  
----|---  
+> 是否想学习顶尖工程团队用来保持构建快速和高性能的提示和技巧？[在此处注册](https://gradle.com/training/build-cache-deep-dive/?bid=docs-userguide)以获取我们的构建缓存培训。  
+
   
 Gradle是专注于灵活性和性能的开源构建自动化工具。Gradle构建脚本是使用[Groovy](https://groovy-
 lang.org/)或[Kotlin](https://kotlinlang.org/)
@@ -102,8 +101,6 @@ service/)和[隐私政策](https://gradle.com/legal/privacy/)，包括接收电�
 [招贤纳士](https://gradle.com/careers/)| [隐私](https://gradle.com/legal/privacy/)|
 [服务条款](https://gradle.com/legal/terms-of-service/)|
 [联系](https://gradle.org/contact/)
-
-![Google 翻译](img/translate_24dp.png)
 
 # 原文
 
