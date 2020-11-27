@@ -1,398 +1,384 @@
 
 
-[ Gradle ](https://docs.gradle.org "Gradle Docs")
+[ Gradle ](https://docs.gradle.org/ "Gradle Docs")
 
-User Manual
+用户手册
 
-  * Community Open Community Menu
+  * 社区 Open Community Menu
 
-[ Community Home ](https://gradle.org/)
+[ 社区之家 ](https://gradle.org/)
 
-[ Community Forums ](https://discuss.gradle.org/)
+[ 社区论坛 ](https://discuss.gradle.org/)
 
-[ Community Plugins ](https://plugins.gradle.org)
+[ 社区插件 ](https://plugins.gradle.org/)
 
-  * [Training](https://gradle.com/training/)
-  * News Open Community Menu
+  * [训练](https://gradle.com/training/)
+  * 新闻 Open Community Menu
 
-[ Newsletter ](https://newsletter.gradle.com)
+[ 通讯 ](https://newsletter.gradle.com/)
 
-[ Blog ](https://blog.gradle.org)
+[ 博客 ](https://blog.gradle.org/)
 
-[ Twitter ](https://twitter.com/gradle)
+[ 推特 ](https://twitter.com/gradle)
 
-  * [Enterprise](https://gradle.com)
-  * [github](https://github.com/gradle/gradle "Gradle on GitHub")
+  * [企业](https://gradle.com/)
+  * [github](https://github.com/gradle/gradle "GitHub上的Gradle")
 
-  * [Docs Home](../userguide/userguide.html)
-  * [Samples](../samples/index.html)
-  * [Release Notes](../release-notes.html)
-  * Gradle API
-    * [Javadoc](../javadoc/index.html?overview-summary.html)
-    * [Groovy DSL Reference](../dsl/index.html)
-    * [Groovy DSL Primer](../userguide/groovy_build_script_primer.html)
+  * [文件首页](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/userguide.html)
+  * [样品](file:///Users/dxs/temp/gradle-6.7.1/docs/samples/index.html)
+  * [发行说明](file:///Users/dxs/temp/gradle-6.7.1/docs/release-notes.html)
+  * [Gradle API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#gradle-api)
+    * [Java文档](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/index.html?overview-summary.html)
+    * [Groovy DSL参考](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/index.html)
+    * [Groovy DSL入门](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/groovy_build_script_primer.html)
     * [Kotlin DSL API](https://gradle.github.io/kotlin-dsl-docs/api/)
-    * [Kotlin DSL Primer](../userguide/kotlin_dsl.html)
+    * [Kotlin DSL入门](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/kotlin_dsl.html)
 
-### User Manual
+### 用户手册
 
-[ PDF ](../userguide/userguide.pdf)
+[ PDF格式 ](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/userguide.pdf)
 
-  * [What is Gradle?](../userguide/what_is_gradle.html)
-  * [Getting Started](../userguide/getting_started.html)
-  * [Installing Gradle](../userguide/installation.html)
-  * Upgrading Gradle...
-    * [version 6.X to latest](../userguide/upgrading_version_6.html)
-    * [version 5.X to 6.0](../userguide/upgrading_version_5.html)
-    * [version 4.X to 5.0](../userguide/upgrading_version_4.html)
-    * [Gradle's Feature Lifecycle](../userguide/feature_lifecycle.html)
-  * Migrating to Gradle...
-    * [from Maven](../userguide/migrating_from_maven.html)
-    * [from Ant](../userguide/migrating_from_ant.html)
-  * [Compatibility Notes](../userguide/compatibility.html)
-  * [Troubleshooting Builds](../userguide/troubleshooting.html)
+  * [什么是Gradle？](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/what_is_gradle.html)
+  * [入门](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/getting_started.html)
+  * [安装Gradle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html)
+  * [升级Gradle ...](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#upgrading-gradle)
+    * [版本6.X到最新](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_6.html)
+    * [版本5.X到6.0](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html)
+    * [版本4.X到5.0](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_4.html)
+    * [Gradle的功能生命周期](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/feature_lifecycle.html)
+  * [迁移至Gradle ...](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#migrating-to-gradle)
+    * [从Maven](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/migrating_from_maven.html)
+    * [来自蚂蚁](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/migrating_from_ant.html)
+  * [相容性说明](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/compatibility.html)
+  * [对构建进行故障排除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/troubleshooting.html)
 
-### Running Gradle Builds
+### 运行Gradle构建
 
-  * Customizing Execution
-    * [Configuring the Build Environment](../userguide/build_environment.html)
-    * [Configuring the Gradle Daemon](../userguide/gradle_daemon.html)
-    * [Using Initialization Scripts](../userguide/init_scripts.html)
-  * [Executing Multi-Project Builds](../userguide/intro_multi_project_builds.html)
-  * [Inspecting Gradle Builds](https://scans.gradle.com/)
-  * Optimizing Build Times
-    * [Build Performance Guide](https://guides.gradle.org/performance/)
-    * [Enabling and Configuring the Build Cache](../userguide/build_cache.html)
-    * [Using the Configuration Cache](../userguide/configuration_cache.html)
+  * [自定义执行](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#customizing-execution)
+    * [配置构建环境](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_environment.html)
+    * [配置Gradle守护程序](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html)
+    * [使用初始化脚本](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/init_scripts.html)
+  * [执行多项目构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/intro_multi_project_builds.html)
+  * [检查Gradle构建](https://scans.gradle.com/)
+  * [优化构建时间](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#optimizing-build-performance)
+    * [构建绩效指南](https://guides.gradle.org/performance/)
+    * [启用和配置构建缓存](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_cache.html)
+    * [使用配置缓存](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/configuration_cache.html)
 
-### Authoring Gradle Builds
+### 编写Gradle构建
 
-  * Learning the Basics
-    * [Introducing the Basics of Build Scripts](../userguide/tutorial_using_tasks.html)
-    * [Working with Tasks](../userguide/more_about_tasks.html)
-    * [Learning More About Build Scripts](../userguide/writing_build_scripts.html)
-    * [Working with Files](../userguide/working_with_files.html)
-    * [Using Gradle Plugins](../userguide/plugins.html)
-    * [Understanding the Build Lifecycle](../userguide/build_lifecycle.html)
-    * [Working with Logging](../userguide/logging.html)
-    * [Avoiding Traps](../userguide/potential_traps.html)
-  * Authoring Multi-Project Builds
-    * [Creating a Basic Multi-Project Build](../userguide/multi_project_builds.html)
-    * [Declaring Dependencies between Subprojects](../userguide/declaring_dependencies_between_subprojects.html)
-    * [Sharing Build Logic between Subprojects](../userguide/sharing_build_logic_between_subprojects.html)
-    * [Fine Tuning the Project Layout](../userguide/fine_tuning_project_layout.html)
-    * [Understanding Configuration and Execution](../userguide/multi_project_configuration_and_execution.html)
-  * Authoring Sustainable Builds
-    * [Organizing Build Logic](../userguide/organizing_gradle_projects.html)
-    * [Following Best Practices](../userguide/authoring_maintainable_build_scripts.html)
-  * Advanced Techniques
+  * [学习基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#learning-the-basics)
+    * [介绍构建脚本的基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/tutorial_using_tasks.html)
+    * [处理任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/more_about_tasks.html)
+    * [Learning More About Build Scripts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/writing_build_scripts.html)
+    * [Working with Files](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/working_with_files.html)
+    * [Using Gradle Plugins](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html)
+    * [Understanding the Build Lifecycle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_lifecycle.html)
+    * [Working with Logging](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/logging.html)
+    * [Avoiding Traps](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/potential_traps.html)
+  * [创作多项目构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#authoring-multi-project-builds)
+    * [Creating a Basic Multi-Project Build](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_builds.html)
+    * [Declaring Dependencies between Subprojects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_dependencies_between_subprojects.html)
+    * [Sharing Build Logic between Subprojects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/sharing_build_logic_between_subprojects.html)
+    * [Fine Tuning the Project Layout](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/fine_tuning_project_layout.html)
+    * [Understanding Configuration and Execution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_configuration_and_execution.html)
+  * [创作可持续建筑](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#authoring-sustainable-builds)
+    * [Organizing Build Logic](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/organizing_gradle_projects.html)
+    * [Following Best Practices](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/authoring_maintainable_build_scripts.html)
+  * [先进技术](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#advanced-techniques)
     * [Developing Parallel Tasks](https://guides.gradle.org/using-the-worker-api/)
-    * [Testing a Build with TestKit](../userguide/test_kit.html)
-    * [Using Ant from Gradle](../userguide/ant.html)
+    * [Testing a Build with TestKit](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/test_kit.html)
+    * [Using Ant from Gradle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/ant.html)
 
-### Authoring JVM Builds
+### 编写JVM构建
 
-  * [Building Java & JVM projects](../userguide/building_java_projects.html)
-  * [Testing Java & JVM projects](../userguide/java_testing.html)
-  * [Toolchains for Java projects](../userguide/toolchains.html)
-  * [Managing Dependencies](../userguide/dependency_management_for_java_projects.html)
-  * JVM Plugins
-    * [Java Library Plugin](../userguide/java_library_plugin.html)
-    * [Java Application Plugin](../userguide/application_plugin.html)
-    * [Java Platform Plugin](../userguide/java_platform_plugin.html)
-    * [Groovy Plugin](../userguide/groovy_plugin.html)
-    * [Scala Plugin](../userguide/scala_plugin.html)
+  * [构建Java和JVM项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_java_projects.html)
+  * [测试Java和JVM项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html)
+  * [Java项目的工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html)
+  * [管理依赖关系](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_management_for_java_projects.html)
+  * [JVM插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#jvm-plugins)
+    * [Java Library Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_library_plugin.html)
+    * [Java Application Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/application_plugin.html)
+    * [Java Platform Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_platform_plugin.html)
+    * [Groovy Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/groovy_plugin.html)
+    * [Scala Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/scala_plugin.html)
 
-### Authoring C++/Swift Builds
+### 编写C ++ / Swift构建
 
-  * [Building C++ projects](../userguide/building_cpp_projects.html)
-  * [Testing C++ projects](../userguide/cpp_testing.html)
-  * [Building Swift projects](../userguide/building_swift_projects.html)
-  * [Testing Swift projects](../userguide/swift_testing.html)
+  * [构建C ++项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_cpp_projects.html)
+  * [测试C ++项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/cpp_testing.html)
+  * [建立Swift项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_swift_projects.html)
+  * [测试Swift项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/swift_testing.html)
 
-### Working with Dependencies
+### 使用依赖项
 
-  * Learning the Basics
-    * [What is Dependency Management?](../userguide/core_dependency_management.html)
-    * [Declaring Repositories](../userguide/declaring_repositories.html)
-    * [Declaring Dependencies](../userguide/declaring_dependencies.html)
-    * [Understanding Library and Application Differences](../userguide/library_vs_application.html)
-    * [Viewing and Debugging Dependencies](../userguide/viewing_debugging_dependencies.html)
-    * [Understanding Resolution](../userguide/dependency_resolution.html)
-    * [Verifying dependencies](../userguide/dependency_verification.html)
-  * Declaring Versions
-    * [Declaring Versions and Ranges](../userguide/single_versions.html)
-    * [Declaring Rich Versions](../userguide/rich_versions.html)
-    * [Handling Changing Versions](../userguide/dynamic_versions.html)
-    * [Locking Versions](../userguide/dependency_locking.html)
-  * Controlling Transitives
-    * [Upgrading Versions](../userguide/dependency_constraints.html)
-    * [Downgrading and Excluding](../userguide/dependency_downgrade_and_exclude.html)
-    * [Sharing Versions](../userguide/platforms.html)
-    * [Aligning Dependencies](../userguide/dependency_version_alignment.html)
-    * [Handling Mutually Exclusive Dependencies](../userguide/dependency_capability_conflict.html)
-    * [Fixing Metadata](../userguide/component_metadata_rules.html)
-    * [Customizing Resolution](../userguide/resolution_rules.html)
-    * [Preventing accidental upgrades](../userguide/resolution_strategy_tuning.html)
-  * Producing and Consuming Variants of Libraries
-    * [Declaring Capabilities of a Library](../userguide/component_capabilities.html)
-    * [Modeling Feature Variants and Optional Dependencies](../userguide/feature_variants.html)
-    * [Understanding Variant Selection](../userguide/variant_model.html)
-    * [Declaring Variant Attributes](../userguide/variant_attributes.html)
-    * [Sharing Outputs of Projects](../userguide/cross_project_publications.html)
-    * [Transforming Artifacts](../userguide/artifact_transforms.html)
-  * Working in a Multi-repo Environment
-    * [Composing Builds](../userguide/composite_builds.html)
-  * Publishing Libraries
-    * [Setting up Publishing](../userguide/publishing_setup.html)
-    * [Understanding Gradle Module Metadata](../userguide/publishing_gradle_module_metadata.html)
-    * [Signing Artifacts](../userguide/publishing_signing.html)
-    * [Customizing Publishing](../userguide/publishing_customization.html)
-    * [Maven Publish Plugin](../userguide/publishing_maven.html)
-    * [Ivy Publish Plugin](../userguide/publishing_ivy.html)
-  * [Terminology](../userguide/dependency_management_terminology.html)
+  * [学习基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#learning-the-basics-dependency-management)
+    * [What is Dependency Management?](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/core_dependency_management.html)
+    * [Declaring Repositories](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_repositories.html)
+    * [Declaring Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_dependencies.html)
+    * [Understanding Library and Application Differences](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/library_vs_application.html)
+    * [Viewing and Debugging Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/viewing_debugging_dependencies.html)
+    * [Understanding Resolution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_resolution.html)
+    * [Verifying dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_verification.html)
+  * [声明版本](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#declaring-dependency-versions)
+    * [Declaring Versions and Ranges](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/single_versions.html)
+    * [Declaring Rich Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/rich_versions.html)
+    * [Handling Changing Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dynamic_versions.html)
+    * [Locking Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_locking.html)
+  * [控制翻译](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#controlling-transitive-dependencies)
+    * [Upgrading Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_constraints.html)
+    * [Downgrading and Excluding](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_downgrade_and_exclude.html)
+    * [Sharing Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/platforms.html)
+    * [Aligning Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_version_alignment.html)
+    * [Handling Mutually Exclusive Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_capability_conflict.html)
+    * [Fixing Metadata](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/component_metadata_rules.html)
+    * [Customizing Resolution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/resolution_rules.html)
+    * [Preventing accidental upgrades](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/resolution_strategy_tuning.html)
+  * [图书馆的生产和消费形式](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#modeling-features)
+    * [Declaring Capabilities of a Library](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/component_capabilities.html)
+    * [Modeling Feature Variants and Optional Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/feature_variants.html)
+    * [Understanding Variant Selection](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_model.html)
+    * [Declaring Variant Attributes](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_attributes.html)
+    * [Sharing Outputs of Projects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/cross_project_publications.html)
+    * [Transforming Artifacts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/artifact_transforms.html)
+  * [在多仓库环境中工作](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#multi-repo)
+    * [Composing Builds](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/composite_builds.html)
+  * [出版图书馆](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#publishing)
+    * [Setting up Publishing](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_setup.html)
+    * [Understanding Gradle Module Metadata](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_gradle_module_metadata.html)
+    * [Signing Artifacts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_signing.html)
+    * [Customizing Publishing](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_customization.html)
+    * [Maven Publish Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_maven.html)
+    * [Ivy Publish Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_ivy.html)
+  * [术语](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_management_terminology.html)
 
-### Extending Gradle
+### 扩展摇篮
 
-  * [Plugin Development Tutorials](https://gradle.org/guides/?q=Plugin%20Development)
-  * [Writing Gradle Task Types](../userguide/custom_tasks.html)
-  * [Writing Gradle Plugins](../userguide/custom_plugins.html)
-  * [Writing Custom Gradle Types](../userguide/custom_gradle_types.html)
-  * [Configuring Tasks Lazily](../userguide/lazy_configuration.html)
-  * [Using Task Configuration Avoidance](../userguide/task_configuration_avoidance.html)
+  * [插件开发教程](https://gradle.org/guides/?q=Plugin%20Development)
+  * [编写Gradle任务类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_tasks.html)
+  * [编写Gradle插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_plugins.html)
+  * [编写自定义Gradle类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_gradle_types.html)
+  * [延迟配置任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/lazy_configuration.html)
+  * [使用避免任务配置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/task_configuration_avoidance.html)
 
-### Reference
+### 参考
 
-  * [Core Plugins](../userguide/plugin_reference.html)
-  * [Command-Line Interface](../userguide/command_line_interface.html)
-  * [Gradle & Third-party Tools](../userguide/third_party_integration.html)
-  * [The Gradle Wrapper](../userguide/gradle_wrapper.html)
-  * [Gradle-managed Directories](../userguide/directory_layout.html)
+  * [核心插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugin_reference.html)
+  * [命令行界面](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/command_line_interface.html)
+  * [Gradle和第三方工具](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/third_party_integration.html)
+  * [摇篮包装](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_wrapper.html)
+  * [Gradle管理的目录](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/directory_layout.html)
 
-# Installing Gradle
+# 安装Gradle
 
 version 6.7.1
 
-Contents
+内容
 
-  * Prerequisites
-  * Installing with a package manager
-  * Installing manually
-  * Verifying installation
-  * Next steps
+  * [先决条件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#sec:prerequisites)
+  * [使用软件包管理器进行安装](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#installing_with_a_package_manager)
+  * [手动安装](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#installing_manually)
+  * [验证安装](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#sec:running_and_testing_your_installation)
+  * [下一步](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#sec:installation_next_steps)
 
-You can install the Gradle build tool on Linux, macOS, or Windows. This
-document covers installing using a package manager like SDKMAN! or Homebrew,
-as well as manual installation.
+您可以在Linux，macOS或Windows上安装Gradle构建工具。本文档涵盖使用软件包管理器（如SDKMAN）进行安装！或Homebrew，以及手动安装。
 
-Use of the [Gradle Wrapper](gradle_wrapper.html#sec:upgrading_wrapper) is the
-recommended way to upgrade Gradle.
+建议使用[Gradle包装器](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_wrapper.html#sec:upgrading_wrapper)升级Gradle。
 
-You can find all releases and their checksums on the [releases
-page](https://gradle.org/releases).
+您可以在“[发行版”页面](https://gradle.org/releases)上找到所有发行版及其校验和。
 
-## Prerequisites
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#sec:prerequisites)[先决条件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#sec:prerequisites)
 
-Gradle runs on all major operating systems and requires only a [Java
-Development Kit](https://jdk.java.net/) version 8 or higher to run. To check,
-run `java -version`. You should see something like this:
+Gradle可在所有主要操作系统上运行，并且仅需要[Java开发套件](https://jdk.java.net/)版本8或更高版本即可运行。要检查，请运行`java
+-version`。您应该会看到以下内容：
 
     
     
-    ❯ java -version
-    java version "1.8.0_151"
-    Java(TM) SE Runtime Environment (build 1.8.0_151-b12)
-    Java HotSpot(TM) 64-Bit Server VM (build 25.151-b12, mixed mode)
+    ❯java -version
+    Java版本“ 1.8.0_151”
+    Java（TM）SE运行时环境（内部版本1.8.0_151-b12）
+    Java HotSpot（TM）64位服务器VM（内部版本25.151-b12，混合模式）
 
-Gradle ships with its own Groovy library, therefore Groovy does not need to be
-installed. Any existing Groovy installation is ignored by Gradle.
+Gradle附带了自己的Groovy库，因此不需要安装Groovy。Gradle将忽略任何现有的Groovy安装。
 
-Gradle uses whatever JDK it finds in your path. Alternatively, you can set the
-`JAVA_HOME` environment variable to point to the installation directory of the
-desired JDK.
+Gradle使用在路径中找到的任何JDK。或者，您可以将`JAVA_HOME`环境变量设置为指向所需JDK的安装目录。
 
-[See the full compatibility notes for Java, Groovy, Kotlin and
-Android.](compatibility.html#compatibility)
+[请参阅Java，Groovy，Kotlin和Android的完整兼容性说明。](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/compatibility.html#compatibility)
 
-## Installing with a package manager
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#installing_with_a_package_manager)[使用软件包管理器进行安装](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#installing_with_a_package_manager)
 
-[SDKMAN!](http://sdkman.io) is a tool for managing parallel versions of
-multiple Software Development Kits on most Unix-like systems (macOS, Linux,
-Cygwin, Solaris and FreeBSD). We deploy and maintain the versions available
-from SDKMAN!.
+[SDKMAN！](http://sdkman.io/)是一种工具，用于在大多数类Unix系统（macOS，Linux，Cygwin，Solaris和FreeBSD）上管理多个软件开发套件的并行版本。我们部署并维护可从SDKMAN！获得的版本。
 
     
     
-    ❯ sdk install gradle
+    s sdk安装gradle
 
-[Homebrew](http://brew.sh) is "the missing package manager for macOS".
-
-    
-    
-    ❯ brew install gradle
-
-Other package managers are available, but the version of Gradle distributed by
-them is not controlled by Gradle, Inc. Linux package managers may distribute a
-modified version of Gradle that is incompatible or incomplete when compared to
-the official version (available from SDKMAN! or below).
-
-↓ Proceed to next steps
-
-## Installing manually
-
-### Step 1. [Download](https://gradle.org/releases) the latest Gradle
-distribution
-
-The distribution ZIP file comes in two flavors:
-
-  * Binary-only (bin)
-
-  * Complete (all) with docs and sources
-
-Need to work with an older version? See the [releases
-page](https://gradle.org/releases).
-
-### Step 2. Unpack the distribution
-
-#### Linux & MacOS users
-
-Unzip the distribution zip file in the directory of your choosing, e.g.:
+[Homebrew](http://brew.sh/)是“ macOS缺少的软件包管理器”。
 
     
     
-    ❯ mkdir /opt/gradle
-    ❯ unzip -d /opt/gradle gradle-6.7.1-bin.zip
-    ❯ ls /opt/gradle/gradle-6.7.1
-    LICENSE  NOTICE  bin  README  init.d  lib  media
+    ❯冲泡安装gradle
 
-#### Microsoft Windows users
+可以使用其他软件包管理器，但是它们分发的Gradle版本不受Gradle，Inc.的控制。Linux软件包管理器可能会分发与正式版本（从SDKMAN！或更低版本提供）相比不兼容或不完整的Gradle修改版。
+）。
 
-Create a new directory `C:\Gradle` with **File Explorer**.
+[↓继续下一步](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#sec:installation_next_steps)
 
-Open a second **File Explorer** window and go to the directory where the
-Gradle distribution was downloaded. Double-click the ZIP archive to expose the
-content. Drag the content folder `gradle-6.7.1` to your newly created
-`C:\Gradle` folder.
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#installing_manually)[手动安装](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#installing_manually)
 
-Alternatively, you can unpack the Gradle distribution ZIP into `C:\Gradle`
-using an archiver tool of your choice.
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#step_1_download_the_latest_gradle_distribution)[步骤1.](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#step_1_download_the_latest_gradle_distribution)[下载](https://gradle.org/releases)最新的Gradle发行版
 
-### Step 3. Configure your system environment
+分发ZIP文件有两种形式：
 
-To run Gradle, the path to the unpacked files from the Gradle website need to
-be on your terminal's path. The steps to do this are different for each
-operating system.
+  * 仅二进制（bin）
 
-#### Linux & MacOS users
+  * 完整（全部）包含文档和来源
 
-Configure your `PATH` environment variable to include the `bin` directory of
-the unzipped distribution, e.g.:
+需要使用旧版本吗？请参阅[发布页面](https://gradle.org/releases)。
 
-    
-    
-    ❯ export PATH=$PATH:/opt/gradle/gradle-6.7.1/bin
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#step_2_unpack_the_distribution)[步骤2.拆开发行包](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#step_2_unpack_the_distribution)
 
-Alternatively, you could also add the environment variable `GRADLE_HOME` and
-point this to the unzipped distribution. Instead of adding a specific version
-of Gradle to your `PATH`, you can add `_$GRADLE_HOME_ /bin` to your `PATH`.
-When upgrading to a different version of Gradle, just change the `GRADLE_HOME`
-environment variable.
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#linux_macos_users)[Linux和MacOS用户](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#linux_macos_users)
 
-#### Microsoft Windows users
-
-In **File Explorer** right-click on the `This PC` (or `Computer`) icon, then
-click `Properties` -> `Advanced System Settings` -> `Environmental Variables`.
-
-Under `System Variables` select `Path`, then click `Edit`. Add an entry for
-`C:\Gradle\gradle-6.7.1\bin`. Click OK to save.
-
-Alternatively, you could also add the environment variable `GRADLE_HOME` and
-point this to the unzipped distribution. Instead of adding a specific version
-of Gradle to your `Path`, you can add `_%GRADLE_HOME%_ /bin` to your `Path`.
-When upgrading to a different version of Gradle, just change the `GRADLE_HOME`
-environment variable.
-
-↓ Proceed to next steps
-
-## Verifying installation
-
-Open a console (or a Windows command prompt) and run `gradle -v` to run gradle
-and display the version, e.g.:
+在您选择的目录中解压缩分发zip文件，例如：
 
     
     
-    ❯ gradle -v
+    ❯mkdir / opt / gradle
+    ❯解压缩-d / opt / gradle gradle-6.7.1-bin.zip
+    ❯ls /opt/gradle/gradle-6.7.1
+    许可声明bin自述文件init.d lib媒体
+
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#microsoft_windows_users)[Microsoft
+Windows用户](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#microsoft_windows_users)
+
+`C:\Gradle`使用 **File Explorer** 创建一个新目录。
+
+打开第二个“ **文件资源管理器”**
+窗口，然后转到下载Gradle发行版的目录。双击ZIP存档以显示内容。将内容文件夹`gradle-6.7.1`拖到新创建的`C:\Gradle`文件夹中。
+
+或者，您可以`C:\Gradle`使用所选的存档器工具将Gradle发行版ZIP打包。
+
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#step_3_configure_your_system_environment)[步骤3.配置您的系统环境](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#step_3_configure_your_system_environment)
+
+要运行Gradle，从Gradle网站到解压缩文件的路径必须在终端的路径上。对于每个操作系统，执行此操作的步骤都不同。
+
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#linux_macos_users_2)[Linux和MacOS用户](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#linux_macos_users_2)
+
+配置`PATH`环境变量以包含`bin`解压缩发行版的目录，例如：
+
     
-    ------------------------------------------------------------
-    Gradle 6.7.1
-    ------------------------------------------------------------
     
-    (environment specific information)
+    ❯导出PATH = $ PATH：/opt/gradle/gradle-6.7.1/bin
 
-If you run into any trouble, see the [section on troubleshooting
-installation](troubleshooting.html#sec:troubleshooting_installation).
+或者，您也可以添加环境变量`GRADLE_HOME`并将其指向未压缩的发行版。`PATH`您可以` _$GRADLE_HOME_
+/bin`向自己的而不是向其中添加特定版本的Gradle `PATH`。当升级到其他版本的Gradle时，只需更改`GRADLE_HOME`环境变量即可。
 
-You can verify the integrity of the Gradle distribution by downloading the
-SHA-256 file (available from the [releases page](https://gradle.org/releases))
-and following these [verification
-instructions](gradle_wrapper.html#sec:verification).
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#microsoft_windows_users_2)[Microsoft
+Windows用户](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#microsoft_windows_users_2)
 
-## Next steps
+在 **文件管理器** 上单击鼠标右键`This PC`（或`Computer`）图标，然后点击`Properties`→交通`Advanced
+System Settings`→交通`Environmental Variables`。
 
-Now that you have Gradle installed, use these resources for getting started:
+在`System
+Variables`选择下`Path`，然后单击确定`Edit`。为添加一个条目`C:\Gradle\gradle-6.7.1\bin`。单击确定保存。
 
-  * Create your first Gradle project by following one of our [step-by-step samples](../samples/index.html).
+或者，您也可以添加环境变量`GRADLE_HOME`并将其指向未压缩的发行版。`Path`您可以` _%GRADLE_HOME%_
+/bin`向自己的而不是向其中添加特定版本的Gradle `Path`。当升级到其他版本的Gradle时，只需更改`GRADLE_HOME`环境变量即可。
 
-  * Sign up for a [live introductory Gradle training](https://gradle.org/training/intro-to-gradle/) with a core engineer.
+[↓继续下一步](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#sec:installation_next_steps)
 
-  * Learn how to achieve common tasks through the [command-line interface](command_line_interface.html#command_line_interface).
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#sec:running_and_testing_your_installation)[验证安装](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#sec:running_and_testing_your_installation)
 
-  * [Configure Gradle execution](build_environment.html#build_environment), such as use of an HTTP proxy for downloading dependencies.
+打开控制台（或Windows命令提示符）并运行`gradle -v`以运行gradle并显示版本，例如：
 
-  * Subscribe to the [Gradle Newsletter](https://newsletter.gradle.com/) for monthly release and community updates.
+    
+    
+    ❯gradle -v
+    
+    -------------------------------------------------- ----------
+    摇篮6.7.1
+    -------------------------------------------------- ----------
+    
+    （特定于环境的信息）
 
-**Docs**
+如果遇到任何麻烦，请参阅“[排除安装故障](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/troubleshooting.html#sec:troubleshooting_installation)”[部分](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/troubleshooting.html#sec:troubleshooting_installation)。
 
-  * [User Manual](/userguide/userguide.html)
-  * [DSL Reference](/dsl/)
-  * [Release Notes](/release-notes.html)
-  * [Javadoc](/javadoc/)
+您可以通过下载SHA-256文件（可从[发行版中获得](https://gradle.org/releases)）并按照以下[验证指示信息](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_wrapper.html#sec:verification)来验证Gradle分发的完整性。
 
-**News**
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#sec:installation_next_steps)[下一步](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html#sec:installation_next_steps)
 
-  * [Blog](https://blog.gradle.org/)
-  * [Newsletter](https://newsletter.gradle.com/)
-  * [Twitter](https://twitter.com/gradle)
-  * [Status Page](https://status.gradle.com/)
+现在您已经安装了Gradle，请使用以下资源进行入门：
 
-**Products**
+  * 通过遵循我们的[分步示例](file:///Users/dxs/temp/gradle-6.7.1/docs/samples/index.html)之一，创建您的第一个Gradle项目。
 
-  * [Build Scans](https://gradle.com/build-scans/)
-  * [Build Cache](https://gradle.com/build-cache/)
-  * [Enterprise Docs](https://gradle.com/enterprise/resources/)
+  * 与核心工程师一起注册[Gradle现场入门培训](https://gradle.org/training/intro-to-gradle/)。
 
-**Get Help**
+  * 了解如何通过[命令行界面](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/command_line_interface.html#command_line_interface)完成常见任务。
 
-  * [Forums](https://discuss.gradle.org/c/help-discuss)
-  * [GitHub](https://github.com/gradle/)
-  * [Training](https://gradle.com/training/)
-  * [Services](https://gradle.org/services/)
+  * [配置Gradle执行](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_environment.html#build_environment)，例如使用HTTP代理下载依赖项。
 
-##### Stay `UP-TO-DATE` on new features and news
+  * 订阅[Gradle通讯](https://newsletter.gradle.com/)以获取每月发布和社区更新。
 
-By entering your email, you agree to our
-[Terms](https://gradle.com/legal/terms-of-service/) and [Privacy
-Policy](https://gradle.com/legal/privacy/), including receipt of emails. You
-can unsubscribe at any time.
+**文件**
 
-Subscribe
+  * [用户手册](file:///userguide/userguide.html)
+  * [DSL参考](file:///dsl/)
+  * [发行说明](file:///release-notes.html)
+  * [Java文档](file:///javadoc/)
 
-© [Gradle Inc.](https://gradle.com) 2020 All rights reserved.
+**新闻**
 
-[ gradle ](/)
+  * [博客](https://blog.gradle.org/)
+  * [通讯](https://newsletter.gradle.com/)
+  * [推特](https://twitter.com/gradle)
+  * [状态页](https://status.gradle.com/)
 
-[Careers](https://gradle.com/careers/) |
-[Privacy](https://gradle.com/legal/privacy/) | [Terms of
-Service](https://gradle.com/legal/terms-of-service/) |
-[Contact](https://gradle.org/contact/)
+**产品展示**
+
+  * [构建扫描](https://gradle.com/build-scans/)
+  * [构建缓存](https://gradle.com/build-cache/)
+  * [企业文件](https://gradle.com/enterprise/resources/)
+
+**得到帮助**
+
+  * [论坛](https://discuss.gradle.org/c/help-discuss)
+  * [的GitHub](https://github.com/gradle/)
+  * [训练](https://gradle.com/training/)
+  * [服务](https://gradle.org/services/)
+
+##### 随时`UP-TO-DATE`关注新功能和新闻
+
+输入您的电子邮件，即表示您同意我们的[条款](https://gradle.com/legal/terms-of-
+service/)和[隐私政策](https://gradle.com/legal/privacy/)，包括接收电子邮件。您可以随时取消订阅。
+
+订阅
+
+© [Gradle Inc.](https://gradle.com/) 2020年 版权所有。
+
+[ gradle ](file:///)
+
+[招贤纳士](https://gradle.com/careers/)| [隐私](https://gradle.com/legal/privacy/)|
+[服务条款](https://gradle.com/legal/terms-of-service/)|
+[联系](https://gradle.org/contact/)
+
+![Google 翻译](./安装Gradle_files/translate_24dp.png)
+
+# 原文
+
+提供更好的翻译建议
+
+* * *
 
