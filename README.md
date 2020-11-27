@@ -21,6 +21,7 @@
     - [Gradle环境搭建](/md/Gradle环境搭建.md)
     - [Gradle守护程序](/md/Gradle守护程序.md)
     - [初始化脚本](/md/初始化脚本.md)
+  - [执行多项目构建](/md/执行多项目构建.md)
 - 编写Gradle构建
 - 编写JVM构建
 - 编写C ++ / Swift构建
