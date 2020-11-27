@@ -1,0 +1,551 @@
+
+
+[ Gradle ](https://docs.gradle.org "Gradle Docs")
+
+User Manual
+
+  * Community Open Community Menu
+
+[ Community Home ](https://gradle.org/)
+
+[ Community Forums ](https://discuss.gradle.org/)
+
+[ Community Plugins ](https://plugins.gradle.org)
+
+  * [Training](https://gradle.com/training/)
+  * News Open Community Menu
+
+[ Newsletter ](https://newsletter.gradle.com)
+
+[ Blog ](https://blog.gradle.org)
+
+[ Twitter ](https://twitter.com/gradle)
+
+  * [Enterprise](https://gradle.com)
+  * [github](https://github.com/gradle/gradle "Gradle on GitHub")
+
+  * [Docs Home](../userguide/userguide.html)
+  * [Samples](../samples/index.html)
+  * [Release Notes](../release-notes.html)
+  * Gradle API
+    * [Javadoc](../javadoc/index.html?overview-summary.html)
+    * [Groovy DSL Reference](../dsl/index.html)
+    * [Groovy DSL Primer](../userguide/groovy_build_script_primer.html)
+    * [Kotlin DSL API](https://gradle.github.io/kotlin-dsl-docs/api/)
+    * [Kotlin DSL Primer](../userguide/kotlin_dsl.html)
+
+### User Manual
+
+[ PDF ](../userguide/userguide.pdf)
+
+  * [What is Gradle?](../userguide/what_is_gradle.html)
+  * [Getting Started](../userguide/getting_started.html)
+  * [Installing Gradle](../userguide/installation.html)
+  * Upgrading Gradle...
+    * [version 6.X to latest](../userguide/upgrading_version_6.html)
+    * [version 5.X to 6.0](../userguide/upgrading_version_5.html)
+    * [version 4.X to 5.0](../userguide/upgrading_version_4.html)
+    * [Gradle's Feature Lifecycle](../userguide/feature_lifecycle.html)
+  * Migrating to Gradle...
+    * [from Maven](../userguide/migrating_from_maven.html)
+    * [from Ant](../userguide/migrating_from_ant.html)
+  * [Compatibility Notes](../userguide/compatibility.html)
+  * [Troubleshooting Builds](../userguide/troubleshooting.html)
+
+### Running Gradle Builds
+
+  * Customizing Execution
+    * [Configuring the Build Environment](../userguide/build_environment.html)
+    * [Configuring the Gradle Daemon](../userguide/gradle_daemon.html)
+    * [Using Initialization Scripts](../userguide/init_scripts.html)
+  * [Executing Multi-Project Builds](../userguide/intro_multi_project_builds.html)
+  * [Inspecting Gradle Builds](https://scans.gradle.com/)
+  * Optimizing Build Times
+    * [Build Performance Guide](https://guides.gradle.org/performance/)
+    * [Enabling and Configuring the Build Cache](../userguide/build_cache.html)
+    * [Using the Configuration Cache](../userguide/configuration_cache.html)
+
+### Authoring Gradle Builds
+
+  * Learning the Basics
+    * [Introducing the Basics of Build Scripts](../userguide/tutorial_using_tasks.html)
+    * [Working with Tasks](../userguide/more_about_tasks.html)
+    * [Learning More About Build Scripts](../userguide/writing_build_scripts.html)
+    * [Working with Files](../userguide/working_with_files.html)
+    * [Using Gradle Plugins](../userguide/plugins.html)
+    * [Understanding the Build Lifecycle](../userguide/build_lifecycle.html)
+    * [Working with Logging](../userguide/logging.html)
+    * [Avoiding Traps](../userguide/potential_traps.html)
+  * Authoring Multi-Project Builds
+    * [Creating a Basic Multi-Project Build](../userguide/multi_project_builds.html)
+    * [Declaring Dependencies between Subprojects](../userguide/declaring_dependencies_between_subprojects.html)
+    * [Sharing Build Logic between Subprojects](../userguide/sharing_build_logic_between_subprojects.html)
+    * [Fine Tuning the Project Layout](../userguide/fine_tuning_project_layout.html)
+    * [Understanding Configuration and Execution](../userguide/multi_project_configuration_and_execution.html)
+  * Authoring Sustainable Builds
+    * [Organizing Build Logic](../userguide/organizing_gradle_projects.html)
+    * [Following Best Practices](../userguide/authoring_maintainable_build_scripts.html)
+  * Advanced Techniques
+    * [Developing Parallel Tasks](https://guides.gradle.org/using-the-worker-api/)
+    * [Testing a Build with TestKit](../userguide/test_kit.html)
+    * [Using Ant from Gradle](../userguide/ant.html)
+
+### Authoring JVM Builds
+
+  * [Building Java & JVM projects](../userguide/building_java_projects.html)
+  * [Testing Java & JVM projects](../userguide/java_testing.html)
+  * [Toolchains for Java projects](../userguide/toolchains.html)
+  * [Managing Dependencies](../userguide/dependency_management_for_java_projects.html)
+  * JVM Plugins
+    * [Java Library Plugin](../userguide/java_library_plugin.html)
+    * [Java Application Plugin](../userguide/application_plugin.html)
+    * [Java Platform Plugin](../userguide/java_platform_plugin.html)
+    * [Groovy Plugin](../userguide/groovy_plugin.html)
+    * [Scala Plugin](../userguide/scala_plugin.html)
+
+### Authoring C++/Swift Builds
+
+  * [Building C++ projects](../userguide/building_cpp_projects.html)
+  * [Testing C++ projects](../userguide/cpp_testing.html)
+  * [Building Swift projects](../userguide/building_swift_projects.html)
+  * [Testing Swift projects](../userguide/swift_testing.html)
+
+### Working with Dependencies
+
+  * Learning the Basics
+    * [What is Dependency Management?](../userguide/core_dependency_management.html)
+    * [Declaring Repositories](../userguide/declaring_repositories.html)
+    * [Declaring Dependencies](../userguide/declaring_dependencies.html)
+    * [Understanding Library and Application Differences](../userguide/library_vs_application.html)
+    * [Viewing and Debugging Dependencies](../userguide/viewing_debugging_dependencies.html)
+    * [Understanding Resolution](../userguide/dependency_resolution.html)
+    * [Verifying dependencies](../userguide/dependency_verification.html)
+  * Declaring Versions
+    * [Declaring Versions and Ranges](../userguide/single_versions.html)
+    * [Declaring Rich Versions](../userguide/rich_versions.html)
+    * [Handling Changing Versions](../userguide/dynamic_versions.html)
+    * [Locking Versions](../userguide/dependency_locking.html)
+  * Controlling Transitives
+    * [Upgrading Versions](../userguide/dependency_constraints.html)
+    * [Downgrading and Excluding](../userguide/dependency_downgrade_and_exclude.html)
+    * [Sharing Versions](../userguide/platforms.html)
+    * [Aligning Dependencies](../userguide/dependency_version_alignment.html)
+    * [Handling Mutually Exclusive Dependencies](../userguide/dependency_capability_conflict.html)
+    * [Fixing Metadata](../userguide/component_metadata_rules.html)
+    * [Customizing Resolution](../userguide/resolution_rules.html)
+    * [Preventing accidental upgrades](../userguide/resolution_strategy_tuning.html)
+  * Producing and Consuming Variants of Libraries
+    * [Declaring Capabilities of a Library](../userguide/component_capabilities.html)
+    * [Modeling Feature Variants and Optional Dependencies](../userguide/feature_variants.html)
+    * [Understanding Variant Selection](../userguide/variant_model.html)
+    * [Declaring Variant Attributes](../userguide/variant_attributes.html)
+    * [Sharing Outputs of Projects](../userguide/cross_project_publications.html)
+    * [Transforming Artifacts](../userguide/artifact_transforms.html)
+  * Working in a Multi-repo Environment
+    * [Composing Builds](../userguide/composite_builds.html)
+  * Publishing Libraries
+    * [Setting up Publishing](../userguide/publishing_setup.html)
+    * [Understanding Gradle Module Metadata](../userguide/publishing_gradle_module_metadata.html)
+    * [Signing Artifacts](../userguide/publishing_signing.html)
+    * [Customizing Publishing](../userguide/publishing_customization.html)
+    * [Maven Publish Plugin](../userguide/publishing_maven.html)
+    * [Ivy Publish Plugin](../userguide/publishing_ivy.html)
+  * [Terminology](../userguide/dependency_management_terminology.html)
+
+### Extending Gradle
+
+  * [Plugin Development Tutorials](https://gradle.org/guides/?q=Plugin%20Development)
+  * [Writing Gradle Task Types](../userguide/custom_tasks.html)
+  * [Writing Gradle Plugins](../userguide/custom_plugins.html)
+  * [Writing Custom Gradle Types](../userguide/custom_gradle_types.html)
+  * [Configuring Tasks Lazily](../userguide/lazy_configuration.html)
+  * [Using Task Configuration Avoidance](../userguide/task_configuration_avoidance.html)
+
+### Reference
+
+  * [Core Plugins](../userguide/plugin_reference.html)
+  * [Command-Line Interface](../userguide/command_line_interface.html)
+  * [Gradle & Third-party Tools](../userguide/third_party_integration.html)
+  * [The Gradle Wrapper](../userguide/gradle_wrapper.html)
+  * [Gradle-managed Directories](../userguide/directory_layout.html)
+
+# Testing in Swift projects
+
+version 6.7.1
+
+Contents
+
+  * The basics
+  * Test execution
+  * Test filtering
+  * Test reporting
+
+Testing in the native ecosystem is a rich subject matter. There are many
+different testing libraries and frameworks, as well as many different types of
+test. All need to be part of the build, whether they are executed frequently
+or infrequently. This chapter is dedicated to explaining how Gradle handles
+differing requirements between and within builds, with significant coverage of
+how it integrates with XCTest on both macOS and Linux.
+
+It explains: \- Ways to control how the tests are run (Test execution) \- How
+to select specific tests to run (Test filtering) \- What test reports are
+generated and how to influence the process (Test reporting) \- How Gradle
+finds tests to run (Test detection)
+
+But first, we look at the basics of native testing in Gradle.
+
+## The basics
+
+Gradle supports deep integration with XCTest testing framework for the Swift
+language and revolves around the
+[XCTest](../dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html) task
+type. This runs a collection of test cases using the [Xcode
+XCTest](https://developer.apple.com/documentation/xctest) on macOS or the
+[open source Swift core library alternative](https://github.com/apple/swift-
+corelibs-xctest) on Linux and collates the results. You can then turn those
+results into a report via an instance of the
+[TestReport](../dsl/org.gradle.api.tasks.testing.TestReport.html) task type.
+
+In order to operate, the
+[XCTest](../dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html) task
+type requires three pieces of information: \- Where to find the built testable
+bundle (on macOS) or executable (on Linux) (property:
+[XCTest.getTestInstalledDirectory()](../dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html#org.gradle.nativeplatform.test.xctest.tasks.XCTest:testInstallDirectory))
+\- The run script for executing the bundle or executable (property:
+[XCTest.getRunScriptFile()](../dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html#org.gradle.nativeplatform.test.xctest.tasks.XCTest:runScriptFile))
+\- The working directory to execution the bundle or executable (property:
+[XCTest.getWorkingDirectory()](../dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html#org.gradle.nativeplatform.test.xctest.tasks.XCTest:workingDirectory))
+
+When you’re using the [XCTest Plugin](xctest_plugin.html) you will
+automatically get the following: \- A dedicated `xctest` extension of type
+[SwiftXCTestSuite](../dsl/org.gradle.nativeplatform.test.xctest.SwiftXCTestSuite.html)
+for configuring test component and its variants \- A `xcTest` task of type
+[XCTest](../dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html) that
+runs those unit tests \- A testable bundle or executable linked with the main
+component’s object files
+
+The test plugins configure the required pieces of information appropriately.
+In addition, they attach the `xcTest` or `run` task to the `check` lifecycle
+task. It also create the `testImplementation` dependency configuration.
+Dependencies that are only needed for test compilation, linking and runtime
+may be added to this configuration. The `xctest` script block behave similarly
+to a `application` or `library` script block.
+
+The [XCTest](../dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)
+task has many configuration options. We cover a significant number of them in
+the rest of the chapter.
+
+## Test execution
+
+Gradle executes tests in a separate (‘forked’) process.
+
+You can control how the test process is launched via several properties on the
+[XCTest](../dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html) task,
+including the following:
+
+`ignoreFailures` \- default: false
+
+    
+
+If this property is `true`, Gradle will continue with the project’s build once
+the tests have completed, even if some of them have failed. Note that, by
+default, both task type always executes every test that it detects,
+irrespective of this setting.
+
+`testLogging` \- default: not set
+
+    
+
+This property represents a set of options that control which test events are
+logged and at what level. You can also configure other logging behavior via
+this property. Set
+[TestLoggingContainer](../javadoc/org/gradle/api/tasks/testing/logging/TestLoggingContainer.html)
+for more detail.
+
+See [XCTest](../dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)
+for details on all the available configuration options.
+
+## Test filtering
+
+It’s a common requirement to run subsets of a test suite, such as when you’re
+fixing a bug or developing a new test case. Gradle provides filtering to do
+this. You can select tests to run based on:
+
+  * A simple class name or method name, e.g. `SomeTest`, `SomeTest.someMethod`
+
+  * ‘*’ wildcard matching
+
+You can enable filtering either in the build script or via the `--tests`
+command-line option. Here’s an example of some filters that are applied every
+time the build runs:
+
+Example 1. Filter tests on every build
+
+build.gradle
+
+    
+    
+    xctest {
+        binaries.configureEach {
+            runTask.get().configure {
+                // include all tests from test class
+                filter.includeTestsMatching "SomeIntegTest.*" // or `"Testing.SomeIntegTest.*"` on macOS
+            }
+        }
+    }
+
+build.gradle.kts
+
+    
+    
+    xctest {
+        binaries.configureEach {
+            runTask.get().filter.includeTestsMatching("SomeIntegTest.*") // or `"Testing.SomeIntegTest.*"` on macOS
+        }
+    }
+
+For more details and examples of declaring filters in the build script, please
+see the TestFilter reference.
+
+The command-line option is especially useful to execute a single test method.
+It is also possible to supply multiple `--tests` options, all of whose
+patterns will take effect. The following sections have several examples of
+using command-line option.
+
+__ |  The test filtering only support XCTest compatible filters at the moment.
+It means the same filter will differ between macOS and Linux. On macOS, the
+bundle base name needs to be prepended to the filter, e.g.
+`TestBundle.SomeTest`, `TestBundle.SomeTest.someMethod` See the Simple name
+pattern section below for more information about valid filtering pattern.  
+---|---  
+  
+The following section looks at the specific cases of simple class/method
+names.
+
+### Simple name pattern
+
+Gradle support simple class name, or a class name + method name test
+filtering. For example, the following command lines run either all or exactly
+one of the tests in the `SomeTestClass` test case:
+
+    
+    
+    # Executes all tests in SomeTestClass
+    gradle xcTest --tests SomeTestClass
+    # or `gradle xcTest --tests TestBundle.SomeTestClass` on macOS
+    
+    # Executes a single specified test in SomeTestClass
+    gradle xcTest --tests TestBundle.SomeTestClass.someSpecificMethod
+    # or `gradle xcTest --tests TestBundle.SomeTestClass.someSpecificMethod` on macOS
+
+You can also combine filters defined at the command line with [continuous
+build](command_line_interface.html#sec:continuous_build) to re-execute a
+subset of tests immediately after every change to a production or test source
+file. The following executes all tests in the ‘SomeTestClass’ test class
+whenever a change triggers the tests to run:
+
+    
+    
+    gradle test --continuous --tests SomeTestClass
+
+## Test reporting
+
+The [XCTest](../dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)
+task generates the following results by default:
+
+  * An HTML test report
+
+  * XML test results in a format compatible with the Ant JUnit report task - one that is supported by many other tools, such as CI servers
+
+  * An efficient binary format of the results used by the `XCTest` task to generate the other formats
+
+In most cases, you’ll work with the standard HTML report, which automatically
+includes the result from your `XCTest` tasks.
+
+There is also a standalone
+[TestReport](../dsl/org.gradle.api.tasks.testing.TestReport.html) task type
+that you can use to generate a custom HTML test report. All it requires are a
+value for `destinationDir` and the test results you want included in the
+report. Here is a sample which generates a combined report for the unit tests
+from all subprojects:
+
+Example 2. Combine test reports from all subprojects
+
+buildSrc/src/main/groovy/myproject.xctest-conventions.gradle
+
+    
+    
+    plugins {
+        id 'xctest'
+    }
+    
+    xctest {
+        binaries.configureEach {
+            runTask.get().configure {
+                // Disable the test report for the individual test task
+                reports.html.enabled = false
+            }
+        }
+    }
+    
+    // Share the test report data to be aggregated for the whole project
+    configurations {
+        binaryTestResultsElements {
+            canBeResolved = false
+            canBeConsumed = true
+            attributes {
+                attribute(Category.CATEGORY_ATTRIBUTE, objects.named(Category, Category.DOCUMENTATION))
+                attribute(DocsType.DOCS_TYPE_ATTRIBUTE, objects.named(DocsType, 'test-report-data'))
+            }
+            tasks.withType(XCTest) {
+                outgoing.artifact(it.binaryResultsDirectory)
+            }
+        }
+    }
+
+build.gradle
+
+    
+    
+    // A resolvable configuration to collect test reports data
+    configurations {
+        testReportData {
+            canBeResolved = true
+            canBeConsumed = false
+            attributes {
+                attribute(Category.CATEGORY_ATTRIBUTE, objects.named(Category, Category.DOCUMENTATION))
+                attribute(DocsType.DOCS_TYPE_ATTRIBUTE, objects.named(DocsType, 'test-report-data'))
+            }
+        }
+    }
+    
+    dependencies {
+        testReportData project(':core')
+        testReportData project(':util')
+    }
+    
+    tasks.register('testReport', TestReport) {
+        destinationDir = file("$buildDir/reports/allTests")
+        // Use test results from testReportData configuration
+        testResultDirs.from(configurations.testReportData)
+    }
+
+buildSrc/src/main/kotlin/myproject.xctest-conventions.gradle.kts
+
+    
+    
+    plugins {
+        id("xctest")
+    }
+    
+    extensions.configure<SwiftXCTestSuite>() {
+        binaries.configureEach {
+            // Disable the test report for the individual test task
+            runTask.get().reports.html.isEnabled = false
+        }
+    }
+    
+    configurations.create("binaryTestResultsElements") {
+        isCanBeResolved = false
+        isCanBeConsumed = true
+        attributes {
+            attribute(Category.CATEGORY_ATTRIBUTE, objects.named(Category.DOCUMENTATION))
+            attribute(DocsType.DOCS_TYPE_ATTRIBUTE, objects.named("test-report-data"))
+        }
+        tasks.withType<XCTest>() {
+            outgoing.artifact(binaryResultsDirectory)
+        }
+    }
+
+build.gradle.kts
+
+    
+    
+    val testReportData by configurations.creating {
+        isCanBeResolved = true
+        isCanBeConsumed = false
+        attributes {
+            attribute(Category.CATEGORY_ATTRIBUTE, objects.named(Category.DOCUMENTATION))
+            attribute(DocsType.DOCS_TYPE_ATTRIBUTE, objects.named("test-report-data"))
+        }
+    }
+    
+    dependencies {
+        testReportData(project(":core"))
+        testReportData(project(":util"))
+    }
+    
+    tasks.register<TestReport>("testReport") {
+        destinationDir = file("$buildDir/reports/allTests")
+    
+        // Use test results from testReportData configuration
+        (getTestResultDirs() as ConfigurableFileCollection).from(testReportData)
+    }
+
+In this example, we use a convention plugin `myproject.xctest-conventions` to
+expose the test results from a project to Gradle's [variant aware dependency
+management engine](variant_model.html).
+
+The plugin declares a consumable `binaryTestResultsElements` configuration
+that represents the binary test results of the `test` task. In the aggregation
+project's build file, we declare the `testReportData` configuration and depend
+on all of the projects that we want to aggregate the results from. Gradle will
+automatically select the binary test result variant from each of the
+subprojects instead of the project's jar file. Lastly, we add a `testReport`
+task that aggregates the test results from the `testResultsDirs` property,
+which contains all of the binary test results resolved from the
+`testReportData` configuration.
+
+You should note that the
+[TestReport](../dsl/org.gradle.api.tasks.testing.TestReport.html) type
+combines the results from multiple test tasks and needs to aggregate the
+results of individual test classes. This means that it a given test class is
+executed by multiple test tasks, then the test report will include executions
+of that class, but it can be hard to distinguish individual executions of that
+class and their output.
+
+**Docs**
+
+  * [User Manual](/userguide/userguide.html)
+  * [DSL Reference](/dsl/)
+  * [Release Notes](/release-notes.html)
+  * [Javadoc](/javadoc/)
+
+**News**
+
+  * [Blog](https://blog.gradle.org/)
+  * [Newsletter](https://newsletter.gradle.com/)
+  * [Twitter](https://twitter.com/gradle)
+  * [Status Page](https://status.gradle.com/)
+
+**Products**
+
+  * [Build Scans](https://gradle.com/build-scans/)
+  * [Build Cache](https://gradle.com/build-cache/)
+  * [Enterprise Docs](https://gradle.com/enterprise/resources/)
+
+**Get Help**
+
+  * [Forums](https://discuss.gradle.org/c/help-discuss)
+  * [GitHub](https://github.com/gradle/)
+  * [Training](https://gradle.com/training/)
+  * [Services](https://gradle.org/services/)
+
+##### Stay `UP-TO-DATE` on new features and news
+
+By entering your email, you agree to our
+[Terms](https://gradle.com/legal/terms-of-service/) and [Privacy
+Policy](https://gradle.com/legal/privacy/), including receipt of emails. You
+can unsubscribe at any time.
+
+Subscribe
+
+© [Gradle Inc.](https://gradle.com) 2020 All rights reserved.
+
+[ gradle ](/)
+
+[Careers](https://gradle.com/careers/) |
+[Privacy](https://gradle.com/legal/privacy/) | [Terms of
+Service](https://gradle.com/legal/terms-of-service/) |
+[Contact](https://gradle.org/contact/)
+

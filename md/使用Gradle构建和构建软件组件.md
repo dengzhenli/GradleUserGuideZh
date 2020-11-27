@@ -1,0 +1,445 @@
+
+
+[ Gradle ](https://docs.gradle.org "Gradle Docs")
+
+User Manual
+
+  * Community Open Community Menu
+
+[ Community Home ](https://gradle.org/)
+
+[ Community Forums ](https://discuss.gradle.org/)
+
+[ Community Plugins ](https://plugins.gradle.org)
+
+  * [Training](https://gradle.com/training/)
+  * News Open Community Menu
+
+[ Newsletter ](https://newsletter.gradle.com)
+
+[ Blog ](https://blog.gradle.org)
+
+[ Twitter ](https://twitter.com/gradle)
+
+  * [Enterprise](https://gradle.com)
+  * [github](https://github.com/gradle/gradle "Gradle on GitHub")
+
+  * [Docs Home](../userguide/userguide.html)
+  * [Samples](../samples/index.html)
+  * [Release Notes](../release-notes.html)
+  * Gradle DSLs and API
+    * [Javadoc](../javadoc/index.html?overview-summary.html)
+    * [Groovy DSL Reference](../dsl/index.html)
+    * [Groovy DSL Primer](../userguide/groovy_build_script_primer.html)
+    * [Kotlin DSL API](https://gradle.github.io/kotlin-dsl-docs/api/)
+    * [Kotlin DSL Primer](../userguide/kotlin_dsl.html)
+    * [Groovy to Kotlin DSL Migration](../userguide/migrating_from_groovy_to_kotlin_dsl.html)
+
+### User Manual
+
+[ PDF ](../userguide/userguide.pdf)
+
+  * [What is Gradle?](../userguide/what_is_gradle.html)
+  * [Getting Started](../userguide/getting_started.html)
+  * [Installing Gradle](../userguide/installation.html)
+  * Upgrading Gradle...
+    * [version 6.X to latest](../userguide/upgrading_version_6.html)
+    * [version 5.X to 6.0](../userguide/upgrading_version_5.html)
+    * [version 4.X to 5.0](../userguide/upgrading_version_4.html)
+    * [Gradle's Feature Lifecycle](../userguide/feature_lifecycle.html)
+  * Migrating to Gradle...
+    * [from Maven](../userguide/migrating_from_maven.html)
+    * [from Ant](../userguide/migrating_from_ant.html)
+  * [Compatibility Notes](../userguide/compatibility.html)
+  * [Troubleshooting Builds](../userguide/troubleshooting.html)
+
+### Running Gradle Builds
+
+  * Customizing Execution
+    * [Configuring the Build Environment](../userguide/build_environment.html)
+    * [Configuring the Gradle Daemon](../userguide/gradle_daemon.html)
+    * [Using Initialization Scripts](../userguide/init_scripts.html)
+  * [Executing Multi-Project Builds](../userguide/intro_multi_project_builds.html)
+  * [Inspecting Gradle Builds](https://scans.gradle.com/)
+  * Using the Build Cache
+    * [Enabling and Configuring](../userguide/build_cache.html)
+    * [Why use the Build Cache?](../userguide/build_cache_use_cases.html)
+    * [Understanding the Impact](../userguide/build_cache_performance.html)
+    * [Learning Basic Concepts](../userguide/build_cache_concepts.html)
+    * [Caching Java Project](../userguide/caching_java_projects.html)
+    * [Caching Android Project](../userguide/caching_android_projects.html)
+    * [Debugging Caching Issues](../userguide/build_cache_debugging.html)
+    * [Troubleshooting](../userguide/common_caching_problems.html)
+  * Optimizing Build Times
+    * [Improving Performance of Gradle Builds](../userguide/performance.html)
+    * [Using the Configuration Cache](../userguide/configuration_cache.html)
+
+### Authoring Gradle Builds
+
+  * Learning the Basics
+    * [Writing Build Scripts](../userguide/tutorial_using_tasks.html)
+    * [Working with Tasks](../userguide/more_about_tasks.html)
+    * [Learning More About Build Scripts](../userguide/writing_build_scripts.html)
+    * [Working with Files](../userguide/working_with_files.html)
+    * [Using Gradle Plugins](../userguide/plugins.html)
+    * [Understanding the Build Lifecycle](../userguide/build_lifecycle.html)
+    * [Working with Logging](../userguide/logging.html)
+    * [Avoiding Traps](../userguide/potential_traps.html)
+  * Structuring Individual Builds
+    * [Creating a Basic Multi-Project Build](../userguide/multi_project_builds.html)
+    * [Declaring Dependencies between Subprojects](../userguide/declaring_dependencies_between_subprojects.html)
+    * [Sharing Build Logic between Subprojects](../userguide/sharing_build_logic_between_subprojects.html)
+    * [Fine Tuning the Project Layout](../userguide/fine_tuning_project_layout.html)
+    * [Understanding Configuration and Execution](../userguide/multi_project_configuration_and_execution.html)
+  * Structuring Software Products
+    * [Structuring large Projects](../userguide/structuring_software_products.html)
+    * [Tweaking Project Structure](../userguide/structuring_software_products_details.html)
+    * [Composing Builds](../userguide/composite_builds.html)
+  * Authoring Sustainable Builds
+    * [Organizing Build Logic](../userguide/organizing_gradle_projects.html)
+    * [Following Best Practices](../userguide/authoring_maintainable_build_scripts.html)
+  * Advanced Techniques
+    * [Testing a Build with TestKit](../userguide/test_kit.html)
+    * [Using Ant from Gradle](../userguide/ant.html)
+
+### Authoring JVM Builds
+
+  * [Building Java & JVM projects](../userguide/building_java_projects.html)
+  * [Testing Java & JVM projects](../userguide/java_testing.html)
+  * [Toolchains for Java projects](../userguide/toolchains.html)
+  * [Managing Dependencies](../userguide/dependency_management_for_java_projects.html)
+  * JVM Plugins
+    * [Java Library Plugin](../userguide/java_library_plugin.html)
+    * [Java Application Plugin](../userguide/application_plugin.html)
+    * [Java Platform Plugin](../userguide/java_platform_plugin.html)
+    * [Groovy Plugin](../userguide/groovy_plugin.html)
+    * [Scala Plugin](../userguide/scala_plugin.html)
+
+### Authoring C++/Swift Builds
+
+  * [Building C++ projects](../userguide/building_cpp_projects.html)
+  * [Testing C++ projects](../userguide/cpp_testing.html)
+  * [Building Swift projects](../userguide/building_swift_projects.html)
+  * [Testing Swift projects](../userguide/swift_testing.html)
+
+### Working with Dependencies
+
+  * Learning the Basics
+    * [What is Dependency Management?](../userguide/core_dependency_management.html)
+    * [Declaring Repositories](../userguide/declaring_repositories.html)
+    * [Declaring Dependencies](../userguide/declaring_dependencies.html)
+    * [Understanding Library and Application Differences](../userguide/library_vs_application.html)
+    * [Viewing and Debugging Dependencies](../userguide/viewing_debugging_dependencies.html)
+    * [Understanding Resolution](../userguide/dependency_resolution.html)
+    * [Verifying dependencies](../userguide/dependency_verification.html)
+  * Declaring Versions
+    * [Declaring Versions and Ranges](../userguide/single_versions.html)
+    * [Declaring Rich Versions](../userguide/rich_versions.html)
+    * [Handling Changing Versions](../userguide/dynamic_versions.html)
+    * [Locking Versions](../userguide/dependency_locking.html)
+  * Controlling Transitives
+    * [Upgrading Versions](../userguide/dependency_constraints.html)
+    * [Downgrading and Excluding](../userguide/dependency_downgrade_and_exclude.html)
+    * [Sharing Versions](../userguide/platforms.html)
+    * [Aligning Dependencies](../userguide/dependency_version_alignment.html)
+    * [Handling Mutually Exclusive Dependencies](../userguide/dependency_capability_conflict.html)
+    * [Fixing Metadata](../userguide/component_metadata_rules.html)
+    * [Customizing Resolution](../userguide/resolution_rules.html)
+    * [Preventing accidental upgrades](../userguide/resolution_strategy_tuning.html)
+  * Producing and Consuming Variants of Libraries
+    * [Declaring Capabilities of a Library](../userguide/component_capabilities.html)
+    * [Modeling Feature Variants and Optional Dependencies](../userguide/feature_variants.html)
+    * [Understanding Variant Selection](../userguide/variant_model.html)
+    * [Declaring Variant Attributes](../userguide/variant_attributes.html)
+    * [Sharing Outputs of Projects](../userguide/cross_project_publications.html)
+    * [Transforming Artifacts](../userguide/artifact_transforms.html)
+  * Publishing Libraries
+    * [Setting up Publishing](../userguide/publishing_setup.html)
+    * [Understanding Gradle Module Metadata](../userguide/publishing_gradle_module_metadata.html)
+    * [Signing Artifacts](../userguide/publishing_signing.html)
+    * [Customizing Publishing](../userguide/publishing_customization.html)
+    * [Maven Publish Plugin](../userguide/publishing_maven.html)
+    * [Ivy Publish Plugin](../userguide/publishing_ivy.html)
+  * [Terminology](../userguide/dependency_management_terminology.html)
+
+### Extending Gradle
+
+  * Developing Gradle Plugins
+    * [Starting Plugin Development](../userguide/custom_plugins.html)
+    * [Designing Plugins](../userguide/designing_gradle_plugins.html)
+    * [Implementing Plugins](../userguide/implementing_gradle_plugins.html)
+    * [Testing Plugins](../userguide/testing_gradle_plugins.html)
+    * [Publishing Plugins](../userguide/publishing_gradle_plugins.html)
+  * Developing Gradle Tasks
+    * [Writing Gradle Task Types](../userguide/custom_tasks.html)
+    * [Configuring Tasks Lazily](../userguide/lazy_configuration.html)
+    * [Avoiding Unnecessary Task Configuration](../userguide/task_configuration_avoidance.html)
+    * [Developing Parallel Tasks](../userguide/worker_api.html)
+  * [Writing Custom Gradle Types](../userguide/custom_gradle_types.html)
+
+### Reference
+
+  * [Core Plugins](../userguide/plugin_reference.html)
+  * [Command-Line Interface](../userguide/command_line_interface.html)
+  * Gradle & Third-party Tools
+    * [Third-party Tools](../userguide/third_party_integration.html)
+    * [Jenkins](../userguide/jenkins.html)
+    * [TeamCity](../userguide/teamcity.html)
+    * [Travis CI](../userguide/travis-ci.html)
+  * [](../userguide/third_party_integration.html)
+  * [The Gradle Wrapper](../userguide/gradle_wrapper.html)
+  * [Gradle-managed Directories](../userguide/directory_layout.html)
+
+# Structuring and Building a Software Component with Gradle
+
+version 6.9-20201126230040+0000
+
+Contents
+
+  * Creating a multi-project build
+  * Adding subprojects
+  * Naming recommendations
+
+If you are building a software of a certain size with Gradle, you have two
+basic structuring mechanisms. First, this chapter describes how to structure
+your software project using a Gradle multi-project. In this documentation, we
+consider this to be a single _software component_ which is structured
+internally. Second, you may regard your software as a _software product_ that
+is composed of multiple _software components_ where each component is
+represented by a separate Gradle build. This is described in detail in the
+chapter on [structuring software products with
+Gradle](structuring_software_products.html)
+
+## Creating a multi-project build
+
+A multi-project build in Gradle consists of one root project, and one or more
+subprojects.
+
+A basic multi-project build contains a root project and a single subproject.
+This is a structure of a multi-project build that contains a single subproject
+called `app`:
+
+Example 1. Basic multi-project build
+
+Project layout
+
+    
+    
+    .
+    ├── app
+    │   ...
+    │   └── build.gradle
+    └── settings.gradle
+
+Project layout
+
+    
+    
+    .
+    ├── app
+    │   ...
+    │   └── build.gradle.kts
+    └── settings.gradle.kts
+
+This is the recommended project structure for starting any Gradle project. The
+[build init plugin](build_init_plugin.html) also generates skeleton projects
+that follow this structure - a root project with a single subproject.
+
+Note that the root project does not have a Gradle build file, only a settings
+file that defines the subprojects to include.
+
+settings.gradle
+
+    
+    
+    rootProject.name = 'basic-multiproject'
+    include 'app'
+
+settings.gradle.kts
+
+    
+    
+    rootProject.name = "basic-multiproject"
+    include("app")
+
+In this case, Gradle will look for a build file in the `app` directory.
+
+We can view the structure of a multi-project build by running the `gradle
+projects` command.
+
+    
+    
+    > gradle -q projects
+    
+    ------------------------------------------------------------
+    Root project 'basic-multiproject'
+    ------------------------------------------------------------
+    
+    Root project 'basic-multiproject'
+    \--- Project ':app'
+    
+    To see a list of the tasks of a project, run gradle <project-path>:tasks
+    For example, try running gradle :app:tasks
+
+Let's say the `app` subproject is a Java application by applying the
+[application plugin](application_plugin.html) and configuring the main class:
+
+app/build.gradle
+
+    
+    
+    plugins {
+        id 'application'
+    }
+    
+    application {
+        mainClass = 'com.example.Hello'
+    }
+
+app/build.gradle.kts
+
+    
+    
+    plugins {
+        id("application")
+    }
+    
+    application {
+        mainClass.set("com.example.Hello")
+    }
+
+app/src/main/java/com/example/Hello.java
+
+    
+    
+    package com.example;
+    
+    public class Hello {
+        public static void main(String[] args) {
+            System.out.println("Hello, world!");
+        }
+    }
+
+We can then run the application by executing the `run` task from the
+[application plugin](application_plugin.html).
+
+    
+    
+    > gradle -q run
+    Hello, world!
+
+And that's how simple it is to create a basic multi-project build.
+
+## Adding subprojects
+
+Let's say we want to add another subproject called `lib` to the previously
+created project. All we need to do is add another `include` statement in the
+root settings file:
+
+settings.gradle
+
+    
+    
+    rootProject.name = 'basic-multiproject'
+    include 'app'
+    include 'lib'
+
+settings.gradle.kts
+
+    
+    
+    rootProject.name = "basic-multiproject"
+    include("app")
+    include("lib")
+
+Gradle will then look for the build file for the new subproject in the `lib/`
+subdirectory of the project:
+
+Example 2. Multi-project build with two subprojects
+
+Project layout
+
+    
+    
+    .
+    ├── app
+    │   ...
+    │   └── build.gradle
+    ├── lib
+    │   ...
+    │   └── build.gradle
+    └── settings.gradle
+
+Project layout
+
+    
+    
+    .
+    ├── app
+    │   ...
+    │   └── build.gradle.kts
+    ├── lib
+    │   ...
+    │   └── build.gradle.kts
+    └── settings.gradle.kts
+
+Next, will explore how build logic can be [shared between
+subprojects](sharing_build_logic_between_subprojects.html) and how subprojects
+can [depend on one another](declaring_dependencies_between_subprojects.html).
+
+## Naming recommendations
+
+As your project grows, naming and consistency gets increasingly more
+important. To keep your builds maintainable, we recommend the following:
+
+  1. _Keep default project names for subprojects_ : It is possible to configure custom project names in the settings file. However, it’s an unnecessary extra effort for the developers to keep track of which project belongs to what folders.
+
+  2. _Use kebab case formatting for all project names_ : A kebab case formatting is when all letters lowercase, words separated with a dash (‘-’) character (e.g.`kebab-case-formatting`). This is already the de-facto pattern for many large projects. Besides, Gradle supports [name abbreviation for kebab case names](command_line_interface.html#sec:name_abbreviation).
+
+  3. _Define the root project name in the settings file_ : The ´rootProject.name´ effectively assigns a name to the build as a whole, which is used in reports like build scans. If the root project name is not set, the name will be the container directory name, which can be unstable (i.e. you can check out your project to any directory).
+
+**Docs**
+
+  * [User Manual](/userguide/userguide.html)
+  * [DSL Reference](/dsl/)
+  * [Release Notes](/release-notes.html)
+  * [Javadoc](/javadoc/)
+
+**News**
+
+  * [Blog](https://blog.gradle.org/)
+  * [Newsletter](https://newsletter.gradle.com/)
+  * [Twitter](https://twitter.com/gradle)
+  * [Status Page](https://status.gradle.com/)
+
+**Products**
+
+  * [Build Scans](https://gradle.com/build-scans/)
+  * [Build Cache](https://gradle.com/build-cache/)
+  * [Enterprise Docs](https://gradle.com/enterprise/resources/)
+
+**Get Help**
+
+  * [Forums](https://discuss.gradle.org/c/help-discuss)
+  * [GitHub](https://github.com/gradle/)
+  * [Training](https://gradle.com/training/)
+  * [Services](https://gradle.org/services/)
+
+##### Stay `UP-TO-DATE` on new features and news
+
+By entering your email, you agree to our
+[Terms](https://gradle.com/legal/terms-of-service/) and [Privacy
+Policy](https://gradle.com/legal/privacy/), including receipt of emails. You
+can unsubscribe at any time.
+
+Subscribe
+
+© [Gradle Inc.](https://gradle.com) 2020 All rights reserved.
+
+[ gradle ](/)
+
+[Careers](https://gradle.com/careers/) |
+[Privacy](https://gradle.com/legal/privacy/) | [Terms of
+Service](https://gradle.com/legal/terms-of-service/) |
+[Contact](https://gradle.org/contact/)
+

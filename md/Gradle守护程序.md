@@ -1,0 +1,694 @@
+
+
+[ Gradle ](https://docs.gradle.org "Gradle Docs")
+
+User Manual
+
+  * Community Open Community Menu
+
+[ Community Home ](https://gradle.org/)
+
+[ Community Forums ](https://discuss.gradle.org/)
+
+[ Community Plugins ](https://plugins.gradle.org)
+
+  * [Training](https://gradle.com/training/)
+  * News Open Community Menu
+
+[ Newsletter ](https://newsletter.gradle.com)
+
+[ Blog ](https://blog.gradle.org)
+
+[ Twitter ](https://twitter.com/gradle)
+
+  * [Enterprise](https://gradle.com)
+  * [github](https://github.com/gradle/gradle "Gradle on GitHub")
+
+  * [Docs Home](../userguide/userguide.html)
+  * [Samples](../samples/index.html)
+  * [Release Notes](../release-notes.html)
+  * Gradle API
+    * [Javadoc](../javadoc/index.html?overview-summary.html)
+    * [Groovy DSL Reference](../dsl/index.html)
+    * [Groovy DSL Primer](../userguide/groovy_build_script_primer.html)
+    * [Kotlin DSL API](https://gradle.github.io/kotlin-dsl-docs/api/)
+    * [Kotlin DSL Primer](../userguide/kotlin_dsl.html)
+
+### User Manual
+
+[ PDF ](../userguide/userguide.pdf)
+
+  * [What is Gradle?](../userguide/what_is_gradle.html)
+  * [Getting Started](../userguide/getting_started.html)
+  * [Installing Gradle](../userguide/installation.html)
+  * Upgrading Gradle...
+    * [version 6.X to latest](../userguide/upgrading_version_6.html)
+    * [version 5.X to 6.0](../userguide/upgrading_version_5.html)
+    * [version 4.X to 5.0](../userguide/upgrading_version_4.html)
+    * [Gradle's Feature Lifecycle](../userguide/feature_lifecycle.html)
+  * Migrating to Gradle...
+    * [from Maven](../userguide/migrating_from_maven.html)
+    * [from Ant](../userguide/migrating_from_ant.html)
+  * [Compatibility Notes](../userguide/compatibility.html)
+  * [Troubleshooting Builds](../userguide/troubleshooting.html)
+
+### Running Gradle Builds
+
+  * Customizing Execution
+    * [Configuring the Build Environment](../userguide/build_environment.html)
+    * [Configuring the Gradle Daemon](../userguide/gradle_daemon.html)
+    * [Using Initialization Scripts](../userguide/init_scripts.html)
+  * [Executing Multi-Project Builds](../userguide/intro_multi_project_builds.html)
+  * [Inspecting Gradle Builds](https://scans.gradle.com/)
+  * Optimizing Build Times
+    * [Build Performance Guide](https://guides.gradle.org/performance/)
+    * [Enabling and Configuring the Build Cache](../userguide/build_cache.html)
+    * [Using the Configuration Cache](../userguide/configuration_cache.html)
+
+### Authoring Gradle Builds
+
+  * Learning the Basics
+    * [Introducing the Basics of Build Scripts](../userguide/tutorial_using_tasks.html)
+    * [Working with Tasks](../userguide/more_about_tasks.html)
+    * [Learning More About Build Scripts](../userguide/writing_build_scripts.html)
+    * [Working with Files](../userguide/working_with_files.html)
+    * [Using Gradle Plugins](../userguide/plugins.html)
+    * [Understanding the Build Lifecycle](../userguide/build_lifecycle.html)
+    * [Working with Logging](../userguide/logging.html)
+    * [Avoiding Traps](../userguide/potential_traps.html)
+  * Authoring Multi-Project Builds
+    * [Creating a Basic Multi-Project Build](../userguide/multi_project_builds.html)
+    * [Declaring Dependencies between Subprojects](../userguide/declaring_dependencies_between_subprojects.html)
+    * [Sharing Build Logic between Subprojects](../userguide/sharing_build_logic_between_subprojects.html)
+    * [Fine Tuning the Project Layout](../userguide/fine_tuning_project_layout.html)
+    * [Understanding Configuration and Execution](../userguide/multi_project_configuration_and_execution.html)
+  * Authoring Sustainable Builds
+    * [Organizing Build Logic](../userguide/organizing_gradle_projects.html)
+    * [Following Best Practices](../userguide/authoring_maintainable_build_scripts.html)
+  * Advanced Techniques
+    * [Developing Parallel Tasks](https://guides.gradle.org/using-the-worker-api/)
+    * [Testing a Build with TestKit](../userguide/test_kit.html)
+    * [Using Ant from Gradle](../userguide/ant.html)
+
+### Authoring JVM Builds
+
+  * [Building Java & JVM projects](../userguide/building_java_projects.html)
+  * [Testing Java & JVM projects](../userguide/java_testing.html)
+  * [Toolchains for Java projects](../userguide/toolchains.html)
+  * [Managing Dependencies](../userguide/dependency_management_for_java_projects.html)
+  * JVM Plugins
+    * [Java Library Plugin](../userguide/java_library_plugin.html)
+    * [Java Application Plugin](../userguide/application_plugin.html)
+    * [Java Platform Plugin](../userguide/java_platform_plugin.html)
+    * [Groovy Plugin](../userguide/groovy_plugin.html)
+    * [Scala Plugin](../userguide/scala_plugin.html)
+
+### Authoring C++/Swift Builds
+
+  * [Building C++ projects](../userguide/building_cpp_projects.html)
+  * [Testing C++ projects](../userguide/cpp_testing.html)
+  * [Building Swift projects](../userguide/building_swift_projects.html)
+  * [Testing Swift projects](../userguide/swift_testing.html)
+
+### Working with Dependencies
+
+  * Learning the Basics
+    * [What is Dependency Management?](../userguide/core_dependency_management.html)
+    * [Declaring Repositories](../userguide/declaring_repositories.html)
+    * [Declaring Dependencies](../userguide/declaring_dependencies.html)
+    * [Understanding Library and Application Differences](../userguide/library_vs_application.html)
+    * [Viewing and Debugging Dependencies](../userguide/viewing_debugging_dependencies.html)
+    * [Understanding Resolution](../userguide/dependency_resolution.html)
+    * [Verifying dependencies](../userguide/dependency_verification.html)
+  * Declaring Versions
+    * [Declaring Versions and Ranges](../userguide/single_versions.html)
+    * [Declaring Rich Versions](../userguide/rich_versions.html)
+    * [Handling Changing Versions](../userguide/dynamic_versions.html)
+    * [Locking Versions](../userguide/dependency_locking.html)
+  * Controlling Transitives
+    * [Upgrading Versions](../userguide/dependency_constraints.html)
+    * [Downgrading and Excluding](../userguide/dependency_downgrade_and_exclude.html)
+    * [Sharing Versions](../userguide/platforms.html)
+    * [Aligning Dependencies](../userguide/dependency_version_alignment.html)
+    * [Handling Mutually Exclusive Dependencies](../userguide/dependency_capability_conflict.html)
+    * [Fixing Metadata](../userguide/component_metadata_rules.html)
+    * [Customizing Resolution](../userguide/resolution_rules.html)
+    * [Preventing accidental upgrades](../userguide/resolution_strategy_tuning.html)
+  * Producing and Consuming Variants of Libraries
+    * [Declaring Capabilities of a Library](../userguide/component_capabilities.html)
+    * [Modeling Feature Variants and Optional Dependencies](../userguide/feature_variants.html)
+    * [Understanding Variant Selection](../userguide/variant_model.html)
+    * [Declaring Variant Attributes](../userguide/variant_attributes.html)
+    * [Sharing Outputs of Projects](../userguide/cross_project_publications.html)
+    * [Transforming Artifacts](../userguide/artifact_transforms.html)
+  * Working in a Multi-repo Environment
+    * [Composing Builds](../userguide/composite_builds.html)
+  * Publishing Libraries
+    * [Setting up Publishing](../userguide/publishing_setup.html)
+    * [Understanding Gradle Module Metadata](../userguide/publishing_gradle_module_metadata.html)
+    * [Signing Artifacts](../userguide/publishing_signing.html)
+    * [Customizing Publishing](../userguide/publishing_customization.html)
+    * [Maven Publish Plugin](../userguide/publishing_maven.html)
+    * [Ivy Publish Plugin](../userguide/publishing_ivy.html)
+  * [Terminology](../userguide/dependency_management_terminology.html)
+
+### Extending Gradle
+
+  * [Plugin Development Tutorials](https://gradle.org/guides/?q=Plugin%20Development)
+  * [Writing Gradle Task Types](../userguide/custom_tasks.html)
+  * [Writing Gradle Plugins](../userguide/custom_plugins.html)
+  * [Writing Custom Gradle Types](../userguide/custom_gradle_types.html)
+  * [Configuring Tasks Lazily](../userguide/lazy_configuration.html)
+  * [Using Task Configuration Avoidance](../userguide/task_configuration_avoidance.html)
+
+### Reference
+
+  * [Core Plugins](../userguide/plugin_reference.html)
+  * [Command-Line Interface](../userguide/command_line_interface.html)
+  * [Gradle & Third-party Tools](../userguide/third_party_integration.html)
+  * [The Gradle Wrapper](../userguide/gradle_wrapper.html)
+  * [Gradle-managed Directories](../userguide/directory_layout.html)
+
+# The Gradle Daemon
+
+version 6.7.1
+
+Contents
+
+  * Why the Gradle Daemon is important for performance
+  * Running Daemon Status
+  * Disabling the Daemon
+  * Stopping an existing Daemon
+  * FAQ
+  * Tools & IDEs
+  * How does the Gradle Daemon make builds faster?
+  * Watching the file system
+
+> A daemon is a computer program that runs as a background process, rather
+> than being under the direct control of an interactive user.
+
+-- Wikipedia
+
+Gradle runs on the Java Virtual Machine (JVM) and uses several supporting
+libraries that require a non-trivial initialization time. As a result, it can
+sometimes seem a little slow to start. The solution to this problem is the
+Gradle _Daemon_ : a long-lived background process that executes your builds
+much more quickly than would otherwise be the case. We accomplish this by
+avoiding the expensive bootstrapping process as well as leveraging caching, by
+keeping data about your project in memory. Running Gradle builds with the
+Daemon is no different than without. Simply configure whether you want to use
+it or not — everything else is handled transparently by Gradle.
+
+## Why the Gradle Daemon is important for performance
+
+The Daemon is a long-lived process, so not only are we able to avoid the cost
+of JVM startup for every build, but we are able to cache information about
+project structure, files, tasks, and more in memory.
+
+The reasoning is simple: improve build speed by reusing computations from
+previous builds. However, the benefits are dramatic: we typically measure
+build times reduced by 15-75% on subsequent builds. We recommend profiling
+your build by using `--profile` to get a sense of how much impact the Gradle
+Daemon can have for you.
+
+The Gradle Daemon is enabled by default starting with Gradle 3.0, so you don't
+have to do anything to benefit from it.
+
+## Running Daemon Status
+
+To get a list of running Gradle Daemons and their statuses use the `--status`
+command.
+
+Sample output:
+
+    
+    
+        PID VERSION                 STATUS
+      28411 3.0                     IDLE
+      34247 3.0                     BUSY
+
+Currently, a given Gradle version can only connect to daemons of the same
+version. This means the status output will only show Daemons for the version
+of Gradle being invoked and not for any other versions. Future versions of
+Gradle will lift this constraint and will show the running Daemons for all
+versions of Gradle.
+
+## Disabling the Daemon
+
+The Gradle Daemon is enabled by default, and we recommend always enabling it.
+There are several ways to disable the Daemon, but the most common one is to
+add the line
+
+    
+    
+    org.gradle.daemon=false
+
+to the file `«USER_HOME»/.gradle/gradle.properties`, where `«USER_HOME»` is
+your home directory. That’s typically one of the following, depending on your
+platform:
+
+  * `C:\Users\<username>` (Windows Vista & 7+)
+
+  * `/Users/<username>` (macOS)
+
+  * `/home/<username>` (Linux)
+
+If that file doesn’t exist, just create it using a text editor. You can find
+details of other ways to disable (and enable) the Daemon in Daemon FAQ further
+down. That section also contains more detailed information on how the Daemon
+works.
+
+Note that having the Daemon enabled, all your builds will take advantage of
+the speed boost, regardless of the version of Gradle a particular build uses.
+
+__ |
+
+Continuous integration
+
+Since Gradle 3.0, we enable Daemon by default and recommend using it for both
+developers' machines and Continuous Integration servers. However, if you
+suspect that Daemon makes your CI builds unstable, you can disable it to use a
+fresh runtime for each build since the runtime is _completely_ isolated from
+any previous builds.  
+  
+---|---  
+  
+## Stopping an existing Daemon
+
+As mentioned, the Daemon is a background process. You needn’t worry about a
+build up of Gradle processes on your machine, though. Every Daemon monitors
+its memory usage compared to total system memory and will stop itself if idle
+when available system memory is low. If you want to explicitly stop running
+Daemon processes for any reason, just use the command `gradle --stop`.
+
+This will terminate all Daemon processes that were started with the same
+version of Gradle used to execute the command. If you have the Java
+Development Kit (JDK) installed, you can easily verify that a Daemon has
+stopped by running the `jps` command. You’ll see any running Daemons listed
+with the name `GradleDaemon`.
+
+## FAQ
+
+### How do I disable the Gradle Daemon?
+
+There are two recommended ways to disable the Daemon persistently for an
+environment:
+
+  * Via environment variables: add the flag `-Dorg.gradle.daemon=false` to the `GRADLE_OPTS` environment variable
+
+  * Via properties file: add `org.gradle.daemon=false` to the `«GRADLE_USER_HOME»/gradle.properties` file
+
+__ |
+
+Note, `«GRADLE_USER_HOME»` defaults to `«USER_HOME»/.gradle`, where
+`«USER_HOME»` is the home directory of the current user. This location can be
+configured via the `-g` and `--gradle-user-home` command line switches, as
+well as by the `GRADLE_USER_HOME` environment variable and
+`org.gradle.user.home` JVM system property.  
+  
+---|---  
+  
+Both approaches have the same effect. Which one to use is up to personal
+preference. Most Gradle users choose the second option and add the entry to
+the user `gradle.properties` file.
+
+On Windows, this command will disable the Daemon for the current user:
+
+    
+    
+    (if not exist "%USERPROFILE%/.gradle" mkdir "%USERPROFILE%/.gradle") && (echo. >> "%USERPROFILE%/.gradle/gradle.properties" && echo org.gradle.daemon=false >> "%USERPROFILE%/.gradle/gradle.properties")
+
+On UNIX-like operating systems, the following Bash shell command will disable
+the Daemon for the current user:
+
+    
+    
+    mkdir -p ~/.gradle && echo "org.gradle.daemon=false" >> ~/.gradle/gradle.properties
+
+Once the Daemon is disabled for a build environment in this way, a Gradle
+Daemon will not be started unless explicitly requested using the `--daemon`
+option.
+
+The `--daemon` and `--no-daemon` command line options enable and disable usage
+of the Daemon for individual build invocations when using the Gradle command
+line interface. These command line options have the _highest_ precedence when
+considering the build environment. Typically, it is more convenient to enable
+the Daemon for an environment (e.g. a user account) so that all builds use the
+Daemon without requiring to remember to supply the `--daemon` option.
+
+### Why is there more than one Daemon process on my machine?
+
+There are several reasons why Gradle will create a new Daemon, instead of
+using one that is already running. The basic rule is that Gradle will start a
+new Daemon if there are no existing idle or compatible Daemons available.
+Gradle will kill any Daemon that has been idle for 3 hours or more, so you
+don't have to worry about cleaning them up manually.
+
+idle
+
+    
+
+An idle Daemon is one that is not currently executing a build or doing other
+useful work.
+
+compatible
+
+    
+
+A compatible Daemon is one that can (or can be made to) meet the requirements
+of the requested build environment. The Java runtime used to execute the build
+is an example aspect of the build environment. Another example is the set of
+JVM system properties required by the build runtime.
+
+Some aspects of the requested build environment may not be met by an Daemon.
+If the Daemon is running with a Java 8 runtime, but the requested environment
+calls for Java 10, then the Daemon is not compatible and another must be
+started. Moreover, certain properties of a Java runtime cannot be changed once
+the JVM has started. For example, it is not possible to change the memory
+allocation (e.g. `-Xmx1024m`), default text encoding, default locale, etc of a
+running JVM.
+
+The “requested build environment” is typically constructed implicitly from
+aspects of the build client’s (e.g. Gradle command line client, IDE etc.)
+environment and explicitly via command line switches and settings. See [Build
+Environment](build_environment.html#build_environment) for details on how to
+specify and control the build environment.
+
+The following JVM system properties are effectively immutable. If the
+requested build environment requires any of these properties, with a different
+value than a Daemon’s JVM has for this property, the Daemon is not compatible.
+
+  * file.encoding
+
+  * user.language
+
+  * user.country
+
+  * user.variant
+
+  * java.io.tmpdir
+
+  * javax.net.ssl.keyStore
+
+  * javax.net.ssl.keyStorePassword
+
+  * javax.net.ssl.keyStoreType
+
+  * javax.net.ssl.trustStore
+
+  * javax.net.ssl.trustStorePassword
+
+  * javax.net.ssl.trustStoreType
+
+  * com.sun.management.jmxremote
+
+The following JVM attributes, controlled by startup arguments, are also
+effectively immutable. The corresponding attributes of the requested build
+environment and the Daemon’s environment must match exactly in order for a
+Daemon to be compatible.
+
+  * The maximum heap size (i.e. the -Xmx JVM argument)
+
+  * The minimum heap size (i.e. the -Xms JVM argument)
+
+  * The boot classpath (i.e. the -Xbootclasspath argument)
+
+  * The “assertion” status (i.e. the -ea argument)
+
+The required Gradle version is another aspect of the requested build
+environment. Daemon processes are coupled to a specific Gradle runtime.
+Working on multiple Gradle projects during a session that use different Gradle
+versions is a common reason for having more than one running Daemon process.
+
+### How much memory does the Daemon use and can I give it more?
+
+If the requested build environment does not specify a maximum heap size, the
+Daemon will use up to 512MB of heap. It will use the JVM's default minimum
+heap size. 512MB is more than enough for most builds. Larger builds with
+hundreds of subprojects, lots of configuration, and source code may require,
+or perform better, with more memory.
+
+To increase the amount of memory the Daemon can use, specify the appropriate
+flags as part of the requested build environment. Please see [Build
+Environment](build_environment.html#build_environment) for details.
+
+### How can I stop a Daemon?
+
+Daemon processes will automatically terminate themselves after 3 hours of
+inactivity or less. If you wish to stop a Daemon process before this, you can
+either kill the process via your operating system or run the `gradle --stop`
+command. The `--stop` switch causes Gradle to request that _all_ running
+Daemon processes, _of the same Gradle version used to run the command_ ,
+terminate themselves.
+
+### What can go wrong with Daemon?
+
+Considerable engineering effort has gone into making the Daemon robust,
+transparent and unobtrusive during day to day development. However, Daemon
+processes can occasionally be corrupted or exhausted. A Gradle build executes
+arbitrary code from multiple sources. While Gradle itself is designed for and
+heavily tested with the Daemon, user build scripts and third party plugins can
+destabilize the Daemon process through defects such as memory leaks or global
+state corruption.
+
+It is also possible to destabilize the Daemon (and build environment in
+general) by running builds that do not release resources correctly. This is a
+particularly poignant problem when using Microsoft Windows as it is less
+forgiving of programs that fail to close files after reading or writing.
+
+Gradle actively monitors heap usage and attempts to detect when a leak is
+starting to exhaust the available heap space in the daemon. When it detects a
+problem, the Gradle daemon will finish the currently running build and
+proactively restart the daemon on the next build. This monitoring is enabled
+by default, but can be disabled by setting the
+`org.gradle.daemon.performance.enable-monitoring` system property to false.
+
+If it is suspected that the Daemon process has become unstable, it can simply
+be killed. Recall that the `--no-daemon` switch can be specified for a build
+to prevent use of the Daemon. This can be useful to diagnose whether or not
+the Daemon is actually the culprit of a problem.
+
+## Tools & IDEs
+
+The [Gradle Tooling API](third_party_integration.html#embedding) that is used
+by IDEs and other tools to integrate with Gradle _always_ uses the Gradle
+Daemon to execute builds. If you are executing Gradle builds from within your
+IDE you are using the Gradle Daemon and do not need to enable it for your
+environment.
+
+## How does the Gradle Daemon make builds faster?
+
+The Gradle Daemon is a _long lived_ build process. In between builds it waits
+idly for the next build. This has the obvious benefit of only requiring Gradle
+to be loaded into memory once for multiple builds, as opposed to once for each
+build. This in itself is a significant performance optimization, but that's
+not where it stops.
+
+A significant part of the story for modern JVM performance is runtime code
+optimization. For example, HotSpot (the JVM implementation provided by Oracle
+and used as the basis of OpenJDK) applies optimization to code while it is
+running. The optimization is progressive and not instantaneous. That is, the
+code is progressively optimized during execution which means that subsequent
+builds can be faster purely due to this optimization process. Experiments with
+HotSpot have shown that it takes somewhere between 5 and 10 builds for
+optimization to stabilize. The difference in perceived build time between the
+first build and the 10th for a Daemon can be quite dramatic.
+
+The Daemon also allows more effective in memory caching across builds. For
+example, the classes needed by the build (e.g. plugins, build scripts) can be
+held in memory between builds. Similarly, Gradle can maintain in-memory caches
+of build data such as the hashes of task inputs and outputs, used for
+incremental building.
+
+To detect changes on the file system, and to calculate what needs to be
+rebuilt, Gradle collects a lot of information about the state of the file
+system during every build. When watching the file system is enabled, the
+Daemon can re-use the already collected information from the last build. This
+can save a significant amount of time for incremental builds, where the number
+of changes to the file system between two builds is typically low.
+
+## Watching the file system
+
+To detect changes on the file system, and to calculate what needs to be
+rebuilt, Gradle collects information about the file system in-memory during
+every build (aka _Virtual File System_ ). By watching the file system, Gradle
+can keep the Virtual File System in sync with the file system even between
+builds. Doing so allows the Daemon to save the time to rebuild the Virtual
+File System from disk for the next build. For incremental builds, there are
+typically only a few changes between builds. Therefore, incremental builds can
+re-use most of the Virtual File System from the last build and benefit the
+most from watching the file system.
+
+Gradle uses operating system features for watching the file system. It
+supports the feature on these operating systems and file systems:
+
+  * Windows 10 with NTFS,
+
+  * Linux (Ubuntu 16.04 or later, CentOS 8 or later, Red Hat Enterprise Linux 8 or later, Amazon Linux 2) using ext3 and ext4,
+
+  * macOS 10.14 (Mojave) or later on APFS and HFS+.
+
+Network file systems like NFS and SMB are not supported. FAT file systems are
+not supported.
+
+Watching the file system is an experimental feature and is disabled by
+default. You can enable the feature in a couple of ways:
+
+Run with `--watch-fs` on the command line
+
+    
+
+This enables watching the file system for this build only.
+
+Put `org.gradle.vfs.watch=true` in your `gradle.properties`
+
+    
+
+This enables watching the file system for all builds, unless explicitly
+disabled with `--no-watch-fs`.
+
+### Troubleshooting file system watching
+
+Limitations
+
+    
+
+File system watching currently has the following limitations:
+
+  * If you have symlinks in your build, you won’t get the performance benefits for those locations.
+
+  * On Windows, we don’t support network drives (they might work, but we don’t test them yet).
+
+Enable verbose logging
+
+    
+
+You can instruct Gradle to some more information about the state of the
+virtual file system, and the events received from the file system using the
+`org.gradle.vfs.verbose` flag. This produces the following output at the start
+and end of the build:
+
+    
+    
+    $ gradle assemble --watch-fs -Dorg.gradle.vfs.verbose=true
+    Received 3 file system events since last build while watching 1 hierarchies
+    Virtual file system retained information about 2 files, 2 directories and 0 missing files since last build
+    > Task :compileJava NO-SOURCE
+    > Task :processResources NO-SOURCE
+    > Task :classes UP-TO-DATE
+    > Task :jar UP-TO-DATE
+    > Task :assemble UP-TO-DATE
+    
+    BUILD SUCCESSFUL in 58ms
+    1 actionable task: 1 up-to-date
+    Received 5 file system events during the current build while watching 1 hierarchies
+    Virtual file system retains information about 3 files, 2 directories and 2 missing files until next build
+
+Note that on Windows and macOS Gradle might report changes received since the
+last build even if you haven't changed anything. These are harmless
+notifications about changes to Gradle's own caches and can be ignored safely.
+
+Gradle does not pick up some of my changes
+
+    
+
+_Please[let us know on the Gradle community Slack](https://gradle-
+community.slack.com/app_redirect?channel=file-system-watching) if that happens
+to you._ If your build declares its inputs and outputs correctly, this should
+not happen. So it’s either a bug we need to fix, or your build is lacking the
+declaration of some inputs or outputs.
+
+VFS state is dropped due to lost state
+
+    
+
+If you receive the `Dropped VFS state due to lost state` message during the
+build, _please[let us know on the Gradle community Slack](https://gradle-
+community.slack.com/app_redirect?channel=file-system-watching) if that happens
+to you._ This message means that either:
+
+  * the daemon received some unknown file system event,
+
+  * too many changes happened, and the watching API couldn’t handle it.
+
+In both cases the build cannot benefit from file system watching.
+
+Too many open files on macOS
+
+    
+
+If you receive the `java.io.IOException: Too many open files` error on macOS,
+you need to raise your open files limit, see
+[here](https://superuser.com/a/443168/8117).
+
+### Linux-specific notes
+
+File system watching uses [inotify](http://en.wikipedia.org/wiki/Inotify) on
+Linux. Depending on the size of your build, it may be necessary to increase
+inotify limits. If you are using an IDE, then you probably already had to
+increase the limits in the past.
+
+File system watching uses one inotify watch per watched directory. You can see
+the current limit of inotify watches per user by running:
+
+    
+    
+    cat /proc/sys/fs/inotify/max_user_watches
+
+To increase the limit to e.g. 512K watches run the following:
+
+    
+    
+    echo 524288 | sudo tee -a /etc/sysctl.conf
+    sudo sysctl -p --system
+
+Each used inotify watch takes up to 1KB of memory. Assuming inotify uses all
+the 512K watches then around 500MB will be used for watching the file system.
+If your environment is memory constraint, you may want to disable file system
+watching.
+
+**Docs**
+
+  * [User Manual](/userguide/userguide.html)
+  * [DSL Reference](/dsl/)
+  * [Release Notes](/release-notes.html)
+  * [Javadoc](/javadoc/)
+
+**News**
+
+  * [Blog](https://blog.gradle.org/)
+  * [Newsletter](https://newsletter.gradle.com/)
+  * [Twitter](https://twitter.com/gradle)
+  * [Status Page](https://status.gradle.com/)
+
+**Products**
+
+  * [Build Scans](https://gradle.com/build-scans/)
+  * [Build Cache](https://gradle.com/build-cache/)
+  * [Enterprise Docs](https://gradle.com/enterprise/resources/)
+
+**Get Help**
+
+  * [Forums](https://discuss.gradle.org/c/help-discuss)
+  * [GitHub](https://github.com/gradle/)
+  * [Training](https://gradle.com/training/)
+  * [Services](https://gradle.org/services/)
+
+##### Stay `UP-TO-DATE` on new features and news
+
+By entering your email, you agree to our
+[Terms](https://gradle.com/legal/terms-of-service/) and [Privacy
+Policy](https://gradle.com/legal/privacy/), including receipt of emails. You
+can unsubscribe at any time.
+
+Subscribe
+
+© [Gradle Inc.](https://gradle.com) 2020 All rights reserved.
+
+[ gradle ](/)
+
+[Careers](https://gradle.com/careers/) |
+[Privacy](https://gradle.com/legal/privacy/) | [Terms of
+Service](https://gradle.com/legal/terms-of-service/) |
+[Contact](https://gradle.org/contact/)
+
