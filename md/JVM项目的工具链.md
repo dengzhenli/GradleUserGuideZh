@@ -1,228 +1,202 @@
 
 
-[ Gradle ](https://docs.gradle.org "Gradle Docs")
+[ Gradle ](https://docs.gradle.org/ "Gradle Docs")
 
-User Manual
+用户手册
 
-  * Community Open Community Menu
+  * 社区 Open Community Menu
 
-[ Community Home ](https://gradle.org/)
+[ 社区之家 ](https://gradle.org/)
 
-[ Community Forums ](https://discuss.gradle.org/)
+[ 社区论坛 ](https://discuss.gradle.org/)
 
-[ Community Plugins ](https://plugins.gradle.org)
+[ 社区插件 ](https://plugins.gradle.org/)
 
-  * [Training](https://gradle.com/training/)
-  * News Open Community Menu
+  * [训练](https://gradle.com/training/)
+  * 新闻 Open Community Menu
 
-[ Newsletter ](https://newsletter.gradle.com)
+[ 通讯 ](https://newsletter.gradle.com/)
 
-[ Blog ](https://blog.gradle.org)
+[ 博客 ](https://blog.gradle.org/)
 
-[ Twitter ](https://twitter.com/gradle)
+[ 推特 ](https://twitter.com/gradle)
 
-  * [Enterprise](https://gradle.com)
-  * [github](https://github.com/gradle/gradle "Gradle on GitHub")
+  * [企业](https://gradle.com/)
+  * [github](https://github.com/gradle/gradle "GitHub上的Gradle")
 
-  * [Docs Home](../userguide/userguide.html)
-  * [Samples](../samples/index.html)
-  * [Release Notes](../release-notes.html)
-  * Gradle DSLs and API
-    * [Javadoc](../javadoc/index.html?overview-summary.html)
-    * [Groovy DSL Reference](../dsl/index.html)
-    * [Groovy DSL Primer](../userguide/groovy_build_script_primer.html)
+  * [文件首页](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/userguide.html)
+  * [样品](file:///Users/dxs/temp/gradle-6.7.1/docs/samples/index.html)
+  * [发行说明](file:///Users/dxs/temp/gradle-6.7.1/docs/release-notes.html)
+  * [Gradle API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#gradle-api)
+    * [Java文档](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/index.html?overview-summary.html)
+    * [Groovy DSL参考](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/index.html)
+    * [Groovy DSL入门](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/groovy_build_script_primer.html)
     * [Kotlin DSL API](https://gradle.github.io/kotlin-dsl-docs/api/)
-    * [Kotlin DSL Primer](../userguide/kotlin_dsl.html)
-    * [Groovy to Kotlin DSL Migration](../userguide/migrating_from_groovy_to_kotlin_dsl.html)
+    * [Kotlin DSL入门](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/kotlin_dsl.html)
 
-### User Manual
+### 用户手册
 
-[ PDF ](../userguide/userguide.pdf)
+[ PDF格式 ](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/userguide.pdf)
 
-  * [What is Gradle?](../userguide/what_is_gradle.html)
-  * [Getting Started](../userguide/getting_started.html)
-  * [Installing Gradle](../userguide/installation.html)
-  * Upgrading Gradle...
-    * [version 6.X to latest](../userguide/upgrading_version_6.html)
-    * [version 5.X to 6.0](../userguide/upgrading_version_5.html)
-    * [version 4.X to 5.0](../userguide/upgrading_version_4.html)
-    * [Gradle's Feature Lifecycle](../userguide/feature_lifecycle.html)
-  * Migrating to Gradle...
-    * [from Maven](../userguide/migrating_from_maven.html)
-    * [from Ant](../userguide/migrating_from_ant.html)
-  * [Compatibility Notes](../userguide/compatibility.html)
-  * [Troubleshooting Builds](../userguide/troubleshooting.html)
+  * [什么是Gradle？](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/what_is_gradle.html)
+  * [入门](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/getting_started.html)
+  * [安装Gradle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html)
+  * [升级Gradle ...](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#upgrading-gradle)
+    * [版本6.X到最新](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_6.html)
+    * [版本5.X到6.0](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html)
+    * [版本4.X到5.0](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_4.html)
+    * [Gradle的功能生命周期](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/feature_lifecycle.html)
+  * [迁移至Gradle ...](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#migrating-to-gradle)
+    * [从Maven](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/migrating_from_maven.html)
+    * [来自蚂蚁](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/migrating_from_ant.html)
+  * [相容性说明](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/compatibility.html)
+  * [对构建进行故障排除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/troubleshooting.html)
 
-### Running Gradle Builds
+### 运行Gradle构建
 
-  * Customizing Execution
-    * [Configuring the Build Environment](../userguide/build_environment.html)
-    * [Configuring the Gradle Daemon](../userguide/gradle_daemon.html)
-    * [Using Initialization Scripts](../userguide/init_scripts.html)
-  * [Executing Multi-Project Builds](../userguide/intro_multi_project_builds.html)
-  * [Inspecting Gradle Builds](https://scans.gradle.com/)
-  * Using the Build Cache
-    * [Enabling and Configuring](../userguide/build_cache.html)
-    * [Why use the Build Cache?](../userguide/build_cache_use_cases.html)
-    * [Understanding the Impact](../userguide/build_cache_performance.html)
-    * [Learning Basic Concepts](../userguide/build_cache_concepts.html)
-    * [Caching Java Project](../userguide/caching_java_projects.html)
-    * [Caching Android Project](../userguide/caching_android_projects.html)
-    * [Debugging Caching Issues](../userguide/build_cache_debugging.html)
-    * [Troubleshooting](../userguide/common_caching_problems.html)
-  * Optimizing Build Times
-    * [Improving Performance of Gradle Builds](../userguide/performance.html)
-    * [Using the Configuration Cache](../userguide/configuration_cache.html)
+  * [自定义执行](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#customizing-execution)
+    * [配置构建环境](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_environment.html)
+    * [Configuring the Gradle Daemon](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html)
+    * [Using Initialization Scripts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/init_scripts.html)
+  * [执行多项目构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/intro_multi_project_builds.html)
+  * [检查Gradle构建](https://scans.gradle.com/)
+  * [优化构建时间](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#optimizing-build-performance)
+    * [Build Performance Guide](https://guides.gradle.org/performance/)
+    * [Enabling and Configuring the Build Cache](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_cache.html)
+    * [Using the Configuration Cache](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/configuration_cache.html)
 
-### Authoring Gradle Builds
+### 编写Gradle构建
 
-  * Learning the Basics
-    * [Writing Build Scripts](../userguide/tutorial_using_tasks.html)
-    * [Working with Tasks](../userguide/more_about_tasks.html)
-    * [Learning More About Build Scripts](../userguide/writing_build_scripts.html)
-    * [Working with Files](../userguide/working_with_files.html)
-    * [Using Gradle Plugins](../userguide/plugins.html)
-    * [Understanding the Build Lifecycle](../userguide/build_lifecycle.html)
-    * [Working with Logging](../userguide/logging.html)
-    * [Avoiding Traps](../userguide/potential_traps.html)
-  * Structuring Individual Builds
-    * [Creating a Basic Multi-Project Build](../userguide/multi_project_builds.html)
-    * [Declaring Dependencies between Subprojects](../userguide/declaring_dependencies_between_subprojects.html)
-    * [Sharing Build Logic between Subprojects](../userguide/sharing_build_logic_between_subprojects.html)
-    * [Fine Tuning the Project Layout](../userguide/fine_tuning_project_layout.html)
-    * [Understanding Configuration and Execution](../userguide/multi_project_configuration_and_execution.html)
-  * Structuring Software Products
-    * [Structuring large Projects](../userguide/structuring_software_products.html)
-    * [Tweaking Project Structure](../userguide/structuring_software_products_details.html)
-    * [Composing Builds](../userguide/composite_builds.html)
-  * Authoring Sustainable Builds
-    * [Organizing Build Logic](../userguide/organizing_gradle_projects.html)
-    * [Following Best Practices](../userguide/authoring_maintainable_build_scripts.html)
-  * Advanced Techniques
-    * [Testing a Build with TestKit](../userguide/test_kit.html)
-    * [Using Ant from Gradle](../userguide/ant.html)
+  * [学习基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#learning-the-basics)
+    * [Introducing the Basics of Build Scripts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/tutorial_using_tasks.html)
+    * [Working with Tasks](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/more_about_tasks.html)
+    * [Learning More About Build Scripts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/writing_build_scripts.html)
+    * [Working with Files](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/working_with_files.html)
+    * [Using Gradle Plugins](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html)
+    * [Understanding the Build Lifecycle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_lifecycle.html)
+    * [Working with Logging](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/logging.html)
+    * [Avoiding Traps](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/potential_traps.html)
+  * [创作多项目构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#authoring-multi-project-builds)
+    * [Creating a Basic Multi-Project Build](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_builds.html)
+    * [Declaring Dependencies between Subprojects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_dependencies_between_subprojects.html)
+    * [Sharing Build Logic between Subprojects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/sharing_build_logic_between_subprojects.html)
+    * [Fine Tuning the Project Layout](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/fine_tuning_project_layout.html)
+    * [Understanding Configuration and Execution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_configuration_and_execution.html)
+  * [创作可持续建筑](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#authoring-sustainable-builds)
+    * [Organizing Build Logic](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/organizing_gradle_projects.html)
+    * [Following Best Practices](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/authoring_maintainable_build_scripts.html)
+  * [先进技术](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#advanced-techniques)
+    * [Developing Parallel Tasks](https://guides.gradle.org/using-the-worker-api/)
+    * [Testing a Build with TestKit](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/test_kit.html)
+    * [Using Ant from Gradle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/ant.html)
 
-### Authoring JVM Builds
+### 编写JVM构建
 
-  * [Building Java & JVM projects](../userguide/building_java_projects.html)
-  * [Testing Java & JVM projects](../userguide/java_testing.html)
-  * [Toolchains for Java projects](../userguide/toolchains.html)
-  * [Managing Dependencies](../userguide/dependency_management_for_java_projects.html)
-  * JVM Plugins
-    * [Java Library Plugin](../userguide/java_library_plugin.html)
-    * [Java Application Plugin](../userguide/application_plugin.html)
-    * [Java Platform Plugin](../userguide/java_platform_plugin.html)
-    * [Groovy Plugin](../userguide/groovy_plugin.html)
-    * [Scala Plugin](../userguide/scala_plugin.html)
+  * [构建Java和JVM项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_java_projects.html)
+  * [测试Java和JVM项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html)
+  * [Java项目的工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html)
+  * [管理依赖关系](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_management_for_java_projects.html)
+  * [JVM插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#jvm-plugins)
+    * [Java Library Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_library_plugin.html)
+    * [Java Application Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/application_plugin.html)
+    * [Java Platform Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_platform_plugin.html)
+    * [Groovy Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/groovy_plugin.html)
+    * [Scala Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/scala_plugin.html)
 
-### Authoring C++/Swift Builds
+### 编写C ++ / Swift构建
 
-  * [Building C++ projects](../userguide/building_cpp_projects.html)
-  * [Testing C++ projects](../userguide/cpp_testing.html)
-  * [Building Swift projects](../userguide/building_swift_projects.html)
-  * [Testing Swift projects](../userguide/swift_testing.html)
+  * [构建C ++项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_cpp_projects.html)
+  * [测试C ++项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/cpp_testing.html)
+  * [建立Swift项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_swift_projects.html)
+  * [测试Swift项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/swift_testing.html)
 
-### Working with Dependencies
+### 使用依赖项
 
-  * Learning the Basics
-    * [What is Dependency Management?](../userguide/core_dependency_management.html)
-    * [Declaring Repositories](../userguide/declaring_repositories.html)
-    * [Declaring Dependencies](../userguide/declaring_dependencies.html)
-    * [Understanding Library and Application Differences](../userguide/library_vs_application.html)
-    * [Viewing and Debugging Dependencies](../userguide/viewing_debugging_dependencies.html)
-    * [Understanding Resolution](../userguide/dependency_resolution.html)
-    * [Verifying dependencies](../userguide/dependency_verification.html)
-  * Declaring Versions
-    * [Declaring Versions and Ranges](../userguide/single_versions.html)
-    * [Declaring Rich Versions](../userguide/rich_versions.html)
-    * [Handling Changing Versions](../userguide/dynamic_versions.html)
-    * [Locking Versions](../userguide/dependency_locking.html)
-  * Controlling Transitives
-    * [Upgrading Versions](../userguide/dependency_constraints.html)
-    * [Downgrading and Excluding](../userguide/dependency_downgrade_and_exclude.html)
-    * [Sharing Versions](../userguide/platforms.html)
-    * [Aligning Dependencies](../userguide/dependency_version_alignment.html)
-    * [Handling Mutually Exclusive Dependencies](../userguide/dependency_capability_conflict.html)
-    * [Fixing Metadata](../userguide/component_metadata_rules.html)
-    * [Customizing Resolution](../userguide/resolution_rules.html)
-    * [Preventing accidental upgrades](../userguide/resolution_strategy_tuning.html)
-  * Producing and Consuming Variants of Libraries
-    * [Declaring Capabilities of a Library](../userguide/component_capabilities.html)
-    * [Modeling Feature Variants and Optional Dependencies](../userguide/feature_variants.html)
-    * [Understanding Variant Selection](../userguide/variant_model.html)
-    * [Declaring Variant Attributes](../userguide/variant_attributes.html)
-    * [Sharing Outputs of Projects](../userguide/cross_project_publications.html)
-    * [Transforming Artifacts](../userguide/artifact_transforms.html)
-  * Publishing Libraries
-    * [Setting up Publishing](../userguide/publishing_setup.html)
-    * [Understanding Gradle Module Metadata](../userguide/publishing_gradle_module_metadata.html)
-    * [Signing Artifacts](../userguide/publishing_signing.html)
-    * [Customizing Publishing](../userguide/publishing_customization.html)
-    * [Maven Publish Plugin](../userguide/publishing_maven.html)
-    * [Ivy Publish Plugin](../userguide/publishing_ivy.html)
-  * [Terminology](../userguide/dependency_management_terminology.html)
+  * [学习基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#learning-the-basics-dependency-management)
+    * [What is Dependency Management?](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/core_dependency_management.html)
+    * [Declaring Repositories](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_repositories.html)
+    * [Declaring Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_dependencies.html)
+    * [Understanding Library and Application Differences](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/library_vs_application.html)
+    * [Viewing and Debugging Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/viewing_debugging_dependencies.html)
+    * [Understanding Resolution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_resolution.html)
+    * [Verifying dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_verification.html)
+  * [声明版本](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#declaring-dependency-versions)
+    * [Declaring Versions and Ranges](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/single_versions.html)
+    * [Declaring Rich Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/rich_versions.html)
+    * [Handling Changing Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dynamic_versions.html)
+    * [Locking Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_locking.html)
+  * [控制翻译](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#controlling-transitive-dependencies)
+    * [Upgrading Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_constraints.html)
+    * [Downgrading and Excluding](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_downgrade_and_exclude.html)
+    * [Sharing Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/platforms.html)
+    * [Aligning Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_version_alignment.html)
+    * [Handling Mutually Exclusive Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_capability_conflict.html)
+    * [Fixing Metadata](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/component_metadata_rules.html)
+    * [Customizing Resolution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/resolution_rules.html)
+    * [Preventing accidental upgrades](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/resolution_strategy_tuning.html)
+  * [图书馆的生产和消费形式](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#modeling-features)
+    * [Declaring Capabilities of a Library](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/component_capabilities.html)
+    * [Modeling Feature Variants and Optional Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/feature_variants.html)
+    * [Understanding Variant Selection](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_model.html)
+    * [Declaring Variant Attributes](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_attributes.html)
+    * [Sharing Outputs of Projects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/cross_project_publications.html)
+    * [Transforming Artifacts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/artifact_transforms.html)
+  * [在多仓库环境中工作](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#multi-repo)
+    * [Composing Builds](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/composite_builds.html)
+  * [出版图书馆](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#publishing)
+    * [Setting up Publishing](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_setup.html)
+    * [Understanding Gradle Module Metadata](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_gradle_module_metadata.html)
+    * [Signing Artifacts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_signing.html)
+    * [Customizing Publishing](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_customization.html)
+    * [Maven Publish Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_maven.html)
+    * [Ivy Publish Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_ivy.html)
+  * [术语](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_management_terminology.html)
 
-### Extending Gradle
+### 扩展摇篮
 
-  * Developing Gradle Plugins
-    * [Starting Plugin Development](../userguide/custom_plugins.html)
-    * [Designing Plugins](../userguide/designing_gradle_plugins.html)
-    * [Implementing Plugins](../userguide/implementing_gradle_plugins.html)
-    * [Testing Plugins](../userguide/testing_gradle_plugins.html)
-    * [Publishing Plugins](../userguide/publishing_gradle_plugins.html)
-  * Developing Gradle Tasks
-    * [Writing Gradle Task Types](../userguide/custom_tasks.html)
-    * [Configuring Tasks Lazily](../userguide/lazy_configuration.html)
-    * [Avoiding Unnecessary Task Configuration](../userguide/task_configuration_avoidance.html)
-    * [Developing Parallel Tasks](../userguide/worker_api.html)
-  * [Writing Custom Gradle Types](../userguide/custom_gradle_types.html)
+  * [插件开发教程](https://gradle.org/guides/?q=Plugin%20Development)
+  * [编写Gradle任务类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_tasks.html)
+  * [编写Gradle插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_plugins.html)
+  * [编写自定义Gradle类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_gradle_types.html)
+  * [延迟配置任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/lazy_configuration.html)
+  * [使用避免任务配置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/task_configuration_avoidance.html)
 
-### Reference
+### 参考
 
-  * [Core Plugins](../userguide/plugin_reference.html)
-  * [Command-Line Interface](../userguide/command_line_interface.html)
-  * Gradle & Third-party Tools
-    * [Third-party Tools](../userguide/third_party_integration.html)
-    * [Jenkins](../userguide/jenkins.html)
-    * [TeamCity](../userguide/teamcity.html)
-    * [Travis CI](../userguide/travis-ci.html)
-  * [](../userguide/third_party_integration.html)
-  * [The Gradle Wrapper](../userguide/gradle_wrapper.html)
-  * [Gradle-managed Directories](../userguide/directory_layout.html)
+  * [核心插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugin_reference.html)
+  * [命令行界面](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/command_line_interface.html)
+  * [Gradle和第三方工具](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/third_party_integration.html)
+  * [摇篮包装](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_wrapper.html)
+  * [Gradle管理的目录](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/directory_layout.html)
 
-# Toolchains for JVM projects
+# JVM项目的工具链
 
-version 6.9-20201126230040+0000
+version 6.7.1
 
-Contents
+内容
 
-  * Consuming Toolchains
-  * Specify custom toolchains for individual tasks
-  * Auto detection of installed toolchains
-  * Auto Provisioning
-  * Custom Toolchain locations
-  * Toolchains for plugin authors
+  * [消费工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:consuming)
+  * [为个别任务指定自定义工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#specify_custom_toolchains_for_individual_tasks)
+  * [自动检测已安装的工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:auto_detection)
+  * [自动配置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:provisioning)
+  * [自定义工具链位置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:custom_loc)
+  * [插件作者的工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:plugins)
 
-By default, Gradle uses the same Java version for running Gradle itself and
-building JVM projects.
+默认情况下，Gradle使用相同的Java版本来运行Gradle本身和构建JVM项目。
 
-This is not always desirable. Building projects with different Java versions
-on different developer machines and CI servers may lead to unexpected issues.
-Additionally, you may want to build a project using a Java version that is not
-supported for running Gradle.
+这并不总是可取的。在不同的开发人员机器和CI服务器上使用不同的Java版本构建项目可能会导致意外问题。此外，您可能想使用不支持运行Gradle的Java版本来构建项目。
 
-A Java Toolchain (from now on referred to simply as toolchain) is a set of
-tools, usually taken from a local JRE/JDK installation that are used to
-configure different aspects of a build. Compile tasks may use `javac` as their
-compiler, test and exec tasks may use the `java` command while `javadoc` will
-be used to generate documentation.
+Java工具链（从现在开始简称为工具链）是一组工具，通常取自本地JRE /
+JDK安装，用于配置构建的不同方面。编译任务可以`javac`用作其编译器，而test和exec任务可以使用该`java`命令，同时`javadoc`将用于生成文档。
 
-## Consuming Toolchains
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:consuming)[消费工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:consuming)
 
-A build can globally define what toolchain it targets by stating the Java
-Language version it needs and optionally the vendor:
+构建可以通过声明所需的Java语言版本来全局定义其目标工具链：
 
-buildSrc/src/main/groovy/myproject.java-conventions.gradle
+`Groovy``Kotlin`
+
+buildSrc / src / main / groovy / myproject.java-conventions.gradle
 
     
     
@@ -242,151 +216,33 @@ buildSrc/src/main/kotlin/myproject.java-conventions.gradle.kts
         }
     }
 
-Executing the build (e.g. using `gradle check`) will now handle several things
-for you and others running your build
+现在，执行构建（例如使用`gradle check`）将为您和其他运行构建的人处理几件事
 
-  1. Setup all compile, test and javadoc tasks to use the defined toolchain which may be different than the one Gradle itself uses
+  1. 设置所有编译，测试和javadoc任务以使用已定义的工具链，该工具链可能与Gradle本身使用的工具链不同
 
-  2. Gradle detects locally installed JVMs
+  2. Gradle检测[本地安装的JVM](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:auto_detection)
 
-  3. Gradle chooses a JRE/JDK matching the requirements of the build (in this case a JVM supporting Java 14)
+  3. Gradle选择符合构建要求的JRE / JDK（在这种情况下，JVM支持Java 14）
 
-  4. If no matching JVM is found, it will automatically download a matching JDK from [AdoptOpenJDK](https://adoptopenjdk.net/)
+  4. 如果找不到匹配的JVM，它将自动从[AdoptOpenJDK](https://adoptopenjdk.net/)下载匹配的JDK。[](https://adoptopenjdk.net/)
 
 __ |
 
-Toolchain support is only available in the Java plugins and for the tasks they
-define. For the Groovy plugin, compilation is supported but not yet Groovydoc
-generation.
-
-Support for the Scala plugin will be released later.
-
-However, _running tests_ can leverage the toolchain support since the `Test`
-task does support toolchains.  
+工具链支持仅在Java插件及其定义的任务中可用。Groovy和Scala插件的支持将在以后发布。该支持将涵盖这些插件添加的特定编译和文档编制任务。但是，由于任务确实支持工具链，因此
+_运行测试_ 可以利用工具链的支持`Test`。  
   
 ---|---  
   
-### Using toolchains by specific vendors
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#specify_custom_toolchains_for_individual_tasks)[为个别任务指定自定义工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#specify_custom_toolchains_for_individual_tasks)
 
-In case your build has specific requirements from the used JRE/JDK, you may
-want to define the vendor for the toolchain as well.
-[`JvmVendorSpec`](../javadoc/org/gradle/jvm/toolchain/JvmVendorSpec.html) has
-a list of well-known JVM vendors recognized by Gradle. The advantage is that
-Gradle can handle any inconsistencies across JDK versions in how exactly the
-JVM encodes the vendor information.
+如果要调整用于特定任务的工具链，可以指定任务使用的确切工具。例如，该`Test`任务公开了一个`JavaLauncher`属性，该属性定义了用于启动测试的java可执行文件。
 
-build.gradle
+在下面的示例中，我们将默认工具链配置为使用JDK8进行编译和测试。此外，我们引入了一个新`Test`任务，它将使用JDK 14运行单元测试。
 
-    
-    
-    java {
-        toolchain {
-            languageVersion = JavaLanguageVersion.of(11)
-            vendor = JvmVendorSpec.ADOPTOPENJDK
-        }
-    }
+`Groovy``Kotlin`
 
-build.gradle.kts
-
-    
-    
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(11))
-            vendor.set(JvmVendorSpec.ADOPTOPENJDK)
-        }
-    }
-
-If the vendor you want to target is not a known vendor, you can still restrict
-the toolchain to those matching the `java.vendor` system property of the
-available toolchains.
-
-Given the snippet below, only toolchain are taken into accounts whose
-`java.vendor` property contains the given match string. Matching is done case-
-insensitive.
-
-build.gradle
-
-    
-    
-    java {
-        toolchain {
-            languageVersion = JavaLanguageVersion.of(11)
-            vendor = JvmVendorSpec.matching("customString")
-        }
-    }
-
-build.gradle.kts
-
-    
-    
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(11))
-            vendor.set(JvmVendorSpec.matching("customString"))
-        }
-    }
-
-### Selecting toolchains by their virtual machine implementation
-
-If your project requires a specific implementation, you can filter based on
-the implementation as well. Currently available implementations to choose from
-are:
-
-`VENDOR_SPECIFIC`
-
-    
-
-Acts as a placeholder and matches any implementation from any vendor (e.g.
-hotspot, zulu, …​)
-
-`J9`
-
-    
-
-Matches only virtual machine implementations using the OpenJ9/IBM J9 runtime
-engine.
-
-For example, to use an [Open J9](https://www.eclipse.org/openj9/) JVM,
-distributed via [AdoptOpenJDK](https://adoptopenjdk.net/), you can specify the
-filter as shown in the example below.
-
-build.gradle
-
-    
-    
-    java {
-        toolchain {
-            languageVersion = JavaLanguageVersion.of(11)
-            vendor = JvmVendorSpec.ADOPTOPENJDK
-            implementation = JvmImplementation.J9
-        }
-    }
-
-build.gradle.kts
-
-    
-    
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(11))
-            vendor.set(JvmVendorSpec.ADOPTOPENJDK)
-            implementation.set(JvmImplementation.J9)
-        }
-    }
-
-## Specify custom toolchains for individual tasks
-
-In case you want to tweak which toolchain is used for a specific task, you can
-specify the exact tool a task is using. For example, the `Test` task exposes a
-`JavaLauncher` property that defines which java executable to use for
-launching the tests.
-
-In the example below, we configure the default toolchain to use JDK8 for
-compiling and testing. Additionally, we introduce a new `Test` task that is
-going to run our unit tests but using a JDK 14.
-
-list/build.gradle
+list / build.gradle
 
     
     
@@ -395,7 +251,7 @@ list/build.gradle
             languageVersion = JavaLanguageVersion.of(8)
         }
     }
-    task('testsOn14', type: Test) {
+    test {
         javaLauncher = javaToolchains.launcherFor {
             languageVersion = JavaLanguageVersion.of(14)
         }
@@ -411,39 +267,34 @@ list/build.gradle.kts
         })
     }
     
-    tasks.register<Test>("testsOn14") {
+    tasks.withType<Test>().configureEach {
         javaLauncher.set(javaToolchains.launcherFor {
             languageVersion.set(JavaLanguageVersion.of(14))
         })
     }
 
-Depending on the task, a JRE might be enough while for other tasks (e.g.
-compilation), a JDK is required. By default, Gradle prefers installed JDKs
-over JREs.
+根据任务的不同，一个JRE可能就足够了，而对于其他任务（例如，编译），则需要一个JDK。默认情况下，Gradle比JRE更喜欢安装的JDK。
 
-Toolchains tool providers can be obtained from the
-[`javaToolchains`](../javadoc/org/gradle/jvm/toolchain/JavaToolchainService.html)
-extension.
+可以从[`javaToolchains`](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/jvm/toolchain/JavaToolchainService.html)扩展中获得工具链工具提供者。
 
-Three tools are available:
+提供三种工具：
 
-  * A `JavaCompiler` which is the tool used by the `JavaCompile` task
+  * A`JavaCompiler`是`JavaCompile`任务使用的工具
 
-  * A `JavaLauncher` which is the tool used by the `JavaExec` or `Test` tasks
+  * A`JavaLauncher`是`JavaExec`或`Test`任务使用的工具
 
-  * A `JavadocTool` which is the tool used by the `Javadoc` task
+  * A`JavadocTool`是`Javadoc`任务使用的工具
 
-### Integration with tasks relying on a Java executable or Java home
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#integration_with_tasks_relying_on_a_java_executable_or_java_home)[与依赖Java可执行文件或Java主目录的任务集成](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#integration_with_tasks_relying_on_a_java_executable_or_java_home)
 
-Any tasks that can be configured with a path to a Java executable, or a Java
-home location, can benefit from toolchains.
+可以使用Java可执行文件的路径或Java主目录配置的任何任务都可以从工具链中受益。
 
-While you will not be able to wire a toolchain tool directly, they all have
-metadata that gives access to their full path or to the path of the Java
-installation they belong to.
+尽管您将无法直接连接工具链工具，但是它们都具有元数据，可以访问其完整路径或它们所属的Java安装路径。
 
-For example, you can configure the executable for a Kotlin compile tasks as
-follows:
+例如，您可以按以下方式为Kotlin编译任务配置可执行文件：
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -469,171 +320,96 @@ build.gradle.kts
         kotlinOptions.jdkHome = compiler.get().metadata.installationPath.asFile.absolutePath
     }
 
-Similarly, doing `compiler.get().executablePath` would give you the full path
-to `javac` for the given toolchain. Please note however that this may realize
-(and provision) a toolchain eagerly.
+同样，这样做`compiler.get().executablePath`会为您`javac`提供给定工具链的完整路径。但是请注意，这可能会急切地实现（并提供）工具链。
 
-## Auto detection of installed toolchains
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:auto_detection)[自动检测已安装的工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:auto_detection)
 
-By default, Gradle automatically detects local JRE/JDK installations so no
-further configuration is required by the user. The following is a list of
-common package managers and locations that are supported by the JVM auto
-detection.
+默认情况下，Gradle自动检测本地JRE / JDK安装，因此用户不需要进一步的配置。以下是JVM自动检测支持的常见程序包管理器和位置的列表。
 
-Operation-system specific locations:
+操作系统特定的位置：
 
-  * Linux
+  * 的Linux
 
-  * MacOs
+  * 苹果系统
 
-  * Windows
+  * 视窗
 
-Supported Package Managers:
+支持的软件包管理器：
 
-  * [Asdf-vm](https://asdf-vm.com/#/)
+  * [音频文件](https://asdf-vm.com/#/)
 
-  * [Jabba](https://github.com/shyiko/jabba)
+  * [贾巴](https://github.com/shyiko/jabba)
 
-  * [SDKMAN!](https://sdkman.io/)
+  * [SDKMAN！](https://sdkman.io/)
 
-### How to disable auto-detection
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sub:disable_auto_detect)[如何禁用自动检测](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sub:disable_auto_detect)
 
-In order to disable auto-detection, you can use the
-`org.gradle.java.installations.auto-detect` Gradle property:
+为了禁用自动检测，可以使用`org.gradle.java.installations.auto-detect`Gradle属性：
 
-  * Either start gradle using `-Porg.gradle.java.installations.auto-detect=false`
+  * 要么使用开始gradle `-Porg.gradle.java.installations.auto-detect=false`
 
-  * Or put `org.gradle.java.installations.auto-detect=false` into your `gradle.properties` file.
+  * 或放入`org.gradle.java.installations.auto-detect=false`您的`gradle.properties`文件中。
 
-## Auto Provisioning
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:provisioning)[自动配置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:provisioning)
 
-If Gradle can't find a locally available toolchain which matches the
-requirements of the build, it will automatically try to download it from
-AdoptOpenJDK. By default, it will request a HotSpot JDK matching the current
-operating system and architecture. Provisioning JDKs are installed in the
-[Gradle User Home directory](directory_layout.html#dir:gradle_user_home).
+如果Gradle找不到与构建要求匹配的本地可用工具链，它将自动尝试从AdoptOpenJDK下载它。默认情况下，它将请求与当前操作系统和体系结构匹配的HotSpot
+JDK。预配JDK安装在[Gradle用户主目录中](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/directory_layout.html#dir:gradle_user_home)。
 
 __ |
 
-Gradle will only download JDK versions for GA releases. There is no support
-for downloading early access versions.  
+Gradle将仅下载GA发行版的JDK版本。不支持下载早期访问版本。  
   
 ---|---  
   
-By default, the public [AdoptOpenJDK APIs](https://api.adoptopenjdk.net/) are
-used to determine and download a matching JDK. In case you want to use another
-server that is compatible with v3 of the AdoptOpenJDK API, you can point
-Gradle to use a different host. For that you use the Gradle property as in the
-example below:
+默认情况下，公共[AdoptOpenJDK
+API](https://api.adoptopenjdk.net/)用于确定和下载匹配的JDK。如果您要使用与AdoptOpenJDK API
+v3兼容的另一台服务器，则可以使Gradle使用其他主机。为此，您可以使用Gradle属性，如以下示例所示：
 
     
     
-    org.gradle.jvm.toolchain.install.adoptopenjdk.baseUri=https://api.company.net/
+    org.gradle.jvm.toolchain.install.adoptopenjdk.baseUri = https：//api.company.net/
 
 __ |
 
-Only secure protocols like `https` are accepted. This is required to make sure
-no one can tamper with the download in flight.  
+仅`https`接受像这样的安全协议。这是确保没有人可以篡改飞行中的下载所必需的。  
   
 ---|---  
   
-### Viewing and debugging toolchains
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sub:disable_auto_provision)[如何禁用自动配置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sub:disable_auto_provision)
 
-Gradle can display the list of all detected toolchains including their
-metadata.
+为了禁用自动配置，可以使用`org.gradle.java.installations.auto-download`Gradle属性：
 
-For example, to show all toolchains of a project, run:
+  * 要么使用开始gradle `-Porg.gradle.java.installations.auto-download=false`
 
-    
-    
-    gradle -q javaToolchains
+  * 或把`org.gradle.java.installations.auto-download=false`成一个`gradle.properties`文件。
 
-Output of **`gradle -q javaToolchains`**
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:custom_loc)[自定义工具链位置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:custom_loc)
 
-    
-    
-    > gradle -q javaToolchains
-    
-     + Options
-         | Auto-detection:     Enabled
-         | Auto-download:      Enabled
-    
-     + AdoptOpenJDK 1.8.0_242
-         | Location:           /Users/username/myJavaInstalls/8.0.242.hs-adpt/jre
-         | Language Version:   8
-         | Vendor:             AdoptOpenJDK
-         | Is JDK:             true
-         | Detected by:        system property 'org.gradle.java.installations.paths'
-    
-     + OpenJDK 15-ea
-         | Location:           /Users/username/.sdkman/candidates/java/15.ea.21-open
-         | Language Version:   15
-         | Vendor:             AdoptOpenJDK
-         | Is JDK:             true
-         | Detected by:        SDKMAN!
-    
-     + OpenJDK 16
-         | Location:           /Users/user/customJdks/16.ea.20-open
-         | Language Version:   16
-         | Vendor:             AdoptOpenJDK
-         | Is JDK:             true
-         | Detected by:        environment variable 'JDK16'
-    
-     + Oracle JDK 1.7.0_80
-         | Location:           /Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre
-         | Language Version:   7
-         | Vendor:             Oracle
-         | Is JDK:             true
-         | Detected by:        macOS java_home
+如果自动检测本地工具链不足或被禁用，则可以通过其他方法让Gradle知道已安装的工具链。
 
-This can help to debug which toolchains are available to the build, how they
-are detected and what kind of metadata Gradle knows about those toolchains.
-
-### How to disable auto provisioning
-
-In order to disable auto-provisioning, you can use the
-`org.gradle.java.installations.auto-download` Gradle property:
-
-  * Either start gradle using `-Porg.gradle.java.installations.auto-download=false`
-
-  * Or put `org.gradle.java.installations.auto-download=false` into a `gradle.properties` file.
-
-## Custom Toolchain locations
-
-If auto-detecting local toolchains is not sufficient or disabled, there are
-additional ways you can let Gradle know about installed toolchains.
-
-If your setup already provides environment variables pointing to installed
-JVMs, you can also let Gradle know about which environment variables to take
-into account. Assuming the environment variables `JDK8` and `JRE14` point to
-valid java installations, the following instructs Gradle to resolve those
-environment variables and consider those installations when looking for a
-matching toolchain.
+如果您的设置已经提供了指向已安装的JVM的环境变量，则还可以让Gradle知道要考虑哪些环境变量。假设环境变量`JDK8`并`JRE14`指向有效的Java安装，以下内容指示Gradle在寻找匹配的工具链时解析这些环境变量并考虑这些安装。
 
     
     
-    org.gradle.java.installations.fromEnv=JDK8,JRE14
+    org.gradle.java.installations.fromEnv = JDK8，JRE14
 
-Additionally, you can provide a comma-separated list of paths to specific
-installations using the `org.gradle.java.installations.paths` property. For
-example, using the following in your `gradle.properties` will let Gradle know
-which directories to look at when detecting JVMs. Gradle will treat these
-directories as possible installations but will not descend into any nested
-directories.
+另外，您可以使用该`org.gradle.java.installations.paths`属性提供以逗号分隔的特定安装路径的列表。例如，在您的代码中使用以下命令`gradle.properties`可使Gradle知道检测JVM时要查看的目录。Gradle会将这些目录视为可能的安装，但不会下降到任何嵌套目录中。
 
     
     
-    org.gradle.java.installations.paths=/custom/path/jdk1.8,/shared/jre11
+    org.gradle.java.installations.paths = / custom / path / jdk1.8，/ shared / jre11
 
-## Toolchains for plugin authors
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:plugins)[插件作者的工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html#sec:plugins)
 
-Custom tasks that require a tool from the JDK should expose a `Property<T>`
-with the desired tool as generic type. By injecting the `JavaToolchainService`
-in the plugin or task, it is also possible to wire a convention in those
-properties by obtaining the `JavaToolchainSpec` from the `java` extension on
-the project. The example below showcases how to use the default toolchain as
-convention while allowing users to individually configure the toolchain per
-task.
+需要JDK中的工具的自定义任务应将`Property<T>`带有所需工具的公开为通用类型。通过`JavaToolchainService`在插件或任务中注入，也可以通过`JavaToolchainSpec`从`java`项目扩展名中获取来在这些属性中连接约定。下面的示例展示了如何使用默认工具链作为约定，同时允许用户针对每个任务单独配置工具链。
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -733,48 +509,53 @@ build.gradle.kts
         })
     }
 
-**Docs**
+**文件**
 
-  * [User Manual](/userguide/userguide.html)
-  * [DSL Reference](/dsl/)
-  * [Release Notes](/release-notes.html)
-  * [Javadoc](/javadoc/)
+  * [用户手册](file:///userguide/userguide.html)
+  * [DSL参考](file:///dsl/)
+  * [发行说明](file:///release-notes.html)
+  * [Java文档](file:///javadoc/)
 
-**News**
+**新闻**
 
-  * [Blog](https://blog.gradle.org/)
-  * [Newsletter](https://newsletter.gradle.com/)
-  * [Twitter](https://twitter.com/gradle)
-  * [Status Page](https://status.gradle.com/)
+  * [博客](https://blog.gradle.org/)
+  * [通讯](https://newsletter.gradle.com/)
+  * [推特](https://twitter.com/gradle)
+  * [状态页](https://status.gradle.com/)
 
-**Products**
+**产品展示**
 
-  * [Build Scans](https://gradle.com/build-scans/)
-  * [Build Cache](https://gradle.com/build-cache/)
-  * [Enterprise Docs](https://gradle.com/enterprise/resources/)
+  * [构建扫描](https://gradle.com/build-scans/)
+  * [构建缓存](https://gradle.com/build-cache/)
+  * [企业文件](https://gradle.com/enterprise/resources/)
 
-**Get Help**
+**得到帮助**
 
-  * [Forums](https://discuss.gradle.org/c/help-discuss)
-  * [GitHub](https://github.com/gradle/)
-  * [Training](https://gradle.com/training/)
-  * [Services](https://gradle.org/services/)
+  * [论坛](https://discuss.gradle.org/c/help-discuss)
+  * [的GitHub](https://github.com/gradle/)
+  * [训练](https://gradle.com/training/)
+  * [服务](https://gradle.org/services/)
 
-##### Stay `UP-TO-DATE` on new features and news
+##### 随时`UP-TO-DATE`关注新功能和新闻
 
-By entering your email, you agree to our
-[Terms](https://gradle.com/legal/terms-of-service/) and [Privacy
-Policy](https://gradle.com/legal/privacy/), including receipt of emails. You
-can unsubscribe at any time.
+输入您的电子邮件，即表示您同意我们的[条款](https://gradle.com/legal/terms-of-
+service/)和[隐私政策](https://gradle.com/legal/privacy/)，包括接收电子邮件。您可以随时取消订阅。
 
-Subscribe
+订阅
 
-© [Gradle Inc.](https://gradle.com) 2020 All rights reserved.
+© [Gradle Inc.](https://gradle.com/) 2020年 版权所有。
 
-[ gradle ](/)
+[ gradle ](file:///)
 
-[Careers](https://gradle.com/careers/) |
-[Privacy](https://gradle.com/legal/privacy/) | [Terms of
-Service](https://gradle.com/legal/terms-of-service/) |
-[Contact](https://gradle.org/contact/)
+[招贤纳士](https://gradle.com/careers/)| [隐私](https://gradle.com/legal/privacy/)|
+[服务条款](https://gradle.com/legal/terms-of-service/)|
+[联系](https://gradle.org/contact/)
+
+![Google 翻译](./JVM项目的工具链_files/translate_24dp.png)
+
+# 原文
+
+提供更好的翻译建议
+
+* * *
 

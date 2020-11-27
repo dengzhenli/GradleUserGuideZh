@@ -1,279 +1,240 @@
 
 
-[ Gradle ](https://docs.gradle.org "Gradle Docs")
+[ Gradle ](https://docs.gradle.org/ "Gradle Docs")
 
-User Manual
+用户手册
 
-  * Community Open Community Menu
+  * 社区 Open Community Menu
 
-[ Community Home ](https://gradle.org/)
+[ 社区之家 ](https://gradle.org/)
 
-[ Community Forums ](https://discuss.gradle.org/)
+[ 社区论坛 ](https://discuss.gradle.org/)
 
-[ Community Plugins ](https://plugins.gradle.org)
+[ 社区插件 ](https://plugins.gradle.org/)
 
-  * [Training](https://gradle.com/training/)
-  * News Open Community Menu
+  * [训练](https://gradle.com/training/)
+  * 新闻 Open Community Menu
 
-[ Newsletter ](https://newsletter.gradle.com)
+[ 通讯 ](https://newsletter.gradle.com/)
 
-[ Blog ](https://blog.gradle.org)
+[ 博客 ](https://blog.gradle.org/)
 
-[ Twitter ](https://twitter.com/gradle)
+[ 推特 ](https://twitter.com/gradle)
 
-  * [Enterprise](https://gradle.com)
-  * [github](https://github.com/gradle/gradle "Gradle on GitHub")
+  * [企业](https://gradle.com/)
+  * [github](https://github.com/gradle/gradle "GitHub上的Gradle")
 
-  * [Docs Home](../userguide/userguide.html)
-  * [Samples](../samples/index.html)
-  * [Release Notes](../release-notes.html)
-  * Gradle DSLs and API
-    * [Javadoc](../javadoc/index.html?overview-summary.html)
-    * [Groovy DSL Reference](../dsl/index.html)
-    * [Groovy DSL Primer](../userguide/groovy_build_script_primer.html)
+  * [文件首页](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/userguide.html)
+  * [样品](file:///Users/dxs/temp/gradle-6.7.1/docs/samples/index.html)
+  * [发行说明](file:///Users/dxs/temp/gradle-6.7.1/docs/release-notes.html)
+  * [Gradle API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#gradle-api)
+    * [Java文档](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/index.html?overview-summary.html)
+    * [Groovy DSL参考](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/index.html)
+    * [Groovy DSL Primer](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/groovy_build_script_primer.html)
     * [Kotlin DSL API](https://gradle.github.io/kotlin-dsl-docs/api/)
-    * [Kotlin DSL Primer](../userguide/kotlin_dsl.html)
-    * [Groovy to Kotlin DSL Migration](../userguide/migrating_from_groovy_to_kotlin_dsl.html)
+    * [Kotlin DSL Primer](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/kotlin_dsl.html)
 
-### User Manual
+### 用户手册
 
-[ PDF ](../userguide/userguide.pdf)
+[ PDF格式 ](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/userguide.pdf)
 
-  * [What is Gradle?](../userguide/what_is_gradle.html)
-  * [Getting Started](../userguide/getting_started.html)
-  * [Installing Gradle](../userguide/installation.html)
-  * Upgrading Gradle...
-    * [version 6.X to latest](../userguide/upgrading_version_6.html)
-    * [version 5.X to 6.0](../userguide/upgrading_version_5.html)
-    * [version 4.X to 5.0](../userguide/upgrading_version_4.html)
-    * [Gradle's Feature Lifecycle](../userguide/feature_lifecycle.html)
-  * Migrating to Gradle...
-    * [from Maven](../userguide/migrating_from_maven.html)
-    * [from Ant](../userguide/migrating_from_ant.html)
-  * [Compatibility Notes](../userguide/compatibility.html)
-  * [Troubleshooting Builds](../userguide/troubleshooting.html)
+  * [什么是Gradle？](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/what_is_gradle.html)
+  * [入门](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/getting_started.html)
+  * [安装Gradle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html)
+  * [升级Gradle ...](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#upgrading-gradle)
+    * [version 6.X to latest](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_6.html)
+    * [version 5.X to 6.0](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html)
+    * [version 4.X to 5.0](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_4.html)
+    * [Gradle's Feature Lifecycle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/feature_lifecycle.html)
+  * [迁移至Gradle ...](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#migrating-to-gradle)
+    * [from Maven](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/migrating_from_maven.html)
+    * [from Ant](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/migrating_from_ant.html)
+  * [相容性说明](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/compatibility.html)
+  * [对构建进行故障排除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/troubleshooting.html)
 
-### Running Gradle Builds
+### 运行Gradle构建
 
-  * Customizing Execution
-    * [Configuring the Build Environment](../userguide/build_environment.html)
-    * [Configuring the Gradle Daemon](../userguide/gradle_daemon.html)
-    * [Using Initialization Scripts](../userguide/init_scripts.html)
-  * [Executing Multi-Project Builds](../userguide/intro_multi_project_builds.html)
-  * [Inspecting Gradle Builds](https://scans.gradle.com/)
-  * Using the Build Cache
-    * [Enabling and Configuring](../userguide/build_cache.html)
-    * [Why use the Build Cache?](../userguide/build_cache_use_cases.html)
-    * [Understanding the Impact](../userguide/build_cache_performance.html)
-    * [Learning Basic Concepts](../userguide/build_cache_concepts.html)
-    * [Caching Java Project](../userguide/caching_java_projects.html)
-    * [Caching Android Project](../userguide/caching_android_projects.html)
-    * [Debugging Caching Issues](../userguide/build_cache_debugging.html)
-    * [Troubleshooting](../userguide/common_caching_problems.html)
-  * Optimizing Build Times
-    * [Improving Performance of Gradle Builds](../userguide/performance.html)
-    * [Using the Configuration Cache](../userguide/configuration_cache.html)
+  * [自定义执行](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#customizing-execution)
+    * [Configuring the Build Environment](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_environment.html)
+    * [Configuring the Gradle Daemon](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html)
+    * [Using Initialization Scripts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/init_scripts.html)
+  * [执行多项目构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/intro_multi_project_builds.html)
+  * [检查Gradle构建](https://scans.gradle.com/)
+  * [优化构建时间](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#optimizing-build-performance)
+    * [Build Performance Guide](https://guides.gradle.org/performance/)
+    * [Enabling and Configuring the Build Cache](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_cache.html)
+    * [Using the Configuration Cache](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/configuration_cache.html)
 
-### Authoring Gradle Builds
+### 编写Gradle构建
 
-  * Learning the Basics
-    * [Writing Build Scripts](../userguide/tutorial_using_tasks.html)
-    * [Working with Tasks](../userguide/more_about_tasks.html)
-    * [Learning More About Build Scripts](../userguide/writing_build_scripts.html)
-    * [Working with Files](../userguide/working_with_files.html)
-    * [Using Gradle Plugins](../userguide/plugins.html)
-    * [Understanding the Build Lifecycle](../userguide/build_lifecycle.html)
-    * [Working with Logging](../userguide/logging.html)
-    * [Avoiding Traps](../userguide/potential_traps.html)
-  * Structuring Individual Builds
-    * [Creating a Basic Multi-Project Build](../userguide/multi_project_builds.html)
-    * [Declaring Dependencies between Subprojects](../userguide/declaring_dependencies_between_subprojects.html)
-    * [Sharing Build Logic between Subprojects](../userguide/sharing_build_logic_between_subprojects.html)
-    * [Fine Tuning the Project Layout](../userguide/fine_tuning_project_layout.html)
-    * [Understanding Configuration and Execution](../userguide/multi_project_configuration_and_execution.html)
-  * Structuring Software Products
-    * [Structuring large Projects](../userguide/structuring_software_products.html)
-    * [Tweaking Project Structure](../userguide/structuring_software_products_details.html)
-    * [Composing Builds](../userguide/composite_builds.html)
-  * Authoring Sustainable Builds
-    * [Organizing Build Logic](../userguide/organizing_gradle_projects.html)
-    * [Following Best Practices](../userguide/authoring_maintainable_build_scripts.html)
-  * Advanced Techniques
-    * [Testing a Build with TestKit](../userguide/test_kit.html)
-    * [Using Ant from Gradle](../userguide/ant.html)
+  * [学习基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#learning-the-basics)
+    * [Introducing the Basics of Build Scripts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/tutorial_using_tasks.html)
+    * [Working with Tasks](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/more_about_tasks.html)
+    * [Learning More About Build Scripts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/writing_build_scripts.html)
+    * [Working with Files](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/working_with_files.html)
+    * [Using Gradle Plugins](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html)
+    * [Understanding the Build Lifecycle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_lifecycle.html)
+    * [Working with Logging](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/logging.html)
+    * [Avoiding Traps](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/potential_traps.html)
+  * [创作多项目构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#authoring-multi-project-builds)
+    * [Creating a Basic Multi-Project Build](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_builds.html)
+    * [Declaring Dependencies between Subprojects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_dependencies_between_subprojects.html)
+    * [Sharing Build Logic between Subprojects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/sharing_build_logic_between_subprojects.html)
+    * [Fine Tuning the Project Layout](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/fine_tuning_project_layout.html)
+    * [Understanding Configuration and Execution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_configuration_and_execution.html)
+  * [创作可持续建筑](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#authoring-sustainable-builds)
+    * [Organizing Build Logic](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/organizing_gradle_projects.html)
+    * [Following Best Practices](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/authoring_maintainable_build_scripts.html)
+  * [先进技术](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#advanced-techniques)
+    * [Developing Parallel Tasks](https://guides.gradle.org/using-the-worker-api/)
+    * [Testing a Build with TestKit](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/test_kit.html)
+    * [Using Ant from Gradle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/ant.html)
 
-### Authoring JVM Builds
+### 编写JVM构建
 
-  * [Building Java & JVM projects](../userguide/building_java_projects.html)
-  * [Testing Java & JVM projects](../userguide/java_testing.html)
-  * [Toolchains for Java projects](../userguide/toolchains.html)
-  * [Managing Dependencies](../userguide/dependency_management_for_java_projects.html)
-  * JVM Plugins
-    * [Java Library Plugin](../userguide/java_library_plugin.html)
-    * [Java Application Plugin](../userguide/application_plugin.html)
-    * [Java Platform Plugin](../userguide/java_platform_plugin.html)
-    * [Groovy Plugin](../userguide/groovy_plugin.html)
-    * [Scala Plugin](../userguide/scala_plugin.html)
+  * [构建Java和JVM项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_java_projects.html)
+  * [测试Java和JVM项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html)
+  * [Java项目的工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html)
+  * [管理依赖关系](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_management_for_java_projects.html)
+  * [JVM插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#jvm-plugins)
+    * [Java Library Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_library_plugin.html)
+    * [Java Application Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/application_plugin.html)
+    * [Java Platform Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_platform_plugin.html)
+    * [Groovy Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/groovy_plugin.html)
+    * [Scala Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/scala_plugin.html)
 
-### Authoring C++/Swift Builds
+### 编写C ++ / Swift构建
 
-  * [Building C++ projects](../userguide/building_cpp_projects.html)
-  * [Testing C++ projects](../userguide/cpp_testing.html)
-  * [Building Swift projects](../userguide/building_swift_projects.html)
-  * [Testing Swift projects](../userguide/swift_testing.html)
+  * [构建C ++项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_cpp_projects.html)
+  * [测试C ++项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/cpp_testing.html)
+  * [建立Swift项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_swift_projects.html)
+  * [测试Swift项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/swift_testing.html)
 
-### Working with Dependencies
+### 使用依赖项
 
-  * Learning the Basics
-    * [What is Dependency Management?](../userguide/core_dependency_management.html)
-    * [Declaring Repositories](../userguide/declaring_repositories.html)
-    * [Declaring Dependencies](../userguide/declaring_dependencies.html)
-    * [Understanding Library and Application Differences](../userguide/library_vs_application.html)
-    * [Viewing and Debugging Dependencies](../userguide/viewing_debugging_dependencies.html)
-    * [Understanding Resolution](../userguide/dependency_resolution.html)
-    * [Verifying dependencies](../userguide/dependency_verification.html)
-  * Declaring Versions
-    * [Declaring Versions and Ranges](../userguide/single_versions.html)
-    * [Declaring Rich Versions](../userguide/rich_versions.html)
-    * [Handling Changing Versions](../userguide/dynamic_versions.html)
-    * [Locking Versions](../userguide/dependency_locking.html)
-  * Controlling Transitives
-    * [Upgrading Versions](../userguide/dependency_constraints.html)
-    * [Downgrading and Excluding](../userguide/dependency_downgrade_and_exclude.html)
-    * [Sharing Versions](../userguide/platforms.html)
-    * [Aligning Dependencies](../userguide/dependency_version_alignment.html)
-    * [Handling Mutually Exclusive Dependencies](../userguide/dependency_capability_conflict.html)
-    * [Fixing Metadata](../userguide/component_metadata_rules.html)
-    * [Customizing Resolution](../userguide/resolution_rules.html)
-    * [Preventing accidental upgrades](../userguide/resolution_strategy_tuning.html)
-  * Producing and Consuming Variants of Libraries
-    * [Declaring Capabilities of a Library](../userguide/component_capabilities.html)
-    * [Modeling Feature Variants and Optional Dependencies](../userguide/feature_variants.html)
-    * [Understanding Variant Selection](../userguide/variant_model.html)
-    * [Declaring Variant Attributes](../userguide/variant_attributes.html)
-    * [Sharing Outputs of Projects](../userguide/cross_project_publications.html)
-    * [Transforming Artifacts](../userguide/artifact_transforms.html)
-  * Publishing Libraries
-    * [Setting up Publishing](../userguide/publishing_setup.html)
-    * [Understanding Gradle Module Metadata](../userguide/publishing_gradle_module_metadata.html)
-    * [Signing Artifacts](../userguide/publishing_signing.html)
-    * [Customizing Publishing](../userguide/publishing_customization.html)
-    * [Maven Publish Plugin](../userguide/publishing_maven.html)
-    * [Ivy Publish Plugin](../userguide/publishing_ivy.html)
-  * [Terminology](../userguide/dependency_management_terminology.html)
+  * [学习基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#learning-the-basics-dependency-management)
+    * [What is Dependency Management?](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/core_dependency_management.html)
+    * [Declaring Repositories](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_repositories.html)
+    * [Declaring Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_dependencies.html)
+    * [Understanding Library and Application Differences](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/library_vs_application.html)
+    * [Viewing and Debugging Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/viewing_debugging_dependencies.html)
+    * [Understanding Resolution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_resolution.html)
+    * [Verifying dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_verification.html)
+  * [声明版本](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#declaring-dependency-versions)
+    * [Declaring Versions and Ranges](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/single_versions.html)
+    * [Declaring Rich Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/rich_versions.html)
+    * [Handling Changing Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dynamic_versions.html)
+    * [Locking Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_locking.html)
+  * [控制翻译](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#controlling-transitive-dependencies)
+    * [Upgrading Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_constraints.html)
+    * [Downgrading and Excluding](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_downgrade_and_exclude.html)
+    * [Sharing Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/platforms.html)
+    * [Aligning Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_version_alignment.html)
+    * [Handling Mutually Exclusive Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_capability_conflict.html)
+    * [Fixing Metadata](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/component_metadata_rules.html)
+    * [Customizing Resolution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/resolution_rules.html)
+    * [Preventing accidental upgrades](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/resolution_strategy_tuning.html)
+  * [图书馆的生产和消费形式](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#modeling-features)
+    * [Declaring Capabilities of a Library](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/component_capabilities.html)
+    * [Modeling Feature Variants and Optional Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/feature_variants.html)
+    * [Understanding Variant Selection](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_model.html)
+    * [Declaring Variant Attributes](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_attributes.html)
+    * [Sharing Outputs of Projects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/cross_project_publications.html)
+    * [Transforming Artifacts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/artifact_transforms.html)
+  * [在多仓库环境中工作](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#multi-repo)
+    * [Composing Builds](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/composite_builds.html)
+  * [出版图书馆](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#publishing)
+    * [Setting up Publishing](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_setup.html)
+    * [Understanding Gradle Module Metadata](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_gradle_module_metadata.html)
+    * [Signing Artifacts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_signing.html)
+    * [Customizing Publishing](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_customization.html)
+    * [Maven Publish Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_maven.html)
+    * [Ivy Publish Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_ivy.html)
+  * [术语](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_management_terminology.html)
 
-### Extending Gradle
+### 扩展摇篮
 
-  * Developing Gradle Plugins
-    * [Starting Plugin Development](../userguide/custom_plugins.html)
-    * [Designing Plugins](../userguide/designing_gradle_plugins.html)
-    * [Implementing Plugins](../userguide/implementing_gradle_plugins.html)
-    * [Testing Plugins](../userguide/testing_gradle_plugins.html)
-    * [Publishing Plugins](../userguide/publishing_gradle_plugins.html)
-  * Developing Gradle Tasks
-    * [Writing Gradle Task Types](../userguide/custom_tasks.html)
-    * [Configuring Tasks Lazily](../userguide/lazy_configuration.html)
-    * [Avoiding Unnecessary Task Configuration](../userguide/task_configuration_avoidance.html)
-    * [Developing Parallel Tasks](../userguide/worker_api.html)
-  * [Writing Custom Gradle Types](../userguide/custom_gradle_types.html)
+  * [插件开发教程](https://gradle.org/guides/?q=Plugin%20Development)
+  * [编写Gradle任务类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_tasks.html)
+  * [编写Gradle插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_plugins.html)
+  * [编写自定义Gradle类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_gradle_types.html)
+  * [延迟配置任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/lazy_configuration.html)
+  * [使用避免任务配置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/task_configuration_avoidance.html)
 
-### Reference
+### 参考
 
-  * [Core Plugins](../userguide/plugin_reference.html)
-  * [Command-Line Interface](../userguide/command_line_interface.html)
-  * Gradle & Third-party Tools
-    * [Third-party Tools](../userguide/third_party_integration.html)
-    * [Jenkins](../userguide/jenkins.html)
-    * [TeamCity](../userguide/teamcity.html)
-    * [Travis CI](../userguide/travis-ci.html)
-  * [](../userguide/third_party_integration.html)
-  * [The Gradle Wrapper](../userguide/gradle_wrapper.html)
-  * [Gradle-managed Directories](../userguide/directory_layout.html)
+  * [核心插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugin_reference.html)
+  * [命令行界面](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/command_line_interface.html)
+  * [Gradle和第三方工具](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/third_party_integration.html)
+  * [摇篮包装](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_wrapper.html)
+  * [Gradle管理的目录](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/directory_layout.html)
 
-# Testing in Java & JVM projects
+# 在Java和JVM项目中进行测试
 
-version 6.9-20201126230040+0000
+version 6.7.1
 
-Contents
+内容
 
-  * The basics
-  * Test execution
-  * Test filtering
-  * Test reporting
-  * Test detection
-  * Test grouping
-  * Using JUnit 5
-  * Test execution order in TestNG
-  * Configuring integration tests
-  * Testing Java Modules
-  * Skipping the tests
-  * Forcing tests to run
-  * Debugging when running tests
-  * Using test fixtures
+  * [基础知识](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:java_testing_basics)
+  * [测试执行](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:test_execution)
+  * [测试过滤](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_filtering)
+  * [测试报告](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_reporting)
+  * [测试检测](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:test_detection)
+  * [测试分组](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_grouping)
+  * [使用JUnit 5](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#using_junit5)
+  * [TestNG中的测试执行顺序](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_execution_order)
+  * [配置集成测试](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:configuring_java_integration_tests)
+  * [测试Java模块](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:java_testing_modular)
+  * [跳过测试](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:skipping_java_tests)
+  * [强制测试运行](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:forcing_java_tests_to_run)
+  * [运行测试时进行调试](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:debugging_java_tests)
+  * [使用测试治具](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:java_test_fixtures)
 
-Testing on the JVM is a rich subject matter. There are many different testing
-libraries and frameworks, as well as many different types of test. All need to
-be part of the build, whether they are executed frequently or infrequently.
-This chapter is dedicated to explaining how Gradle handles differing
-requirements between and within builds, with significant coverage of how it
-integrates with the two most common testing frameworks:
-[JUnit](https://junit.org/) and [TestNG](https://testng.org/).
+在JVM上进行测试是一个很丰富的主题。有许多不同的测试库和框架，以及许多不同类型的测试。无论它们是频繁执行还是不频繁执行，所有这些都需要成为构建的一部分。本章致力于解释Gradle如何处理内部版本之间以及内部内部的不同需求，并广泛介绍了Gradle如何与两个最常见的测试框架[JUnit](https://junit.org/)和[TestNG](https://testng.org/)集成。
 
-It explains:
+它说明：
 
-  * Ways to control how the tests are run (Test execution)
+  * 控制测试运行方式的方法（[测试执行](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:test_execution)）
 
-  * How to select specific tests to run (Test filtering)
+  * 如何选择要运行的特定测试（[测试过滤](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_filtering)）
 
-  * What test reports are generated and how to influence the process (Test reporting)
+  * 生成什么测试报告以及如何影响过程（[测试报告](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_reporting)）
 
-  * How Gradle finds tests to run (Test detection)
+  * Gradle如何找到要运行的[测试](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:test_detection)（[测试检测](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:test_detection)）
 
-  * How to make use of the major frameworks' mechanisms for grouping tests together (Test grouping)
+  * 如何利用主要框架的机制将测试分组在一起（[测试分组](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_grouping)）
 
-But first, we look at the basics of JVM testing in Gradle.
+但是首先，我们看一下Gradle中JVM测试的基础。
 
-## The basics
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:java_testing_basics)[基础知识](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:java_testing_basics)
 
-All JVM testing revolves around a single task type:
-[Test](../dsl/org.gradle.api.tasks.testing.Test.html). This runs a collection
-of test cases using any supported test library — JUnit, JUnit Platform or
-TestNG — and collates the results. You can then turn those results into a
-report via an instance of the
-[TestReport](../dsl/org.gradle.api.tasks.testing.TestReport.html) task type.
+所有JVM测试都围绕一种任务类型：[Test](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.tasks.testing.Test.html)。这将使用任何受支持的测试库（JUnit，JUnit
+Platform或TestNG）运行一系列测试用例，并整理结果。然后，您可以通过[TestReport](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.tasks.testing.TestReport.html)任务类型的实例将这些结果转换为报告。
 
-In order to operate, the `Test` task type requires just two pieces of
-information:
+为了进行操作，`Test`任务类型仅需要两条信息：
 
-  * Where to find the compiled test classes (property: [Test.getTestClassesDirs()](../dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:testClassesDirs))
+  * 在哪里可以找到已编译的测试类（属性：[Test.getTestClassesDirs（）](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:testClassesDirs)）
 
-  * The execution classpath, which should include the classes under test as well as the test library that you're using (property: [Test.getClasspath()](../dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:classpath))
+  * 执行类路径，其中应包括被测类以及您正在使用的测试库（属性：[Test.getClasspath（）](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:classpath)）
 
-When you're using a JVM language plugin — such as the [Java
-Plugin](java_plugin.html#java_plugin) — you will automatically get the
-following:
+当您使用JVM语言插件（例如[Java插件）时](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_plugin.html#java_plugin)，您将自动获得以下信息：
 
-  * A dedicated `test` source set for unit tests
+  * `test`用于单元测试的专用源集
 
-  * A `test` task of type `Test` that runs those unit tests
+  * 一个`test`类型的任务`Test`运行这些单元测试
 
-The JVM language plugins use the source set to configure the task with the
-appropriate execution classpath and the directory containing the compiled test
-classes. In addition, they attach the `test` task to the `check` [lifecycle
-task](more_about_tasks.html#sec:lifecycle_tasks).
+JVM语言插件使用源集来配置具有适当执行类路径和包含已编译测试类的目录的任务。另外，他们将`test`任务附加到`check`
+[生命周期任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/more_about_tasks.html#sec:lifecycle_tasks)。
 
-It's also worth bearing in mind that the `test` source set automatically
-creates [corresponding dependency
-configurations](java_plugin.html#java_source_set_configurations) — of which
-the most useful are `testImplementation` and `testRuntimeOnly` — that the
-plugins tie into the `test` task's classpath.
+这也是考虑到值得铭记的是，`test`源集合自动创建[相应的依赖关系配置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_plugin.html#java_source_set_configurations)-其中最有用的是`testImplementation`和`testRuntimeOnly`-该插件扎入`test`任务的类路径。
 
-All you need to do in most cases is configure the appropriate compilation and
-runtime dependencies and add any necessary configuration to the `test` task.
-The following example shows a simple setup that uses JUnit 4.x and changes the
-maximum heap size for the tests' JVM to 1 gigabyte:
+在大多数情况下，您要做的就是配置适当的编译和运行时依赖项，并将任何必要的配置添加到`test`任务中。以下示例显示了一个简单的设置，该设置使用JUnit
+4.x，并将测试JVM的最大堆大小更改为1 GB：
 
-Example 1. A basic configuration for the 'test' task
+示例1.“测试”任务的基本配置
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -303,138 +264,88 @@ build.gradle.kts
         maxHeapSize = "1G"
     }
 
-The [Test](../dsl/org.gradle.api.tasks.testing.Test.html) task has many
-generic configuration options as well as several framework-specific ones that
-you can find described in
-[JUnitOptions](../javadoc/org/gradle/api/tasks/testing/junit/JUnitOptions.html),
-[JUnitPlatformOptions](../javadoc/org/gradle/api/tasks/testing/junitplatform/JUnitPlatformOptions.html)
-and
-[TestNGOptions](../javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html).
-We cover a significant number of them in the rest of the chapter.
+该[测试](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.tasks.testing.Test.html)任务有很多通用的配置选项，以及一些框架，具体的，你可以在找到描述[JUnitOptions](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/tasks/testing/junit/JUnitOptions.html)，[JUnitPlatformOptions](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/tasks/testing/junitplatform/JUnitPlatformOptions.html)和[TestNGOptions](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html)。在本章的其余部分中，我们将讨论很多。
 
-If you want to set up your own `Test` task with its own set of test classes,
-then the easiest approach is to create your own source set and `Test` task
-instance, as shown in Configuring integration tests.
+如果要`Test`使用自己的测试类集来设置自己的任务，那么最简单的方法是创建自己的源集和`Test`任务实例，如[配置集成测试中](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:configuring_java_integration_tests)所示。
 
-## Test execution
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:test_execution)[测试执行](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:test_execution)
 
-Gradle executes tests in a separate ('forked') JVM, isolated from the main
-build process. This prevents classpath pollution and excessive memory
-consumption for the build process. It also allows you to run the tests with
-different JVM arguments than the build is using.
+Gradle在独立于主构建过程的单独（“分叉”）JVM中执行测试。这样可以防止类路径污染和构建过程中过多的内存消耗。它还允许您使用与构建使用的JVM参数不同的JVM参数运行测试。
 
-You can control how the test process is launched via several properties on the
-`Test` task, including the following:
+您可以通过`Test`任务的多个属性来控制如何启动测试过程，包括以下内容：
 
-`maxParallelForks` — default: 1
+`maxParallelForks` —默认值：1
 
     
 
-You can run your tests in parallel by setting this property to a value greater
-than 1. This may make your test suites complete faster, particularly if you
-run them on a multi-core CPU. When using parallel test execution, make sure
-your tests are properly isolated from one another. Tests that interact with
-the filesystem are particularly prone to conflict, causing intermittent test
-failures.
+您可以通过将此属性设置为大于1的值来并行运行测试。这可能会使您的测试套件更快地完成，尤其是在多核CPU上运行它们时。使用并行测试执行时，请确保您的测试正确地相互隔离。与文件系统交互的测试特别容易发生冲突，从而导致间歇性的测试失败。
 
-Your tests can distinguish between parallel test processes by using the value
-of the `org.gradle.test.worker` property, which is unique for each process.
-You can use this for anything you want, but it's particularly useful for
-filenames and other resource identifiers to prevent the kind of conflict we
-just mentioned.
+您的测试可以通过使用`org.gradle.test.worker`属性值来区分并行测试过程，该属性值对于每个过程都是唯一的。您可以将其用于任何所需的内容，但是对于文件名和其他资源标识符尤其有用，它可以防止我们刚才提到的那种冲突。
 
-`forkEvery` — default: 0 (no maximum)
+`forkEvery` —默认值：0（无最大值）
 
     
 
-This property specifies the maximum number of test classes that Gradle should
-run on a test process before its disposed of and a fresh one created. This is
-mainly used as a way to manage leaky tests or frameworks that have static
-state that can't be cleared or reset between tests.
+此属性指定Gradle在处置之前应创建的新测试类的最大数量。这主要用作管理泄漏测试或框架的静态状态，这些静态状态无法在测试之间清除或重置。
 
-**Warning: a low value (other than 0) can severely hurt the performance of the
-tests**
+**警告：较低的值（非0）会严重损害测试的性能**
 
-`ignoreFailures` — default: false
+`ignoreFailures` —默认值：false
 
     
 
-If this property is `true`, Gradle will continue with the project's build once
-the tests have completed, even if some of them have failed. Note that, by
-default, the `Test` task always executes every test that it detects,
-irrespective of this setting.
+如果此属性为`true`，则在测试完成后，即使其中一些失败，Gradle也会继续进行项目的构建。请注意，默认情况下`Test`，无论此设置如何，任务始终执行其检测到的每个测试。
 
-`failFast` — (since Gradle 4.6) default: false
+`failFast` —（自Gradle 4.6起）默认值：false
 
     
 
-Set this to `true` if you want the build to fail and finish as soon as one of
-your tests fails. This can save a lot of time when you have a long-running
-test suite and is particularly useful when running the build on continuous
-integration servers. When a build fails before all tests have run, the test
-reports only include the results of the tests that have completed,
-successfully or not.
+`true`如果您希望构建失败并在其中一项测试失败后立即完成，则将其设置为。当您拥有长期运行的测试套件时，这可以节省大量时间，并且在连续集成服务器上运行构建时特别有用。如果在运行所有测试之前构建失败，则测试报告仅包括已成功完成或未成功完成的测试结果。
 
-You can also enable this behavior by using the `--fail-fast` command line
-option.
+您还可以通过使用`--fail-fast`命令行选项来启用此行为。
 
-`testLogging` — default: _not set_
+`testLogging`—默认值： _未设置_
 
     
 
-This property represents a set of options that control which test events are
-logged and at what level. You can also configure other logging behavior via
-this property. See
-[TestLoggingContainer](../javadoc/org/gradle/api/tasks/testing/logging/TestLoggingContainer.html)
-for more detail.
+此属性表示一组选项，用于控制记录哪些测试事件以及记录在哪个级别。您还可以通过此属性配置其他日志记录行为。有关更多详细信息，请参见[TestLoggingContainer](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/tasks/testing/logging/TestLoggingContainer.html)。
 
-See [Test](../dsl/org.gradle.api.tasks.testing.Test.html) for details on all
-the available configuration options.
+有关所有可用配置选项的详细信息，请参见[测试](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.tasks.testing.Test.html)。
 
 __ |
 
-The test process can exit unexpectedly if configured incorrectly. For
-instance, if the Java executable does not exist or an invalid JVM argument is
-provided, the test process will fail to start. Similarly, if a test makes
-programmatic changes to the test process, this can also cause unexpected
-failures.
+如果配置不正确，测试过程可能会意外退出。例如，如果Java可执行文件不存在或提供了无效的JVM参数，则测试过程将无法启动。同样，如果测试对测试过程进行程序化更改，这也会导致意外失败。
 
-For example, issues may occur if a
-`[SecurityManager](https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityManager.html)`
-is modified in a test because Gradle's internal messaging depends on
-reflection and socket communication, which may be disrupted if the permissions
-on the security manager change. In this particular case, you should restore
-the original `SecurityManager` after the test so that the gradle test worker
-process can continue to function.  
+例如，如果`[SecurityManager](https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityManager.html)`在测试中修改了a
+，则可能会出现问题，因为Gradle的内部消息传递取决于反射和套接字通信，如果安全管理器上的权限发生更改，则可能会中断该通信。在这种特殊情况下，您应该`SecurityManager`在测试后还原原始文件，以便gradle测试工作程序进程可以继续运行。  
   
 ---|---  
   
-## Test filtering
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_filtering)[测试过滤](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_filtering)
 
-It's a common requirement to run subsets of a test suite, such as when you're
-fixing a bug or developing a new test case. Gradle provides two mechanisms to
-do this:
+运行测试套件的子集是常见的要求，例如，当您修复错误或开发新的测试用例时。Gradle提供了两种机制来执行此操作：
 
-  * Filtering (the preferred option)
+  * 过滤（首选选项）
 
-  * Test inclusion/exclusion
+  * 测试包含/排除
 
-Filtering supersedes the inclusion/exclusion mechanism, but you may still come
-across the latter in the wild.
+过滤取代了包含/排除机制，但您仍然可能在野外遇到后者。
 
-With Gradle's test filtering you can select tests to run based on:
+使用Gradle的测试过滤，您可以根据以下条件选择要运行的测试：
 
-  * A fully-qualified class name or fully qualified method name, e.g. `org.gradle.SomeTest`, `org.gradle.SomeTest.someMethod`
+  * 完全限定的类名或完全限定的方法名，例如`org.gradle.SomeTest`，`org.gradle.SomeTest.someMethod`
 
-  * A simple class name or method name if the pattern starts with an upper-case letter, e.g. `SomeTest`, `SomeTest.someMethod` (since Gradle 4.7)
+  * 如果模式以大写字母开头，则为简单的类名或方法名，例如`SomeTest`，`SomeTest.someMethod`（自Gradle 4.7起）
 
-  * '*' wildcard matching
+  * '*'通配符匹配
 
-You can enable filtering either in the build script or via the `--tests`
-command-line option. Here's an example of some filters that are applied every
-time the build runs:
+您可以在构建脚本中或通过`--tests`命令行选项启用筛选。这是每次构建运行时都会应用的一些过滤器的示例：
 
-Example 2. Filtering tests in the build script
+示例2.在构建脚本中过滤测试
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -470,33 +381,22 @@ build.gradle.kts
         }
     }
 
-For more details and examples of declaring filters in the build script, please
-see the [TestFilter](../javadoc/org/gradle/api/tasks/testing/TestFilter.html)
-reference.
+有关在构建脚本中声明过滤器的更多详细信息和示例，请参见[TestFilter](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/tasks/testing/TestFilter.html)参考。
 
-The command-line option is especially useful to execute a single test method.
-When you use `--tests`, be aware that the inclusions declared in the build
-script are still honored. It is also possible to supply multiple `--tests`
-options, all of whose patterns will take effect. The following sections have
-several examples of using the command-line option.
+命令行选项对于执行单个测试方法特别有用。使用时`--tests`，请注意仍会尊重构建脚本中声明的包含。也可以提供多个`--tests`选项，所有选项都会生效。以下各节提供了几个使用命令行选项的示例。
 
 __ |
 
-Not all test frameworks play well with filtering. Some advanced, synthetic
-tests may not be fully compatible. However, the vast majority of tests and use
-cases work perfectly well with Gradle's filtering mechanism.  
+并不是所有的测试框架都可以很好地与过滤一起使用。某些高级的综合测试可能不完全兼容。但是，绝大多数测试和用例都可以与Gradle的过滤机制完美配合。  
   
 ---|---  
   
-The following two sections look at the specific cases of simple class/method
-names and fully-qualified names.
+以下两节介绍简单类/方法名称和完全限定名称的特殊情况。
 
-### Simple name pattern
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#simple_name_pattern)[简单名称模式](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#simple_name_pattern)
 
-Since 4.7, Gradle has treated a pattern starting with an uppercase letter as a
-simple class name, or a class name + method name. For example, the following
-command lines run either all or exactly one of the tests in the
-`SomeTestClass` test case, regardless of what package it's in:
+从4.7开始，Gradle将以大写字母开头的模式作为简单的类名或类名+方法名。例如，以下命令行运行测试用例中的所有`SomeTestClass`测试，也可以只运行其中的一个，而不管它位于哪个程序包中：
 
     
     
@@ -508,12 +408,11 @@ command lines run either all or exactly one of the tests in the
     
     gradle test --tests SomeTestClass.*someMethod*
 
-### Fully-qualified name pattern
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#full_qualified_name_pattern)[完全限定的名称模式](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#full_qualified_name_pattern)
 
-Prior to 4.7 or if the pattern doesn't start with an uppercase letter, Gradle
-treats the pattern as fully-qualified. So if you want to use the test class
-name irrespective of its package, you would use `--tests *.SomeTestClass`.
-Here are some more examples:
+在4.7之前，或者如果模式不是以大写字母开头，则Gradle会将模式视为完全合格。因此，如果要使用测试类名称而不考虑其包，请使用`--tests
+*.SomeTestClass`。这里还有更多示例：
 
     
     
@@ -541,42 +440,35 @@ Here are some more examples:
     # the second iteration of a parameterized test
     gradle test --tests '*ParameterizedTest.*[2]'
 
-Note that the wildcard '*' has no special understanding of the '.' package
-separator. It's purely text based. So `--tests *.SomeTestClass` will match any
-package, regardless of its 'depth'.
+请注意，通配符“ *”对“。”没有特殊的了解。包装分离器。它是纯粹基于文本的。因此`--tests
+*.SomeTestClass`将匹配任何程序包，无论其“深度”如何。
 
-You can also combine filters defined at the command line with [continuous
-build](command_line_interface.html#sec:continuous_build) to re-execute a
-subset of tests immediately after every change to a production or test source
-file. The following executes all tests in the 'com.mypackage.foo' package or
-subpackages whenever a change triggers the tests to run:
+您还可以将在命令行中定义的过滤器与[连续构建结合使用，](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/command_line_interface.html#sec:continuous_build)以在每次对生产或测试源文件进行更改后立即重新执行测试的子集。每当更改触发测试运行时，以下命令将执行“
+com.mypackage.foo”包或子包中的所有测试：
 
     
     
     gradle test --continuous --tests "com.mypackage.foo.*"
 
-## Test reporting
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_reporting)[测试报告](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_reporting)
 
-The `Test` task generates the following results by default:
+该`Test`任务默认情况下会生成以下结果：
 
-  * An HTML test report
+  * HTML测试报告
 
-  * XML test results in a format compatible with the Ant JUnit report task — one that is supported by many other tools, such as CI servers
+  * XML测试结果的格式与Ant JUnit报告任务兼容-许多其他工具（例如CI服务器）都支持该格式
 
-  * An efficient binary format of the results used by the `Test` task to generate the other formats
+  * `Test`任务用于生成其他格式的结果的有效二进制格式
 
-In most cases, you'll work with the standard HTML report, which automatically
-includes the results from _all_ your `Test` tasks, even the ones you
-explicitly add to the build yourself. For example, if you add a `Test` task
-for integration tests, the report will include the results of both the unit
-tests and the integration tests if both tasks are run.
+在大多数情况下，你会用标准的HTML报告，它将自动从结果中工作 _的所有_
+的`Test`任务，即使你明确地添加到构建自己的人。例如，如果您添加了一个`Test`用于集成测试的任务，则如果两个任务都运行，则报告将同时包含单元测试和集成测试的结果。
 
-Unlike with many of the testing configuration options, there are several
-project-level [convention properties that affect the test
-reports](java_plugin.html#sec:java_convention_properties). For example, you
-can change the destination of the test results and reports like so:
+与许多测试配置选项不同，有一些项目级别的[约定属性会影响测试报告](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_plugin.html#sec:java_convention_properties)。例如，您可以像这样更改测试结果和报告的目的地：
 
-Example 3. Changing the default test report and results directories
+例子3.更改默认的测试报告和结果目录
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -606,26 +498,23 @@ build.gradle.kts
         }
     }
 
-Output of **`gradle -q showDirs`**
+输出 **`gradle -q showDirs`**
 
     
     
     > gradle -q showDirs
-    my-reports
-    build/my-test-results
+    我的报告
+    建立/我的测试结果
 
-Follow the link to the convention properties for more details.
+单击链接到约定属性以获取更多详细信息。
 
-There is also a standalone
-[TestReport](../dsl/org.gradle.api.tasks.testing.TestReport.html) task type
-that you can use to generate a custom HTML test report. All it requires are a
-value for `destinationDir` and the test results you want included in the
-report. Here is a sample which generates a combined report for the unit tests
-from all subprojects:
+还有一种独立的[TestReport](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.tasks.testing.TestReport.html)任务类型，可用于生成自定义HTML测试报告。它所需要的只是一个值`destinationDir`以及要包含在报告中的测试结果。这是一个示例，可为所有子项目的单元测试生成组合报告：
 
-Example 4. Creating a unit test report for subprojects
+例子4.为子项目创建一个单元测试报告
 
-buildSrc/src/main/groovy/myproject.java-conventions.gradle
+`Groovy``Kotlin`
+
+buildSrc / src / main / groovy / myproject.java-conventions.gradle
 
     
     
@@ -726,225 +615,54 @@ build.gradle.kts
         (getTestResultDirs() as ConfigurableFileCollection).from(testReportData)
     }
 
-In this example, we use a convention plugin `myproject.java-conventions` to
-expose the test results from a project to Gradle's [variant aware dependency
-management engine](variant_model.html).
+在此示例中，我们使用约定插件`myproject.java-
+conventions`将项目的测试结果暴露给Gradle的[变体感知依赖管理引擎](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_model.html)。
 
-The plugin declares a consumable `binaryTestResultsElements` configuration
-that represents the binary test results of the `test` task. In the aggregation
-project's build file, we declare the `testReportData` configuration and depend
-on all of the projects that we want to aggregate the results from. Gradle will
-automatically select the binary test result variant from each of the
-subprojects instead of the project's jar file. Lastly, we add a `testReport`
-task that aggregates the test results from the `testResultsDirs` property,
-which contains all of the binary test results resolved from the
-`testReportData` configuration.
+该插件声明了一个耗材`binaryTestResultsElements`配置，该配置代表了该`test`任务的二进制测试结果。在聚合项目的构建文件中，我们声明`testReportData`配置并依赖于要从中聚合结果的所有项目。Gradle将从每个子项目中自动选择二进制测试结果变量，而不是从项目的jar文件中选择。最后，我们添加了一个`testReport`任务，该任务汇总了来自`testResultsDirs`属性的测试结果，其中包含从`testReportData`配置中解析出的所有二进制测试结果。
 
-You should note that the `TestReport` type combines the results from multiple
-test tasks and needs to aggregate the results of individual test classes. This
-means that if a given test class is executed by multiple test tasks, then the
-test report will include executions of that class, but it can be hard to
-distinguish individual executions of that class and their output.
+您应该注意，该`TestReport`类型合并了多个测试任务的结果，并且需要汇总各个测试类的结果。这意味着，如果给定的测试类由多个测试任务执行，则测试报告将包括该类的执行，但是很难区分该类的各个执行及其输出。
 
-### Communicating test results to CI servers and other tools via XML files
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:test_detection)[测试检测](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:test_detection)
 
-The Test tasks creates XML files describing the test results, in the “JUnit
-XML” pseudo standard. It is common for CI servers and other tooling to observe
-test results via these XML files.
+默认情况下，Gradle将运行它检测到的所有测试，这是通过检查编译的测试类来完成的。根据所使用的测试框架，此检测使用不同的标准。
 
-By default, the files are written to `$buildDir/test-results/$testTaskName`
-with a file per test class. The location can be changed for all test tasks of
-a project, or individually per test task.
+对于 _JUnit_ ，Gradle会扫描JUnit 3和4测试类。如果某个类符合以下条件，则将其视为JUnit测试：
 
-Example 5. Changing JUnit XML results location for all test tasks
+  * 最终继承自`TestCase`或`GroovyTestCase`
 
-build.gradle
+  * 带有注释 `@RunWith`
 
-    
-    
-    testResultsDirName = "$buildDir/junit-xml"
+  * 包含带有注解的方法`@Test`或超类
 
-build.gradle.kts
+对于 _TestNG_ ，Gradle扫描使用注释的方法`@Test`。
 
-    
-    
-    project.setProperty("testResultsDirName", "$buildDir/junit-xml")
+请注意，不执行抽象类。另外，请注意Gradle会将继承树扫描到测试类路径上的jar文件中。因此，如果这些JAR包含测试类，它们也将运行。
 
-With the above configuration, the XML files will be written to
-`$buildDir/junit-xml/$testTaskName`.
+如果你不想使用测试类的检测，你可以通过设置禁用它`scanForTestClasses`的性能[测试](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.tasks.testing.Test.html)到`false`。执行此操作时，测试任务仅使用`includes`和`excludes`属性来查找测试类。
 
-Example 6. Changing JUnit XML results location for a particular test task
-
-build.gradle
-
-    
-    
-    test {
-        reports {
-            junitXml.outputLocation.set(layout.buildDirectory.dir("test-junit-xml"))
-        }
-    }
-
-build.gradle.kts
-
-    
-    
-    tasks.test {
-        reports {
-            junitXml.outputLocation.set(layout.buildDirectory.dir("test-junit-xml"))
-        }
-    }
-
-With the above configuration, the XML files for the `test` task will be
-written to `$buildDir/test-results/test-junit-xml`. The location of the XML
-files for other test tasks will be unchanged.
-
-#### Configuration options
-
-The content of the XML files can also be configured to convey the results
-differently, by configuring the
-[JUnitXmlReport](../javadoc/org/gradle/api/tasks/testing/JUnitXmlReport.html)
-options.
-
-Example 7. Configuring how the results are conveyed
-
-build.gradle
-
-    
-    
-    test {
-        reports {
-            junitXml {
-                outputPerTestCase = true // defaults to false
-                mergeReruns = true // defaults to false
-            }
-        }
-    }
-
-build.gradle.kts
-
-    
-    
-    tasks.test {
-        reports {
-            junitXml.apply {
-                isOutputPerTestCase = true // defaults to false
-                mergeReruns.set(true) // defaults to false
-            }
-        }
-    }
-
-##### outputPerTestCase
-
-The `outputPerTestCase` option, when enabled, associates any output logging
-generated during a test case to that test case in the results. When disabled
-(the default) output is associated with the test class as whole and not the
-individual test cases (e.g. test methods) that produced the logging output.
-Most modern tools that observe JUnit XML files support the “output per test
-case” format.
-
-If you are using the XML files to communicate test results, it is recommended
-to enable this option as it provides more useful reporting.
-
-##### mergeReruns
-
-When `mergeReruns` is enabled, if a test fails but is then retried and
-succeeds, its failures will be recorded as `<flakyFailure>` instead of
-`<failure>`, within one `<testcase>`. This is effectively the reporting
-produced by the [surefire plugin of Apache
-Maven™](https://maven.apache.org/components/surefire/maven-surefire-
-plugin/examples/rerun-failing-tests.html) when enabling reruns. If your CI
-server understands this format, it will indicate that the test was flaky. If
-it does not, it will indicate that the test succeeded as it will ignore the
-`<flakyFailure>` information. If the test does not succeed (i.e. it fails for
-every retry), it will be indicated as having failed whether your tool
-understands this format or not.
-
-When `mergeReruns` is disabled (the default), each execution of a test will be
-listed as a separate test case.
-
-If you are using [build scans](https://scans.gradle.com) or [Gradle
-Enterprise](https://gradle.com/gradle-enterprise-solution-overview/failure-
-analytics/), flaky tests will be detected regardless of this setting.
-
-Enabling this option is especially useful when using a CI tool that uses the
-XML test results to determine build failure instead of relying on Gradle's
-determination of whether the build failed or not, and you wish to not consider
-the build failed if all failed tests passed when retried. This is the case for
-the Jenkins CI server and its [JUnit
-plugin](https://plugins.jenkins.io/junit/). With `mergeReruns` enabled, tests
-that pass-on-retry will no longer cause this Jenkins plugin to consider the
-build to have failed. However, failed test executions will be omitted from the
-Jenkins test result visualizations as it does not consider `<flakyFailure>`
-information. The separate [Flaky Test Handler Jenkins
-plugin](https://plugins.jenkins.io/flaky-test-handler) can be used in addition
-to the JUnit Jenkins plugin to have such “flaky failures” also be visualized.
-
-Tests are grouped and merged based on their reported name. When using any kind
-of test parameterization that affects the reported test name, or any other
-kind of mechanism that produces a potentially dynamic test name, care should
-be taken to ensure that the test name is stable and does not unnecessarily
-change.
-
-Enabling the `mergeReruns` option does not add any retry/rerun functionality
-to test execution. Rerunning can be enabled by the test execution framework
-(e.g. JUnit's [@RepeatedTest](https://junit.org/junit5/docs/current/user-
-guide/#writing-tests-repeated-tests)), or via the separate [Test Retry Gradle
-plugin](https://github.com/gradle/test-retry-gradle-plugin).
-
-## Test detection
-
-By default, Gradle will run all tests that it detects, which it does by
-inspecting the compiled test classes. This detection uses different criteria
-depending on the test framework used.
-
-For _JUnit_ , Gradle scans for both JUnit 3 and 4 test classes. A class is
-considered to be a JUnit test if it:
-
-  * Ultimately inherits from `TestCase` or `GroovyTestCase`
-
-  * Is annotated with `@RunWith`
-
-  * Contains a method annotated with `@Test` or a super class does
-
-For _TestNG_ , Gradle scans for methods annotated with `@Test`.
-
-Note that abstract classes are not executed. In addition, be aware that Gradle
-scans up the inheritance tree into jar files on the test classpath. So if
-those JARs contain test classes, they will also be run.
-
-If you don't want to use test class detection, you can disable it by setting
-the `scanForTestClasses` property on
-[Test](../dsl/org.gradle.api.tasks.testing.Test.html) to `false`. When you do
-that, the test task uses only the `includes` and `excludes` properties to find
-test classes.
-
-If `scanForTestClasses` is false and no include or exclude patterns are
-specified, Gradle defaults to running any class that matches the patterns
-`**/*Tests.class` and `**/*Test.class`, excluding those that match
-`**/Abstract*.class`.
+如果`scanForTestClasses`为false并且未指定包含或排除模式，则Gradle默认运行任何与模式`**/*Tests.class`和匹配的类，但`**/*Test.class`不包括与匹配的类`**/Abstract*.class`。
 
 __ |
 
-With [JUnit Platform](http://junit.org/junit5/docs/current/user-guide), only
-`includes` and `excludes` are used to filter test classes —
-`scanForTestClasses` has no effect.  
+对于[JUnit Platform](http://junit.org/junit5/docs/current/user-
+guide)，仅`includes`和`excludes`用于过滤测试类-`scanForTestClasses`无效。  
   
 ---|---  
   
-## Test grouping
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_grouping)[测试分组](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_grouping)
 
-JUnit, JUnit Platform and TestNG allow sophisticated groupings of test
-methods.
+JUnit，JUnit Platform和TestNG允许对测试方法进行复杂的分组。
 
-JUnit 4.8 introduced the concept of categories for grouping JUnit 4 tests
-classes and methods.[1]
-[Test.useJUnit(org.gradle.api.Action)](../dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:useJUnit\(org.gradle.api.Action\))
-allows you to specify the JUnit categories you want to include and exclude.
-For example, the following configuration includes tests in `CategoryA` and
-excludes those in `CategoryB` for the `test` task:
+JUnit 4.8引入了将JUnit 4测试类和方法分组的类别的概念。[
+[1](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#_footnotedef_1
+"查看脚注。") ]
+[Test.useJUnit（org.gradle.api.Action）](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:useJUnit\(org.gradle.api.Action\))允许您指定要包括和排除的JUnit类别。例如，以下配置在任务中包括测试`CategoryA`，但不包括测试：`CategoryB``test`
 
-Example 8. JUnit Categories
+例子5. JUnit类别
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -968,14 +686,15 @@ build.gradle.kts
         }
     }
 
-[JUnit Platform](http://junit.org/junit5/docs/current/user-guide) introduced
-[tagging](http://junit.org/junit5/docs/current/user-guide/#writing-tests-
-tagging-and-filtering) to replace categories. You can specify the
-included/excluded tags via
-[Test.useJUnitPlatform(org.gradle.api.Action)](../javadoc/org/gradle/api/tasks/testing/Test.html#useJUnitPlatform-
-org.gradle.api.Action-), as follows:
+[JUnit Platform](http://junit.org/junit5/docs/current/user-
+guide)引入了[标记](http://junit.org/junit5/docs/current/user-guide/#writing-tests-
+tagging-and-
+filtering)来替换类别。您可以通过[Test.useJUnitPlatform（org.gradle.api.Action）](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/tasks/testing/Test.html#useJUnitPlatform-
+org.gradle.api.Action-)指定包含/排除的标签，如下所示：
 
-Example 9. JUnit Platform Tags
+例子6. JUnit平台标签
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -999,13 +718,14 @@ build.gradle.kts
         }
     }
 
-The TestNG framework uses the concept of test groups for a similar effect.[2]
-You can configure which test groups to include or exclude during the test
-execution via the
-[Test.useTestNG(org.gradle.api.Action)](../dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:useTestNG\(org.gradle.api.Action\))
-setting, as seen here:
+TestNG框架使用测试组的概念来达到类似的效果。[
+[2](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#_footnotedef_2
+"查看脚注。")
+]您可以通过[Test.useTestNG（org.gradle.api.Action）](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:useTestNG\(org.gradle.api.Action\))设置配置在测试执行过程中包括或排除哪些测试组，如下所示：
 
-Example 10. Grouping TestNG tests
+例子7.分组TestNG测试
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1030,26 +750,28 @@ build.gradle.kts
         }
     }
 
-## Using JUnit 5
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#using_junit5)[使用JUnit
+5](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#using_junit5)
 
-[JUnit 5](http://junit.org/junit5) is the latest version of the well-known
-JUnit test framework. Unlike its predecessor, JUnit 5 is modularized and
-composed of several modules:
+[JUnit 5](http://junit.org/junit5)是著名的JUnit测试框架的最新版本。与之前的版本不同，JUnit
+5是模块化的，并且由几个模块组成：
 
     
     
-    JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage
+    JUnit 5 = JUnit平台+ JUnit Jupiter + JUnit Vintage
 
-The JUnit Platform serves as a foundation for launching testing frameworks on
-the JVM. JUnit Jupiter is the combination of the new [programming
-model](http://junit.org/junit5/docs/current/user-guide/#writing-tests) and
-[extension model](http://junit.org/junit5/docs/current/user-guide/#extensions)
-for writing tests and extensions in JUnit 5. JUnit Vintage provides a
-`TestEngine` for running JUnit 3 and JUnit 4 based tests on the platform.
+JUnit平台是在JVM上启动测试框架的基础。JUnit
+Jupiter是新[编程模型](http://junit.org/junit5/docs/current/user-guide/#writing-
+tests) 和[扩展模型](http://junit.org/junit5/docs/current/user-
+guide/#extensions)的组合，用于在JUnit 5中编写测试和扩展。JUnit
+Vintage提供了一种`TestEngine`在平台上运行基于JUnit 3和JUnit 4的测试的功能。
 
-The following code enables JUnit Platform support in `build.gradle`:
+以下代码在中启用JUnit Platform支持`build.gradle`：
 
-Example 11. Enabling JUnit Platform to run your tests
+例子8.启用JUnit Platform来运行测试
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1067,25 +789,24 @@ build.gradle.kts
         useJUnitPlatform()
     }
 
-See
-[Test.useJUnitPlatform()](../javadoc/org/gradle/api/tasks/testing/Test.html#useJUnitPlatform--)
-for more details.
+有关更多详细信息，请参见[Test.useJUnitPlatform（）](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/tasks/testing/Test.html#useJUnitPlatform--)。
 
 __ |
 
-There are some known limitations of using JUnit 5 with Gradle, for example
-that tests in static nested classes won't be discovered. These will be fixed
-in future version of Gradle. If you find more, please tell us at
-<https://github.com/gradle/gradle/issues/new>  
+将JUnit
+5与Gradle结合使用存在一些已知的局限性，例如，不会发现静态嵌套类中的测试。这些将在Gradle的未来版本中修复。如果您发现更多信息，请在[https://github.com/gradle/gradle/issues/new](https://github.com/gradle/gradle/issues/new)告诉我们[](https://github.com/gradle/gradle/issues/new)  
   
 ---|---  
   
-### Compiling and executing JUnit Jupiter tests
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#compiling_and_executing_junit_jupiter_tests)[编译和执行JUnit
+Jupiter测试](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#compiling_and_executing_junit_jupiter_tests)
 
-To enable JUnit Jupiter support in Gradle, all you need to do is add the
-following dependencies:
+要在Gradle中启用JUnit Jupiter支持，您需要做的就是添加以下依赖项：
 
-Example 12. JUnit Jupiter dependencies
+例子9. JUnit Jupiter依赖
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1105,15 +826,18 @@ build.gradle.kts
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     }
 
-You can then put your test cases into _src/test/java_ as normal and execute
-them with `gradle test`.
+然后，您可以像平常一样将测试用例放入 _src / test / java中_ ，并使用执行它们`gradle test`。
 
-### Executing legacy tests with JUnit Vintage
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#executing_legacy_tests_with_junit_vintage)[使用JUnit
+Vintage执行旧式测试](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#executing_legacy_tests_with_junit_vintage)
 
-If you want to run JUnit 3/4 tests on JUnit Platform, or even mix them with
-Jupiter tests, you should add extra JUnit Vintage Engine dependencies:
+如果要在JUnit Platform上运行JUnit 3/4测试，或者甚至将它们与Jupiter测试混合使用，则应添加额外的JUnit Vintage
+Engine依赖项：
 
-Example 13. JUnit Vintage dependencies
+例子10. JUnit Vintage依赖
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1137,26 +861,23 @@ build.gradle.kts
         testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
     }
 
-In this way, you can use `gradle test` to test JUnit 3/4 tests on JUnit
-Platform, without the need to rewrite them.
+这样，您可以用来`gradle test`在JUnit Platform上测试JUnit 3/4测试，而无需重写它们。
 
-### Filtering test engine
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#filtering_test_engine)[过滤测试引擎](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#filtering_test_engine)
 
-JUnit Platform allows you to use different test engines. JUnit currently
-provides two `TestEngine` implementations out of the box: [junit-jupiter-
+JUnit Platform允许您使用不同的测试引擎。JUnit当前提供了两种`TestEngine`开箱即用的实现： [junit-jupiter-
 engine](https://junit.org/junit5/docs/current/api/org.junit.jupiter.engine/module-
-summary.html) and [junit-vintage-
+summary.html)和[junit-vintage-
 engine](https://junit.org/junit5/docs/current/api/org.junit.vintage.engine/module-
-summary.html). You can also write and plug in your own `TestEngine`
-implementation as documented
-[here](https://junit.org/junit5/docs/current/user-guide/#launcher-api-engines-
-custom).
+summary.html)。您还可以`TestEngine`按照[此处所述](https://junit.org/junit5/docs/current/user-
+guide/#launcher-api-engines-custom)编写和插入自己的实现。
 
-By default, all test engines on the test runtime classpath will be used. To
-control specific test engine implementations explicitly, you can add the
-following setting to your build script:
+默认情况下，将使用测试运行时类路径上的所有测试引擎。要显式控制特定的测试引擎实现，可以将以下设置添加到构建脚本：
 
-Example 14. Filter specific engines
+例子11.过滤特定引擎
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1180,30 +901,23 @@ build.gradle.kts
         }
     }
 
-## Test execution order in TestNG
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_execution_order)[TestNG中的测试执行顺序](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#test_execution_order)
 
-TestNG allows explicit control of the execution order of tests when you use a
-_testng.xml_ file. Without such a file — or an equivalent one configured by
-[TestNGOptions.getSuiteXmlBuilder()](../javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html#getSuiteXmlBuilder--)
-— you can't specify the test execution order. However, what you _can_ do is
-control whether all aspects of a test — including its associated `@BeforeXXX`
-and `@AfterXXX` methods, such as those annotated with `@Before/AfterClass` and
-`@Before/AfterMethod` — are executed before the next test starts. You do this
-by setting the
-[TestNGOptions.getPreserveOrder()](../javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html#getPreserveOrder--)
-property to `true`. If you set it to `false`, you may encounter scenarios in
-which the execution order is something like: `TestA.doBeforeClass()` ->
-`TestB.doBeforeClass()` -> `TestA` tests.
+当您使用 _testng.xml_
+文件时，TestNG允许显式控制测试的执行顺序。没有这样的文件（或由[TestNGOptions.getSuiteXmlBuilder（）](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html#getSuiteXmlBuilder--)配置的等效文件[）](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html#getSuiteXmlBuilder--)，您将无法指定测试执行顺序。但是，您
+_可以_ 做的是控制
+在下一个测试开始之前是否执行了测试的所有方面，包括其关联的方法`@BeforeXXX`和`@AfterXXX`方法，例如用`@Before/AfterClass`和注释的那些方法`@Before/AfterMethod`。您可以通过将[TestNGOptions.getPreserveOrder（）](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html#getPreserveOrder--)属性设置为来实现`true`。如果你把它设置为`false`，您可能会遇到的情况，其中执行顺序是这样的：`TestA.doBeforeClass()`→交通`TestB.doBeforeClass()`→交通`TestA`测试。
 
-While preserving the order of tests is the default behavior when directly
-working with _testng.xml_ files, the [TestNG
-API](https://jitpack.io/com/github/cbeust/testng/master/javadoc/org/testng/TestNG.html)
-that is used by Gradle's TestNG integration executes tests in unpredictable
-order by default.[3] The ability to preserve test execution order was
-introduced with TestNG version 5.14.5. Setting the `preserveOrder` property to
-`true` for an older TestNG version will cause the build to fail.
+直接使用 _testng.xml_ 文件时，保留测试顺序是默认行为，而Gradle的TestNG集成所使用的[TestNG
+API](https://jitpack.io/com/github/cbeust/testng/master/javadoc/org/testng/TestNG.html)默认以不可预测的顺序执行测试。[
+[3](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#_footnotedef_3
+"查看脚注。") ]
+TestNG版本5.14.5引入了保留测试执行顺序的功能。将`preserveOrder`属性设置`true`为较旧的TestNG版本将导致构建失败。
 
-Example 15. Preserving order of TestNG tests
+例子12.保留TestNG测试的顺序
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1225,21 +939,16 @@ build.gradle.kts
         }
     }
 
-The `groupByInstance` property controls whether tests should be grouped by
-instance rather than by class. The [TestNG
-documentation](http://testng.org/doc/documentation-main.html#dependencies-
-with-annotations) explains the difference in more detail, but essentially, if
-you have a test method `A()` that depends on `B()`, grouping by instance
-ensures that each A-B pairing, e.g. `B(1)`-`A(1)`, is executed before the next
-pairing. With group by class, all `B()` methods are run and then all `A()`
-ones.
+该`groupByInstance`属性控制测试是否应按实例而不是按类别分组。在[TestNG的文档](http://testng.org/doc/documentation-
+main.html#dependencies-with-
+annotations)详细解释了区别，但本质上，如果你有一个测试方法`A()`依赖于`B()`，每个AB配对，例如，通过例如确保分组`B(1)`\-
+`A(1)`，在下一配对之前执行。通过按组分组，所有`B()`方法都将运行，然后所有方法都将运行`A()`。
 
-Note that you typically only have more than one instance of a test if you're
-using a data provider to parameterize it. Also, grouping tests by instances
-was introduced with TestNG version 6.1. Setting the `groupByInstances`
-property to `true` for an older TestNG version will cause the build to fail.
+请注意，如果您使用数据提供程序对其进行参数化，则通常只有一个以上的测试实例。此外，TestNG版本6.1引入了按实例对测试进行分组的功能。将`groupByInstances`属性设置`true`为较旧的TestNG版本将导致构建失败。
 
-Example 16. Grouping TestNG tests by instances
+例子13.按实例对TestNG测试进行分组
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1261,44 +970,37 @@ build.gradle.kts
         }
     }
 
-### TestNG parameterized methods and reporting
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#testNgParameterizedReporting)[TestNG参数化方法和报告](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#testNgParameterizedReporting)
 
-TestNG supports [parameterizing test
-methods](http://testng.org/doc/documentation-main.html#parameters), allowing a
-particular test method to be executed multiple times with different inputs.
-Gradle includes the parameter values in its reporting of the test method
-execution.
+TestNG支持[参数化测试方法](http://testng.org/doc/documentation-
+main.html#parameters)，允许使用不同的输入多次执行特定的测试方法。Gradle在其测试方法执行的报告中包括参数值。
 
-Given a parameterized test method named `aTestMethod` that takes two
-parameters, it will be reported with the name
-`aTestMethod(toStringValueOfParam1, toStringValueOfParam2)`. This makes it
-easy to identify the parameter values for a particular iteration.
+给定名为的参数化测试方法`aTestMethod`，该方法带有两个参数，将以name报告`aTestMethod(toStringValueOfParam1,
+toStringValueOfParam2)`。这使得识别特定迭代的参数值变得​​容易。
 
-## Configuring integration tests
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:configuring_java_integration_tests)[配置集成测试](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:configuring_java_integration_tests)
 
-A common requirement for projects is to incorporate integration tests in one
-form or another. Their aim is to verify that the various parts of the project
-are working together properly. This often means that they require special
-execution setup and dependencies compared to unit tests.
+项目的常见要求是以一种或另一种形式合并集成测试。他们的目的是验证项目的各个部分是否正常工作。与单元测试相比，这通常意味着它们需要特殊的执行设置和依赖性。
 
-The simplest way to add integration tests to your build is by taking these
-steps:
+将集成测试添加到构建中的最简单方法是采取以下步骤：
 
-  1. Create a new [source set](building_java_projects.html#sec:java_source_sets) for them
+  1. 为他们创建一个新的[源集](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_java_projects.html#sec:java_source_sets)
 
-  2. Add the dependencies you need to the appropriate configurations for that source set
+  2. 将所需的依赖项添加到该源集的适当配置中
 
-  3. Configure the compilation and runtime classpaths for that source set
+  3. 为该源集配置编译和运行时类路径
 
-  4. Create a task to run the integration tests
+  4. 创建任务以运行集成测试
 
-You may also need to perform some additional configuration depending on what
-form the integration tests take. We will discuss those as we go.
+您可能还需要执行一些其他配置，具体取决于集成测试采用的形式。我们将在讨论过程中进行讨论。
 
-Let's start with a practical example that implements the first three steps in
-a build script, centered around a new source set `intTest`:
+让我们从一个实际示例开始，该示例以新的源集为中心在构建脚本中实现前三个步骤`intTest`：
 
-Example 17. Setting up working integration tests
+例子14.设置工作的集成测试
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1341,48 +1043,36 @@ build.gradle.kts
         intTestImplementation("junit:junit:4.13")
     }
 
-This will set up a new source set called `intTest` that automatically creates:
+这将设置一个新的源集`intTest`，该源集将自动创建：
 
-  * `intTestImplementation`, `intTestCompileOnly`, `intTestRuntimeOnly` configurations (and [a few others](java_plugin.html#java_source_set_configurations) that are less commonly needed)
+  * `intTestImplementation`，`intTestCompileOnly`，`intTestRuntimeOnly`配置（以及[其他一些](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_plugin.html#java_source_set_configurations)不那么常见的需要）
 
-  * A `compileIntTestJava` task that will compile all the source files under _src/intTest/java_
+  * 一`compileIntTestJava`，将编译下的所有源文件任务 _的src / intTest / JAVA_
 
-The example also does the following, not all of which you may need for your
-specific integration tests:
+该示例还执行以下操作，并非特定集成测试可能需要全部操作：
 
-  * Adds the production classes from the `main` source set to the compilation and runtime classpaths of the integration tests — `sourceSets.main.output` is a [file collection](working_with_files.html#sec:file_collections) of all the directories containing compiled production classes and resources
+  * 将生产类从`main`源集中添加到集成测试的编译和运行时类路径中-`sourceSets.main.output`是包含编译的生产类和资源的所有目录的[文件集合](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/working_with_files.html#sec:file_collections)
 
-  * Makes the `intTestImplementation` configuration extend from `implementation`, which means that all the declared dependencies of the production code also become dependencies of the integration tests
+  * 使`intTestImplementation`配置从扩展`implementation`，这意味着所有声明的生产代码依赖项也将成为集成测试的依赖项
 
-  * Does the same for the `intTestRuntimeOnly` configuration
+  * `intTestRuntimeOnly`配置是否相同
 
-In most cases, you want your integration tests to have access to the classes
-under test, which is why we ensure that those are included on the compilation
-and runtime classpaths in this example. But some types of test interact with
-the production code in a different way. For example, you may have tests that
-run your application as an executable and verify the output. In the case of
-web applications, the tests may interact with your application via HTTP. Since
-the tests don't need direct access to the classes under test in such cases,
-you don't need to add the production classes to the test classpath.
+在大多数情况下，您希望集成测试可以访问被测类，这就是为什么我们确保在本示例中将它们包括在编译和运行时类路径中的原因。但是某些类型的测试以不同的方式与生产代码交互。例如，您可能具有将应用程序作为可执行文件运行并测试输出的测试。对于Web应用程序，测试可能会通过HTTP与您的应用程序进行交互。由于在这种情况下测试不需要直接访问被测类，因此您无需将生产类添加到测试类路径中。
 
-Another common step is to attach all the unit test dependencies to the
-integration tests as well — via `intTestImplementation.extendsFrom
-testImplementation` — but that only makes sense if the integration tests
-require _all_ or nearly all the same dependencies that the unit tests have.
+另一个常见步骤是也通过`intTestImplementation.extendsFrom
+testImplementation`-将所有单元测试依赖项附加到集成测试中，但这仅在集成测试要求单元测试具有 _全部_ 或几乎所有相同的依赖项时才有意义。
 
-There are a couple of other facets of the example you should take note of:
+您还应注意该示例的其他两个方面：
 
-  * `+=` allows you to append paths and collections of paths to `compileClasspath` and `runtimeClasspath` instead of overwriting them
+  * `+=`允许您向其添加路径和路径集合，`compileClasspath`而`runtimeClasspath`不是覆盖它们
 
-  * If you want to use the convention-based configurations, such as `intTestImplementation`, you _must_ declare the dependencies _after_ the new source set
+  * 如果要使用基于约定的配置（例如）`intTestImplementation`，则 _必须_ 在新的源集 _之后_ 声明依赖项
 
-Creating and configuring a source set automatically sets up the compilation
-stage, but it does nothing with respect to running the integration tests. So
-the last piece of the puzzle is a custom test task that uses the information
-from the new source set to configure its runtime classpath and the test
-classes:
+创建和配置源集会自动设置编译阶段，但是对于运行集成测试没有任何作用。因此，最后一个难题是一个自定义测试任务，该任务使用来自新源集的信息来配置其运行时类路径和测试类：
 
-Example 18. Defining a working integration test task
+例子15.定义一个有效的集成测试任务
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1414,93 +1104,64 @@ build.gradle.kts
     
     tasks.check { dependsOn(integrationTest) }
 
-Again, we're accessing a source set to get the relevant information, i.e.
-where the compiled test classes are — the `testClassesDirs` property — and
-what needs to be on the classpath when running them — `classpath`.
+同样，我们正在访问源集以获取相关信息，即，已编译的测试类的位置（`testClassesDirs`属性）以及运行它们时需要在类路径上的内容
+`classpath`。
 
-Users commonly want to run integration tests after the unit tests, because
-they are often slower to run and you want the build to fail early on the unit
-tests rather than later on the integration tests. That's why the above example
-adds a `shouldRunAfter()` declaration. This is preferred over `mustRunAfter()`
-so that Gradle has more flexibility in executing the build in parallel.
+用户通常希望在单元测试之后运行集成测试，因为它们通常运行速度较慢，并且您希望构建在单元测试之前失败而不是在集成测试之后失败。这就是上面的示例添加一个`shouldRunAfter()`声明的原因。相对`mustRunAfter()`于此，它是首选的，以便Gradle在并行执行构建时具有更大的灵活性。
 
-## Testing Java Modules
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:java_testing_modular)[测试Java模块](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:java_testing_modular)
 
-If you are [developing Java Modules](java_library_plugin.html), everything
-described in this chapter still applies and any of the supported test
-frameworks can be used. However, there are some things to consider depending
-on whether you need module information to be available, and module boundaries
-to be enforced, during test execution. In this context, the terms _whitebox
-testing_ (module boundaries are deactivated or relaxed) and _blackbox testing_
-(module boundaries are in place) are often used. Whitebox testing is
-used/needed for unit testing and blackbox testing fits functional or
-integration test requirements.
+如果您正在[开发Java模块](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_library_plugin.html)，则本章中描述的所有内容仍然适用，并且可以使用任何受支持的测试框架。但是，根据测试执行期间是否需要可用的模块信息以及要强制执行的模块边界，需要考虑一些事项。在这种情况下，经常使用术语“
+_白盒测试”_ （停用或放宽模块边界）和“ _黑盒测试”_ （已设置模块边界）。白盒测试用于/需要用于单元测试，黑盒测试符合功能或集成测试要求。
 
-Sample: [Java Modules multi-project with integration
-tests](../samples/sample_java_modules_multi_project_with_integration_tests.html)
+样本：[具有集成测试的Java
+Modules多项目](file:///Users/dxs/temp/gradle-6.7.1/docs/samples/sample_java_modules_multi_project_with_integration_tests.html)
 
-### Whitebox unit test execution on the classpath
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#whitebox_unit_test_execution_on_the_classpath)[在类路径上执行白盒单元测试](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#whitebox_unit_test_execution_on_the_classpath)
 
-The simplest setup to write unit tests for functions or classes in modules is
-to _not_ use module specifics during test execution. For this, you just need
-to write tests the same way you would write them for normal libraries. If you
-don't have a `module-info.java` file in your test source set (`src/test/java`)
-this source set will be considered as traditional Java library during
-compilation and test runtime. This means, all dependencies, including Jars
-with module information, are put on the classpath. The advantage is that all
-internal classes of your (or other) modules are then accessible directly in
-tests. This may be a totally valid setup for unit testing, where we do not
-care about the larger module structure, but only about testing single
-functions.
+为模块中的函数或类编写单元测试的最简单设置是在测试执行期间 _不_ 使用模块规范。为此，您只需要以与普通库一样的方式编写测试即可。如果您`module-
+info.java`的测试源集中（`src/test/java`）中没有文件，则在编译和测试运行时，该源集将被视为传统Java库。这意味着，所有依赖项（包括带有模块信息的Jar）都放在类路径上。好处是，您（或其他）模块的所有内部类都可以在测试中直接访问。对于单元测试，这可能是完全有效的设置，在这里，我们不必关心较大的模块结构，而只关心测试单个功能。
 
 __ |
 
-If you are using Eclipse: By default, Eclipse also runs unit tests as modules
-using module patching (see below). In an imported Gradle project, unit testing
-a module with the Eclipse test runner might fail. You then need to manually
-adjust the classpath/module path in the test run configuration or delegate
-test execution to Gradle. This only concerns the test execution. Unit test
-compilation and development works fine in Eclipse.  
+如果您使用的是Eclipse：默认情况下，Eclipse还使用模块修补程序将单元测试作为模块运行（请参见[下文](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:java_testing_modular_patching)）。在导入的Gradle项目中，使用Eclipse测试运行器对模块进行单元测试可能会失败。然后，您需要在测试运行配置中手动调整类路径/模块路径，或将测试执行委托给Gradle。这仅涉及测试执行。单元测试的编译和开发在Eclipse中运行良好。  
   
 ---|---  
   
-### Blackbox integration testing
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#blackbox_integration_testing)[黑盒集成测试](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#blackbox_integration_testing)
 
-For integration tests, you have the option to define the test set itself as
-additional module. You do this similar to how you turn your main sources into
-a module: by adding a `module-info.java` file to the corresponding source set
-(e.g. `integrationTests/java/module-info.java`).
+对于集成测试，您可以选择将测试集本身定义为附加模块。您可以通过将`module-
+info.java`文件添加到相应的源集（例如`integrationTests/java/module-
+info.java`）中的方式类似于将主要源变成模块的方式。
 
-You can find a full example that includes blackbox integration tests
-[here](../samples/sample_java_modules_multi_project_with_integration_tests.html).
+您可以[在此处](file:///Users/dxs/temp/gradle-6.7.1/docs/samples/sample_java_modules_multi_project_with_integration_tests.html)找到包含黑盒集成测试的完整示例。
 
 __ |
 
-In Eclipse, compiling multiple modules in one project is [currently not
-support](https://bugs.eclipse.org/bugs/show_bug.cgi?id=520667). Therefore the
-integration test (blackbox) setup described here only works in Eclipse if the
-tests are moved to a separate subproject.  
+在Eclipse中，[当前不支持](https://bugs.eclipse.org/bugs/show_bug.cgi?id=520667)在一个项目中编译多个模块。因此，仅在将测试移至单独的子项目的情况下，此处描述的集成测试（黑盒）设置才能在Eclipse中使用。  
   
 ---|---  
   
-### Whitebox test execution with module patching
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:java_testing_modular_patching)[白盒测试执行与模块修补](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:java_testing_modular_patching)
 
-Another approach for whitebox testing is to stay in the module world by
-_patching_ the tests into the module under test. This way, module boundaries
-stay in place, but the tests themselves become part of the module under test
-and can then access the module's internals.
+白盒测试的另一种方法是通过将测试 _修补_
+到被测模块中来保留在模块世界中。这样，模块边界保持不变，但是测试本身成为被测试模块的一部分，然后可以访问模块的内部。
 
-For which uses cases this is relevant and how this is best done is a topic of
-discussion. There is no general best approach at the moment. Thus, there is no
-special support for this in Gradle right now.
+对于哪些用例而言，这是相关的，如何最好地做到这一点是讨论的主题。目前尚无一般最佳方法。因此，目前在Gradle中对此没有特别的支持。
 
-You can however, setup module patching for tests like this:
+但是，您可以为以下测试设置模块补丁：
 
-  * Add a `module-info.java` to your test source set that is a copy of the main `module-info.java` with additional dependencies needed for testing (e.g. `requires org.junit.jupiter.api`).
+  * `module-info.java`在您的测试源集中添加一个，它是主要版本的副本，其中`module-info.java`包含测试所需的其他依赖项（例如`requires org.junit.jupiter.api`）。
 
-  * Configure both the `testCompileJava` and `test` tasks with arguments to patch the the main classes with the test classes as shown below.
+  * 用参数配置`testCompileJava`和`test`任务，以用测试类修补主类，如下所示。
 
-Example 19. Patch module for testing using command line arguments
+例子16.使用命令行参数测试的补丁模块
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1530,35 +1191,28 @@ build.gradle.kts
 
 __ |
 
-If custom arguments are used for patching, these are not picked up by Eclipse
-and IDEA. You will most likely see invalid compilation errors in the IDE.  
+如果使用自定义参数进行修补，那么Eclipse和IDEA不会选择这些自定义参数。您很可能会在IDE中看到无效的编译错误。  
   
 ---|---  
   
-## Skipping the tests
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:skipping_java_tests)[跳过测试](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:skipping_java_tests)
 
-If you want to skip the tests when running a build, you have a few options.
-You can either do it via [command line
-arguments](command_line_interface.html#sec:excluding_tasks_from_the_command_line)
-or [in the build script](more_about_tasks.html#sec:skipping_tasks). To do it
-on the command line, you can use the `-x` or `--exclude-task` option like so:
+如果要在运行构建时跳过测试，则有几种选择。您可以通过[命令行参数](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/command_line_interface.html#sec:excluding_tasks_from_the_command_line)或[在构建脚本中进行操作](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/more_about_tasks.html#sec:skipping_tasks)。要在命令行上执行此操作，可以使用`-x`或`--exclude-
+task`选项，如下所示：
 
     
     
-    gradle build -x test
+    gradle build -x测试
 
-This excludes the `test` task and any other task that it _exclusively_ depends
-on, i.e. no other task depends on the same task. Those tasks will not be
-marked "SKIPPED" by Gradle, but will simply not appear in the list of tasks
-executed.
+这排除了该`test`任务及其 _唯一_
+依赖的任何其他任务，即没有其他任务依赖于同一任务。这些任务不会被Gradle标记为“跳过”，而只会出现在已执行任务的列表中。
 
-Skipping a test via the build script can be done a few ways. One common
-approach is to make test execution conditional via the
-[Task.onlyIf(org.gradle.api.specs.Spec)](../dsl/org.gradle.api.Task.html#org.gradle.api.Task:onlyIf\(org.gradle.api.specs.Spec\))
-method. The following sample skips the `test` task if the project has a
-property called `mySkipTests`:
+通过构建脚本跳过测试可以通过几种方法完成。一种常见的方法是通过[Task.onlyIf（org.gradle.api.specs.Spec）](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.Task.html#org.gradle.api.Task:onlyIf\(org.gradle.api.specs.Spec\))方法使测试执行有条件。`test`如果项目具有名为的属性，以下示例将跳过任务`mySkipTests`：
 
-Example 20. Skipping the unit tests based on a project property
+例子17.跳过基于项目属性的单元测试
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1572,67 +1226,61 @@ build.gradle.kts
     
     tasks.test { onlyIf { !project.hasProperty("mySkipTests") } }
 
-In this case, Gradle will mark the skipped tests as "SKIPPED" rather than
-exclude them from the build.
+在这种情况下，Gradle会将跳过的测试标记为“跳过”，而不是从构建中排除它们。
 
-## Forcing tests to run
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:forcing_java_tests_to_run)[强制测试运行](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:forcing_java_tests_to_run)
 
-In well-defined builds, you can rely on Gradle to only run tests if the tests
-themselves or the production code change. However, you may encounter
-situations where the tests rely on a third-party service or something else
-that might change but can't be modeled in the build.
+在定义良好的版本中，您可以依靠Gradle仅在测试本身或生产代码发生更改时运行测试。但是，您可能会遇到测试依赖第三方服务或可能会更改但无法在构建中建模的其他情况。
 
-You can force tests to run in this situation by cleaning the output of the
-relevant `Test` task — say `test` — and running the tests again, like so:
+您可以通过清除相关`Test`任务的输出（例如`test`）并再次运行测试来强制测试在这种情况下运行，如下所示：
 
     
     
-    gradle cleanTest test
+    gradle cleanTest测试
 
-`cleanTest` is based on a [task rule](more_about_tasks.html#sec:task_rules)
-provided by the [Base Plugin](base_plugin.html#sec:base_tasks). You can use it
-for _any_ task.
+`cleanTest`基于[基础插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/base_plugin.html#sec:base_tasks)提供的[任务规则](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/more_about_tasks.html#sec:task_rules)。您可以将其用于
+_任何_
+任务。[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/base_plugin.html#sec:base_tasks)
+__
 
-## Debugging when running tests
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:debugging_java_tests)[运行测试时进行调试](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:debugging_java_tests)
 
-On the few occasions that you want to debug your code while the tests are
-running, it can be helpful if you can attach a debugger at that point. You can
-either set the
-[Test.getDebug()](../dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:debug)
-property to `true` or use the `--debug-jvm` command line option.
+在少数情况下，您想在测试运行时调试代码，如果可以在此时附加调试器，则可能会有所帮助。您可以将[Test.getDebug（）](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:debug)属性设置为`true`或使用`--debug-
+jvm`命令行选项。
 
-When debugging for tests is enabled, Gradle will start the test process
-suspended and listening on port 5005.
+启用测试调试后，Gradle将暂停测试过程并监听端口5005。
 
-You can also enable debugging in the DSL, where you can also configure other
-properties:
+您还可以在DSL中启用调试，还可以在其中配置其他属性：
 
     
     
-    test {
+    测试{
         debugOptions {
-            enabled = true
-            port = 4455
-            server = true
-            suspend = true
+            启用=真
+            端口= 4455
+            服务器=真
+            暂停=真
         }
     }
 
-With this configuration the test JVM will behave just like when passing the
-`--debug-jvm` argument but it will listen on port 4455.
+使用此配置，测试JVM的行为就像传递`--debug-jvm`参数时一样，但是它将侦听端口4455。
 
-## Using test fixtures
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:java_test_fixtures)[使用测试治具](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#sec:java_test_fixtures)
 
-### Producing and using test fixtures within a single project
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#producing_and_using_test_fixtures_within_a_single_project)[在单个项目中生产和使用测试夹具](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#producing_and_using_test_fixtures_within_a_single_project)
 
-Test fixtures are commonly used to setup the code under test, or provide
-utilities aimed at facilitating the tests of a component. Java projects can
-enable test fixtures support by applying the `java-test-fixtures` plugin, in
-addition to the `java` or `java-library` plugins:
+测试装置通常用于设置被测代码，或提供旨在促进组件测试的实用程序。`java-test-
+fixtures`除了`java`或插件，Java项目还可以通过应用插件来启用测试装置支持`java-library`：
 
-Example 21. Applying the Java test fixtures plugin
+例子18.应用Java测试装置插件
 
-lib/build.gradle
+`Groovy``Kotlin`
+
+lib / build.gradle
 
     
     
@@ -1658,16 +1306,15 @@ lib/build.gradle.kts
         `maven-publish`
     }
 
-This will automatically create a `testFixtures` source set, in which you can
-write your test fixtures. Test fixtures are configured so that:
+这将自动创建一个`testFixtures`源集，您可以在其中编写测试装置。测试夹具的配置如下：
 
-  * they can see the _main_ source set classes
+  * 他们可以看到 _主要的_ 源集类
 
-  * _test_ sources can see the _test fixtures_ classes
+  * _测试_ 源可以看到 _测试夹具_ 类
 
-For example for this main class:
+例如对于这个主类：
 
-src/main/java/com/acme/Person.java
+src / main / java / com / acme / Person.java
 
     
     
@@ -1690,9 +1337,9 @@ src/main/java/com/acme/Person.java
     
         // ...
 
-A test fixture can be written in `src/testFixtures/java`:
+测试夹具可以写成`src/testFixtures/java`：
 
-src/testFixtures/java/com/acme/Simpsons.java
+src / testFixtures / java / com / acme / Simpsons.java
 
     
     
@@ -1722,14 +1369,16 @@ src/testFixtures/java/com/acme/Simpsons.java
     
         // ...
 
-### Declaring dependencies of test fixtures
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#declaring_dependencies_of_test_fixtures)[声明测试夹具的依赖性](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#declaring_dependencies_of_test_fixtures)
 
-Similarly to the [Java Library Plugin](java_library_plugin.html), test
-fixtures expose an API and an implementation configuration:
+与[Java库插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_library_plugin.html)类似，测试装置公开了API和实现配置：
 
-Example 22. Declaring test fixture dependencies
+例子19.声明测试夹具的依赖关系
 
-lib/build.gradle
+`Groovy``Kotlin`
+
+lib / build.gradle
 
     
     
@@ -1757,18 +1406,17 @@ lib/build.gradle.kts
         testFixturesImplementation("org.apache.commons:commons-text:1.6")
     }
 
-It's worth noticing that if a dependency is an _implementation_ dependency of
-test fixtures, then _when compiling tests that depend on those test fixtures_
-, the implementation dependencies will _not leak_ into the compile classpath.
-This results in improved separation of concerns and better compile avoidance.
+值得注意的是，如果依赖性是测试夹具的 _实现_ 依赖性，那么 _在编译依赖于那些测试夹具_ 的 _测试时_ ，实现依赖性 _不会泄漏_
+到编译类路径中。这样可以改善关注点分离并更好地避免编译。
 
-### Consuming test fixtures of another project
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#consuming_test_fixtures_of_another_project)[消耗另一个项目的测试装置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#consuming_test_fixtures_of_another_project)
 
-Test fixtures are not limited to a single project. It is often the case that a
-dependent project tests also needs the test fixtures of the dependency. This
-can be achieved very easily using the `testFixtures` keyword:
+测试装置不限于单个项目。通常，从属项目测试也需要依赖项的测试装置。使用`testFixtures`关键字可以很容易地做到这一点：
 
-Example 23. Adding a dependency on test fixtures of another project
+例子20.添加对另一个项目的测试装置的依赖
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1792,19 +1440,18 @@ build.gradle.kts
         testImplementation(testFixtures(project(":lib")))
     }
 
-### Publishing test fixtures
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#publishing_test_fixtures)[发布测试装置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#publishing_test_fixtures)
 
-One of the advantages of using the `java-test-fixtures` plugin is that test
-fixtures are published. By convention, test fixtures will be published with an
-artifact having the `test-fixtures` classifier. For both Maven and Ivy, an
-artifact with that classifier is simply published alongside the regular
-artifacts. However, if you use the `maven-publish` or `ivy-publish` plugin,
-test fixtures are published as additional variants in [Gradle Module
-Metadata](https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-
-module-metadata-1.0-specification.md) and you can directly depend on test
-fixtures of external libraries in another Gradle project:
+使用该`java-test-fixtures`插件的优点之一是发布了测试装置。按照惯例，测试装置将与具有`test-
+fixtures`分类器的工件一起发布。对于Maven和Ivy，带有该分类器的工件都将与常规工件一起简单发布。但是，如果使用`maven-
+publish`或`ivy-
+publish`插件，则测试夹具会作为其他变体发布在[Gradle模块元数据中，](https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-
+module-metadata-1.0-specification.md)并且您可以直接依赖另一个Gradle项目中外部库的测试夹具：
 
-Example 24. Adding a dependency on test fixtures of an external library
+例子21.添加对外部库测试装置的依赖
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1826,52 +1473,48 @@ build.gradle.kts
         functionalTest(testFixtures("com.google.code.gson:gson:2.8.5"))
     }
 
-It's worth noting that if the external project is _not_ publishing Gradle
-Module Metadata, then resolution will fail with an error indicating that such
-a variant cannot be found:
+值得注意的是，如果外部项目 _未_ 发布Gradle模块元数据，则解析将失败，并显示一条错误消息，指出找不到这样的变体：
 
-Output of **`gradle dependencyInsight --configuration functionalTestClasspath
+输出 **`gradle dependencyInsight --configuration functionalTestClasspath
 --dependency gson`**
 
     
     
-    > gradle dependencyInsight --configuration functionalTestClasspath --dependency gson
+    > gradledependencyInsight-配置functionalTestClasspath --dependency gson
     
-    > Task :dependencyInsight
-    com.google.code.gson:gson:2.8.5 FAILED
-       Failures:
-          - Could not resolve com.google.code.gson:gson:2.8.5.
-              - Unable to find a variant of com.google.code.gson:gson:2.8.5 providing the requested capability com.google.code.gson:gson-test-fixtures:
-                   - Variant compile provides com.google.code.gson:gson:2.8.5
-                   - Variant runtime provides com.google.code.gson:gson:2.8.5
-                   - Variant platform-compile provides com.google.code.gson:gson-derived-platform:2.8.5
-                   - Variant platform-runtime provides com.google.code.gson:gson-derived-platform:2.8.5
-                   - Variant enforced-platform-compile provides com.google.code.gson:gson-derived-enforced-platform:2.8.5
-                   - Variant enforced-platform-runtime provides com.google.code.gson:gson-derived-enforced-platform:2.8.5
+    >任务：dependencyInsight
+    com.google.code.gson：gson：2.8.5失败
+       失败：
+          -无法解析com.google.code.gson：gson：2.8.5。
+              -无法找到提供所需功能com.google.code.gson：gson-test-fixtures的com.google.code.gson：gson：2.8.5的变体：
+                   -变体编译提供com.google.code.gson：gson：2.8.5
+                   -变体运行时提供com.google.code.gson：gson：2.8.5
+                   -Variant platform-compile提供com.google.code.gson：gson派生平台：2.8.5
+                   -变体平台运行时提供com.google.code.gson：gson衍生平台：2.8.5
+                   -各种强制平台编译提供com.google.code.gson：gson派生强制平台：2.8.5
+                   -各种强制平台运行时提供com.google.code.gson：gson衍生强制平台：2.8.5
     
-    com.google.code.gson:gson:2.8.5 FAILED
-    \--- functionalTestClasspath
+    com.google.code.gson：gson：2.8.5失败
+    \ --- functionalTestClasspath
     
-    A web-based, searchable dependency report is available by adding the --scan option.
+    通过添加--scan选项，可以使用基于Web的可搜索依赖项报告。
     
-    BUILD SUCCESSFUL in 0s
-    1 actionable task: 1 executed
+    在0秒内成功建立
+    1个可执行的任务：1个已执行
 
-The error message mentions the missing `com.google.code.gson:gson-test-
-fixtures` capability, which is indeed not defined for this library. That's
-because by convention, for projects that use the `java-test-fixtures` plugin,
-Gradle automatically creates test fixtures variants with a capability whose
-name is the name of the main component, with the appendix `-test-fixtures`.
+错误消息中提到了缺少的`com.google.code.gson:gson-test-
+fixtures`功能，但实际上并未为此库定义。这是因为按照惯例，对于使用该`java-test-
+fixtures`插件的项目，Gradle会自动创建具有其名称为主要组件名称的功能的测试夹具变体，并带有附录`-test-fixtures`。
 
 __ |
 
-If you publish your library and use test fixtures, but do not want to publish
-the fixtures, you can deactivate publishing of the _test fixtures variants_ as
-shown below.  
+如果您发布库并使用测试夹具，但是不想发布夹具，则可以停用 _测试夹具变体的_ 发布，如下所示。  
   
 ---|---  
   
-Example 25. Disable publishing of test fixtures variants
+例子22.禁用测试夹具变体的发布
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1890,54 +1533,67 @@ build.gradle.kts
 
 * * *
 
-1. The JUnit wiki contains a detailed description on how to work with JUnit categories: <https://github.com/junit-team/junit/wiki/Categories>. 
+[1](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#_footnoteref_1)。JUnit
+Wiki包含有关如何使用JUnit类别的详细说明：[https](https://github.com/junit-
+team/junit/wiki/Categories) : [//github.com/junit-
+team/junit/wiki/Categories](https://github.com/junit-
+team/junit/wiki/Categories)。
 
-2. The TestNG documentation contains more details about test groups: <http://testng.org/doc/documentation-main.html#test-groups>. 
+[2](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#_footnoteref_2)。TestNG文档包含有关测试组的更多详细信息：[http](http://testng.org/doc/documentation-
+main.html#test-groups) : [//testng.org/doc/documentation-main.html#test-
+groups](http://testng.org/doc/documentation-main.html#test-groups)。
 
-3. The TestNG documentation contains more details about test ordering when working with `testng.xml` files: <http://testng.org/doc/documentation-main.html#testng-xml>. 
+[3](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html#_footnoteref_3)。当使用`testng.xml`文件时，TestNG文档包含有关测试排序的更多详细信息：[http](http://testng.org/doc/documentation-
+main.html#testng-xml) : [//testng.org/doc/documentation-main.html#testng-
+xml](http://testng.org/doc/documentation-main.html#testng-xml)。
 
-**Docs**
+**文件**
 
-  * [User Manual](/userguide/userguide.html)
-  * [DSL Reference](/dsl/)
-  * [Release Notes](/release-notes.html)
-  * [Javadoc](/javadoc/)
+  * [用户手册](file:///userguide/userguide.html)
+  * [DSL参考](file:///dsl/)
+  * [发行说明](file:///release-notes.html)
+  * [Java文档](file:///javadoc/)
 
-**News**
+**新闻**
 
-  * [Blog](https://blog.gradle.org/)
-  * [Newsletter](https://newsletter.gradle.com/)
-  * [Twitter](https://twitter.com/gradle)
-  * [Status Page](https://status.gradle.com/)
+  * [博客](https://blog.gradle.org/)
+  * [通讯](https://newsletter.gradle.com/)
+  * [推特](https://twitter.com/gradle)
+  * [状态页](https://status.gradle.com/)
 
-**Products**
+**产品展示**
 
-  * [Build Scans](https://gradle.com/build-scans/)
-  * [Build Cache](https://gradle.com/build-cache/)
-  * [Enterprise Docs](https://gradle.com/enterprise/resources/)
+  * [构建扫描](https://gradle.com/build-scans/)
+  * [构建缓存](https://gradle.com/build-cache/)
+  * [企业文件](https://gradle.com/enterprise/resources/)
 
-**Get Help**
+**得到帮助**
 
-  * [Forums](https://discuss.gradle.org/c/help-discuss)
-  * [GitHub](https://github.com/gradle/)
-  * [Training](https://gradle.com/training/)
-  * [Services](https://gradle.org/services/)
+  * [论坛](https://discuss.gradle.org/c/help-discuss)
+  * [的GitHub](https://github.com/gradle/)
+  * [训练](https://gradle.com/training/)
+  * [服务](https://gradle.org/services/)
 
-##### Stay `UP-TO-DATE` on new features and news
+##### 随时`UP-TO-DATE`关注新功能和新闻
 
-By entering your email, you agree to our
-[Terms](https://gradle.com/legal/terms-of-service/) and [Privacy
-Policy](https://gradle.com/legal/privacy/), including receipt of emails. You
-can unsubscribe at any time.
+输入您的电子邮件，即表示您同意我们的[条款](https://gradle.com/legal/terms-of-
+service/)和[隐私政策](https://gradle.com/legal/privacy/)，包括接收电子邮件。您可以随时取消订阅。
 
-Subscribe
+订阅
 
-© [Gradle Inc.](https://gradle.com) 2020 All rights reserved.
+© [Gradle Inc.](https://gradle.com/) 2020年 版权所有。
 
-[ gradle ](/)
+[ gradle ](file:///)
 
-[Careers](https://gradle.com/careers/) |
-[Privacy](https://gradle.com/legal/privacy/) | [Terms of
-Service](https://gradle.com/legal/terms-of-service/) |
-[Contact](https://gradle.org/contact/)
+[招贤纳士](https://gradle.com/careers/)| [隐私](https://gradle.com/legal/privacy/)|
+[服务条款](https://gradle.com/legal/terms-of-service/)|
+[联系](https://gradle.org/contact/)
+
+![Google 翻译](./在Java和JVM项目中进行测试_files/translate_24dp.png)
+
+# 原文
+
+提供更好的翻译建议
+
+* * *
 

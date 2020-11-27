@@ -1,225 +1,215 @@
 
 
-[ Gradle ](https://docs.gradle.org "Gradle Docs")
+[ Gradle ](https://docs.gradle.org/ "Gradle Docs")
 
-User Manual
+用户手册
 
-  * Community Open Community Menu
+  * 社区 Open Community Menu
 
-[ Community Home ](https://gradle.org/)
+[ 社区之家 ](https://gradle.org/)
 
-[ Community Forums ](https://discuss.gradle.org/)
+[ 社区论坛 ](https://discuss.gradle.org/)
 
-[ Community Plugins ](https://plugins.gradle.org)
+[ 社区插件 ](https://plugins.gradle.org/)
 
-  * [Training](https://gradle.com/training/)
-  * News Open Community Menu
+  * [训练](https://gradle.com/training/)
+  * 新闻 Open Community Menu
 
-[ Newsletter ](https://newsletter.gradle.com)
+[ 通讯 ](https://newsletter.gradle.com/)
 
-[ Blog ](https://blog.gradle.org)
+[ 博客 ](https://blog.gradle.org/)
 
-[ Twitter ](https://twitter.com/gradle)
+[ 推特 ](https://twitter.com/gradle)
 
-  * [Enterprise](https://gradle.com)
-  * [github](https://github.com/gradle/gradle "Gradle on GitHub")
+  * [企业](https://gradle.com/)
+  * [github](https://github.com/gradle/gradle "GitHub上的Gradle")
 
-  * [Docs Home](../userguide/userguide.html)
-  * [Samples](../samples/index.html)
-  * [Release Notes](../release-notes.html)
-  * Gradle API
-    * [Javadoc](../javadoc/index.html?overview-summary.html)
-    * [Groovy DSL Reference](../dsl/index.html)
-    * [Groovy DSL Primer](../userguide/groovy_build_script_primer.html)
+  * [文件首页](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/userguide.html)
+  * [样品](file:///Users/dxs/temp/gradle-6.7.1/docs/samples/index.html)
+  * [发行说明](file:///Users/dxs/temp/gradle-6.7.1/docs/release-notes.html)
+  * [Gradle API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#gradle-api)
+    * [Java文档](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/index.html?overview-summary.html)
+    * [Groovy DSL参考](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/index.html)
+    * [Groovy DSL入门](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/groovy_build_script_primer.html)
     * [Kotlin DSL API](https://gradle.github.io/kotlin-dsl-docs/api/)
-    * [Kotlin DSL Primer](../userguide/kotlin_dsl.html)
+    * [Kotlin DSL入门](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/kotlin_dsl.html)
 
-### User Manual
+### 用户手册
 
-[ PDF ](../userguide/userguide.pdf)
+[ PDF格式 ](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/userguide.pdf)
 
-  * [What is Gradle?](../userguide/what_is_gradle.html)
-  * [Getting Started](../userguide/getting_started.html)
-  * [Installing Gradle](../userguide/installation.html)
-  * Upgrading Gradle...
-    * [version 6.X to latest](../userguide/upgrading_version_6.html)
-    * [version 5.X to 6.0](../userguide/upgrading_version_5.html)
-    * [version 4.X to 5.0](../userguide/upgrading_version_4.html)
-    * [Gradle's Feature Lifecycle](../userguide/feature_lifecycle.html)
-  * Migrating to Gradle...
-    * [from Maven](../userguide/migrating_from_maven.html)
-    * [from Ant](../userguide/migrating_from_ant.html)
-  * [Compatibility Notes](../userguide/compatibility.html)
-  * [Troubleshooting Builds](../userguide/troubleshooting.html)
+  * [什么是Gradle？](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/what_is_gradle.html)
+  * [入门](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/getting_started.html)
+  * [安装Gradle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html)
+  * [升级Gradle ...](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#upgrading-gradle)
+    * [版本6.X到最新](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_6.html)
+    * [版本5.X到6.0](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html)
+    * [版本4.X到5.0](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_4.html)
+    * [Gradle的功能生命周期](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/feature_lifecycle.html)
+  * [迁移至Gradle ...](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#migrating-to-gradle)
+    * [从Maven](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/migrating_from_maven.html)
+    * [来自蚂蚁](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/migrating_from_ant.html)
+  * [相容性说明](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/compatibility.html)
+  * [对构建进行故障排除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/troubleshooting.html)
 
-### Running Gradle Builds
+### 运行Gradle构建
 
-  * Customizing Execution
-    * [Configuring the Build Environment](../userguide/build_environment.html)
-    * [Configuring the Gradle Daemon](../userguide/gradle_daemon.html)
-    * [Using Initialization Scripts](../userguide/init_scripts.html)
-  * [Executing Multi-Project Builds](../userguide/intro_multi_project_builds.html)
-  * [Inspecting Gradle Builds](https://scans.gradle.com/)
-  * Optimizing Build Times
-    * [Build Performance Guide](https://guides.gradle.org/performance/)
-    * [Enabling and Configuring the Build Cache](../userguide/build_cache.html)
-    * [Using the Configuration Cache](../userguide/configuration_cache.html)
+  * [自定义执行](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#customizing-execution)
+    * [配置构建环境](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_environment.html)
+    * [配置Gradle守护程序](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html)
+    * [使用初始化脚本](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/init_scripts.html)
+  * [执行多项目构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/intro_multi_project_builds.html)
+  * [检查Gradle构建](https://scans.gradle.com/)
+  * [优化构建时间](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#optimizing-build-performance)
+    * [构建绩效指南](https://guides.gradle.org/performance/)
+    * [启用和配置构建缓存](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_cache.html)
+    * [使用配置缓存](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/configuration_cache.html)
 
-### Authoring Gradle Builds
+### 编写Gradle构建
 
-  * Learning the Basics
-    * [Introducing the Basics of Build Scripts](../userguide/tutorial_using_tasks.html)
-    * [Working with Tasks](../userguide/more_about_tasks.html)
-    * [Learning More About Build Scripts](../userguide/writing_build_scripts.html)
-    * [Working with Files](../userguide/working_with_files.html)
-    * [Using Gradle Plugins](../userguide/plugins.html)
-    * [Understanding the Build Lifecycle](../userguide/build_lifecycle.html)
-    * [Working with Logging](../userguide/logging.html)
-    * [Avoiding Traps](../userguide/potential_traps.html)
-  * Authoring Multi-Project Builds
-    * [Creating a Basic Multi-Project Build](../userguide/multi_project_builds.html)
-    * [Declaring Dependencies between Subprojects](../userguide/declaring_dependencies_between_subprojects.html)
-    * [Sharing Build Logic between Subprojects](../userguide/sharing_build_logic_between_subprojects.html)
-    * [Fine Tuning the Project Layout](../userguide/fine_tuning_project_layout.html)
-    * [Understanding Configuration and Execution](../userguide/multi_project_configuration_and_execution.html)
-  * Authoring Sustainable Builds
-    * [Organizing Build Logic](../userguide/organizing_gradle_projects.html)
-    * [Following Best Practices](../userguide/authoring_maintainable_build_scripts.html)
-  * Advanced Techniques
+  * [学习基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#learning-the-basics)
+    * [介绍构建脚本的基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/tutorial_using_tasks.html)
+    * [处理任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/more_about_tasks.html)
+    * [了解有关构建脚本的更多信息](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/writing_build_scripts.html)
+    * [处理文件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/working_with_files.html)
+    * [使用Gradle插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html)
+    * [了解构建生命周期](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_lifecycle.html)
+    * [Working with Logging](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/logging.html)
+    * [Avoiding Traps](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/potential_traps.html)
+  * [创作多项目构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#authoring-multi-project-builds)
+    * [Creating a Basic Multi-Project Build](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_builds.html)
+    * [Declaring Dependencies between Subprojects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_dependencies_between_subprojects.html)
+    * [Sharing Build Logic between Subprojects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/sharing_build_logic_between_subprojects.html)
+    * [Fine Tuning the Project Layout](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/fine_tuning_project_layout.html)
+    * [Understanding Configuration and Execution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_configuration_and_execution.html)
+  * [创作可持续建筑](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#authoring-sustainable-builds)
+    * [Organizing Build Logic](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/organizing_gradle_projects.html)
+    * [Following Best Practices](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/authoring_maintainable_build_scripts.html)
+  * [先进技术](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#advanced-techniques)
     * [Developing Parallel Tasks](https://guides.gradle.org/using-the-worker-api/)
-    * [Testing a Build with TestKit](../userguide/test_kit.html)
-    * [Using Ant from Gradle](../userguide/ant.html)
+    * [Testing a Build with TestKit](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/test_kit.html)
+    * [Using Ant from Gradle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/ant.html)
 
-### Authoring JVM Builds
+### 编写JVM构建
 
-  * [Building Java & JVM projects](../userguide/building_java_projects.html)
-  * [Testing Java & JVM projects](../userguide/java_testing.html)
-  * [Toolchains for Java projects](../userguide/toolchains.html)
-  * [Managing Dependencies](../userguide/dependency_management_for_java_projects.html)
-  * JVM Plugins
-    * [Java Library Plugin](../userguide/java_library_plugin.html)
-    * [Java Application Plugin](../userguide/application_plugin.html)
-    * [Java Platform Plugin](../userguide/java_platform_plugin.html)
-    * [Groovy Plugin](../userguide/groovy_plugin.html)
-    * [Scala Plugin](../userguide/scala_plugin.html)
+  * [构建Java和JVM项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_java_projects.html)
+  * [测试Java和JVM项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html)
+  * [Java项目的工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html)
+  * [管理依赖关系](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_management_for_java_projects.html)
+  * [JVM插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#jvm-plugins)
+    * [Java Library Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_library_plugin.html)
+    * [Java Application Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/application_plugin.html)
+    * [Java Platform Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_platform_plugin.html)
+    * [Groovy Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/groovy_plugin.html)
+    * [Scala Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/scala_plugin.html)
 
-### Authoring C++/Swift Builds
+### 编写C ++ / Swift构建
 
-  * [Building C++ projects](../userguide/building_cpp_projects.html)
-  * [Testing C++ projects](../userguide/cpp_testing.html)
-  * [Building Swift projects](../userguide/building_swift_projects.html)
-  * [Testing Swift projects](../userguide/swift_testing.html)
+  * [构建C ++项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_cpp_projects.html)
+  * [测试C ++项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/cpp_testing.html)
+  * [建立Swift项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_swift_projects.html)
+  * [测试Swift项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/swift_testing.html)
 
-### Working with Dependencies
+### 使用依赖项
 
-  * Learning the Basics
-    * [What is Dependency Management?](../userguide/core_dependency_management.html)
-    * [Declaring Repositories](../userguide/declaring_repositories.html)
-    * [Declaring Dependencies](../userguide/declaring_dependencies.html)
-    * [Understanding Library and Application Differences](../userguide/library_vs_application.html)
-    * [Viewing and Debugging Dependencies](../userguide/viewing_debugging_dependencies.html)
-    * [Understanding Resolution](../userguide/dependency_resolution.html)
-    * [Verifying dependencies](../userguide/dependency_verification.html)
-  * Declaring Versions
-    * [Declaring Versions and Ranges](../userguide/single_versions.html)
-    * [Declaring Rich Versions](../userguide/rich_versions.html)
-    * [Handling Changing Versions](../userguide/dynamic_versions.html)
-    * [Locking Versions](../userguide/dependency_locking.html)
-  * Controlling Transitives
-    * [Upgrading Versions](../userguide/dependency_constraints.html)
-    * [Downgrading and Excluding](../userguide/dependency_downgrade_and_exclude.html)
-    * [Sharing Versions](../userguide/platforms.html)
-    * [Aligning Dependencies](../userguide/dependency_version_alignment.html)
-    * [Handling Mutually Exclusive Dependencies](../userguide/dependency_capability_conflict.html)
-    * [Fixing Metadata](../userguide/component_metadata_rules.html)
-    * [Customizing Resolution](../userguide/resolution_rules.html)
-    * [Preventing accidental upgrades](../userguide/resolution_strategy_tuning.html)
-  * Producing and Consuming Variants of Libraries
-    * [Declaring Capabilities of a Library](../userguide/component_capabilities.html)
-    * [Modeling Feature Variants and Optional Dependencies](../userguide/feature_variants.html)
-    * [Understanding Variant Selection](../userguide/variant_model.html)
-    * [Declaring Variant Attributes](../userguide/variant_attributes.html)
-    * [Sharing Outputs of Projects](../userguide/cross_project_publications.html)
-    * [Transforming Artifacts](../userguide/artifact_transforms.html)
-  * Working in a Multi-repo Environment
-    * [Composing Builds](../userguide/composite_builds.html)
-  * Publishing Libraries
-    * [Setting up Publishing](../userguide/publishing_setup.html)
-    * [Understanding Gradle Module Metadata](../userguide/publishing_gradle_module_metadata.html)
-    * [Signing Artifacts](../userguide/publishing_signing.html)
-    * [Customizing Publishing](../userguide/publishing_customization.html)
-    * [Maven Publish Plugin](../userguide/publishing_maven.html)
-    * [Ivy Publish Plugin](../userguide/publishing_ivy.html)
-  * [Terminology](../userguide/dependency_management_terminology.html)
+  * [学习基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#learning-the-basics-dependency-management)
+    * [What is Dependency Management?](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/core_dependency_management.html)
+    * [Declaring Repositories](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_repositories.html)
+    * [Declaring Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_dependencies.html)
+    * [Understanding Library and Application Differences](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/library_vs_application.html)
+    * [Viewing and Debugging Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/viewing_debugging_dependencies.html)
+    * [Understanding Resolution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_resolution.html)
+    * [Verifying dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_verification.html)
+  * [声明版本](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#declaring-dependency-versions)
+    * [Declaring Versions and Ranges](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/single_versions.html)
+    * [Declaring Rich Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/rich_versions.html)
+    * [Handling Changing Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dynamic_versions.html)
+    * [Locking Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_locking.html)
+  * [控制翻译](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#controlling-transitive-dependencies)
+    * [Upgrading Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_constraints.html)
+    * [Downgrading and Excluding](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_downgrade_and_exclude.html)
+    * [Sharing Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/platforms.html)
+    * [Aligning Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_version_alignment.html)
+    * [Handling Mutually Exclusive Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_capability_conflict.html)
+    * [Fixing Metadata](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/component_metadata_rules.html)
+    * [Customizing Resolution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/resolution_rules.html)
+    * [Preventing accidental upgrades](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/resolution_strategy_tuning.html)
+  * [图书馆的生产和消费形式](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#modeling-features)
+    * [Declaring Capabilities of a Library](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/component_capabilities.html)
+    * [Modeling Feature Variants and Optional Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/feature_variants.html)
+    * [Understanding Variant Selection](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_model.html)
+    * [Declaring Variant Attributes](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_attributes.html)
+    * [Sharing Outputs of Projects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/cross_project_publications.html)
+    * [Transforming Artifacts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/artifact_transforms.html)
+  * [在多仓库环境中工作](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#multi-repo)
+    * [Composing Builds](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/composite_builds.html)
+  * [出版图书馆](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#publishing)
+    * [Setting up Publishing](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_setup.html)
+    * [Understanding Gradle Module Metadata](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_gradle_module_metadata.html)
+    * [Signing Artifacts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_signing.html)
+    * [Customizing Publishing](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_customization.html)
+    * [Maven Publish Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_maven.html)
+    * [Ivy Publish Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_ivy.html)
+  * [术语](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_management_terminology.html)
 
-### Extending Gradle
+### 扩展摇篮
 
-  * [Plugin Development Tutorials](https://gradle.org/guides/?q=Plugin%20Development)
-  * [Writing Gradle Task Types](../userguide/custom_tasks.html)
-  * [Writing Gradle Plugins](../userguide/custom_plugins.html)
-  * [Writing Custom Gradle Types](../userguide/custom_gradle_types.html)
-  * [Configuring Tasks Lazily](../userguide/lazy_configuration.html)
-  * [Using Task Configuration Avoidance](../userguide/task_configuration_avoidance.html)
+  * [插件开发教程](https://gradle.org/guides/?q=Plugin%20Development)
+  * [编写Gradle任务类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_tasks.html)
+  * [编写Gradle插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_plugins.html)
+  * [编写自定义Gradle类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_gradle_types.html)
+  * [延迟配置任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/lazy_configuration.html)
+  * [使用避免任务配置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/task_configuration_avoidance.html)
 
-### Reference
+### 参考
 
-  * [Core Plugins](../userguide/plugin_reference.html)
-  * [Command-Line Interface](../userguide/command_line_interface.html)
-  * [Gradle & Third-party Tools](../userguide/third_party_integration.html)
-  * [The Gradle Wrapper](../userguide/gradle_wrapper.html)
-  * [Gradle-managed Directories](../userguide/directory_layout.html)
+  * [核心插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugin_reference.html)
+  * [命令行界面](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/command_line_interface.html)
+  * [Gradle和第三方工具](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/third_party_integration.html)
+  * [摇篮包装](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_wrapper.html)
+  * [Gradle管理的目录](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/directory_layout.html)
 
-# The Gradle Daemon
+# Gradle守护程序
 
 version 6.7.1
 
-Contents
+内容
 
-  * Why the Gradle Daemon is important for performance
-  * Running Daemon Status
-  * Disabling the Daemon
-  * Stopping an existing Daemon
-  * FAQ
-  * Tools & IDEs
-  * How does the Gradle Daemon make builds faster?
-  * Watching the file system
+  * [为什么Gradle Daemon对性能很重要](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:why_the_daemon)
+  * [运行守护程序状态](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:status)
+  * [禁用守护程序](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:disabling_the_daemon)
+  * [停止现有的守护程序](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:stopping_an_existing_daemon)
+  * [常问问题](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#daemon_faq)
+  * [工具和IDE](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:tools_and_ides)
+  * [Gradle守护程序如何使构建更快？](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:how_does_the_gradle_daemon_make_builds_faster)
+  * [观看文件系统](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:daemon_watch_fs)
 
-> A daemon is a computer program that runs as a background process, rather
-> than being under the direct control of an interactive user.
+> 守护程序是一种计算机程序，它作为后台进程运行，而不是受交互式用户的直接控制。
 
--- Wikipedia
+—维基百科
 
-Gradle runs on the Java Virtual Machine (JVM) and uses several supporting
-libraries that require a non-trivial initialization time. As a result, it can
-sometimes seem a little slow to start. The solution to this problem is the
-Gradle _Daemon_ : a long-lived background process that executes your builds
-much more quickly than would otherwise be the case. We accomplish this by
-avoiding the expensive bootstrapping process as well as leveraging caching, by
-keeping data about your project in memory. Running Gradle builds with the
-Daemon is no different than without. Simply configure whether you want to use
-it or not — everything else is handled transparently by Gradle.
+Gradle在Java虚拟机（JVM）上运行，并使用一些支持库，这些库需要很短的初始化时间。结果，有时启动似乎有些慢。解决此问题的方法是Gradle
+_Daemon_
+：这是一个长期存在的后台进程，与以前相比，它可以更快地执行构建。通过避免昂贵的引导过程以及利用缓存（将有关项目的数据保留在内存中），我们可以实现这一目标。使用Daemon运行Gradle构建与没有运行没有什么不同。只需配置您是否要使用它-
+其他所有事情都由Gradle透明地处理。
 
-## Why the Gradle Daemon is important for performance
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:why_the_daemon)[为什么Gradle
+Daemon对性能很重要](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:why_the_daemon)
 
-The Daemon is a long-lived process, so not only are we able to avoid the cost
-of JVM startup for every build, but we are able to cache information about
-project structure, files, tasks, and more in memory.
+守护进程是一个长期存在的过程，因此我们不仅可以避免每次构建都需要启动JVM的成本，而且还可以在内存中缓存有关项目结构，文件，任务等的信息。
 
-The reasoning is simple: improve build speed by reusing computations from
-previous builds. However, the benefits are dramatic: we typically measure
-build times reduced by 15-75% on subsequent builds. We recommend profiling
-your build by using `--profile` to get a sense of how much impact the Gradle
-Daemon can have for you.
+推理很简单：通过重用以前构建的计算来提高构建速度。但是，这样做的好处是巨大的：通常，在以后的构建中，我们估计构建时间减少了15-75％。我们建议您使用`--profile`来对构建进行概要分析，以了解Gradle
+Daemon对您的影响。
 
-The Gradle Daemon is enabled by default starting with Gradle 3.0, so you don't
-have to do anything to benefit from it.
+默认情况下，Gradle Daemon从Gradle 3.0开始启用，因此您无需做任何事情即可从中受益。
 
-## Running Daemon Status
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:status)[运行守护程序状态](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:status)
 
-To get a list of running Gradle Daemons and their statuses use the `--status`
-command.
+要获取正在运行的Gradle守护程序及其状态的列表，请使用`--status`命令。
 
-Sample output:
+样本输出：
 
     
     
@@ -227,164 +217,117 @@ Sample output:
       28411 3.0                     IDLE
       34247 3.0                     BUSY
 
-Currently, a given Gradle version can only connect to daemons of the same
-version. This means the status output will only show Daemons for the version
-of Gradle being invoked and not for any other versions. Future versions of
-Gradle will lift this constraint and will show the running Daemons for all
-versions of Gradle.
+当前，给定的Gradle版本只能连接到相同版本的守护程序。这意味着状态输出将仅显示正在调用的Gradle版本的守护程序，而不显示任何其他版本的守护程序。Gradle的未来版本将解除此约束，并将显示所有Gradle版本的正在运行的守护程序。
 
-## Disabling the Daemon
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:disabling_the_daemon)[禁用守护程序](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:disabling_the_daemon)
 
-The Gradle Daemon is enabled by default, and we recommend always enabling it.
-There are several ways to disable the Daemon, but the most common one is to
-add the line
+Gradle守护程序默认情况下处于启用状态，我们建议始终启用它。有几种方法可以禁用守护程序，但是最常见的一种方法是添加行
 
     
     
     org.gradle.daemon=false
 
-to the file `«USER_HOME»/.gradle/gradle.properties`, where `«USER_HOME»` is
-your home directory. That’s typically one of the following, depending on your
-platform:
+到文件`«USER_HOME»/.gradle/gradle.properties`，`«USER_HOME»`您的主目录在哪里。通常是以下之一，具体取决于您的平台：
 
-  * `C:\Users\<username>` (Windows Vista & 7+)
+  * `C:\Users\<username>` （Windows Vista和7+）
 
-  * `/Users/<username>` (macOS)
+  * `/Users/<username>` （苹果系统）
 
-  * `/home/<username>` (Linux)
+  * `/home/<username>` （Linux）
 
-If that file doesn’t exist, just create it using a text editor. You can find
-details of other ways to disable (and enable) the Daemon in Daemon FAQ further
-down. That section also contains more detailed information on how the Daemon
-works.
+如果该文件不存在，则使用文本编辑器创建它。您可以在后面的“守护[程序常见问题”中](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#daemon_faq)找到其他禁用（启用）守护[程序的](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#daemon_faq)方法的详细信息。该部分还包含有关守护程序如何工作的更多详细信息。
 
-Note that having the Daemon enabled, all your builds will take advantage of
-the speed boost, regardless of the version of Gradle a particular build uses.
+请注意，启用了守护程序后，无论特定构建使用的Gradle版本如何，所有构建都将利用速度提升。
 
 __ |
 
-Continuous integration
+持续集成
 
-Since Gradle 3.0, we enable Daemon by default and recommend using it for both
-developers' machines and Continuous Integration servers. However, if you
-suspect that Daemon makes your CI builds unstable, you can disable it to use a
-fresh runtime for each build since the runtime is _completely_ isolated from
-any previous builds.  
+从Gradle 3.0开始，我们默认启用Daemon并建议将其用于开发人员的计算机和Continuous
+Integration服务器。但是，如果您怀疑Daemon使您的CI构建不稳定，则可以将其禁用以对每个构建使用全新的运行时，因为运行时与任何先前的构建
+_完全_ 隔离。  
   
 ---|---  
   
-## Stopping an existing Daemon
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:stopping_an_existing_daemon)[停止现有的守护程序](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:stopping_an_existing_daemon)
 
-As mentioned, the Daemon is a background process. You needn’t worry about a
-build up of Gradle processes on your machine, though. Every Daemon monitors
-its memory usage compared to total system memory and will stop itself if idle
-when available system memory is low. If you want to explicitly stop running
-Daemon processes for any reason, just use the command `gradle --stop`.
+如前所述，守护进程是一个后台进程。不过，您不必担心计算机上会构建Gradle进程。与可用的系统内存总量相比，每个守护程序都会监视其内存使用情况，并且在可用系统内存不足时空闲时将自行停止。如果出于任何原因要显式停止运行Daemon进程，只需使用命令`gradle
+--stop`。
 
-This will terminate all Daemon processes that were started with the same
-version of Gradle used to execute the command. If you have the Java
-Development Kit (JDK) installed, you can easily verify that a Daemon has
-stopped by running the `jps` command. You’ll see any running Daemons listed
-with the name `GradleDaemon`.
+这将终止所有与用于执行命令的相同Gradle版本一起启动的Daemon进程。如果安装了Java开发工具包（JDK），则可以通过运行`jps`命令轻松地验证守护程序是否已停止。您会看到名称为的所有正在运行的守护程序`GradleDaemon`。
 
-## FAQ
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#daemon_faq)[常问问题](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#daemon_faq)
 
-### How do I disable the Gradle Daemon?
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:ways_to_disable_gradle_daemon)[如何禁用Gradle守护程序？](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:ways_to_disable_gradle_daemon)
 
-There are two recommended ways to disable the Daemon persistently for an
-environment:
+有两种建议的方法可以为环境持久禁用守护程序：
 
-  * Via environment variables: add the flag `-Dorg.gradle.daemon=false` to the `GRADLE_OPTS` environment variable
+  * 通过环境变量：将标志添加`-Dorg.gradle.daemon=false`到`GRADLE_OPTS`环境变量
 
-  * Via properties file: add `org.gradle.daemon=false` to the `«GRADLE_USER_HOME»/gradle.properties` file
+  * 通过属性文件：添加`org.gradle.daemon=false`到`«GRADLE_USER_HOME»/gradle.properties`文件
 
 __ |
 
-Note, `«GRADLE_USER_HOME»` defaults to `«USER_HOME»/.gradle`, where
-`«USER_HOME»` is the home directory of the current user. This location can be
-configured via the `-g` and `--gradle-user-home` command line switches, as
-well as by the `GRADLE_USER_HOME` environment variable and
-`org.gradle.user.home` JVM system property.  
+注意，`«GRADLE_USER_HOME»`默认为`«USER_HOME»/.gradle`，其中`«USER_HOME»`是当前用户的主目录。可以通过`-g`和`--gradle-
+user-home`命令行开关以及`GRADLE_USER_HOME`环境变量和`org.gradle.user.home`JVM系统属性来配置此位置。  
   
 ---|---  
   
-Both approaches have the same effect. Which one to use is up to personal
-preference. Most Gradle users choose the second option and add the entry to
-the user `gradle.properties` file.
+两种方法具有相同的效果。使用哪一个取决于个人喜好。大多数Gradle用户选择第二个选项，然后将条目添加到用户`gradle.properties`文件中。
 
-On Windows, this command will disable the Daemon for the current user:
+在Windows上，此命令将为当前用户禁用守护程序：
 
     
     
     (if not exist "%USERPROFILE%/.gradle" mkdir "%USERPROFILE%/.gradle") && (echo. >> "%USERPROFILE%/.gradle/gradle.properties" && echo org.gradle.daemon=false >> "%USERPROFILE%/.gradle/gradle.properties")
 
-On UNIX-like operating systems, the following Bash shell command will disable
-the Daemon for the current user:
+在类似UNIX的操作系统上，以下Bash shell命令将为当前用户禁用守护程序：
 
     
     
     mkdir -p ~/.gradle && echo "org.gradle.daemon=false" >> ~/.gradle/gradle.properties
 
-Once the Daemon is disabled for a build environment in this way, a Gradle
-Daemon will not be started unless explicitly requested using the `--daemon`
-option.
+一旦以此方式为构建环境禁用了守护程序，除非使用该`--daemon`选项明确请求，否则不会启动Gradle守护程序。
 
-The `--daemon` and `--no-daemon` command line options enable and disable usage
-of the Daemon for individual build invocations when using the Gradle command
-line interface. These command line options have the _highest_ precedence when
-considering the build environment. Typically, it is more convenient to enable
-the Daemon for an environment (e.g. a user account) so that all builds use the
-Daemon without requiring to remember to supply the `--daemon` option.
+使用Gradle命令行界面时，`--daemon`和`--no-
+daemon`命令行选项启用和禁用守护程序用于单独的构建调用。在考虑构建环境时，这些命令行选项具有 _最高_
+优先级。通常，为环境（例如，用户帐户）启用守护程序更为方便，以便所有构建都使用守护程序而无需记住要提供该`--daemon`选项。
 
-### Why is there more than one Daemon process on my machine?
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:why_is_there_more_than_one_daemon_process_on_my_machine)[为什么我的机器上有多个守护进程？](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:why_is_there_more_than_one_daemon_process_on_my_machine)
 
-There are several reasons why Gradle will create a new Daemon, instead of
-using one that is already running. The basic rule is that Gradle will start a
-new Daemon if there are no existing idle or compatible Daemons available.
-Gradle will kill any Daemon that has been idle for 3 hours or more, so you
-don't have to worry about cleaning them up manually.
+Gradle为什么要创建一个新的守护程序，而不使用已经运行的守护程序，有几个原因。基本规则是，如果没有可用的空闲或兼容守护程序，则Gradle将启动新的守护程序。Gradle将杀死任何闲置了3小时或更长时间的守护程序，因此您不必担心手动清理它们。
 
-idle
+闲
 
     
 
-An idle Daemon is one that is not currently executing a build or doing other
-useful work.
+空闲的守护程序是当前未执行构建或未执行其他有用工作的守护程序。
 
-compatible
+兼容
 
     
 
-A compatible Daemon is one that can (or can be made to) meet the requirements
-of the requested build environment. The Java runtime used to execute the build
-is an example aspect of the build environment. Another example is the set of
-JVM system properties required by the build runtime.
+兼容的守护程序是可以（或可以使其）满足所请求构建环境的要求的守护程序。用于执行构建的Java运行时是构建环境的一个示例方面。另一个示例是构建运行时所需的JVM系统属性集。
 
-Some aspects of the requested build environment may not be met by an Daemon.
-If the Daemon is running with a Java 8 runtime, but the requested environment
-calls for Java 10, then the Daemon is not compatible and another must be
-started. Moreover, certain properties of a Java runtime cannot be changed once
-the JVM has started. For example, it is not possible to change the memory
-allocation (e.g. `-Xmx1024m`), default text encoding, default locale, etc of a
-running JVM.
+守护程序可能无法满足请求的构建环境的某些方面。如果守护程序与Java 8运行时一起运行，但是请求的环境要求Java
+10，则该守护程序不兼容，必须启动另一个守护程序。而且，一旦JVM启动，就无法更改Java运行时的某些属性。例如，不可能更改`-Xmx1024m`正在运行的JVM的内存分配（例如），默认文本编码，默认语言环境等。
 
-The “requested build environment” is typically constructed implicitly from
-aspects of the build client’s (e.g. Gradle command line client, IDE etc.)
-environment and explicitly via command line switches and settings. See [Build
-Environment](build_environment.html#build_environment) for details on how to
-specify and control the build environment.
+“请求的构建环境”通常是从构建客户端（例如Gradle命令行客户端，IDE等）环境的各个方面隐式构建的，并通过命令行开关和设置显式构建的。有关如何指定和控制[构建环境](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_environment.html#build_environment)的详细信息，请参见[构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_environment.html#build_environment)环境。
 
-The following JVM system properties are effectively immutable. If the
-requested build environment requires any of these properties, with a different
-value than a Daemon’s JVM has for this property, the Daemon is not compatible.
+以下JVM系统属性实际上是不可变的。如果请求的构建环境需要这些属性中的任何一个，且其值与守护程序的JVM具有的该属性的值不同，则守护程序不兼容。
 
   * file.encoding
 
-  * user.language
+  * 用户语言
 
-  * user.country
+  * 用户国家
 
-  * user.variant
+  * 用户变量
 
   * java.io.tmpdir
 
@@ -402,293 +345,228 @@ value than a Daemon’s JVM has for this property, the Daemon is not compatible.
 
   * com.sun.management.jmxremote
 
-The following JVM attributes, controlled by startup arguments, are also
-effectively immutable. The corresponding attributes of the requested build
-environment and the Daemon’s environment must match exactly in order for a
-Daemon to be compatible.
+由启动参数控制的以下JVM属性也实际上是不可变的。为了使守护程序兼容，请求的构建环境和守护程序的环境的相应属性必须完全匹配。
 
-  * The maximum heap size (i.e. the -Xmx JVM argument)
+  * 最大堆大小（即-Xmx JVM参数）
 
-  * The minimum heap size (i.e. the -Xms JVM argument)
+  * 最小堆大小（即-Xms JVM参数）
 
-  * The boot classpath (i.e. the -Xbootclasspath argument)
+  * 引导类路径（即-Xbootclasspath参数）
 
-  * The “assertion” status (i.e. the -ea argument)
+  * “断言”状态（即-ea参数）
 
-The required Gradle version is another aspect of the requested build
-environment. Daemon processes are coupled to a specific Gradle runtime.
-Working on multiple Gradle projects during a session that use different Gradle
-versions is a common reason for having more than one running Daemon process.
+所需的Gradle版本是所请求构建环境的另一方面。守护进程与特定的Gradle运行时耦合。在使用不同Gradle版本的会话中处理多个Gradle项目是导致有多个正在运行的Daemon进程的常见原因。
 
-### How much memory does the Daemon use and can I give it more?
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:how_much_memory_does_the_daemon_use_and_can_i_give_it_more)[守护程序使用多少内存，我可以给它更多空间吗？](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:how_much_memory_does_the_daemon_use_and_can_i_give_it_more)
 
-If the requested build environment does not specify a maximum heap size, the
-Daemon will use up to 512MB of heap. It will use the JVM's default minimum
-heap size. 512MB is more than enough for most builds. Larger builds with
-hundreds of subprojects, lots of configuration, and source code may require,
-or perform better, with more memory.
+如果请求的构建环境未指定最大堆大小，则守护程序将使用最多512MB的堆。它将使用JVM的默认最小堆大小。对于大多数构建来说，512MB绰绰有余。包含数百个子项目的较大内部版本，大量配置和源代码可能需要或在具有更多内存的情况下表现更好。
 
-To increase the amount of memory the Daemon can use, specify the appropriate
-flags as part of the requested build environment. Please see [Build
-Environment](build_environment.html#build_environment) for details.
+要增加守护程序可以使用的内存量，请在请求的构建环境中指定适当的标志。有关详细信息，请参见[构建环境](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_environment.html#build_environment)。
 
-### How can I stop a Daemon?
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:how_can_i_stop_a_daemon)[如何停止守护程序？](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:how_can_i_stop_a_daemon)
 
-Daemon processes will automatically terminate themselves after 3 hours of
-inactivity or less. If you wish to stop a Daemon process before this, you can
-either kill the process via your operating system or run the `gradle --stop`
-command. The `--stop` switch causes Gradle to request that _all_ running
-Daemon processes, _of the same Gradle version used to run the command_ ,
-terminate themselves.
+闲置3个小时或更短的时间后，守护进程将自动终止。如果您希望在此之前停止Daemon进程，则可以通过操作系统终止该进程或运行`gradle
+--stop`命令。该`--stop`开关使Gradle请求 _所有_ 正在运行 _的，与用于运行命令的Gradle版本相同的_ Daemon进程自行终止。
 
-### What can go wrong with Daemon?
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:what_can_go_wrong_with_daemon)[守护程序会出什么问题？](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:what_can_go_wrong_with_daemon)
 
-Considerable engineering effort has gone into making the Daemon robust,
-transparent and unobtrusive during day to day development. However, Daemon
-processes can occasionally be corrupted or exhausted. A Gradle build executes
-arbitrary code from multiple sources. While Gradle itself is designed for and
-heavily tested with the Daemon, user build scripts and third party plugins can
-destabilize the Daemon process through defects such as memory leaks or global
-state corruption.
+在日常开发中，使Daemon健壮，透明且不引人注目的工程方面已经付出了相当大的努力。但是，守护进程有时会被破坏或耗尽。Gradle构建从多个源执行任意代码。虽然Gradle本身是为Daemon设计并经过严格测试的，但用户构建脚本和第三方插件可能会通过内存泄漏或全局状态损坏等缺陷破坏Daemon进程的稳定性。
 
-It is also possible to destabilize the Daemon (and build environment in
-general) by running builds that do not release resources correctly. This is a
-particularly poignant problem when using Microsoft Windows as it is less
-forgiving of programs that fail to close files after reading or writing.
+通过运行无法正确释放资源的构建，还可能破坏守护程序（通常是构建环境）的稳定性。当使用Microsoft
+Windows时，这是一个特别棘手的问题，因为它对读取或写入后无法关闭文件的程序的宽容度较小。
 
-Gradle actively monitors heap usage and attempts to detect when a leak is
-starting to exhaust the available heap space in the daemon. When it detects a
-problem, the Gradle daemon will finish the currently running build and
-proactively restart the daemon on the next build. This monitoring is enabled
-by default, but can be disabled by setting the
-`org.gradle.daemon.performance.enable-monitoring` system property to false.
+Gradle主动监视堆使用情况，并尝试检测何时泄漏开始耗尽守护程序中的可用堆空间。当检测到问题时，Gradle守护程序将完成当前正在运行的构建，并在下一个构建中主动重新启动该守护程序。默认情况下启用此监视，但是可以通过将`org.gradle.daemon.performance.enable-
+monitoring`system属性设置为false来禁用此监视。
 
-If it is suspected that the Daemon process has become unstable, it can simply
-be killed. Recall that the `--no-daemon` switch can be specified for a build
-to prevent use of the Daemon. This can be useful to diagnose whether or not
-the Daemon is actually the culprit of a problem.
+如果怀疑Daemon进程变得不稳定，则可以将其杀死。回想一下，`--no-
+daemon`可以为构建指定开关，以防止使用守护程序。这对于诊断守护程序是否实际上是问题的元凶很有用。
 
-## Tools & IDEs
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:tools_and_ides)[工具和IDE](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:tools_and_ides)
 
-The [Gradle Tooling API](third_party_integration.html#embedding) that is used
-by IDEs and other tools to integrate with Gradle _always_ uses the Gradle
-Daemon to execute builds. If you are executing Gradle builds from within your
-IDE you are using the Gradle Daemon and do not need to enable it for your
-environment.
+IDE和其他工具用于与Gradle集成的[Gradle Tooling
+API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/third_party_integration.html#embedding)
+_始终_ 使用Gradle守护程序执行构建。如果要在IDE中执行Gradle构建，则使用的是Gradle Daemon，而无需为您的环境启用它。
 
-## How does the Gradle Daemon make builds faster?
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:how_does_the_gradle_daemon_make_builds_faster)[Gradle守护程序如何使构建更快？](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:how_does_the_gradle_daemon_make_builds_faster)
 
-The Gradle Daemon is a _long lived_ build process. In between builds it waits
-idly for the next build. This has the obvious benefit of only requiring Gradle
-to be loaded into memory once for multiple builds, as opposed to once for each
-build. This in itself is a significant performance optimization, but that's
-not where it stops.
+Gradle守护程序是一个 _长期存在的_
+构建过程。在两次构建之间，它空闲地等待下一次构建。这具有明显的好处，即对于多个构建只需要一次将Gradle加载到内存中，而不是对于每个构建一次。这本身就是一项重大的性能优化，但并非止于此。
 
-A significant part of the story for modern JVM performance is runtime code
-optimization. For example, HotSpot (the JVM implementation provided by Oracle
-and used as the basis of OpenJDK) applies optimization to code while it is
-running. The optimization is progressive and not instantaneous. That is, the
-code is progressively optimized during execution which means that subsequent
-builds can be faster purely due to this optimization process. Experiments with
-HotSpot have shown that it takes somewhere between 5 and 10 builds for
-optimization to stabilize. The difference in perceived build time between the
-first build and the 10th for a Daemon can be quite dramatic.
+关于现代JVM性能的故事的重要部分是运行时代码优化。例如，HotSpot（Oracle提供的JVM实现，用作OpenJDK的基础）在运行时对代码进行优化。优化是渐进的，不是瞬时的。也就是说，在执行过程中对代码进行了逐步优化，这意味着纯粹由于此优化过程而使得后续构建可以更快。使用HotSpot进行的实验表明，需要5到10次构建才能稳定优化。守护程序的第一个构建和第10个构建之间的可感知构建时间差异可能非常明显。
 
-The Daemon also allows more effective in memory caching across builds. For
-example, the classes needed by the build (e.g. plugins, build scripts) can be
-held in memory between builds. Similarly, Gradle can maintain in-memory caches
-of build data such as the hashes of task inputs and outputs, used for
-incremental building.
+守护程序还允许跨构建更有效地进行内存缓存。例如，构建所需的类（例如，插件，构建脚本）可以保存在构建之间的内存中。同样，Gradle可以维护构建数据的内存缓存，例如用于增量构建的任务输入和输出的哈希值。
 
-To detect changes on the file system, and to calculate what needs to be
-rebuilt, Gradle collects a lot of information about the state of the file
-system during every build. When watching the file system is enabled, the
-Daemon can re-use the already collected information from the last build. This
-can save a significant amount of time for incremental builds, where the number
-of changes to the file system between two builds is typically low.
+为了检测文件系统上的更改并计算需要重建的内容，Gradle会在每次构建过程中收集有关文件系统状态的大量信息。当[监视的文件系统](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:daemon_watch_fs)被启用，后台程序可以重新使用来自上次编译已经收集到的信息。这可以为增量构建节省大量时间，而两次构建之间对文件系统的更改次数通常很少。
 
-## Watching the file system
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:daemon_watch_fs)[观看文件系统](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:daemon_watch_fs)
 
-To detect changes on the file system, and to calculate what needs to be
-rebuilt, Gradle collects information about the file system in-memory during
-every build (aka _Virtual File System_ ). By watching the file system, Gradle
-can keep the Virtual File System in sync with the file system even between
-builds. Doing so allows the Daemon to save the time to rebuild the Virtual
-File System from disk for the next build. For incremental builds, there are
-typically only a few changes between builds. Therefore, incremental builds can
-re-use most of the Virtual File System from the last build and benefit the
-most from watching the file system.
+为了检测文件系统上的更改并计算需要重建的内容，Gradle会在每次构建（即 _虚拟文件系统_ ）期间收集有关内存中 _文件系统的信息_
+。通过监视文件系统，Gradle可以使虚拟文件系统与文件系统保持同步，即使在两次构建之间也是如此。这样做可以使守护程序节省时间来从磁盘重建虚拟文件系统以进行下一个构建。对于增量构建，构建之间通常只有几处更改。因此，增量构建可以重用上次构建中的大部分虚拟文件系统，并从监视文件系统中获得最大收益。
 
-Gradle uses operating system features for watching the file system. It
-supports the feature on these operating systems and file systems:
+Gradle使用操作系统功能来监视文件系统。它支持以下操作系统和文件系统上的功能：
 
-  * Windows 10 with NTFS,
+  * Windows 10和NTFS
 
-  * Linux (Ubuntu 16.04 or later, CentOS 8 or later, Red Hat Enterprise Linux 8 or later, Amazon Linux 2) using ext3 and ext4,
+  * 使用ext3和ext4的Linux（Ubuntu 16.04或更高版本，CentOS 8或更高版本，Red Hat Enterprise Linux 8或更高版本，Amazon Linux 2），
 
-  * macOS 10.14 (Mojave) or later on APFS and HFS+.
+  * APFS和HFS +上的macOS 10.14（Mojave）或更高版本。
 
-Network file systems like NFS and SMB are not supported. FAT file systems are
-not supported.
+不支持NFS和SMB等网络文件系统。不支持FAT文件系统。
 
-Watching the file system is an experimental feature and is disabled by
-default. You can enable the feature in a couple of ways:
+监视文件系统是一项实验性功能，默认情况下处于禁用状态。您可以通过以下两种方式启用该功能：
 
-Run with `--watch-fs` on the command line
+`--watch-fs`在命令行上运行
 
     
 
-This enables watching the file system for this build only.
+这样就可以仅监视此构建的文件系统。
 
-Put `org.gradle.vfs.watch=true` in your `gradle.properties`
-
-    
-
-This enables watching the file system for all builds, unless explicitly
-disabled with `--no-watch-fs`.
-
-### Troubleshooting file system watching
-
-Limitations
+放在`org.gradle.vfs.watch=true`你的`gradle.properties`
 
     
 
-File system watching currently has the following limitations:
+除非使用显式禁用，否则这可以监视文件系统的所有构建`--no-watch-fs`。
 
-  * If you have symlinks in your build, you won’t get the performance benefits for those locations.
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:daemon_watch_fs_troubleshooting)[对文件系统监视进行故障排除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:daemon_watch_fs_troubleshooting)
 
-  * On Windows, we don’t support network drives (they might work, but we don’t test them yet).
-
-Enable verbose logging
-
-    
-
-You can instruct Gradle to some more information about the state of the
-virtual file system, and the events received from the file system using the
-`org.gradle.vfs.verbose` flag. This produces the following output at the start
-and end of the build:
-
-    
-    
-    $ gradle assemble --watch-fs -Dorg.gradle.vfs.verbose=true
-    Received 3 file system events since last build while watching 1 hierarchies
-    Virtual file system retained information about 2 files, 2 directories and 0 missing files since last build
-    > Task :compileJava NO-SOURCE
-    > Task :processResources NO-SOURCE
-    > Task :classes UP-TO-DATE
-    > Task :jar UP-TO-DATE
-    > Task :assemble UP-TO-DATE
-    
-    BUILD SUCCESSFUL in 58ms
-    1 actionable task: 1 up-to-date
-    Received 5 file system events during the current build while watching 1 hierarchies
-    Virtual file system retains information about 3 files, 2 directories and 2 missing files until next build
-
-Note that on Windows and macOS Gradle might report changes received since the
-last build even if you haven't changed anything. These are harmless
-notifications about changes to Gradle's own caches and can be ignored safely.
-
-Gradle does not pick up some of my changes
+局限性
 
     
 
-_Please[let us know on the Gradle community Slack](https://gradle-
-community.slack.com/app_redirect?channel=file-system-watching) if that happens
-to you._ If your build declares its inputs and outputs correctly, this should
-not happen. So it’s either a bug we need to fix, or your build is lacking the
-declaration of some inputs or outputs.
+当前监视文件系统具有以下限制：
 
-VFS state is dropped due to lost state
+  * 如果您的构建中有符号链接，则这些位置将不会带来性能优势。
 
-    
+  * 在Windows上，我们不支持网络驱动器（它们可能会工作，但我们尚未对其进行测试）。
 
-If you receive the `Dropped VFS state due to lost state` message during the
-build, _please[let us know on the Gradle community Slack](https://gradle-
-community.slack.com/app_redirect?channel=file-system-watching) if that happens
-to you._ This message means that either:
-
-  * the daemon received some unknown file system event,
-
-  * too many changes happened, and the watching API couldn’t handle it.
-
-In both cases the build cannot benefit from file system watching.
-
-Too many open files on macOS
+启用详细日志记录
 
     
 
-If you receive the `java.io.IOException: Too many open files` error on macOS,
-you need to raise your open files limit, see
-[here](https://superuser.com/a/443168/8117).
+您可以使用该`org.gradle.vfs.verbose`标志指示Gradle提供有关虚拟文件系统状态以及从文件系统接收到的事件的更多信息。这将在构建的开始和结束时产生以下输出：
 
-### Linux-specific notes
+    
+    
+    $ gradle汇编--watch-fs -Dorg.gradle.vfs.verbose = true
+    自上次构建以来，在观看1个层次结构时收到3个文件系统事件
+    自上次构建以来，虚拟文件​​系统保留了有关2个文件，2个目录和0个丢失文件的信息
+    >任务：compileJava NO-SOURCE
+    >任务：processResources NO-SOURCE
+    >任务：UP-TO-DATE
+    >任务：JAR UP-TO-DATE
+    >任务：组装最新
+    
+    在58毫秒内成功建立
+    1个可执行任务：1个最新任务
+    在查看1个层次结构的同时，在当前构建期间收到5个文件系统事件
+    虚拟文件系统将保留有关3个文件，2个目录和2个丢失的文件的信息，直到下一次构建
 
-File system watching uses [inotify](http://en.wikipedia.org/wiki/Inotify) on
-Linux. Depending on the size of your build, it may be necessary to increase
-inotify limits. If you are using an IDE, then you probably already had to
-increase the limits in the past.
+请注意，在Windows和macOS上，Gradle可能会报告自上次构建以来所收到的更改，即使您没有进行任何更改。这些是有关Gradle自己的缓存更改的无害通知，可以安全地忽略。
 
-File system watching uses one inotify watch per watched directory. You can see
-the current limit of inotify watches per user by running:
+Gradle无法接收我的某些更改
+
+    
+
+_如果您遇到这种情况， 请[在Gradle社区Slack上告诉我们](https://gradle-
+community.slack.com/app_redirect?channel=file-system-watching)。_
+如果您的构建正确地声明了其输入和输出，则不应发生这种情况。因此，这可能是我们需要修复的错误，或者您的构建缺少某些输入或输出的声明。
+
+由于丢失状态，VFS状态被丢弃
+
+    
+
+如果您`Dropped VFS state due to lost state`在构建期间收到消息， _请[ 在](https://gradle-
+community.slack.com/app_redirect?channel=file-system-
+watching)发生这种情况时[在Gradle社区Slack上告诉我们](https://gradle-
+community.slack.com/app_redirect?channel=file-system-watching)。_ 此消息表示：
+
+  * 守护程序收到一些未知的文件系统事件，
+
+  * 发生了太多更改，并且监视API无法处理它。
+
+在这两种情况下，构建都无法从文件系统监视中受益。
+
+macOS上的打开文件过多
+
+    
+
+如果您`java.io.IOException: Too many open
+files`在macOS上收到错误消息，则需要提高打开文件的限制，请参见[此处](https://superuser.com/a/443168/8117)。
+
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:inotify_watches_limit)[Linux专用说明](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html#sec:inotify_watches_limit)
+
+文件系统监视在Linux上使用[inotify](http://en.wikipedia.org/wiki/Inotify)。根据构建的大小，可能有必要增加inotify限制。如果您使用的是IDE，那么过去您可能已经不得不增加限制。
+
+文件系统监视对每个监视目录使用一个inotify监视。您可以通过运行以下命令查看每个用户当前的inotify监视限制：
 
     
     
     cat /proc/sys/fs/inotify/max_user_watches
 
-To increase the limit to e.g. 512K watches run the following:
+要将限制增加到例如512K手表，请运行以下命令：
 
     
     
     echo 524288 | sudo tee -a /etc/sysctl.conf
     sudo sysctl -p --system
 
-Each used inotify watch takes up to 1KB of memory. Assuming inotify uses all
-the 512K watches then around 500MB will be used for watching the file system.
-If your environment is memory constraint, you may want to disable file system
-watching.
+每个使用的inotify手表最多占用1KB的内存。假设inotify使用所有512K手表，那么将使用大约500MB的空间来监视文件系统。如果环境受内存限制，则可能要禁用文件系统监视。
 
-**Docs**
+**文件**
 
-  * [User Manual](/userguide/userguide.html)
-  * [DSL Reference](/dsl/)
-  * [Release Notes](/release-notes.html)
-  * [Javadoc](/javadoc/)
+  * [用户手册](file:///userguide/userguide.html)
+  * [DSL参考](file:///dsl/)
+  * [发行说明](file:///release-notes.html)
+  * [Java文档](file:///javadoc/)
 
-**News**
+**新闻**
 
-  * [Blog](https://blog.gradle.org/)
-  * [Newsletter](https://newsletter.gradle.com/)
-  * [Twitter](https://twitter.com/gradle)
-  * [Status Page](https://status.gradle.com/)
+  * [博客](https://blog.gradle.org/)
+  * [通讯](https://newsletter.gradle.com/)
+  * [推特](https://twitter.com/gradle)
+  * [状态页](https://status.gradle.com/)
 
-**Products**
+**产品展示**
 
-  * [Build Scans](https://gradle.com/build-scans/)
-  * [Build Cache](https://gradle.com/build-cache/)
-  * [Enterprise Docs](https://gradle.com/enterprise/resources/)
+  * [构建扫描](https://gradle.com/build-scans/)
+  * [构建缓存](https://gradle.com/build-cache/)
+  * [企业文件](https://gradle.com/enterprise/resources/)
 
-**Get Help**
+**得到帮助**
 
-  * [Forums](https://discuss.gradle.org/c/help-discuss)
-  * [GitHub](https://github.com/gradle/)
-  * [Training](https://gradle.com/training/)
-  * [Services](https://gradle.org/services/)
+  * [论坛](https://discuss.gradle.org/c/help-discuss)
+  * [的GitHub](https://github.com/gradle/)
+  * [训练](https://gradle.com/training/)
+  * [服务](https://gradle.org/services/)
 
-##### Stay `UP-TO-DATE` on new features and news
+##### 随时`UP-TO-DATE`关注新功能和新闻
 
-By entering your email, you agree to our
-[Terms](https://gradle.com/legal/terms-of-service/) and [Privacy
-Policy](https://gradle.com/legal/privacy/), including receipt of emails. You
-can unsubscribe at any time.
+输入您的电子邮件，即表示您同意我们的[条款](https://gradle.com/legal/terms-of-
+service/)和[隐私政策](https://gradle.com/legal/privacy/)，包括接收电子邮件。您可以随时取消订阅。
 
-Subscribe
+订阅
 
-© [Gradle Inc.](https://gradle.com) 2020 All rights reserved.
+© [Gradle Inc.](https://gradle.com/) 2020年 版权所有。
 
-[ gradle ](/)
+[ gradle ](file:///)
 
-[Careers](https://gradle.com/careers/) |
-[Privacy](https://gradle.com/legal/privacy/) | [Terms of
-Service](https://gradle.com/legal/terms-of-service/) |
-[Contact](https://gradle.org/contact/)
+[招贤纳士](https://gradle.com/careers/)| [隐私](https://gradle.com/legal/privacy/)|
+[服务条款](https://gradle.com/legal/terms-of-service/)|
+[联系](https://gradle.org/contact/)
+
+![Google 翻译](./Gradle守护程序_files/translate_24dp.png)
+
+# 原文
+
+提供更好的翻译建议
+
+* * *
 

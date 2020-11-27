@@ -1,322 +1,266 @@
 
 
-[ Gradle ](https://docs.gradle.org "Gradle Docs")
+[ Gradle ](https://docs.gradle.org/ "Gradle Docs")
 
-User Manual
+用户手册
 
-  * Community Open Community Menu
+  * 社区 Open Community Menu
 
-[ Community Home ](https://gradle.org/)
+[ 社区之家 ](https://gradle.org/)
 
-[ Community Forums ](https://discuss.gradle.org/)
+[ 社区论坛 ](https://discuss.gradle.org/)
 
-[ Community Plugins ](https://plugins.gradle.org)
+[ 社区插件 ](https://plugins.gradle.org/)
 
-  * [Training](https://gradle.com/training/)
-  * News Open Community Menu
+  * [训练](https://gradle.com/training/)
+  * 新闻 Open Community Menu
 
-[ Newsletter ](https://newsletter.gradle.com)
+[ 通讯 ](https://newsletter.gradle.com/)
 
-[ Blog ](https://blog.gradle.org)
+[ 博客 ](https://blog.gradle.org/)
 
-[ Twitter ](https://twitter.com/gradle)
+[ 推特 ](https://twitter.com/gradle)
 
-  * [Enterprise](https://gradle.com)
-  * [github](https://github.com/gradle/gradle "Gradle on GitHub")
+  * [企业](https://gradle.com/)
+  * [github](https://github.com/gradle/gradle "GitHub上的Gradle")
 
-  * [Docs Home](../userguide/userguide.html)
-  * [Samples](../samples/index.html)
-  * [Release Notes](../release-notes.html)
-  * Gradle DSLs and API
-    * [Javadoc](../javadoc/index.html?overview-summary.html)
-    * [Groovy DSL Reference](../dsl/index.html)
-    * [Groovy DSL Primer](../userguide/groovy_build_script_primer.html)
+  * [文件首页](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/userguide.html)
+  * [样品](file:///Users/dxs/temp/gradle-6.7.1/docs/samples/index.html)
+  * [发行说明](file:///Users/dxs/temp/gradle-6.7.1/docs/release-notes.html)
+  * [Gradle API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#gradle-api)
+    * [Java文档](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/index.html?overview-summary.html)
+    * [Groovy DSL参考](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/index.html)
+    * [Groovy DSL入门](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/groovy_build_script_primer.html)
     * [Kotlin DSL API](https://gradle.github.io/kotlin-dsl-docs/api/)
-    * [Kotlin DSL Primer](../userguide/kotlin_dsl.html)
-    * [Groovy to Kotlin DSL Migration](../userguide/migrating_from_groovy_to_kotlin_dsl.html)
+    * [Kotlin DSL Primer](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/kotlin_dsl.html)
 
-### User Manual
+### 用户手册
 
-[ PDF ](../userguide/userguide.pdf)
+[ PDF格式 ](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/userguide.pdf)
 
-  * [What is Gradle?](../userguide/what_is_gradle.html)
-  * [Getting Started](../userguide/getting_started.html)
-  * [Installing Gradle](../userguide/installation.html)
-  * Upgrading Gradle...
-    * [version 6.X to latest](../userguide/upgrading_version_6.html)
-    * [version 5.X to 6.0](../userguide/upgrading_version_5.html)
-    * [version 4.X to 5.0](../userguide/upgrading_version_4.html)
-    * [Gradle's Feature Lifecycle](../userguide/feature_lifecycle.html)
-  * Migrating to Gradle...
-    * [from Maven](../userguide/migrating_from_maven.html)
-    * [from Ant](../userguide/migrating_from_ant.html)
-  * [Compatibility Notes](../userguide/compatibility.html)
-  * [Troubleshooting Builds](../userguide/troubleshooting.html)
+  * [什么是Gradle？](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/what_is_gradle.html)
+  * [入门](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/getting_started.html)
+  * [安装Gradle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html)
+  * [升级Gradle ...](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#upgrading-gradle)
+    * [version 6.X to latest](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_6.html)
+    * [version 5.X to 6.0](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html)
+    * [version 4.X to 5.0](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_4.html)
+    * [Gradle's Feature Lifecycle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/feature_lifecycle.html)
+  * [迁移至Gradle ...](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#migrating-to-gradle)
+    * [from Maven](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/migrating_from_maven.html)
+    * [from Ant](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/migrating_from_ant.html)
+  * [相容性说明](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/compatibility.html)
+  * [对构建进行故障排除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/troubleshooting.html)
 
-### Running Gradle Builds
+### 运行Gradle构建
 
-  * Customizing Execution
-    * [Configuring the Build Environment](../userguide/build_environment.html)
-    * [Configuring the Gradle Daemon](../userguide/gradle_daemon.html)
-    * [Using Initialization Scripts](../userguide/init_scripts.html)
-  * [Executing Multi-Project Builds](../userguide/intro_multi_project_builds.html)
-  * [Inspecting Gradle Builds](https://scans.gradle.com/)
-  * Using the Build Cache
-    * [Enabling and Configuring](../userguide/build_cache.html)
-    * [Why use the Build Cache?](../userguide/build_cache_use_cases.html)
-    * [Understanding the Impact](../userguide/build_cache_performance.html)
-    * [Learning Basic Concepts](../userguide/build_cache_concepts.html)
-    * [Caching Java Project](../userguide/caching_java_projects.html)
-    * [Caching Android Project](../userguide/caching_android_projects.html)
-    * [Debugging Caching Issues](../userguide/build_cache_debugging.html)
-    * [Troubleshooting](../userguide/common_caching_problems.html)
-  * Optimizing Build Times
-    * [Improving Performance of Gradle Builds](../userguide/performance.html)
-    * [Using the Configuration Cache](../userguide/configuration_cache.html)
+  * [自定义执行](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#customizing-execution)
+    * [Configuring the Build Environment](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_environment.html)
+    * [Configuring the Gradle Daemon](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html)
+    * [Using Initialization Scripts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/init_scripts.html)
+  * [执行多项目构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/intro_multi_project_builds.html)
+  * [检查Gradle构建](https://scans.gradle.com/)
+  * [优化构建时间](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#optimizing-build-performance)
+    * [Build Performance Guide](https://guides.gradle.org/performance/)
+    * [Enabling and Configuring the Build Cache](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_cache.html)
+    * [Using the Configuration Cache](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/configuration_cache.html)
 
-### Authoring Gradle Builds
+### 编写Gradle构建
 
-  * Learning the Basics
-    * [Writing Build Scripts](../userguide/tutorial_using_tasks.html)
-    * [Working with Tasks](../userguide/more_about_tasks.html)
-    * [Learning More About Build Scripts](../userguide/writing_build_scripts.html)
-    * [Working with Files](../userguide/working_with_files.html)
-    * [Using Gradle Plugins](../userguide/plugins.html)
-    * [Understanding the Build Lifecycle](../userguide/build_lifecycle.html)
-    * [Working with Logging](../userguide/logging.html)
-    * [Avoiding Traps](../userguide/potential_traps.html)
-  * Structuring Individual Builds
-    * [Creating a Basic Multi-Project Build](../userguide/multi_project_builds.html)
-    * [Declaring Dependencies between Subprojects](../userguide/declaring_dependencies_between_subprojects.html)
-    * [Sharing Build Logic between Subprojects](../userguide/sharing_build_logic_between_subprojects.html)
-    * [Fine Tuning the Project Layout](../userguide/fine_tuning_project_layout.html)
-    * [Understanding Configuration and Execution](../userguide/multi_project_configuration_and_execution.html)
-  * Structuring Software Products
-    * [Structuring large Projects](../userguide/structuring_software_products.html)
-    * [Tweaking Project Structure](../userguide/structuring_software_products_details.html)
-    * [Composing Builds](../userguide/composite_builds.html)
-  * Authoring Sustainable Builds
-    * [Organizing Build Logic](../userguide/organizing_gradle_projects.html)
-    * [Following Best Practices](../userguide/authoring_maintainable_build_scripts.html)
-  * Advanced Techniques
-    * [Testing a Build with TestKit](../userguide/test_kit.html)
-    * [Using Ant from Gradle](../userguide/ant.html)
+  * [学习基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#learning-the-basics)
+    * [介绍构建脚本的基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/tutorial_using_tasks.html)
+    * [处理任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/more_about_tasks.html)
+    * [了解有关构建脚本的更多信息](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/writing_build_scripts.html)
+    * [处理文件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/working_with_files.html)
+    * [使用Gradle插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html)
+    * [了解构建生命周期](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_lifecycle.html)
+    * [使用记录](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/logging.html)
+    * [避免陷阱](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/potential_traps.html)
+  * [创作多项目构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#authoring-multi-project-builds)
+    * [Creating a Basic Multi-Project Build](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_builds.html)
+    * [Declaring Dependencies between Subprojects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_dependencies_between_subprojects.html)
+    * [Sharing Build Logic between Subprojects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/sharing_build_logic_between_subprojects.html)
+    * [Fine Tuning the Project Layout](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/fine_tuning_project_layout.html)
+    * [Understanding Configuration and Execution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_configuration_and_execution.html)
+  * [创作可持续建筑](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#authoring-sustainable-builds)
+    * [Organizing Build Logic](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/organizing_gradle_projects.html)
+    * [Following Best Practices](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/authoring_maintainable_build_scripts.html)
+  * [先进技术](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#advanced-techniques)
+    * [Developing Parallel Tasks](https://guides.gradle.org/using-the-worker-api/)
+    * [Testing a Build with TestKit](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/test_kit.html)
+    * [Using Ant from Gradle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/ant.html)
 
-### Authoring JVM Builds
+### 编写JVM构建
 
-  * [Building Java & JVM projects](../userguide/building_java_projects.html)
-  * [Testing Java & JVM projects](../userguide/java_testing.html)
-  * [Toolchains for Java projects](../userguide/toolchains.html)
-  * [Managing Dependencies](../userguide/dependency_management_for_java_projects.html)
-  * JVM Plugins
-    * [Java Library Plugin](../userguide/java_library_plugin.html)
-    * [Java Application Plugin](../userguide/application_plugin.html)
-    * [Java Platform Plugin](../userguide/java_platform_plugin.html)
-    * [Groovy Plugin](../userguide/groovy_plugin.html)
-    * [Scala Plugin](../userguide/scala_plugin.html)
+  * [构建Java和JVM项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_java_projects.html)
+  * [测试Java和JVM项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html)
+  * [Java项目的工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html)
+  * [管理依赖关系](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_management_for_java_projects.html)
+  * [JVM插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#jvm-plugins)
+    * [Java Library Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_library_plugin.html)
+    * [Java Application Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/application_plugin.html)
+    * [Java Platform Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_platform_plugin.html)
+    * [Groovy Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/groovy_plugin.html)
+    * [Scala Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/scala_plugin.html)
 
-### Authoring C++/Swift Builds
+### 编写C ++ / Swift构建
 
-  * [Building C++ projects](../userguide/building_cpp_projects.html)
-  * [Testing C++ projects](../userguide/cpp_testing.html)
-  * [Building Swift projects](../userguide/building_swift_projects.html)
-  * [Testing Swift projects](../userguide/swift_testing.html)
+  * [构建C ++项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_cpp_projects.html)
+  * [测试C ++项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/cpp_testing.html)
+  * [建立Swift项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_swift_projects.html)
+  * [测试Swift项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/swift_testing.html)
 
-### Working with Dependencies
+### 使用依赖项
 
-  * Learning the Basics
-    * [What is Dependency Management?](../userguide/core_dependency_management.html)
-    * [Declaring Repositories](../userguide/declaring_repositories.html)
-    * [Declaring Dependencies](../userguide/declaring_dependencies.html)
-    * [Understanding Library and Application Differences](../userguide/library_vs_application.html)
-    * [Viewing and Debugging Dependencies](../userguide/viewing_debugging_dependencies.html)
-    * [Understanding Resolution](../userguide/dependency_resolution.html)
-    * [Verifying dependencies](../userguide/dependency_verification.html)
-  * Declaring Versions
-    * [Declaring Versions and Ranges](../userguide/single_versions.html)
-    * [Declaring Rich Versions](../userguide/rich_versions.html)
-    * [Handling Changing Versions](../userguide/dynamic_versions.html)
-    * [Locking Versions](../userguide/dependency_locking.html)
-  * Controlling Transitives
-    * [Upgrading Versions](../userguide/dependency_constraints.html)
-    * [Downgrading and Excluding](../userguide/dependency_downgrade_and_exclude.html)
-    * [Sharing Versions](../userguide/platforms.html)
-    * [Aligning Dependencies](../userguide/dependency_version_alignment.html)
-    * [Handling Mutually Exclusive Dependencies](../userguide/dependency_capability_conflict.html)
-    * [Fixing Metadata](../userguide/component_metadata_rules.html)
-    * [Customizing Resolution](../userguide/resolution_rules.html)
-    * [Preventing accidental upgrades](../userguide/resolution_strategy_tuning.html)
-  * Producing and Consuming Variants of Libraries
-    * [Declaring Capabilities of a Library](../userguide/component_capabilities.html)
-    * [Modeling Feature Variants and Optional Dependencies](../userguide/feature_variants.html)
-    * [Understanding Variant Selection](../userguide/variant_model.html)
-    * [Declaring Variant Attributes](../userguide/variant_attributes.html)
-    * [Sharing Outputs of Projects](../userguide/cross_project_publications.html)
-    * [Transforming Artifacts](../userguide/artifact_transforms.html)
-  * Publishing Libraries
-    * [Setting up Publishing](../userguide/publishing_setup.html)
-    * [Understanding Gradle Module Metadata](../userguide/publishing_gradle_module_metadata.html)
-    * [Signing Artifacts](../userguide/publishing_signing.html)
-    * [Customizing Publishing](../userguide/publishing_customization.html)
-    * [Maven Publish Plugin](../userguide/publishing_maven.html)
-    * [Ivy Publish Plugin](../userguide/publishing_ivy.html)
-  * [Terminology](../userguide/dependency_management_terminology.html)
+  * [学习基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#learning-the-basics-dependency-management)
+    * [What is Dependency Management?](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/core_dependency_management.html)
+    * [Declaring Repositories](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_repositories.html)
+    * [Declaring Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_dependencies.html)
+    * [Understanding Library and Application Differences](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/library_vs_application.html)
+    * [Viewing and Debugging Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/viewing_debugging_dependencies.html)
+    * [Understanding Resolution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_resolution.html)
+    * [Verifying dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_verification.html)
+  * [声明版本](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#declaring-dependency-versions)
+    * [Declaring Versions and Ranges](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/single_versions.html)
+    * [Declaring Rich Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/rich_versions.html)
+    * [Handling Changing Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dynamic_versions.html)
+    * [Locking Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_locking.html)
+  * [控制翻译](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#controlling-transitive-dependencies)
+    * [Upgrading Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_constraints.html)
+    * [Downgrading and Excluding](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_downgrade_and_exclude.html)
+    * [Sharing Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/platforms.html)
+    * [Aligning Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_version_alignment.html)
+    * [Handling Mutually Exclusive Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_capability_conflict.html)
+    * [Fixing Metadata](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/component_metadata_rules.html)
+    * [Customizing Resolution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/resolution_rules.html)
+    * [Preventing accidental upgrades](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/resolution_strategy_tuning.html)
+  * [图书馆的生产和消费形式](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#modeling-features)
+    * [Declaring Capabilities of a Library](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/component_capabilities.html)
+    * [Modeling Feature Variants and Optional Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/feature_variants.html)
+    * [Understanding Variant Selection](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_model.html)
+    * [Declaring Variant Attributes](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_attributes.html)
+    * [Sharing Outputs of Projects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/cross_project_publications.html)
+    * [Transforming Artifacts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/artifact_transforms.html)
+  * [在多仓库环境中工作](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#multi-repo)
+    * [Composing Builds](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/composite_builds.html)
+  * [出版图书馆](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#publishing)
+    * [Setting up Publishing](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_setup.html)
+    * [Understanding Gradle Module Metadata](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_gradle_module_metadata.html)
+    * [Signing Artifacts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_signing.html)
+    * [Customizing Publishing](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_customization.html)
+    * [Maven Publish Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_maven.html)
+    * [Ivy Publish Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_ivy.html)
+  * [术语](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_management_terminology.html)
 
-### Extending Gradle
+### 扩展摇篮
 
-  * Developing Gradle Plugins
-    * [Starting Plugin Development](../userguide/custom_plugins.html)
-    * [Designing Plugins](../userguide/designing_gradle_plugins.html)
-    * [Implementing Plugins](../userguide/implementing_gradle_plugins.html)
-    * [Testing Plugins](../userguide/testing_gradle_plugins.html)
-    * [Publishing Plugins](../userguide/publishing_gradle_plugins.html)
-  * Developing Gradle Tasks
-    * [Writing Gradle Task Types](../userguide/custom_tasks.html)
-    * [Configuring Tasks Lazily](../userguide/lazy_configuration.html)
-    * [Avoiding Unnecessary Task Configuration](../userguide/task_configuration_avoidance.html)
-    * [Developing Parallel Tasks](../userguide/worker_api.html)
-  * [Writing Custom Gradle Types](../userguide/custom_gradle_types.html)
+  * [插件开发教程](https://gradle.org/guides/?q=Plugin%20Development)
+  * [编写Gradle任务类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_tasks.html)
+  * [编写Gradle插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_plugins.html)
+  * [编写自定义Gradle类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_gradle_types.html)
+  * [延迟配置任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/lazy_configuration.html)
+  * [使用避免任务配置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/task_configuration_avoidance.html)
 
-### Reference
+### 参考
 
-  * [Core Plugins](../userguide/plugin_reference.html)
-  * [Command-Line Interface](../userguide/command_line_interface.html)
-  * Gradle & Third-party Tools
-    * [Third-party Tools](../userguide/third_party_integration.html)
-    * [Jenkins](../userguide/jenkins.html)
-    * [TeamCity](../userguide/teamcity.html)
-    * [Travis CI](../userguide/travis-ci.html)
-  * [](../userguide/third_party_integration.html)
-  * [The Gradle Wrapper](../userguide/gradle_wrapper.html)
-  * [Gradle-managed Directories](../userguide/directory_layout.html)
+  * [核心插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugin_reference.html)
+  * [命令行界面](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/command_line_interface.html)
+  * [Gradle和第三方工具](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/third_party_integration.html)
+  * [摇篮包装](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_wrapper.html)
+  * [Gradle管理的目录](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/directory_layout.html)
 
-# Using Gradle Plugins
+# 使用Gradle插件
 
-version 6.9-20201126230040+0000
+version 6.7.1
 
-Contents
+内容
 
-  * What plugins do
-  * Types of plugins
-  * Using plugins
-  * Binary plugins
-  * Script plugins
-  * Finding community plugins
-  * More on plugins
+  * [插件做什么](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:what_plugins_do)
+  * [插件类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:types_of_plugins)
+  * [使用插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:using_plugins)
+  * [二进制插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:binary_plugins)
+  * [脚本插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:script_plugins)
+  * [寻找社区插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:finding_community_plugins)
+  * [有关插件的更多信息](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:more_on_plugins)
 
-Gradle at its core intentionally provides very little for real world
-automation. All of the useful features, like the ability to compile Java code,
-are added by _plugins_. Plugins add new tasks (e.g.
-[JavaCompile](../dsl/org.gradle.api.tasks.compile.JavaCompile.html)), domain
-objects (e.g. [SourceSet](../dsl/org.gradle.api.tasks.SourceSet.html)),
-conventions (e.g. Java source is located at `src/main/java`) as well as
-extending core objects and objects from other plugins.
+Gradle的核心故意为现实世界的自动化提供了很少的东西。所有有用的功能（如编译Java代码的功能）都由 _plugins_
+添加。插件添加新任务（例如[JavaCompile](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.tasks.compile.JavaCompile.html)），域对象（例如[SourceSet](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.tasks.SourceSet.html)），约定（例如Java源位于`src/main/java`），以及扩展核心对象和其他插件中的对象。
 
-In this chapter we discuss how to use plugins and the terminology and concepts
-surrounding plugins.
+在本章中，我们讨论如何使用插件以及围绕插件的术语和概念。
 
-## What plugins do
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:what_plugins_do)[插件做什么](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:what_plugins_do)
 
-Applying a plugin to a project allows the plugin to extend the project's
-capabilities. It can do things such as:
+将插件应用于项目可以使插件扩展项目的功能。它可以执行以下操作：
 
-  * Extend the Gradle model (e.g. add new DSL elements that can be configured)
+  * 扩展Gradle模型（例如，添加可以配置的新DSL元素）
 
-  * Configure the project according to conventions (e.g. add new tasks or configure sensible defaults)
+  * 根据约定配置项目（例如，添加新任务或配置合理的默认值）
 
-  * Apply specific configuration (e.g. add organizational repositories or enforce standards)
+  * 应用特定的配置（例如，添加组织存储库或强制执行标准）
 
-By applying plugins, rather than adding logic to the project build script, we
-can reap a number of benefits. Applying plugins:
+通过应用插件，而不是向项目构建脚本添加逻辑，我们可以获得许多好处。应用插件：
 
-  * Promotes reuse and reduces the overhead of maintaining similar logic across multiple projects
+  * 促进重用并减少跨多个项目维护相似逻辑的开销
 
-  * Allows a higher degree of modularization, enhancing comprehensibility and organization
+  * 允许更高程度的模块化，增强可理解性和组织性
 
-  * Encapsulates imperative logic and allows build scripts to be as declarative as possible
+  * 封装命令性逻辑，并允许构建脚本尽可能地具有声明性
 
-## Types of plugins
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:types_of_plugins)[插件类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:types_of_plugins)
 
-There are two general types of plugins in Gradle, _binary_ plugins and
-_script_ plugins. Binary plugins are written either programmatically by
-implementing [Plugin](../javadoc/org/gradle/api/Plugin.html) interface or
-declaratively using one of Gradle's DSL languages. Binary plugins can reside
-within a build script, within the project hierarchy or externally in a plugin
-jar. Script plugins are additional build scripts that further configure the
-build and usually implement a declarative approach to manipulating the build.
-They are typically used within a build although they can be externalized and
-accessed from a remote location.
+Gradle中有两种通用的插件类型，即 _二进制_ 插件和 _脚本_
+插件。通过实现[插件](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/Plugin.html)接口以编程方式编写二进制插件，或使用Gradle的一种DSL语言以声明方式编写二进制插件。二进制插件可以驻留在构建脚本中，项目层次结构中或插件罐的外部。脚本插件是其他构建脚本，可以进一步配置构建，并通常采用声明式方法来操纵构建。尽管它们可以被外部化并可以从远程位置访问，但它们通常在构建中使用。
 
-A plugin often starts out as a script plugin (because they are easy to write)
-and then, as the code becomes more valuable, it's migrated to a binary plugin
-that can be easily tested and shared between multiple projects or
-organizations.
+插件通常起初是脚本插件（因为它们易于编写），然后，随着代码变得更有价值，它被迁移到可以轻松测试并在多个项目或组织之间共享的二进制插件。
 
-## Using plugins
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:using_plugins)[使用插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:using_plugins)
 
-To use the build logic encapsulated in a plugin, Gradle needs to perform two
-steps. First, it needs to _resolve_ the plugin, and then it needs to _apply_
-the plugin to the target, usually a
-[Project](../dsl/org.gradle.api.Project.html).
+要使用封装在插件中的构建逻辑，Gradle需要执行两个步骤。首先，它需要 _解析_ 插件，然后需要 _将_
+插件应用于目标（通常是[Project）](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.api.Project.html)。
 
-_Resolving_ a plugin means finding the correct version of the jar which
-contains a given plugin and adding it to the script classpath. Once a plugin
-is resolved, its API can be used in a build script. Script plugins are self-
-resolving in that they are resolved from the specific file path or URL
-provided when applying them. Core binary plugins provided as part of the
-Gradle distribution are automatically resolved.
+_解决_
+插件意味着找到包含给定插件的jar的正确版本，并将其添加为脚本类路径。插件解决后，即可在构建脚本中使用其API。脚本插件是自解析的，因为它们是从应用它们时提供的特定文件路径或URL解析的。作为Gradle发行的一部分提供的核心二进制插件会自动解决。
 
-_Applying_ a plugin means actually executing the plugin's
-[Plugin.apply(T)](../javadoc/org/gradle/api/Plugin.html#apply-T-) on the
-Project you want to enhance with the plugin. Applying plugins is _idempotent_.
-That is, you can safely apply any plugin multiple times without side effects.
+_应用_
+插件意味着在要使用插件增强的项目上实际执行插件的[Plugin.apply（T）](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/Plugin.html#apply-T-)。应用插件是
+_幂等的_ 。也就是说，您可以安全地多次应用任何插件而不会产生副作用。
 
-The most common use case for using a plugin is to both resolve the plugin and
-apply it to the current project. Since this is such a common use case, it's
-recommended that build authors use the plugins DSL to both resolve and apply
-plugins in one step.
+使用插件的最常见用例是解析插件并将其应用于当前项目。由于这是一个常见用例，因此建议构建作者使用[插件DSL](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugins_block)一步解决和应用插件。
 
-## Binary plugins
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:binary_plugins)[二进制插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:binary_plugins)
 
-You apply plugins by their _plugin id_ , which is a globally unique
-identifier, or name, for plugins. Core Gradle plugins are special in that they
-provide short names, such as `'java'` for the core
-[JavaPlugin](../javadoc/org/gradle/api/plugins/JavaPlugin.html). All other
-binary plugins must use the fully qualified form of the plugin id (e.g.
-`com.github.foo.bar`), although some legacy plugins may still utilize a short,
-unqualified form. Where you put the plugin id depends on whether you are using
-the plugins DSL or the buildscript block.
+您可以通过 _插件的插件ID来_ 应用插件， _插件ID_ 是 _插件_ 的全局唯一标识符或名称。Core
+Gradle插件的特殊之处在于它们提供了简短的名称，例如`'java'`用于核心[JavaPlugin的名称](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/plugins/JavaPlugin.html)。所有其他二进制插件都必须使用插件ID的完全限定形式（例如`com.github.foo.bar`），尽管某些旧式插件可能仍使用简短的非限定形式。放置插件ID的位置取决于您使用的是[插件DSL](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugins_block)还是[buildscript块。](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:old_plugin_application)
 
-### Locations of binary plugins
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:binary_plugin_locations)[二进制插件的位置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:binary_plugin_locations)
 
-A plugin is simply any class that implements the
-[Plugin](../javadoc/org/gradle/api/Plugin.html) interface. Gradle provides the
-core plugins (e.g. `JavaPlugin`) as part of its distribution which means they
-are automatically resolved. However, non-core binary plugins need to be
-resolved before they can be applied. This can be achieved in a number of ways:
+插件就是实现了[Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/Plugin.html)接口的任何类。Gradle提供了核心插件（例如`JavaPlugin`）作为其分发的一部分，这意味着它们会自动解决。但是，非核心二进制插件需要先解决，然后才能应用。这可以通过多种方式实现：
 
-  * Including the plugin from the plugin portal or a custom repository using the plugins DSL (see Applying plugins using the plugins DSL).
+  * 使用插件DSL从插件门户或[自定义存储库添加](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:custom_plugin_repositories)插件（请参阅[使用插件DSL应用插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugins_block)）。
 
-  * Including the plugin from an external jar defined as a buildscript dependency (see Applying plugins using the buildscript block).
+  * 包括来自定义为buildscript依赖项的外部jar中的插件（请参阅[使用buildscript块应用插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:applying_plugins_buildscript)）。
 
-  * Defining the plugin as a source file under the buildSrc directory in the project (see [Using buildSrc to extract functional logic](organizing_gradle_projects.html#sec:build_sources)).
+  * 在项目的buildSrc目录下将插件定义为源文件（请参阅[使用buildSrc提取功能逻辑](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/organizing_gradle_projects.html#sec:build_sources)）。
 
-  * Defining the plugin as an inline class declaration inside a build script.
+  * 在构建脚本中将插件定义为内联类声明。
 
-For more on defining your own plugins, see [Custom
-Plugins](custom_plugins.html#custom_plugins).
+有关定义自己的插件的更多信息，请参见[自定义插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_plugins.html#custom_plugins)。
 
-### Applying plugins with the plugins DSL
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugins_block)[通过插件DSL应用插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugins_block)
 
-The plugins DSL provides a succinct and convenient way to declare plugin
-dependencies. It works with the [Gradle plugin
-portal](http://plugins.gradle.org) to provide easy access to both core and
-community plugins. The plugins DSL block configures an instance of
-[PluginDependenciesSpec](../javadoc/org/gradle/plugin/use/PluginDependenciesSpec.html).
+插件DSL提供了一种声明插件依赖关系的简洁方便的方法。它与[Gradle插件门户](http://plugins.gradle.org/)一起使用，以提供对核心插件和社区插件的轻松访问。插件DSL块配置[PluginDependenciesSpec](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/plugin/use/PluginDependenciesSpec.html)的实例。
 
-To apply a core plugin, the short name can be used:
+要应用核心插件，可以使用简称：
 
-Example 1. Applying a core plugin
+例子1.应用核心插件
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -334,10 +278,11 @@ build.gradle.kts
         java
     }
 
-To apply a community plugin from the portal, the fully qualified plugin id
-must be used:
+要从门户网站应用社区插件，必须使用完全限定的插件ID：
 
-Example 2. Applying a community plugin
+例子2.应用社区插件
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -355,62 +300,54 @@ build.gradle.kts
         id("com.jfrog.bintray") version "0.4.1"
     }
 
-See
-[PluginDependenciesSpec](../javadoc/org/gradle/plugin/use/PluginDependenciesSpec.html)
-for more information on using the Plugin DSL.
+有关使用插件DSL的更多信息，请参见[PluginDependenciesSpec](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/plugin/use/PluginDependenciesSpec.html)。
 
-#### Limitations of the plugins DSL
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#plugins_dsl_limitations)[插件DSL的局限性](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#plugins_dsl_limitations)
 
-This way of adding plugins to a project is much more than a more convenient
-syntax. The plugins DSL is processed in a way which allows Gradle to determine
-the plugins in use very early and very quickly. This allows Gradle to do smart
-things such as:
+这种将插件添加到项目中的方法远不止是更方便的语法。插件DSL的处理方式使Gradle可以非常早，非常迅速地确定正在使用的插件。这使Gradle可以做一些聪明的事情，例如：
 
-  * Optimize the loading and reuse of plugin classes.
+  * 优化插件类的加载和重用。
 
-  * Allow different plugins to use different versions of dependencies.
+  * 允许不同的插件使用不同版本的依赖项。
 
-  * Provide editors detailed information about the potential properties and values in the buildscript for editing assistance.
+  * 向编辑者提供有关构建脚本中潜在属性和值的详细信息，以提供编辑帮助。
 
-This requires that plugins be specified in a way that Gradle can easily and
-quickly extract, before executing the rest of the build script. It also
-requires that the definition of plugins to use be somewhat static.
+这要求在执行其余构建脚本之前，以Gradle可以轻松，快速提取的方式指定插件。它还要求要使用的插件的定义必须是静态的。
 
-There are some key differences between the `plugins {}` block mechanism and
-the “traditional” `apply()` method mechanism. There are also some constraints,
-some of which are temporary limitations while the mechanism is still being
-developed and some are inherent to the new approach.
+`plugins
+{}`块机制与“传统”`apply()`方法机制之间存在一些关键差异。还有一些约束，其中一些是暂时的限制，而该机制仍在开发中，而某些则是新方法固有的。
 
-##### Constrained Syntax
+#####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:constrained_syntax)[约束语法](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:constrained_syntax)
 
-The `plugins {}` block does not support arbitrary code. It is constrained, in
-order to be idempotent (produce the same result every time) and side effect
-free (safe for Gradle to execute at any time).
+该`plugins {}`块不支持任意代码。它是受约束的，以便具有幂等性（每次都产生相同的结果）并且没有副作用（对于Gradle可以随时执行是安全的）。
 
-The form is:
+形式是：
+
+`Groovy``Kotlin`
 
 build.gradle
 
     
     
     plugins {
-        id «plugin id»                                            __**(1)**
-        id «plugin id» version «plugin version» [apply «false»]   __**(2)**
+        id «plugin id»                                            __**( 1)**
+        id «plugin id» version «plugin version» [apply «false»]   __**( 2)**
     }
 
-__**1** | for core Gradle plugins or plugins already available to the build
-script  
+__**1** | 用于核心Gradle插件或构建脚本已可用的插件  
 ---|---  
-__**2** | for binary Gradle plugins that need to be resolved  
+__**2** | 用于需要解决的二进制Gradle插件  
   
 build.gradle.kts
 
     
     
     plugins {
-        `«plugin id»`                                             __**(1)**
-        id(«plugin id»)                                           __**(2)**
-        id(«plugin id») version «plugin version» [apply «false»]  __**(3)**
+        `«plugin id»`                                             __**( 1)**
+        id(«plugin id»)                                           __**( 2)**
+        id(«plugin id») version «plugin version» [apply «false»]  __**( 3)**
     }
 
 __**1** | for core Gradle plugins  
@@ -419,11 +356,8 @@ __**2** | for core Gradle plugins or plugins already available to the build
 script  
 __**3** | for binary Gradle plugins that need to be resolved  
   
-Where `«plugin id»` and `«plugin version»` must be constant, literal, strings
-and the `apply` statement with a `boolean` can be used to disable the default
-behavior of applying the plugin immediately (e.g. you want to apply it only in
-`subprojects`). No other statements are allowed; their presence will cause a
-compilation error.
+在`«plugin id»`并且`«plugin
+version»`必须为常数的地方，文字，字符串和`apply`带有的语句`boolean`可用于禁用立即应用插件的默认行为（例如，您仅希望在中应用插件`subprojects`）。不允许其他声明；它们的存在将导致编译错误。
 
 Where `«plugin id»`, in case `#1` is a static Kotlin extension property, named
 after the core plugin ID ; and in cases `#2` and `#3` is a string. `«plugin
@@ -431,36 +365,30 @@ version»` is also a string. The `apply` statement with a `boolean` can be used
 to disable the default behavior of applying the plugin immediately (e.g. you
 want to apply it only in `subprojects`).
 
-See plugin version management if you want to use a variable to define a plugin
-version.
+如果要使用变量定义插件版本，请参见[插件版本管理](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugin_version_management)。
 
-The `plugins {}` block must also be a top level statement in the buildscript.
-It cannot be nested inside another construct (e.g. an if-statement or for-
-loop).
+该`plugins {}`块还必须是buildscript中的顶级语句。它不能嵌套在另一个构造中（例如，if语句或for循环）。
 
-##### Can only be used in build scripts and settings file
+#####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:build_scripts_only)[只能在构建脚本和设置文件中使用](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:build_scripts_only)
 
-The `plugins {}` block can currently only be used in a project's build script
-and the settings.gradle file. It cannot be used in script plugins or init
-scripts.
+该`plugins {}`块当前只能在项目的构建脚本和settings.gradle文件中使用。不能在脚本插件或初始化脚本中使用。
 
-_Future versions of Gradle will remove this restriction._
+_Gradle的未来版本将删除此限制。_
 
-If the restrictions of the `plugins {}` block are prohibitive, the recommended
-approach is to apply plugins using the buildscript {} block.
+如果该`plugins {}`块的限制令人望而却步，则建议的方法是使用[buildscript
+{}块](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:applying_plugins_buildscript)来应用插件。
 
-#### Applying external plugins with same version to subprojects
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:subprojects_plugins_dsl)[将具有相同版本的外部插件应用于子项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:subprojects_plugins_dsl)
 
-If you have a [multi-project
-build](multi_project_builds.html#multi_project_builds), you probably want to
-apply plugins to some or all of the subprojects in your build, but not to the
-`root` project. The default behavior of the `plugins {}` block is to
-immediately `resolve` _and_ `apply` the plugins. But, you can use the `apply
-false` syntax to tell Gradle not to apply the plugin to the current project
-and then use the `plugins {}` block without the version in subprojects' build
-scripts:
+如果您具有[多项目构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_builds.html#multi_project_builds)，则可能希望将插件应用于[构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_builds.html#multi_project_builds)中的部分或全部子项目，而不是应用于`root`项目。该`plugins
+{}`块的默认行为是立即`resolve` _和_ `apply`插件。但是，您可以使用`apply
+false`语法告诉Gradle不要将插件应用于当前项目，然后`plugins {}`在子项目的构建脚本中使用不带版本的块：
 
-Example 3. Applying plugins only on certain subprojects
+例子3.仅在某些子项目上应用插件
+
+`Groovy``Kotlin`
 
 settings.gradle
 
@@ -479,7 +407,7 @@ build.gradle
         id 'com.example.goodbye' version '1.0.0' apply false
     }
 
-hello-a/build.gradle
+你好-a / build.gradle
 
     
     
@@ -487,7 +415,7 @@ hello-a/build.gradle
         id 'com.example.hello'
     }
 
-hello-b/build.gradle
+hello-b / build.gradle
 
     
     
@@ -495,7 +423,7 @@ hello-b/build.gradle
         id 'com.example.hello'
     }
 
-goodbye-c/build.gradle
+再见-c / build.gradle
 
     
     
@@ -544,20 +472,21 @@ goodbye-c/build.gradle.kts
         id("com.example.goodbye")
     }
 
-Even better - you can encapsulate the versions of external plugins by
-composing the build logic using your own [convention
-plugins](sharing_build_logic_between_subprojects.html#sec:convention_plugins).
+更好的是，您可以使用自己的[约定插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/sharing_build_logic_between_subprojects.html#sec:convention_plugins)通过组合构建逻辑来封装外部插件的版本。
 
-#### Applying plugins from the _buildSrc_ directory
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:buildsrc_plugins_dsl)[从
+_buildSrc_
+目录应用插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:buildsrc_plugins_dsl)
 
-You can apply plugins that reside in a project's _buildSrc_ directory as long
-as they have a defined ID. The following example shows how to tie a plugin
-implementation class — `my.MyPlugin` — defined in _buildSrc_ to the ID "my-
-plugin":
+您可以应用驻留在项目的 _buildSrc_ 目录中的插件，只要它们具有已定义的ID即可。以下示例显示了如何将插件实现类（`my.MyPlugin`在
+_buildSrc中_ 定义）与ID“ my-plugin”相关联：
 
-Example 4. Defining a buildSrc plugin with an ID
+例子4.定义一个带有ID的buildSrc插件
 
-buildSrc/build.gradle
+`Groovy``Kotlin`
+
+buildSrc / build.gradle
 
     
     
@@ -591,9 +520,11 @@ buildSrc/build.gradle.kts
         }
     }
 
-The plugin can then be applied by ID as normal:
+然后可以按常规方式通过ID应用插件：
 
-Example 5. Applying a plugin from buildSrc
+例子5.从buildSrc应用一个插件
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -611,13 +542,15 @@ build.gradle.kts
         id("my-plugin")
     }
 
-#### Plugin Management
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugin_management)[插件管理](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugin_management)
 
-The `pluginManagement {}` block may only appear in either the
-`settings.gradle` file, where it must be the first block in the file, or in an
-[Initialization Script](init_scripts.html#init_scripts).
+该`pluginManagement
+{}`块只能出现在`settings.gradle`文件中，该文件必须是文件中的第一个块，也可以出现在[初始化脚本中](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/init_scripts.html#init_scripts)。
 
-Example 6. Configuring pluginManagement per-project and globally
+例子6.为每个项目和全局配置pluginManagement
+
+`Groovy``Kotlin`
 
 settings.gradle
 
@@ -633,7 +566,7 @@ settings.gradle
     }
     rootProject.name = 'plugin-management'
 
-init.gradle
+初始化等级
 
     
     
@@ -677,18 +610,17 @@ init.gradle.kts
         }
     }
 
-##### Custom Plugin Repositories
+#####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:custom_plugin_repositories)[自定义插件存储库](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:custom_plugin_repositories)
 
-By default, the `plugins {}` DSL resolves plugins from the public [Gradle
-Plugin Portal.](https://plugins.gradle.org) Many build authors would also like
-to resolve plugins from private Maven or Ivy repositories because the plugins
-contain proprietary implementation details, or just to have more control over
-what plugins are available to their builds.
+默认情况下，`plugins
+{}`DSL从公共[Gradle插件门户](https://plugins.gradle.org/)解析插件[。](https://plugins.gradle.org/)许多构建作者还希望从私有Maven或Ivy存储库中解析插件，因为这些插件包含专有的实现细节，或者只是为了更好地控制其构建可用的插件。
 
-To specify custom plugin repositories, use the `repositories {}` block inside
-`pluginManagement {}`:
+要指定自定义插件存储库，请使用其中的`repositories {}`块`pluginManagement {}`：
 
-Example 7. Example: Using plugins from custom plugin repositories.
+示例7.示例：使用来自自定义插件存储库的插件。
+
+`Groovy``Kotlin`
 
 settings.gradle
 
@@ -697,11 +629,11 @@ settings.gradle
     pluginManagement {
         repositories {
             maven {
-                url './maven-repo'
+                url '../maven-repo'
             }
             gradlePluginPortal()
             ivy {
-                url './ivy-repo'
+                url '../ivy-repo'
             }
         }
     }
@@ -712,30 +644,29 @@ settings.gradle.kts
     
     pluginManagement {
         repositories {
-            maven(url = "./maven-repo")
+            maven(url = "../maven-repo")
             gradlePluginPortal()
-            ivy(url = "./ivy-repo")
+            ivy(url = "../ivy-repo")
         }
     }
 
-This tells Gradle to first look in the Maven repository at `../maven-repo`
-when resolving plugins and then to check the Gradle Plugin Portal if the
-plugins are not found in the Maven repository. If you don't want the Gradle
-Plugin Portal to be searched, omit the `gradlePluginPortal()` line. Finally,
-the Ivy repository at `../ivy-repo` will be checked.
+这告诉Gradle在`../maven-
+repo`解析插件时首先在Maven存储库中查找，然后检查Gradle插件门户是否在Maven存储库中找不到插件。如果您不想搜索Gradle插件门户，请省略该`gradlePluginPortal()`行。最后，`../ivy-
+repo`将检查Ivy存储库。
 
-##### Plugin Version Management
+#####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugin_version_management)[插件版本管理](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugin_version_management)
 
-A `plugins {}` block inside `pluginManagement {}` allows all plugin versions
-for the build to be defined in a single location. Plugins can then be applied
-by id to any build script via the `plugins {}` block.
+`plugins {}`内部的一个块`pluginManagement
+{}`允许将构建的所有插件版本定义在一个位置。然后可以通过ID将插件按ID应用于任何构建脚本`plugins {}`。
 
-One benefit of setting plugin versions this way is that the
-`pluginManagement.plugins {}` does not have the same constrained syntax as the
-build script `plugins {}` block. This allows plugin versions to be taken from
-`gradle.properties`, or loaded via another mechanism.
+通过这种方式设置插件版本的好处之一是，`pluginManagement.plugins
+{}`它们的[语法](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:constrained_syntax)与构建脚本`plugins
+{}`块的[约束语法不同](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:constrained_syntax)。这允许从中获取插件版本`gradle.properties`，或通过其他机制加载。
 
-Example 8. Example: Managing plugin versions via `pluginManagement`.
+示例8.示例：通过管理插件版本`pluginManagement`。
+
+`Groovy``Kotlin`
 
 settings.gradle
 
@@ -748,12 +679,6 @@ settings.gradle
     }
 
 build.gradle
-
-    
-    
-    plugins {
-        id 'com.example.hello'
-    }
 
 gradle.properties
 
@@ -774,32 +699,24 @@ settings.gradle.kts
 
 build.gradle.kts
 
-    
-    
-    plugins {
-        id("com.example.hello")
-    }
-
 gradle.properties
 
     
     
     helloPluginVersion=1.0.0
 
-The plugin version is loaded from `gradle.properties` and configured in the
-settings script, allowing the plugin to be added to any project without
-specifying the version.
+插件版本从`gradle.properties`设置脚本加载并在设置脚本中进行配置，从而允许在不指定版本的情况下将插件添加到任何项目中。
 
-#### Plugin Resolution Rules
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugin_resolution_rules)[插件解析规则](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugin_resolution_rules)
 
-Plugin resolution rules allow you to modify plugin requests made in `plugins
-{}` blocks, e.g. changing the requested version or explicitly specifying the
-implementation artifact coordinates.
+插件解析规则允许您修改以`plugins {}`块为单位的插件请求，例如，更改请求的版本或显式指定实现工件坐标。
 
-To add resolution rules, use the `resolutionStrategy {}` inside the
-`pluginManagement {}` block:
+要添加解析规则，请使用`resolutionStrategy {}`内部`pluginManagement {}`块：
 
-Example 9. Plugin resolution strategy.
+示例9.插件解析策略。
+
+`Groovy``Kotlin`
 
 settings.gradle
 
@@ -815,11 +732,11 @@ settings.gradle
         }
         repositories {
             maven {
-                url './maven-repo'
+                url '../maven-repo'
             }
             gradlePluginPortal()
             ivy {
-                url './ivy-repo'
+                url '../ivy-repo'
             }
         }
     }
@@ -838,46 +755,40 @@ settings.gradle.kts
         }
         repositories {
             maven {
-                url = uri("./maven-repo")
+                url = uri("../maven-repo")
             }
             gradlePluginPortal()
             ivy {
-                url = uri("./ivy-repo")
+                url = uri("../ivy-repo")
             }
         }
     }
 
-This tells Gradle to use the specified plugin implementation artifact instead
-of using its built-in default mapping from plugin ID to Maven/Ivy coordinates.
+这告诉Gradle使用指定的插件实现构件，而不是使用其从插件ID到Maven / Ivy坐标的内置默认映射。
 
-Custom Maven and Ivy plugin repositories must contain plugin marker artifacts
-in addition to the artifacts which actually implement the plugin. For more
-information on publishing plugins to custom repositories read [Gradle Plugin
-Development Plugin](java_gradle_plugin.html#java_gradle_plugin).
+自定义Maven和Ivy插件存储库除了实际实现插件的[工件外](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugin_markers)，还必须包含[插件标记工件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugin_markers)。有关将插件发布到自定义存储库的更多信息，请阅读[Gradle
+Plugin Development
+Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_gradle_plugin.html#java_gradle_plugin)。
 
-See
-[PluginManagementSpec](../javadoc/org/gradle/plugin/management/PluginManagementSpec.html)
-for complete documentation for using the `pluginManagement {}` block.
+有关使用该块的完整文档，请参见[PluginManagementSpec](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/plugin/management/PluginManagementSpec.html)`pluginManagement
+{}`。
 
-### Plugin Marker Artifacts
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugin_markers)[插件标记工件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugin_markers)
 
-Since the `plugins {}` DSL block only allows for declaring plugins by their
-globally unique plugin `id` and `version` properties, Gradle needs a way to
-look up the coordinates of the plugin implementation artifact. To do so,
-Gradle will look for a Plugin Marker Artifact with the coordinates
-`plugin.id:plugin.id.gradle.plugin:plugin.version`. This marker needs to have
-a dependency on the actual plugin implementation. Publishing these markers is
-automated by the [java-gradle-
-plugin](java_gradle_plugin.html#java_gradle_plugin).
+由于`plugins
+{}`DSL块仅允许通过其全局唯一的插件`id`和`version`属性来声明插件，因此Gradle需要一种方法来查找插件实现工件的坐标。为此，Gradle将寻找具有坐标的插件标记工件`plugin.id:plugin.id.gradle.plugin:plugin.version`。该标记需要依赖于实际的插件实现。这些标记的发布由[java-
+gradle-
+plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_gradle_plugin.html#java_gradle_plugin)自动执行。
 
-For example, the following complete sample from the `sample-plugins` project
-shows how to publish a `com.example.hello` plugin and a `com.example.goodbye`
-plugin to both an Ivy and Maven repository using the combination of the [java-
-gradle-plugin](java_gradle_plugin.html#java_gradle_plugin), the [maven-
-publish](publishing_maven.html#publishing_maven) plugin, and the [ivy-
-publish](publishing_ivy.html#publishing_ivy) plugin.
+例如，下面的`sample-plugins`项目完整示例显示了如何使用[java-gradle-
+plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_gradle_plugin.html#java_gradle_plugin)，[maven-
+publish](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_maven.html#publishing_maven)插件和[ivy-
+publish](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_ivy.html#publishing_ivy)插件的组合将`com.example.hello`插件和`com.example.goodbye`插件发布到Ivy和Maven存储库。[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_gradle_plugin.html#java_gradle_plugin)[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_maven.html#publishing_maven)[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_ivy.html#publishing_ivy)
 
-Example 10. Complete Plugin Publishing Sample
+例子10.完整的插件发布样本
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -953,21 +864,21 @@ build.gradle.kts
         }
     }
 
-Running `gradle publish` in the sample directory causes the following repo
-layouts to exist:
+`gradle publish`在示例目录中运行会导致以下回购布局存在：
 
-![pluginMarkers](img/pluginMarkers.png)
+![pluginMarkers](./使用Gradle插件_files/pluginMarkers.png)
 
-### Legacy Plugin Application
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:old_plugin_application)[旧版插件应用](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:old_plugin_application)
 
-With the introduction of the plugins DSL, users should have little reason to
-use the legacy method of applying plugins. It is documented here in case a
-build author cannot use the plugins DSL due to restrictions in how it
-currently works.
+随着[插件DSL](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:plugins_block)的引入，用户几乎没有理由使用应用插件的旧方法。如果构建作者由于当前工作方式的限制而无法使用插件DSL，则在此进行记录。
 
-#### Applying Binary Plugins
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:applying_binary_plugins)[应用二进制插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:applying_binary_plugins)
 
-Example 11. Applying a binary plugin
+例子11.应用一个二进制插件
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -981,14 +892,14 @@ build.gradle.kts
     
     apply(plugin = "java")
 
-Plugins can be applied using a _plugin id_. In the above case, we are using
-the short name ‘`java`’ to apply the
-[JavaPlugin](../javadoc/org/gradle/api/plugins/JavaPlugin.html).
+可以使用 _插件ID_ 来应用 _插件_ 。在上述情况下，我们使用简称'
+`java`'来应用[JavaPlugin](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/plugins/JavaPlugin.html)。
 
-Rather than using a plugin id, plugins can also be applied by simply
-specifying the class of the plugin:
+除了使用插件ID，还可以通过简单地指定插件的类来应用插件：
 
-Example 12. Applying a binary plugin by type
+例子12.按类型应用二进制插件
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1002,27 +913,23 @@ build.gradle.kts
     
     apply<JavaPlugin>()
 
-The `JavaPlugin` symbol in the above sample refers to the
-[JavaPlugin](../javadoc/org/gradle/api/plugins/JavaPlugin.html). This class
-does not strictly need to be imported as the `org.gradle.api.plugins` package
-is automatically imported in all build scripts (see [Default
-imports](writing_build_scripts.html#script-default-imports)).
+`JavaPlugin`上面示例中的符号引用[JavaPlugin](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/plugins/JavaPlugin.html)。绝对不需要导入此类，因为会`org.gradle.api.plugins`在所有构建脚本中自动导入软件包（请参见[默认导入](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/writing_build_scripts.html#script-
+default-imports)）。
 
-Furthermore, it is not necessary to append `.class` to identify a class
-literal in Groovy as it is in Java.
+此外，不需要`.class`像在Java中那样在Groovy中附加以标识类文字。
 
 Furthermore, one need to append the `::class` suffix to identify a class
 literal in Kotlin instead of `.class` in Java.
 
-#### Applying plugins with the buildscript block
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:applying_plugins_buildscript)[使用带有buildscript块的插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:applying_plugins_buildscript)
 
-Binary plugins that have been published as external jar files can be added to
-a project by adding the plugin to the build script classpath and then applying
-the plugin. External jars can be added to the build script classpath using the
-`buildscript {}` block as described in [External dependencies for the build
-script](tutorial_using_tasks.html#sec:build_script_external_dependencies).
+通过将插件添加到构建脚本类路径中，然后应用该插件，可以将已发布为外部jar文件的二进制插件添加到项目中。可以使用构建脚本的[外部依赖项中所述](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/tutorial_using_tasks.html#sec:build_script_external_dependencies)的`buildscript
+{}`块将外部jar添加到构建脚本类路径中。[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/tutorial_using_tasks.html#sec:build_script_external_dependencies)
 
-Example 13. Applying a plugin with the buildscript block
+例子13.使用带有buildscript块的插件
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1054,9 +961,12 @@ build.gradle.kts
     
     apply(plugin = "com.jfrog.bintray")
 
-## Script plugins
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:script_plugins)[脚本插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:script_plugins)
 
-Example 14. Applying a script plugin
+例子14.应用脚本插件
+
+`Groovy``Kotlin`
 
 build.gradle
 
@@ -1070,67 +980,66 @@ build.gradle.kts
     
     apply(from = "other.gradle.kts")
 
-Script plugins are automatically resolved and can be applied from a script on
-the local filesystem or at a remote location. Filesystem locations are
-relative to the project directory, while remote script locations are specified
-with an HTTP URL. Multiple script plugins (of either form) can be applied to a
-given target.
+脚本插件会自动解决，可以从本地文件系统或远程位置的脚本中应用。文件系统位置是相对于项目目录的，而远程脚本位置是通过HTTP
+URL指定的。可以将多个脚本插件（任意一种形式）应用于给定目标。
 
-## Finding community plugins
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:finding_community_plugins)[寻找社区插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:finding_community_plugins)
 
-Gradle has a vibrant community of plugin developers who contribute plugins for
-a wide variety of capabilities. The Gradle [plugin
-portal](https://plugins.gradle.org) provides an interface for searching and
-exploring community plugins.
+Gradle有一个充满活力的插件开发人员社区，他们为各种功能贡献插件。Gradle[插件门户](https://plugins.gradle.org/)提供了一个用于搜索和浏览社区插件的界面。
 
-## More on plugins
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:more_on_plugins)[有关插件的更多信息](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html#sec:more_on_plugins)
 
-This chapter aims to serve as an introduction to plugins and Gradle and the
-role they play. For more information on the inner workings of plugins, see
-[Custom Plugins](custom_plugins.html#custom_plugins).
+本章旨在介绍插件和Gradle及其作用。有关插件内部工作的更多信息，请参见“[自定义插件”](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_plugins.html#custom_plugins)。
 
-**Docs**
+**文件**
 
-  * [User Manual](/userguide/userguide.html)
-  * [DSL Reference](/dsl/)
-  * [Release Notes](/release-notes.html)
-  * [Javadoc](/javadoc/)
+  * [用户手册](file:///userguide/userguide.html)
+  * [DSL参考](file:///dsl/)
+  * [发行说明](file:///release-notes.html)
+  * [Java文档](file:///javadoc/)
 
-**News**
+**新闻**
 
-  * [Blog](https://blog.gradle.org/)
-  * [Newsletter](https://newsletter.gradle.com/)
-  * [Twitter](https://twitter.com/gradle)
-  * [Status Page](https://status.gradle.com/)
+  * [博客](https://blog.gradle.org/)
+  * [通讯](https://newsletter.gradle.com/)
+  * [推特](https://twitter.com/gradle)
+  * [状态页](https://status.gradle.com/)
 
-**Products**
+**产品展示**
 
-  * [Build Scans](https://gradle.com/build-scans/)
-  * [Build Cache](https://gradle.com/build-cache/)
-  * [Enterprise Docs](https://gradle.com/enterprise/resources/)
+  * [构建扫描](https://gradle.com/build-scans/)
+  * [构建缓存](https://gradle.com/build-cache/)
+  * [企业文件](https://gradle.com/enterprise/resources/)
 
-**Get Help**
+**得到帮助**
 
-  * [Forums](https://discuss.gradle.org/c/help-discuss)
-  * [GitHub](https://github.com/gradle/)
-  * [Training](https://gradle.com/training/)
-  * [Services](https://gradle.org/services/)
+  * [论坛](https://discuss.gradle.org/c/help-discuss)
+  * [的GitHub](https://github.com/gradle/)
+  * [训练](https://gradle.com/training/)
+  * [服务](https://gradle.org/services/)
 
-##### Stay `UP-TO-DATE` on new features and news
+##### 随时`UP-TO-DATE`关注新功能和新闻
 
-By entering your email, you agree to our
-[Terms](https://gradle.com/legal/terms-of-service/) and [Privacy
-Policy](https://gradle.com/legal/privacy/), including receipt of emails. You
-can unsubscribe at any time.
+输入您的电子邮件，即表示您同意我们的[条款](https://gradle.com/legal/terms-of-
+service/)和[隐私政策](https://gradle.com/legal/privacy/)，包括接收电子邮件。您可以随时取消订阅。
 
-Subscribe
+订阅
 
-© [Gradle Inc.](https://gradle.com) 2020 All rights reserved.
+© [Gradle Inc.](https://gradle.com/) 2020年 版权所有。
 
-[ gradle ](/)
+[ gradle ](file:///)
 
-[Careers](https://gradle.com/careers/) |
-[Privacy](https://gradle.com/legal/privacy/) | [Terms of
-Service](https://gradle.com/legal/terms-of-service/) |
-[Contact](https://gradle.org/contact/)
+[招贤纳士](https://gradle.com/careers/)| [隐私](https://gradle.com/legal/privacy/)|
+[服务条款](https://gradle.com/legal/terms-of-service/)|
+[联系](https://gradle.org/contact/)
+
+![Google 翻译](./使用Gradle插件_files/translate_24dp.png)
+
+# 原文
+
+提供更好的翻译建议
+
+* * *
 

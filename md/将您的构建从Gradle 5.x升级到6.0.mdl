@@ -1,252 +1,241 @@
 
 
-[ Gradle ](https://docs.gradle.org "Gradle Docs")
+[ Gradle ](https://docs.gradle.org/ "Gradle Docs")
 
-User Manual
+用户手册
 
-  * Community Open Community Menu
+  * 社区 Open Community Menu
 
-[ Community Home ](https://gradle.org/)
+[ 社区之家 ](https://gradle.org/)
 
-[ Community Forums ](https://discuss.gradle.org/)
+[ 社区论坛 ](https://discuss.gradle.org/)
 
-[ Community Plugins ](https://plugins.gradle.org)
+[ 社区插件 ](https://plugins.gradle.org/)
 
-  * [Training](https://gradle.com/training/)
-  * News Open Community Menu
+  * [训练](https://gradle.com/training/)
+  * 新闻 Open Community Menu
 
-[ Newsletter ](https://newsletter.gradle.com)
+[ 通讯 ](https://newsletter.gradle.com/)
 
-[ Blog ](https://blog.gradle.org)
+[ 博客 ](https://blog.gradle.org/)
 
-[ Twitter ](https://twitter.com/gradle)
+[ 推特 ](https://twitter.com/gradle)
 
-  * [Enterprise](https://gradle.com)
-  * [github](https://github.com/gradle/gradle "Gradle on GitHub")
+  * [企业](https://gradle.com/)
+  * [github](https://github.com/gradle/gradle "GitHub上的Gradle")
 
-  * [Docs Home](../userguide/userguide.html)
-  * [Samples](../samples/index.html)
-  * [Release Notes](../release-notes.html)
-  * Gradle API
-    * [Javadoc](../javadoc/index.html?overview-summary.html)
-    * [Groovy DSL Reference](../dsl/index.html)
-    * [Groovy DSL Primer](../userguide/groovy_build_script_primer.html)
+  * [文件首页](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/userguide.html)
+  * [样品](file:///Users/dxs/temp/gradle-6.7.1/docs/samples/index.html)
+  * [发行说明](file:///Users/dxs/temp/gradle-6.7.1/docs/release-notes.html)
+  * [Gradle API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#gradle-api)
+    * [Java文档](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/index.html?overview-summary.html)
+    * [Groovy DSL Reference](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/index.html)
+    * [Groovy DSL Primer](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/groovy_build_script_primer.html)
     * [Kotlin DSL API](https://gradle.github.io/kotlin-dsl-docs/api/)
-    * [Kotlin DSL Primer](../userguide/kotlin_dsl.html)
+    * [Kotlin DSL Primer](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/kotlin_dsl.html)
 
-### User Manual
+### 用户手册
 
-[ PDF ](../userguide/userguide.pdf)
+[ PDF格式 ](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/userguide.pdf)
 
-  * [What is Gradle?](../userguide/what_is_gradle.html)
-  * [Getting Started](../userguide/getting_started.html)
-  * [Installing Gradle](../userguide/installation.html)
-  * Upgrading Gradle...
-    * [version 6.X to latest](../userguide/upgrading_version_6.html)
-    * [version 5.X to 6.0](../userguide/upgrading_version_5.html)
-    * [version 4.X to 5.0](../userguide/upgrading_version_4.html)
-    * [Gradle's Feature Lifecycle](../userguide/feature_lifecycle.html)
-  * Migrating to Gradle...
-    * [from Maven](../userguide/migrating_from_maven.html)
-    * [from Ant](../userguide/migrating_from_ant.html)
-  * [Compatibility Notes](../userguide/compatibility.html)
-  * [Troubleshooting Builds](../userguide/troubleshooting.html)
+  * [什么是Gradle？](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/what_is_gradle.html)
+  * [入门](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/getting_started.html)
+  * [安装Gradle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/installation.html)
+  * [升级Gradle ...](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#upgrading-gradle)
+    * [版本6.X到最新](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_6.html)
+    * [版本5.X到6.0](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html)
+    * [版本4.X到5.0](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_4.html)
+    * [Gradle的功能生命周期](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/feature_lifecycle.html)
+  * [迁移至Gradle ...](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#migrating-to-gradle)
+    * [from Maven](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/migrating_from_maven.html)
+    * [from Ant](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/migrating_from_ant.html)
+  * [相容性说明](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/compatibility.html)
+  * [对构建进行故障排除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/troubleshooting.html)
 
-### Running Gradle Builds
+### 运行Gradle构建
 
-  * Customizing Execution
-    * [Configuring the Build Environment](../userguide/build_environment.html)
-    * [Configuring the Gradle Daemon](../userguide/gradle_daemon.html)
-    * [Using Initialization Scripts](../userguide/init_scripts.html)
-  * [Executing Multi-Project Builds](../userguide/intro_multi_project_builds.html)
-  * [Inspecting Gradle Builds](https://scans.gradle.com/)
-  * Optimizing Build Times
+  * [自定义执行](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#customizing-execution)
+    * [Configuring the Build Environment](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_environment.html)
+    * [Configuring the Gradle Daemon](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_daemon.html)
+    * [Using Initialization Scripts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/init_scripts.html)
+  * [执行多项目构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/intro_multi_project_builds.html)
+  * [检查Gradle构建](https://scans.gradle.com/)
+  * [优化构建时间](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#optimizing-build-performance)
     * [Build Performance Guide](https://guides.gradle.org/performance/)
-    * [Enabling and Configuring the Build Cache](../userguide/build_cache.html)
-    * [Using the Configuration Cache](../userguide/configuration_cache.html)
+    * [Enabling and Configuring the Build Cache](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_cache.html)
+    * [Using the Configuration Cache](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/configuration_cache.html)
 
-### Authoring Gradle Builds
+### 编写Gradle构建
 
-  * Learning the Basics
-    * [Introducing the Basics of Build Scripts](../userguide/tutorial_using_tasks.html)
-    * [Working with Tasks](../userguide/more_about_tasks.html)
-    * [Learning More About Build Scripts](../userguide/writing_build_scripts.html)
-    * [Working with Files](../userguide/working_with_files.html)
-    * [Using Gradle Plugins](../userguide/plugins.html)
-    * [Understanding the Build Lifecycle](../userguide/build_lifecycle.html)
-    * [Working with Logging](../userguide/logging.html)
-    * [Avoiding Traps](../userguide/potential_traps.html)
-  * Authoring Multi-Project Builds
-    * [Creating a Basic Multi-Project Build](../userguide/multi_project_builds.html)
-    * [Declaring Dependencies between Subprojects](../userguide/declaring_dependencies_between_subprojects.html)
-    * [Sharing Build Logic between Subprojects](../userguide/sharing_build_logic_between_subprojects.html)
-    * [Fine Tuning the Project Layout](../userguide/fine_tuning_project_layout.html)
-    * [Understanding Configuration and Execution](../userguide/multi_project_configuration_and_execution.html)
-  * Authoring Sustainable Builds
-    * [Organizing Build Logic](../userguide/organizing_gradle_projects.html)
-    * [Following Best Practices](../userguide/authoring_maintainable_build_scripts.html)
-  * Advanced Techniques
+  * [学习基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#learning-the-basics)
+    * [Introducing the Basics of Build Scripts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/tutorial_using_tasks.html)
+    * [Working with Tasks](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/more_about_tasks.html)
+    * [Learning More About Build Scripts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/writing_build_scripts.html)
+    * [Working with Files](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/working_with_files.html)
+    * [Using Gradle Plugins](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugins.html)
+    * [Understanding the Build Lifecycle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/build_lifecycle.html)
+    * [Working with Logging](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/logging.html)
+    * [Avoiding Traps](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/potential_traps.html)
+  * [创作多项目构建](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#authoring-multi-project-builds)
+    * [Creating a Basic Multi-Project Build](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_builds.html)
+    * [Declaring Dependencies between Subprojects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_dependencies_between_subprojects.html)
+    * [Sharing Build Logic between Subprojects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/sharing_build_logic_between_subprojects.html)
+    * [Fine Tuning the Project Layout](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/fine_tuning_project_layout.html)
+    * [Understanding Configuration and Execution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/multi_project_configuration_and_execution.html)
+  * [创作可持续建筑](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#authoring-sustainable-builds)
+    * [Organizing Build Logic](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/organizing_gradle_projects.html)
+    * [Following Best Practices](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/authoring_maintainable_build_scripts.html)
+  * [先进技术](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#advanced-techniques)
     * [Developing Parallel Tasks](https://guides.gradle.org/using-the-worker-api/)
-    * [Testing a Build with TestKit](../userguide/test_kit.html)
-    * [Using Ant from Gradle](../userguide/ant.html)
+    * [Testing a Build with TestKit](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/test_kit.html)
+    * [Using Ant from Gradle](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/ant.html)
 
-### Authoring JVM Builds
+### 编写JVM构建
 
-  * [Building Java & JVM projects](../userguide/building_java_projects.html)
-  * [Testing Java & JVM projects](../userguide/java_testing.html)
-  * [Toolchains for Java projects](../userguide/toolchains.html)
-  * [Managing Dependencies](../userguide/dependency_management_for_java_projects.html)
-  * JVM Plugins
-    * [Java Library Plugin](../userguide/java_library_plugin.html)
-    * [Java Application Plugin](../userguide/application_plugin.html)
-    * [Java Platform Plugin](../userguide/java_platform_plugin.html)
-    * [Groovy Plugin](../userguide/groovy_plugin.html)
-    * [Scala Plugin](../userguide/scala_plugin.html)
+  * [构建Java和JVM项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_java_projects.html)
+  * [测试Java和JVM项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_testing.html)
+  * [Java项目的工具链](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/toolchains.html)
+  * [管理依赖关系](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_management_for_java_projects.html)
+  * [JVM插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#jvm-plugins)
+    * [Java Library Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_library_plugin.html)
+    * [Java Application Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/application_plugin.html)
+    * [Java Platform Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_platform_plugin.html)
+    * [Groovy Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/groovy_plugin.html)
+    * [Scala Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/scala_plugin.html)
 
-### Authoring C++/Swift Builds
+### 编写C ++ / Swift构建
 
-  * [Building C++ projects](../userguide/building_cpp_projects.html)
-  * [Testing C++ projects](../userguide/cpp_testing.html)
-  * [Building Swift projects](../userguide/building_swift_projects.html)
-  * [Testing Swift projects](../userguide/swift_testing.html)
+  * [构建C ++项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_cpp_projects.html)
+  * [测试C ++项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/cpp_testing.html)
+  * [建立Swift项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/building_swift_projects.html)
+  * [测试Swift项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/swift_testing.html)
 
-### Working with Dependencies
+### 使用依赖项
 
-  * Learning the Basics
-    * [What is Dependency Management?](../userguide/core_dependency_management.html)
-    * [Declaring Repositories](../userguide/declaring_repositories.html)
-    * [Declaring Dependencies](../userguide/declaring_dependencies.html)
-    * [Understanding Library and Application Differences](../userguide/library_vs_application.html)
-    * [Viewing and Debugging Dependencies](../userguide/viewing_debugging_dependencies.html)
-    * [Understanding Resolution](../userguide/dependency_resolution.html)
-    * [Verifying dependencies](../userguide/dependency_verification.html)
-  * Declaring Versions
-    * [Declaring Versions and Ranges](../userguide/single_versions.html)
-    * [Declaring Rich Versions](../userguide/rich_versions.html)
-    * [Handling Changing Versions](../userguide/dynamic_versions.html)
-    * [Locking Versions](../userguide/dependency_locking.html)
-  * Controlling Transitives
-    * [Upgrading Versions](../userguide/dependency_constraints.html)
-    * [Downgrading and Excluding](../userguide/dependency_downgrade_and_exclude.html)
-    * [Sharing Versions](../userguide/platforms.html)
-    * [Aligning Dependencies](../userguide/dependency_version_alignment.html)
-    * [Handling Mutually Exclusive Dependencies](../userguide/dependency_capability_conflict.html)
-    * [Fixing Metadata](../userguide/component_metadata_rules.html)
-    * [Customizing Resolution](../userguide/resolution_rules.html)
-    * [Preventing accidental upgrades](../userguide/resolution_strategy_tuning.html)
-  * Producing and Consuming Variants of Libraries
-    * [Declaring Capabilities of a Library](../userguide/component_capabilities.html)
-    * [Modeling Feature Variants and Optional Dependencies](../userguide/feature_variants.html)
-    * [Understanding Variant Selection](../userguide/variant_model.html)
-    * [Declaring Variant Attributes](../userguide/variant_attributes.html)
-    * [Sharing Outputs of Projects](../userguide/cross_project_publications.html)
-    * [Transforming Artifacts](../userguide/artifact_transforms.html)
-  * Working in a Multi-repo Environment
-    * [Composing Builds](../userguide/composite_builds.html)
-  * Publishing Libraries
-    * [Setting up Publishing](../userguide/publishing_setup.html)
-    * [Understanding Gradle Module Metadata](../userguide/publishing_gradle_module_metadata.html)
-    * [Signing Artifacts](../userguide/publishing_signing.html)
-    * [Customizing Publishing](../userguide/publishing_customization.html)
-    * [Maven Publish Plugin](../userguide/publishing_maven.html)
-    * [Ivy Publish Plugin](../userguide/publishing_ivy.html)
-  * [Terminology](../userguide/dependency_management_terminology.html)
+  * [学习基础](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#learning-the-basics-dependency-management)
+    * [What is Dependency Management?](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/core_dependency_management.html)
+    * [Declaring Repositories](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_repositories.html)
+    * [Declaring Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_dependencies.html)
+    * [Understanding Library and Application Differences](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/library_vs_application.html)
+    * [Viewing and Debugging Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/viewing_debugging_dependencies.html)
+    * [Understanding Resolution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_resolution.html)
+    * [Verifying dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_verification.html)
+  * [声明版本](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#declaring-dependency-versions)
+    * [Declaring Versions and Ranges](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/single_versions.html)
+    * [Declaring Rich Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/rich_versions.html)
+    * [Handling Changing Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dynamic_versions.html)
+    * [Locking Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_locking.html)
+  * [控制翻译](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#controlling-transitive-dependencies)
+    * [Upgrading Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_constraints.html)
+    * [Downgrading and Excluding](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_downgrade_and_exclude.html)
+    * [Sharing Versions](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/platforms.html)
+    * [Aligning Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_version_alignment.html)
+    * [Handling Mutually Exclusive Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_capability_conflict.html)
+    * [Fixing Metadata](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/component_metadata_rules.html)
+    * [Customizing Resolution](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/resolution_rules.html)
+    * [Preventing accidental upgrades](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/resolution_strategy_tuning.html)
+  * [图书馆的生产和消费形式](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#modeling-features)
+    * [Declaring Capabilities of a Library](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/component_capabilities.html)
+    * [Modeling Feature Variants and Optional Dependencies](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/feature_variants.html)
+    * [Understanding Variant Selection](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_model.html)
+    * [Declaring Variant Attributes](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_attributes.html)
+    * [Sharing Outputs of Projects](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/cross_project_publications.html)
+    * [Transforming Artifacts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/artifact_transforms.html)
+  * [在多仓库环境中工作](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#multi-repo)
+    * [Composing Builds](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/composite_builds.html)
+  * [出版图书馆](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#publishing)
+    * [Setting up Publishing](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_setup.html)
+    * [Understanding Gradle Module Metadata](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_gradle_module_metadata.html)
+    * [Signing Artifacts](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_signing.html)
+    * [Customizing Publishing](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_customization.html)
+    * [Maven Publish Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_maven.html)
+    * [Ivy Publish Plugin](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_ivy.html)
+  * [术语](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_management_terminology.html)
 
-### Extending Gradle
+### 扩展摇篮
 
-  * [Plugin Development Tutorials](https://gradle.org/guides/?q=Plugin%20Development)
-  * [Writing Gradle Task Types](../userguide/custom_tasks.html)
-  * [Writing Gradle Plugins](../userguide/custom_plugins.html)
-  * [Writing Custom Gradle Types](../userguide/custom_gradle_types.html)
-  * [Configuring Tasks Lazily](../userguide/lazy_configuration.html)
-  * [Using Task Configuration Avoidance](../userguide/task_configuration_avoidance.html)
+  * [插件开发教程](https://gradle.org/guides/?q=Plugin%20Development)
+  * [编写Gradle任务类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_tasks.html)
+  * [编写Gradle插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_plugins.html)
+  * [编写自定义Gradle类型](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_gradle_types.html)
+  * [延迟配置任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/lazy_configuration.html)
+  * [使用避免任务配置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/task_configuration_avoidance.html)
 
-### Reference
+### 参考
 
-  * [Core Plugins](../userguide/plugin_reference.html)
-  * [Command-Line Interface](../userguide/command_line_interface.html)
-  * [Gradle & Third-party Tools](../userguide/third_party_integration.html)
-  * [The Gradle Wrapper](../userguide/gradle_wrapper.html)
-  * [Gradle-managed Directories](../userguide/directory_layout.html)
+  * [核心插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/plugin_reference.html)
+  * [命令行界面](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/command_line_interface.html)
+  * [Gradle和第三方工具](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/third_party_integration.html)
+  * [摇篮包装](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/gradle_wrapper.html)
+  * [Gradle管理的目录](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/directory_layout.html)
 
-# Upgrading your build from Gradle 5.x to 6.0
+# 将您的构建从Gradle 5.x升级到6.0
 
 version 6.7.1
 
-Contents
+内容
 
-  * Upgrading from 5.6 and earlier
-  * Upgrading from 5.5 and earlier
-  * Upgrading from 5.4 and earlier
-  * Upgrading from 5.3 and earlier
-  * Upgrading from 5.2 and earlier
-  * Upgrading from 5.1 and earlier
-  * Upgrading from 5.0 and earlier
+  * [从5.6及更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_6.0)
+  * [从5.5或更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.6)
+  * [从5.4或更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.5)
+  * [从5.3或更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.4)
+  * [从5.2或更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.3)
+  * [从5.1或更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.2)
+  * [从5.0或更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.1)
 
-This chapter provides the information you need to migrate your Gradle 5.x
-builds to Gradle 6.0. For migrating from Gradle 4.x, complete the [4.x to 5.0
-guide](upgrading_version_4.html#upgrading_version_4) first.
+本章提供了将Gradle 5.x构建迁移到Gradle 6.0所需的信息。要从Gradle
+4.x迁移，请先完成从[4.x到5.0的指南](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_4.html#upgrading_version_4)。
 
-We recommend the following steps for all users:
+我们建议所有用户执行以下步骤：
 
-  1. Try running `gradle help --scan` and view the [deprecations view](https://gradle.com/enterprise/releases/2018.4/#identify-usages-of-deprecated-gradle-functionality) of the generated build scan.
+  1. 尝试运行`gradle help --scan`并查看生成的构建扫描的[弃用视图](https://gradle.com/enterprise/releases/2018.4/#identify-usages-of-deprecated-gradle-functionality)。
 
-![Deprecations View of a Gradle Build Scan](img/deprecations.png)
+![Gradle构建扫描的弃用视图](./将您的构建从Gradle 5.x升级到6.0_files/deprecations.png)
 
-This is so that you can see any deprecation warnings that apply to your build.
+这样一来，您就可以看到适用于您的构建的所有弃用警告。
 
-Alternatively, you could run `gradle help --warning-mode=all` to see the
-deprecations in the console, though it may not report as much detailed
-information.
+或者，您可以运行`gradle help --warning-mode=all`在控制台中查看弃用项，尽管它可能不会报告太多详细信息。
 
-  2. Update your plugins.
+  2. 更新您的插件。
 
-Some plugins will break with this new version of Gradle, for example because
-they use internal APIs that have been removed or changed. The previous step
-will help you identify potential problems by issuing deprecation warnings when
-a plugin does try to use a deprecated part of the API.
+一些插件将随新版本的Gradle一起中断，例如，因为它们使用已被删除或更改的内部API。上一步将通过在插件确实尝试使用API​​弃用的部分时发出弃用警告来帮助您识别潜在的问题。
 
-  3. Run `gradle wrapper --gradle-version 6.7.1` to update the project to 6.7.1.
+  3. 运行`gradle wrapper --gradle-version 6.7.1`以将项目更新为6.7.1。
 
-  4. Try to run the project and debug any errors using the [Troubleshooting Guide](troubleshooting.html#troubleshooting).
+  4. 尝试使用《[故障排除指南》](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/troubleshooting.html#troubleshooting)运行项目并调试所有错误。
 
-## Upgrading from 5.6 and earlier
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_6.0)[从5.6及更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_6.0)
 
-### Deprecations
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#deprecations)[弃用](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#deprecations)
 
-#### Dependencies should no longer be declared using the `compile` and
-`runtime` configurations
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations)[不再应该使用`compile`和`runtime`配置声明依赖项](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations)
 
-The usage of the `compile` and `runtime` configurations in the Java ecosystem
-plugins has been discouraged since [Gradle
-3.4](https://docs.gradle.org/3.4/release-notes.html#the-java-library-plugin).
+从[Gradle 3.4](https://docs.gradle.org/3.4/release-notes.html#the-java-library-
+plugin)开始，不鼓励在Java生态系统插件中使用`compile`和`runtime`配置。[](https://docs.gradle.org/3.4/release-
+notes.html#the-java-library-plugin)
 
-These configurations are used for compiling and running code from the `main`
-source set. Other sources sets create similar configurations (e.g.
-`testCompile` and `testRuntime` for the `test` source set), should not be used
-either. The `implementation`, `api`, `compileOnly` and `runtimeOnly`
-configurations should be used to declare dependencies and the
-`compileClasspath` and `runtimeClasspath` configurations to resolve
-dependencies. See [the relationship of these
-configurations](java_library_plugin.html#sec:java_library_configurations_graph).
+这些配置用于从`main`源集中编译和运行代码。其他源集创建类似的配置（例如`testCompile`和`testRuntime`用于`test`源集），也不应使用。的`implementation`，`api`，`compileOnly`和`runtimeOnly`配置应该用于依赖性和申报`compileClasspath`和`runtimeClasspath`配置，以解决依赖关系。请参阅[这些配置的关系](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/java_library_plugin.html#sec:java_library_configurations_graph)。
 
-#### Legacy publication system is deprecated and replaced with the `*-publish`
-plugins
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#legacy_publication_system_is_deprecated_and_replaced_with_the_publish_plugins)[旧版发布系统已弃用，并替换为`*-publish`插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#legacy_publication_system_is_deprecated_and_replaced_with_the_publish_plugins)
 
-The `uploadArchives` task and the `maven` plugin are deprecated.
+该`uploadArchives`任务和`maven`插件已被弃用。
 
-Users should migrate to the [publishing system](publishing_setup.html) of
-Gradle by using either the [`maven-publish`](publishing_maven.html) or [`ivy-
-publish`](publishing_ivy.html) plugins. These plugins have been stable since
-Gradle 4.8.
+用户应使用或插件迁移到Gradle的[发布系统](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_setup.html)。自Gradle
+4.8起，这些插件一直稳定。[`maven-
+publish`](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_maven.html)[`ivy-
+publish`](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_ivy.html)
 
-The publishing system is also the only way to ensure the publication of
-[Gradle Module Metadata](publishing_gradle_module_metadata.html).
+发布系统也是确保[Gradle
+Module元数据](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_gradle_module_metadata.html)发布的唯一方法。
 
-#### Problems with tasks emit deprecation warnings
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#problems_with_tasks_emit_deprecation_warnings)[任务问题会发出弃用警告](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#problems_with_tasks_emit_deprecation_warnings)
 
-When Gradle detects problems with task definitions (such as incorrectly
-defined inputs or outputs) it will show the following message on the console:
+当Gradle检测到任务定义问题（例如错误定义的输入或输出）时，它将在控制台上显示以下消息：
 
     
     
@@ -254,12 +243,9 @@ defined inputs or outputs) it will show the following message on the console:
     Use '--warning-mode all' to show the individual deprecation warnings.
     See https://docs.gradle.org/6.0/userguide/command_line_interface.html#sec:command_line_warnings
 
-The deprecation warnings show up in [build
-scans](https://scans.gradle.com/s/txrptciitl2ha/deprecations) for every build,
-regardless of the command-line switches used.
+无论使用哪个命令行开关，都将在每个版本的[构建扫描中](https://scans.gradle.com/s/txrptciitl2ha/deprecations)显示不赞成使用警告。
 
-When the build is executed with `--warning-mode all`, the individual warnings
-will be shown:
+当使用构建执行时`--warning-mode all`，将显示单个警告：
 
     
     
@@ -267,60 +253,49 @@ will be shown:
     Property 'inputDirectory' is declared without normalization specified. Properties of cacheable work must declare their normalization via @PathSensitive, @Classpath or @CompileClasspath. Defaulting to PathSensitivity.ABSOLUTE. This behaviour has been deprecated and is scheduled to be removed in Gradle 7.0.
     Property 'outputFile' is not annotated with an input or output annotation. This behaviour has been deprecated and is scheduled to be removed in Gradle 7.0.
 
-If you own the code of the tasks in question, you can fix them by [following
-the suggestions](more_about_tasks.html#sec:task_input_validation). You can
-also use `--stacktrace` to see where in the code each warning originates from.
+如果您拥有相关任务的代码，则可以[按照建议](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/more_about_tasks.html#sec:task_input_validation)进行修复。您还可以`--stacktrace`用来查看每个警告的源代码。
 
-Otherwise, you'll need to report the problems to the maintainer of the
-relevant task or plugin.
+否则，您需要将问题报告给相关任务或插件的维护者。
 
-#### Old API for incremental tasks, `IncrementalTaskInputs`, has been
-deprecated
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#old_api_for_incremental_tasks_incrementaltaskinputs_has_been_deprecated)[`IncrementalTaskInputs`不推荐使用用于增量任务的旧API，](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#old_api_for_incremental_tasks_incrementaltaskinputs_has_been_deprecated)
 
-In Gradle 5.4 we introduced a new API for implementing [incremental
-tasks](custom_tasks.html#incremental_tasks):
-[InputChanges](../dsl/org.gradle.work.InputChanges.html). The old API based on
-`IncrementalTaskInputs` has been deprecated.
+在Gradle
+5.4中，我们引入了用于实现[增量任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_tasks.html#incremental_tasks)的新API
+：[InputChanges](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.work.InputChanges.html)。基于的旧API`IncrementalTaskInputs`已被弃用。
 
-#### Forced dependencies
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#forced_dependencies)[强制依赖](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#forced_dependencies)
 
-Forcing dependency versions using `force = true` on a first-level dependency
-has been deprecated.
+不建议`force = true`在第一级依赖项上使用强制性依赖项版本。
 
-Force has both a semantic and ordering issue which can be avoided by using a
-[strict version constraint](rich_versions.html#rich-version-constraints).
+强制同时具有语义和顺序问题，可以通过使用[严格的版本约束](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/rich_versions.html#rich-
+version-constraints)来避免。
 
-#### Search upwards related APIs in `StartParameter` have been deprecated
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#search_upwards_related_apis_in_startparameter_have_been_deprecated)[`StartParameter`不建议使用向上搜索相关的API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#search_upwards_related_apis_in_startparameter_have_been_deprecated)
 
-In Gradle 5.0, we removed the `--no-search-upward` CLI parameter.
+在Gradle 5.0中，我们删除了`--no-search-upward`CLI参数。
 
-The related APIs in `StartParameter` (like `isSearchUpwards()`) are now
-deprecated.
+`StartParameter`（如`isSearchUpwards()`）中的相关API现在已弃用。
 
-#### APIs `BuildListener.buildStarted` and `Gradle.buildStarted` have been
-deprecated
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#apis_buildlistener_buildstarted_and_gradle_buildstarted_have_been_deprecated)[API`BuildListener.buildStarted`和`Gradle.buildStarted`已被弃用](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#apis_buildlistener_buildstarted_and_gradle_buildstarted_have_been_deprecated)
 
-These methods currently do not work as expected since the callbacks will never
-be called after the build has started.
+这些方法当前无法按预期方式工作，因为在构建开始之后将永远不会调用回调。
 
-The methods are being deprecated to avoid confusion.
+不推荐使用这些方法以避免混淆。
 
-#### Implicit duplicate strategy for `Copy` or archive tasks has been
-deprecated
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#implicit_duplicate_strategy_for_copy_or_archive_tasks_has_been_deprecated)[不建议使用隐式重复策略`Copy`或存档任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#implicit_duplicate_strategy_for_copy_or_archive_tasks_has_been_deprecated)
 
-Archive tasks `Tar` and `Zip` by default allow multiple entries for the same
-path to exist in the created archive. This can cause ["grossly invalid zip
-files" that can trigger zip bomb
-detection](https://github.com/gradle/gradle/issues/9990).
+归档任务`Tar`，`Zip`默认情况下允许在创建的归档中存在同一路径的多个条目。这可能会导致[“严重无效的zip文件”，从而触发zip炸弹检测](https://github.com/gradle/gradle/issues/9990)。
 
-To prevent this from happening accidentally, encountering duplicates while
-creating an archive now produces a deprecation message and will fail the build
-starting with Gradle 7.0.
+为了防止这种情况的发生，创建存档时遇到重复会产生弃用消息，并且将使从Gradle 7.0开始的构建失败。
 
-`Copy` tasks also happily copy multiple sources with the same relative path to
-the destination directory. This behavior has also been deprecated.
+`Copy`任务还可以愉快地将具有相同相对路径的多个源复制到目标目录。此行为也已被弃用。
 
-If you want to allow duplicates, you can specify that explicitly:
+如果要允许重复，则可以明确指定：
 
     
     
@@ -329,26 +304,22 @@ If you want to allow duplicates, you can specify that explicitly:
         ...
     }
 
-#### Executing Gradle without a settings file has been deprecated
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#executing_gradle_without_a_settings_file_has_been_deprecated)[在不使用设置文件的情况下执行Gradle已被弃用](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#executing_gradle_without_a_settings_file_has_been_deprecated)
 
-A Gradle build is defined by a `settings.gradle[.kts]` file in the current or
-parent directory. Without a settings file, a Gradle build is undefined and
-will emit a deprecation warning.
+Gradle构建由`settings.gradle[.kts]`当前或父目录中的文件定义。没有设置文件，Gradle构建是未定义的，并且将发出弃用警告。
 
-In Gradle 7.0, Gradle will only allow you to invoke the `init` task or
-diagnostic command line flags, such as `--version`, with undefined builds.
+在Gradle 7.0中，Gradle仅允许您使用未定义的构建调用`init`任务或诊断命令行标志，例如`--version`。
 
-#### Calling `Project.afterEvaluate` on an evaluated project has been
-deprecated
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#calling_project_afterevaluate_on_an_evaluated_project_has_been_deprecated)[不建议调用`Project.afterEvaluate`评估项目](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#calling_project_afterevaluate_on_an_evaluated_project_has_been_deprecated)
 
-Once a project is evaluated, Gradle ignores all configuration passed to
-`Project#afterEvaluate` and emits a deprecation warning. This scenario will
-become an error in Gradle 7.0.
+评估项目后，Gradle会忽略传递给它的所有配置`Project#afterEvaluate`并发出弃用警告。这种情况将成为Gradle 7.0中的错误。
 
-#### Deprecated plugins
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#deprecated_plugins)[不推荐使用的插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#deprecated_plugins)
 
-The following bundled plugins were never announced and will be removed in the
-next major release of Gradle:
+以下捆绑插件从未发布过，它们将在Gradle的下一个主要版本中删除：
 
   * `org.gradle.coffeescript-base`
 
@@ -360,46 +331,49 @@ next major release of Gradle:
 
   * `org.gradle.rhino`
 
-Some of these plugins may have replacements on the [Plugin
-Portal](https://plugins.gradle.org/).
+其中一些插件可能会在[插件门户](https://plugins.gradle.org/)上进行替换。
 
-### Potential breaking changes
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes)[潜在的重大变化](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes)
 
-#### Android Gradle Plugin 3.3 and earlier is no longer supported
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#android_gradle_plugin_3_3_and_earlier_is_no_longer_supported)[不再支持Android
+Gradle Plugin
+3.3和更早版本](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#android_gradle_plugin_3_3_and_earlier_is_no_longer_supported)
 
-Gradle 6.0 supports Android Gradle Plugin versions 3.4 and later.
+Gradle 6.0支持Android Gradle插件版本3.4及更高版本。
 
-#### Build scan plugin 2.x is no longer supported
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#build_scan_plugin_2_x_is_no_longer_supported)[不再支持构建扫描插件2.x](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#build_scan_plugin_2_x_is_no_longer_supported)
 
-For Gradle 6, usage of the build scan plugin must be replaced with the Gradle
-Enterprise plugin. This also requires changing how the plugin is applied.
-Please see <https://gradle.com/help/gradle-6-build-scan-plugin> for more
-information.
+对于Gradle 6，必须使用Gradle
+Enterprise插件替换对构建扫描插件的使用。这还需要更改插件的应用方式。请参阅[https://gradle.com/help/gradle-6-build-
+scan-plugin](https://gradle.com/help/gradle-6-build-scan-plugin)了解更多信息。
 
-#### Updates to bundled Gradle dependencies
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#updates_to_bundled_gradle_dependencies)[更新捆绑的Gradle依赖项](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#updates_to_bundled_gradle_dependencies)
 
-  * Groovy has been updated to [Groovy 2.5.8](http://groovy-lang.org/changelogs/changelog-2.5.8.html).
+  * Groovy已更新为[Groovy 2.5.8](http://groovy-lang.org/changelogs/changelog-2.5.8.html)。
 
-  * Kotlin has been updated to [Kotlin 1.3.50](https://blog.jetbrains.com/kotlin/2019/08/kotlin-1-3-50-released/).
+  * Kotlin已更新至[Kotlin 1.3.50](https://blog.jetbrains.com/kotlin/2019/08/kotlin-1-3-50-released/)。
 
-  * Ant has been updated to [Ant 1.10.7](https://archive.apache.org/dist/ant/RELEASE-NOTES-1.10.7.html).
+  * Ant已更新为[Ant 1.10.7](https://archive.apache.org/dist/ant/RELEASE-NOTES-1.10.7.html)。
 
-#### Updates to default integration versions
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#updates_to_default_integration_versions)[更新为默认集成版本](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#updates_to_default_integration_versions)
 
-  * Checkstyle has been updated to [Checkstyle 8.24](https://checkstyle.org/releasenotes.html#Release_8.24).
+  * Checkstyle已更新至[Checkstyle 8.24](https://checkstyle.org/releasenotes.html#Release_8.24)。
 
-  * CodeNarc has been updated to [CodeNarc 1.4](https://github.com/CodeNarc/CodeNarc/blob/master/CHANGELOG.md#version-14---may-2019).
+  * CodeNarc已更新为[CodeNarc 1.4](https://github.com/CodeNarc/CodeNarc/blob/master/CHANGELOG.md#version-14---may-2019)。
 
-  * PMD has been updated to [PMD 6.17.0](https://pmd.github.io/latest/pmd_release_notes.html#28-july-2019---6170).
+  * PMD已更新至[PMD 6.17.0](https://pmd.github.io/latest/pmd_release_notes.html#28-july-2019---6170)。
 
-  * JaCoCo has been updated to [0.8.5](http://www.jacoco.org/jacoco/trunk/doc/changes.html). Contributed by [Evgeny Mandrikov](https://github.com/Godin)
+  * JaCoCo已更新至[0.8.5](http://www.jacoco.org/jacoco/trunk/doc/changes.html)。由[Evgeny Mandrikov](https://github.com/Godin)贡献[](https://github.com/Godin)
 
-#### Changes to build and task names in composite builds
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_build_and_task_names_in_composite_builds)[复合构建中对构建和任务名称的更改](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_build_and_task_names_in_composite_builds)
 
-Previously, Gradle used the name of the root project as the build name for an
-included build. Now, the name of the build's root directory is used and the
-root project name is not considered if different. A different name for the
-build can be specified if the build is being included via a settings file.
+以前，Gradle使用根项目的名称作为所包含构建的构建名称。现在，将使用构建的根目录名称，并且如果不相同，则不考虑根项目名称。如果通过设置文件包含构建，则可以为构建指定其他名称。
 
     
     
@@ -407,30 +381,25 @@ build can be specified if the build is being included via a settings file.
         name = "another-name"
     }
 
-The previous behavior was problematic as it caused different names to be used
-at different times during the build.
+先前的行为是有问题的，因为它导致在构建期间的不同时间使用不同的名称。
 
-#### buildSrc is now reserved as a project and subproject build name
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#buildsrc_is_now_reserved_as_a_project_and_subproject_build_name)[现在，将buildSrc保留为项目和子项目的内部版本名称](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#buildsrc_is_now_reserved_as_a_project_and_subproject_build_name)
 
-Previously, Gradle did not prevent using the name “buildSrc” for a subproject
-of a multi-project build or as the name of an included build. Now, this is not
-allowed. The name “buildSrc” is now reserved for the conventional buildSrc
-project that builds extra build logic.
+以前，Gradle并未阻止将名称“ buildSrc”用于多项目构建的子项目或包含的构建的名称。现在，这是不允许的。现在，将名称“
+buildSrc”保留给构建额外构建逻辑的常规buildSrc项目。
 
-Typical use of buildSrc is unaffected by this change. You will only be
-affected if your settings file specifies `include("buildSrc")` or
-`includeBuild("buildSrc")`.
+buildSrc的典型用法不受此更改的影响。仅当您的设置文件指定`include("buildSrc")`或时，您才会受到影响`includeBuild("buildSrc")`。
 
-#### Scala Zinc compiler
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#scala_zinc_compiler)[Scala
+Zinc编译器](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#scala_zinc_compiler)
 
-The Zinc compiler has been upgraded to version 1.3.0. Gradle no longer
-supports building for Scala 2.9.
+Zinc编译器已升级到版本1.3.0。Gradle不再支持为Scala 2.9构建。
 
-The minimum Zinc compiler supported by Gradle is 1.2.0 and the maximum tested
-version is 1.3.0.
+Gradle支持的最小Zinc编译器为1.2.0，最大测试版本为1.3.0。
 
-To make it easier to select the version of the Zinc compiler, you can now
-configure a `zincVersion` property:
+为了使选择Zinc编译器的版本更加容易，您现在可以配置一个`zincVersion`属性：
 
     
     
@@ -438,186 +407,159 @@ configure a `zincVersion` property:
         zincVersion = "1.2.1"
     }
 
-Please remove any explicit dependencies you've added to the `zinc`
-configuration and use this property instead. If you try to use the
-`com.typesafe.zinc:zinc` dependency, Gradle will switch to the new Zinc
-implementation.
+请删除您添加到`zinc`配置中的所有显式依赖项，并改用此属性。如果您尝试使用`com.typesafe.zinc:zinc`依赖项，Gradle将切换到新的Zinc实现。
 
-#### Changes to Build Cache
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_build_cache)[对构建缓存的更改](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_build_cache)
 
-#### Local build cache is always a directory cache
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#local_build_cache_is_always_a_directory_cache)[本地构建缓存始终是目录缓存](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#local_build_cache_is_always_a_directory_cache)
 
-In the past, it was possible to use any build cache implementation as the
-`local` cache. This is no longer allowed as the local cache must always be a
-`DirectoryBuildCache`.
+过去，可以将任何构建高速缓存实现用作`local`高速缓存。由于本地缓存必须始终为，因此不再允许这样做`DirectoryBuildCache`。
 
-Calls to `BuildCacheConfiguration.local(Class)` with anything other than
-`DirectoryBuildCache` as the type will fail the build. Calling these methods
-with the `DirectoryBuildCache` type will produce a deprecation warning.
+`BuildCacheConfiguration.local(Class)`使用除`DirectoryBuildCache`type作为类型以外的任何内容进行调用都会使构建失败。使用`DirectoryBuildCache`类型调用这些方法将产生弃用警告。
 
-Use `getLocal()` and `local(Action)` instead.
+使用`getLocal()`和`local(Action)`代替。
 
-#### Failing to pack or unpack cached results will now fail the build
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#failing_to_pack_or_unpack_cached_results_will_now_fail_the_build)[无法打包或解包缓存的结果现在将使构建失败](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#failing_to_pack_or_unpack_cached_results_will_now_fail_the_build)
 
-In the past, when Gradle encountered a problem while packing the results of a
-cached task, Gradle would ignore the problem and continue running the build.
+过去，当Gradle在打包缓存任务的结果时遇到问题时，Gradle会忽略该问题并继续运行构建。
 
-When encountering a corrupt cached artifact, Gradle would remove whatever was
-already unpacked and re-execute the task to make sure the build had a chance
-to succeed.
+当遇到损坏的缓存工件时，Gradle会删除已解包的所有内容，然后重新执行任务以确保构建有成功的机会。
 
-While this behavior was intended to make a build successful, this had the
-adverse effect of hiding problems and led to reduced cache performance.
+尽管此行为旨在使构建成功，但会产生隐藏问题的不利影响，并导致缓存性能下降。
 
-In Gradle 6.0, both pack and unpack errors will cause the build to fail, so
-that these problems will be surfaced more easily.
+在Gradle 6.0中，打包和解包错误都将导致构建失败，因此这些问题将更容易得到解决。
 
-#### buildSrc projects automatically use build cache configuration
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#buildsrc_projects_automatically_use_build_cache_configuration)[buildSrc项目自动使用构建缓存配置](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#buildsrc_projects_automatically_use_build_cache_configuration)
 
-Previously, in order to to use the build cache for the buildSrc build you
-needed to duplicate your build cache config in the buildSrc build. Now, it
-automatically uses the build cache configuration defined by the top level
-settings script.
+以前，为了将构建缓存用于buildSrc构建，您需要在buildSrc构建中复制构建缓存配置。现在，它会自动使用顶级设置脚本定义的构建缓存配置。
 
-#### Changes to Dependency Management
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_dependency_management)[依赖管理的变化](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_dependency_management)
 
-#### Gradle Module Metadata is always published
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#gradle_module_metadata_is_always_published)[Gradle模块元数据总是发布](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#gradle_module_metadata_is_always_published)
 
-Officially introduced in Gradle 5.3, [Gradle Module
-Metadata](https://blog.gradle.org/gradle-metadata-1.0) was created to solve
-many of the problems that have plagued dependency management for years, in
-particular, but not exclusively, in the Java ecosystem.
+在摇篮5.3正式出台，[摇篮模块元数据](https://blog.gradle.org/gradle-
+metadata-1.0)的建立是为了解决许多有多年困扰依赖管理，特别是问题，但不完全是在Java生态系统。
 
-With Gradle 6.0, Gradle Module Metadata is enabled by default.
+在Gradle 6.0中，默认情况下启用了Gradle模块元数据。
 
-This means, if you are publishing libraries with Gradle and using the [maven-
-publish](publishing_maven.html) or [ivy-publish](publishing_ivy.html) plugin,
-the Gradle Module Metadata file is always published **in addition** to
-traditional metadata.
+这意味着，如果要使用Gradle发布库并使用[maven-
+publish](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_maven.html)或[ivy-
+publish](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/publishing_ivy.html)插件，则
+**除** 传统元数据 **外，还将** 始终发布Gradle Module元数据文件。
 
-The traditional metadata file will contain a marker so that Gradle knows that
-there is additional metadata to consume.
+传统的元数据文件将包含一个标记，以便Gradle知道还有其他元数据要使用。
 
-#### Gradle Module Metadata has stricter validation
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#gradle_module_metadata_has_stricter_validation)[Gradle模块元数据具有更严格的验证](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#gradle_module_metadata_has_stricter_validation)
 
-The following rules are verified when publishing Gradle Module Metadata:
+发布Gradle模块元数据时，将验证以下规则：
 
-  * Variant names must be unique,
+  * 变体名称必须唯一，
 
-  * Each variant must have at least [one attribute](variant_attributes.html),
+  * 每个变体必须至少具有[一个属性](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_attributes.html)，
 
-  * Two variants cannot have the [exact same attributes and capabilities](variant_model.html),
+  * 两个变体不能具有[完全相同的属性和功能](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/variant_model.html)，
 
-  * If there are dependencies, at least one, across all variants, must carry [version information](rich_versions.html).
+  * 如果存在依赖性，则所有变体中的至少一个必须携带[版本信息](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/rich_versions.html)。
 
-These are documented in the
-[specification](https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-
-module-metadata-latest-specification.md) as well.
+这些也记录在[规范](https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-
+module-metadata-latest-specification.md)中。
 
-#### Maven or Ivy repositories are no longer queried for artifacts without
-metadata by default
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#maven_or_ivy_repositories_are_no_longer_queried_for_artifacts_without_metadata_by_default)[默认情况下，不再向Maven或Ivy存储库查询没有元数据的工件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#maven_or_ivy_repositories_are_no_longer_queried_for_artifacts_without_metadata_by_default)
 
-If Gradle fails to locate the metadata file (`.pom` or `ivy.xml`) of a module
-in a repository defined in the `repositories { }` section, it now assumes that
-the module does not exist in that repository.
+如果Gradle无法在本节中定义的存储库中找到模块的元数据文件（`.pom`或`ivy.xml`）`repositories {
+}`，则现在假定该模块在该存储库中不存在。
 
-For dynamic versions, the `maven-metadata.xml` for the corresponding module
-needs to be present in a Maven repository.
+对于动态版本，`maven-metadata.xml`需要在Maven存储库中提供对应模块的。
 
-Previously, Gradle would also look for a default artifact (`.jar`). This
-behavior often caused a large number of unnecessary requests when using
-multiple repositories that slowed builds down.
+以前，Gradle还将寻找默认的工件（`.jar`）。当使用多个存储库减慢构建速度时，此行为通常会导致大量不必要的请求。
 
-You can opt into the old behavior for selected repositories by adding the
-`artifact()` [metadata
-source](declaring_repositories.html#sec:supported_metadata_sources).
+您可以通过添加`artifact()`
+[元数据源](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/declaring_repositories.html#sec:supported_metadata_sources)来选择选定存储库的旧行为。
 
-#### Changing the pom `packaging` property no longer changes the artifact
-extension
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changing_the_pom_packaging_property_no_longer_changes_the_artifact_extension)[更改pom`packaging`属性不再更改工件扩展](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changing_the_pom_packaging_property_no_longer_changes_the_artifact_extension)
 
-Previously, if the pom packaging was not _jar_ , _ejb_ , _bundle_ or _maven-
-plugin_ , the extension of the main artifact published to a Maven repository
-was changed during publishing to match the pom packaging.
+以前，如果pom包装不是 _jar_ ， _ejb_ ， _bundle_ 或 _maven-plugin_
+，则在发布过程中会更改发布到Maven存储库的主要工件的扩展名，以匹配pom包装。
 
-This behavior led to broken Gradle Module Metadata and was difficult to
-understand due to handling of different packaging types.
+这种行为导致Gradle Module元数据损坏，并且由于处理不同的包装类型而难以理解。
 
-Build authors can change the artifact name when the artifact is created to
-obtain the same result as before — e.g. by setting
-`jar.archiveExtension.set(pomPackaging)` explicitly.
+创建工件时，构建作者可以更改工件名称，以获得与以前相同的结果-
+例如，通过`jar.archiveExtension.set(pomPackaging)`显式设置。
 
-#### An `ivy.xml` published for Java libraries contains more information
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#an_ivy_xml_published_for_java_libraries_contains_more_information)[`ivy.xml`Java库的出版物包含更多信息](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#an_ivy_xml_published_for_java_libraries_contains_more_information)
 
-A number of fixes were made to produce more correct `ivy.xml` metadata in the
-`ivy-publish` plugin.
+已进行了许多修复，以`ivy.xml`在`ivy-publish`插件中生成更正确的元数据。
 
-As a consequence, the internal structure of the `ivy.xml` file has changed.
-The `runtime` configuration now contains more information, which corresponds
-to the _runtimeElements_ variant of a Java library. The `default`
-configuration should yield the same result as before.
+结果，`ivy.xml`文件的内部结构已更改。`runtime`现在，该配置包含更多信息，这些信息对应于Java库的 _runtimeElements_
+变体。该`default`配置应产生与以前相同的结果。
 
-In general, users are advised to migrate from `ivy.xml` to the new Gradle
-Module Metadata format.
+通常，建议用户从迁移`ivy.xml`到新的Gradle模块元数据格式。
 
-#### Changes to Plugins and Build scripts
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_plugins_and_build_scripts)[插件和构建脚本的更改](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_plugins_and_build_scripts)
 
-#### Classes from `buildSrc` are no longer visible to settings scripts
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#classes_from_buildsrc_are_no_longer_visible_to_settings_scripts)[`buildSrc`设置脚本不再可见来自的类](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#classes_from_buildsrc_are_no_longer_visible_to_settings_scripts)
 
-Previously, the buildSrc project was built before applying the project's
-settings script and its classes were visible within the script. Now, buildSrc
-is built after the settings script and its classes are not visible to it. The
-buildSrc classes remain visible to project build scripts and script plugins.
+以前，buildSrc项目是在应用项目的设置脚本之前构建的，并且其类在脚本中可见。现在，在设置脚本及其类对它不可见之后，将构建buildSrc。buildSrc类对于项目构建脚本和脚本插件仍然可见。
 
-Custom logic can be used from a settings script by [declaring external
-dependencies](tutorial_using_tasks.html#sec:build_script_external_dependencies).
+可以通过[声明外部依赖项](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/tutorial_using_tasks.html#sec:build_script_external_dependencies)从设置脚本中使用自定义逻辑。
 
-#### The `pluginManagement` block in settings scripts is now isolated
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_pluginmanagement_block_in_settings_scripts_is_now_isolated)[`pluginManagement`现在隔离了设置脚本中的块](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_pluginmanagement_block_in_settings_scripts_is_now_isolated)
 
-Previously, any `pluginManagement {}` blocks inside a settings script were
-executed during the normal execution of the script.
+以前，`pluginManagement {}`设置脚本中的任何块都是在脚本正常执行期间执行的。
 
-Now, they are executed earlier in a similar manner to `buildscript {}` or
-`plugins {}`. This means that code inside such a block cannot reference
-anything declared elsewhere in the script.
+现在，它们以与`buildscript {}`或类似的方式更早地执行`plugins {}`。这意味着该块中的代码无法引用脚本中其他地方声明的任何内容。
 
-This change has been made so that `pluginManagement` configuration can also be
-applied when resolving plugins for the settings script itself.
+进行了此更改，以便`pluginManagement`在解析设置脚本本身的插件时也可以应用配置。
 
-#### Plugins and classes loaded in settings scripts are visible to project
-scripts and `buildSrc`
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#plugins_and_classes_loaded_in_settings_scripts_are_visible_to_project_scripts_and_buildsrc)[设置脚本中加载的插件和类对项目脚本可见，并且
+`buildSrc`](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#plugins_and_classes_loaded_in_settings_scripts_are_visible_to_project_scripts_and_buildsrc)
 
-Previously, any classes added to the a settings script by using `buildscript
-{}` were not visible outside of the script. Now, they they are visible to all
-of the project build scripts.
+以前，通过使用脚本添加到a设置脚本中的任何类`buildscript {}`在脚本外部都不可见。现在，它们对于所有项目构建脚本都是可见的。
 
-They are also visible to the `buildSrc` build script and its settings script.
+它们对于`buildSrc`构建脚本及其设置脚本也是可见的。
 
-This change has been made so that plugins applied to the settings script can
-contribute logic to the entire build.
+进行了此更改，以便应用于设置脚本的插件可以为整个构建贡献逻辑。
 
-#### Plugin validation changes
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#plugin_validation_changes)[插件验证更改](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#plugin_validation_changes)
 
-  * The `validateTaskProperties` task is now deprecated, use `validatePlugins` instead. The new name better reflects the fact that it also validates artifact transform parameters and other non-property definitions.
+  * `validateTaskProperties`现在不推荐使用该任务，请`validatePlugins`改用。新名称更好地反映了以下事实：它还可以验证工件转换参数和其他非属性定义。
 
-  * The `ValidateTaskProperties` type is replaced by `ValidatePlugins`.
+  * 该`ValidateTaskProperties`类型被替换`ValidatePlugins`。
 
-  * The `setClasses()` method is now removed. Use `getClasses().setFrom()` instead.
+  * 该`setClasses()`方法现已删除。使用`getClasses().setFrom()`代替。
 
-  * The `setClasspath()` method is also removed. use `getClasspath().setFrom()` instead.
+  * 该`setClasspath()`方法也被删除。使用`getClasspath().setFrom()`代替。
 
-  * The [failOnWarning](../javadoc/org/gradle/plugin/devel/tasks/ValidatePlugins.html#getFailOnWarning--) option is now enabled by default.
+  * 该[failOnWarning](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/plugin/devel/tasks/ValidatePlugins.html#getFailOnWarning--)选项现在是默认启用的。
 
-  * The following task validation errors now fail the build at runtime and are promoted to errors for [ValidatePlugins](../javadoc/org/gradle/plugin/devel/tasks/ValidatePlugins.html):
+  * 现在，以下任务验证错误将在运行时使构建失败，并被提升为[ValidatePlugins的](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/plugin/devel/tasks/ValidatePlugins.html)错误：
 
-    * A task property is annotated with a property annotation not allowed for tasks, like `@InputArtifact`.
+    * 任务属性带有不允许用于任务的属性注释，例如`@InputArtifact`。
 
-#### Changes to Kotlin DSL
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_kotlin_dsl)[对Kotlin
+DSL的更改](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_kotlin_dsl)
 
-#### Using the `embedded-kotlin` plugin now requires a repository
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#using_the_embedded_kotlin_plugin_now_requires_a_repository)[`embedded-
+kotlin`现在使用插件需要一个存储库](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#using_the_embedded_kotlin_plugin_now_requires_a_repository)
 
-Just like when using the `kotlin-dsl` plugin, it is now required to declare a
-repository where Kotlin dependencies can be found if you apply the `embedded-
-kotlin` plugin.
+就像使用`kotlin-dsl`插件时一样，现在需要声明一个存储库，如果您应用该`embedded-kotlin`插件，则可以在其中找到Kotlin依赖项。
 
     
     
@@ -629,72 +571,57 @@ kotlin` plugin.
         jcenter()
     }
 
-#### Kotlin DSL IDE support now requires Kotlin IntelliJ Plugin >= 1.3.50
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#kotlin_dsl_ide_support_now_requires_kotlin_intellij_plugin_1_3_50)[Kotlin
+DSL IDE支持现在需要> = 1.3.50的Kotlin
+IntelliJ插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#kotlin_dsl_ide_support_now_requires_kotlin_intellij_plugin_1_3_50)
 
-With Kotlin IntelliJ plugin versions prior to 1.3.50, Kotlin DSL scripts will
-be wrongly highlighted when the _Gradle JVM_ is set to a version different
-from the one in _Project SDK_. Simply upgrade your IDE plugin to a version >=
-1.3.50 to restore the correct Kotlin DSL script highlighting behavior.
+对于1.3.50之前的Kotlin IntelliJ插件版本，当 _Gradle JVM_ 设置为不同于 _Project SDK中_
+的版本时，将错误地突出显示Kotlin DSL脚本。只需将您的IDE插件升级到> = 1.3.50，即可恢复正确的Kotlin DSL脚本突出显示行为。
 
-#### Kotlin DSL script base types no longer extend `Project`, `Settings` or
-`Gradle`
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#kotlin_dsl_script_base_types_no_longer_extend_project_settings_or_gradle)[Kotlin
+DSL脚本基本类型不再扩展`Project`，`Settings`或者`Gradle`](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#kotlin_dsl_script_base_types_no_longer_extend_project_settings_or_gradle)
 
-In previous versions, Kotlin DSL scripts were compiled to classes that
-implemented one of the three core Gradle configuration interfaces in order to
-implicitly expose their APIs to scripts. `org.gradle.api.Project` for project
-scripts, `org.gradle.api.initialization.Settings` for settings scripts and
-`org.gradle.api.invocation.Gradle` for init scripts.
+在以前的版本中，Kotlin
+DSL脚本被编译为实现三个Gradle核心配置接口之一的类，以便向脚本隐式公开其API。`org.gradle.api.Project`用于项目脚本，`org.gradle.api.initialization.Settings`设置脚本和`org.gradle.api.invocation.Gradle`初始化脚本。
 
-Having the script instance implement the core Gradle interface of the model
-object it was supposed to configure was convenient because it made the model
-object API immediately available to the body of the script but it was also a
-lie that could cause all sorts of trouble whenever the script itself was used
-in place of the model object, a project script **was not** a proper `Project`
-instance just because it implemented the core `Project` interface and the same
-was true for settings and init scripts.
+让脚本实例实现应该配置的模型对象的核心Gradle接口非常方便，因为它使模型对象API立即可用于脚本主体，但是这也是一个谎言，每当脚本实例执行时，它都会引起各种麻烦。脚本本身用于代替模型对象，项目脚本
+**不是** 正确的`Project`实例，仅因为它实现了核心`Project`接口，设置和初始化脚本也是如此。
 
-In 6.0 all Kotlin DSL scripts are compiled to classes that implement the newly
-introduced `org.gradle.kotlin.dsl.KotlinScript` interface and the
-corresponding model objects are now available as _implicit receivers_ in the
-body of the scripts. In other words, a project script behaves as if the body
-of the script is enclosed within a `with(project) { …​ }` block, a settings
-script as if the body of the script is enclosed within a `with(settings) { …​
-}` block and an init script as if the body of the script is enclosed within a
-`with(gradle) { …​ }` block. This implies the corresponding model object is
-also available as a property in the body of the script, the `project` property
-for project scripts, the `settings` property for settings scripts and the
-`gradle` property for init scripts.
+在6.0中，所有Kotlin
+DSL脚本都被编译为实现新引入的`org.gradle.kotlin.dsl.KotlinScript`接口的类，并且相应的模型对象现在可以作为脚本主体中的
+_隐式接收器_ 使用。换句话说，项目脚本的行为就像脚本的主体被封闭在一个`with(project) { …​
+}`块内，设置脚本的行为就像脚本的主体被封闭在一个`with(settings) { …​
+}`块内，而初始化脚本的行为就像脚本的主体被封闭在其中一样。一个`with(gradle) { …​
+}`街区。这意味着相应的模型对象也可以用作脚本主体中的`project`属性，项目脚本的`settings`属性，设置脚本的`gradle`属性和初始化脚本的属性。
 
-As part of the change, the `SettingsScriptApi` interface is no longer
-implemented by settings scripts and the `InitScriptApi` interface is no longer
-implemented by init scripts. They should be replaced with the corresponding
-model object interfaces, `Settings` and `Gradle`.
+作为更改的一部分，该`SettingsScriptApi`接口不再由设置脚本实现，并且该`InitScriptApi`接口不再由初始化脚本实现。应该将它们替换为相应的模型对象接口`Settings`和`Gradle`。
 
-#### Miscellaneous
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#miscellaneous)[杂](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#miscellaneous)
 
-#### Javadoc and Groovydoc don't include timestamps by default
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#javadoc_and_groovydoc_dont_include_timestamps_by_default)[Javadoc和Groovydoc默认不包含时间戳](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#javadoc_and_groovydoc_dont_include_timestamps_by_default)
 
-Timestamps in the generated documentation have very limited practical use,
-however they make it impossible to have repeatable documentation builds.
-Therefore, the `Javadoc` and `Groovydoc` tasks are now configured to not
-include timestamps by default any more.
+生成的文档中的时间戳实际用途非常有限，但是它们使得无法构建可重复的文档。因此，`Javadoc`和`Groovydoc`任务现在已配置为默认情况下不再包括时间戳。
 
-#### User provided 'config_loc' properties are ignored by Checkstyle
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#user_provided_config_loc_properties_are_ignored_by_checkstyle)[用户提供的'config_loc'属性被Checkstyle忽略](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#user_provided_config_loc_properties_are_ignored_by_checkstyle)
 
-Gradle always uses `configDirectory` as the value for 'config_loc' when
-running Checkstyle.
+`configDirectory`运行Checkstyle时，Gradle始终将其用作“ config_loc”的值。
 
-#### New Tooling API progress event
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#new_tooling_api_progress_event)[新的Tooling
+API进度事件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#new_tooling_api_progress_event)
 
-In Gradle 6.0, we introduced a new progress event
-([org.gradle.tooling.events.test.TestOutputEvent](../javadoc/org/gradle/tooling/events/test/TestOutputEvent.html))
-to expose the output of test execution. This new event breaks the convention
-of having a `StartEvent`-`FinisEvent` pair to express progress.
-`TaskOutputEvent` is a simple `ProgressEvent`.
+在Gradle
+6.0中，我们引入了一个新的进度事件（[org.gradle.tooling.events.test.TestOutputEvent](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/tooling/events/test/TestOutputEvent.html)）以公开测试执行的输出。这个新事件打破了用`StartEvent`-`FinisEvent`对表示进度的惯例。`TaskOutputEvent`很简单`ProgressEvent`。
 
-#### Changes to the task container behavior
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_the_task_container_behavior)[任务容器行为的更改](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_the_task_container_behavior)
 
-The following deprecated methods on the task container now result in errors:
+现在，任务容器上的以下不推荐使用的方法会导致错误：
 
   * `TaskContainer.add()`
 
@@ -710,21 +637,21 @@ The following deprecated methods on the task container now result in errors:
 
   * `TaskContainer.iterator().remove()`
 
-Additionally, the following deprecated functionality now results in an error:
+此外，以下不推荐使用的功能现在会导致错误：
 
-  * Replacing a task that has already been realized.
+  * 替换已经实现的任务。
 
-  * Replacing a registered (unrealized) task with an incompatible type. A compatible type is the same type or a sub-type of the registered type.
+  * 用不兼容的类型替换已注册（未实现）的任务。兼容类型是注册类型的相同类型或子类型。
 
-  * Replacing a task that has never been registered.
+  * 替换从未注册的任务。
 
-#### Replaced and Removed APIs
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#replaced_and_removed_apis)[替换和删除的API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#replaced_and_removed_apis)
 
-#### Methods on `DefaultTask` and `ProjectLayout` replaced with
-`ObjectFactory`
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#methods_on_defaulttask_and_projectlayout_replaced_with_objectfactory)[方法打开`DefaultTask`并`ProjectLayout`替换为`ObjectFactory`](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#methods_on_defaulttask_and_projectlayout_replaced_with_objectfactory)
 
-Use `ObjectFactory.fileProperty()` instead of the following methods that are
-now removed:
+使用`ObjectFactory.fileProperty()`代替现在已删除的以下方法：
 
   * `DefaultTask.newInputFile()`
 
@@ -732,8 +659,7 @@ now removed:
 
   * `ProjectLayout.fileProperty()`
 
-Use `ObjectFactory.directoryProperty()` instead of the following methods that
-are now removed:
+使用`ObjectFactory.directoryProperty()`代替现在已删除的以下方法：
 
   * `DefaultTask.newInputDirectory()`
 
@@ -741,245 +667,211 @@ are now removed:
 
   * `ProjectLayout.directoryProperty()`
 
-#### Annotation `@Nullable` has been removed
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#annotation_nullable_has_been_removed)[注释`@Nullable`已删除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#annotation_nullable_has_been_removed)
 
-The `org.gradle.api.Nullable` annotation type has been removed. Use
-`javax.annotation.Nullable` from JSR-305 instead.
+该`org.gradle.api.Nullable`注释类型已被删除。请改用`javax.annotation.Nullable`JSR-305。
 
-#### The FindBugs plugin has been removed
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_findbugs_plugin_has_been_removed)[FindBugs插件已被删除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_findbugs_plugin_has_been_removed)
 
-The deprecated FindBugs plugin has been removed. As an alternative, you can
-use the [SpotBugs
-plugin](https://plugins.gradle.org/plugin/com.github.spotbugs) from the
-[Gradle Plugin Portal](https://plugins.gradle.org/search?term=spotbugs).
+不推荐使用的FindBugs插件已被删除。作为替代方案，可以使用[SpotBugs插件](https://plugins.gradle.org/plugin/com.github.spotbugs)从[摇篮插件门户](https://plugins.gradle.org/search?term=spotbugs)。
 
-#### The JDepend plugin has been removed
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_jdepend_plugin_has_been_removed)[JDepend插件已被删除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_jdepend_plugin_has_been_removed)
 
-The deprecated JDepend plugin has been removed. There are a number of
-community-provided plugins for code and architecture analysis available on the
-[Gradle Plugin Portal](https://plugins.gradle.org).
+不推荐使用的JDepend插件已被删除。[Gradle插件门户](https://plugins.gradle.org/)上有许多社区提供的用于代码和体系结构分析的[插件](https://plugins.gradle.org/)。
 
-#### The OSGI plugin has been removed
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_osgi_plugin_has_been_removed)[OSGI插件已被删除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_osgi_plugin_has_been_removed)
 
-The deprecated OSGI plugin has been removed. There are a number of community-
-provided OSGI plugins available on the [Gradle Plugin
-Portal](https://plugins.gradle.org/search?term=osgi).
+不推荐使用的OSGI插件已被删除。[Gradle插件门户](https://plugins.gradle.org/search?term=osgi)上有许多社区提供的OSGI插件。
 
-#### The announce and build-announcements plugins have been removed
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_announce_and_build_announcements_plugins_have_been_removed)[公告和构建公告插件已被删除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_announce_and_build_announcements_plugins_have_been_removed)
 
-The deprecated announce and build-announcements plugins have been removed.
-There are a number of community-provided plugins for sending out notifications
-available on the [Gradle Plugin Portal](https://plugins.gradle.org).
+不推荐使用的announce和build-
+announcements插件已被删除。[Gradle插件门户](https://plugins.gradle.org/)上有许多社区提供的用于发送通知的[插件](https://plugins.gradle.org/)。
 
-#### The Compare Gradle Builds plugin has been removed
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_compare_gradle_builds_plugin_has_been_removed)[比较Gradle构建插件已被删除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_compare_gradle_builds_plugin_has_been_removed)
 
-The deprecated Compare Gradle Builds plugin has been removed. Please use
-[build scans](https://scans.gradle.com/) for build analysis and comparison.
+不推荐使用的Compare Gradle
+Builds插件已被删除。请使用[构建扫描](https://scans.gradle.com/)进行构建分析和比较。
 
-#### The Play plugins have been removed
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_play_plugins_have_been_removed)[Play插件已被删除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#the_play_plugins_have_been_removed)
 
-The deprecated Play plugin has been removed. An external replacement, the
-[Play Framework plugin](https://gradle.github.io/playframework), is available
-from the plugin portal.
+不推荐使用的Play插件已被删除。可从插件门户网站获得外部替代品[Play
+Framework插件](https://gradle.github.io/playframework)。
 
-#### Method `AbstractCompile.compile()` method has been removed
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#method_abstractcompile_compile_method_has_been_removed)[方法`AbstractCompile.compile()`method已删除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#method_abstractcompile_compile_method_has_been_removed)
 
-The abstract method `compile()` is no longer declared by `AbstractCompile`.
+`compile()`不再声明abstract方法`AbstractCompile`。
 
-Tasks extending `AbstractCompile` can implement their own `@TaskAction` method
-with the name of their choosing.
+任务扩展`AbstractCompile`可以`@TaskAction`使用自己选择的名称实现自己的方法。
 
-They are also free to add a method annotated with `@TaskAction` using an
-`InputChanges` parameter without having to implement a parameter-less one as
-well.
+他们还可以自由添加一种`@TaskAction`使用`InputChanges`参数进行注释的方法，而不必也实现无参数方法。
 
-#### Other Deprecated Behaviors and APIs
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#other_deprecated_behaviors_and_apis)[其他不建议使用的行为和API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#other_deprecated_behaviors_and_apis)
 
-  * The `org.gradle.util.GUtil.savePropertiesNoDateComment` has been removed. There is no public replacement for this internal method.
+  * 在`org.gradle.util.GUtil.savePropertiesNoDateComment`已被删除。此内部方法没有公共替代方法。
 
-  * The deprecated class `org.gradle.api.tasks.compile.CompilerArgumentProvider` has been removed. Use [org.gradle.process.CommandLineArgumentProvider](../javadoc/org/gradle/process/CommandLineArgumentProvider.html) instead.
+  * 不推荐使用的类`org.gradle.api.tasks.compile.CompilerArgumentProvider`已被删除。请改用[org.gradle.process.CommandLineArgumentProvider](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/process/CommandLineArgumentProvider.html)。
 
-  * The deprecated class `org.gradle.api.ConventionProperty` has been removed. Use [Providers](../javadoc/org/gradle/api/provider/Provider.html) instead of convention properties.
+  * 不推荐使用的类`org.gradle.api.ConventionProperty`已被删除。使用[提供程序](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/provider/Provider.html)而不是约定属性。
 
-  * The deprecated class `org.gradle.reporting.DurationFormatter` has been removed.
+  * 不推荐使用的类`org.gradle.reporting.DurationFormatter`已被删除。
 
-  * The bridge method `org.gradle.api.tasks.TaskInputs.property(String name, @Nullable Object value)` returning `TaskInputs` has been removed. A plugin using the method must be compiled with Gradle 4.3 to work on Gradle 6.0.
+  * `org.gradle.api.tasks.TaskInputs.property(String name, @Nullable Object value)`返回的桥接方法`TaskInputs`已删除。必须使用Gradle 4.3编译使用该方法的插件才能在Gradle 6.0上运行。
 
-  * The following setters have been removed from `JacocoReportBase`:
+  * 以下设置员已从中删除`JacocoReportBase`：
 
-    * [executionData](../dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html#org.gradle.testing.jacoco.tasks.JacocoReport:executionData) \- use `getExecutionData().setFrom()` instead.
+    * [executionData-](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html#org.gradle.testing.jacoco.tasks.JacocoReport:executionData)`getExecutionData().setFrom()`改为使用。
 
-    * [sourceDirectories](../dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html#org.gradle.testing.jacoco.tasks.JacocoReport:sourceDirectories) \- use `getSourceDirectories().setFrom()` instead.
+    * [sourceDirectories](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html#org.gradle.testing.jacoco.tasks.JacocoReport:sourceDirectories) -使用`getSourceDirectories().setFrom()`来代替。
 
-    * [classDirectories](../dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html#org.gradle.testing.jacoco.tasks.JacocoReport:classDirectories) \- use `getClassDirectories().setFrom()` instead.
+    * [classDirectories-](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html#org.gradle.testing.jacoco.tasks.JacocoReport:classDirectories)使用`getClassDirectories().setFrom()`代替。
 
-    * [additionalClassDirs](../dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html#org.gradle.testing.jacoco.tasks.JacocoReport:additionalClassDirs) \- use `getAdditionalClassDirs().setFrom()` instead.
+    * [AdditionalClassDirs-](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html#org.gradle.testing.jacoco.tasks.JacocoReport:additionalClassDirs)使用`getAdditionalClassDirs().setFrom()`代替。
 
-    * [additionalSourceDirs](../dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html#org.gradle.testing.jacoco.tasks.JacocoReport:additionalSourceDirs) \- use `getAdditionalSourceDirs().setFrom()` instead.
+    * [AdditionalSourceDirs-](file:///Users/dxs/temp/gradle-6.7.1/docs/dsl/org.gradle.testing.jacoco.tasks.JacocoReport.html#org.gradle.testing.jacoco.tasks.JacocoReport:additionalSourceDirs)使用`getAdditionalSourceDirs().setFrom()`代替。
 
-  * The `append` property on `JacocoTaskExtension` has been removed. `append` is now always configured to be true for the Jacoco agent.
+  * 上的`append`属性`JacocoTaskExtension`已被删除。 `append`现在对于Jacoco代理始终配置为true。
 
-  * The `configureDefaultOutputPathForJacocoMerge` method on `JacocoPlugin` has been removed. The method was never meant to be public.
+  * 上的`configureDefaultOutputPathForJacocoMerge`方法`JacocoPlugin`已被删除。该方法从未打算公开。
 
-  * File paths in [deployment descriptor file name](../javadoc/org/gradle/plugins/ear/descriptor/DeploymentDescriptor.html#getFileName--) for the ear plugin are not allowed any more. Use a simple name, like `application.xml`, instead.
+  * 耳插件的[部署描述符文件名](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/plugins/ear/descriptor/DeploymentDescriptor.html#getFileName--)中的文件路径不再被允许。请使用简单的名称，例如`application.xml`。
 
-  * The `org.gradle.testfixtures.ProjectBuilder` constructor has been removed. Please use `ProjectBuilder.builder()` instead.
+  * 该`org.gradle.testfixtures.ProjectBuilder`构造已被删除。请`ProjectBuilder.builder()`改用。
 
-  * When [incremental Groovy compilation](groovy_plugin.html#sec:incremental_groovy_compilation) is enabled, a wrong configuration of the source roots or enabling Java annotation for Groovy now fails the build. Disable incremental Groovy compilation when you want to compile in those cases.
+  * 当[增量Groovy的编译](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/groovy_plugin.html#sec:incremental_groovy_compilation)启用后，源根的错误配置或启用Java注释对Groovy现在失败的构建。在这些情况下要进行编译时，请禁用增量Groovy编译。
 
-  * `ComponentSelectionRule` no longer can inject the metadata or ivy descriptor. Use the methods on the [`ComponentSelection` parameter](dynamic_versions.html#sec:component_selection_rules) instead.
+  * `ComponentSelectionRule`不再可以注入元数据或常春藤描述符。请改用[`ComponentSelection`参数](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dynamic_versions.html#sec:component_selection_rules)上的方法。
 
-  * Declaring an [incremental task](custom_tasks.html#incremental_tasks) without declaring outputs is now an error. Declare file outputs or use [TaskOutputs.upToDateWhen()](../javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-groovy.lang.Closure-) instead.
+  * 声明的[增量任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_tasks.html#incremental_tasks)不宣而输出现在是一个错误。声明文件输出或改用[TaskOutputs.upToDateWhen（）](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-groovy.lang.Closure-)。
 
-  * The `getEffectiveAnnotationProcessorPath()` method is removed from the `JavaCompile` and `ScalaCompile` tasks.
+  * 该`getEffectiveAnnotationProcessorPath()`方法已从`JavaCompile`和`ScalaCompile`任务中删除。
 
-  * Changing the value of a task property with type `Property<T>` after the task has started execution now results in an error.
+  * `Property<T>`现在，在任务开始执行后，使用type更改任务属性的值会导致错误。
 
-  * The `isLegacyLayout()` method is removed from `SourceSetOutput`.
+  * 该`isLegacyLayout()`方法已从中删除`SourceSetOutput`。
 
-  * The map returned by `TaskInputs.getProperties()` is now unmodifiable. Trying to modify it will result in an `UnsupportedOperationException` being thrown.
+  * `TaskInputs.getProperties()`现在返回的地图不可修改。尝试修改它会导致`UnsupportedOperationException`被抛出。
 
-  * There are slight changes in the incubating [capabilities resolution](dependency_capability_conflict.html#sub:selecting-between-candidates) API, which has been introduced in 5.6, to also allow variant selection based on variant name
+  * 在5.6中引入的孵化[功能解析](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_capability_conflict.html#sub:selecting-between-candidates)API进行了细微更改，以允许基于变体名称进行变体选择
 
-## Upgrading from 5.5 and earlier
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.6)[从5.5或更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.6)
 
-### Deprecations
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#deprecations_2)[弃用](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#deprecations_2)
 
-#### Changing the contents of `ConfigurableFileCollection` task properties
-after task starts execution
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changing_the_contents_of_configurablefilecollection_task_properties_after_task_starts_execution)[`ConfigurableFileCollection`任务开始执行后更改任务属性的内容](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changing_the_contents_of_configurablefilecollection_task_properties_after_task_starts_execution)
 
-When a task property has type `ConfigurableFileCollection`, then the file
-collection referenced by the property will ignore changes made to the contents
-of the collection once the task starts execution. This has two benefits.
-Firstly, this prevents accidental changes to the property value during task
-execution which can cause Gradle up-to-date checks and build cache lookup
-using different values to those used by the task action. Secondly, this
-improves performance as Gradle can calculate the value once and cache the
-result.
+当task属性具有type时`ConfigurableFileCollection`，一旦任务开始执行，该属性引用的文件集合将忽略对该集合内容所做的更改。这有两个好处。首先，这可以防止在任务执行期间意外更改属性值，这可能导致Gradle进行最新检查并使用与任务操作使用的值不同的值来构建缓存查找。其次，这提高了性能，因为Gradle可以一次计算值并缓存结果。
 
-This will become an error in Gradle 6.0.
+这将成为Gradle 6.0中的错误。
 
-#### Creating `SignOperation` instances
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#creating_signoperation_instances)[创建`SignOperation`实例](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#creating_signoperation_instances)
 
-Creating `SignOperation` instances directly is now deprecated. Instead, the
-methods of `SigningExtension` should be used to create these instances.
+`SignOperation`现在不建议直接创建实例。而是`SigningExtension`应使用方法来创建这些实例。
 
-This will become an error in Gradle 6.0.
+这将成为Gradle 6.0中的错误。
 
-#### Declaring an incremental task without outputs
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#declaring_an_incremental_task_without_outputs)[声明没有输出的增量任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#declaring_an_incremental_task_without_outputs)
 
-Declaring an [incremental task](custom_tasks.html#incremental_tasks) without
-declaring outputs is now deprecated. Declare file outputs or use
-[TaskOutputs.upToDateWhen()](../javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-
-groovy.lang.Closure-) instead.
+现在不建议声明[增量任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_tasks.html#incremental_tasks)而不声明输出。声明文件输出或改用[TaskOutputs.upToDateWhen（）](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-
+groovy.lang.Closure-)。
 
-This will become an error in Gradle 6.0.
+这将成为Gradle 6.0中的错误。
 
-#### Method `WorkerExecutor.submit()` is deprecated
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#method_workerexecutor_submit_is_deprecated)[方法`WorkerExecutor.submit()`已弃用](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#method_workerexecutor_submit_is_deprecated)
 
-The `WorkerExecutor.submit()` method is now deprecated. The new
-`noIsolation()`, `classLoaderIsolation()` and `processIsolation()` methods
-should now be used to submit work. See [the
-userguide](custom_tasks.html#using-the-worker-api) for more information on
-using these methods.
+`WorkerExecutor.submit()`现在不建议使用该方法。新的`noIsolation()`，`classLoaderIsolation()`和`processIsolation()`方法现在应该用于提交工作。见[的userguide](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_tasks.html#using-
+the-worker-api)上使用这些方法的详细信息。
 
-`WorkerExecutor.submit()` will be removed in Gradle 7.0.
+`WorkerExecutor.submit()` 将在Gradle 7.0中删除。
 
-### Potential breaking changes
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes_2)[潜在的重大变化](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes_2)
 
-#### Task dependencies are honored for task `@Input` properties whose value is
-a `Property`
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#task_dependencies_are_honored_for_task_input_properties_whose_value_is_a_property)[任务依赖关系受其`@Input`值为a的任务属性的尊重`Property`](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#task_dependencies_are_honored_for_task_input_properties_whose_value_is_a_property)
 
-Previously, task dependencies would be ignored for task `@Input` properties of
-type `Property<T>`. These are now honored, so that it is possible to attach a
-task output property to a task `@Input` property.
+以前，任务相关`@Input`性对于type的任务属性将被忽略`Property<T>`。现在，这些已被接受，因此可以将任务输出属性附加到任务`@Input`属性。
 
-This may introduce unexpected cycles in the task dependency graph, where the
-value of an output property is mapped to produce a value for an input
-property.
+这可能会在任务依赖关系图中引入意外的周期，在该图中，输出属性的值将被映射以产生输入属性的值。
 
-#### Declaring task dependencies using a file `Provider` that does not
-represent a task output
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#declaring_task_dependencies_using_a_file_provider_that_does_not_represent_a_task_output)[使用`Provider`不代表任务输出的文件声明任务依赖关系](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#declaring_task_dependencies_using_a_file_provider_that_does_not_represent_a_task_output)
 
-Previously, it was possible to pass `Task.dependsOn()` a `Provider<File>`,
-`Provider<RegularFile>` or `Provider<Directory>` instance that did not
-represent a task output. These providers would be silently ignored.
+此前，有可能通过`Task.dependsOn()`一个`Provider<File>`，`Provider<RegularFile>`或`Provider<Directory>`实例并不代表任务输出。这些提供程序将被默默忽略。
 
-This is now an error because Gradle does not know how to build files that are
-not task outputs.
+现在这是一个错误，因为Gradle不知道如何生成不是任务输出的文件。
 
-**Note** that it is still possible to to pass `Task.dependsOn()` a `Provider`
-that returns a file and that represents a task output, for example
-`myTask.dependsOn(jar.archiveFile)` or `myTask.dependsOn(taskProvider.flatMap
-{ it.outputDirectory })`, when the `Provider` is an annotated `@OutputFile` or
-`@OutputDirectory` property of a task.
+**请注意**
+，它仍然有可能通过`Task.dependsOn()`一个`Provider`返回一个文件，并表示任务的输出，例如`myTask.dependsOn(jar.archiveFile)`或`myTask.dependsOn(taskProvider.flatMap
+{ it.outputDirectory
+})`，当`Provider`是一个注释`@OutputFile`或`@OutputDirectory`任务的性质。
 
-#### Setting `Property` value to `null` uses the property convention
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#setting_property_value_to_null_uses_the_property_convention)[设置`Property`值以`null`使用属性约定](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#setting_property_value_to_null_uses_the_property_convention)
 
-Previously, calling `Property.set(null)` would always reset the value of the
-property to 'not defined'. Now, the convention that is associated with the
-property using the `convention()` method will be used to determine the value
-of the property.
+以前，调用`Property.set(null)`总是将属性的值重置为“未定义”。现在，将使用该`convention()`方法与属性相关联的约定来确定属性的值。
 
-#### Enhanced validation of names for `publishing.publications` and
-`publishing.repositories`
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#enhanced_validation_of_names_for_publishing_publications_and_publishing_repositories)[`publishing.publications`和的名称验证得到增强`publishing.repositories`](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#enhanced_validation_of_names_for_publishing_publications_and_publishing_repositories)
 
-The repository and publication names are used to construct task names for
-publishing. It was possible to supply a name that would result in an invalid
-task name. Names for publications and repositories are now restricted to
-`[A-Za-z0-9_\\-.]+`.
+存储库名称和发布名称用于构造要发布的任务名称。可以提供一个导致无效任务名称的名称。出版物和存储库的名称现在限制为`[A-Za-z0-9_\\-.]+`。
 
-#### Restricted Worker API classloader and process classpath
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#restricted_worker_api_classloader_and_process_classpath)[受限制的Worker
+API类加载器和进程类路径](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#restricted_worker_api_classloader_and_process_classpath)
 
-Gradle now prevents internal dependencies (like Guava) from leaking into the
-classpath used by Worker API actions. This fixes [an
-issue](https://github.com/gradle/gradle/issues/3698) where a worker needs to
-use a dependency that is also used by Gradle internally.
+Gradle现在可以防止内部依赖项（例如Guava）泄漏到Worker
+API操作使用的类路径中。这解决了工作者需要使用Gradle内部也使用的依赖项[的问题](https://github.com/gradle/gradle/issues/3698)。
 
-In previous releases, it was possible to rely on these leaked classes. Plugins
-relying on this behavior will now fail. To fix the plugin, the worker should
-explicitly include all required dependencies in its classpath.
+在以前的版本中，可能依赖于这些泄漏的类。现在，依赖此行为的插件将失败。要修复插件，工作程序应在其类路径中明确包含所有必需的依赖项。
 
-#### Default PMD version upgraded to 6.15.0
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#default_pmd_version_upgraded_to_6_15_0)[默认PMD版本已升级到6.15.0](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#default_pmd_version_upgraded_to_6_15_0)
 
-[The PMD plugin](pmd_plugin.html#pmd_plugin) has been upgraded to use [PMD
-version 6.15.0](https://pmd.github.io/pmd-6.15.0/pmd_release_notes.html)
-instead of 6.8.0 by default.
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/pmd_plugin.html#pmd_plugin)默认情况下[，PMD插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/pmd_plugin.html#pmd_plugin)已升级为使用[PMD版本6.15.0](https://pmd.github.io/pmd-6.15.0/pmd_release_notes.html)而不是6.8.0。
 
-Contributed by [wreulicke](https://github.com/wreulicke)
+由[wreulicke](https://github.com/wreulicke)贡献[](https://github.com/wreulicke)
 
-#### Configuration copies have unique names
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#configuration_copies_have_unique_names)[配置副本具有唯一的名称](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#configuration_copies_have_unique_names)
 
-Previously, all copies of a configuration always had the name
-`<OriginConfigurationName>Copy`. Now when creating multiple copies, each will
-have a unique name by adding an index starting from the second copy. (e.g.
-`CompileOnlyCopy2`)
+以前，配置的所有副本始终使用名称`<OriginConfigurationName>Copy`。现在，当创建多个副本时，通过从第二个副本开始添加索引，每个副本将具有唯一的名称。（例如`CompileOnlyCopy2`）
 
-#### Changed classpath filtering for Eclipse
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changed_classpath_filtering_for_eclipse)[更改了Eclipse的类路径过滤](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changed_classpath_filtering_for_eclipse)
 
-Gradle 5.6 no longer supplies custom classpath attributes in the Eclipse
-model. Instead, it provides the attributes for [Eclipse test
-sources](https://www.eclipse.org/eclipse/news/4.8/jdt.php#jdt-test-sources).
-This change requires Buildship version 3.1.1 or later.
+Gradle
+5.6不再在Eclipse模型中提供自定义类路径属性。相反，它提供了[Eclipse测试源](https://www.eclipse.org/eclipse/news/4.8/jdt.php#jdt-
+test-sources)的属性。此更改需要Buildship 3.1.1或更高版本。
 
-#### Embedded Kotlin upgraded to 1.3.41
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#embedded_kotlin_upgraded_to_1_3_41)[嵌入式Kotlin升级到1.3.41](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#embedded_kotlin_upgraded_to_1_3_41)
 
-Gradle Kotlin DSL scripts and Gradle Plugins authored using the `kotlin-dsl`
-plugin are now compiled using Kotlin 1.3.41.
+`kotlin-dsl`现在使用Kotlin 1.3.41编译Gradle Kotlin DSL脚本和使用该插件编写的Gradle插件。
 
-Please see the Kotlin [blog
-post](https://blog.jetbrains.com/kotlin/2019/06/kotlin-1-3-40-released/) and
-[changelog](https://github.com/JetBrains/kotlin/blob/1.3.40/ChangeLog.md) for
-more information about the included changes.
+请参阅Kotlin[博客文章](https://blog.jetbrains.com/kotlin/2019/06/kotlin-1-3-40-released/)和[changelog](https://github.com/JetBrains/kotlin/blob/1.3.40/ChangeLog.md)以获取有关所包含更改的更多信息。
 
-The minimum supported Kotlin Gradle Plugin version is now 1.2.31. Previously
-it was 1.2.21.
+现在支持的最低Kotlin Gradle插件版本为1.2.31。以前是1.2.21。
 
-#### Automatic capability conflict resolution
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#automatic_capability_conflict_resolution)[自动能力冲突解决](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#automatic_capability_conflict_resolution)
 
-Previous versions of Gradle would automatically select, in case of capability
-conflicts, the module which has the highest capability version. Starting from
-5.6, this is an opt-in behavior that can be activated using:
+在功能冲突的情况下，Gradle的早期版本将自动选择具有最高功能版本的模块。从5.6开始，这是一种可以选择使用以下行为激活的行为：
 
     
     
@@ -987,157 +879,132 @@ conflicts, the module which has the highest capability version. Starting from
        resolutionStrategy.capabilitiesResolution.all { selectHighestVersion() }
     }
 
-See [the capabilities section of the
-documentation](dependency_capability_conflict.html#sub:capabilities) for more
-options.
+有关更多选项，请参见[文档的功能部分](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/dependency_capability_conflict.html#sub:capabilities)。
 
-#### File removal operations don't follow symlinked directories
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#file_removal_operations_dont_follow_symlinked_directories)[文件删除操作不遵循符号链接目录](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#file_removal_operations_dont_follow_symlinked_directories)
 
-When Gradle has to remove the output files of a task for various reasons, it
-will not follow symlinked directories. The symlink itself will be deleted, but
-the contents of the linked directory will stay intact.
+当Gradle由于各种原因不得不删除任务的输出文件时，它将不会遵循符号链接目录。符号链接本身将被删除，但链接目录的内容将保持不变。
 
-### Disabled debug argument parsing in JavaExec
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#disabled_debug_argument_parsing_in_javaexec)[禁用JavaExec中的调试参数解析](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#disabled_debug_argument_parsing_in_javaexec)
 
-Gradle 5.6 introduced a new DSL element
-(`JavaForkOptions.debugOptions(Action<JavaDebugOptions>)`) to configure debug
-properties for forked Java processes. Due to this change, Gradle no longer
-parses debug-related JVM arguments. Consequently, `JavaForkOptions.getDebu()`
-no longer returns `true` if the
-`-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005` or the
-`-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005` argument
-is specified to the process.
+Gradle
+5.6引入了一个新的DSL元素（`JavaForkOptions.debugOptions(Action<JavaDebugOptions>)`），用于配置分支Java进程的调试属性。由于此更改，Gradle不再解析与调试相关的JVM参数。因此，如果为流程指定或参数，则`JavaForkOptions.getDebu()`不再返回。`true``-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005``-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005`
 
-### Scala 2.9 and Zinc compiler
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#scala_2_9_and_zinc_compiler)[Scala
+2.9和Zinc编译器](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#scala_2_9_and_zinc_compiler)
 
-Gradle no longer supports building applications using Scala 2.9.
+Gradle不再支持使用Scala 2.9构建应用程序。
 
-## Upgrading from 5.4 and earlier
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.5)[从5.4或更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.5)
 
-### Deprecations
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#deprecations_3)[弃用](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#deprecations_3)
 
-#### Play
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#play)[玩](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#play)
 
-The built-in [Play plugin](play_plugin.html#play_plugin) has been deprecated
-and will be replaced by a new [Play Framework
-plugin](https://gradle.github.io/playframework) available from the plugin
-portal.
+内置的[Play插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/play_plugin.html#play_plugin)已被弃用，将由插件门户提供的新的[Play
+Framework插件](https://gradle.github.io/playframework)代替。
 
-#### Build Comparison
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#build_comparison)[构建比较](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#build_comparison)
 
-The _build comparison_ plugin has been deprecated and will be removed in the
-next major version of Gradle.
+该 _构造比较_ 插件已经被弃用，并将在摇篮的下一个主要版本中删除。
 
-[Build scans](https://gradle.com/build-scans) show much deeper insights into
-your build and you can use [Gradle Enterprise](https://gradle.com/) to
-directly compare two build's build-scans.
+[构建扫描](https://gradle.com/build-scans)显示了对[构建的](https://gradle.com/build-
+scans)更深入了解，您可以使用[Gradle Enterprise](https://gradle.com/)直接比较两个构建的构建扫描。
 
-### Potential breaking changes
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes_3)[潜在的重大变化](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes_3)
 
-#### User supplied Eclipse project names may be ignored on conflict
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#user_supplied_eclipse_project_names_may_be_ignored_on_conflict)[用户提供的Eclipse项目名称可能在冲突时被忽略](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#user_supplied_eclipse_project_names_may_be_ignored_on_conflict)
 
-Project names configured via
-[`EclipseProject.setName(…​)`](../javadoc/org/gradle/plugins/ide/eclipse/model/EclipseProject.html)
-were honored by Gradle and Buildship in all cases, even when the names caused
-conflicts and import/synchronization errors.
+[`EclipseProject.setName(…​)`](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/plugins/ide/eclipse/model/EclipseProject.html)即使在名称引起冲突和导入/同步错误的情况下，在所有情况下，Gradle和Buildship都会使用通过配置的项目名称来纪念。
 
-Gradle can now deduplicate these names if they conflict with other project
-names in an Eclipse workspace. This may lead to different Eclipse project
-names for projects with user-specified names.
+如果这些名称与Eclipse工作空间中的其他项目名称冲突，那么Gradle现在可以对这些名称进行重复数据删除。对于具有用户指定名称的项目，这可能导致不同的Eclipse项目名称。
 
-The upcoming 3.1.1 version of Buildship is required to take advantage of this
-behavior.
+要利用此行为，需要即将发布的Buildship 3.1.1版本。
 
-Contributed by [Christian Fränkel](https://github.com/fraenkelc)
+由[ChristianFränkel](https://github.com/fraenkelc)贡献[](https://github.com/fraenkelc)
 
-#### Default JaCoCo version upgraded to 0.8.4
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#default_jacoco_version_upgraded_to_0_8_4)[JaCoCo的默认版本已升级到0.8.4](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#default_jacoco_version_upgraded_to_0_8_4)
 
-[The JaCoCo plugin](jacoco_plugin.html#jacoco_plugin) has been upgraded to use
-[JaCoCo version 0.8.4](http://www.jacoco.org/jacoco/trunk/doc/changes.html)
-instead of 0.8.3 by default.
+[JaCoCo插件](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/jacoco_plugin.html#jacoco_plugin)已升级为默认使用[JaCoCo版本0.8.4](http://www.jacoco.org/jacoco/trunk/doc/changes.html)而不是0.8.3。
 
-Contributed by [Evgeny Mandrikov](https://github.com/Godin)
+由[Evgeny Mandrikov](https://github.com/Godin)贡献[](https://github.com/Godin)
 
-#### Embedded Ant version upgraded to 1.9.14
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#embedded_ant_version_upgraded_to_1_9_14)[嵌入式Ant版本已升级到1.9.14](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#embedded_ant_version_upgraded_to_1_9_14)
 
-The version of Ant distributed with Gradle has been upgraded to
-[1.9.14](https://archive.apache.org/dist/ant/RELEASE-NOTES-1.9.14.html) from
-1.9.13.
+与摇篮分发的Ant版本已经升级到了[14年9月1日](https://archive.apache.org/dist/ant/RELEASE-
+NOTES-1.9.14.html)从1.9.13。
 
-#### Type `DependencyHandler` now statically exposes `ExtensionAware`
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#type_dependencyhandler_now_statically_exposes_extensionaware)[键入`DependencyHandler`现在静态自曝`ExtensionAware`](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#type_dependencyhandler_now_statically_exposes_extensionaware)
 
-This affects Kotlin DSL build scripts that make use of `ExtensionAware`
-extension members such as the `extra` properties accessor inside the
-`dependencies {}` block. The receiver for those members will no longer be the
-enclosing `Project` instance but the `dependencies` object itself, the
-innermost `ExtensionAware` conforming receiver. In order to address `Project`
-extra properties inside `dependencies {}` the receiver must be explicitly
-qualified i.e. `project.extra` instead of just `extra`. Affected extensions
-also include `the<T>()` and `configure<T>(T.() -> Unit)`.
+这会影响Kotlin DSL构建脚本，该脚本使用`ExtensionAware`扩展成员，例如块`extra`内的属性访问器`dependencies
+{}`。这些成员的接收者将不再是封闭的`Project`实例，而是`dependencies`对象本身，即最内在的`ExtensionAware`接收者。为了解决接收器`Project`内部`dependencies
+{}`的其他属性，必须显式地限定接收器，`project.extra`而不是just
+`extra`。受影响的扩展名还包括`the<T>()`和`configure<T>(T.() → Unit)`。
 
-#### Improved processing of dependency excludes
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#improved_processing_of_dependency_excludes)[改进的依赖性处理排除](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#improved_processing_of_dependency_excludes)
 
-Previous versions of Gradle could, in some complex dependency graphs, have a
-wrong result or a randomized dependency order when lots of excludes were
-present. To mitigate this, the algorithm that computes exclusions has been
-rewritten. In some rare cases this may cause some differences in resolution,
-due to the correctness changes.
+当存在大量排除项时，在某些复杂的依赖图中，Gradle的早期版本可能会产生错误的结果或随机的依赖顺序。为了减轻这种情况，计算排除的算法已被重写。在少数情况下，由于正确性的改变，这可能会导致分辨率有所不同。
 
-#### Improved classpath separation for worker processes
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#improved_classpath_separation_for_worker_processes)[改进了工作进程的类路径分离](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#improved_classpath_separation_for_worker_processes)
 
-The system classpath for worker daemons started by the [Worker
-API](custom_tasks.html#worker_api) when using `PROCESS` isolation has been
-reduced to a minimum set of Gradle infrastructure. User code is still
-segregated into a separate classloader to isolate it from the Gradle runtime.
-This should be a transparent change for tasks using the worker API, but
-previous versions of Gradle mixed user code and Gradle internals in the worker
-process. Worker actions that rely on things like the `java.class.path` system
-property may be affected, since `java.class.path` now represents only the
-classpath of the Gradle internals.
+使用隔离时由[Worker
+API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_tasks.html#worker_api)启动的工作守护程序的系统类路径`PROCESS`已减少为Gradle基础结构的最小集合。用户代码仍被隔离到单独的类加载器中，以将其与Gradle运行时隔离。对于使用worker
+API的任务，这应该是透明的更改，但是Gradle的早期版本在worker进程中混合了用户代码和Gradle内部。依赖于`java.class.path`系统属性`java.class.path`之类的工作者动作可能会受到影响，因为现在仅代表Gradle内部结构的类路径。
 
-## Upgrading from 5.3 and earlier
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.4)[从5.3或更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.4)
 
-### Deprecations
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#deprecations_4)[弃用](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#deprecations_4)
 
-#### Using custom local build cache implementations
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#using_custom_local_build_cache_implementations)[使用自定义本地构建缓存实现](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#using_custom_local_build_cache_implementations)
 
-Using a custom build cache implementation for the local build cache is now
-deprecated. The only allowed type will be `DirectoryBuildCache` going forward.
-There is no change in the support for using custom build cache implementations
-as the remote build cache.
+现在不建议将自定义生成缓存实现用于本地生成缓存。唯一允许的类型将是`DirectoryBuildCache`前进。使用自定义生成缓存实现作为远程生成缓存的支持没有变化。
 
-### Potential breaking changes
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes_4)[潜在的重大变化](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes_4)
 
-#### Use HTTPS when configuring Google Hosted Libraries via `googleApis()`
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#use_https_when_configuring_google_hosted_libraries_via_googleapis)[通过配置Google托管库时使用HTTPS
+`googleApis()`](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#use_https_when_configuring_google_hosted_libraries_via_googleapis)
 
-The Google Hosted Libraries URL accessible via
-`JavaScriptRepositoriesExtension#GOOGLE_APIS_REPO_URL` was changed to use the
-HTTPS protocol. The change also affect the Ivy repository configured via
-`googleApis()`.
+通过可以访问的Google Hosted Libraries
+URL`JavaScriptRepositoriesExtension#GOOGLE_APIS_REPO_URL`已更改为使用HTTPS协议。更改还会影响通过进行配置的Ivy存储库`googleApis()`。
 
-## Upgrading from 5.2 and earlier
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.3)[从5.2或更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.3)
 
-### Potential breaking changes
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes_5)[潜在的重大变化](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes_5)
 
-#### Bug fixes in platform resolution
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#bug_fixes_in_platform_resolution)[修复了平台分辨率中的错误](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#bug_fixes_in_platform_resolution)
 
-There was a bug from Gradle 5.0 to 5.2.1 (included) where enforced platforms
-would potentially include dependencies instead of constraints. This would
-happen whenever a POM file defined both dependencies and "constraints" (via
-`<dependencyManagement>`) and that you used `enforcedPlatform`. Gradle 5.3
-fixes this bug, meaning that you might have differences in the resolution
-result if you relied on this broken behavior. Similarly, Gradle 5.3 will no
-longer try to download jars for `platform` and `enforcedPlatform` dependencies
-(as they should only bring in constraints).
+从Gradle
+5.0到5.2.1（包括）存在一个错误，其中强制平台可能包含依赖性而不是约束。只要POM文件同时定义了依赖关系和“约束”（通过`<dependencyManagement>`）并且您使用了它，就会发生这种情况`enforcedPlatform`。Gradle
+5.3修复了此错误，这意味着如果您依赖此无效行为，则分辨率结果可能会有所不同。同样，Gradle 5.3将不再尝试下载jar`platform`和和jars
+`enforcedPlatform`（因为它们只能引入约束）。
 
-#### Automatic target JVM version
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#automatic_target_jvm_version)[自动目标JVM版本](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#automatic_target_jvm_version)
 
-If you apply any of the Java plugins, Gradle will now do its best to select
-dependencies which match the target compatibility of the module being
-compiled. What it means, in practice, is that if you have module A built for
-Java 8, and module B built for Java 8, then there's no change. However if B is
-built for Java 9+, then it's not binary compatible anymore, and Gradle would
-complain with an error message like the following:
+如果您使用任何Java插件，Gradle现在将尽力选择与正在编译的模块的目标兼容性相匹配的依赖项。实际上，这意味着如果您具有为Java
+8构建的模块A和为Java 8构建的模块B，则没有任何变化。但是，如果B是为Java 9+构建的，则它不再与二进制兼容，并且Gradle会抱怨如下错误消息：
 
     
     
@@ -1151,13 +1018,8 @@ complain with an error message like the following:
           - Required org.gradle.jvm.version '8' and found incompatible value '9'.
           - Required org.gradle.usage 'java-api' and found value 'java-runtime-jars'.
 
-In general, this is a sign that your project is misconfigured and that your
-dependencies are not compatible. However, there are cases where you still may
-want to do this, for example when only a _subset_ of classes of your module
-actually need the Java 9 dependencies, and are not intended to be used on
-earlier releases. Java in general doesn't encourage you to do this (you should
-split your module instead), but if you face this problem, you can workaround
-by disabling this new behavior on the consumer side:
+通常，这表明您的项目配置错误并且您的依赖项不兼容。但是，在某些情况下，您仍然可能想要这样做，例如，当模块的仅一 _小类_ 类实际上需要Java
+9依赖项，并且不打算在早期版本中使用时。Java通常不鼓励您这样做（您应该拆分模块），但是如果遇到此问题，可以通过在使用者方面禁用此新行为来解决：
 
     
     
@@ -1165,178 +1027,175 @@ by disabling this new behavior on the consumer side:
        disableAutoTargetJvm()
     }
 
-#### Bug fix in Maven / Ivy interoperability with dependency substitution
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#bug_fix_in_maven_ivy_interoperability_with_dependency_substitution)[通过依赖替换在Maven
+/
+Ivy互操作性中的错误修复](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#bug_fix_in_maven_ivy_interoperability_with_dependency_substitution)
 
-If you have a Maven dependency pointing to an Ivy dependency where the
-`default` configuration dependencies do not match the `compile` \+ `runtime`
-\+ `master` ones _and_ that Ivy dependency was substituted (using a
-`resolutionStrategy.force`, `resolutionStrategy.eachDependency` or
-`resolutionStrategy.dependencySubstitution`) then this fix will impact you.
-The legacy behaviour of Gradle, prior to 5.0, was still in place instead of
-being replaced by the changes introduced by improved pom support.
+如果你有一个Maven依赖指向常春藤依赖在`default`配置依赖性不匹配`compile`\+ `runtime`+`master`那些 _和_
+常春藤依赖性取代（使用`resolutionStrategy.force`，`resolutionStrategy.eachDependency`或`resolutionStrategy.dependencySubstitution`），则此修复程序会影响你。5.0之前的Gradle的旧行为仍然存在，而不是被改进的pom支持所引入的更改所取代。
 
-#### Delete operations correctly handle symbolic links on Windows
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#delete_operations_correctly_handle_symbolic_links_on_windows)[删除操作可以正确处理Windows上的符号链接](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#delete_operations_correctly_handle_symbolic_links_on_windows)
 
-Gradle no longer ignores the `followSymlink` option on Windows for the `clean`
-task, all `Delete` tasks, and `project.delete {}` operations in the presence
-of junction points and symbolic links.
+在存在连接点和符号链接的情况下，Gradle不再忽略`followSymlink`Windows上的`clean`任务，所有`Delete`任务和`project.delete
+{}`操作选项。
 
-#### Fix in publication of additional artifacts
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#fix_in_publication_of_additional_artifacts)[修复其他工件的发布](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#fix_in_publication_of_additional_artifacts)
 
-In previous Gradle versions, additional artifacts registered at the project
-level were not published by `maven-publish` or `ivy-publish` unless they were
-also added as artifacts in the publication configuration.
+在以前的Gradle版本中，在项目级别注册的其他工件没有被发布，`maven-publish`或者`ivy-
+publish`除非它们也已作为工件添加到发布配置中，否则不会发布。
 
-With Gradle 5.3, these artifacts are now properly accounted for and published.
+使用Gradle 5.3，现在可以正确解释和发布这些工件了。
 
-This means that artifacts that are registered both on the project _and_ the
-publication, Ivy or Maven, will cause publication to fail since it will create
-duplicate entries. The fix is to remove these artifacts from the publication
-configuration.
+这意味着在项目 _和_ 发布（Ivy或Maven）上都注册的工件会导致发布失败，因为它将创建重复的条目。解决方法是从发布配置中删除这些工件。
 
-## Upgrading from 5.1 and earlier
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.2)[从5.1或更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.2)
 
-### Potential breaking changes
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes_6)[潜在的重大变化](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes_6)
 
-none
+没有
 
-## Upgrading from 5.0 and earlier
+##
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.1)[从5.0或更早版本升级](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_5.1)
 
-### Deprecations
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#deprecations_5)[弃用](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#deprecations_5)
 
-Follow the API links to learn how to deal with these deprecations (if no extra
-information is provided here):
+按照API链接了解如何处理这些弃用（如果此处未提供其他信息）：
 
-  * Setters for `classes` and `classpath` on [`ValidateTaskProperties`](../javadoc/org/gradle/plugin/devel/tasks/ValidateTaskProperties.html)
+  * setter方法`classes`和`classpath`上[`ValidateTaskProperties`](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/plugin/devel/tasks/ValidateTaskProperties.html)
 
-  * There should not be setters for lazy properties like [`ConfigurableFileCollection`](../javadoc/org/gradle/api/file/ConfigurableFileCollection.html). Use `setFrom` instead. For example,
+  * 不应设置诸如的惰性属性的设置器[`ConfigurableFileCollection`](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/api/file/ConfigurableFileCollection.html)。使用`setFrom`代替。例如，
 
     
     
-        validateTaskProperties.getClasses().setFrom(fileCollection)
-        validateTaskProperties.getClasspath().setFrom(fileCollection)
+        validateTaskProperties.getClasses（）。setFrom（fileCollection）
+        validateTaskProperties.getClasspath（）。setFrom（fileCollection）
 
-### Potential breaking changes
+###
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes_7)[潜在的重大变化](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#potential_breaking_changes_7)
 
-The following changes were not previously deprecated:
+以前不建议过以下更改：
 
-#### Signing API changes
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#signing_api_changes)[签名API更改](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#signing_api_changes)
 
-Input and output files of `Sign` tasks are now tracked via
-`Signature.getToSign()` and `Signature.getFile()`, respectively.
+`Sign`现在分别通过`Signature.getToSign()`和跟踪任务的输入和输出文件`Signature.getFile()`。
 
-#### Collection properties default to empty collection
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#collection_properties_default_to_empty_collection)[集合属性默认为空集合](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#collection_properties_default_to_empty_collection)
 
-In Gradle 5.0, the collection property instances created using `ObjectFactory`
-would have no value defined, requiring plugin authors to explicitly set an
-initial value. This proved to be awkward and error prone so `ObjectFactory`
-now returns instances with an empty collection as their initial value.
+在Gradle
+5.0中，使用创建的collection属性实例`ObjectFactory`未定义任何值，要求插件作者明确设置初始值。事实证明这很尴尬且容易出错，因此`ObjectFactory`现在返回带有空集合的实例作为其初始值。
 
-#### Worker API: working directory of a worker can no longer be set
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#worker_api_working_directory_of_a_worker_can_no_longer_be_set)[Worker
+API：无法再设置工人的工作目录](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#worker_api_working_directory_of_a_worker_can_no_longer_be_set)
 
-Since JDK 11 no longer supports changing the working directory of a running
-process, setting the working directory of a worker via its fork options is now
-prohibited. All workers now use the same working directory to enable reuse.
-Please pass files and directories as arguments instead. See examples in the
-[Worker API documentation](custom_tasks.html#worker_api).
+由于JDK
+11不再支持更改正在运行的进程的工作目录，因此现在禁止通过其fork选项设置工作程序的工作目录。现在，所有工作程序都使用相同的工作目录来启用重用。请改为将文件和目录作为参数传递。请参阅[Worker
+API文档](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/custom_tasks.html#worker_api)中的示例。
 
-#### Changes to native linking tasks
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_native_linking_tasks)[更改本机链接任务](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_native_linking_tasks)
 
-To expand our idiomatic [Provider API](lazy_configuration.html) practices, the
-install name property from `org.gradle.nativeplatform.tasks.LinkSharedLibrary`
-is affected by this change.
+为了扩展我们惯用的[Provider
+API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/lazy_configuration.html)做法，`org.gradle.nativeplatform.tasks.LinkSharedLibrary`此更改将影响from的安装名称属性。
 
-  * `getInstallName()` was changed to return a `Property`.
+  * `getInstallName()`已更改为返回`Property`。
 
-  * `setInstallName(String)` was removed. Use `Property.set()` instead.
+  * `setInstallName(String)`去掉了。使用`Property.set()`代替。
 
-#### Passing arguments to Windows Resource Compiler
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#passing_arguments_to_windows_resource_compiler)[将参数传递给Windows
+Resource
+Compiler](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#passing_arguments_to_windows_resource_compiler)
 
-To expand our idiomatic [Provider API](lazy_configuration.html) practices, the
-`WindowsResourceCompile` task has been converted to use the Provider API.
+为了扩展我们惯用的[Provider
+API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/lazy_configuration.html)实践，`WindowsResourceCompile`已将任务转换为使用Provider
+API。
 
-Passing additional compiler arguments now follow the same pattern as the
-`CppCompile` and other tasks.
+现在，传递其他编译器参数的方式与`CppCompile`和其他任务的方式相同。
 
-#### Copied configuration no longer shares a list of `beforeResolve` actions
-with original
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#copied_configuration_no_longer_shares_a_list_of_beforeresolve_actions_with_original)[复制的配置不再`beforeResolve`与原始配置共享操作列表](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#copied_configuration_no_longer_shares_a_list_of_beforeresolve_actions_with_original)
 
-The list of `beforeResolve` actions are no longer shared between a copied
-configuration and the original. Instead, a copied configuration receives a
-copy of the `beforeResolve` actions at the time the copy is made. Any
-`beforeResolve` actions added after copying (to either configuration) will not
-be shared between the original and the copy. This may break plugins that
-relied on the previous behaviour.
+`beforeResolve`操作列表不再在复制的配置和原始配置之间共享。取而代之的是，复制的配置会在进行复制时接收`beforeResolve`操作的复制。`beforeResolve`复制后（添加到任一配置）添加的任何操作都不会在原始副本和副本之间共享。这可能会破坏依赖于先前行为的插件。
 
-#### Changes to incubating POM customization types
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_incubating_pom_customization_types)[孵化POM定制类型的更改](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_incubating_pom_customization_types)
 
-  * The type of `MavenPomDeveloper.properties` has changed from `Property<Map<String, String>>` to `MapProperty<String, String>`.
+  * 的类型`MavenPomDeveloper.properties`已从更改`Property<Map<String, String>>`为`MapProperty<String, String>`。
 
-  * The type of `MavenPomContributor.properties` has changed from `Property<Map<String, String>>` to `MapProperty<String, String>`.
+  * 的类型`MavenPomContributor.properties`已从更改`Property<Map<String, String>>`为`MapProperty<String, String>`。
 
-#### Changes to specifying operating system for native projects
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_specifying_operating_system_for_native_projects)[对本机项目指定操作系统的更改](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_to_specifying_operating_system_for_native_projects)
 
-The incubating `operatingSystems` property on native components has been
-replaced with the
-[targetMachines](../javadoc/org/gradle/language/cpp/CppComponent.html#getTargetMachines\(\))
-property.
+`operatingSystems`本地组件的孵化属性已替换为[targetMachines](file:///Users/dxs/temp/gradle-6.7.1/docs/javadoc/org/gradle/language/cpp/CppComponent.html#getTargetMachines\(\))属性。
 
-#### Changes for archive tasks (`Zip`, `Jar`, `War`, `Ear`, `Tar`)
+####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_for_archive_tasks_zip_jar_war_ear_tar)[归档任务的变化（`Zip`，`Jar`，`War`，`Ear`，`Tar`）](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#changes_for_archive_tasks_zip_jar_war_ear_tar)
 
-##### Change in behavior for tasks extending `AbstractArchiveTask`
+#####
+[](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#change_in_behavior_for_tasks_extending_abstractarchivetask)[行为变化以扩展任务
+`AbstractArchiveTask`](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/upgrading_version_5.html#change_in_behavior_for_tasks_extending_abstractarchivetask)
 
-The `AbstractArchiveTask` has several new properties using the [Provider
-API](lazy_configuration.html#lazy_configuration_reference). Plugins that
-extend these types and override methods from the base class may no longer
-behave the same way. Internally, `AbstractArchiveTask` prefers the new
-properties and methods like `getArchiveName()` are façades over the new
-properties.
+在`AbstractArchiveTask`具有使用了一些新的特性[提供API](file:///Users/dxs/temp/gradle-6.7.1/docs/userguide/lazy_configuration.html#lazy_configuration_reference)。扩展这些类型并从基类覆盖方法的插件可能不再具有相同的行为。在内部，相`AbstractArchiveTask`对于新属性，更喜欢新属性和方法，例如`getArchiveName()`外观。
 
-If your plugin/build only uses these types (and does not extend them), nothing
-has changed.
+如果您的插件/内部版本仅使用这些类型（而不扩展它们），则没有任何改变。
 
-**Docs**
+**文件**
 
-  * [User Manual](/userguide/userguide.html)
-  * [DSL Reference](/dsl/)
-  * [Release Notes](/release-notes.html)
-  * [Javadoc](/javadoc/)
+  * [用户手册](file:///userguide/userguide.html)
+  * [DSL参考](file:///dsl/)
+  * [发行说明](file:///release-notes.html)
+  * [Java文档](file:///javadoc/)
 
-**News**
+**新闻**
 
-  * [Blog](https://blog.gradle.org/)
-  * [Newsletter](https://newsletter.gradle.com/)
-  * [Twitter](https://twitter.com/gradle)
-  * [Status Page](https://status.gradle.com/)
+  * [博客](https://blog.gradle.org/)
+  * [通讯](https://newsletter.gradle.com/)
+  * [推特](https://twitter.com/gradle)
+  * [状态页](https://status.gradle.com/)
 
-**Products**
+**产品展示**
 
-  * [Build Scans](https://gradle.com/build-scans/)
-  * [Build Cache](https://gradle.com/build-cache/)
-  * [Enterprise Docs](https://gradle.com/enterprise/resources/)
+  * [构建扫描](https://gradle.com/build-scans/)
+  * [构建缓存](https://gradle.com/build-cache/)
+  * [企业文件](https://gradle.com/enterprise/resources/)
 
-**Get Help**
+**得到帮助**
 
-  * [Forums](https://discuss.gradle.org/c/help-discuss)
-  * [GitHub](https://github.com/gradle/)
-  * [Training](https://gradle.com/training/)
-  * [Services](https://gradle.org/services/)
+  * [论坛](https://discuss.gradle.org/c/help-discuss)
+  * [的GitHub](https://github.com/gradle/)
+  * [训练](https://gradle.com/training/)
+  * [服务](https://gradle.org/services/)
 
-##### Stay `UP-TO-DATE` on new features and news
+##### 随时`UP-TO-DATE`关注新功能和新闻
 
-By entering your email, you agree to our
-[Terms](https://gradle.com/legal/terms-of-service/) and [Privacy
-Policy](https://gradle.com/legal/privacy/), including receipt of emails. You
-can unsubscribe at any time.
+输入您的电子邮件，即表示您同意我们的[条款](https://gradle.com/legal/terms-of-
+service/)和[隐私政策](https://gradle.com/legal/privacy/)，包括接收电子邮件。您可以随时取消订阅。
 
-Subscribe
+订阅
 
-© [Gradle Inc.](https://gradle.com) 2020 All rights reserved.
+© [Gradle Inc.](https://gradle.com/) 2020年 版权所有。
 
-[ gradle ](/)
+[ gradle ](file:///)
 
-[Careers](https://gradle.com/careers/) |
-[Privacy](https://gradle.com/legal/privacy/) | [Terms of
-Service](https://gradle.com/legal/terms-of-service/) |
-[Contact](https://gradle.org/contact/)
+[招贤纳士](https://gradle.com/careers/)| [隐私](https://gradle.com/legal/privacy/)|
+[服务条款](https://gradle.com/legal/terms-of-service/)|
+[联系](https://gradle.org/contact/)
+
+![Google 翻译](./将您的构建从Gradle 5.x升级到6.0_files/translate_24dp.png)
+
+# 原文
+
+提供更好的翻译建议
+
+* * *
 
