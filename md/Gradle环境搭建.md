@@ -287,7 +287,7 @@ __prop_ =somevalue``prop``somevalue``org.gradle.project. _prop_``foo``"bar"`
 
 
 Tip：
-  如果引用了项目属性但不存在，则将引发异常，并且构建将失败。
+  如果引用了项目属性但不存在，则将引发异常，并且构建将失败。  
   在使用[Project.hasProperty（java.lang.String）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:hasProperty\(java.lang.String\))方法访问可选项目属性之前，应检查其是否存在。  
       
 
