@@ -14,5 +14,5 @@
   - 迁移至Gradle
     - [从Apache Maven迁移](/md/从Apache%sMaven迁移.md)
     - [从Apache Ant迁移](/md/从Apache%sAnt迁移.md)
-  - [从Apache Ant迁移](/用户手册/从Apache%sAnt迁移.md)
-  - [从Apache Ant迁移](/用户手册/从Apache%sAnt迁移.md)
+  - [兼容性说明](/md/兼容性说明.md)
+  - [对构建进行故障排除](/md/对构建进行故障排除.md)
