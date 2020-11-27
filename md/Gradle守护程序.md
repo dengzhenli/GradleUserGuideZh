@@ -43,7 +43,7 @@ Daemon对您的影响。
 
 当前，给定的Gradle版本只能连接到相同版本的守护程序。这意味着状态输出将仅显示正在调用的Gradle版本的守护程序，而不显示任何其他版本的守护程序。Gradle的未来版本将解除此约束，并将显示所有Gradle版本的正在运行的守护程序。
 
-## ](#sec:disabling_the_daemon)[禁用守护程序](#sec:disabling_the_daemon)
+## [](#sec:disabling_the_daemon)[禁用守护程序](#sec:disabling_the_daemon)
 
 Gradle守护程序默认情况下处于启用状态，我们建议始终启用它。有几种方法可以禁用守护程序，但是最常见的一种方法是添加行
 
@@ -92,12 +92,12 @@ _完全_ 隔离。
   * 通过属性文件：添加`org.gradle.daemon=false`到`«GRADLE_USER_HOME»/gradle.properties`文件
 
   
-╚═════════════════════════════
+╔═════════════════════════════
 
 注意，`«GRADLE_USER_HOME»`默认为`«USER_HOME»/.gradle`，其中`«USER_HOME»`是当前用户的主目录。可以通过`-g`和`--gradle-
 user-home`命令行开关以及`GRADLE_USER_HOME`环境变量和`org.gradle.user.home`JVM系统属性来配置此位置。  
   
----|---  
+╚═════════════════════════════
   
 两种方法具有相同的效果。使用哪一个取决于个人喜好。大多数Gradle用户选择第二个选项，然后将条目添加到用户`gradle.properties`文件中。
 
