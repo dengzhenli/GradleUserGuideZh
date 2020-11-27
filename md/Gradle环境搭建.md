@@ -286,10 +286,9 @@ __prop_ =somevalue``prop``somevalue``org.gradle.project. _prop_``foo``"bar"`
 您可以像使用变量一样使用名称来访问构建脚本中的项目属性。
 
 
-
-    如果引用了项目属性但不存在，则将引发异常，并且构建将失败。
-    
-    在使用[Project.hasProperty（java.lang.String）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:hasProperty\(java.lang.String\))方法访问可选项目属性之前，应检查其是否存在。  
+Tip：
+  如果引用了项目属性但不存在，则将引发异常，并且构建将失败。
+  在使用[Project.hasProperty（java.lang.String）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:hasProperty\(java.lang.String\))方法访问可选项目属性之前，应检查其是否存在。  
       
 
   
@@ -312,10 +311,7 @@ __prop_ =somevalue``prop``somevalue``org.gradle.project. _prop_``foo``"bar"`
     
     
     JAVA_OPTS =“-Xmx64m -XX：MaxPermSize = 64m -XX：+ HeapDumpOnOutOfMemoryError -Dfile.encoding = UTF-8”
-
-
-    
-    在一种情况下，客户端VM也可以用作构建VM：如果停用[Gradle Daemon](https://docs.gradle.org/6.7.1/userguide/gradle_daemon.html#gradle_daemon)，并且客户端VM具有与构建VM相同的设置，则客户端VM将直接运行构建。否则，客户端虚拟机将派生一个新的虚拟机来运行实际的构建，以便采用不同的设置。  
+  在一种情况下，客户端VM也可以用作构建VM：如果停用[Gradle Daemon](https://docs.gradle.org/6.7.1/userguide/gradle_daemon.html#gradle_daemon)，并且客户端VM具有与构建VM相同的设置，则客户端VM将直接运行构建。否则，客户端虚拟机将派生一个新的虚拟机来运行实际的构建，以便采用不同的设置。  
       
  
   
