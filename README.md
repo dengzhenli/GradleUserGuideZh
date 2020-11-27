@@ -16,7 +16,9 @@
     - [从Apache Ant迁移](/md/从Apache%sAnt迁移.md)
   - [兼容性说明](/md/兼容性说明.md)
   - [对构建进行故障排除](/md/对构建进行故障排除.md)
-- 运行Gradle构建
+- 自定义执行
+  - 迁移至Gradle
+    - [Gradle环境搭建](/md/Gradle环境搭建.md)
 - 编写Gradle构建
 - 编写JVM构建
 - 编写C ++ / Swift构建
