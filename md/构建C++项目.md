@@ -407,8 +407,7 @@ _api_ 配置中。否则，依赖项是内部实现细节，应将其添加到 _
 
 如果不确定API和实现依赖项之间的区别，请参阅[C++库插件](https://docs.gradle.org/6.7.1/userguide/cpp_library_plugin.html#sec:cpp_library_api_vs_implementation)一章的详细说明。另外，您可以在相应的[样本中](https://docs.gradle.org/6.7.1/samples/sample_building_cpp_libraries.html)看到构建C++库的基本，实际[示例](https://docs.gradle.org/6.7.1/samples/sample_building_cpp_libraries.html)。
 
-## [](#sec:building_cpp_applications)[构建C
-++应用程序](#sec:building_cpp_applications)
+## [](#sec:building_cpp_applications)[构建C++应用程序](#sec:building_cpp_applications)
 
 有关更多详细信息，请参见“ [C++应用程序插件”](https://docs.gradle.org/6.7.1/userguide/cpp_application_plugin.html)一章，但这是您所获得内容的快速摘要：
 
