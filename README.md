@@ -47,7 +47,7 @@
     - [组织Gradle项目](/md/组织Gradle项目.md)
     - [最佳实践](/md/创作可维护版本的最佳实践.md)
   - 先进技术
-    - [开发并行任务](/md/使用Worker%sAPI开发并行任务.md)
+    - [开发并行任务](/md/使用Worker API开发并行任务.md)
     - [使用TestKit测试构建](/md/使用TestKit测试构建逻辑.md)
     - [从Gradle使用Ant](/md/从Gradle使用Ant.md)
 - 编写JVM构建
