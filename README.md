@@ -62,10 +62,10 @@
     - [Groovy插件](/md/Groovy插件.md)
     - [Scala插件](/md/Scala插件.md)
 - 编写C ++ / Swift构建
-  - 构建C ++项目
-  - 测试C ++项目
-  - 建立Swift项目
-  - 测试Swift项目
+  - [构建C++项目](/md/构建C++项目.md)
+  - [测试C++项目](/md/在C++项目中进行测试.md)
+  - [构建Swift项目](/md/建立Swift项目.md)
+  - [测试Swift项目](/md/在Swift项目中进行测试.md)
 - 使用依赖项
   - 学习基础
   - 声明版本

@@ -9,7 +9,7 @@
   * [Java库插件配置](#sec:java_library_configurations_graph)
   * [Java模块系统的构建模块](#sec:java_library_modular)
   * [使用类而不是jar进行编译](#sec:java_library_classes_usage)
-  * [分发图书馆](#sec:library_distribution)
+  * [分发库](#sec:library_distribution)
 
 Java库插件扩展的功能[的Java插件，](https://docs.gradle.org/6.7.1/userguide/java_plugin.html)通过提供有关Java库的具体知识。特别是，Java库向使用者（即使用Java或Java库插件的其他项目）公开API。使用此插件时，Java插件公开的所有源集，任务和配置都是隐式可用的。
 
@@ -503,7 +503,7 @@ _和已_ 处理资源。
 classpath-packaging`system属性设置`true`为更改Java
 Library插件的行为，以对编译类路径上的所有内容使用jar代替类文件夹。请注意，由于这会带来其他性能影响和潜在的副作用，因此通过在编译时触发所有jar任务，只有在Windows上遇到上述性能问题时，才建议激活此功能。
 
-## [](#sec:library_distribution)[分发图书馆](#sec:library_distribution)
+## [](#sec:library_distribution)[分发库](#sec:library_distribution)
 
 除了将库[发布](https://docs.gradle.org/6.7.1/userguide/publishing_setup.html)到组件存储库之外，有时您可能还需要将库及其依赖项打包在可分发的交付中。该[Java库分布插件](https://docs.gradle.org/6.7.1/userguide/java_library_distribution_plugin.html)是在那里你做到这一点的帮助。
 
