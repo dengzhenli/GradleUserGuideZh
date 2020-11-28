@@ -51,13 +51,13 @@ buildSrc/build.gradle.kts
         implementation("commons-io:commons-io:2.5")
         implementation("commons-codec:commons-codec:1.9") __**( 1)**
     }
-╔═════════════════════════════
+╔═════════════════════════════  
 ①  您的自定义任务类将使用[Apache Commons Codec](https://commons.apache.org/proper/commons-codec/)生成MD5哈希。  
-╚═════════════════════════════  
+╚═════════════════════════════   
   
-╔═════════════════════════════
+╔═════════════════════════════  
 如果您不熟悉`buildSrc`，这是一个特殊目录，可让您定义和构建应在构建脚本中使用的自定义类。有关更多信息，请参见[有关组织构建逻辑的部分](https://docs.gradle.org/nightly/userguide/organizing_gradle_projects.html#sec:build_sources)。  
-╚═════════════════════════════  
+╚═════════════════════════════   
   
 现在，在`buildSrc/src/main/java`目录中创建一个自定义任务类。您应该为此类命名`CreateMD5`。
 
