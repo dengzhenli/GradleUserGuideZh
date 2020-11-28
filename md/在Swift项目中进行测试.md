@@ -110,7 +110,7 @@ Gradle支持简单的类名，或类名+方法名的测试过滤。例如，以�
     gradle xcTest --tests TestBundle.SomeTestClass.someSpecificMethod
     # or `gradle xcTest --tests TestBundle.SomeTestClass.someSpecificMethod` on macOS
 
-您还可以将在命令行中定义的过滤器与[连续构建结合使用，](https://docs.gradle.org/6.7.1/userguide/command_line_interface.html#sec:continuous_build)以在每次对生产或测试源文件进行更改后立即重新执行测试的子集。每当更改触发测试运行时，以下命令将执行“
+您还可以将在命令行中定义的过滤器与[连续构建结合使用，](/md/命令行界面.md#sec:continuous_build)以在每次对生产或测试源文件进行更改后立即重新执行测试的子集。每当更改触发测试运行时，以下命令将执行“
 SomeTestClass”测试类中的所有测试：
 
     
@@ -247,7 +247,7 @@ build.gradle.kts
     }
 
 在此示例中，我们使用约定插件`myproject.xctest-
-conventions`将项目的测试结果暴露给Gradle的[变体感知依赖管理引擎](https://docs.gradle.org/6.7.1/userguide/variant_model.html)。
+conventions`将项目的测试结果暴露给Gradle的[变体感知依赖管理引擎](/md/使用变体属性.md)。
 
 该插件声明了一个耗材`binaryTestResultsElements`配置，该配置代表了该`test`任务的二进制测试结果。在聚合项目的构建文件中，我们声明`testReportData`配置并依赖于要从中聚合结果的所有项目。Gradle将从每个子项目中自动选择二进制测试结果变量，而不是从项目的jar文件中选择。最后，我们添加了一个`testReport`任务，该任务汇总了来自`testResultsDirs`属性的测试结果，其中包含从`testReportData`配置中解析的所有二进制测试结果。
 

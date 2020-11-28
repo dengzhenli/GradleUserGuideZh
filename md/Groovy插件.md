@@ -18,7 +18,7 @@ Groovy插件扩展了[Java插件，](https://docs.gradle.org/6.7.1/userguide/jav
 _联合编译_
 ，可让您自由混合并匹配Groovy和Java代码，并具有双向依赖性。例如，Groovy类可以扩展Java类，而Java类又可以扩展Groovy类。这样就可以为作业使用最佳语言，并在需要时用其他语言重写任何类。
 
-请注意，如果您希望从[API/实现分离中](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#sec:java_library_separation)受益，则还可以将`java-
+请注意，如果您希望从[API/实现分离中](/md/Java库插件.md#sec:java_library_separation)受益，则还可以将`java-
 library`插件应用于Groovy项目。
 
 ## [](#sec:groovy_usage)[用法](#sec:groovy_usage)
@@ -47,7 +47,7 @@ build.gradle.kts
 
 ## [](#sec:groovy_tasks)[任务](#sec:groovy_tasks)
 
-Groovy插件将以下任务添加到项目中。在[此处](https://docs.gradle.org/6.7.1/userguide/building_java_projects.html#sec:building_jvm_lang)可以找到有关更改对Java编译任务的依赖性的信息。
+Groovy插件将以下任务添加到项目中。在[此处](/md/构建Java和JVM项目.md#sec:building_jvm_lang)可以找到有关更改对Java编译任务的依赖性的信息。
 
 `compileGroovy`—
 [GroovyCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.compile.GroovyCompile.html)
@@ -367,7 +367,7 @@ _默认值_ ：不为空
 
 _预设值_ ：`[ _projectDir_ /src/ _name_ /groovy]`
 
-包含此源集的Groovy源文件的源目录。也可能包含用于联合编译的Java源文件。可以使用“[指定多个文件”中](https://docs.gradle.org/6.7.1/userguide/working_with_files.html#sec:specifying_multiple_files)所述的任何内容进行设置。
+包含此源集的Groovy源文件的源目录。也可能包含用于联合编译的Java源文件。可以使用“[指定多个文件”中](/md/编写构建脚本.md#sec:specifying_multiple_files)所述的任何内容进行设置。
 
 `allGroovy`—
 [FileTree](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/FileTree.html)（只读）
@@ -391,14 +391,14 @@ Groovy插件还修改了一些源集属性：
   
 ## [](#sec:groovyCompile)[Groovy编译](#sec:groovyCompile)
 
-Groovy插件为项目中的每个源集添加了一个[GroovyCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.compile.GroovyCompile.html)任务。任务类型扩展了`JavaCompile`任务（请参阅[相关的Java插件部分](https://docs.gradle.org/6.7.1/userguide/building_java_projects.html#sec:compile)）。该`GroovyCompile`任务支持官方Groovy编译器的大多数配置选项。
+Groovy插件为项目中的每个源集添加了一个[GroovyCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.compile.GroovyCompile.html)任务。任务类型扩展了`JavaCompile`任务（请参阅[相关的Java插件部分](/md/构建Java和JVM项目.md#sec:compile)）。该`GroovyCompile`任务支持官方Groovy编译器的大多数配置选项。
 
 表2. Groovy插件-GroovyCompile属性 
 
 任务属性 | 类型 | 默认值  
 ---|---|---  
 `classpath`|[文件集](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/FileCollection.html)|`_sourceSet_.compileClasspath`  
-`source`|[FileTree](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/FileTree.html)。可以使用“[指定多个文件”中](https://docs.gradle.org/6.7.1/userguide/working_with_files.html#sec:specifying_multiple_files)所述的任何内容进行设置。|`_sourceSet_.groovy`  
+`source`|[FileTree](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/FileTree.html)。可以使用“[指定多个文件”中](/md/编写构建脚本.md#sec:specifying_multiple_files)所述的任何内容进行设置。|`_sourceSet_.groovy`  
 `destinationDir`|`File`。|`_sourceSet_.groovy.outputDir`  
 `groovyClasspath`|[文件集](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/FileCollection.html)|`groovy`非空配置；在`classpath`其他地方找到Groovy库  
   
@@ -502,7 +502,7 @@ buildSrc/src/main/kotlin/myproject.groovy-conventions.gradle.kts
 
 ## [](#sec:groovy_cross_compilation)[针对Java 6或Java 7进行编译和测试](#sec:groovy_cross_compilation)
 
-Groovy编译器将始终与用于启动Gradle的Java版本一起执行。您应该将`sourceCompatibility`和设置`targetCompatibility`为`1.6`或`1.7`。如果您还具有Java源文件，则可以按照与[Java插件](https://docs.gradle.org/6.7.1/userguide/building_java_projects.html#sec:java_cross_compilation)相同的步骤进行操作，以确保使用正确的Java编译器。
+Groovy编译器将始终与用于启动Gradle的Java版本一起执行。您应该将`sourceCompatibility`和设置`targetCompatibility`为`1.6`或`1.7`。如果您还具有Java源文件，则可以按照与[Java插件](/md/构建Java和JVM项目.md#sec:java_cross_compilation)相同的步骤进行操作，以确保使用正确的Java编译器。
 
 ### [](#example_configure_java_6_build_for_groovy)[示例：为Groovy配置Java 6构建](#example_configure_java_6_build_for_groovy)
 

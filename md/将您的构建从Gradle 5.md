@@ -12,7 +12,7 @@
   * [从5.0或更早版本升级](#changes_5.1)
 
 本章提供了将Gradle 5.x构建迁移到Gradle 6.0所需的信息。要从Gradle
-4.x迁移，请先完成从[4.x到5.0的指南](https://docs.gradle.org/6.7.1/userguide/upgrading_version_4.html#upgrading_version_4)。
+4.x迁移，请先完成从[4.x到5.0的指南](/md/将您的构建从Gradle 4.md#upgrading_version_4)。
 
 我们建议所有用户执行以下步骤：
 
@@ -30,7 +30,7 @@
 
   3. 运行`gradle wrapper --gradle-version 6.7.1`以将项目更新为6.7.1。
 
-  4. 尝试使用《[故障排除指南》](https://docs.gradle.org/6.7.1/userguide/troubleshooting.html#troubleshooting)运行项目并调试所有错误。
+  4. 尝试使用《[故障排除指南》](/md/对构建进行故障排除.md#troubleshooting)运行项目并调试所有错误。
 
 ## [](#changes_6.0)[从5.6及更早版本升级](#changes_6.0)
 
@@ -40,16 +40,16 @@
 
 从[Gradle 3.4](https://docs.gradle.org/3.4/release-notes.html#the-java-library-plugin)开始，不鼓励在Java生态系统插件中使用`compile`和`runtime`配置。[](https://docs.gradle.org/3.4/release-notes.html#the-java-library-plugin)
 
-这些配置用于从`main`源集中编译和运行代码。其他源集创建类似的配置（例如`testCompile`和`testRuntime`用于`test`源集），也不应使用。的`implementation`，`api`，`compileOnly`和`runtimeOnly`配置应该用于依赖性和申报`compileClasspath`和`runtimeClasspath`配置，以解决依赖关系。请参阅[这些配置的关系](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#sec:java_library_configurations_graph)。
+这些配置用于从`main`源集中编译和运行代码。其他源集创建类似的配置（例如`testCompile`和`testRuntime`用于`test`源集），也不应使用。的`implementation`，`api`，`compileOnly`和`runtimeOnly`配置应该用于依赖性和申报`compileClasspath`和`runtimeClasspath`配置，以解决依赖关系。请参阅[这些配置的关系](/md/Java库插件.md#sec:java_library_configurations_graph)。
 
 #### [](#legacy_publication_system_is_deprecated_and_replaced_with_the_publish_plugins)[旧版发布系统已弃用，并替换为`*-publish`插件](#legacy_publication_system_is_deprecated_and_replaced_with_the_publish_plugins)
 
 该`uploadArchives`任务和`maven`插件已被弃用。
 
-用户应使用或插件迁移到Gradle的[发布系统](https://docs.gradle.org/6.7.1/userguide/publishing_setup.html)。自Gradle
-4.8起，这些插件一直稳定。[`maven-publish`](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html) [`ivy-publish`](https://docs.gradle.org/6.7.1/userguide/publishing_ivy.html)
+用户应使用或插件迁移到Gradle的[发布系统](/md/将项目发布为模块.md)。自Gradle
+4.8起，这些插件一直稳定。[`maven-publish`](/md/Maven发布插件.md) [`ivy-publish`](/md/Ivy发布插件.md)
 
-发布系统也是确保[Gradle Module元数据](https://docs.gradle.org/6.7.1/userguide/publishing_gradle_module_metadata.html)发布的唯一方法。
+发布系统也是确保[Gradle Module元数据](/md/了解Gradle模块元数据.md)发布的唯一方法。
 
 #### [](#problems_with_tasks_emit_deprecation_warnings)[任务问题会发出弃用警告](#problems_with_tasks_emit_deprecation_warnings)
 
@@ -71,21 +71,21 @@
     Property 'inputDirectory' is declared without normalization specified. Properties of cacheable work must declare their normalization via @PathSensitive, @Classpath or @CompileClasspath. Defaulting to PathSensitivity.ABSOLUTE. This behaviour has been deprecated and is scheduled to be removed in Gradle 7.0.
     Property 'outputFile' is not annotated with an input or output annotation. This behaviour has been deprecated and is scheduled to be removed in Gradle 7.0.
 
-如果您拥有相关任务的代码，则可以[按照建议](https://docs.gradle.org/6.7.1/userguide/more_about_tasks.html#sec:task_input_validation)进行修复。您还可以`--stacktrace`用来查看每个警告的源代码。
+如果您拥有相关任务的代码，则可以[按照建议](/md/处理任务.md#sec:task_input_validation)进行修复。您还可以`--stacktrace`用来查看每个警告的源代码。
 
 否则，您需要将问题报告给相关任务或插件的维护者。
 
 #### [](#old_api_for_incremental_tasks_incrementaltaskinputs_has_been_deprecated)[`IncrementalTaskInputs`不推荐使用用于增量任务的旧API，](#old_api_for_incremental_tasks_incrementaltaskinputs_has_been_deprecated)
 
 在Gradle
-5.4中，我们引入了用于实现[增量任务](https://docs.gradle.org/6.7.1/userguide/custom_tasks.html#incremental_tasks)的新API
+5.4中，我们引入了用于实现[增量任务](/md/开发自定义Gradle任务类型.md#incremental_tasks)的新API
 ：[InputChanges](https://docs.gradle.org/6.7.1/dsl/org.gradle.work.InputChanges.html)。基于的旧API`IncrementalTaskInputs`已被弃用。
 
 #### [](#forced_dependencies)[强制依赖](#forced_dependencies)
 
 不建议`force = true`在第一级依赖项上使用强制性依赖项版本。
 
-强制同时具有语义和顺序问题，可以通过使用[严格的版本约束](https://docs.gradle.org/6.7.1/userguide/rich_versions.html#rich-
+强制同时具有语义和顺序问题，可以通过使用[严格的版本约束](/md/声明丰富版本.md#rich-
 version-constraints)来避免。
 
 #### [](#search_upwards_related_apis_in_startparameter_have_been_deprecated)[`StartParameter`不建议使用向上搜索相关的API](#search_upwards_related_apis_in_startparameter_have_been_deprecated)
@@ -241,7 +241,7 @@ metadata-1.0)的建立是为了解决许多有多年困扰依赖管理，特别�
 
 在Gradle 6.0中，默认情况下启用了Gradle模块元数据。
 
-这意味着，如果要使用Gradle发布库并使用[maven-publish](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html)或[ivy-publish](https://docs.gradle.org/6.7.1/userguide/publishing_ivy.html)插件，则
+这意味着，如果要使用Gradle发布库并使用[maven-publish](/md/Maven发布插件.md)或[ivy-publish](/md/Ivy发布插件.md)插件，则
 **除** 传统元数据 **外，还将** 始终发布Gradle Module元数据文件。
 
 传统的元数据文件将包含一个标记，以便Gradle知道还有其他元数据要使用。
@@ -252,11 +252,11 @@ metadata-1.0)的建立是为了解决许多有多年困扰依赖管理，特别�
 
   * 变体名称必须唯一，
 
-  * 每个变体必须至少具有[一个属性](https://docs.gradle.org/6.7.1/userguide/variant_attributes.html)，
+  * 每个变体必须至少具有[一个属性](/md/了解变体选择.md)，
 
-  * 两个变体不能具有[完全相同的属性和功能](https://docs.gradle.org/6.7.1/userguide/variant_model.html)，
+  * 两个变体不能具有[完全相同的属性和功能](/md/使用变体属性.md)，
 
-  * 如果存在依赖性，则所有变体中的至少一个必须携带[版本信息](https://docs.gradle.org/6.7.1/userguide/rich_versions.html)。
+  * 如果存在依赖性，则所有变体中的至少一个必须携带[版本信息](/md/声明丰富版本.md)。
 
 这些也记录在[规范](https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-
 module-metadata-latest-specification.md)中。
@@ -271,7 +271,7 @@ module-metadata-latest-specification.md)中。
 以前，Gradle还将寻找默认的工件（`.jar`）。当使用多个存储库减慢构建速度时，此行为通常会导致大量不必要的请求。
 
 您可以通过添加`artifact()`
-[元数据源](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sec:supported_metadata_sources)来选择选定存储库的旧行为。
+[元数据源](/md/声明存储库.md#sec:supported_metadata_sources)来选择选定存储库的旧行为。
 
 #### [](#changing_the_pom_packaging_property_no_longer_changes_the_artifact_extension)[更改pom`packaging`属性不再更改工件扩展](#changing_the_pom_packaging_property_no_longer_changes_the_artifact_extension)
 
@@ -298,7 +298,7 @@ module-metadata-latest-specification.md)中。
 
 以前，buildSrc项目是在应用项目的设置脚本之前构建的，并且其类在脚本中可见。现在，在设置脚本及其类对它不可见之后，将构建buildSrc。buildSrc类对于项目构建脚本和脚本插件仍然可见。
 
-可以通过[声明外部依赖项](https://docs.gradle.org/6.7.1/userguide/tutorial_using_tasks.html#sec:build_script_external_dependencies)从设置脚本中使用自定义逻辑。
+可以通过[声明外部依赖项](/md/构建脚本基础.md#sec:build_script_external_dependencies)从设置脚本中使用自定义逻辑。
 
 #### [](#the_pluginmanagement_block_in_settings_scripts_is_now_isolated)[`pluginManagement`现在隔离了设置脚本中的块](#the_pluginmanagement_block_in_settings_scripts_is_now_isolated)
 
@@ -502,11 +502,11 @@ Framework插件](https://gradle.github.io/playframework)。
 
   * 该`org.gradle.testfixtures.ProjectBuilder`构造已被删除。请`ProjectBuilder.builder()`改用。
 
-  * 当[增量Groovy的编译](https://docs.gradle.org/6.7.1/userguide/groovy_plugin.html#sec:incremental_groovy_compilation)启用后，源根的错误配置或启用Java注释对Groovy现在失败的构建。在这些情况下要进行编译时，请禁用增量Groovy编译。
+  * 当[增量Groovy的编译](/md/Groovy插件.md#sec:incremental_groovy_compilation)启用后，源根的错误配置或启用Java注释对Groovy现在失败的构建。在这些情况下要进行编译时，请禁用增量Groovy编译。
 
-  * `ComponentSelectionRule`不再可以注入元数据或Ivy描述符。请改用[`ComponentSelection`参数](https://docs.gradle.org/6.7.1/userguide/dynamic_versions.html#sec:component_selection_rules)上的方法。
+  * `ComponentSelectionRule`不再可以注入元数据或Ivy描述符。请改用[`ComponentSelection`参数](/md/处理随时间变化的版本.md#sec:component_selection_rules)上的方法。
 
-  * 声明的[增量任务](https://docs.gradle.org/6.7.1/userguide/custom_tasks.html#incremental_tasks)不宣而输出现在是一个错误。声明文件输出或改用[TaskOutputs.upToDateWhen（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-groovy.lang.Closure-)。
+  * 声明的[增量任务](/md/开发自定义Gradle任务类型.md#incremental_tasks)不宣而输出现在是一个错误。声明文件输出或改用[TaskOutputs.upToDateWhen（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-groovy.lang.Closure-)。
 
   * 该`getEffectiveAnnotationProcessorPath()`方法已从`JavaCompile`和`ScalaCompile`任务中删除。
 
@@ -516,7 +516,7 @@ Framework插件](https://gradle.github.io/playframework)。
 
   * `TaskInputs.getProperties()`现在返回的地图不可修改。尝试修改它会导致`UnsupportedOperationException`被抛出。
 
-  * 5.6中引入的孵化[功能解析](https://docs.gradle.org/6.7.1/userguide/dependency_capability_conflict.html#sub:selecting-between-candidates)API进行了细微更改，以允许根据变体名称选择变体
+  * 5.6中引入的孵化[功能解析](/md/处理互斥依赖性.md#sub:selecting-between-candidates)API进行了细微更改，以允许根据变体名称选择变体
 
 ## [](#changes_5.6)[从5.5或更早版本升级](#changes_5.6)
 
@@ -536,14 +536,14 @@ Framework插件](https://gradle.github.io/playframework)。
 
 #### [](#declaring_an_incremental_task_without_outputs)[声明没有输出的增量任务](#declaring_an_incremental_task_without_outputs)
 
-现在不建议声明[增量任务](https://docs.gradle.org/6.7.1/userguide/custom_tasks.html#incremental_tasks)而不声明输出。声明文件输出或改用[TaskOutputs.upToDateWhen（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-
+现在不建议声明[增量任务](/md/开发自定义Gradle任务类型.md#incremental_tasks)而不声明输出。声明文件输出或改用[TaskOutputs.upToDateWhen（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-
 groovy.lang.Closure-)。
 
 这将成为Gradle 6.0中的错误。
 
 #### [](#method_workerexecutor_submit_is_deprecated)[方法`WorkerExecutor.submit()`已弃用](#method_workerexecutor_submit_is_deprecated)
 
-`WorkerExecutor.submit()`现在不建议使用该方法。新的`noIsolation()`，`classLoaderIsolation()`和`processIsolation()`方法现在应该用于提交工作。见[的userguide](https://docs.gradle.org/6.7.1/userguide/custom_tasks.html#using-
+`WorkerExecutor.submit()`现在不建议使用该方法。新的`noIsolation()`，`classLoaderIsolation()`和`processIsolation()`方法现在应该用于提交工作。见[的userguide](/md/开发自定义Gradle任务类型.md#using-
 the-worker-api)上使用这些方法的详细信息。
 
 `WorkerExecutor.submit()` 将在Gradle 7.0中删除。
@@ -616,7 +616,7 @@ test-sources)的属性。此更改需要Buildship 3.1.1或更高版本。
        resolutionStrategy.capabilitiesResolution.all { selectHighestVersion() }
     }
 
-有关更多选项，请参见[文档的功能部分](https://docs.gradle.org/6.7.1/userguide/dependency_capability_conflict.html#sub:capabilities)。
+有关更多选项，请参见[文档的功能部分](/md/处理互斥依赖性.md#sub:capabilities)。
 
 #### [](#file_removal_operations_dont_follow_symlinked_directories)[文件删除操作不遵循符号链接目录](#file_removal_operations_dont_follow_symlinked_directories)
 
@@ -682,7 +682,7 @@ NOTES-1.9.14.html)从1.9.13。
 #### [](#improved_classpath_separation_for_worker_processes)[改进了工作进程的类路径分离](#improved_classpath_separation_for_worker_processes)
 
 使用隔离时由[Worker
-API](https://docs.gradle.org/6.7.1/userguide/custom_tasks.html#worker_api)启动的工作守护程序的系统类路径`PROCESS`已减少为Gradle基础结构的最小集合。用户代码仍被隔离到单独的类加载器中，以将其与Gradle运行时隔离。对于使用worker
+API](/md/开发自定义Gradle任务类型.md#worker_api)启动的工作守护程序的系统类路径`PROCESS`已减少为Gradle基础结构的最小集合。用户代码仍被隔离到单独的类加载器中，以将其与Gradle运行时隔离。对于使用worker
 API的任务，这应该是透明的更改，但是Gradle的早期版本在worker进程中混合了用户代码和Gradle内部。依赖于`java.class.path`系统属性`java.class.path`之类的工作者动作可能会受到影响，因为现在仅代表Gradle内部结构的类路径。
 
 ## [](#changes_5.4)[从5.3或更早版本升级](#changes_5.4)
@@ -795,12 +795,12 @@ publish`除非它们也已作为工件添加到发布配置中，否则不会发
 
 由于JDK
 11不再支持更改正在运行的进程的工作目录，因此现在禁止通过其fork选项设置工作程序的工作目录。现在，所有工作程序都使用相同的工作目录来启用重用。请改为将文件和目录作为参数传递。请参阅[Worker
-API文档](https://docs.gradle.org/6.7.1/userguide/custom_tasks.html#worker_api)中的示例。
+API文档](/md/开发自定义Gradle任务类型.md#worker_api)中的示例。
 
 #### [](#changes_to_native_linking_tasks)[更改本机链接任务](#changes_to_native_linking_tasks)
 
 为了扩展我们惯用的[Provider
-API](https://docs.gradle.org/6.7.1/userguide/lazy_configuration.html)做法，`org.gradle.nativeplatform.tasks.LinkSharedLibrary`此更改将影响from的安装名称属性。
+API](/md/延迟配置.md)做法，`org.gradle.nativeplatform.tasks.LinkSharedLibrary`此更改将影响from的安装名称属性。
 
   * `getInstallName()`已更改为返回`Property`。
 
@@ -809,7 +809,7 @@ API](https://docs.gradle.org/6.7.1/userguide/lazy_configuration.html)做法，`o
 #### [](#passing_arguments_to_windows_resource_compiler)[将参数传递给Windows Resource Compiler](#passing_arguments_to_windows_resource_compiler)
 
 为了扩展我们惯用的[Provider
-API](https://docs.gradle.org/6.7.1/userguide/lazy_configuration.html)实践，`WindowsResourceCompile`已将任务转换为使用Provider
+API](/md/延迟配置.md)实践，`WindowsResourceCompile`已将任务转换为使用Provider
 API。
 
 现在，传递附加的编译器参数遵循与`CppCompile`和其他任务相同的模式。
@@ -832,7 +832,7 @@ API。
 
 ##### [](#change_in_behavior_for_tasks_extending_abstractarchivetask)[行为变化以扩展任务 `AbstractArchiveTask`](#change_in_behavior_for_tasks_extending_abstractarchivetask)
 
-在`AbstractArchiveTask`具有使用了一些新的特性[提供API](https://docs.gradle.org/6.7.1/userguide/lazy_configuration.html#lazy_configuration_reference)。扩展这些类型并从基类覆盖方法的插件可能不再具有相同的行为。在内部，相`AbstractArchiveTask`对于新属性，更喜欢新属性和方法，例如`getArchiveName()`外观。
+在`AbstractArchiveTask`具有使用了一些新的特性[提供API](/md/延迟配置.md#lazy_configuration_reference)。扩展这些类型并从基类覆盖方法的插件可能不再具有相同的行为。在内部，相`AbstractArchiveTask`对于新属性，更喜欢新属性和方法，例如`getArchiveName()`外观。
 
 如果您的插件/内部版本仅使用这些类型（而不扩展它们），则没有任何改变。
 

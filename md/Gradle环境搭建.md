@@ -17,7 +17,7 @@ Gradle提供了多种机制来配置Gradle本身和特定项目的行为。以�
 
 在配置Gradle行为时，您可以使用以下方法，按从高到低的优先顺序列出：
 
-  * [命令行标志](https://docs.gradle.org/6.7.1/userguide/command_line_interface.html#command_line_interface)
+  * [命令行标志](/md/命令行界面.md#command_line_interface)
   例如`--build-cache`。这些优先于属性和环境变量。
 
   * [系统属性](#sec:gradle_system_properties)
@@ -53,31 +53,31 @@ _取第一个_ ：
 
     
 
-当设置为true时，Gradle将在可能的情况下重用任何先前构建的任务输出，从而使构建速度更快。了解有关[使用构建缓存的](https://docs.gradle.org/6.7.1/userguide/build_cache.html#build_cache)更多信息。
+当设置为true时，Gradle将在可能的情况下重用任何先前构建的任务输出，从而使构建速度更快。了解有关[使用构建缓存的](/md/构建缓存.md#build_cache)更多信息。
 
 `org.gradle.caching.debug=(true,false)`
 
     
 
-设置为true时，单个输入属性哈希值和每个任务的构建缓存键都记录在控制台上。了解有关[任务输出缓存的](https://docs.gradle.org/6.7.1/userguide/build_cache.html#sec:task_output_caching)更多信息。
+设置为true时，单个输入属性哈希值和每个任务的构建缓存键都记录在控制台上。了解有关[任务输出缓存的](/md/构建缓存.md#sec:task_output_caching)更多信息。
 
 `org.gradle.configureondemand=(true,false)`
 
     
 
-启用[按需](https://docs.gradle.org/6.7.1/userguide/multi_project_configuration_and_execution.html#sec:configuration_on_demand)孵化[配置](https://docs.gradle.org/6.7.1/userguide/multi_project_configuration_and_execution.html#sec:configuration_on_demand)，Gradle将尝试仅配置必要的项目。
+启用[按需](/md/配置时间和执行时间.md#sec:configuration_on_demand)孵化[配置](/md/配置时间和执行时间.md#sec:configuration_on_demand)，Gradle将尝试仅配置必要的项目。
 
 `org.gradle.console=(auto,plain,rich,verbose)`
 
     
 
-自定义控制台输出的颜色或详细程度。默认值取决于Gradle的调用方式。有关其他详细信息，请参见[命令行日志记录](https://docs.gradle.org/6.7.1/userguide/command_line_interface.html#sec:command_line_logging)。
+自定义控制台输出的颜色或详细程度。默认值取决于Gradle的调用方式。有关其他详细信息，请参见[命令行日志记录](/md/命令行界面.md#sec:command_line_logging)。
 
 `org.gradle.daemon=(true,false)`
 
     
 
-当设置`true`的[Gradle守护进程](https://docs.gradle.org/6.7.1/userguide/gradle_daemon.html#gradle_daemon)来运行构建。默认值为`true`。
+当设置`true`的[Gradle守护进程](/md/Gradle守护程序.md#gradle_daemon)来运行构建。默认值为`true`。
 
 `org.gradle.daemon.idletimeout=(# of idle millis)`
 
@@ -107,7 +107,7 @@ _取第一个_ ：
 
     
 
-当设置为安静，警告，生命周期，信息或调试时，Gradle将使用此日志级别。这些值不区分大小写。该`lifecycle`级别是默认级别。请参阅[选择日志级别](https://docs.gradle.org/6.7.1/userguide/logging.html#sec:choosing_a_log_level)。
+当设置为安静，警告，生命周期，信息或调试时，Gradle将使用此日志级别。这些值不区分大小写。该`lifecycle`级别是默认级别。请参阅[选择日志级别](/md/使用记录.md#sec:choosing_a_log_level)。
 
 `org.gradle.parallel=(true,false)`
 
@@ -119,32 +119,32 @@ _取第一个_ ：
 
     
 
-指定Gradle守护程序及其启动的所有进程的调度优先级。默认值为`normal`。另请参阅[性能命令行选项](https://docs.gradle.org/6.7.1/userguide/command_line_interface.html#sec:command_line_performance)。
+指定Gradle守护程序及其启动的所有进程的调度优先级。默认值为`normal`。另请参阅[性能命令行选项](/md/命令行界面.md#sec:command_line_performance)。
 
 `org.gradle.vfs.verbose=(true,false)`
 
     
 
-在[监视文件系统](https://docs.gradle.org/6.7.1/userguide/gradle_daemon.html#sec:daemon_watch_fs)时配置详细日志记录。
+在[监视文件系统](/md/Gradle守护程序.md#sec:daemon_watch_fs)时配置详细日志记录。
 _默认为关闭_ 。
 
 `org.gradle.vfs.watch=(true,false)`
 
     
-切换[观看文件系统](https://docs.gradle.org/6.7.1/userguide/gradle_daemon.html#sec:daemon_watch_fs)。允许Gradle在下一个版本中重用有关文件系统的信息。
+切换[观看文件系统](/md/Gradle守护程序.md#sec:daemon_watch_fs)。允许Gradle在下一个版本中重用有关文件系统的信息。
 _默认为关闭_ 。
 
 `org.gradle.warning.mode=(all,fail,summary,none)`
 
     
 
-当设置为`all`，`summary`或者`none`，Gradle会使用不同的预警类型的显示器。有关详细信息，请参见[命令行日志记录选项](https://docs.gradle.org/6.7.1/userguide/command_line_interface.html#sec:command_line_logging)。
+当设置为`all`，`summary`或者`none`，Gradle会使用不同的预警类型的显示器。有关详细信息，请参见[命令行日志记录选项](/md/命令行界面.md#sec:command_line_logging)。
 
 `org.gradle.workers.max=(max # of worker processes)`
 
     
 
-配置后，Gradle将最多使用给定数量的工人。默认值为CPU处理器数。另请参阅[性能命令行选项](https://docs.gradle.org/6.7.1/userguide/command_line_interface.html#sec:command_line_performance)。
+配置后，Gradle将最多使用给定数量的工人。默认值为CPU处理器数。另请参阅[性能命令行选项](/md/命令行界面.md#sec:command_line_performance)。
 
 下面的示例演示各种属性的用法。
 
@@ -217,7 +217,7 @@ build.gradle.kts
 
     
 
-指定用户名以使用HTTP基本认证从服务器下载Gradle发行版。在[身份验证的包装下载中](https://docs.gradle.org/6.7.1/userguide/gradle_wrapper.html#sec:authenticated_download)了解更多信息。
+指定用户名以使用HTTP基本认证从服务器下载Gradle发行版。在[身份验证的包装下载中](/md/gradle_wrapper.md#sec:authenticated_download)了解更多信息。
 
 `gradle.wrapperPassword=(mypassword)`
 
@@ -311,7 +311,7 @@ Tip：
     
     
     JAVA_OPTS =“-Xmx64m -XX：MaxPermSize = 64m -XX：+ HeapDumpOnOutOfMemoryError -Dfile.encoding = UTF-8”
-  在一种情况下，客户端VM也可以用作构建VM：如果停用[Gradle Daemon](https://docs.gradle.org/6.7.1/userguide/gradle_daemon.html#gradle_daemon)，并且客户端VM具有与构建VM相同的设置，则客户端VM将直接运行构建。否则，客户端虚拟机将派生一个新的虚拟机来运行实际的构建，以便采用不同的设置。  
+  在一种情况下，客户端VM也可以用作构建VM：如果停用[Gradle Daemon](/md/Gradle守护程序.md#gradle_daemon)，并且客户端VM具有与构建VM相同的设置，则客户端VM将直接运行构建。否则，客户端虚拟机将派生一个新的虚拟机来运行实际的构建，以便采用不同的设置。  
       
  
   
@@ -346,7 +346,7 @@ build.gradle.kts
     }
 
 请参阅[Test](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)
-API文档中的其他示例，以及[Java插件参考中的测试执行](https://docs.gradle.org/6.7.1/userguide/java_testing.html#sec:test_execution)。
+API文档中的其他示例，以及[Java插件参考中的测试执行](/md/在Java和JVM项目中进行测试.md#sec:test_execution)。
 
 [](https://scans.gradle.com/)使用该`--scan`选项时，[构建扫描](https://scans.gradle.com/)将告诉您有关执行构建的JVM的信息。
 

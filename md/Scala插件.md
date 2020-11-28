@@ -23,7 +23,7 @@ lang.org/)项目的支持。它可以处理Scala代码，Scala和Java混合代�
 _联合编译_
 ，可让您自由地混合和匹配Scala和Java代码，并具有双向依赖性。例如，Scala类可以扩展Java类，而Java类又可以扩展Scala类。这样就可以为作业使用最佳语言，并在需要时用其他语言重写任何类。
 
-请注意，如果您希望从[API/实现分离中](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#sec:java_library_separation)受益，还可以将`java-
+请注意，如果您希望从[API/实现分离中](/md/Java库插件.md#sec:java_library_separation)受益，还可以将`java-
 library`插件应用于Scala项目。
 
 ## [](#sec:scala_usage)[用法](#sec:scala_usage)
@@ -52,7 +52,7 @@ build.gradle.kts
 
 ## [](#sec:scala_tasks)[任务](#sec:scala_tasks)
 
-Scala插件将以下任务添加到项目中。在[此处](https://docs.gradle.org/6.7.1/userguide/building_java_projects.html#sec:building_jvm_lang)可以找到有关更改对Java编译任务的依赖性的信息。
+Scala插件将以下任务添加到项目中。在[此处](/md/构建Java和JVM项目.md#sec:building_jvm_lang)可以找到有关更改对Java编译任务的依赖性的信息。
 
 `compileScala`—
 [ScalaCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.scala.ScalaCompile.html)
@@ -304,7 +304,7 @@ build.gradle.kts
 Zinc编译器本身需要兼容的版本，`scala-library`该版本可能与您的应用程序所需的版本不同。Gradle会`scala-
 library`为您指定兼容版本。 [[2](#_footnotedef_2"查看脚注。") ]
 
-可以诊断出通过运行选择的锌编译器的版本问题[dependencyInsight](https://docs.gradle.org/6.7.1/userguide/viewing_debugging_dependencies.html)的`zinc`配置。
+可以诊断出通过运行选择的锌编译器的版本问题[dependencyInsight](/md/查看和调试依赖项.md)的`zinc`配置。
 
 表2.锌兼容性表 
 
@@ -358,7 +358,7 @@ Scala插件将以下约定属性添加到项目中的每个源集。您可以在
 
     
 
-包含此源集的Scala源文件的源目录。也可能包含用于联合编译的Java源文件。可以使用“[了解隐式转换为文件集合”中](https://docs.gradle.org/6.7.1/userguide/working_with_files.html#sec:specifying_multiple_files)所述的任何内容进行设置。
+包含此源集的Scala源文件的源目录。也可能包含用于联合编译的Java源文件。可以使用“[了解隐式转换为文件集合”中](/md/编写构建脚本.md#sec:specifying_multiple_files)所述的任何内容进行设置。
 _默认值：_ 。`[ _projectDir_ /src/ _name_ /scala]`
 
 `allScala`—
@@ -455,7 +455,7 @@ DATE`照常执行该任务。
 
 Scala编译器会忽略Gradle的`targetCompatibility`和`sourceCompatibility`设置。在Scala
 2.11中，Scala编译器始终将其编译为与Java 6兼容的字节码。在Scala 2.12中，Scala编译器始终将其编译为Java
-8兼容的字节码。如果您也有Java源代码，则可以按照与[Java插件](https://docs.gradle.org/6.7.1/userguide/building_java_projects.html#sec:java_cross_compilation)相同的步骤进行操作，以确保使用正确的Java编译器。
+8兼容的字节码。如果您也有Java源代码，则可以按照与[Java插件](/md/构建Java和JVM项目.md#sec:java_cross_compilation)相同的步骤进行操作，以确保使用正确的Java编译器。
 
 gradle.properties
 

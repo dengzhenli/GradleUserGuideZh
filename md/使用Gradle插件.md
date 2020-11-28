@@ -68,11 +68,11 @@ Gradle插件的特殊之处在于它们提供了简短的名称，例如`'java'`
 
   * 包括来自定义为buildscript依赖项的外部jar中的插件（请参阅[使用buildscript块应用插件](#sec:applying_plugins_buildscript)）。
 
-  * 在项目的buildSrc目录下将插件定义为源文件（请参阅[使用buildSrc提取功能逻辑](https://docs.gradle.org/6.7.1/userguide/organizing_gradle_projects.html#sec:build_sources)）。
+  * 在项目的buildSrc目录下将插件定义为源文件（请参阅[使用buildSrc提取功能逻辑](/md/组织Gradle项目.md#sec:build_sources)）。
 
   * 在构建脚本中将插件定义为内联类声明。
 
-有关定义自己的插件的更多信息，请参见[自定义插件](https://docs.gradle.org/6.7.1/userguide/custom_plugins.html#custom_plugins)。
+有关定义自己的插件的更多信息，请参见[自定义插件](/md/开发自定义Gradle插件.md#custom_plugins)。
 
 ### [](#sec:plugins_block)[通过插件DSL应用插件](#sec:plugins_block)
 
@@ -192,7 +192,7 @@ _Gradle的未来版本将删除此限制。_
 
 #### [](#sec:subprojects_plugins_dsl)[将具有相同版本的外部插件应用于子项目](#sec:subprojects_plugins_dsl)
 
-如果您具有[多项目构建](https://docs.gradle.org/6.7.1/userguide/multi_project_builds.html#multi_project_builds)，则可能希望将插件应用于[构建](https://docs.gradle.org/6.7.1/userguide/multi_project_builds.html#multi_project_builds)中的部分或全部子项目，而不是应用于`root`项目。该`plugins
+如果您具有[多项目构建](/md/Gradle中的多项目构建.md#multi_project_builds)，则可能希望将插件应用于[构建](/md/Gradle中的多项目构建.md#multi_project_builds)中的部分或全部子项目，而不是应用于`root`项目。该`plugins
 {}`块的默认行为是立即`resolve` _和_ `apply`插件。但是，您可以使用`apply
 false`语法告诉Gradle不要将插件应用于当前项目，然后`plugins {}`在子项目的构建脚本中使用不带版本的块：
 
@@ -282,7 +282,7 @@ goodbye-c/build.gradle.kts
         id("com.example.goodbye")
     }
 
-更好的是，您可以使用自己的[约定插件](https://docs.gradle.org/6.7.1/userguide/sharing_build_logic_between_subprojects.html#sec:convention_plugins)通过组合构建逻辑来封装外部插件的版本。
+更好的是，您可以使用自己的[约定插件](/md/在子项目之间共享构建逻辑.md#sec:convention_plugins)通过组合构建逻辑来封装外部插件的版本。
 
 #### [](#sec:buildsrc_plugins_dsl)[从_buildSrc_目录应用插件](#sec:buildsrc_plugins_dsl)
 
@@ -352,7 +352,7 @@ build.gradle.kts
 #### [](#sec:plugin_management)[插件管理](#sec:plugin_management)
 
 该`pluginManagement
-{}`块只能出现在`settings.gradle`文件中，该文件必须是文件中的第一个块，也可以出现在[初始化脚本中](https://docs.gradle.org/6.7.1/userguide/init_scripts.html#init_scripts)。
+{}`块只能出现在`settings.gradle`文件中，该文件必须是文件中的第一个块，也可以出现在[初始化脚本中](/md/初始化脚本.md#init_scripts)。
 
 例子6.为每个项目和全局配置pluginManagement
 
@@ -580,7 +580,7 @@ Plugin](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gra
 
 由于`plugins{}`DSL块仅允许通过其全局唯一的插件`id`和`version`属性来声明插件，因此Gradle需要一种方法来查找插件实现工件的坐标。为此，Gradle将寻找具有坐标的插件标记工件`plugin.id:plugin.id.gradle.plugin:plugin.version`。该标记需要依赖于实际的插件实现。这些标记的发布由[java-gradle-plugin](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)自动执行。
 
-例如，下面的`sample-plugins`项目完整示例显示了如何使用[java-gradle-plugin](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)，[maven-publish](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html#publishing_maven)插件和[ivy-publish](https://docs.gradle.org/6.7.1/userguide/publishing_ivy.html#publishing_ivy)插件的组合将`com.example.hello`插件和`com.example.goodbye`插件发布到Ivy和Maven存储库。[](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)[](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html#publishing_maven)[](https://docs.gradle.org/6.7.1/userguide/publishing_ivy.html#publishing_ivy)
+例如，下面的`sample-plugins`项目完整示例显示了如何使用[java-gradle-plugin](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)，[maven-publish](/md/Maven发布插件.md#publishing_maven)插件和[ivy-publish](/md/Ivy发布插件.md#publishing_ivy)插件的组合将`com.example.hello`插件和`com.example.goodbye`插件发布到Ivy和Maven存储库。[](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)[](/md/Maven发布插件.md#publishing_maven)[](/md/Ivy发布插件.md#publishing_ivy)
 
 例子10.完整的插件发布样本
 
@@ -707,7 +707,7 @@ build.gradle.kts
     
     apply<JavaPlugin>()
 
-`JavaPlugin`上面示例中的符号引用[JavaPlugin](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/plugins/JavaPlugin.html)。绝对不需要导入此类，因为会`org.gradle.api.plugins`在所有构建脚本中自动导入软件包（请参见[默认导入](https://docs.gradle.org/6.7.1/userguide/writing_build_scripts.html#script-
+`JavaPlugin`上面示例中的符号引用[JavaPlugin](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/plugins/JavaPlugin.html)。绝对不需要导入此类，因为会`org.gradle.api.plugins`在所有构建脚本中自动导入软件包（请参见[默认导入](/md/编写构建脚本.md#script-
 default-imports)）。
 
 此外，不需要`.class`像在Java中那样在Groovy中附加以标识类文字。
@@ -717,8 +717,8 @@ literal in Kotlin instead of `.class` in Java.
 
 #### [](#sec:applying_plugins_buildscript)[使用带有buildscript块的插件](#sec:applying_plugins_buildscript)
 
-通过将插件添加到构建脚本类路径中，然后应用该插件，可以将已发布为外部jar文件的二进制插件添加到项目中。可以使用构建脚本的[外部依赖项中所述](https://docs.gradle.org/6.7.1/userguide/tutorial_using_tasks.html#sec:build_script_external_dependencies)的`buildscript
-{}`块将外部jar添加到构建脚本类路径中。[](https://docs.gradle.org/6.7.1/userguide/tutorial_using_tasks.html#sec:build_script_external_dependencies)
+通过将插件添加到构建脚本类路径中，然后应用该插件，可以将已发布为外部jar文件的二进制插件添加到项目中。可以使用构建脚本的[外部依赖项中所述](/md/构建脚本基础.md#sec:build_script_external_dependencies)的`buildscript
+{}`块将外部jar添加到构建脚本类路径中。[](/md/构建脚本基础.md#sec:build_script_external_dependencies)
 
 例子13.使用带有buildscript块的插件
 
@@ -781,5 +781,5 @@ Gradle有一个充满活力的插件开发人员社区，他们为各种功能�
 
 ## [](#sec:more_on_plugins)[有关插件的更多信息](#sec:more_on_plugins)
 
-本章旨在作为插件和Gradle以及它们扮演的角色的介绍。有关插件内部工作的更多信息，请参见“[自定义插件”](https://docs.gradle.org/6.7.1/userguide/custom_plugins.html#custom_plugins)。
+本章旨在作为插件和Gradle以及它们扮演的角色的介绍。有关插件内部工作的更多信息，请参见“[自定义插件”](/md/开发自定义Gradle插件.md#custom_plugins)。
 

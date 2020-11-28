@@ -39,7 +39,7 @@ build.gradle.kts
     }
 
 其中`gradleTestKit()`包含TestKit的类以及[Gradle Tooling
-API客户端](https://docs.gradle.org/6.7.1/userguide/third_party_integration.html#embedding)。它不包括[JUnit](http://junit.org/)，[TestNG](http://testng.org/)或任何其他测试执行框架的版本。必须明确声明这种依赖性。
+API客户端](/md/Gradle和第三方工具.md#embedding)。它不包括[JUnit](http://junit.org/)，[TestNG](http://testng.org/)或任何其他测试执行框架的版本。必须明确声明这种依赖性。
 
 示例2.声明JUnit依赖项
 
@@ -258,7 +258,7 @@ BuildLogicFunctionalTest.groovy
 ## [](#sub:test-kit-classpath-injection)[将被测插件放入测试版本](#sub:test-kit-classpath-injection)
 
 GradleRunner使用[Tooling
-API](https://docs.gradle.org/6.7.1/userguide/third_party_integration.html#embedding)执行构建。这意味着构建是在单独的过程中执行的（即，执行测试的过程不是同一过程）。因此，测试版本与测试过程不会共享相同的类路径或类加载器，并且测试代码不会隐式地提供给测试版本。
+API](/md/Gradle和第三方工具.md#embedding)执行构建。这意味着构建是在单独的过程中执行的（即，执行测试的过程不是同一过程）。因此，测试版本与测试过程不会共享相同的类路径或类加载器，并且测试代码不会隐式地提供给测试版本。
 
 从2.13版开始，Gradle提供了一种常规机制，可以将被测代码注入测试版本中。
 
@@ -267,7 +267,7 @@ API](https://docs.gradle.org/6.7.1/userguide/third_party_integration.html#embedd
 在[Java的Gradle插件开发的插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)可以用来协助Gradle插件的开发。从Gradle
 2.13版本开始，该插件提供了与TestKit的直接集成。当应用于项目时，该插件会自动将`gradleTestKit()`依赖项添加到测试编译配置中。此外，它会自动为测试中的代码生成类路径，并通过[GradleRunner.withPluginClasspath（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath--)将其注入`GradleRunner`用户创建的任何实例。重要的是要注意，该机制当前
 _仅_
-在使用[插件DSL](https://docs.gradle.org/6.7.1/userguide/plugins.html#sec:plugins_block)应用被测插件
+在使用[插件DSL](/md/使用Gradle插件.md#sec:plugins_block)应用被测插件
 _时才_
 有效。如果[目标Gradle版本](#sub:gradle-
 runner-gradle-version) 在2.8之前的版本中，不会执行自动插件类路径注入。
@@ -488,7 +488,7 @@ build.gradle.kts
     }
 
 然后，测试可以读取该值，并使用[GradleRunner.withPluginClasspath（java.lang.Iterable）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath-
-java.lang.Iterable-)方法将类路径注入测试版本。然后可以使用该类路径通过插件DSL在测试版本中定位插件（请参阅[插件](https://docs.gradle.org/6.7.1/userguide/plugins.html#plugins)）。通过插件DSL应用插件需要定义插件标识符。以下是在Spock
+java.lang.Iterable-)方法将类路径注入测试版本。然后可以使用该类路径通过插件DSL在测试版本中定位插件（请参阅[插件](/md/使用Gradle插件.md#plugins)）。通过插件DSL应用插件需要定义插件标识符。以下是在Spock
 Framework`setup()`方法中执行此操作的示例（在Groovy中），该方法类似于JUnit`@Before`方法。
 
 ### [](#example_injecting_the_code_under_test_classes_into_test_builds)[示例：将测试类下的代码注入测试版本](#example_injecting_the_code_under_test_classes_into_test_builds)
@@ -688,7 +688,7 @@ BuildLogicFunctionalTest.groovy
   
 ## [](#sub:test-kit-debug)[调试构建逻辑](#sub:test-kit-debug)
 
-跑步者使用[Tooling API](https://docs.gradle.org/6.7.1/userguide/third_party_integration.html#embedding)执行构建。这意味着构建是在单独的过程中执行的（即，执行测试的过程不是同一过程）。因此，以调试方式执行
+跑步者使用[Tooling API](/md/Gradle和第三方工具.md#embedding)执行构建。这意味着构建是在单独的过程中执行的（即，执行测试的过程不是同一过程）。因此，以调试方式执行
 _测试_ 不允许您调试调试逻辑。在IDE中设置的任何断点都不会因测试版本执行的代码而跳闸。
 
 TestKit提供了两种不同的方式来启用调试模式：
@@ -701,8 +701,8 @@ TestKit提供了两种不同的方式来启用调试模式：
 
 ## [](#sub:test-kit-build-cache)[使用构建缓存进行测试](#sub:test-kit-build-cache)
 
-要在测试中启用[构建缓存](https://docs.gradle.org/6.7.1/userguide/build_cache.html#build_cache)，可以将`--build-
-cache`参数传递给[GradleRunner](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html)或使用[启用构建缓存中](https://docs.gradle.org/6.7.1/userguide/build_cache.html#sec:build_cache_enable)描述的其他方法之一。然后，可以在缓存插件的自定义任务时检查任务结果[TaskOutcome.FROM_CACHE](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/TaskOutcome.html#FROM_CACHE)。此结果仅对Gradle
+要在测试中启用[构建缓存](/md/构建缓存.md#build_cache)，可以将`--build-
+cache`参数传递给[GradleRunner](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html)或使用[启用构建缓存中](/md/构建缓存.md#sec:build_cache_enable)描述的其他方法之一。然后，可以在缓存插件的自定义任务时检查任务结果[TaskOutcome.FROM_CACHE](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/TaskOutcome.html#FROM_CACHE)。此结果仅对Gradle
 3.5及更高版本有效。
 
 ### [](#example_testing_cacheable_tasks)[示例：测试可缓存任务](#example_testing_cacheable_tasks)

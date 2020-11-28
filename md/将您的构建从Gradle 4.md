@@ -50,7 +50,7 @@ Plugin**](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow) 。
 
   6. 阅读“[从4.10升级”](#changes_5.0)部分并进行任何必要的更改。
 
-  7. 尝试使用《[故障排除指南》](https://docs.gradle.org/6.7.1/userguide/troubleshooting.html#troubleshooting)运行项目并调试所有错误。
+  7. 尝试使用《[故障排除指南》](/md/对构建进行故障排除.md#troubleshooting)运行项目并调试所有错误。
 
 此外，Gradle还添加了一些重要的新功能和改进的功能，您应该在构建中考虑使用这些功能：
 
@@ -58,7 +58,7 @@ Plugin**](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow) 。
 
   * 在构建中使用本机[BOM导入](#rel5.0:bom_import)。
 
-  * 用于使工作单元并行运行的[Worker API](https://docs.gradle.org/6.7.1/userguide/custom_tasks.html#worker_api)。
+  * 用于使工作单元并行运行的[Worker API](/md/开发自定义Gradle任务类型.md#worker_api)。
 
   * 用于[延迟创建和配置任务的](#rel4.9:lazy_task_creation)新API ，可以显着缩短构建的配置时间。
 
@@ -101,7 +101,7 @@ Plugin**](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow) 。
 
   * 在[`Javadoc`](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.javadoc.Javadoc.html)和[`Groovydoc`](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.javadoc.Groovydoc.html)任务现在执行之前删除的文件的目标目录。已添加此功能以从上一次任务执行中删除过时的输出文件。
 
-  * 该[Java库分布插件](https://docs.gradle.org/6.7.1/userguide/java_library_distribution_plugin.html)现在是基于[Java库插件](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html)，而不是[Java插件](https://docs.gradle.org/6.7.1/userguide/java_plugin.html)。
+  * 该[Java库分布插件](https://docs.gradle.org/6.7.1/userguide/java_library_distribution_plugin.html)现在是基于[Java库插件](/md/Java库插件.md)，而不是[Java插件](https://docs.gradle.org/6.7.1/userguide/java_plugin.html)。
 
 在应用Java插件时，其行为略有不同（例如，它添加了`api`配置）。因此，请确保在升级后检查您的构建是否符合预期。
 
@@ -138,11 +138,11 @@ Plugin**](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow) 。
 
     
 
-  * 如前所述，Gradle不能再在Java 7上运行。但是，您仍然可以使用[派生的编译和测试](https://docs.gradle.org/6.7.1/userguide/building_java_projects.html#sec:java_cross_compilation)来构建和测试Java 6及更高版本的软件。
+  * 如前所述，Gradle不能再在Java 7上运行。但是，您仍然可以使用[派生的编译和测试](/md/构建Java和JVM项目.md#sec:java_cross_compilation)来构建和测试Java 6及更高版本的软件。
 
-  * 该`-Dtest.single`命令行选项已被删除-使用[测试过滤](https://docs.gradle.org/6.7.1/userguide/java_testing.html#test_filtering)来代替。
+  * 该`-Dtest.single`命令行选项已被删除-使用[测试过滤](/md/在Java和JVM项目中进行测试.md#test_filtering)来代替。
 
-  * 该`-Dtest.debug`命令行选项已被删除-使用[`--debug-jvm`选项](https://docs.gradle.org/6.7.1/userguide/java_testing.html#sec:debugging_java_tests)来代替。
+  * 该`-Dtest.debug`命令行选项已被删除-使用[`--debug-jvm`选项](/md/在Java和JVM项目中进行测试.md#sec:debugging_java_tests)来代替。
 
   * 将`-u`/`--no-search-upward`命令行选项已被删除-确保所有的构建有 _settings.gradle_ 文件。
 
@@ -202,7 +202,7 @@ Java构建
 
     
 
-  * 删除了以下与[惰性属性](https://docs.gradle.org/6.7.1/userguide/lazy_configuration.html#lazy_properties)相关的旧类和方法-使用[ObjectFactory.property（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/model/ObjectFactory.html#property-java.lang.Class-)创建`Property`实例：
+  * 删除了以下与[惰性属性](/md/延迟配置.md#lazy_properties)相关的旧类和方法-使用[ObjectFactory.property（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/model/ObjectFactory.html#property-java.lang.Class-)创建`Property`实例：
 
     * `PropertyState`
 
@@ -220,15 +220,15 @@ Java构建
 
     * `ProviderFactory.property(Class)`
 
-  * 使用[任务配置避免](https://docs.gradle.org/6.7.1/userguide/task_configuration_avoidance.html#sec:task_configuration_avoidance_migration_guidelines)API配置和注册的[任务](https://docs.gradle.org/6.7.1/userguide/task_configuration_avoidance.html#sec:task_configuration_avoidance_migration_guidelines)对可以从配置操作中调用的其他方法有更多限制。
+  * 使用[任务配置避免](/md/避免任务配置.md#sec:task_configuration_avoidance_migration_guidelines)API配置和注册的[任务](/md/避免任务配置.md#sec:task_configuration_avoidance_migration_guidelines)对可以从配置操作中调用的其他方法有更多限制。
 
   * 内部`@Option`和`@OptionValues`注释（程序包`org.gradle.api.internal.tasks.options`）已被删除。请改用公共[@Option](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/options/Option.html)和[@OptionValues](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/options/OptionValues.html)批注。
 
   * 该`Task.deleteAllActions()`方法已删除，无法替代。
 
-  * 该`Task.dependsOnTaskDidWork()`方法已删除-改用[声明的输入和输出](https://docs.gradle.org/6.7.1/userguide/more_about_tasks.html#sec:up_to_date_checks)。
+  * 该`Task.dependsOnTaskDidWork()`方法已删除-改用[声明的输入和输出](/md/处理任务.md#sec:up_to_date_checks)。
 
-  * `TaskInternal`已删除以下属性和方法-使用任务依赖项，任务规则，可重用的实用程序方法或[Worker API](https://docs.gradle.org/6.7.1/userguide/custom_tasks.html#worker_api)代替直接执行任务。
+  * `TaskInternal`已删除以下属性和方法-使用任务依赖项，任务规则，可重用的实用程序方法或[Worker API](/md/开发自定义Gradle任务类型.md#worker_api)代替直接执行任务。
 
     * `execute()`
 
@@ -353,7 +353,7 @@ lang.org/latest/html/documentation/#_spread_operator)。例如，您将替换`ta
 
   * [配置现有任务`wrapper`和`init`任务，](#rel4.8:configure_internal_tasks)而不是定义自己的[任务](#rel4.8:configure_internal_tasks)
 
-  * 如果当前正在为此目的使用插件或自定义解决方案，请考虑迁移到内置的[依赖项锁定机制](https://docs.gradle.org/6.7.1/userguide/dependency_locking.html)
+  * 如果当前正在为此目的使用插件或自定义解决方案，请考虑迁移到内置的[依赖项锁定机制](/md/锁定依赖版本.md)
 
 ### [](#potential_breaking_changes_4)[潜在的重大变化](#potential_breaking_changes_4)
 
@@ -428,7 +428,7 @@ notes.html#overwriting-gradle's-built-in-tasks)。
 
   * 确保您具有 _settings.gradle_ 文件：它避免了性能下降，并允许您设置根项目的名称。
 
-  * Gradle现在忽略包含的构建（[复合构建](https://docs.gradle.org/6.7.1/userguide/composite_builds.html)）的构建缓存配置，而是对所有构建使用根构建的配置。
+  * Gradle现在忽略包含的构建（[复合构建](/md/复合构建.md)）的构建缓存配置，而是对所有构建使用根构建的配置。
 
 ### [](#potential_breaking_changes_7)[潜在的重大变化](#potential_breaking_changes_7)
 
@@ -471,7 +471,7 @@ Studio版本的安装目录来绕过工具链发现。
 
 ## [](#changes_4.3)[从4.2或更早版本升级](#changes_4.3)
 
-  * `plugins {}`现在，该块可以[用于子项目中](https://docs.gradle.org/6.7.1/userguide/plugins.html#sec:subprojects_plugins_dsl)，也可以[用于](https://docs.gradle.org/6.7.1/userguide/plugins.html#sec:subprojects_plugins_dsl)[ _buildSrc_](https://docs.gradle.org/6.7.1/userguide/plugins.html#sec:buildsrc_plugins_dsl)[ 目录中的](https://docs.gradle.org/6.7.1/userguide/plugins.html#sec:buildsrc_plugins_dsl)[插件 __](https://docs.gradle.org/6.7.1/userguide/plugins.html#sec:buildsrc_plugins_dsl)。
+  * `plugins {}`现在，该块可以[用于子项目中](/md/使用Gradle插件.md#sec:subprojects_plugins_dsl)，也可以[用于](/md/使用Gradle插件.md#sec:subprojects_plugins_dsl)[ _buildSrc_](/md/使用Gradle插件.md#sec:buildsrc_plugins_dsl)[ 目录中的](/md/使用Gradle插件.md#sec:buildsrc_plugins_dsl)[插件 __](/md/使用Gradle插件.md#sec:buildsrc_plugins_dsl)。
 
 ### [](#other_deprecations)[其他折旧](#other_deprecations)
 
@@ -522,7 +522,7 @@ module`找到了版本范围为的依存关系，`[3,6]`并且也可传递范围
 
 ## [](#changes_4.1)[从4.0升级](#changes_4.1)
 
-  * 考虑使用新的[Worker API](https://docs.gradle.org/6.7.1/userguide/custom_tasks.html#worker_api)来使构建中的工作单元并行运行。
+  * 考虑使用新的[Worker API](/md/开发自定义Gradle任务类型.md#worker_api)来使构建中的工作单元并行运行。
 
 ### [](#deprecated_classes_methods_and_properties_2)[不推荐使用的类，方法和属性](#deprecated_classes_methods_and_properties_2)
 
@@ -532,7 +532,7 @@ module`找到了版本范围为的依存关系，`[3,6]`并且也可传递范围
 
 ### [](#potential_breaking_changes_11)[潜在的重大变化](#potential_breaking_changes_11)
 
-  * 与Java项目有[项目依赖性](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies.html#sub:project_dependencies)的非Java项目现在`runtimeElements`默认使用配置而不是`default`配置。
+  * 与Java项目有[项目依赖性](/md/声明依赖.md#sub:project_dependencies)的非Java项目现在`runtimeElements`默认使用配置而不是`default`配置。
 
 要覆盖此行为，您可以显式声明要在项目依赖项中使用的配置。例如：`project(path: ':myJavaProject', configuration:
 'default')`。
@@ -549,9 +549,9 @@ module`找到了版本范围为的依存关系，`[3,6]`并且也可传递范围
 daemon`模式在客户端VM内部直接运行的内部版本。我们不鼓励使用`--no-
 daemon`，但是如果必须使用它，则可以使用`GRADLE_OPTS`环境变量来增加可用内存。
 
-Gradle守护程序现在从512MB的堆而不是1GB的堆开始。大型项目可能必须使用该[`org.gradle.jvmargs`](https://docs.gradle.org/6.7.1/userguide/build_environment.html#sec:configuring_jvm_memory)属性来增加此设置。
+Gradle守护程序现在从512MB的堆而不是1GB的堆开始。大型项目可能必须使用该[`org.gradle.jvmargs`](/md/Gradle环境搭建.md#sec:configuring_jvm_memory)属性来增加此设置。
 
-现在，所有工作程序（包括编译器和测试执行程序）都以512MB的堆开始。先前的默认值为物理内存的1/4。大型项目可能必须在相关任务上增加此设置，例如[`JavaCompile`](https://docs.gradle.org/6.7.1/userguide/build_environment.html#sec:configuring_jvm_memory)或[`Test`](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)。
+现在，所有工作程序（包括编译器和测试执行程序）都以512MB的堆开始。先前的默认值为物理内存的1/4。大型项目可能必须在相关任务上增加此设置，例如[`JavaCompile`](/md/Gradle环境搭建.md#sec:configuring_jvm_memory)或[`Test`](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)。
 
 ### [](#rel5.0:default_tool_versions)[[5.0]代码质量插件的新默认版本](#rel5.0:default_tool_versions)
 
@@ -623,7 +623,7 @@ Gradle现在为导入物料清单（BOM）文件提供支持，该文件是有�
 
   * 编译类路径包括不会影响编译的运行时作用域文件，当这些文件更改时，会导致不必要的重新编译。
 
-通过这种新行为，Java和Java库插件都可以[实现编译范围和运行时范围](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#sec:java_library_separation)的[分离](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#sec:java_library_separation)。这意味着编译类路径仅包含编译范围的依赖关系，而运行时类路径也添加了运行时范围的依赖关系。如果您使用Gradle开发和发布Java库，并且它们之间的依赖关系`api`和`implementation`依赖关系反映在已发布的范围中，则这特别有用。
+通过这种新行为，Java和Java库插件都可以[实现编译范围和运行时范围](/md/Java库插件.md#sec:java_library_separation)的[分离](/md/Java库插件.md#sec:java_library_separation)。这意味着编译类路径仅包含编译范围的依赖关系，而运行时类路径也添加了运行时范围的依赖关系。如果您使用Gradle开发和发布Java库，并且它们之间的依赖关系`api`和`implementation`依赖关系反映在已发布的范围中，则这特别有用。
 
 ### [](#rel5.0:changes_to_default_task)[[5.0]对属性工厂方法的更改`DefaultTask`](#rel5.0:changes_to_default_task)
 
@@ -754,13 +754,13 @@ settings.gradle.kts
 ### [](#rel5.0:java_library_distribution_plugin)[Java库分发插件利用Java库插件](#rel5.0:java_library_distribution_plugin)
 
 该[Java库分布插件](https://docs.gradle.org/6.7.1/userguide/java_library_distribution_plugin.html)现在是基于
-[Java库插件](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html)，而不是[Java插件](https://docs.gradle.org/6.7.1/userguide/java_plugin.html)。
+[Java库插件](/md/Java库插件.md)，而不是[Java插件](https://docs.gradle.org/6.7.1/userguide/java_plugin.html)。
 
 另外，由插件创建的默认发行版将包含`runtimeClasspath`配置的所有工件，而不是已弃用的`runtime`配置。
 
 ### [](#rel5.0:configuration_avoidance)[配置回避API禁止常见的配置错误](#rel5.0:configuration_avoidance)
 
-该[配置避免API](https://docs.gradle.org/6.7.1/userguide/task_configuration_avoidance.html)在Gradle4.9推出可以让你避免创建和配置是从未使用过的任务。
+该[配置避免API](/md/避免任务配置.md)在Gradle4.9推出可以让你避免创建和配置是从未使用过的任务。
 
 使用现有的API，此示例添加了两个任务（`foo`和`bar`）：
 
@@ -835,21 +835,21 @@ control`罐装ACL。确保用于发布工件的AWS账户具有`s3:PutObjectAcl`�
         ]
     }
 
-有关更多信息，请参阅[AWS S3跨账户访问](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sub:s3_cross_account)。
+有关更多信息，请参阅[AWS S3跨账户访问](/md/声明存储库.md#sub:s3_cross_account)。
 
 ### [](#rel4.9:lazy_task_creation)[[4.9]考虑尝试使用惰性API进行任务创建和配置](#rel4.9:lazy_task_creation)
 
 Gradle
 4.9引入了一种新的方式来创建和配置惰性工作的任务。当您将这种方法用于配置成本很高的任务时，或者当您有许多任务时，如果这些任务不运行，则构建配置时间会大大减少。
 
-您可以在“[避免任务配置”](https://docs.gradle.org/6.7.1/userguide/task_configuration_avoidance.html#task_configuration_avoidance) 一章中了解有关延迟创建任务的更多信息。您也可以在[此博客文章中](https://blog.gradle.org/preview-avoiding-task-configuration-time)了解此新功能的背景。
+您可以在“[避免任务配置”](/md/避免任务配置.md#task_configuration_avoidance) 一章中了解有关延迟创建任务的更多信息。您也可以在[此博客文章中](https://blog.gradle.org/preview-avoiding-task-configuration-time)了解此新功能的背景。
 
 ### [](#rel4.8:switch_to_publishing_plugins)[[4.8]切换到Maven Publish和Ivy Publish插件](#rel4.8:switch_to_publishing_plugins)
 
-现在，发布插件已经稳定了，我们建议您从标准Java项目（即基于[Java Plugin的](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_plugin)那些）的[旧发布](https://docs.gradle.org/6.7.1/userguide/artifact_management.html#artifact_management)机制中迁移。其中包括使用以下任何一项的项目：[Java库插件](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#java_library_plugin)，[应用程序插件](https://docs.gradle.org/6.7.1/userguide/application_plugin.html#application_plugin)或[War插件](https://docs.gradle.org/6.7.1/userguide/war_plugin.html#war_plugin)。[](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_plugin)[](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#java_library_plugin)[](https://docs.gradle.org/6.7.1/userguide/application_plugin.html#application_plugin)[](https://docs.gradle.org/6.7.1/userguide/war_plugin.html#war_plugin)
+现在，发布插件已经稳定了，我们建议您从标准Java项目（即基于[Java Plugin的](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_plugin)那些）的[旧发布](https://docs.gradle.org/6.7.1/userguide/artifact_management.html#artifact_management)机制中迁移。其中包括使用以下任何一项的项目：[Java库插件](/md/Java库插件.md#java_library_plugin)，[应用程序插件](/md/Java应用插件.md#application_plugin)或[War插件](https://docs.gradle.org/6.7.1/userguide/war_plugin.html#war_plugin)。[](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_plugin)[](/md/Java库插件.md#java_library_plugin)[](/md/Java应用插件.md#application_plugin)[](https://docs.gradle.org/6.7.1/userguide/war_plugin.html#war_plugin)
 
 要使用新方法，只需将任何`upload<Conf>`配置替换为一个`publishing
-{}`块。有关更多信息，请参见[发布概述一章](https://docs.gradle.org/6.7.1/userguide/publishing_setup.html#publishing_overview)。
+{}`块。有关更多信息，请参见[发布概述一章](/md/将项目发布为模块.md#publishing_overview)。
 
 ### [](#rel4.8:deferred_configuration)[[4.8]使用延迟配置发布插件](#rel4.8:deferred_configuration)
 
@@ -1011,7 +1011,7 @@ build.gradle.kts
 ### [](#rel:4.6:native_task_api_changes)[[4.6]与编译，链接和安装相关的本机任务的API更改](#rel:4.6:native_task_api_changes)
 
 与编译，链接和安装本机库和应用程序有关的许多任务已转换为Provider
-API，以便它们支持[延迟配置](https://docs.gradle.org/6.7.1/userguide/lazy_configuration.html#lazy_configuration)。此转换对任务的API进行了一些重大更改，以使它们与Provider
+API，以便它们支持[延迟配置](/md/延迟配置.md#lazy_configuration)。此转换对任务的API进行了一些重大更改，以使它们与Provider
 API的约定相匹配。
 
 以下任务已更改：

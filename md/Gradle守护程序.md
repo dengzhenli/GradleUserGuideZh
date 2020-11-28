@@ -136,7 +136,7 @@ compatible（兼容）
 守护程序可能无法满足请求的构建环境的某些方面。如果守护程序与Java 8运行时一起运行，但是请求的环境要求Java
 10，则该守护程序不兼容，必须启动另一个守护程序。而且，一旦JVM启动，就无法更改Java运行时的某些属性。例如，不可能更改`-Xmx1024m`正在运行的JVM的内存分配（例如），默认文本编码，默认语言环境等。
 
-“请求的构建环境”通常是从构建客户端（例如Gradle命令行客户端，IDE等）环境的各个方面隐式构建的，并通过命令行开关和设置显式构建的。有关如何指定和控制[构建环境](https://docs.gradle.org/6.7.1/userguide/build_environment.html#build_environment)的详细信息，请参见[构建](https://docs.gradle.org/6.7.1/userguide/build_environment.html#build_environment)环境。
+“请求的构建环境”通常是从构建客户端（例如Gradle命令行客户端，IDE等）环境的各个方面隐式构建的，并通过命令行开关和设置显式构建的。有关如何指定和控制[构建环境](/md/Gradle环境搭建.md#build_environment)的详细信息，请参见[构建](/md/Gradle环境搭建.md#build_environment)环境。
 
 以下JVM系统属性实际上是不可变的。如果请求的构建环境需要这些属性中的任何一个，且其值与守护程序的JVM具有的该属性的值不同，则守护程序不兼容。
 
@@ -180,7 +180,7 @@ compatible（兼容）
 
 如果请求的构建环境未指定最大堆大小，则守护程序将使用最多512MB的堆。它将使用JVM的默认最小堆大小。对于大多数构建来说，512MB绰绰有余。包含数百个子项目的较大内部版本，大量配置和源代码可能需要或在具有更多内存的情况下表现更好。
 
-要增加守护程序可以使用的内存量，请在请求的构建环境中指定适当的标志。有关详细信息，请参见[构建环境](https://docs.gradle.org/6.7.1/userguide/build_environment.html#build_environment)。
+要增加守护程序可以使用的内存量，请在请求的构建环境中指定适当的标志。有关详细信息，请参见[构建环境](/md/Gradle环境搭建.md#build_environment)。
 
 ### [](#sec:how_can_i_stop_a_daemon)[如何停止守护程序？](#sec:how_can_i_stop_a_daemon)
 
@@ -202,7 +202,7 @@ daemon`可以为构建指定开关，以防止使用守护程序。这对于诊�
 
 ## [](#sec:tools_and_ides)[工具和IDE](#sec:tools_and_ides)
 
-IDE和其他工具用于与Gradle集成的[Gradle Tooling API](https://docs.gradle.org/6.7.1/userguide/third_party_integration.html#embedding)
+IDE和其他工具用于与Gradle集成的[Gradle Tooling API](/md/Gradle和第三方工具.md#embedding)
 _始终_ 使用Gradle守护程序执行构建。如果要在IDE中执行Gradle构建，则使用的是Gradle Daemon，而无需为您的环境启用它。
 
 ## [](#sec:how_does_the_gradle_daemon_make_builds_faster)[Gradle守护程序如何使构建更快？](#sec:how_does_the_gradle_daemon_make_builds_faster)

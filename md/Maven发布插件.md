@@ -11,7 +11,7 @@
   * [完整的例子](#publishing_maven:complete_example)
   * [删除延迟的配置行为](#publishing_maven:deferred_configuration)
 
-Maven发布插件提供了将构建工件发布到[Apache Maven](http://maven.apache.org/)存储库的功能。发布到Maven存储库的模块可由Maven，Gradle（请参阅[声明依赖项](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies.html)）和其他了解Maven存储库格式的工具使用。您可以在[发布概述中](https://docs.gradle.org/6.7.1/userguide/publishing_setup.html#publishing_overview)了解发布的基础知识。
+Maven发布插件提供了将构建工件发布到[Apache Maven](http://maven.apache.org/)存储库的功能。发布到Maven存储库的模块可由Maven，Gradle（请参阅[声明依赖项](/md/声明依赖.md)）和其他了解Maven存储库格式的工具使用。您可以在[发布概述中](/md/将项目发布为模块.md#publishing_overview)了解发布的基础知识。
 
 ## [](#publishing_maven:usage)[用法](#publishing_maven:usage)
 
@@ -84,13 +84,13 @@ _取决于_ ：所有任务`publish _PubName_ PublicationToMavenLocal`
 
 ## [](#publishing_maven:publications)[刊物](#publishing_maven:publications)
 
-此插件提供[出版物](https://docs.gradle.org/6.7.1/userguide/dependency_management_terminology.html#sub:terminology_publication)类型的[MavenPublication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html)。要了解如何定义和使用出版物，请参见[基本出版](https://docs.gradle.org/6.7.1/userguide/publishing_setup.html#sec:basic_publishing)部分。
+此插件提供[出版物](/md/依赖管理术语.md#sub:terminology_publication)类型的[MavenPublication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html)。要了解如何定义和使用出版物，请参见[基本出版](/md/将项目发布为模块.md#sec:basic_publishing)部分。
 
 您可以在Maven发布中配置以下四项主要内容：
 
-  * 一个[组件](https://docs.gradle.org/6.7.1/userguide/dependency_management_terminology.html#sub:terminology_component)—通过[MavenPublication.from（org.gradle.api.component.SoftwareComponent）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html#org.gradle.api.publish.maven.MavenPublication:from\(org.gradle.api.component.SoftwareComponent\))。
+  * 一个[组件](/md/依赖管理术语.md#sub:terminology_component)—通过[MavenPublication.from（org.gradle.api.component.SoftwareComponent）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html#org.gradle.api.publish.maven.MavenPublication:from\(org.gradle.api.component.SoftwareComponent\))。
 
-  * [自定义工件](https://docs.gradle.org/6.7.1/userguide/publishing_customization.html#sec:publishing_custom_artifacts_to_maven)-通过[MavenPublication.artifact（java.lang.Object）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html#org.gradle.api.publish.maven.MavenPublication:artifact\(java.lang.Object\))方法。有关自定义Maven工件的可用配置选项，请参见[MavenArtifact](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenArtifact.html)。
+  * [自定义工件](/md/定制发布.md#sec:publishing_custom_artifacts_to_maven)-通过[MavenPublication.artifact（java.lang.Object）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html#org.gradle.api.publish.maven.MavenPublication:artifact\(java.lang.Object\))方法。有关自定义Maven工件的可用配置选项，请参见[MavenArtifact](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenArtifact.html)。
 
   * 标准元数据一样`artifactId`，`groupId`和`version`。
 
@@ -249,7 +249,7 @@ build.gradle.kts
 
     
 
-此策略使用`dependencies`块中的依赖项声明发布由构建脚本作者定义的版本。发布不会考虑任何其他类型的处理，例如通过[更改已解决版本的规则](https://docs.gradle.org/6.7.1/userguide/resolution_rules.html)。
+此策略使用`dependencies`块中的依赖项声明发布由构建脚本作者定义的版本。发布不会考虑任何其他类型的处理，例如通过[更改已解决版本的规则](/md/直接自定义依赖项的解析.md)。
 
 解决的版本
 
@@ -261,7 +261,7 @@ build.gradle.kts
 
   * 项目将动态版本用于依赖项，但更喜欢将给定版本的已解析版本公开给其使用者。
 
-  * 与[依赖项锁定](https://docs.gradle.org/6.7.1/userguide/dependency_locking.html)结合使用，您要发布锁定的版本。
+  * 与[依赖项锁定](/md/锁定依赖版本.md)结合使用，您要发布锁定的版本。
 
   * 一个项目利用了Gradle的丰富版本约束，这些约束对Maven进行了有损转换。它不依赖转换，而是发布已解决的版本。
 
@@ -315,7 +315,7 @@ runtime`。
 
 ## [](#publishing_maven:repositories)[储存库](#publishing_maven:repositories)
 
-该插件提供了[MavenArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)类型的[存储库](https://docs.gradle.org/6.7.1/userguide/dependency_management_terminology.html#sub:terminology_repository)。要了解如何定义和使用存储库进行发布，请参见“[基本发布](https://docs.gradle.org/6.7.1/userguide/publishing_setup.html#sec:basic_publishing)”部分。[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)[](https://docs.gradle.org/6.7.1/userguide/publishing_setup.html#sec:basic_publishing)
+该插件提供了[MavenArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)类型的[存储库](/md/依赖管理术语.md#sub:terminology_repository)。要了解如何定义和使用存储库进行发布，请参见“[基本发布](/md/将项目发布为模块.md#sec:basic_publishing)”部分。[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)[](/md/将项目发布为模块.md#sec:basic_publishing)
 
 这是定义发布存储库的简单示例：
 
@@ -396,7 +396,7 @@ build.gradle.kts
         }
     }
 
-同样，您可以使用[项目或系统属性](https://docs.gradle.org/6.7.1/userguide/build_environment.html#build_environment)来决定发布到哪个存储库。如果`release`设置了项目属性，例如在用户运行时，以下示例将使用发行版存储库`gradle
+同样，您可以使用[项目或系统属性](/md/Gradle环境搭建.md#build_environment)来决定发布到哪个存储库。如果`release`设置了项目属性，例如在用户运行时，以下示例将使用发行版存储库`gradle
 -Prelease publish`：
 
 例子7.根据项目属性配置存储库URL

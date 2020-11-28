@@ -36,7 +36,7 @@ Gradle插件打包了可重用的构建逻辑，可在许多不同的项目和�
 /buildSrc/src/main/groovy`或` _rootProjectDir_
 /buildSrc/src/main/kotlin`根据您喜欢的语言）。Gradle将负责编译和测试插件，并使其在构建脚本的类路径中可用。该插件对构建使用的每个构建脚本都是可见的。但是，它在构建外部不可见，因此您不能在定义该构建的外部重用该插件。
 
-有关[项目](https://docs.gradle.org/6.7.1/userguide/organizing_gradle_projects.html#organizing_gradle_projects)的更多详细信息，请参见[组织Gradle](https://docs.gradle.org/6.7.1/userguide/organizing_gradle_projects.html#organizing_gradle_projects)`buildSrc`项目。
+有关[项目](/md/组织Gradle项目.md#organizing_gradle_projects)的更多详细信息，请参见[组织Gradle](/md/组织Gradle项目.md#organizing_gradle_projects)`buildSrc`项目。
 
 独立项目
 
@@ -247,7 +247,7 @@ DSL，从而为插件添加项目属性和DSL块。并且由于扩展对象只�
 
 ### [](#developing_project_extensions)[开发项目扩展](#developing_project_extensions)
 
-您可以在[开发自定义Gradle类型中](https://docs.gradle.org/6.7.1/userguide/custom_gradle_types.html#custom_gradle_types)找到有关实现项目扩展的更多信息。
+您可以在[开发自定义Gradle类型中](/md/开发自定义Gradle类型.md#custom_gradle_types)找到有关实现项目扩展的更多信息。
 
 ## [](#sec:working_with_files_in_custom_tasks_and_plugins)[在自定义任务和插件中处理文件](#sec:working_with_files_in_custom_tasks_and_plugins)
 
@@ -337,11 +337,11 @@ build.gradle.kts
 
 从构建脚本通过扩展捕获用户输入并将其映射到自定义任务的输入/输出属性是一种有用的模式。构建脚本作者仅与扩展定义的DSL交互。命令式逻辑隐藏在插件实现中。
 
-Gradle提供了一些类型，您可以在任务实现和扩展中使用这些类型来帮助您。有关更多信息，请参考[惰性配置](https://docs.gradle.org/6.7.1/userguide/lazy_configuration.html#lazy_configuration)。
+Gradle提供了一些类型，您可以在任务实现和扩展中使用这些类型来帮助您。有关更多信息，请参考[惰性配置](/md/延迟配置.md#lazy_configuration)。
 
 ## [](#sec:custom_plugins_standalone_project)[一个独立的项目](#sec:custom_plugins_standalone_project)
 
-现在，我们将插件移至独立项目，以便我们可以发布它并与他人共享。这个项目只是一个Java项目，它产生包含插件类的JAR。打包和发布插件的最简单且推荐的方法是使用[Java Gradle插件开发插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)。该插件将自动应用[Java插件](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_plugin)，将`gradleApi()`依赖项添加到api配置中，在生成的JAR文件中生成所需的插件描述符，并配置要在发布时使用的[插件标记工件](https://docs.gradle.org/6.7.1/userguide/plugins.html#sec:plugin_markers)。这是该项目的简单构建脚本。
+现在，我们将插件移至独立项目，以便我们可以发布它并与他人共享。这个项目只是一个Java项目，它产生包含插件类的JAR。打包和发布插件的最简单且推荐的方法是使用[Java Gradle插件开发插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)。该插件将自动应用[Java插件](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_plugin)，将`gradleApi()`依赖项添加到api配置中，在生成的JAR文件中生成所需的插件描述符，并配置要在发布时使用的[插件标记工件](/md/使用Gradle插件.md#sec:plugin_markers)。这是该项目的简单构建脚本。
 
 例子5.一个自定义插件的构建
 
@@ -410,7 +410,7 @@ gradle”作为组件似乎是合理的，但是由于插件ID仅用于Gradle插
 
 ### [](#sec:publishing_your_plugin)[发布您的插件](#sec:publishing_your_plugin)
 
-如果要在内部发布插件供组织内部使用，则可以像其他任何代码工件一样发布。请参阅有关发布工件的[Ivy](https://docs.gradle.org/6.7.1/userguide/publishing_ivy.html#publishing_ivy)和[Maven](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html#publishing_maven)章节。
+如果要在内部发布插件供组织内部使用，则可以像其他任何代码工件一样发布。请参阅有关发布工件的[Ivy](/md/Ivy发布插件.md#publishing_ivy)和[Maven](/md/Maven发布插件.md#publishing_maven)章节。
 
 如果您有兴趣发布供更广泛的Gradle社区使用的插件，则可以将其发布到[Gradle插件门户](http://plugins.gradle.org/)。该站点提供了搜索和收集有关Gradle社区贡献的插件的信息的功能。
 请参阅相应的[指南，](https://guides.gradle.org/publishing-plugins-to-gradle-plugin-portal/)以了解如何在此站点上使用您的插件。
@@ -466,7 +466,7 @@ build.gradle.kts
 #### [](#note_for_plugins_published_without_java_gradle_plugin)[不带插件发布的注释`java-gradle-plugin`](#note_for_plugins_published_without_java_gradle_plugin)
 
 如果您的插件是在未使用[Java Gradle插件开发插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)的情况下发布的，
-则该出版物将缺少[PluginMarker Artifact](https://docs.gradle.org/6.7.1/userguide/plugins.html#sec:plugin_markers)，这是[插件DSL](https://docs.gradle.org/6.7.1/userguide/plugins.html#sec:plugins_block)查找插件所需的。在这种情况下，建议在另一个项目中解析该插件的方法是在该项目的设置文件`resolutionStrategy`的`pluginManagement
+则该出版物将缺少[PluginMarker Artifact](/md/使用Gradle插件.md#sec:plugin_markers)，这是[插件DSL](/md/使用Gradle插件.md#sec:plugins_block)查找插件所需的。在这种情况下，建议在另一个项目中解析该插件的方法是在该项目的设置文件`resolutionStrategy`的`pluginManagement
 {}`块中添加一个部分，如下所示。
 
 例子7.没有插件标记工件的插件的解析策略
@@ -728,12 +728,12 @@ src / test / java / org / gradle / GreetingPluginTest.java
 
 ## [](#more_details)[更多细节](#more_details)
 
-插件通常还提供自定义任务类型。有关更多详细信息，请参见[开发自定义Gradle任务类型](https://docs.gradle.org/6.7.1/userguide/custom_tasks.html#custom_tasks)。
+插件通常还提供自定义任务类型。有关更多详细信息，请参见[开发自定义Gradle任务类型](/md/开发自定义Gradle任务类型.md#custom_tasks)。
 
-Gradle提供了许多在开发Gradle类型（包括插件）时有用的功能。有关更多详细信息，请参见[开发自定义Gradle类型](https://docs.gradle.org/6.7.1/userguide/custom_gradle_types.html#custom_gradle_types)。
+Gradle提供了许多在开发Gradle类型（包括插件）时有用的功能。有关更多详细信息，请参见[开发自定义Gradle类型](/md/开发自定义Gradle类型.md#custom_gradle_types)。
 
 ╔═════════════════════════════  
-在开发Gradle插件时，将信息记录到构建日志中时请务必小心。记录敏感信息（例如凭据，令牌，某些环境变量）被[视为安全漏洞](https://docs.gradle.org/6.7.1/userguide/logging.html#sec:debug_security)。公共持续集成服务的构建日志在世界范围内可见，并且可以公开此敏感信息。  
+在开发Gradle插件时，将信息记录到构建日志中时请务必小心。记录敏感信息（例如凭据，令牌，某些环境变量）被[视为安全漏洞](/md/使用记录.md#sec:debug_security)。公共持续集成服务的构建日志在世界范围内可见，并且可以公开此敏感信息。  
 ╚═════════════════════════════    
   
 ## [](#behind_the_scenes)[幕后花絮](#behind_the_scenes)

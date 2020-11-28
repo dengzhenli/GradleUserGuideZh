@@ -52,7 +52,7 @@ Platform或TestNG）运行一系列测试用例，并整理结果。然后，您
   * 一个`test`类型的任务`Test`运行这些单元测试
 
 JVM语言插件使用源集来配置具有适当执行类路径和包含已编译测试类的目录的任务。另外，他们将`test`任务附加到`check`
-[生命周期任务](https://docs.gradle.org/6.7.1/userguide/more_about_tasks.html#sec:lifecycle_tasks)。
+[生命周期任务](/md/处理任务.md#sec:lifecycle_tasks)。
 
 这也是考虑到值得铭记的是，`test`源集合自动创建[相应的依赖关系配置](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_source_set_configurations)-其中最有用的是`testImplementation`和`testRuntimeOnly`-该插件扎入`test`任务的类路径。
 
@@ -266,7 +266,7 @@ build.gradle.kts
 请注意，通配符“ *”对“。”没有特殊的了解。包装分离器。它是纯粹基于文本的。因此`--tests
 *.SomeTestClass`将匹配任何程序包，无论其“深度”如何。
 
-您还可以将在命令行中定义的过滤器与[连续构建结合使用，](https://docs.gradle.org/6.7.1/userguide/command_line_interface.html#sec:continuous_build)以在每次对生产或测试源文件进行更改后立即重新执行测试的子集。每当更改触发测试运行时，以下命令将执行“
+您还可以将在命令行中定义的过滤器与[连续构建结合使用，](/md/命令行界面.md#sec:continuous_build)以在每次对生产或测试源文件进行更改后立即重新执行测试的子集。每当更改触发测试运行时，以下命令将执行“
 com.mypackage.foo”包或子包中的所有测试：
 
     
@@ -438,7 +438,7 @@ build.gradle.kts
     }
 
 在此示例中，我们使用约定插件`myproject.java-
-conventions`将项目的测试结果暴露给Gradle的[变体感知依赖管理引擎](https://docs.gradle.org/6.7.1/userguide/variant_model.html)。
+conventions`将项目的测试结果暴露给Gradle的[变体感知依赖管理引擎](/md/使用变体属性.md)。
 
 该插件声明了一个耗材`binaryTestResultsElements`配置，该配置代表了该`test`任务的二进制测试结果。在聚合项目的构建文件中，我们声明`testReportData`配置并依赖于要从中聚合结果的所有项目。Gradle将从每个子项目中自动选择二进制测试结果变量，而不是从项目的jar文件中选择。最后，我们添加了一个`testReport`任务，该任务汇总了来自`testResultsDirs`属性的测试结果，其中包含从`testReportData`配置中解析出的所有二进制测试结果。
 
@@ -777,7 +777,7 @@ toStringValueOfParam2)`。这使得识别特定迭代的参数值变得​​容
 
 将集成测试添加到构建中的最简单方法是采取以下步骤：
 
-  1. 为他们创建一个新的[源集](https://docs.gradle.org/6.7.1/userguide/building_java_projects.html#sec:java_source_sets)
+  1. 为他们创建一个新的[源集](/md/构建Java和JVM项目.md#sec:java_source_sets)
 
   2. 将所需的依赖项添加到该源集的适当配置中
 
@@ -842,7 +842,7 @@ build.gradle.kts
 
 该示例还执行以下操作，并非特定集成测试可能需要全部操作：
 
-  * 将生产类从`main`源集中添加到集成测试的编译和运行时类路径中-`sourceSets.main.output`是包含编译的生产类和资源的所有目录的[文件集合](https://docs.gradle.org/6.7.1/userguide/working_with_files.html#sec:file_collections)
+  * 将生产类从`main`源集中添加到集成测试的编译和运行时类路径中-`sourceSets.main.output`是包含编译的生产类和资源的所有目录的[文件集合](/md/编写构建脚本.md#sec:file_collections)
 
   * 使`intTestImplementation`配置从扩展`implementation`，这意味着所有声明的生产代码依赖项也将成为集成测试的依赖项
 
@@ -902,7 +902,7 @@ build.gradle.kts
 
 ## [](#sec:java_testing_modular)[测试Java模块](#sec:java_testing_modular)
 
-如果您正在[开发Java模块](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html)，则本章中描述的所有内容仍然适用，并且可以使用任何受支持的测试框架。但是，根据测试执行期间是否需要可用的模块信息以及要强制执行的模块边界，需要考虑一些事项。在这种情况下，经常使用术语“
+如果您正在[开发Java模块](/md/Java库插件.md)，则本章中描述的所有内容仍然适用，并且可以使用任何受支持的测试框架。但是，根据测试执行期间是否需要可用的模块信息以及要强制执行的模块边界，需要考虑一些事项。在这种情况下，经常使用术语“
 _白盒测试”_ （停用或放宽模块边界）和“ _黑盒测试”_ （已设置模块边界）。白盒测试用于/需要用于单元测试，黑盒测试符合功能或集成测试要求。
 
 样本：[具有集成测试的JavaModules多项目](https://docs.gradle.org/6.7.1/samples/sample_java_modules_multi_project_with_integration_tests.html)
@@ -983,7 +983,7 @@ build.gradle.kts
   
 ## [](#sec:skipping_java_tests)[跳过测试](#sec:skipping_java_tests)
 
-如果要在运行构建时跳过测试，则有几种选择。您可以通过[命令行参数](https://docs.gradle.org/6.7.1/userguide/command_line_interface.html#sec:excluding_tasks_from_the_command_line)或[在构建脚本中进行操作](https://docs.gradle.org/6.7.1/userguide/more_about_tasks.html#sec:skipping_tasks)。要在命令行上执行此操作，可以使用`-x`或`--exclude-
+如果要在运行构建时跳过测试，则有几种选择。您可以通过[命令行参数](/md/命令行界面.md#sec:excluding_tasks_from_the_command_line)或[在构建脚本中进行操作](/md/处理任务.md#sec:skipping_tasks)。要在命令行上执行此操作，可以使用`-x`或`--exclude-
 task`选项，如下所示：
 
     
@@ -1023,7 +1023,7 @@ build.gradle.kts
     
     gradle cleanTest test
 
-`cleanTest`基于[基础插件](https://docs.gradle.org/6.7.1/userguide/base_plugin.html#sec:base_tasks)提供的[任务规则](https://docs.gradle.org/6.7.1/userguide/more_about_tasks.html#sec:task_rules)。您可以将其用于
+`cleanTest`基于[基础插件](https://docs.gradle.org/6.7.1/userguide/base_plugin.html#sec:base_tasks)提供的[任务规则](/md/处理任务.md#sec:task_rules)。您可以将其用于
 _任何_
 任务。[](https://docs.gradle.org/6.7.1/userguide/base_plugin.html#sec:base_tasks)
 __
@@ -1152,7 +1152,7 @@ src / testFixtures / java / com / acme / Simpsons.java
 
 ### [](#declaring_dependencies_of_test_fixtures)[声明测试夹具的依赖性](#declaring_dependencies_of_test_fixtures)
 
-与[Java库插件](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html)类似，测试装置公开了API和实现配置：
+与[Java库插件](/md/Java库插件.md)类似，测试装置公开了API和实现配置：
 
 例子19.声明测试夹具的依赖关系
 

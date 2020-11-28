@@ -34,7 +34,7 @@ Gradle的速度也比Maven快2-10倍。可以在[此处](https://gradle.org/grad
 
 ## [](#migmvn:general_guidelines)[一般准则](#migmvn:general_guidelines)
 
-Gradle和Maven对如何构建项目有根本不同的看法。Gradle提供了一种灵活且可扩展的构建模型，该模型将实际工作委托给[_任务依赖关系图_](https://docs.gradle.org/6.7.1/userguide/what_is_gradle.html#the_core_model_is_based_on_tasks)
+Gradle和Maven对如何构建项目有根本不同的看法。Gradle提供了一种灵活且可扩展的构建模型，该模型将实际工作委托给[_任务依赖关系图_](/md/什么是Gradle.md#the_core_model_is_based_on_tasks)
 。Maven使用固定的线性阶段模型，可以在其中附加目标（完成工作的事物）。这可能会使两者之间的迁移看起来令人生畏，但迁移可能出奇的容易，因为Gradle遵循许多与Maven相同的约定（例如[标准项目结构）](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#sec:java_project_layout)
 ，并且其依赖项管理以类似的方式工作。
 
@@ -84,12 +84,12 @@ Plugin Portal](https://plugins.gradle.org/)上是否有合适的社区插件。
 ## [](#migmvn:build_lifecycle)[了解构建生命周期](#migmvn:build_lifecycle)
 
 Maven构建基于[_构建生命周期_](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
-的概念，该概念由一组固定阶段组成。这可能会成为用户迁移到Gradle的障碍，因为它的构建生命周期[有所不同](https://docs.gradle.org/6.7.1/userguide/build_lifecycle.html#build_lifecycle)，
-尽管了解Gradle的构建方式如何适合初始化，配置和执行阶段的结构很重要。幸运的是，Gradle具有可以模仿Maven各个阶段的功能：[_生命周期任务_](https://docs.gradle.org/6.7.1/userguide/more_about_tasks.html#sec:lifecycle_tasks)
+的概念，该概念由一组固定阶段组成。这可能会成为用户迁移到Gradle的障碍，因为它的构建生命周期[有所不同](/md/构建生命周期.md#build_lifecycle)，
+尽管了解Gradle的构建方式如何适合初始化，配置和执行阶段的结构很重要。幸运的是，Gradle具有可以模仿Maven各个阶段的功能：[_生命周期任务_](/md/处理任务.md#sec:lifecycle_tasks)
 。
 
 这些使您可以通过创建仅依赖于您感兴趣的任务的无操作任务来定义自己的“生命周期”。为了使Maven用户更轻松地过渡到Gradle，[Base插件](https://docs.gradle.org/6.7.1/userguide/base_plugin.html#sec:base_tasks)
--由所有JVM语言应用[Java库](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#java_library_plugin) 插件之类的[插件](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#java_library_plugin)
+-由所有JVM语言应用[Java库](/md/Java库插件.md#java_library_plugin) 插件之类的[插件](/md/Java库插件.md#java_library_plugin)
 —提供了一组与主要Maven阶段相对应的生命周期任务。
 
 这是一些主要的Maven阶段以及它们映射到的Gradle任务的列表：
@@ -129,9 +129,9 @@ Maven构建基于[_构建生命周期_](https://maven.apache.org/guides/introduc
 
     
 
-使用[Maven发布插件](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html#publishing_maven:tasks) `publishToMavenLocal`提供的任务。[](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html#publishing_maven:tasks)
+使用[Maven发布插件](/md/Maven发布插件.md#publishing_maven:tasks) `publishToMavenLocal`提供的任务。[](/md/Maven发布插件.md#publishing_maven:tasks)
 
-请注意，Gradle构建不需要您“安装”工件，因为您可以访问更合适的功能，例如[项目间依赖](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies.html#sub:project_dependencies) 和[复合构建](https://docs.gradle.org/6.7.1/userguide/composite_builds.html) 。您应该只`publishToMavenLocal`用于与Maven构建进行互操作。
+请注意，Gradle构建不需要您“安装”工件，因为您可以访问更合适的功能，例如[项目间依赖](/md/声明依赖.md#sub:project_dependencies) 和[复合构建](/md/复合构建.md) 。您应该只`publishToMavenLocal`用于与Maven构建进行互操作。
 
 Gradle还允许您解决对本地Maven缓存的依赖关系，如“[声明存储库”](#migmvn:declaring_repos) 部分中所述。
 
@@ -139,22 +139,22 @@ Gradle还允许您解决对本地Maven缓存的依赖关系，如“[声明存�
 
     
 
-使用[Maven Publish插件](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html#publishing_maven:tasks) `publish`提供的任务
--如果您的构建正在使用该Maven插件，请确保从旧的Maven插件（ID：）切换。这会将您的程序包发布到所有已配置的发布存储库。即使定义了多个存储库，也有其他任务可以使您发布到单个存储库。[](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html#publishing_maven:tasks)`maven`
+使用[Maven Publish插件](/md/Maven发布插件.md#publishing_maven:tasks) `publish`提供的任务
+-如果您的构建正在使用该Maven插件，请确保从旧的Maven插件（ID：）切换。这会将您的程序包发布到所有已配置的发布存储库。即使定义了多个存储库，也有其他任务可以使您发布到单个存储库。[](/md/Maven发布插件.md#publishing_maven:tasks)`maven`
 
 请注意， _默认情况下_ ，Maven Publish Plugin不会发布 **源代码和Javadoc JAR**
-，但是可以按照[构建Java项目的指南中的](https://docs.gradle.org/6.7.1/userguide/building_java_projects.html#sec:java_packaging)说明轻松激活它。
-__[](https://docs.gradle.org/6.7.1/userguide/building_java_projects.html#sec:java_packaging)
+，但是可以按照[构建Java项目的指南中的](/md/构建Java和JVM项目.md#sec:java_packaging)说明轻松激活它。
+__[](/md/构建Java和JVM项目.md#sec:java_packaging)
 
 ## [](#migmvn:automatic_conversion)[执行自动转换](#migmvn:automatic_conversion)
 
-Gradle的[`init`任务](https://docs.gradle.org/6.7.1/userguide/build_init_plugin.html#build_init_plugin)通常用于创建新的骨架项目，但是您也可以使用它来将现有的Maven构建自动转换为Gradle。将Gradle[安装到系统上后](https://docs.gradle.org/6.7.1/userguide/installation.html#installation)，只需执行以下命令
+Gradle的[`init`任务](https://docs.gradle.org/6.7.1/userguide/build_init_plugin.html#build_init_plugin)通常用于创建新的骨架项目，但是您也可以使用它来将现有的Maven构建自动转换为Gradle。将Gradle[安装到系统上后](/md/安装Gradle.md#installation)，只需执行以下命令
 
     
     
     > gradle init
 
-从根项目目录，并让Gradle做它的事情。这基本上包括解析现有的POM并生成相应的Gradle构建脚本。如果您要迁移[多项目构建，](https://docs.gradle.org/6.7.1/userguide/multi_project_builds.html#multi_project_builds)
+从根项目目录，并让Gradle做它的事情。这基本上包括解析现有的POM并生成相应的Gradle构建脚本。如果您要迁移[多项目构建，](/md/Gradle中的多项目构建.md#multi_project_builds)
 Gradle还将创建一个设置脚本。
 
 您会发现新的Gradle构建包括以下内容：
@@ -163,7 +163,7 @@ Gradle还将创建一个设置脚本。
 
   * 您的外部和项目间依赖性
 
-  * 用于构建项目的适当插件（仅限于[Maven Publish](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html)，[Java](https://docs.gradle.org/6.7.1/userguide/java_plugin.html)和[War](https://docs.gradle.org/6.7.1/userguide/war_plugin.html)插件中的一个或多个）
+  * 用于构建项目的适当插件（仅限于[Maven Publish](/md/Maven发布插件.md)，[Java](https://docs.gradle.org/6.7.1/userguide/java_plugin.html)和[War](https://docs.gradle.org/6.7.1/userguide/war_plugin.html)插件中的一个或多个）
 
 有关自动转换功能的完整列表，请参见[Build Init插件一章](https://docs.gradle.org/6.7.1/userguide/build_init_plugin.html#sec:pom_maven_conversion)。
 
@@ -173,9 +173,9 @@ Gradle还将创建一个设置脚本。
 
   * 使用[Java库分发插件](https://docs.gradle.org/6.7.1/userguide/java_library_distribution_plugin.html#java_library_distribution_plugin)
 
-  * 使用[应用程序插件](https://docs.gradle.org/6.7.1/userguide/application_plugin.html#application_plugin)
+  * 使用[应用程序插件](/md/Java应用插件.md#application_plugin)
 
-  * [创建自定义存档任务](https://docs.gradle.org/6.7.1/userguide/working_with_files.html#sec:creating_archives_example)
+  * [创建自定义存档任务](/md/编写构建脚本.md#sec:creating_archives_example)
 
   * 从[Gradle插件门户](https://plugins.gradle.org/)使用合适的社区插件[](https://plugins.gradle.org/)
 
@@ -190,18 +190,18 @@ Gradle还将创建一个设置脚本。
 ## [](#migmvn:migrating_deps)[迁移依赖项](#migmvn:migrating_deps)
 
 Gradle的依赖项管理系统比Maven的依赖项管理系统更灵活，但它仍支持相同的存储库，声明的依赖项，
-范围（Gradle中的[依赖项配置](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies.html#sec:what-are-dependency-configurations) ）和可传递依赖项的概念。
+范围（Gradle中的[依赖项配置](/md/声明依赖.md#sec:what-are-dependency-configurations) ）和可传递依赖项的概念。
 实际上，Gradle与兼容Maven的存储库完美配合，这使得迁移依赖关系变得容易。
 
 ╔═════════════════════════════  
-两种工具之间的一个显着区别是它们如何管理版本冲突。Maven使用“最接近”的匹配算法，而Gradle选择最新的匹配算法。不过不要担心，如[管理传递依赖项中](https://docs.gradle.org/6.7.1/userguide/dependency_constraints.html)所述，您对选择哪个版本有很多控制权。  
+两种工具之间的一个显着区别是它们如何管理版本冲突。Maven使用“最接近”的匹配算法，而Gradle选择最新的匹配算法。不过不要担心，如[管理传递依赖项中](/md/升级传递依赖的版本.md)所述，您对选择哪个版本有很多控制权。  
 ╚═════════════════════════════    
   
 在以下各节中，我们将向您展示如何迁移Maven构建的依赖管理信息中最常见的元素。
 
 ### [](#migmvn:declaring_deps)[声明依赖](#migmvn:declaring_deps)
 
-Gradle使用与Maven相同的依赖项标识符组件：组ID，工件ID和版本。它还支持分类器。因此，您需要做的就是将标识符的依赖项信息替换为Gradle的语法，这在“[声明依赖项”](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies.html)一章中进行了介绍。
+Gradle使用与Maven相同的依赖项标识符组件：组ID，工件ID和版本。它还支持分类器。因此，您需要做的就是将标识符的依赖项信息替换为Gradle的语法，这在“[声明依赖项”](/md/声明依赖.md)一章中进行了介绍。
 
 例如，考虑对Log4J的这种Maven风格的依赖关系：
 
@@ -252,9 +252,9 @@ Maven的作用域和Gradle的标准配置之间的一些区别归结为Gradle区
 
     
 
-Gradle具有两种可以代替`compile`示波器的配置：`implementation`和`api`。前者适用于所有应用Java插件的项目，而`api`仅适用于专门应用[Java库插件的项目](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#java_library_plugin)。
+Gradle具有两种可以代替`compile`示波器的配置：`implementation`和`api`。前者适用于所有应用Java插件的项目，而`api`仅适用于专门应用[Java库插件的项目](/md/Java库插件.md#java_library_plugin)。
 
-在大多数情况下，您应该只使用`implementation`配置，尤其是在构建应用程序或Webapp时。但是，如果您要构建库，则可以`api`在[构建Java库](https://docs.gradle.org/6.7.1/userguide/building_java_projects.html#sec:building_java_libraries)的部分中了解应使用哪些依赖项进行声明。对之间的差异甚至更多的信息`api`，并`implementation`在上面链接的Java库插件章提供。
+在大多数情况下，您应该只使用`implementation`配置，尤其是在构建应用程序或Webapp时。但是，如果您要构建库，则可以`api`在[构建Java库](/md/构建Java和JVM项目.md#sec:building_java_libraries)的部分中了解应使用哪些依赖项进行声明。对之间的差异甚至更多的信息`api`，并`implementation`在上面链接的Java库插件章提供。
 
 `runtime`
 
@@ -315,7 +315,7 @@ all`添加到测试运行时类路径，而仅将`compile`范围依赖项添加�
 ### [](#migmvn:declaring_repos)[声明存储库](#migmvn:declaring_repos)
 
 Gradle允许您从任何与Maven兼容或与Ivy兼容的存储库中检索已声明的依赖项。与Maven不同，它没有默认存储库，因此您必须声明至少一个。为了具有与Maven构建相同的行为，只需在Gradle构建中配置[Maven
-Central](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sub:maven_central)，如下所示：
+Central](/md/声明存储库.md#sub:maven_central)，如下所示：
 
 例子3.配置构建以使用Maven Central
 
@@ -338,11 +338,11 @@ build.gradle.kts
     }
 
 您还可以使用该`repositories
-{}`块来配置自定义存储库，如“[存储库类型”](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sec:maven_repo)一章中所述。
+{}`块来配置自定义存储库，如“[存储库类型”](/md/声明存储库.md#sec:maven_repo)一章中所述。
 
-最后，Gradle允许您解决对[本地Maven缓存/存储库的](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sub:maven_local)依赖关系。这有助于Gradle构建与Maven构建进行互操作，但是如果您不需要这种互操作性，则不应使用该技术。如果要通过文件系统共享已发布的工件，请考虑使用URL配置[自定义Maven存储库](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sec:maven_repo)`file://`。
+最后，Gradle允许您解决对[本地Maven缓存/存储库的](/md/声明存储库.md#sub:maven_local)依赖关系。这有助于Gradle构建与Maven构建进行互操作，但是如果您不需要这种互操作性，则不应使用该技术。如果要通过文件系统共享已发布的工件，请考虑使用URL配置[自定义Maven存储库](/md/声明存储库.md#sec:maven_repo)`file://`。
 
-您可能还对学习Gradle自己的[依赖项缓存](https://docs.gradle.org/6.7.1/userguide/dependency_resolution.html#sec:dependency_cache)感兴趣，该[缓存的](https://docs.gradle.org/6.7.1/userguide/dependency_resolution.html#sec:dependency_cache)行为比Maven的可靠，并且可以被多个并发的Gradle进程安全地使用。
+您可能还对学习Gradle自己的[依赖项缓存](/md/了解依赖性解析.md#sec:dependency_cache)感兴趣，该[缓存的](/md/了解依赖性解析.md#sec:dependency_cache)行为比Maven的可靠，并且可以被多个并发的Gradle进程安全地使用。
 
 ### [](#migmvn:controlling_dep_versions)[控制依赖项版本](#migmvn:controlling_dep_versions)
 
@@ -350,23 +350,23 @@ build.gradle.kts
 
 在每个项目的基础上，您可以使用：
 
-  * [依赖约束](https://docs.gradle.org/6.7.1/userguide/dependency_constraints.html#sec:adding-constraints-transitive-deps)
+  * [依赖约束](/md/升级传递依赖的版本.md#sec:adding-constraints-transitive-deps)
 
   * [的材料清单](#migmvn:using_boms)（BOM表的Maven）
 
-  * [覆盖传递版本](https://docs.gradle.org/6.7.1/userguide/dependency_downgrade_and_exclude.html#sec:enforcing_dependency_version)
+  * [覆盖传递版本](/md/降级版本并排除依赖项.md#sec:enforcing_dependency_version)
 
-在[控制传递依赖项](https://docs.gradle.org/6.7.1/userguide/dependency_constraints.html)一章中列出了更多专门的选项。
+在[控制传递依赖项](/md/升级传递依赖的版本.md)一章中列出了更多专门的选项。
 
-如果要确保多项目构建中所有项目之间版本的一致性（类似于`<dependencyManagement>`Maven中的块的工作方式），可以使用[Java Platform Plugin](https://docs.gradle.org/6.7.1/userguide/java_platform_plugin.html#java_platform_plugin) 。这允许您声明一组可以应用于多个项目的依赖项约束。您甚至可以将平台发布为Maven
-BOM或使用Gradle的元数据格式发布。有关如何执行此操作的更多信息，请参见插件页面，尤其是在使用[平台](https://docs.gradle.org/6.7.1/userguide/java_platform_plugin.html#sec:java_platform_consumption)部分，以了解如何将平台应用于同一构建中的其他项目。
+如果要确保多项目构建中所有项目之间版本的一致性（类似于`<dependencyManagement>`Maven中的块的工作方式），可以使用[Java Platform Plugin](/md/Java平台插件.md#java_platform_plugin) 。这允许您声明一组可以应用于多个项目的依赖项约束。您甚至可以将平台发布为Maven
+BOM或使用Gradle的元数据格式发布。有关如何执行此操作的更多信息，请参见插件页面，尤其是在使用[平台](/md/Java平台插件.md#sec:java_platform_consumption)部分，以了解如何将平台应用于同一构建中的其他项目。
 
 ### [](#migmvn:excluding_deps)[排除传递依赖](#migmvn:excluding_deps)
 
 Maven构建使用排除项将不需要的依赖关系或不需要的依赖关系 _版本_ 排除在依赖关系图中。您可以使用Gradle做同样的事情，但这不一定是 _正确的_
 事情。Gradle提供了其他一些选项，这些选项可能更适合给定的情况，因此您确实需要了解 _为什么_ 要适当地设置排除项。
 
-如果您出于与版本无关的原因而要排除依赖项，请查看[dependency_downgrade_and_exclude.html](https://docs.gradle.org/6.7.1/userguide/dependency_downgrade_and_exclude.html#sec:excluding-transitive-deps)的部分。它显示了如何将排除项附加到整个配置（通常是最合适的解决方案）或依赖项。您甚至可以轻松地将排除应用于所有配置。
+如果您出于与版本无关的原因而要排除依赖项，请查看[dependency_downgrade_and_exclude.html](/md/降级版本并排除依赖项.md#sec:excluding-transitive-deps)的部分。它显示了如何将排除项附加到整个配置（通常是最合适的解决方案）或依赖项。您甚至可以轻松地将排除应用于所有配置。
 
 如果您对控制实际解决依赖关系的版本更感兴趣，请参阅上一节。
 
@@ -380,7 +380,7 @@ Maven构建使用排除项将不需要的依赖关系或不需要的依赖关系
 
 对于第一种情况，Gradle的行为与Maven相同，只是忽略了声明为可选的任何传递依赖。如果相同的依存关系在依存关系图中的其他位置显示为非可选，则无法解析，并且对所选版本没有影响。
 
-至于将依赖项发布为可选的，Gradle提供了一个更丰富的模型，称为[Feature Variants](https://docs.gradle.org/6.7.1/userguide/feature_variants.html#feature_variants)，它可以让您声明库提供的“可选功能”。
+至于将依赖项发布为可选的，Gradle提供了一个更丰富的模型，称为[Feature Variants](/md/建模功能变体和可选依赖项.md#feature_variants)，它可以让您声明库提供的“可选功能”。
 
 ## [](#migmvn:using_boms)[使用物料清单（BOM）](#migmvn:using_boms)
 
@@ -419,7 +419,7 @@ build.gradle.kts
 ②  添加依赖项，该依赖项的版本由该BOM表定义  
 ╚═════════════════════════════  
 您可以了解更多关于此功能之间的差异`platform()`，并`enforcedPlatform()`在上一节[从一个Maven
-BOM导入版本的建议](https://docs.gradle.org/6.7.1/userguide/platforms.html#sub:bom_import)。
+BOM导入版本的建议](/md/在项目之间共享依赖版本.md#sub:bom_import)。
 
 ╔═════════════════════════════  
 您可以使用此功能将`<dependencyManagement>`来自任何依赖项的POM的信息应用于Gradle构建，即使那些没有打包类型为的信息也是如此`pom`。双方`platform()`并`enforcedPlatform()`会忽略声明的依赖`<dependencies>`块。  
@@ -427,7 +427,7 @@ BOM导入版本的建议](https://docs.gradle.org/6.7.1/userguide/platforms.html
   
 ## [](#migmvn:multimodule_builds)[迁移多模块构建（项目聚合）](#migmvn:multimodule_builds)
 
-Maven的多模块构建与Gradle的[多项目构建](https://docs.gradle.org/6.7.1/userguide/multi_project_builds.html#multi_project_builds)很好地映射。尝试相应的[示例，](https://docs.gradle.org/6.7.1/samples/sample_jvm_multi_project_build.html)以了解如何设置基本的多项目Gradle构建。
+Maven的多模块构建与Gradle的[多项目构建](/md/Gradle中的多项目构建.md#multi_project_builds)很好地映射。尝试相应的[示例，](https://docs.gradle.org/6.7.1/samples/sample_jvm_multi_project_build.html)以了解如何设置基本的多项目Gradle构建。
 
 要迁移多模块Maven构建，只需执行以下步骤：
 
@@ -481,16 +481,16 @@ settings.gradle.kts
     To see a list of the tasks of a project, run gradle <project-path>:tasks
     For example, try running gradle :simple-weather:tasks
 
-  2. 将跨模块依赖项替换为[项目依赖项](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies.html#sub:project_dependencies)。
+  2. 将跨模块依赖项替换为[项目依赖项](/md/声明依赖.md#sub:project_dependencies)。
 
-  3. 使用[约定插件](https://docs.gradle.org/6.7.1/userguide/sharing_build_logic_between_subprojects.html#sec:convention_plugins)复制项目继承。
+  3. 使用[约定插件](/md/在子项目之间共享构建逻辑.md#sec:convention_plugins)复制项目继承。
 
 这基本上涉及创建一个根项目构建脚本，该脚本将共享配置注入到适当的子项目中。
 
 ### [](#migmvn:sub:sharing-versions)[跨项目共享版本](#migmvn:sub:sharing-versions)
 
 如果要复制在`dependencyManagement`根POM文件的部分中声明的具有依赖项版本的Maven模式，最好的方法是利用`java-
-platform`插件。您将需要为此添加一个专用项目，并在构建的常规项目中使用它。有关此模式的更多详细信息，请参见[文档](https://docs.gradle.org/6.7.1/userguide/java_platform_plugin.html)。
+platform`插件。您将需要为此添加一个专用项目，并在构建的常规项目中使用它。有关此模式的更多详细信息，请参见[文档](/md/Java平台插件.md)。
 
 ## [](#migmvn:profiles_and_properties)[迁移Maven配置文件和属性](#migmvn:profiles_and_properties)
 
@@ -504,7 +504,7 @@ Gradle具有类似的项目属性系统，尽管它可以区分项目属性和�
 
   * 一个`gradle.properties`在文件`$HOME/.gradle`目录
 
-这些不是唯一的选择，因此，如果您有兴趣了解有关如何以及在何处定义属性的更多信息，请查阅“[构建环境”](https://docs.gradle.org/6.7.1/userguide/build_environment.html#build_environment)一章。
+这些不是唯一的选择，因此，如果您有兴趣了解有关如何以及在何处定义属性的更多信息，请查阅“[构建环境”](/md/Gradle环境搭建.md#build_environment)一章。
 
 您需要了解的一项重要行为是，在构建脚本和一个外部属性文件中定义了相同的属性时会发生什么：构建脚本值优先。总是。幸运的是，您可以模仿配置文件的概念以提供可覆盖的默认值。
 
@@ -513,9 +513,9 @@ if”语句。并且由于Gradle具有更强大的声明条件的方法，因此
 
 假设您根据环境有不同的部署设置：本地开发（默认），测试环境和生产。要添加型材式的行为，首先在项目的根每个环境中创建构建脚本：`profile-
 default.gradle`，`profile-test.gradle`，和`profile-
-prod.gradle`。然后，您可以根据自己选择的[项目属性](https://docs.gradle.org/6.7.1/userguide/build_environment.html#sec:project_properties)有条件地应用这些概要文件脚本之一。
+prod.gradle`。然后，您可以根据自己选择的[项目属性](/md/Gradle环境搭建.md#sec:project_properties)有条件地应用这些概要文件脚本之一。
 
-下面的例子演示了如何使用称为项目属性的基本技术`buildProfile`和配置文件脚本，简单地初始化一个[额外的项目属性](https://docs.gradle.org/6.7.1/userguide/writing_build_scripts.html#sec:extra_properties)称为`message`：
+下面的例子演示了如何使用称为项目属性的基本技术`buildProfile`和配置文件脚本，简单地初始化一个[额外的项目属性](/md/编写构建脚本.md#sec:extra_properties)称为`message`：
 
 例子6.模仿Gradle中的Maven配置文件的行为
 
@@ -605,7 +605,7 @@ profile-prod.gradle.kts
 
 您不仅限于检查项目属性。您还可以检查环境变量，JDK版本，运行内部版本的OS或您可以想象的任何其他内容。
 
-要记住的一件事是，高级条件语句使构建更难以理解和维护，类似于它们使面向对象的代码复杂化的方式。配置文件也是如此。Gradle提供了许多更好的方法来避免广泛使用Maven经常需要的配置文件，例如，通过配置彼此不同的多个任务。请参见[Maven发布插件](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html#publishing_maven:tasks)创建的任务。`publish_PubName_ PublicationTo _RepoName_Repository`[](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html#publishing_maven:tasks)
+要记住的一件事是，高级条件语句使构建更难以理解和维护，类似于它们使面向对象的代码复杂化的方式。配置文件也是如此。Gradle提供了许多更好的方法来避免广泛使用Maven经常需要的配置文件，例如，通过配置彼此不同的多个任务。请参见[Maven发布插件](/md/Maven发布插件.md#publishing_maven:tasks)创建的任务。`publish_PubName_ PublicationTo _RepoName_Repository`[](/md/Maven发布插件.md#publishing_maven:tasks)
 
 有关在Gradle中使用Maven概要文件的冗长讨论，请参阅[此博客文章](https://blog.gradle.org/maven-pom-
 profiles)。
@@ -616,7 +616,7 @@ Maven有一个称为的阶段，默认情况下`process-
 resources`目标已`resources:resources`绑定到该阶段。这为构建作者提供了对各种文件（例如Web资源，打包的属性文件等）执行变量替换的机会。
 
 Gradle的Java插件提供了`processResources`执行相同操作的任务。这是一个[复制](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.Copy.html)任务，`src/main/resources`默认情况下将文件从配置的资源目录复制
-到输出目录。与任何`Copy`任务一样，您可以对其进行配置以执行[文件过滤](https://docs.gradle.org/6.7.1/userguide/working_with_files.html#filtering_files)，[重命名](https://docs.gradle.org/6.7.1/userguide/working_with_files.html#sec:renaming_files)和[内容过滤](https://docs.gradle.org/6.7.1/userguide/working_with_files.html#sec:filtering_files)。
+到输出目录。与任何`Copy`任务一样，您可以对其进行配置以执行[文件过滤](/md/编写构建脚本.md#filtering_files)，[重命名](/md/编写构建脚本.md#sec:renaming_files)和[内容过滤](/md/编写构建脚本.md#sec:filtering_files)。
 
 例如，以下配置将源文件视为[Groovy`SimpleTemplateEngine`](https://docs.groovy-lang.org/docs/next/html/documentation/template-engines.html#_simpletemplateengine)模板，`version`并`buildNumber`为这些模板提供属性：
 
@@ -650,9 +650,9 @@ build.gradle.kts
 test`，`integration-test`，`post-integration-
 test`，和`verify`。它还使用Failsafe插件代替Surefire，以便失败的集成测试不会自动使构建失败（因为您可能需要清理资源，例如正在运行的应用程序服务器）。
 
-如我们[在Java和JVM项目中测试](https://docs.gradle.org/6.7.1/userguide/java_testing.html#sec:configuring_java_integration_tests)章节中所述，此行为很容易在带有源集的Gradle中复制。然后，您可以使用[Task.finalizedBy（）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Task.html#org.gradle.api.Task:finalizedBy\(java.lang.Object\[\]\))将清理任务（例如关闭测试服务器的清理任务）配置为始终在集成测试之后运行，而不管它们是否成功。
+如我们[在Java和JVM项目中测试](/md/在Java和JVM项目中进行测试.md#sec:configuring_java_integration_tests)章节中所述，此行为很容易在带有源集的Gradle中复制。然后，您可以使用[Task.finalizedBy（）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Task.html#org.gradle.api.Task:finalizedBy\(java.lang.Object\[\]\))将清理任务（例如关闭测试服务器的清理任务）配置为始终在集成测试之后运行，而不管它们是否成功。
 
-如果您确实不希望集成测试使构建失败，那么可以使用Java测试一章的“[测试执行”](https://docs.gradle.org/6.7.1/userguide/java_testing.html#sec:test_execution)部分中描述的[Test.ignoreFailures](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:ignoreFailures)设置。[](https://docs.gradle.org/6.7.1/userguide/java_testing.html#sec:test_execution)
+如果您确实不希望集成测试使构建失败，那么可以使用Java测试一章的“[测试执行”](/md/在Java和JVM项目中进行测试.md#sec:test_execution)部分中描述的[Test.ignoreFailures](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:ignoreFailures)设置。[](/md/在Java和JVM项目中进行测试.md#sec:test_execution)
 
 源集还为您在集成测试中放置源文件的位置提供了很大的灵活性。您可以轻松地将它们保存在与单元测试相同的目录中，或者更可取的是将它们保存在单独的源目录中，例如`src/integTest/java`。要支持其他类型的测试，您只需添加更多源集和[测试](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)任务！
 
@@ -781,11 +781,11 @@ build.gradle.kts
         }
     }
 
-本机还支持Ant属性和文件集。要了解更多信息，请参阅《[从Gradle中使用Ant》](https://docs.gradle.org/6.7.1/userguide/ant.html#ant)。
+本机还支持Ant属性和文件集。要了解更多信息，请参阅《[从Gradle中使用Ant》](/md/从Gradle使用Ant.md#ant)。
 
 ╔═════════════════════════════  
 
-仅[创建自定义任务类型](https://docs.gradle.org/6.7.1/userguide/custom_tasks.html#custom_tasks)来替换Ant为您所做的工作可能更简单，更简洁。然后，您可以更轻松地从[增量构建](https://docs.gradle.org/6.7.1/userguide/more_about_tasks.html#sec:up_to_date_checks)和其他有用的Gradle功能中受益。  
+仅[创建自定义任务类型](/md/开发自定义Gradle任务类型.md#custom_tasks)来替换Ant为您所做的工作可能更简单，更简洁。然后，您可以更轻松地从[增量构建](/md/处理任务.md#sec:up_to_date_checks)和其他有用的Gradle功能中受益。  
   
 ╚═════════════════════════════    
   
@@ -804,7 +804,7 @@ Enforcer插件允许您控制依赖项版本和环境因素，但是可以在常
 
   * 那些没有。
 
-为什么这很重要？因为如果使用后者之一，则可以轻松地将其重新实现为[自定义Gradle任务类型](https://docs.gradle.org/6.7.1/userguide/custom_tasks.html#custom_tasks)。只需定义与mojo参数相对应的任务输入和输出，然后将执行逻辑转换为任务动作即可。
+为什么这很重要？因为如果使用后者之一，则可以轻松地将其重新实现为[自定义Gradle任务类型](/md/开发自定义Gradle任务类型.md#custom_tasks)。只需定义与mojo参数相对应的任务输入和输出，然后将执行逻辑转换为任务动作即可。
 
 如果插件依赖于Maven项目，那么您将不得不重写它。不要首先考虑Maven插件的工作原理，而要看看它试图解决的问题。然后尝试解决如何在Gradle中解决该问题。您可能会发现这两个构建模型之间的差异足以使Maven插件代码“转录”到Gradle插件中才有效。从好的方面来说，该插件可能比原始的Maven插件更容易编写，因为Gradle具有更丰富的构建模型和API。
 
@@ -815,11 +815,11 @@ DSL参考](https://docs.gradle.org/6.7.1/dsl/)，该[参考](https://docs.gradle
 
 本章涵盖了将Maven构建迁移到Gradle的主要主题。剩下的就是迁移期间或迁移之后可能有用的其他一些方面：
 
-  * 了解如何配置Gradle的[构建环境](https://docs.gradle.org/6.7.1/userguide/build_environment.html#build_environment)，包括用于运行Gradle的JVM设置
+  * 了解如何配置Gradle的[构建环境](/md/Gradle环境搭建.md#build_environment)，包括用于运行Gradle的JVM设置
 
-  * 了解如何[有效构建构建](https://docs.gradle.org/6.7.1/userguide/organizing_gradle_projects.html#organizing_gradle_projects)
+  * 了解如何[有效构建构建](/md/组织Gradle项目.md#organizing_gradle_projects)
 
-  * [配置Gradle的日志记录](https://docs.gradle.org/6.7.1/userguide/logging.html#logging)并在构建中使用它
+  * [配置Gradle的日志记录](/md/使用记录.md#logging)并在构建中使用它
 
 最后，本指南仅涉及Gradle的一些功能，我们鼓励您从用户手册的其他章节以及[分步示例中](https://docs.gradle.org/6.7.1/samples/index.html)学习其余内容。
 

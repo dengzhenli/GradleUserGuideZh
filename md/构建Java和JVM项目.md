@@ -26,7 +26,7 @@ Maven的几种约定。特别是，它对源文件和资源使用相同的默认
 
 我们将在本章中详细介绍Java项目，但是大多数主题也适用于其他受支持的JVM语言，例如[Kotlin](https://kotlinlang.org/docs/reference/using-
 gradle.html#targeting-the-
-jvm)，[Groovy](https://docs.gradle.org/6.7.1/userguide/groovy_plugin.html#groovy_plugin)和[Scala](https://docs.gradle.org/6.7.1/userguide/scala_plugin.html#scala_plugin)。如果您没有使用Gradle构建基于JVM的项目的丰富经验，请查看[Java示例](https://docs.gradle.org/6.7.1/samples/index.html#java)以获取有关如何构建各种类型的基本Java项目的逐步说明。
+jvm)，[Groovy](/md/Groovy插件.md#groovy_plugin)和[Scala](/md/Scala插件.md#scala_plugin)。如果您没有使用Gradle构建基于JVM的项目的丰富经验，请查看[Java示例](https://docs.gradle.org/6.7.1/samples/index.html#java)以获取有关如何构建各种类型的基本Java项目的逐步说明。
 
 ╔═════════════════════════════  
 
@@ -46,7 +46,7 @@ jvm)，[Groovy](https://docs.gradle.org/6.7.1/userguide/groovy_plugin.html#groov
   
 ## [](#introduction)[介绍](#introduction)
 
-Java项目的最简单构建脚本将应用[Java库插件，](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html)并可以选择设置项目版本并选择要使用的[Java工具链](https://docs.gradle.org/6.7.1/userguide/toolchains.html)：
+Java项目的最简单构建脚本将应用[Java库插件，](/md/Java库插件.md)并可以选择设置项目版本并选择要使用的[Java工具链](/md/JVM项目的工具链.md)：
 
 例子1.应用Java库插件
 
@@ -118,7 +118,7 @@ _不必位于同一目录中_ ！
 
   * 源文件及其位置
 
-  * 编译类路径，包括任何必需的依赖项（通过Gradle[配置](https://docs.gradle.org/6.7.1/userguide/dependency_management_terminology.html#sub:terminology_configuration)）
+  * 编译类路径，包括任何必需的依赖项（通过Gradle[配置](/md/依赖管理术语.md#sub:terminology_configuration)）
 
   * 放置已编译的类文件的位置
 
@@ -147,7 +147,7 @@ _SourceSet_ Resources``processResources``main`
 
 与以前一样，阴影框表示源集的属性，在这种情况下，该属性包括资源文件的位置以及将它们复制到的位置。
 
-除了`main`源集之外，Java库插件还定义了`test`代表项目测试的源集。该源集由`test`运行测试的任务使用。您可以在[Java测试](https://docs.gradle.org/6.7.1/userguide/java_testing.html#java_testing)一章中了解有关此任务和相关主题的更多信息。
+除了`main`源集之外，Java库插件还定义了`test`代表项目测试的源集。该源集由`test`运行测试的任务使用。您可以在[Java测试](/md/在Java和JVM项目中进行测试.md#java_testing)一章中了解有关此任务和相关主题的更多信息。
 
 项目通常使用此源集进行单元测试，但如果需要，也可以将其用于集成，验收和其他类型的测试。另一种方法是为其他每种测试类型[定义一个新的源集](#sec:custom_java_source_sets)，通常是出于以下两个或多个原因之一：
 
@@ -155,17 +155,17 @@ _SourceSet_ Resources``processResources``main`
 
   * 不同的测试类型需要不同的编译或运行时类路径或设置上的其他差异
 
-您可以在Java测试一章中看到这种方法的示例，该示例向您[展示了如何](https://docs.gradle.org/6.7.1/userguide/java_testing.html#sec:configuring_java_integration_tests)在项目中[设置集成测试](https://docs.gradle.org/6.7.1/userguide/java_testing.html#sec:configuring_java_integration_tests)。
+您可以在Java测试一章中看到这种方法的示例，该示例向您[展示了如何](/md/在Java和JVM项目中进行测试.md#sec:configuring_java_integration_tests)在项目中[设置集成测试](/md/在Java和JVM项目中进行测试.md#sec:configuring_java_integration_tests)。
 
 您将了解有关源集及其提供的功能的更多信息：
 
   * [自定义文件和目录位置](#sec:custom_java_source_set_paths)
 
-  * [配置Java集成测试](https://docs.gradle.org/6.7.1/userguide/java_testing.html#sec:configuring_java_integration_tests)
+  * [配置Java集成测试](/md/在Java和JVM项目中进行测试.md#sec:configuring_java_integration_tests)
 
 ## [](#sec:java_dependency_management_overview)[管理你的依赖](#sec:java_dependency_management_overview)
 
-绝大多数Java项目都依赖于库，因此管理项目的依赖关系是构建Java项目的重要组成部分。依赖管理是一个大话题，因此我们将在这里重点介绍Java项目的基础知识。如果您想深入研究细节，请查看[依赖管理](https://docs.gradle.org/6.7.1/userguide/core_dependency_management.html)的[介绍](https://docs.gradle.org/6.7.1/userguide/core_dependency_management.html)。
+绝大多数Java项目都依赖于库，因此管理项目的依赖关系是构建Java项目的重要组成部分。依赖管理是一个大话题，因此我们将在这里重点介绍Java项目的基础知识。如果您想深入研究细节，请查看[依赖管理](/md/Gradle中的依赖管理.md)的[介绍](/md/Gradle中的依赖管理.md)。
 
 为Java项目指定依赖项仅需要三点信息：
 
@@ -215,7 +215,7 @@ build.gradle.kts
 
   * _模块坐标（Module coordinate）_ （ex：`org.hibernate:hibernate-core-3.6.7.Final`）—依赖项的ID，通常采用' _< group>_： _< module>_： _< version>_ '的形式（或在Maven术语中为' _< groupId>_： _< artifactId>_： _< version>_ '）
 
-您可以[在此处](https://docs.gradle.org/6.7.1/userguide/dependency_management_terminology.html)找到更全面的依赖项管理术语表。
+您可以[在此处](/md/依赖管理术语.md)找到更全面的依赖项管理术语表。
 
 就配置而言，主要感兴趣的是：
 
@@ -233,7 +233,7 @@ build.gradle.kts
 
 您可以在[插件参考一章中](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#sec:java_plugin_and_dependency_management)了解有关它们的更多信息以及它们之间的关系。
 
-请注意，[Java库插件](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#java_library_plugin)提供了两个附加配置-`api`和`compileOnlyApi`-编译模块和依赖该模块的任何模块所需的依赖项。
+请注意，[Java库插件](/md/Java库插件.md#java_library_plugin)提供了两个附加配置-`api`和`compileOnlyApi`-编译模块和依赖该模块的任何模块所需的依赖项。
 
 ╔═════════════════════════════  
 
@@ -245,17 +245,17 @@ Java库插件在历史上一直使用该`compile`配置作为编译和运行项�
   
 我们仅在此处进行了介绍，因此，一旦您熟悉使用Gradle构建Java项目的基础知识，我们建议您阅读专用的依赖管理章节。需要进一步阅读的一些常见方案包括：
 
-  * 定义与[Maven](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sec:maven_repo)或[Ivy兼容](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sec:ivy_repositories)的自定义存储库
+  * 定义与[Maven](/md/声明存储库.md#sec:maven_repo)或[Ivy兼容](/md/声明存储库.md#sec:ivy_repositories)的自定义存储库
 
-  * 使用[本地文件系统目录中的](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sub:flat_dir_resolver)依赖项[](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sub:flat_dir_resolver)
+  * 使用[本地文件系统目录中的](/md/声明存储库.md#sub:flat_dir_resolver)依赖项[](/md/声明存储库.md#sub:flat_dir_resolver)
 
-  * 使用[变化的版本](https://docs.gradle.org/6.7.1/userguide/dynamic_versions.html#sub:declaring_dependency_with_changing_version)（例如SNAPSHOT）和[动态的](https://docs.gradle.org/6.7.1/userguide/dynamic_versions.html#sub:declaring_dependency_with_dynamic_version)（范围）声明依赖项
+  * 使用[变化的版本](/md/处理随时间变化的版本.md#sub:declaring_dependency_with_changing_version)（例如SNAPSHOT）和[动态的](/md/处理随时间变化的版本.md#sub:declaring_dependency_with_dynamic_version)（范围）声明依赖项
 
-  * 将同级[项目](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies.html#sub:project_dependencies)声明[为依赖项](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies.html#sub:project_dependencies)
+  * 将同级[项目](/md/声明依赖.md#sub:project_dependencies)声明[为依赖项](/md/声明依赖.md#sub:project_dependencies)
 
-  * [控制传递依赖及其版本](https://docs.gradle.org/6.7.1/userguide/dependency_constraints.html)
+  * [控制传递依赖及其版本](/md/升级传递依赖的版本.md)
 
-  * 通过[组合构建](https://docs.gradle.org/6.7.1/userguide/composite_builds.html#composite_builds)测试对第三方依赖关系的修复（这是发布到[Maven Local](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sub:maven_local)和从[Maven Local](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sub:maven_local)消费的更好的替代方法）
+  * 通过[组合构建](/md/复合构建.md#composite_builds)测试对第三方依赖关系的修复（这是发布到[Maven Local](/md/声明存储库.md#sub:maven_local)和从[Maven Local](/md/声明存储库.md#sub:maven_local)消费的更好的替代方法）
 
 您会发现Gradle具有丰富的API用于处理依赖关系-一种需要花费时间来掌握的API，但对于常见的情况却很容易使用。
 
@@ -273,7 +273,7 @@ Java库插件在历史上一直使用该`compile`配置作为编译和运行项�
 
   5. 运行`compileJava`生产代码和`compileTestJava`测试的任务
 
-其他JVM语言插件，例如[Groovy的](https://docs.gradle.org/6.7.1/userguide/groovy_plugin.html#groovy_plugin)插件，遵循相同的约定模式。我们建议您尽可能遵循这些约定，但是不必这样做。有几个自定义选项，您将在下面看到。
+其他JVM语言插件，例如[Groovy的](/md/Groovy插件.md#groovy_plugin)插件，遵循相同的约定模式。我们建议您尽可能遵循这些约定，但是不必这样做。有几个自定义选项，您将在下面看到。
 
 ### [](#sec:custom_java_source_set_paths)[自定义文件和目录位置](#sec:custom_java_source_set_paths)
 
@@ -392,7 +392,7 @@ build.gradle.kts
 
 ### [](#sec:java_cross_compilation)[定位特定的Java版本](#sec:java_cross_compilation)
 
-默认情况下，Gradle将Java代码编译为运行Gradle的JVM的语言级别。通过使用[Java工具链](https://docs.gradle.org/6.7.1/userguide/toolchains.html)，您可以通过确保由构建定义的给定Java版本用于编译，执行和文档编制来断开该链接。但是，可以在任务级别覆盖某些编译器和执行选项。
+默认情况下，Gradle将Java代码编译为运行Gradle的JVM的语言级别。通过使用[Java工具链](/md/JVM项目的工具链.md)，您可以通过确保由构建定义的给定Java版本用于编译，执行和文档编制来断开该链接。但是，可以在任务级别覆盖某些编译器和执行选项。
 
 从版本9开始，可以将Java编译器配置为生成旧Java版本的字节码，同时确保该代码不使用更新版本的任何API。Gradle现在直接在Java编译上支持此[发行](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.compile.CompileOptions.html#org.gradle.api.tasks.compile.CompileOptions:release)标志`CompileOptions`。此选项优先于下面描述的属性。
 
@@ -489,13 +489,13 @@ build.gradle.kts
     }
 
 唯一的要求是必须安装Java 7，并且该Java
-7必须[位于Gradle可以自动检测](https://docs.gradle.org/6.7.1/userguide/toolchains.html#sec:auto_detection)或[显式配置的位置](https://docs.gradle.org/6.7.1/userguide/toolchains.html#sec:custom_loc)。
+7必须[位于Gradle可以自动检测](/md/JVM项目的工具链.md#sec:auto_detection)或[显式配置的位置](/md/JVM项目的工具链.md#sec:custom_loc)。
 
 ### [](#sec:custom_java_source_sets)[分别编译独立的源](#sec:custom_java_source_sets)
 
 大多数项目至少有两个独立的源集：生产代码和测试代码。Gradle已经将此场景作为其Java约定的一部分，但是如果您有其他来源的话该怎么办？最常见的情况之一是当您进行某种形式或其他形式的单独集成测试时。在这种情况下，自定义源集可能正是您所需要的。
 
-您可以在[Java测试一章中](https://docs.gradle.org/6.7.1/userguide/java_testing.html#sec:configuring_java_integration_tests)看到设置集成测试的完整示例。您可以设置以相同方式担当不同角色的其他源集。问题就变成了：您何时应该定义自定义源集？
+您可以在[Java测试一章中](/md/在Java和JVM项目中进行测试.md#sec:configuring_java_integration_tests)看到设置集成测试的完整示例。您可以设置以相同方式担当不同角色的其他源集。问题就变成了：您何时应该定义自定义源集？
 
 要回答该问题，请考虑以下来源：
 
@@ -523,11 +523,11 @@ build.gradle.kts
 到将被包括在生产JAR的目录。该目标目录也将包含在测试的运行时类路径中。`process _SourceSet_
 Resources``processResources``main` __
 
-由于`processResources`是`Copy`任务的一个实例，因此您可以执行“[使用文件”](https://docs.gradle.org/6.7.1/userguide/working_with_files.html#sec:copying_files)一章中描述的任何处理。
+由于`processResources`是`Copy`任务的一个实例，因此您可以执行“[使用文件”](/md/编写构建脚本.md#sec:copying_files)一章中描述的任何处理。
 
 ### [](#sec:properties_files)[Java属性文件和可复制的内部版本](#sec:properties_files)
 
-您可以通过[WriteProperties](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.WriteProperties.html)任务轻松创建Java属性文件，该任务解决了一个众所周知的问题，`Properties.store()`即降低[增量构建](https://docs.gradle.org/6.7.1/userguide/more_about_tasks.html#sec:up_to_date_checks)的用处。
+您可以通过[WriteProperties](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.WriteProperties.html)任务轻松创建Java属性文件，该任务解决了一个众所周知的问题，`Properties.store()`即降低[增量构建](/md/处理任务.md#sec:up_to_date_checks)的用处。
 
 即使使用相同的属性和值，用于编写属性文件的标准Java
 API也会每次生成一个唯一的文件，因为注释中包括了时间戳。`WriteProperties`如果所有属性均未更改，则Gradle的任务逐字节生成完全相同的输出。这是通过对属性文件的生成方式进行一些调整来实现的：
@@ -564,7 +564,7 @@ notes.html#junit-5-support)JUnit 5的支持）和TestNG。你得到：
 您
 _不会_`Test`为声明的每个源集获得任务，因为不是每个源集都代表测试！这就是为什么您通常需要为集成和验收测试之类的东西[创建自己的`Test`任务](#sec:custom_java_source_sets)，如果它们不包含在`test`源集中。
 
-由于涉及测试的内容很多，因此该主题有其[自己的章节](https://docs.gradle.org/6.7.1/userguide/java_testing.html#java_testing)，我们在其中进行介绍：
+由于涉及测试的内容很多，因此该主题有其[自己的章节](/md/在Java和JVM项目中进行测试.md#java_testing)，我们在其中进行介绍：
 
   * 测试如何运行
 
@@ -674,9 +674,9 @@ build.gradle.kts
 
 您可以使用发布插件之一来发布由Java项目创建的JAR：
 
-  * [Maven发布插件](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html#publishing_maven)
+  * [Maven发布插件](/md/Maven发布插件.md#publishing_maven)
 
-  * [Ivy发布插件](https://docs.gradle.org/6.7.1/userguide/publishing_ivy.html#publishing_ivy)
+  * [Ivy发布插件](/md/Ivy发布插件.md#publishing_ivy)
 
 ### [](#sec:jar_manifest)[修改JAR清单](#sec:jar_manifest)
 
@@ -918,15 +918,15 @@ Java库插件`clean`通过应用[基本插件](https://docs.gradle.org/6.7.1/use
 库项目的独特之处在于它们被其他Java项目使用（或“消耗”）。这意味着与JAR文件一起发布的依赖项元数据（通常以Maven
 POM的形式）至关重要。特别是，库的使用者应能够区分两种不同类型的依赖关系：仅依赖于编译库的依赖关系和也依赖于编译使用者的依赖关系。
 
-Gradle通过[Java库插件](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#java_library_plugin)来管理这一区别，该[插件](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#java_library_plugin)除了本章介绍的
+Gradle通过[Java库插件](/md/Java库插件.md#java_library_plugin)来管理这一区别，该[插件](/md/Java库插件.md#java_library_plugin)除了本章介绍的
 _实现_ 之外，还引入了 _api_ 配置。如果依赖项的类型出现在库的公共类的公共字段或方法中，则该依赖项将通过库的公共API公开，因此应将其添加到
 _api_ 配置中。否则，依赖项是内部实现细节，应将其添加到 _Implementation中_ 。 __ __ __
 
-如果不确定API和实现依赖项之间的区别，请参阅[Java库插件一章](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#sec:java_library_recognizing_dependencies)中的详细说明。另外，您可以探索[构建Java库](https://docs.gradle.org/6.7.1/samples/sample_building_java_libraries.html)的基本，实际[示例](https://docs.gradle.org/6.7.1/samples/sample_building_java_libraries.html)。
+如果不确定API和实现依赖项之间的区别，请参阅[Java库插件一章](/md/Java库插件.md#sec:java_library_recognizing_dependencies)中的详细说明。另外，您可以探索[构建Java库](https://docs.gradle.org/6.7.1/samples/sample_building_java_libraries.html)的基本，实际[示例](https://docs.gradle.org/6.7.1/samples/sample_building_java_libraries.html)。
 
 ## [](#sec:building_java_applications)[构建Java应用程序](#sec:building_java_applications)
 
-无法将打包为JAR的Java应用程序设置为易于从命令行或桌面环境启动。该[应用程序插件](https://docs.gradle.org/6.7.1/userguide/application_plugin.html#application_plugin)通过创建一个分布，其包括生产JAR，它的依赖和启动脚本类Unix和Windows系统解决了命令行方面。
+无法将打包为JAR的Java应用程序设置为易于从命令行或桌面环境启动。该[应用程序插件](/md/Java应用插件.md#application_plugin)通过创建一个分布，其包括生产JAR，它的依赖和启动脚本类Unix和Windows系统解决了命令行方面。
 
 有关更多详细信息，请参见插件的章节，但这是您所获得的快速摘要：
 
@@ -968,7 +968,7 @@ Java平台代表了一组依赖项声明和约束，这些声明和约束形成�
 to-dependency-mechanism.html#Dependency_Management)。
 
 该支持来自[Java
-Platform插件](https://docs.gradle.org/6.7.1/userguide/java_platform_plugin.html)，该[插件](https://docs.gradle.org/6.7.1/userguide/java_platform_plugin.html)设置了不同的配置和发布组件。
+Platform插件](/md/Java平台插件.md)，该[插件](/md/Java平台插件.md)设置了不同的配置和发布组件。
 
 ╔═════════════════════════════  
 
@@ -1022,7 +1022,7 @@ build.gradle.kts
 
 如果要利用JVM的多语言方面，此处描述的大多数内容仍然适用。
 
-Gradle本身提供了[Groovy](https://docs.gradle.org/6.7.1/userguide/groovy_plugin.html)和[Scala](https://docs.gradle.org/6.7.1/userguide/scala_plugin.html)插件。插件会自动提供对Java代码编译的支持，并且可以通过将其与`java-
+Gradle本身提供了[Groovy](/md/Groovy插件.md)和[Scala](/md/Scala插件.md)插件。插件会自动提供对Java代码编译的支持，并且可以通过将其与`java-
 library`插件结合来进一步增强。
 
 ### [](#sub:compile_deps_jvm_lang)[语言之间的编译依赖性](#sub:compile_deps_jvm_lang)
@@ -1068,7 +1068,7 @@ build.gradle.kts
 
   2. 通过添加`sourceSets.main.groovy.classesDirectory`到`compileJava` `classpath`，我们有效申报的依赖`compileGroovy`任务
 
-所有这些都可以通过使用[目录属性来实现](https://docs.gradle.org/6.7.1/userguide/lazy_configuration.html)。
+所有这些都可以通过使用[目录属性来实现](/md/延迟配置.md)。
 
 ### [](#extra_language_support)[额外的语言支持](#extra_language_support)
 

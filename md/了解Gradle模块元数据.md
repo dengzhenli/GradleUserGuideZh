@@ -16,25 +16,25 @@ Gradle模块元数据是一种独特的格式，旨在通过使其具有多平�
 
 特别是，Gradle模块元数据支持：
 
-  * [丰富的版本限制](https://docs.gradle.org/6.7.1/userguide/rich_versions.html#rich-version-constraints)
+  * [丰富的版本限制](/md/声明丰富版本.md#rich-version-constraints)
 
-  * [依赖约束](https://docs.gradle.org/6.7.1/userguide/dependency_constraints.html#sec:adding-constraints-transitive-deps)
+  * [依赖约束](/md/升级传递依赖的版本.md#sec:adding-constraints-transitive-deps)
 
-  * [组件功能](https://docs.gradle.org/6.7.1/userguide/component_capabilities.html#declaring-component-capabilities)
+  * [组件功能](/md/声明Library的能力.md#declaring-component-capabilities)
 
-  * [变体感知分辨率](https://docs.gradle.org/6.7.1/userguide/variant_model.html#understanding-variant-selection)
+  * [变体感知分辨率](/md/使用变体属性.md#understanding-variant-selection)
 
 发布Gradle模块元数据将为您的使用者提供更好的依赖关系管理：
 
-  * 通过检测[不兼容的模块来](https://docs.gradle.org/6.7.1/userguide/component_capabilities.html#declaring-component-capabilities)尽早发现问题[](https://docs.gradle.org/6.7.1/userguide/component_capabilities.html#declaring-component-capabilities)
+  * 通过检测[不兼容的模块来](/md/声明Library的能力.md#declaring-component-capabilities)尽早发现问题[](/md/声明Library的能力.md#declaring-component-capabilities)
 
-  * 一致选择[特定于平台的依赖项](https://docs.gradle.org/6.7.1/userguide/cross_project_publications.html#targeting-different-platforms)
+  * 一致选择[特定于平台的依赖项](/md/在项目之间共享输出.md#targeting-different-platforms)
 
-  * 本机[依赖版本对齐](https://docs.gradle.org/6.7.1/userguide/dependency_version_alignment.html#version_alignment)
+  * 本机[依赖版本对齐](/md/对齐依赖版本.md#version_alignment)
 
-  * 自动获取[库](https://docs.gradle.org/6.7.1/userguide/feature_variants.html)特定[功能的](https://docs.gradle.org/6.7.1/userguide/feature_variants.html)依赖关系[](https://docs.gradle.org/6.7.1/userguide/feature_variants.html)
+  * 自动获取[库](/md/建模功能变体和可选依赖项.md)特定[功能的](/md/建模功能变体和可选依赖项.md)依赖关系[](/md/建模功能变体和可选依赖项.md)
 
-使用[Maven Publish插件](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html)或[Ivy Publish插件](https://docs.gradle.org/6.7.1/userguide/publishing_ivy.html)时，Gradle模块元数据会自动[发布](https://docs.gradle.org/6.7.1/userguide/publishing_ivy.html)。它
+使用[Maven Publish插件](/md/Maven发布插件.md)或[Ivy Publish插件](/md/Ivy发布插件.md)时，Gradle模块元数据会自动[发布](/md/Ivy发布插件.md)。它
 _不_ 支持传统`maven`和`ivy`插件。
 
 可以在[此处](https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-module-metadata-latest-specification.md)找到Gradle模块元数据规范的规范。
@@ -48,11 +48,11 @@ Gradle尽其所能将Gradle特定的概念映射到Maven或Ivy。当构建文件
 
 表1. Gradle特定概念到Maven和Ivy的映射 Gradle | 马文 | Ivy | 描述  
 ---|---  |---|---    
-[依赖约束](https://docs.gradle.org/6.7.1/userguide/dependency_constraints.html#sec:adding-constraints-transitive-deps)|`<dependencyManagement>` 依存关系|未发表|Gradle依赖项约束是可 _传递的_ ，而Maven的依赖项管理块 _不是_  
-[丰富的版本限制](https://docs.gradle.org/6.7.1/userguide/rich_versions.html#rich-version-constraints)|发布 _需求_ 版本|发布了 _需求_ 版本|  
-[组件功能](https://docs.gradle.org/6.7.1/userguide/component_capabilities.html#declaring-component-capabilities)|未发表|未发表|组件功能是Gradle独有的  
-[功能变体](https://docs.gradle.org/6.7.1/userguide/feature_variants.html)|上载变异工件，依赖性发布为_optional依赖性|已上传变体工件，未发布依赖项|功能变体很好地替代了可选的依赖项  
-[自定义组件类型](https://docs.gradle.org/6.7.1/userguide/publishing_customization.html#sec:publishing-custom-components)|工件已上传，依赖项是映射所描述的依赖项|工件已上传，相关性被忽略|在任何情况下，自定义组件类型都可能无法从Maven或Ivy中使用。它们通常存在于自定义生态系统中。  
+[依赖约束](/md/升级传递依赖的版本.md#sec:adding-constraints-transitive-deps)|`<dependencyManagement>` 依存关系|未发表|Gradle依赖项约束是可 _传递的_ ，而Maven的依赖项管理块 _不是_  
+[丰富的版本限制](/md/声明丰富版本.md#rich-version-constraints)|发布 _需求_ 版本|发布了 _需求_ 版本|  
+[组件功能](/md/声明Library的能力.md#declaring-component-capabilities)|未发表|未发表|组件功能是Gradle独有的  
+[功能变体](/md/建模功能变体和可选依赖项.md)|上载变异工件，依赖性发布为_optional依赖性|已上传变体工件，未发布依赖项|功能变体很好地替代了可选的依赖项  
+[自定义组件类型](/md/定制发布.md#sec:publishing-custom-components)|工件已上传，依赖项是映射所描述的依赖项|工件已上传，相关性被忽略|在任何情况下，自定义组件类型都可能无法从Maven或Ivy中使用。它们通常存在于自定义生态系统中。  
   
 ### [](#disabling_metadata_compatibility_publication_warnings)[禁用元数据兼容性发布警告](#disabling_metadata_compatibility_publication_warnings)
 
@@ -146,11 +146,11 @@ Gradle模块元数据在发布之前先经过验证。
 
   * 变体名称必须唯一，
 
-  * 每个变体必须至少具有[一个属性](https://docs.gradle.org/6.7.1/userguide/variant_attributes.html)，
+  * 每个变体必须至少具有[一个属性](/md/了解变体选择.md)，
 
-  * 两个变体不能具有[完全相同的属性和功能](https://docs.gradle.org/6.7.1/userguide/variant_model.html)，
+  * 两个变体不能具有[完全相同的属性和功能](/md/使用变体属性.md)，
 
-  * 如果存在依赖性，则所有变体中的至少一个必须携带[版本信息](https://docs.gradle.org/6.7.1/userguide/rich_versions.html)。
+  * 如果存在依赖性，则所有变体中的至少一个必须携带[版本信息](/md/声明丰富版本.md)。
 
 这些规则可确保生成的元数据的质量，并有助于确认使用不会有问题。
 

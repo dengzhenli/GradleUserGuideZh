@@ -42,7 +42,7 @@ build.gradle.kts
 标准Java插件和Java库插件之间的主要区别在于，后者引入了向消费者公开的 _API_
 的概念。库是一个Java组件，打算由其他组件使用。在多项目构建中，这是一个非常常见的用例，但在您具有外部依赖关系时也是如此。
 
-该插件公开了两个[配置](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies.html#sec:what-
+该插件公开了两个[配置](/md/声明依赖.md#sec:what-
 are-dependency-
 configurations)可用于声明的依赖性：`api`和`implementation`。该`api`配置应用于声明由库API导出的依赖关系，而该`implementation`配置应用于声明组件内部的依赖关系。
 
@@ -86,9 +86,9 @@ build.gradle.kts
   
 如果您的构建使用带有POM元数据的已发布模块，则Java和Java库插件会通过pom中使用的作用域来实现api和实现分离。这意味着编译类路径仅包含`compile`范围内的依赖关系，而运行时类路径也添加`runtime`范围内的依赖关系。
 
-这通常对用Maven发布的模块没有影响，在Maven中，定义项目的POM直接作为元数据发布。在那里，编译范围既包括编译项目所需的依赖关系（即，实现依赖关系），又包括针对已发布库进行编译所需要的依赖关系（即API依赖关系）。对于大多数已发布的库，这意味着所有依赖项都属于编译范围。如果现有库遇到此类问题，则可以考虑使用[组件元数据规则](https://docs.gradle.org/6.7.1/userguide/component_metadata_rules.html#sec:component_metadata_rules)来修复构建中不正确的元数据。但是，如上所述，如果该库与Gradle一起发布，则生成的POM文件只会将`api`依赖项放入编译范围，而将其余`implementation`依赖项放入运行时范围。
+这通常对用Maven发布的模块没有影响，在Maven中，定义项目的POM直接作为元数据发布。在那里，编译范围既包括编译项目所需的依赖关系（即，实现依赖关系），又包括针对已发布库进行编译所需要的依赖关系（即API依赖关系）。对于大多数已发布的库，这意味着所有依赖项都属于编译范围。如果现有库遇到此类问题，则可以考虑使用[组件元数据规则](/md/使用组件元数据规则修复元数据.md#sec:component_metadata_rules)来修复构建中不正确的元数据。但是，如上所述，如果该库与Gradle一起发布，则生成的POM文件只会将`api`依赖项放入编译范围，而将其余`implementation`依赖项放入运行时范围。
 
-如果您的构建使用带有Ivy元数据的模块，则如果所有模块都遵循特定的结构，则可以按[此处](https://docs.gradle.org/6.7.1/userguide/variant_model.html#sub:ivy-
+如果您的构建使用带有Ivy元数据的模块，则如果所有模块都遵循特定的结构，则可以按[此处](/md/使用变体属性.md#sub:ivy-
 mapping-to-variants)所述激活api和实现分离。
 
 ╔═════════════════════════════  
@@ -434,11 +434,11 @@ build.gradle.kts
 
 虽然实际模块不能直接依赖未命名的模块（只能通过添加命令行标志），但是自动模块也可以看到未命名的模块。因此，如果您无法避免没有模块信息的库，则可以将该库包装在自动模块中，作为项目的一部分。下一节将介绍如何执行此操作。
 
-处理非模块的另一种方法是使用[构件转换](https://docs.gradle.org/6.7.1/userguide/artifact_transforms.html)自己使用模块描述符来丰富现有的Jar
+处理非模块的另一种方法是使用[构件转换](/md/转换解决方案上的依赖工件.md)自己使用模块描述符来丰富现有的Jar
 。
 [此示例](https://docs.gradle.org/6.7.1/samples/sample_java_modules_with_transform.html)包含一个小的
 _buildSrc_
-插件，该插件注册了您可以使用并根据需要进行调整的转换。如果您想构建一个完全[模块化的应用程序](https://docs.gradle.org/6.7.1/userguide/application_plugin.html#sec:application_modular)并希望Java运行时将所有内容都视为一个真正的模块，那么这可能会很有趣。
+插件，该插件注册了您可以使用并根据需要进行调整的转换。如果您想构建一个完全[模块化的应用程序](/md/Java应用插件.md#sec:application_modular)并希望Java运行时将所有内容都视为一个真正的模块，那么这可能会很有趣。
 
 ### [](#sec:java_library_modular_auto)[建立一个自动模块](#sec:java_library_modular_auto)
 
@@ -505,5 +505,5 @@ Library插件的行为，以对编译类路径上的所有内容使用jar代替�
 
 ## [](#sec:library_distribution)[分发库](#sec:library_distribution)
 
-除了将库[发布](https://docs.gradle.org/6.7.1/userguide/publishing_setup.html)到组件存储库之外，有时您可能还需要将库及其依赖项打包在可分发的交付中。该[Java库分布插件](https://docs.gradle.org/6.7.1/userguide/java_library_distribution_plugin.html)是在那里你做到这一点的帮助。
+除了将库[发布](/md/将项目发布为模块.md)到组件存储库之外，有时您可能还需要将库及其依赖项打包在可分发的交付中。该[Java库分布插件](https://docs.gradle.org/6.7.1/userguide/java_library_distribution_plugin.html)是在那里你做到这一点的帮助。
 

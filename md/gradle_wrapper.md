@@ -34,9 +34,9 @@ Wrapper”）的帮助下。 Wrap是一个脚本，可调用Gradle的声明版�
 
 ## [](#sec:adding_wrapper)[添加Gradle Wrap](#sec:adding_wrapper)
 
-生成Wrapper文件需要在计算机上安装Gradle运行时的安装版本，如[Installation中所述](https://docs.gradle.org/6.7.1/userguide/installation.html#installation)。幸运的是，生成初始Wrapper文件是一个一次性的过程。
+生成Wrapper文件需要在计算机上安装Gradle运行时的安装版本，如[Installation中所述](/md/安装Gradle.md#installation)。幸运的是，生成初始Wrapper文件是一个一次性的过程。
 
-每个普通的Gradle构建都带有一个称为的内置任务`wrapper`。列出任务时，您将可以在“构建安装程序任务”组下找到列出[的任务](https://docs.gradle.org/6.7.1/userguide/command_line_interface.html#sec:listing_tasks)。执行`wrapper`任务会在项目目录中生成必要的Wrapper文件。
+每个普通的Gradle构建都带有一个称为的内置任务`wrapper`。列出任务时，您将可以在“构建安装程序任务”组下找到列出[的任务](/md/命令行界面.md#sec:listing_tasks)。执行`wrapper`任务会在项目目录中生成必要的Wrapper文件。
 
 运行 Wrap任务
 
@@ -156,7 +156,7 @@ Gradle项目通常为每个子项目提供一个`settings.gradle(.kts)`文件和
 
     
 
-一个属性文件，负责配置Wrapper运行时行为，例如与该版本兼容的Gradle版本。请注意，更多常规设置（例如，[将 Wrap配置为使用代理](https://docs.gradle.org/6.7.1/userguide/build_environment.html#sec:accessing_the_web_via_a_proxy)）需要进入[其他文件](https://docs.gradle.org/6.7.1/userguide/build_environment.html#sec:gradle_configuration_properties)。
+一个属性文件，负责配置Wrapper运行时行为，例如与该版本兼容的Gradle版本。请注意，更多常规设置（例如，[将 Wrap配置为使用代理](/md/Gradle环境搭建.md#sec:accessing_the_web_via_a_proxy)）需要进入[其他文件](/md/Gradle环境搭建.md#sec:gradle_configuration_properties)。
 
 `gradlew`， `gradlew.bat`
 
@@ -263,7 +263,7 @@ HTTP基本身份验证仅应与`HTTPS`URL一起使用，而不应与普通URL一
   
 ╚═════════════════════════════    
   
-使用系统属性可以`.gradle/gradle.properties`在用户主目录中的文件中完成，也可以通过其他方式进行，请参阅[Gradle配置属性](https://docs.gradle.org/6.7.1/userguide/build_environment.html#sec:gradle_configuration_properties)。
+使用系统属性可以`.gradle/gradle.properties`在用户主目录中的文件中完成，也可以通过其他方式进行，请参阅[Gradle配置属性](/md/Gradle环境搭建.md#sec:gradle_configuration_properties)。
 
 使用系统属性指定HTTP基本身份验证凭据
 
@@ -281,7 +281,7 @@ wrapper.properties`的文件也适用。请注意，此文件将提交到您的�
     
     distributionUrl=https://username:password@somehost/path/to/gradle-distribution.zip
 
-可以与已认证的代理或未认证的代理一起使用。有关如何配置使用[代理](https://docs.gradle.org/6.7.1/userguide/build_environment.html#sec:accessing_the_web_via_a_proxy)的更多信息，请参见[通过代理访问网络](https://docs.gradle.org/6.7.1/userguide/build_environment.html#sec:accessing_the_web_via_a_proxy)`Wrapper`。
+可以与已认证的代理或未认证的代理一起使用。有关如何配置使用[代理](/md/Gradle环境搭建.md#sec:accessing_the_web_via_a_proxy)的更多信息，请参见[通过代理访问网络](/md/Gradle环境搭建.md#sec:accessing_the_web_via_a_proxy)`Wrapper`。
 
 ### [](#sec:verification)[验证下载的Gradle发行版](#sec:verification)
 

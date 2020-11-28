@@ -76,7 +76,7 @@ settings.gradle.kts
     To see a list of the tasks of a project, run gradle <project-path>:tasks
     For example, try running gradle :app:tasks
 
-假设`app`通过应用[应用程序插件](https://docs.gradle.org/6.7.1/userguide/application_plugin.html)并配置主类，该子项目是一个Java应用[程序](https://docs.gradle.org/6.7.1/userguide/application_plugin.html)：
+假设`app`通过应用[应用程序插件](/md/Java应用插件.md)并配置主类，该子项目是一个Java应用[程序](/md/Java应用插件.md)：
 
 `Groovy``Kotlin`
 
@@ -116,7 +116,7 @@ app / src / main / java / com / example / Hello.java
         }
     }
 
-然后，我们可以通过执行[应用程序插件中](https://docs.gradle.org/6.7.1/userguide/application_plugin.html)的`run`任务来运行应用[程序](https://docs.gradle.org/6.7.1/userguide/application_plugin.html)。
+然后，我们可以通过执行[应用程序插件中](/md/Java应用插件.md)的`run`任务来运行应用[程序](/md/Java应用插件.md)。
 
     
     
@@ -179,8 +179,8 @@ Project layout
     │   └── build.gradle.kts
     └── settings.gradle.kts
 
-接下来，将探讨如何[在子项目之间共享](https://docs.gradle.org/6.7.1/userguide/sharing_build_logic_between_subprojects.html)构建逻辑[以及子项目](https://docs.gradle.org/6.7.1/userguide/sharing_build_logic_between_subprojects.html)
-如何[相互依赖](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies_between_subprojects.html)。
+接下来，将探讨如何[在子项目之间共享](/md/在子项目之间共享构建逻辑.md)构建逻辑[以及子项目](/md/在子项目之间共享构建逻辑.md)
+如何[相互依赖](/md/声明子项目之间的依赖关系.md)。
 
 ## [](#naming_recommendations)[命名建议](#naming_recommendations)
 
@@ -188,7 +188,7 @@ Project layout
 
   1. _保留子项目的默认项目名称_ ：可以在设置文件中配置自定义项目名称。但是，对于开发人员来说，跟踪哪个项目属于哪个文件夹是不必要的额外工作。
 
-  2. _所有项目名称均使用kebab大小写格式_ ：kebab大小写格式是当所有字母均小写，单词之间用短划线（'-'）分隔时（例如`kebab-case-formatting`）。这已经是许多大型项目的实际模式。此外，Gradle支持[kebab案例名称的名称缩写](https://docs.gradle.org/6.7.1/userguide/command_line_interface.html#sec:name_abbreviation)。
+  2. _所有项目名称均使用kebab大小写格式_ ：kebab大小写格式是当所有字母均小写，单词之间用短划线（'-'）分隔时（例如`kebab-case-formatting`）。这已经是许多大型项目的实际模式。此外，Gradle支持[kebab案例名称的名称缩写](/md/命令行界面.md#sec:name_abbreviation)。
 
   3. _在设置文件中定义根项目名称_ ：“ rootProject.name”有效地为整个构建分配一个名称，该名称用于诸如构建扫描的报告中。如果未设置根项目名称，则该名称将是容器目录名称，该名称可能不稳定（即，您可以将项目检出到任何目录）。
 

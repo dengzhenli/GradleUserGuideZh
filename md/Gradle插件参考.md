@@ -20,25 +20,25 @@
 
 提供对构建任何类型的Java项目的支持。
 
-[Java库](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html)
+[Java库](/md/Java库插件.md)
 
     
 
 提供对构建Java库的支持。
 
-[Java平台](https://docs.gradle.org/6.7.1/userguide/java_platform_plugin.html)
+[Java平台](/md/Java平台插件.md)
 
     
 
 提供对构建Java平台的支持。
 
-[Groovy](https://docs.gradle.org/6.7.1/userguide/groovy_plugin.html)
+[Groovy](/md/Groovy插件.md)
 
     
 
 为构建任何类型的[Groovy](https://groovy-lang.org/)项目提供支持。
 
-[Scala](https://docs.gradle.org/6.7.1/userguide/scala_plugin.html)
+[Scala](/md/Scala插件.md)
 
     
 
@@ -90,7 +90,7 @@
 
 ## [](packaging_and_distribution)[packaging and distribution](packaging_and_distribution)
 
-[application](https://docs.gradle.org/6.7.1/userguide/application_plugin.html)
+[application](/md/Java应用插件.md)
 
     
 
@@ -108,17 +108,17 @@
 
 提供对构建和打包Java EE应用程序的支持。
 
-[Maven发布](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html)
+[Maven发布](/md/Maven发布插件.md)
 
     
 
-提供对将[工件发布](https://docs.gradle.org/6.7.1/userguide/publishing_setup.html)到兼容Maven的存储库的支持。
+提供对将[工件发布](/md/将项目发布为模块.md)到兼容Maven的存储库的支持。
 
-[Ivy出版](https://docs.gradle.org/6.7.1/userguide/publishing_ivy.html)
+[Ivy出版](/md/Ivy发布插件.md)
 
     
 
-提供对将[工件发布](https://docs.gradle.org/6.7.1/userguide/publishing_setup.html)到兼容Ivy的存储库的支持。
+提供对将[工件发布](/md/将项目发布为模块.md)到兼容Ivy的存储库的支持。
 
 [旧版Maven插件](https://docs.gradle.org/6.7.1/userguide/maven_plugin.html)
 
@@ -202,7 +202,7 @@
     
 
 生成指定类型的新Gradle构建，例如Java库。它还可以从Maven POM生成构建脚本-
-有关更多详细信息，请参见[从Maven迁移到Gradle](https://docs.gradle.org/6.7.1/userguide/migrating_from_maven.html)。
+有关更多详细信息，请参见[从Maven迁移到Gradle](/md/从Apache Maven迁移.md)。
 
 [签名](https://docs.gradle.org/6.7.1/userguide/signing_plugin.html)
 

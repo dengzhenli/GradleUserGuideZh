@@ -56,10 +56,10 @@ build.gradle.kts
 ## [](#sec:java_platform_separation)[API和运行时分离](#sec:java_platform_separation)
 
 Maven
-BOM和Java平台之间的主要区别在于，在Gradle中，依赖项和[约束](https://docs.gradle.org/6.7.1/userguide/dependency_management_terminology.html#sub:terminology_dependency_constraint)被声明并确定范围为配置以及扩展配置。尽管许多用户只关心声明
+BOM和Java平台之间的主要区别在于，在Gradle中，依赖项和[约束](/md/依赖管理术语.md#sub:terminology_dependency_constraint)被声明并确定范围为配置以及扩展配置。尽管许多用户只关心声明
 _编译时_ 相关性的约束，这样才可以由运行时和测试继承，但它允许声明依赖项或仅适用于运行时或测试的约束。
 
-为了这个目的，该插件公开了两个[配置](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies.html#sec:what-are-dependency-configurations)可用于声明的依赖性：`api`和`runtime`。该`api`配置应用于声明在针对平台进行编译时应使用的约束和依赖关系，而`runtime`配置应用于声明在运行时可见的约束或依赖关系。
+为了这个目的，该插件公开了两个[配置](/md/声明依赖.md#sec:what-are-dependency-configurations)可用于声明的依赖性：`api`和`runtime`。该`api`配置应用于声明在针对平台进行编译时应使用的约束和依赖关系，而`runtime`配置应用于声明在运行时可见的约束或依赖关系。
 
 示例2.声明API和运行时约束
 
@@ -223,7 +223,7 @@ build.gradle.kts
 
 ## [](#sec:java_platform_consumption)[消费平台](#sec:java_platform_consumption)
 
-因为Java平台是一种特殊的组件，所以必须使用`platform`or`enforcedPlatform`关键字声明对Java平台的依赖关系，如[管理传递依赖关系](https://docs.gradle.org/6.7.1/userguide/platforms.html#sub:bom_import)部分中所述。例如，如果要在子项目之间共享依赖版本，则可以定义一个平台模块来声明所有版本：
+因为Java平台是一种特殊的组件，所以必须使用`platform`or`enforcedPlatform`关键字声明对Java平台的依赖关系，如[管理传递依赖关系](/md/在项目之间共享依赖版本.md#sub:bom_import)部分中所述。例如，如果要在子项目之间共享依赖版本，则可以定义一个平台模块来声明所有版本：
 
 示例7.平台模块中的推荐版本
 

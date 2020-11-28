@@ -68,7 +68,7 @@ Swift插件还将上述任务集成到标准[生命周期任务中](https://docs
 
 变体是这些维度的值的组合，每个维度恰好由一个值组成。您可能具有“调试x86-64”或“发行版x86”变体。
 
-Gradle内置支持多个维度以及每个维度中的多个值。您可以在本[机插件参考章节中](https://docs.gradle.org/6.7.1/userguide/plugin_reference.html#native_languages)找到它们的列表。
+Gradle内置支持多个维度以及每个维度中的多个值。您可以在本[机插件参考章节中](/md/插件参考.md#native_languages)找到它们的列表。
 
 ## [](#sec:swift_source_sets)[声明您的源文件](#sec:swift_source_sets)
 
@@ -84,7 +84,7 @@ Gradle的Swift支持使用`ConfigurableFileCollection`直接来自[应用程序]
 
 ## [](#sec:swift_dependency_management_overview)[管理你的依赖](#sec:swift_dependency_management_overview)
 
-绝大多数项目都依赖于其他项目，因此管理项目的依存关系是构建任何项目的重要组成部分。依赖管理是一个大话题，因此我们在这里仅关注Swift项目的基础知识。如果您想深入了解细节，请查看[依赖管理简介](https://docs.gradle.org/6.7.1/userguide/core_dependency_management.html)。
+绝大多数项目都依赖于其他项目，因此管理项目的依存关系是构建任何项目的重要组成部分。依赖管理是一个大话题，因此我们在这里仅关注Swift项目的基础知识。如果您想深入了解细节，请查看[依赖管理简介](/md/Gradle中的依赖管理.md)。
 
 Gradle提供了对使用Gradle [[1](#_footnotedef_1"查看脚注。") ]发布的Maven存储库中的预构建二进制文件的支持。
 
@@ -129,7 +129,7 @@ build.gradle.kts
 
   * _项目引用_ （例如：`project(':common')`）-指定路径引用的项目
 
-您可以[在此处](https://docs.gradle.org/6.7.1/userguide/dependency_management_terminology.html)找到更全面的依赖项管理术语表。
+您可以[在此处](/md/依赖管理术语.md)找到更全面的依赖项管理术语表。
 
 就配置而言，主要感兴趣的是：
 
@@ -141,23 +141,23 @@ build.gradle.kts
 
   * `nativeRuntime _Variant_` -对于运行组件所需的依赖关系，但不应该包含在编译或链接过程中
 
-您可以在本[机插件参考章节中](https://docs.gradle.org/6.7.1/userguide/plugin_reference.html#native_languages)了解有关它们的更多信息以及它们之间的关系。
+您可以在本[机插件参考章节中](/md/插件参考.md#native_languages)了解有关它们的更多信息以及它们之间的关系。
 
 请注意，[Swift库插件](https://docs.gradle.org/6.7.1/userguide/swift_library_plugin.html)`api`为编译和链接模块以及依赖该模块的任何模块所需的依赖项创建了一个附加配置。
 
-我们仅在此处进行了介绍，因此，一旦您熟悉使用Gradle构建Swift项目的基础知识，我们建议您阅读[专用的依赖管理章节](https://docs.gradle.org/6.7.1/userguide/core_dependency_management.html)。
+我们仅在此处进行了介绍，因此，一旦您熟悉使用Gradle构建Swift项目的基础知识，我们建议您阅读[专用的依赖管理章节](/md/Gradle中的依赖管理.md)。
 
 需要进一步阅读的一些常见方案包括：
 
-  * 定义与[Maven兼容](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sec:repository-types)的自定义存储库
+  * 定义与[Maven兼容](/md/声明存储库.md#sec:repository-types)的自定义存储库
 
-  * 使用[变化的版本](https://docs.gradle.org/6.7.1/userguide/dynamic_versions.html#sub:declaring_dependency_with_changing_version)（例如SNAPSHOT）和[动态的](https://docs.gradle.org/6.7.1/userguide/dynamic_versions.html#sub:declaring_dependency_with_dynamic_version)（范围）声明依赖项
+  * 使用[变化的版本](/md/处理随时间变化的版本.md#sub:declaring_dependency_with_changing_version)（例如SNAPSHOT）和[动态的](/md/处理随时间变化的版本.md#sub:declaring_dependency_with_dynamic_version)（范围）声明依赖项
 
-  * 将同级[项目](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies.html#sub:project_dependencies)声明[为依赖项](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies.html#sub:project_dependencies)
+  * 将同级[项目](/md/声明依赖.md#sub:project_dependencies)声明[为依赖项](/md/声明依赖.md#sub:project_dependencies)
 
-  * [控制传递依赖及其版本](https://docs.gradle.org/6.7.1/userguide/dependency_constraints.html)
+  * [控制传递依赖及其版本](/md/升级传递依赖的版本.md)
 
-  * 通过[组合构建](https://docs.gradle.org/6.7.1/userguide/composite_builds.html)测试对第三方依赖关系的修复（这是发布到[Maven Local](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sub:maven_local)和从[Maven Local](https://docs.gradle.org/6.7.1/userguide/declaring_repositories.html#sub:maven_local)消费的更好的替代方法）
+  * 通过[组合构建](/md/复合构建.md)测试对第三方依赖关系的修复（这是发布到[Maven Local](/md/声明存储库.md#sub:maven_local)和从[Maven Local](/md/声明存储库.md#sub:maven_local)消费的更好的替代方法）
 
 您会发现Gradle具有丰富的API用于处理依赖关系-一种需要花费时间来掌握的API，但对于常见的情况却很容易使用。
 

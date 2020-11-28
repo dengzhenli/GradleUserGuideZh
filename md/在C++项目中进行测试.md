@@ -10,7 +10,7 @@
 
 有不同的测试库和框架，以及许多不同类型的测试。无论它们是频繁执行还是不频繁执行，所有这些都需要成为构建的一部分。本章致力于说明Gradle如何处理内部版本之间以及内部内部的不同要求，并大量介绍了Gradle如何与基于可执行文件的测试框架（例如[Google Test）](https://github.com/google/googletest)集成。
 
-与[在Java和JVM项目中](https://docs.gradle.org/6.7.1/userguide/java_testing.html#java_testing)进行[测试](https://docs.gradle.org/6.7.1/userguide/java_testing.html#java_testing)相比，在Gradle中测试C
+与[在Java和JVM项目中](/md/在Java和JVM项目中进行测试.md#java_testing)进行[测试](/md/在Java和JVM项目中进行测试.md#java_testing)相比，在Gradle中测试C
 ++项目非常有限。在本章中，我们解释了控制测试运行方式的方法（[测试执行](#sec:cpp_test_execution)）。
 
 但是首先，我们看一下Gradle中本机测试的基础。

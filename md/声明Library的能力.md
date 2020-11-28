@@ -11,7 +11,7 @@
 
 组件提供了许多功能，这些功能通常与用于提供那些功能的软件体系结构正交。例如，一个库可能在单个工件中包含多个功能。但是，这样的库将以单个GAV（组，工件和版本）坐标发布。这意味着，在单个坐标处，可能会共存组件的不同“特征”。
 
-使用Gradle，显式声明组件提供的功能变得很有趣。为此，Gradle提供了[功能](https://docs.gradle.org/6.7.1/userguide/dependency_constraints.html#sec:adding-constraints-transitive-deps)的概念。
+使用Gradle，显式声明组件提供的功能变得很有趣。为此，Gradle提供了[功能](/md/升级传递依赖的版本.md#sec:adding-constraints-transitive-deps)的概念。
 
 通常通过组合不同的 _功能_ 来构建 _功能_ 。
 
@@ -134,7 +134,7 @@ build.gradle.kts
           > Module 'log4j:log4j' has been rejected:
                Cannot select module with conflict on capability 'log4j:log4j:1.2.16' also provided by [org.slf4j:log4j-over-slf4j:1.7.10(compile)]
                
-请参阅[文档](https://docs.gradle.org/6.7.1/userguide/dependency_capability_conflict.html#sub:selecting-between-candidates)的[功能部分，](https://docs.gradle.org/6.7.1/userguide/dependency_capability_conflict.html#sub:selecting-between-candidates)以了解如何解决功能冲突。
+请参阅[文档](/md/处理互斥依赖性.md#sub:selecting-between-candidates)的[功能部分，](/md/处理互斥依赖性.md#sub:selecting-between-candidates)以了解如何解决功能冲突。
 
 ## [](#declaring_additional_capabilities_for_a_local_component)[声明本地组件的其他功能](#declaring_additional_capabilities_for_a_local_component)
 
@@ -184,7 +184,7 @@ build.gradle.kts
     }
 
 功能必须附加到 _传出配置_ ， _传出配置_
-是组件的[消耗性配置](https://docs.gradle.org/6.7.1/userguide/declaring_dependencies.html#sec:resolvable-consumable-configs)。
+是组件的[消耗性配置](/md/声明依赖.md#sec:resolvable-consumable-configs)。
 
 此示例显示我们声明了两个功能：
 
@@ -194,7 +194,7 @@ build.gradle.kts
 
 值得注意的是，我们需要执行1.，因为一旦您开始声 _明显式_ 功能，就需要声明 _所有_ 功能，包括 _隐式功能_ 。
 
-第二功能可以特定于此库，也可以对应于外部组件提供的功能。在这种情况下，如果`com.other:module`出现在相同的依赖图中，则构建将失败，并且使用者[将不得不选择要使用的模块](https://docs.gradle.org/6.7.1/userguide/dependency_capability_conflict.html#sub:selecting-between-candidates)。
+第二功能可以特定于此库，也可以对应于外部组件提供的功能。在这种情况下，如果`com.other:module`出现在相同的依赖图中，则构建将失败，并且使用者[将不得不选择要使用的模块](/md/处理互斥依赖性.md#sub:selecting-between-candidates)。
 
 功能已发布到Gradle模块元数据。但是，它们在POM或Ivy元数据文件中 _没有等效项_
 。因此，发布此类组件时，Gradle会警告您该功能仅适用于Gradle使用者：

@@ -41,11 +41,11 @@ Gradle用户主目录（`$USER_HOME/.gradle`默认情况下）用于存储全局
 ①  全局缓存目录（适用于所有非项目专用的目录） 
 ②  特定于版本的缓存（例如，支持增量构建）  
 ③  共享缓存（例如，依赖项的工件）  
-④ [Gradle守护程序的](https://docs.gradle.org/6.7.1/userguide/gradle_daemon.html#gradle_daemon) 注册表和日志[](https://docs.gradle.org/6.7.1/userguide/gradle_daemon.html#gradle_daemon)  
-⑤ 全局[初始化脚本](https://docs.gradle.org/6.7.1/userguide/init_scripts.html#init_scripts)  
-⑥ [工具链支持](https://docs.gradle.org/6.7.1/userguide/toolchains.html#sec:provisioning) 下载的JDK[](https://docs.gradle.org/6.7.1/userguide/toolchains.html#sec:provisioning)  
-⑦  [Gradle Wrapper](https://docs.gradle.org/6.7.1/userguide/gradle_wrapper.html#gradle_wrapper) 下载的发行版[](https://docs.gradle.org/6.7.1/userguide/gradle_wrapper.html#gradle_wrapper)  
-⑧ 全局[Gradle配置属性](https://docs.gradle.org/6.7.1/userguide/build_environment.html#sec:gradle_configuration_properties)  
+④ [Gradle守护程序的](/md/Gradle守护程序.md#gradle_daemon) 注册表和日志[](/md/Gradle守护程序.md#gradle_daemon)  
+⑤ 全局[初始化脚本](/md/初始化脚本.md#init_scripts)  
+⑥ [工具链支持](/md/JVM项目的工具链.md#sec:provisioning) 下载的JDK[](/md/JVM项目的工具链.md#sec:provisioning)  
+⑦  [Gradle Wrapper](/md/gradle_wrapper.md#gradle_wrapper) 下载的发行版[](/md/gradle_wrapper.md#gradle_wrapper)  
+⑧ 全局[Gradle配置属性](/md/Gradle环境搭建.md#sec:gradle_configuration_properties)  
 
 ╚═════════════════════════════    
 ### [](#dir:gradle_user_home:cache_cleanup)[清理缓存和分发](#dir:gradle_user_home:cache_cleanup)
@@ -89,10 +89,10 @@ daemon`，它将在带有可视进度指示器的构建会话之后在前台运�
 ①  Gradle生成的特定于项目的缓存目录  
 ②  特定于版本的缓存（例如，支持增量构建）  
 ③  Gradle在其中生成所有构建工件的该项目的构建目录。  
-④ 包含JAR文件和[Gradle包装器的](https://docs.gradle.org/6.7.1/userguide/gradle_wrapper.html#gradle_wrapper) 配置[](https://docs.gradle.org/6.7.1/userguide/gradle_wrapper.html#gradle_wrapper)  
-⑤ 项目特定的[Gradle配置属性](https://docs.gradle.org/6.7.1/userguide/build_environment.html#sec:gradle_configuration_properties)  
-⑥  使用[Gradle Wrapper](https://docs.gradle.org/6.7.1/userguide/gradle_wrapper.html#gradle_wrapper) 执行构建的脚本[](https://docs.gradle.org/6.7.1/userguide/gradle_wrapper.html#gradle_wrapper)  
-⑦ 该项目的[设置文件](https://docs.gradle.org/6.7.1/userguide/build_lifecycle.html#sec:settings_file) ， 其中定义子项目的列表  
+④ 包含JAR文件和[Gradle包装器的](/md/gradle_wrapper.md#gradle_wrapper) 配置[](/md/gradle_wrapper.md#gradle_wrapper)  
+⑤ 项目特定的[Gradle配置属性](/md/Gradle环境搭建.md#sec:gradle_configuration_properties)  
+⑥  使用[Gradle Wrapper](/md/gradle_wrapper.md#gradle_wrapper) 执行构建的脚本[](/md/gradle_wrapper.md#gradle_wrapper)  
+⑦ 该项目的[设置文件](/md/构建生命周期.md#sec:settings_file) ， 其中定义子项目的列表  
 ⑧  通常，一个项目被组织成一个或多个子项目  
 ⑨  每个子项目都有自己的Gradle构建脚本  
   

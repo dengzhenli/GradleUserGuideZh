@@ -71,7 +71,7 @@ JetBrains支持[使用Gradle](https://blog.jetbrains.com/clion/2018/05/clion-sta
 
   * [特拉维斯CI](https://guides.gradle.org/executing-gradle-builds-on-travisci)
 
-即使您不使用上述方法之一，您也几乎可以确定将CI平台配置为使用[Gradle Wrapper](https://docs.gradle.org/6.7.1/userguide/gradle_wrapper.html)脚本。
+即使您不使用上述方法之一，您也几乎可以确定将CI平台配置为使用[Gradle Wrapper](/md/gradle_wrapper.md)脚本。
 
 ## [](#how_to_integrate_with_gradle)[如何与Gradle集成](#how_to_integrate_with_gradle)
 
@@ -81,7 +81,7 @@ JetBrains支持[使用Gradle](https://blog.jetbrains.com/clion/2018/05/clion-sta
 
   * 该工具执行Gradle构建
 
-前一种情况通常[实现为Gradle插件](https://docs.gradle.org/6.7.1/userguide/custom_plugins.html)。后者可通过如下所述通过Tooling
+前一种情况通常[实现为Gradle插件](/md/开发自定义Gradle插件.md)。后者可通过如下所述通过Tooling
 API嵌入Gradle来实现。
 
 ## [](#embedding)[使用Tooling API嵌入Gradle](#embedding)
@@ -91,7 +91,7 @@ API嵌入Gradle来实现。
 Gradle提供了一个称为Tooling
 API的编程API，可用于将Gradle嵌入到自己的软件中。该API允许您执行和监视构建，并向Gradle查询构建的详细信息。该API的主要受众是IDE，CI服务器和其他UI作者；但是，该API对需要将Gradle嵌入其应用程序的任何人都是开放的。
 
-  * [Gradle TestKit](https://docs.gradle.org/6.7.1/userguide/test_kit.html#test_kit)使用Tooling API对Gradle插件进行功能测试。
+  * [Gradle TestKit](/md/使用TestKit测试构建逻辑.md#test_kit)使用Tooling API对Gradle插件进行功能测试。
 
   * [Eclipse Buildship](http://projects.eclipse.org/projects/tools.buildship)使用Tooling API导入Gradle项目并运行任务。
 
@@ -124,7 +124,7 @@ API的版本新或旧的版本。Tooling API支持Gradle包装器，默认情况
 ### [](#sec:embedding_daemon)[工具API和Gradle Build守护进程](#sec:embedding_daemon)
 
 工具API始终使用Gradle守护程序。这意味着随后对Tooling
-API的调用，无论是模型构建请求还是任务执行请求，都将在相同的长期过程中执行。[Gradle守护程序](https://docs.gradle.org/6.7.1/userguide/gradle_daemon.html#gradle_daemon)包含有关该守护程序的更多详细信息，尤其是有关分派新守护程序时的情况的信息。
+API的调用，无论是模型构建请求还是任务执行请求，都将在相同的长期过程中执行。[Gradle守护程序](/md/Gradle守护程序.md#gradle_daemon)包含有关该守护程序的更多详细信息，尤其是有关分派新守护程序时的情况的信息。
 
 ### [](#sec:embedding_quickstart)[快速开始](#sec:embedding_quickstart)
 
@@ -171,7 +171,7 @@ API模型。您可以使用[GradleConnector.connect（）](https://docs.gradle.o
 ### [](#sec:embedding_compatibility)[Java和Gradle版本的兼容性](#sec:embedding_compatibility)
 
 工具API需要Java
-8或更高版本。构建使用的Gradle版本可能会强加[其他Java版本要求](https://docs.gradle.org/6.7.1/userguide/compatibility.html)。
+8或更高版本。构建使用的Gradle版本可能会强加[其他Java版本要求](/md/兼容性说明.md)。
 
 Tooling API支持使用Gradle 2.6和更高版本运行构建。Gradle 5.0及更高版本要求客户端使用Tooling
 API版本3.0或更高版本。
