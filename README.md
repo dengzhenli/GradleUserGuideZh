@@ -51,11 +51,16 @@
     - [使用TestKit测试构建](/md/使用TestKit测试构建逻辑.md)
     - [从Gradle使用Ant](/md/从Gradle使用Ant.md)
 - 编写JVM构建
-  - 构建Java和JVM项目
-  - 测试Java和JVM项目
-  - Java项目的工具链
-  - 管理依赖关系
+  - [构建Java和JVM项目](/md/构建Java和JVM项目.md)
+  - [测试Java和JVM项目](/md/在Java和JVM项目中进行测试.md)
+  - [Java项目的工具链](/md/JVM项目的工具链.md)
+  - [管理依赖关系](/md/管理JVM项目的依赖关系.md)
   - JVM插件
+    - [Java库插件](/md/Java库插件.md)
+    - [Java应用插件](/md/Java应用插件.md)
+    - [Java平台插件](/md/Java平台插件.md)
+    - [Groovy插件](/md/Groovy插件.md)
+    - [Scala插件](/md/Scala插件.md)
 - 编写C ++ / Swift构建
   - 构建C ++项目
   - 测试C ++项目
