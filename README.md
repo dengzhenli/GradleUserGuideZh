@@ -107,16 +107,15 @@
       - [Ivy发布插件](/md/Ivy发布插件.md)
   - [术语](/md/依赖管理术语.md)
 - Gradle扩展
-  - 插件开发教程
-  - 编写Gradle任务类型
-  - 编写Gradle插件
-  - 编写自定义Gradle类型
-  - 延迟配置任务
-  - 使用避免任务配置
+  - [插件开发教程](https://gradle.org/guides/?q=Plugin%20Development)
+  - [编写Gradle任务类型](/md/开发自定义Gradle任务类型.md)
+  - [编写Gradle插件](/md/开发自定义Gradle插件.md)
+  - [编写自定义Gradle类型](/md/开发自定义Gradle类型.md)
+  - [延迟配置任务](/md/延迟配置.md)
+  - [使用避免任务配置](https://docs.gradle.org/6.7.1/userguide/task_configuration_avoidance.html)
 - 参考
-  - 核心插件
-  - 命令行界面
-  - Gradle和第三方工具
-  - 摇篮包装
-  - Gradle管理的目录
-
+  - [核心插件](/md/Gradle插件参考.md)
+  - [命令行界面](/md/命令行界面.md)
+  - [Gradle和第三方工具](/md/Gradle和第三方工具.md)
+  - [gradle wrapper](/md/gradle_wrapper.md)
+  - [Gradle管理的目录](/md/Gradle目录和文件的使用.md)
