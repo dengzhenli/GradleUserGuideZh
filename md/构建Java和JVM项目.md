@@ -958,11 +958,9 @@ Gradle仅直接支持部署为WAR文件的传统基于Servlet的Web应用程序�
 
 没有直接从内部版本运行Web应用程序的核心支持，但是我们建议您尝试使用[Gretty](https://plugins.gradle.org/plugin/org.gretty)社区插件，该插件提供了嵌入式Servlet容器。
 
-## [](#sec:building_java_enterprise_apps)[构建Java
-EE应用程序](#sec:building_java_enterprise_apps)
+## [](#sec:building_java_enterprise_apps)[构建Java EE应用程序](#sec:building_java_enterprise_apps)
 
-多年来，Java企业系统已经发生了很大的变化，但是如果您仍要部署到JEE应用服务器，则可以使用[Ear
-Plugin](https://docs.gradle.org/6.7.1/userguide/ear_plugin.html#ear_plugin)。这增加了约定和构建EAR文件的任务。插件的章节有更多详细信息。
+多年来，Java企业系统已经发生了很大的变化，但是如果您仍要部署到JEE应用服务器，则可以使用[Ear Plugin](https://docs.gradle.org/6.7.1/userguide/ear_plugin.html#ear_plugin)。这增加了约定和构建EAR文件的任务。插件的章节有更多详细信息。
 
 ## [](#sec:building_java_platform)[构建Java平台](#sec:building_java_platform)
 
