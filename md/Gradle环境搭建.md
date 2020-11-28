@@ -296,7 +296,7 @@ Tip：
 
 您可以通过以下方式调整Gradle的JVM选项：
 
-该`org.gradle.jvmargs`摇篮属性控制虚拟机上运行的版本。默认为`-Xmx512m "-XX:MaxMetaspaceSize=256m"`
+该`org.gradle.jvmargs`Gradle属性控制虚拟机上运行的版本。默认为`-Xmx512m "-XX:MaxMetaspaceSize=256m"`
 
 更改构建VM的JVM设置
 

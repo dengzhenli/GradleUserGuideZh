@@ -64,7 +64,7 @@ build.gradle.kts
 ## [](#sec:functional_testing_with_the_gradle_runner)[使用Gradle
 Runner进行功能测试](#sec:functional_testing_with_the_gradle_runner)
 
-所述[GradleRunner](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html)便于编程执行摇篮构建，和检查结果。
+所述[GradleRunner](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html)便于编程执行Gradle构建，和检查结果。
 
 可以（例如以编程方式或从模板中）创建人为构建的练习“被测逻辑”。然后可以潜在地以各种方式（例如，任务和参数的不同组合）执行构建。然后可以通过断言以下内容（可能组合使用）来验证逻辑的正确性：
 
@@ -264,7 +264,7 @@ API](https://docs.gradle.org/6.7.1/userguide/third_party_integration.html#embedd
 
 ### [](#sub:test-kit-automatic-classpath-injection)[使用JavaGradle插件开发插件自动注入](#sub:test-kit-automatic-classpath-injection)
 
-在[Java的摇篮插件开发的插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)可以用来协助摇篮插件的开发。从Gradle
+在[Java的Gradle插件开发的插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)可以用来协助Gradle插件的开发。从Gradle
 2.13版本开始，该插件提供了与TestKit的直接集成。当应用于项目时，该插件会自动将`gradleTestKit()`依赖项添加到测试编译配置中。此外，它会自动为测试中的代码生成类路径，并通过[GradleRunner.withPluginClasspath（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath--)将其注入`GradleRunner`用户创建的任何实例。重要的是要注意，该机制当前
 _仅_
 在使用[插件DSL](https://docs.gradle.org/6.7.1/userguide/plugins.html#sec:plugins_block)应用被测插件

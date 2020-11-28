@@ -10,7 +10,7 @@ version 6.7.1
   * [发布工件](#migant:ivy_publishing)
   * [处理自定义Ant任务](#migant:custom_tasks)
   * [处理文件](#migant:working_with_files)
-  * [迁移蚂蚁属性](#migant:properties)
+  * [迁移Ant属性](#migant:properties)
   * [迁移多项目构建](#migant:multi_project_builds)
   * [进一步阅读](#further_reading)
 
@@ -98,7 +98,7 @@ Gradle提供了许多配置选项，可以实现高度的自定义。这些选�
 
 以示意图的形式，场景如下所示，其中每个框代表一个目标/任务：
 
-![蚂蚁任务迁移](img/ant-task-migration.png)
+![Ant任务迁移](img/ant-task-migration.png)
 
 这个想法是用标准Gradle`compileJava`任务代替Ant`build`任务。此替换涉及几个步骤：
 
@@ -237,7 +237,7 @@ build.gradle.kts
 操作  
     1⃣️ 使编译取决于`prepare`任务  
     2⃣️ 分离`package`从`ant_build`它取决于任务，使`compileJava`  
-    3⃣️ 分离`assemble`从标准摇篮`jar`任务，并使其依赖于`package`代替  
+    3⃣️ 分离`assemble`从标准Gradle`jar`任务，并使其依赖于`package`代替  
   
 而已！这四个步骤将用Gradle实现成功替换旧的Ant编译。即使是很小的迁移也将有很大帮助，因为您将能够利用Gradle的[增量Java编译](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#sec:incremental_compile)来加快构建速度。
 
@@ -341,7 +341,7 @@ __ |
 ---|---  
   
 ###
-[](#migant:ivy_deps)[迁移常春藤依赖](#migant:ivy_deps)
+[](#migant:ivy_deps)[迁移Ivy依赖](#migant:ivy_deps)
 
 Apache Ivy是一个独立的依赖项管理工具，已与Ant一起广泛使用。它的工作方式与Gradle类似。实际上，它们都允许您
 

@@ -676,7 +676,7 @@ build.gradle.kts
 
   * [Maven发布插件](https://docs.gradle.org/6.7.1/userguide/publishing_maven.html#publishing_maven)
 
-  * [常春藤发布插件](https://docs.gradle.org/6.7.1/userguide/publishing_ivy.html#publishing_ivy)
+  * [Ivy发布插件](https://docs.gradle.org/6.7.1/userguide/publishing_ivy.html#publishing_ivy)
 
 ### [](#sec:jar_manifest)[修改JAR清单](#sec:jar_manifest)
 
