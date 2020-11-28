@@ -308,8 +308,7 @@ module-metadata-latest-specification.md)中。
 
 进行了此更改，以便`pluginManagement`在解析设置脚本本身的插件时也可以应用配置。
 
-#### [](#plugins_and_classes_loaded_in_settings_scripts_are_visible_to_project_scripts_and_buildsrc)[设置脚本中加载的插件和类对项目脚本可见，并且
-`buildSrc`](#plugins_and_classes_loaded_in_settings_scripts_are_visible_to_project_scripts_and_buildsrc)
+#### [](#plugins_and_classes_loaded_in_settings_scripts_are_visible_to_project_scripts_and_buildsrc)[设置脚本中加载的插件和类对项目脚本可见，并且`buildSrc`](#plugins_and_classes_loaded_in_settings_scripts_are_visible_to_project_scripts_and_buildsrc)
 
 以前，通过使用脚本添加到a设置脚本中的任何类`buildscript {}`在脚本外部都不可见。现在，它们对于所有项目构建脚本都是可见的。
 
@@ -333,11 +332,9 @@ module-metadata-latest-specification.md)中。
 
     * 任务属性带有不允许用于任务的属性注释，例如`@InputArtifact`。
 
-#### [](#changes_to_kotlin_dsl)[对Kotlin
-DSL的更改](#changes_to_kotlin_dsl)
+#### [](#changes_to_kotlin_dsl)[对Kotlin DSL的更改](#changes_to_kotlin_dsl)
 
-#### [](#using_the_embedded_kotlin_plugin_now_requires_a_repository)[`embedded-
-kotlin`现在使用插件需要一个存储库](#using_the_embedded_kotlin_plugin_now_requires_a_repository)
+#### [](#using_the_embedded_kotlin_plugin_now_requires_a_repository)[`embedded-kotlin`现在使用插件需要一个存储库](#using_the_embedded_kotlin_plugin_now_requires_a_repository)
 
 就像使用`kotlin-dsl`插件时一样，现在需要声明一个存储库，如果您应用该`embedded-kotlin`插件，则可以在其中找到Kotlin依赖项。
 
@@ -351,15 +348,12 @@ kotlin`现在使用插件需要一个存储库](#using_the_embedded_kotlin_plugi
         jcenter()
     }
 
-#### [](#kotlin_dsl_ide_support_now_requires_kotlin_intellij_plugin_1_3_50)[Kotlin
-DSL IDE支持现在需要> = 1.3.50的Kotlin
-IntelliJ插件](#kotlin_dsl_ide_support_now_requires_kotlin_intellij_plugin_1_3_50)
+#### [](#kotlin_dsl_ide_support_now_requires_kotlin_intellij_plugin_1_3_50)[Kotlin DSL IDE支持现在需要> = 1.3.50的Kotlin IntelliJ插件](#kotlin_dsl_ide_support_now_requires_kotlin_intellij_plugin_1_3_50)
 
 对于1.3.50之前的Kotlin IntelliJ插件版本，当 _Gradle JVM_ 设置为不同于 _Project SDK中_
 的版本时，将错误地突出显示Kotlin DSL脚本。只需将您的IDE插件升级到> = 1.3.50，即可恢复正确的Kotlin DSL脚本突出显示行为。
 
-#### [](#kotlin_dsl_script_base_types_no_longer_extend_project_settings_or_gradle)[Kotlin
-DSL脚本基本类型不再扩展`Project`，`Settings`或者`Gradle`](#kotlin_dsl_script_base_types_no_longer_extend_project_settings_or_gradle)
+#### [](#kotlin_dsl_script_base_types_no_longer_extend_project_settings_or_gradle)[Kotlin DSL脚本基本类型不再扩展`Project`，`Settings`或者`Gradle`](#kotlin_dsl_script_base_types_no_longer_extend_project_settings_or_gradle)
 
 在以前的版本中，Kotlin
 DSL脚本被编译为实现三个Gradle核心配置接口之一的类，以便向脚本隐式公开其API。`org.gradle.api.Project`用于项目脚本，`org.gradle.api.initialization.Settings`设置脚本和`org.gradle.api.invocation.Gradle`初始化脚本。
@@ -376,7 +370,7 @@ _隐式接收器_ 使用。换句话说，项目脚本的行为就像脚本的�
 
 作为更改的一部分，该`SettingsScriptApi`接口不再由设置脚本实现，并且该`InitScriptApi`接口不再由初始化脚本实现。应将它们替换为相应的模型对象接口`Settings`和`Gradle`。
 
-#### [](#miscellaneous)[杂](#miscellaneous)
+#### [](#miscellaneous)[miscellaneous](#miscellaneous)
 
 #### [](#javadoc_and_groovydoc_dont_include_timestamps_by_default)[Javadoc和Groovydoc默认不包含时间戳](#javadoc_and_groovydoc_dont_include_timestamps_by_default)
 
@@ -386,8 +380,7 @@ _隐式接收器_ 使用。换句话说，项目脚本的行为就像脚本的�
 
 `configDirectory`运行Checkstyle时，Gradle始终将其用作“ config_loc”的值。
 
-#### [](#new_tooling_api_progress_event)[新的Tooling
-API进度事件](#new_tooling_api_progress_event)
+#### [](#new_tooling_api_progress_event)[新的Tooling API进度事件](#new_tooling_api_progress_event)
 
 在Gradle
 6.0中，我们引入了一个新的进度事件（[org.gradle.tooling.events.test.TestOutputEvent](https://docs.gradle.org/6.7.1/javadoc/org/gradle/tooling/events/test/TestOutputEvent.html)）以公开测试执行的输出。这个新事件打破了用`StartEvent`-`FinisEvent`对表示进度的惯例。`TaskOutputEvent`很简单`ProgressEvent`。
@@ -582,8 +575,7 @@ the-worker-api)上使用这些方法的详细信息。
 
 存储库名称和发布名称用于构造要发布的任务名称。可以提供一个导致无效任务名称的名称。出版物和存储库的名称现在限制为`[A-Za-z0-9_\\-.]+`。
 
-#### [](#restricted_worker_api_classloader_and_process_classpath)[受限制的Worker
-API类加载器和进程类路径](#restricted_worker_api_classloader_and_process_classpath)
+#### [](#restricted_worker_api_classloader_and_process_classpath)[受限制的Worker API类加载器和进程类路径](#restricted_worker_api_classloader_and_process_classpath)
 
 Gradle现在可以防止内部依赖项（例如Guava）泄漏到Worker
 API操作使用的类路径中。这解决了工作者需要使用Gradle内部也使用的依赖项[的问题](https://github.com/gradle/gradle/issues/3698)。
@@ -635,8 +627,7 @@ test-sources)的属性。此更改需要Buildship 3.1.1或更高版本。
 Gradle
 5.6引入了一个新的DSL元素（`JavaForkOptions.debugOptions(Action<JavaDebugOptions>)`），用于配置分支Java进程的调试属性。由于此更改，Gradle不再解析与调试相关的JVM参数。因此，如果为流程指定或参数，则`JavaForkOptions.getDebu()`不再返回。`true``-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005``-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005`
 
-### [](#scala_2_9_and_zinc_compiler)[Scala
-2.9和Zinc编译器](#scala_2_9_and_zinc_compiler)
+### [](#scala_2_9_and_zinc_compiler)[Scala 2.9和Zinc编译器](#scala_2_9_and_zinc_compiler)
 
 Gradle不再支持使用Scala 2.9构建应用程序。
 
@@ -800,8 +791,7 @@ publish`除非它们也已作为工件添加到发布配置中，否则不会发
 在Gradle
 5.0中，使用创建的collection属性实例`ObjectFactory`将没有定义值，要求插件作者明确设置初始值。事实证明这很尴尬且容易出错，因此`ObjectFactory`现在返回带有空集合的实例作为其初始值。
 
-#### [](#worker_api_working_directory_of_a_worker_can_no_longer_be_set)[Worker
-API：无法再设置工人的工作目录](#worker_api_working_directory_of_a_worker_can_no_longer_be_set)
+#### [](#worker_api_working_directory_of_a_worker_can_no_longer_be_set)[Worker API：无法再设置工人的工作目录](#worker_api_working_directory_of_a_worker_can_no_longer_be_set)
 
 由于JDK
 11不再支持更改正在运行的进程的工作目录，因此现在禁止通过其fork选项设置工作程序的工作目录。现在，所有工作程序都使用相同的工作目录来启用重用。请改为将文件和目录作为参数传递。请参阅[Worker
@@ -816,9 +806,7 @@ API](https://docs.gradle.org/6.7.1/userguide/lazy_configuration.html)做法，`o
 
   * `setInstallName(String)`去掉了。使用`Property.set()`代替。
 
-#### [](#passing_arguments_to_windows_resource_compiler)[将参数传递给Windows
-Resource
-Compiler](#passing_arguments_to_windows_resource_compiler)
+#### [](#passing_arguments_to_windows_resource_compiler)[将参数传递给Windows Resource Compiler](#passing_arguments_to_windows_resource_compiler)
 
 为了扩展我们惯用的[Provider
 API](https://docs.gradle.org/6.7.1/userguide/lazy_configuration.html)实践，`WindowsResourceCompile`已将任务转换为使用Provider
@@ -842,8 +830,7 @@ API。
 
 #### [](#changes_for_archive_tasks_zip_jar_war_ear_tar)[归档任务的变化（`Zip`，`Jar`，`War`，`Ear`，`Tar`）](#changes_for_archive_tasks_zip_jar_war_ear_tar)
 
-##### [](#change_in_behavior_for_tasks_extending_abstractarchivetask)[行为变化以扩展任务
-`AbstractArchiveTask`](#change_in_behavior_for_tasks_extending_abstractarchivetask)
+##### [](#change_in_behavior_for_tasks_extending_abstractarchivetask)[行为变化以扩展任务 `AbstractArchiveTask`](#change_in_behavior_for_tasks_extending_abstractarchivetask)
 
 在`AbstractArchiveTask`具有使用了一些新的特性[提供API](https://docs.gradle.org/6.7.1/userguide/lazy_configuration.html#lazy_configuration_reference)。扩展这些类型并从基类覆盖方法的插件可能不再具有相同的行为。在内部，相`AbstractArchiveTask`对于新属性，更喜欢新属性和方法，例如`getArchiveName()`外观。
 

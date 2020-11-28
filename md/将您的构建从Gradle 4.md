@@ -598,8 +598,7 @@ Gradle使用的一些库已升级：
 
 如果您一直在使用`IMPROVED_POM_SUPPORT`功能预览，使用约束条件或偏好，拒绝，以及其他特定版本指示，那么请确保对依赖关系解决方案的结果进行了仔细的研究。
 
-### [](#rel5.0:bom_import)[[5.0]
-BOM导入](#rel5.0:bom_import)
+### [](#rel5.0:bom_import)[[5.0]BOM导入](#rel5.0:bom_import)
 
 Gradle现在为导入物料清单（BOM）文件提供支持，该文件是有效的POM文件，使用`<dependencyManagement>`部分来控制直接和传递依赖项的版本。您需要做的就是将POM声明为`platform`依赖项。
 
@@ -626,8 +625,7 @@ Gradle现在为导入物料清单（BOM）文件提供支持，该文件是有�
 
 通过这种新行为，Java和Java库插件都可以[实现编译范围和运行时范围](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#sec:java_library_separation)的[分离](https://docs.gradle.org/6.7.1/userguide/java_library_plugin.html#sec:java_library_separation)。这意味着编译类路径仅包含编译范围的依赖关系，而运行时类路径也添加了运行时范围的依赖关系。如果您使用Gradle开发和发布Java库，并且它们之间的依赖关系`api`和`implementation`依赖关系反映在已发布的范围中，则这特别有用。
 
-### [](#rel5.0:changes_to_default_task)[[5.0]对属性工厂方法的更改
-`DefaultTask`](#rel5.0:changes_to_default_task)
+### [](#rel5.0:changes_to_default_task)[[5.0]对属性工厂方法的更改`DefaultTask`](#rel5.0:changes_to_default_task)
 
 #### [](#property_factory_methods_on_defaulttask_are_now_final)[物业工厂方法`DefaultTask`现已确定](#property_factory_methods_on_defaulttask_are_now_final)
 
@@ -703,9 +701,7 @@ build.gradle.kts
         doLast { ... }
     }
 
-### [](#rel5.0:jaxb_and_java9)[[5.0]
-Gradle现在捆绑了Java
-9及更高版本的JAXB](#rel5.0:jaxb_and_java9)
+### [](#rel5.0:jaxb_and_java9)[[5.0]Gradle现在捆绑了Java 9及更高版本的JAXB](#rel5.0:jaxb_and_java9)
 
 为了使用S3支持的工件存储库，您以前必须在Java 9及更高版本上运行时添加`--add-modules
 java.xml.bind`到`org.gradle.jvmargs`。
@@ -808,9 +804,7 @@ build.gradle.kts
 
 为避免这种情况，Gradle现在可以检测到这一点，并在使用新API时防止修改基础容器（通过`create()`或`register()`）。
 
-### [](#rel5.0:worker_api)[[5.0]
-Worker
-API：无法再设置工人的工作目录](#rel5.0:worker_api)
+### [](#rel5.0:worker_api)[[5.0] Worker API：无法再设置工人的工作目录](#rel5.0:worker_api)
 
 由于JDK 11不再支持更改正在运行的进程的工作目录，因此现在禁止通过其fork选项设置工作程序的工作目录。
 
@@ -818,8 +812,7 @@ API：无法再设置工人的工作目录](#rel5.0:worker_api)
 
 请改为将文件和目录作为参数传递。
 
-### [](#rel4.10:aws_s3_permissions)[[4.10]发布到AWS
-S3需要新权限](#rel4.10:aws_s3_permissions)
+### [](#rel4.10:aws_s3_permissions)[[4.10]发布到AWS S3需要新权限](#rel4.10:aws_s3_permissions)
 
 S3存储库传输协议允许Gradle将工件发布到AWS S3存储桶。从此版本开始，每个上传到S3存储桶的工件都将配备`bucket-owner-full-
 control`罐装ACL。确保用于发布工件的AWS账户具有`s3:PutObjectAcl`和`s3:PutObjectVersionAcl`权限，否则上传将失败。
@@ -996,9 +989,7 @@ build.gradle.kts
         ...
     }
 
-### [](#rel4.8:pom_wildcard_exclusions)[[4.8]
-Gradle现在可以在Maven
-POM排除中使用隐式通配符](#rel4.8:pom_wildcard_exclusions)
+### [](#rel4.8:pom_wildcard_exclusions)[[4.8]Gradle现在可以在Maven POM排除中使用隐式通配符](#rel4.8:pom_wildcard_exclusions)
 
 如果Maven POM中的排除项缺少`groupId`或`artifactId`，则Gradle会忽略该排除项。现在，丢失的元素被视为隐式通配符-
 例如`<groupId>*</groupId>`，这意味着您的某些依赖项可能现在被排除在以前没有的地方。

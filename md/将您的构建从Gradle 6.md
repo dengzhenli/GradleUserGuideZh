@@ -321,8 +321,7 @@ suite`）请查阅文档[构建Java和JVM的项目](https://docs.gradle.org/6.7.
 
   * PMD已更新至[PMD 6.20.0](https://pmd.github.io/pmd-6.20.0/pmd_release_notes.html#29-november-2019---6200)。
 
-#### [](#publishing_spring_boot_applications)[发布Spring
-Boot应用程序](#publishing_spring_boot_applications)
+#### [](#publishing_spring_boot_applications)[发布Spring Boot应用程序](#publishing_spring_boot_applications)
 
 从Gradle
 6.2开始，Gradle会在上传之前执行健全性检查，以确保您没有上传陈旧的文件（由另一个构建生成的文件）。这会导致使用该`components.java`组件上传的Spring
