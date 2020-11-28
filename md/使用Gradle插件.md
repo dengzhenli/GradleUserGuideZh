@@ -3,13 +3,13 @@
 
 内容
 
-  * [插件做什么[](#sec:what_plugins_do)
-  * [插件类型[](#sec:types_of_plugins)
-  * [使用插件[](#sec:using_plugins)
-  * [二进制插件[](#sec:binary_plugins)
-  * [脚本插件[](#sec:script_plugins)
-  * [寻找社区插件[](#sec:finding_community_plugins)
-  * [有关插件的更多信息[](#sec:more_on_plugins)
+  * [插件做什么](#sec:what_plugins_do)
+  * [插件类型](#sec:types_of_plugins)
+  * [使用插件](#sec:using_plugins)
+  * [二进制插件](#sec:binary_plugins)
+  * [脚本插件](#sec:script_plugins)
+  * [寻找社区插件](#sec:finding_community_plugins)
+  * [有关插件的更多信息](#sec:more_on_plugins)
 
 Gradle的核心故意为现实世界的自动化提供了很少的东西。所有有用的功能（如编译Java代码的功能）都由 _plugins_
 添加。插件添加新任务（例如[JavaCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.compile.JavaCompile.html)），域对象（例如[SourceSet](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.SourceSet.html)），约定（例如Java源位于`src/main/java`），以及扩展核心对象和其他插件中的对象。
