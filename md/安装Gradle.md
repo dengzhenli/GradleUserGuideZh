@@ -10,9 +10,9 @@
 
 您可以在Linux，macOS或Windows上安装Gradle构建工具。本文档涵盖使用软件包管理器（如SDKMAN）进行安装！或Homebrew，以及手动安装。
 
-建议使用[Gradle包装器]()升级Gradle。
+建议使用[Gradle wrapper](https://docs.gradle.org/6.7.1/userguide/gradle_wrapper.html#sec:upgrading_wrapper) 升级Gradle。
 
-您可以在“[发行版”页面](https://gradle.org/releases)上找到所有发行版及其校验和。
+您可以在“[发行版”页面](https://gradle.org/releases) 上找到所有发行版及其校验和。
 
 ## [](#sec:prerequisites)[先决条件](#sec:prerequisites)
 
@@ -29,7 +29,7 @@ Gradle附带了自己的Groovy库，因此不需要安装Groovy。Gradle将忽�
 
 Gradle使用在路径中找到的任何JDK。或者，您可以将`JAVA_HOME`环境变量设置为指向所需JDK的安装目录。
 
-[请参阅Java，Groovy，Kotlin和Android的完整兼容性说明。]()
+[请参阅Java，Groovy，Kotlin和Android的完整兼容性说明。](https://docs.gradle.org/6.7.1/userguide/compatibility.html#compatibility)
 
 ## [](#installing_with_a_package_manager)[使用软件包管理器进行安装](#installing_with_a_package_manager)
 
@@ -114,16 +114,17 @@ Gradle 6.7.1
 
 (environment specific information)
 ```
-如果遇到麻烦，请参阅“[排除安装故障]()”[部分]()。
+如果遇到麻烦，请参阅“[排除安装故障](https://docs.gradle.org/6.7.1/userguide/troubleshooting.html#sec:troubleshooting_installation) ”[部分](https://docs.gradle.org/6.7.1/userguide/troubleshooting.html#sec:troubleshooting_installation) 。
 
-您可以通过下载SHA-256文件（可从[发行版中获得](https://gradle.org/releases)）并按照以下[验证指示信息]()来验证Gradle分发的完整性。
+
+您可以通过下载SHA-256文件（可从[发行版中获得](https://gradle.org/releases) ）并按照以下[验证指示信息](https://docs.gradle.org/6.7.1/userguide/gradle_wrapper.html#sec:verification) 来验证Gradle分发的完整性。
 
 ## [](#sec:installation_next_steps)[下一步](#sec:installation_next_steps)
 
 现在您已经安装了Gradle，请使用以下资源进行入门：
 
-* 通过遵循我们的[分步示例]()之一，创建您的第一个Gradle项目。
-* 与核心工程师一起注册[Gradle现场入门培训](https://gradle.org/training/intro-to-gradle/)。
-* 了解如何通过[命令行界面]()完成常见任务。
-* [配置Gradle执行]()，例如使用HTTP代理下载依赖项。
-* 订阅[Gradle通讯](https://newsletter.gradle.com/)以获取每月发布和社区更新。
+* 通过遵循我们的[分步示例](https://docs.gradle.org/6.7.1/samples/index.html) 之一，创建您的第一个Gradle项目。
+* 与核心工程师一起注册[Gradle现场入门培训](https://gradle.org/training/intro-to-gradle/) 。
+* 了解如何通过[命令行界面](https://docs.gradle.org/6.7.1/userguide/command_line_interface.html#command_line_interface) 完成常见任务。
+* [配置Gradle执行](https://docs.gradle.org/6.7.1/userguide/build_environment.html#build_environment) ，例如使用HTTP代理下载依赖项。
+* 订阅[Gradle通讯](https://newsletter.gradle.com/) 以获取每月发布和社区更新。
