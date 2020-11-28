@@ -941,12 +941,9 @@ java-
 applications.html)看到构建Java应用程序的基本[示例](https://docs.gradle.org/6.7.1/samples/building-
 java-applications.html)。
 
-## [](#sec:building_java_webapps)[构建Java
-Web应用程序](#sec:building_java_webapps)
+## [](#sec:building_java_webapps)[构建JavaWeb应用程序](#sec:building_java_webapps)
 
-Java Web应用程序可以根据您使用的技术以多种方式打包和部署。例如，您可以将[Spring
-Boot](https://projects.spring.io/spring-
-boot/)与胖JAR或[Netty上](https://netty.io/)运行的基于[Reactive](https://www.reactivemanifesto.org/)的系统一起使用。无论您使用哪种技术，Gradle及其庞大的插件社区都可以满足您的需求。但是，Core
+Java Web应用程序可以根据您使用的技术以多种方式打包和部署。例如，您可以将[Spring Boot](https://projects.spring.io/spring-boot/)与胖JAR或[Netty上](https://netty.io/)运行的基于[Reactive](https://www.reactivemanifesto.org/)的系统一起使用。无论您使用哪种技术，Gradle及其庞大的插件社区都可以满足您的需求。但是，Core
 Gradle仅直接支持部署为WAR文件的传统基于Servlet的Web应用程序。[](https://netty.io/)
 
 该支持来自[War插件](https://docs.gradle.org/6.7.1/userguide/war_plugin.html#war_plugin)，该[插件](https://docs.gradle.org/6.7.1/userguide/war_plugin.html#war_plugin)会自动应用Java插件并添加一个额外的打包步骤，该步骤执行以下操作：
