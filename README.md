@@ -1,5 +1,15 @@
 # GradleUserGuideZh
 
+## 这是什么？
+本仓库提供Gradle文档的翻译，主要内容为常见文章翻译。原文见[Gradle](https://docs.gradle.org/current/userguide/userguide.html) 
+
+## 如何保证时效性
+考虑到Gradle的更新速度，会以月为周期及时更新文档
+
+## 翻译效果
+因笔者个人能力及精力原因，大部分翻译还是机器翻译。后续会陆续优化，欢迎提交issue优化
+
+## 目录
 - [首页](/md/首页.md)
 - [发行说明](/md/Gradle发行说明.md)
 - 用户手册
@@ -119,3 +129,8 @@
   - [Gradle和第三方工具](/md/Gradle和第三方工具.md)
   - [gradle wrapper](/md/gradle_wrapper.md)
   - [Gradle管理的目录](/md/Gradle目录和文件的使用.md)
+
+## 致谢
+* 感谢[Gradle](https://docs.gradle.org/) 提供优秀的工具与文档
+* 感谢我的好友郑PP提供翻译咨询
+* 还要感谢我实际上不存在的女朋友，感谢她体谅我创作不易，所以至今没出现在我生命里，让我有如此多的精力折腾
