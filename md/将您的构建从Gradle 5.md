@@ -3,13 +3,13 @@
 
 内容
 
-  * [从5.6及更早版本升级](#changes_6.0)
-  * [从5.5或更早版本升级](#changes_5.6)
-  * [从5.4或更早版本升级](#changes_5.5)
-  * [从5.3或更早版本升级](#changes_5.4)
-  * [从5.2或更早版本升级](#changes_5.3)
-  * [从5.1或更早版本升级](#changes_5.2)
-  * [从5.0或更早版本升级](#changes_5.1)
+  * [从5.6及更早版本升级](#changes_6_0)
+  * [从5.5或更早版本升级](#changes_5_6)
+  * [从5.4或更早版本升级](#changes_5_5)
+  * [从5.3或更早版本升级](#changes_5_4)
+  * [从5.2或更早版本升级](#changes_5_3)
+  * [从5.1或更早版本升级](#changes_5_2)
+  * [从5.0或更早版本升级](#changes_5_1)
 
 本章提供了将Gradle 5.x构建迁移到Gradle 6.0所需的信息。要从Gradle
 4.x迁移，请先完成从[4.x到5.0的指南](/md/将您的构建从Gradle 4.md#upgrading_version_4)。
@@ -32,7 +32,7 @@
 
   4. 尝试使用《[故障排除指南》](/md/对构建进行故障排除.md#troubleshooting)运行项目并调试所有错误。
 
-<h2 id = '#changes_6.0'> <a href = '#changes_6.0'>从5.6及更早版本升级</a> </h2>
+<h2 id = '#changes_6_0'> <a href = '#changes_6_0'>从5.6及更早版本升级</a> </h2>
 
 <h3 id = '#deprecations'> <a href = '#deprecations'>弃用</a> </h3>
 
@@ -517,7 +517,7 @@ Framework插件](https://gradle.github.io/playframework)。
 
   * 5.6中引入的孵化[功能解析](/md/处理互斥依赖性.md#sub_selecting-between-candidates)API进行了细微更改，以允许根据变体名称选择变体
 
-<h2 id = '#changes_5.6'> <a href = '#changes_5.6'>从5.5或更早版本升级</a> </h2>
+<h2 id = '#changes_5_6'> <a href = '#changes_5_6'>从5.5或更早版本升级</a> </h2>
 
 <h3 id = '#deprecations_2'> <a href = '#deprecations_2'>弃用</a> </h3>
 
@@ -630,7 +630,7 @@ Gradle
 
 Gradle不再支持使用Scala 2.9构建应用程序。
 
-<h2 id = '#changes_5.5'> <a href = '#changes_5.5'>从5.4或更早版本升级</a> </h2>
+<h2 id = '#changes_5_5'> <a href = '#changes_5_5'>从5.4或更早版本升级</a> </h2>
 
 <h3 id = '#deprecations_3'> <a href = '#deprecations_3'>弃用</a> </h3>
 
@@ -684,7 +684,7 @@ NOTES-1.9.14.html)从1.9.13。
 API](/md/开发自定义Gradle任务类型.md#worker_api)启动的工作守护程序的系统类路径`PROCESS`已减少为Gradle基础结构的最小集合。用户代码仍被隔离到单独的类加载器中，以将其与Gradle运行时隔离。对于使用worker
 API的任务，这应该是透明的更改，但是Gradle的早期版本在worker进程中混合了用户代码和Gradle内部。依赖于`java.class.path`系统属性`java.class.path`之类的工作者动作可能会受到影响，因为现在仅代表Gradle内部结构的类路径。
 
-<h2 id = '#changes_5.4'> <a href = '#changes_5.4'>从5.3或更早版本升级</a> </h2>
+<h2 id = '#changes_5_4'> <a href = '#changes_5_4'>从5.3或更早版本升级</a> </h2>
 
 <h3 id = '#deprecations_4'> <a href = '#deprecations_4'>弃用</a> </h3>
 
@@ -699,7 +699,7 @@ API的任务，这应该是透明的更改，但是Gradle的早期版本在worke
 通过可以访问的Google Hosted Libraries
 URL`JavaScriptRepositoriesExtension#GOOGLE_APIS_REPO_URL`已更改为使用HTTPS协议。更改还会影响通过进行配置的Ivy存储库`googleApis()`。
 
-<h2 id = '#changes_5.3'> <a href = '#changes_5.3'>从5.2或更早版本升级</a> </h2>
+<h2 id = '#changes_5_3'> <a href = '#changes_5_3'>从5.2或更早版本升级</a> </h2>
 
 <h3 id = '#potential_breaking_changes_5'> <a href = '#potential_breaking_changes_5'>潜在的重大变化</a> </h3>
 
@@ -755,13 +755,13 @@ publish`除非它们也已作为工件添加到发布配置中，否则不会发
 
 这意味着在项目 _和_ 发布（Ivy或Maven）上都注册的工件会导致发布失败，因为它将创建重复的条目。解决方法是从发布配置中删除这些工件。
 
-<h2 id = '#changes_5.2'> <a href = '#changes_5.2'>从5.1或更早版本升级</a> </h2>
+<h2 id = '#changes_5_2'> <a href = '#changes_5_2'>从5.1或更早版本升级</a> </h2>
 
 <h3 id = '#potential_breaking_changes_6'> <a href = '#potential_breaking_changes_6'>潜在的重大变化</a> </h3>
 
 没有
 
-<h2 id = '#changes_5.1'> <a href = '#changes_5.1'>从5.0或更早版本升级</a> </h2>
+<h2 id = '#changes_5_1'> <a href = '#changes_5_1'>从5.0或更早版本升级</a> </h2>
 
 <h3 id = '#deprecations_5'> <a href = '#deprecations_5'>弃用</a> </h3>
 

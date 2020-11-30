@@ -3,13 +3,13 @@
 
 内容
 
-  * [从6.6升级](#changes_6.7)
-  * [从6.5升级](#changes_6.6)
-  * [从6.4升级](#changes_6.5)
-  * [从6.3升级](#changes_6.4)
-  * [从6.2升级](#changes_6.3)
-  * [从6.1升级](#changes_6.2)
-  * [从6.0或更早版本升级](#changes_6.1)
+  * [从6.6升级](#changes_6_7)
+  * [从6.5升级](#changes_6_6)
+  * [从6.4升级](#changes_6_5)
+  * [从6.3升级](#changes_6_4)
+  * [从6.2升级](#changes_6_3)
+  * [从6.1升级](#changes_6_2)
+  * [从6.0或更早版本升级](#changes_6_1)
 
 本章提供了将Gradle 6.x构建迁移到最新的Gradle版本所需的信息。要从Gradle
 4.x或5.x进行迁移，请首先参阅[旧的迁移指南](/md/将您的构建从Gradle 5.md#upgrading_version_5)。
@@ -32,7 +32,7 @@
 
   4. 尝试使用《[故障排除指南》](/md/对构建进行故障排除.md#troubleshooting)运行项目并调试所有错误。
 
-<h2 id = '#changes_6.7'> <a href = '#changes_6.7'>从6.6升级</a> </h2>
+<h2 id = '#changes_6_7'> <a href = '#changes_6_7'>从6.6升级</a> </h2>
 
 <h3 id = '#potential_breaking_changes'> <a href = '#potential_breaking_changes'>潜在的重大变化</a> </h3>
 
@@ -76,7 +76,7 @@ Gradle允许将的实例`Configuration`直接用作依赖项：
     
     configurations.implementation.extendsFrom(configurations.myConfiguration)
 
-<h2 id = '#changes_6.6'> <a href = '#changes_6.6'>从6.5升级</a> </h2>
+<h2 id = '#changes_6_6'> <a href = '#changes_6_6'>从6.5升级</a> </h2>
 
 <h3 id = '#potential_breaking_changes_2'> <a href = '#potential_breaking_changes_2'>潜在的重大变化</a> </h3>
 
@@ -106,7 +106,7 @@ Gradle允许将的实例`Configuration`直接用作依赖项：
 
 Gradle 6.6中未弃用。
 
-<h2 id = '#changes_6.5'> <a href = '#changes_6.5'>从6.4升级</a> </h2>
+<h2 id = '#changes_6_5'> <a href = '#changes_6_5'>从6.4升级</a> </h2>
 
 <h3 id = '#potential_breaking_changes_3'> <a href = '#potential_breaking_changes_3'>潜在的重大变化</a> </h3>
 
@@ -133,7 +133,7 @@ Gradle 6.6中未弃用。
 
   * 使用`AbstractTask`插件代码或构建脚本中的类。您可以更改代码以`DefaultTask`代替使用。
 
-<h2 id = '#changes_6.4'> <a href = '#changes_6.4'>从6.3升级</a> </h2>
+<h2 id = '#changes_6_4'> <a href = '#changes_6_4'>从6.3升级</a> </h2>
 
 <h3 id = '#potential_breaking_changes_4'> <a href = '#potential_breaking_changes_4'>潜在的重大变化</a> </h3>
 
@@ -186,7 +186,7 @@ Module元数据一起发布，则它支持的Java版本信息将编码在`org.gr
 
 Gradle 6.3和6.4之间没有弃用。
 
-<h2 id = '#changes_6.3'> <a href = '#changes_6.3'>从6.2升级</a> </h2>
+<h2 id = '#changes_6_3'> <a href = '#changes_6_3'>从6.2升级</a> </h2>
 
 <h3 id = '#potential_breaking_changes_5'> <a href = '#potential_breaking_changes_5'>潜在的重大变化</a> </h3>
 
@@ -228,7 +228,7 @@ Gradle将继续在32位系统上构建项目，但不再显示丰富的控制台
 解决这些配置绝不是预期的用例，仅是可能的，因为在较早的Gradle版本中， _每个_
 配置都是可以解决的。要声明依赖关系，请使用您使用的插件提供的配置，例如[Java库插件](/md/Java库插件.md#sec_java_library_configurations_graph)。
 
-<h2 id = '#changes_6.2'> <a href = '#changes_6.2'>从6.1升级</a> </h2>
+<h2 id = '#changes_6_2'> <a href = '#changes_6_2'>从6.1升级</a> </h2>
 
 <h3 id = '#potential_breaking_changes_6'> <a href = '#potential_breaking_changes_6'>潜在的重大变化</a> </h3>
 
@@ -250,7 +250,7 @@ Gradle 6.2和Gradle
 
 Gradle 6.1和6.2之间没有弃用。
 
-<h2 id = '#changes_6.1'> <a href = '#changes_6.1'>从6.0或更早版本升级</a> </h2>
+<h2 id = '#changes_6_1'> <a href = '#changes_6_1'>从6.0或更早版本升级</a> </h2>
 
 <h3 id = '#deprecations_7'> <a href = '#deprecations_7'>弃用</a> </h3>
 

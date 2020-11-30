@@ -12,7 +12,7 @@
 
 建议使用[Gradle wrapper](/md/gradle_wrapper.md#sec_upgrading_wrapper) 升级Gradle。
 
-您可以在“[发行版”页面](https_//gradle.org/releases) 上找到所有发行版及其校验和。
+您可以在“[发行版”页面](https_//gradle_org/releases) 上找到所有发行版及其校验和。
 
 <h2 id = '#sec_prerequisites'> <a href = '#sec_prerequisites'>先决条件</a> </h2>
 
@@ -51,14 +51,14 @@ Gradle使用在路径中找到的任何JDK。或者，您可以将`JAVA_HOME`环
 
 <h2 id = '#installing_manually'> <a href = '#installing_manually'>手动安装</a> </h2>
 
-<h3 id = 'https_//gradle.org/releases'> <a href = 'https_//gradle.org/releases'>下载</a> </h3>
+<h3 id = 'https_//gradle_org/releases'> <a href = 'https_//gradle_org/releases'>步骤1.](#step_1_download_the_latest_gradle_distribution)[下载</a> </h3>
 
 分发ZIP文件有两种形式：
 
 * 仅二进制（bin）
 * 完整（全部）包含文档和来源
 
-需要使用旧版本吗？请参阅[发布页面](https_//gradle.org/releases)。
+需要使用旧版本吗？请参阅[发布页面](https_//gradle_org/releases)。
 
 <h3 id = '#step_2_unpack_the_distribution'> <a href = '#step_2_unpack_the_distribution'>步骤2.拆开发行包</a> </h3>
 
@@ -117,7 +117,7 @@ Gradle 6.7.1
 如果遇到麻烦，请参阅“[排除安装故障](/md/对构建进行故障排除.md#sec_troubleshooting_installation) ”[部分](/md/对构建进行故障排除.md#sec_troubleshooting_installation) 。
 
 
-您可以通过下载SHA-256文件（可从[发行版中获得](https_//gradle.org/releases) ）并按照以下[验证指示信息](/md/gradle_wrapper.md#sec_verification) 来验证Gradle分发的完整性。
+您可以通过下载SHA-256文件（可从[发行版中获得](https_//gradle_org/releases) ）并按照以下[验证指示信息](/md/gradle_wrapper.md#sec_verification) 来验证Gradle分发的完整性。
 
 <h2 id = '#sec_installation_next_steps'> <a href = '#sec_installation_next_steps'>下一步</a> </h2>
 
