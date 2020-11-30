@@ -699,7 +699,7 @@ API的任务，这应该是透明的更改，但是Gradle的早期版本在worke
 通过可以访问的Google Hosted Libraries
 URL`JavaScriptRepositoriesExtension#GOOGLE_APIS_REPO_URL`已更改为使用HTTPS协议。更改还会影响通过进行配置的Ivy存储库`googleApis()`。
 
-<h2 id = '#changes_5_3'  data-anchor-id = 'changes_5_3'> <a href = '#changes_5_3'>从5.2或更早版本升级</a> </h2>
+<h2 id = 'changes_5_3'  data-anchor-id = 'changes_5_3'> <a href = '#changes_5_3'>从5.2或更早版本升级</a> </h2>
 
 <h3 id = '#potential_breaking_changes_5'> <a href = '#potential_breaking_changes_5'>潜在的重大变化</a> </h3>
 
