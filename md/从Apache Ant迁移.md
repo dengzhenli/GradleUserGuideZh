@@ -5,7 +5,7 @@ version 6.7.1
 内容
 
   * [一般准则](#migant_general_guidelines)
-  * [使用导入的版本](#migant_imported_builds)
+  * [使用导入的版本](#使用导入的版本)
   * [管理依赖](#migant_managing_dependencies)
   * [发布工件](#migant_ivy_publishing)
   * [处理自定义Ant任务](#migant_custom_tasks)
