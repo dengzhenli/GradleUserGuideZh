@@ -33,7 +33,7 @@
   4. 尝试使用《[故障排除指南》](/md/对构建进行故障排除.md#troubleshooting)运行项目并调试所有错误。
 
 
-## [](#changes_6_0) [从5.6及更早版本升级](#changes_6_0)
+## [从5.6及更早版本升级](#changes_6_0)
 
 
 <h3 id = '#deprecations'> <a href = '#deprecations'>弃用</a> </h3>
