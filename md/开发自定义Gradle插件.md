@@ -3,14 +3,14 @@
 
 内容
 
-  * [打包插件](#sec:packaging_a_plugin)
-  * [编写一个简单的插件](#sec:writing_a_simple_plugin)
-  * [使插件可配置](#sec:getting_input_from_the_build)
-  * [在自定义任务和插件中处理文件](#sec:working_with_files_in_custom_tasks_and_plugins)
-  * [将扩展属性映射到任务属性](#sec:mapping_extension_properties_to_task_properties)
-  * [一个独立的项目](#sec:custom_plugins_standalone_project)
-  * [预编译脚本插件](#sec:precompiled_plugins)
-  * [为您的插件编写测试](#sec:writing_tests_for_your_plugin)
+  * [打包插件](#sec_packaging_a_plugin)
+  * [编写一个简单的插件](#sec_writing_a_simple_plugin)
+  * [使插件可配置](#sec_getting_input_from_the_build)
+  * [在自定义任务和插件中处理文件](#sec_working_with_files_in_custom_tasks_and_plugins)
+  * [将扩展属性映射到任务属性](#sec_mapping_extension_properties_to_task_properties)
+  * [一个独立的项目](#sec_custom_plugins_standalone_project)
+  * [预编译脚本插件](#sec_precompiled_plugins)
+  * [为您的插件编写测试](#sec_writing_tests_for_your_plugin)
   * [更多细节](#more_details)
   * [幕后花絮](#behind_the_scenes)
 
@@ -18,7 +18,7 @@ Gradle插件打包了可重用的构建逻辑，可在许多不同的项目和�
 
 您可以使用任何喜欢的语言来实现Gradle插件，前提是该实现最终被编译为JVM字节码。在我们的示例中，我们将使用Java作为独立插件项目的实现语言，并在buildscript插件示例中使用Groovy或Kotlin。通常，使用Java或Kotlin（静态类型）实现的插件比使用Groovy实施的插件性能更好。
 
-<h2 id = '#sec:packaging_a_plugin'> <a href = '#sec:packaging_a_plugin'>打包插件</a> </h2>
+<h2 id = '#sec_packaging_a_plugin'> <a href = '#sec_packaging_a_plugin'>打包插件</a> </h2>
 
 您可以在几个地方放置插件的源代码。
 
@@ -46,7 +46,7 @@ Gradle插件打包了可重用的构建逻辑，可在许多不同的项目和�
 
 在我们的示例中，我们将从构建脚本中的插件开始，以使事情变得简单。然后，我们将考虑创建一个独立的项目。
 
-<h2 id = '#sec:writing_a_simple_plugin'> <a href = '#sec:writing_a_simple_plugin'>编写一个简单的插件</a> </h2>
+<h2 id = '#sec_writing_a_simple_plugin'> <a href = '#sec_writing_a_simple_plugin'>编写一个简单的插件</a> </h2>
 
 要创建Gradle插件，您需要编写一个实现[Plugin](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/Plugin.html)接口的类。将插件应用于项目时，Gradle将创建插件类的实例，并调用该实例的[Plugin.apply（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/Plugin.html#apply-T-)方法。项目对象作为参数传递，插件可以使用该参数配置项目，但需要这样做。下面的示例包含一个Greeting插件，该插件将一个`hello`任务添加到项目中。
 
@@ -97,7 +97,7 @@ build.gradle.kts
 
 需要注意的一件事是，将为每个应用插件的项目创建一个插件的新实例。另请注意，[Plugin](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/Plugin.html)类是泛型类型。此示例接收[项目](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)类型作为类型参数。插件可以改为接收类型为[Settings](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.initialization.Settings.html)的参数，在这种情况下，可以将其应用在设置脚本中，或者可以将类型为[Gradle](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.invocation.Gradle.html)的参数应用在初始化脚本中。
 
-<h2 id = '#sec:getting_input_from_the_build'> <a href = '#sec:getting_input_from_the_build'>使插件可配置</a> </h2>
+<h2 id = '#sec_getting_input_from_the_build'> <a href = '#sec_getting_input_from_the_build'>使插件可配置</a> </h2>
 
 大多数插件为构建脚本提供了一些配置选项，其他插件则用于自定义插件的工作方式。插件使用 _扩展对象_
 执行此操作。Gradle[项目](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)具有关联的[ExtensionContainer](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/plugins/ExtensionContainer.html)对象，该对象包含已应用于项目的插件的所有设置和属性。您可以通过向该容器添加扩展对象来为您的插件提供配置。扩展对象只是具有表示配置的Java
@@ -249,7 +249,7 @@ DSL，从而为插件添加项目属性和DSL块。并且由于扩展对象只�
 
 您可以在[开发自定义Gradle类型中](/md/开发自定义Gradle类型.md#custom_gradle_types)找到有关实现项目扩展的更多信息。
 
-<h2 id = '#sec:working_with_files_in_custom_tasks_and_plugins'> <a href = '#sec:working_with_files_in_custom_tasks_and_plugins'>在自定义任务和插件中处理文件</a> </h2>
+<h2 id = '#sec_working_with_files_in_custom_tasks_and_plugins'> <a href = '#sec_working_with_files_in_custom_tasks_and_plugins'>在自定义任务和插件中处理文件</a> </h2>
 
 开发自定义任务和插件时，在接受文件位置的输入配置时非常灵活是一个好主意。为此，您可以利用[Project.file（java.lang.Object）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.lang.Object\))方法尽可能晚地将值解析为文件。
 
@@ -333,15 +333,15 @@ build.gradle.kts
 
 在此示例中，我们将`greet`task`destination`属性配置为闭包/提供者，使用[Project.file（java.lang.Object）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.lang.Object\))方法对其进行评估，`File`以在最后一刻将闭包/提供者的返回值转换为对象。您会注意到，在上面的示例中，`greetingFile`在配置为任务使用属性值之后，我们指定了属性值。这种惰性评估的主要好处是在设置文件属性时接受任何值，然后在读取属性时解析该值。
 
-<h2 id = '#sec:mapping_extension_properties_to_task_properties'> <a href = '#sec:mapping_extension_properties_to_task_properties'>将扩展属性映射到任务属性</a> </h2>
+<h2 id = '#sec_mapping_extension_properties_to_task_properties'> <a href = '#sec_mapping_extension_properties_to_task_properties'>将扩展属性映射到任务属性</a> </h2>
 
 从构建脚本通过扩展捕获用户输入并将其映射到自定义任务的输入/输出属性是一种有用的模式。构建脚本作者仅与扩展定义的DSL交互。命令式逻辑隐藏在插件实现中。
 
 Gradle提供了一些类型，您可以在任务实现和扩展中使用这些类型来帮助您。有关更多信息，请参考[惰性配置](/md/延迟配置.md#lazy_configuration)。
 
-<h2 id = '#sec:custom_plugins_standalone_project'> <a href = '#sec:custom_plugins_standalone_project'>一个独立的项目</a> </h2>
+<h2 id = '#sec_custom_plugins_standalone_project'> <a href = '#sec_custom_plugins_standalone_project'>一个独立的项目</a> </h2>
 
-现在，我们将插件移至独立项目，以便我们可以发布它并与他人共享。这个项目只是一个Java项目，它产生包含插件类的JAR。打包和发布插件的最简单且推荐的方法是使用[Java Gradle插件开发插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)。该插件将自动应用[Java插件](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_plugin)，将`gradleApi()`依赖项添加到api配置中，在生成的JAR文件中生成所需的插件描述符，并配置要在发布时使用的[插件标记工件](/md/使用Gradle插件.md#sec:plugin_markers)。这是该项目的简单构建脚本。
+现在，我们将插件移至独立项目，以便我们可以发布它并与他人共享。这个项目只是一个Java项目，它产生包含插件类的JAR。打包和发布插件的最简单且推荐的方法是使用[Java Gradle插件开发插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)。该插件将自动应用[Java插件](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_plugin)，将`gradleApi()`依赖项添加到api配置中，在生成的JAR文件中生成所需的插件描述符，并配置要在发布时使用的[插件标记工件](/md/使用Gradle插件.md#sec_plugin_markers)。这是该项目的简单构建脚本。
 
 例子5.一个自定义插件的构建
 
@@ -381,7 +381,7 @@ build.gradle.kts
         }
     }
 
-<h3 id = '#sec:creating_a_plugin_id'> <a href = '#sec:creating_a_plugin_id'>创建一个插件ID</a> </h3>
+<h3 id = '#sec_creating_a_plugin_id'> <a href = '#sec_creating_a_plugin_id'>创建一个插件ID</a> </h3>
 
 插件ID以类似于Java包的方式（即反向域名）完全合格。这有助于避免冲突，并提供了一种将具有相似所有权的插件分组的方法。
 
@@ -408,14 +408,14 @@ bar”，则合适的插件ID可能为`com.github.foo.bar`。同样，如果插�
 尽管插件ID与程序包名称之间存在常规的相似之处，但通常包名称比插件ID所需的更为详细。例如，在您的插件ID中添加“
 gradle”作为组件似乎是合理的，但是由于插件ID仅用于Gradle插件，因此这是多余的。通常，一个良好的插件ID只需要一个用于标识所有权和名称的名称空间。
 
-<h3 id = '#sec:publishing_your_plugin'> <a href = '#sec:publishing_your_plugin'>发布您的插件</a> </h3>
+<h3 id = '#sec_publishing_your_plugin'> <a href = '#sec_publishing_your_plugin'>发布您的插件</a> </h3>
 
 如果要在内部发布插件供组织内部使用，则可以像其他任何代码工件一样发布。请参阅有关发布工件的[Ivy](/md/Ivy发布插件.md#publishing_ivy)和[Maven](/md/Maven发布插件.md#publishing_maven)章节。
 
 如果您有兴趣发布供更广泛的Gradle社区使用的插件，则可以将其发布到[Gradle插件门户](http://plugins.gradle.org/)。该站点提供了搜索和收集有关Gradle社区贡献的插件的信息的功能。
 请参阅相应的[指南，](https://guides.gradle.org/publishing-plugins-to-gradle-plugin-portal/)以了解如何在此站点上使用您的插件。
 
-<h3 id = '#sec:using_your_plugin_in_another_project'> <a href = '#sec:using_your_plugin_in_another_project'>在另一个项目中使用您的插件</a> </h3>
+<h3 id = '#sec_using_your_plugin_in_another_project'> <a href = '#sec_using_your_plugin_in_another_project'>在另一个项目中使用您的插件</a> </h3>
 
 要在构建脚本中使用插件，您需要`pluginManagement {}`在项目的设置文件中配置存储库。以下示例显示了将插件发布到本地存储库后如何执行此操作：
 
@@ -466,7 +466,7 @@ build.gradle.kts
 <h4 id = '#note_for_plugins_published_without_java_gradle_plugin'> <a href = '#note_for_plugins_published_without_java_gradle_plugin'>不带插件发布的注释`java-gradle-plugin`</a> </h4>
 
 如果您的插件是在未使用[Java Gradle插件开发插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)的情况下发布的，
-则该出版物将缺少[PluginMarker Artifact](/md/使用Gradle插件.md#sec:plugin_markers)，这是[插件DSL](/md/使用Gradle插件.md#sec:plugins_block)查找插件所需的。在这种情况下，建议在另一个项目中解析该插件的方法是在该项目的设置文件`resolutionStrategy`的`pluginManagement
+则该出版物将缺少[PluginMarker Artifact](/md/使用Gradle插件.md#sec_plugin_markers)，这是[插件DSL](/md/使用Gradle插件.md#sec_plugins_block)查找插件所需的。在这种情况下，建议在另一个项目中解析该插件的方法是在该项目的设置文件`resolutionStrategy`的`pluginManagement
 {}`块中添加一个部分，如下所示。
 
 例子7.没有插件标记工件的插件的解析策略
@@ -497,7 +497,7 @@ settings.gradle.kts
             }
         }
 
-<h2 id = '#sec:precompiled_plugins'> <a href = '#sec:precompiled_plugins'>预编译脚本插件</a> </h2>
+<h2 id = '#sec_precompiled_plugins'> <a href = '#sec_precompiled_plugins'>预编译脚本插件</a> </h2>
 
 除了作为独立项目编写的插件之外，Gradle还允许您提供以Groovy或Kotlin
 DSL编写的构建逻辑作为预编译脚本插件。您可以将它们写为`*.gradle`目录中的`src/main/groovy`
@@ -706,7 +706,7 @@ buildSrc/src/main/kotlin/my-plugin.gradle.kts
 
 在将来的Gradle版本中将删除此限制。
 
-<h2 id = '#sec:writing_tests_for_your_plugin'> <a href = '#sec:writing_tests_for_your_plugin'>为您的插件编写测试</a> </h2>
+<h2 id = '#sec_writing_tests_for_your_plugin'> <a href = '#sec_writing_tests_for_your_plugin'>为您的插件编写测试</a> </h2>
 
 您可以使用[ProjectBuilder](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testfixtures/ProjectBuilder.html)类创建要在测试插件实现时使用的[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)实例。
 
@@ -733,7 +733,7 @@ src / test / java / org / gradle / GreetingPluginTest.java
 Gradle提供了许多在开发Gradle类型（包括插件）时有用的功能。有关更多详细信息，请参见[开发自定义Gradle类型](/md/开发自定义Gradle类型.md#custom_gradle_types)。
 
 ╔═════════════════════════════  
-在开发Gradle插件时，将信息记录到构建日志中时请务必小心。记录敏感信息（例如凭据，令牌，某些环境变量）被[视为安全漏洞](/md/使用记录.md#sec:debug_security)。公共持续集成服务的构建日志在世界范围内可见，并且可以公开此敏感信息。  
+在开发Gradle插件时，将信息记录到构建日志中时请务必小心。记录敏感信息（例如凭据，令牌，某些环境变量）被[视为安全漏洞](/md/使用记录.md#sec_debug_security)。公共持续集成服务的构建日志在世界范围内可见，并且可以公开此敏感信息。  
 ╚═════════════════════════════    
   
 <h2 id = '#behind_the_scenes'> <a href = '#behind_the_scenes'>幕后花絮</a> </h2>

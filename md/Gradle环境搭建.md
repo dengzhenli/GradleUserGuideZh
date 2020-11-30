@@ -4,13 +4,13 @@ version 6.7.1
 
 内容
 
-  * [Gradle属性](#sec:gradle_configuration_properties)
-  * [系统属性](#sec:gradle_system_properties)
-  * [环境变量](#sec:gradle_environment_variables)
-  * [项目性质](#sec:project_properties)
-  * [配置JVM内存](#sec:configuring_jvm_memory)
-  * [使用项目属性配置任务](#sec:configuring_task_using_project_properties)
-  * [通过HTTP代理访问网络](#sec:accessing_the_web_via_a_proxy)
+  * [Gradle属性](#sec_gradle_configuration_properties)
+  * [系统属性](#sec_gradle_system_properties)
+  * [环境变量](#sec_gradle_environment_variables)
+  * [项目性质](#sec_project_properties)
+  * [配置JVM内存](#sec_configuring_jvm_memory)
+  * [使用项目属性配置任务](#sec_configuring_task_using_project_properties)
+  * [通过HTTP代理访问网络](#sec_accessing_the_web_via_a_proxy)
 
 
 Gradle提供了多种机制来配置Gradle本身和特定项目的行为。以下是使用这些机制的参考。
@@ -20,19 +20,19 @@ Gradle提供了多种机制来配置Gradle本身和特定项目的行为。以�
   * [命令行标志](/md/命令行界面.md#command_line_interface)
   例如`--build-cache`。这些优先于属性和环境变量。
 
-  * [系统属性](#sec:gradle_system_properties)
+  * [系统属性](#sec_gradle_system_properties)
   例如`systemProp.http.proxyHost=somehost.org`存储在`gradle.properties`文件中。
 
-  * [Gradle属性](#sec:gradle_configuration_properties)
-  例如`org.gradle.caching=true`通常存储在`gradle.properties`项目根目录或`GRADLE_USER_HOME`环境变量中的文件中的[属性](#sec:gradle_configuration_properties)。
+  * [Gradle属性](#sec_gradle_configuration_properties)
+  例如`org.gradle.caching=true`通常存储在`gradle.properties`项目根目录或`GRADLE_USER_HOME`环境变量中的文件中的[属性](#sec_gradle_configuration_properties)。
 
-  * [环境变量](#sec:gradle_environment_variables)
+  * [环境变量](#sec_gradle_environment_variables)
   例如`GRADLE_OPTS`由执行Gradle的环境派生的。
 
-除了配置构建环境外，您还可以使用[Project属性](#sec:project_properties)
+除了配置构建环境外，您还可以使用[Project属性](#sec_project_properties)
 （例如）配置给定的项目构建`-PreleaseType=final`。
 
-<h2 id = '#sec:gradle_configuration_properties'> <a href = '#sec:gradle_configuration_properties'>Gradle属性</a> </h2>
+<h2 id = '#sec_gradle_configuration_properties'> <a href = '#sec_gradle_configuration_properties'>Gradle属性</a> </h2>
 
 Gradle提供了多个选项，可以轻松配置将用于执行构建的Java流程。尽管可以通过`GRADLE_OPTS`或在本地环境中配置这些`JAVA_OPTS`设置，但将某些设置（例如JVM内存配置和Java主目录位置）存储在版本控制中非常有用，这样整个团队就可以在一致的环境中工作。
 
@@ -59,19 +59,19 @@ _取第一个_ ：
 
     
 
-设置为true时，单个输入属性哈希值和每个任务的构建缓存键都记录在控制台上。了解有关[任务输出缓存的](/md/构建缓存.md#sec:task_output_caching)更多信息。
+设置为true时，单个输入属性哈希值和每个任务的构建缓存键都记录在控制台上。了解有关[任务输出缓存的](/md/构建缓存.md#sec_task_output_caching)更多信息。
 
 `org.gradle.configureondemand=(true,false)`
 
     
 
-启用[按需](/md/配置时间和执行时间.md#sec:configuration_on_demand)孵化[配置](/md/配置时间和执行时间.md#sec:configuration_on_demand)，Gradle将尝试仅配置必要的项目。
+启用[按需](/md/配置时间和执行时间.md#sec_configuration_on_demand)孵化[配置](/md/配置时间和执行时间.md#sec_configuration_on_demand)，Gradle将尝试仅配置必要的项目。
 
 `org.gradle.console=(auto,plain,rich,verbose)`
 
     
 
-自定义控制台输出的颜色或详细程度。默认值取决于Gradle的调用方式。有关其他详细信息，请参见[命令行日志记录](/md/命令行界面.md#sec:command_line_logging)。
+自定义控制台输出的颜色或详细程度。默认值取决于Gradle的调用方式。有关其他详细信息，请参见[命令行日志记录](/md/命令行界面.md#sec_command_line_logging)。
 
 `org.gradle.daemon=(true,false)`
 
@@ -95,19 +95,19 @@ _取第一个_ ：
 
     
 
-指定用于Gradle构建过程的Java主页。可以将值设置为`jdk`或`jre`位置，但是，根据您的构建方式，使用JDK更安全。如果未指定设置，则从您的环境（`JAVA_HOME`或的路径`java`）派生合理的默认值。这不会影响用于启动Gradle客户端VM的Java版本（[请参阅环境变量](#sec:gradle_environment_variables)）。
+指定用于Gradle构建过程的Java主页。可以将值设置为`jdk`或`jre`位置，但是，根据您的构建方式，使用JDK更安全。如果未指定设置，则从您的环境（`JAVA_HOME`或的路径`java`）派生合理的默认值。这不会影响用于启动Gradle客户端VM的Java版本（[请参阅环境变量](#sec_gradle_environment_variables)）。
 
 `org.gradle.jvmargs=(JVM arguments)`
 
     
 
-指定用于Gradle守护程序的JVM参数。该设置对于[配置JVM内存设置](#sec:configuring_jvm_memory)以提高构建性能特别有用。这不会影响Gradle客户端VM的JVM设置。
+指定用于Gradle守护程序的JVM参数。该设置对于[配置JVM内存设置](#sec_configuring_jvm_memory)以提高构建性能特别有用。这不会影响Gradle客户端VM的JVM设置。
 
 `org.gradle.logging.level=(quiet,warn,lifecycle,info,debug)`
 
     
 
-当设置为安静，警告，生命周期，信息或调试时，Gradle将使用此日志级别。这些值不区分大小写。该`lifecycle`级别是默认级别。请参阅[选择日志级别](/md/使用记录.md#sec:choosing_a_log_level)。
+当设置为安静，警告，生命周期，信息或调试时，Gradle将使用此日志级别。这些值不区分大小写。该`lifecycle`级别是默认级别。请参阅[选择日志级别](/md/使用记录.md#sec_choosing_a_log_level)。
 
 `org.gradle.parallel=(true,false)`
 
@@ -119,32 +119,32 @@ _取第一个_ ：
 
     
 
-指定Gradle守护程序及其启动的所有进程的调度优先级。默认值为`normal`。另请参阅[性能命令行选项](/md/命令行界面.md#sec:command_line_performance)。
+指定Gradle守护程序及其启动的所有进程的调度优先级。默认值为`normal`。另请参阅[性能命令行选项](/md/命令行界面.md#sec_command_line_performance)。
 
 `org.gradle.vfs.verbose=(true,false)`
 
     
 
-在[监视文件系统](/md/Gradle守护程序.md#sec:daemon_watch_fs)时配置详细日志记录。
+在[监视文件系统](/md/Gradle守护程序.md#sec_daemon_watch_fs)时配置详细日志记录。
 _默认为关闭_ 。
 
 `org.gradle.vfs.watch=(true,false)`
 
     
-切换[观看文件系统](/md/Gradle守护程序.md#sec:daemon_watch_fs)。允许Gradle在下一个版本中重用有关文件系统的信息。
+切换[观看文件系统](/md/Gradle守护程序.md#sec_daemon_watch_fs)。允许Gradle在下一个版本中重用有关文件系统的信息。
 _默认为关闭_ 。
 
 `org.gradle.warning.mode=(all,fail,summary,none)`
 
     
 
-当设置为`all`，`summary`或者`none`，Gradle会使用不同的预警类型的显示器。有关详细信息，请参见[命令行日志记录选项](/md/命令行界面.md#sec:command_line_logging)。
+当设置为`all`，`summary`或者`none`，Gradle会使用不同的预警类型的显示器。有关详细信息，请参见[命令行日志记录选项](/md/命令行界面.md#sec_command_line_logging)。
 
 `org.gradle.workers.max=(max # of worker processes)`
 
     
 
-配置后，Gradle将最多使用给定数量的工人。默认值为CPU处理器数。另请参阅[性能命令行选项](/md/命令行界面.md#sec:command_line_performance)。
+配置后，Gradle将最多使用给定数量的工人。默认值为CPU处理器数。另请参阅[性能命令行选项](/md/命令行界面.md#sec_command_line_performance)。
 
 下面的示例演示各种属性的用法。
 
@@ -198,7 +198,7 @@ build.gradle.kts
     systemPropertyValue
     systemValue
 
-<h2 id = '#sec:gradle_system_properties'> <a href = '#sec:gradle_system_properties'>系统属性</a> </h2>
+<h2 id = '#sec_gradle_system_properties'> <a href = '#sec_gradle_system_properties'>系统属性</a> </h2>
 
 使用`-D`命令行选项，可以将系统属性传递给运行Gradle的JVM。在`-D`该选项的`gradle`命令有作为的效果相同`-D`的选项的`java`命令。
 
@@ -217,7 +217,7 @@ build.gradle.kts
 
     
 
-指定用户名以使用HTTP基本认证从服务器下载Gradle发行版。在[身份验证的包装下载中](/md/gradle_wrapper.md#sec:authenticated_download)了解更多信息。
+指定用户名以使用HTTP基本认证从服务器下载Gradle发行版。在[身份验证的包装下载中](/md/gradle_wrapper.md#sec_authenticated_download)了解更多信息。
 
 `gradle.wrapperPassword=(mypassword)`
 
@@ -234,7 +234,7 @@ build.gradle.kts
 在多项目构建中，`systemProp.`除根目录以外的任何项目中设置的“
 ”属性都将被忽略。也就是说，`gradle.properties`将仅检查根项目的文件中以“ `systemProp.`”开头的属性。
 
-<h2 id = '#sec:gradle_environment_variables'> <a href = '#sec:gradle_environment_variables'>环境变量</a> </h2>
+<h2 id = '#sec_gradle_environment_variables'> <a href = '#sec_gradle_environment_variables'>环境变量</a> </h2>
 
 以下环境变量可用于该`gradle`命令。请注意，命令行选项和系统属性优先于环境变量。
 
@@ -256,7 +256,7 @@ build.gradle.kts
 
 指定要用于客户端VM的JDK安装目录。除非使用Gradle属性文件指定了另一个虚拟机，否则此虚拟机也用于守护程序`org.gradle.java.home`。
 
-<h2 id = '#sec:project_properties'> <a href = '#sec:project_properties'>项目性质</a> </h2>
+<h2 id = '#sec_project_properties'> <a href = '#sec_project_properties'>项目性质</a> </h2>
 
 您可以通过命令行选项将属性直接添加到[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)对象`-P`。
 
@@ -292,7 +292,7 @@ Tip：
       
 
   
-<h2 id = '#sec:configuring_jvm_memory'> <a href = '#sec:configuring_jvm_memory'>配置JVM内存</a> </h2>
+<h2 id = '#sec_configuring_jvm_memory'> <a href = '#sec_configuring_jvm_memory'>配置JVM内存</a> </h2>
 
 您可以通过以下方式调整Gradle的JVM选项：
 
@@ -346,13 +346,13 @@ build.gradle.kts
     }
 
 请参阅[Test](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)
-API文档中的其他示例，以及[Java插件参考中的测试执行](/md/在Java和JVM项目中进行测试.md#sec:test_execution)。
+API文档中的其他示例，以及[Java插件参考中的测试执行](/md/在Java和JVM项目中进行测试.md#sec_test_execution)。
 
 [](https://scans.gradle.com/)使用该`--scan`选项时，[构建扫描](https://scans.gradle.com/)将告诉您有关执行构建的JVM的信息。
 
 [![构建扫描中的构建环境](img/build-scan-infrastructure.png)](https://scans.gradle.com/s/sample/cpp-parallel/infrastructure)
 
-<h2 id = '#sec:configuring_task_using_project_properties'> <a href = '#sec:configuring_task_using_project_properties'>使用项目属性配置任务</a> </h2>
+<h2 id = '#sec_configuring_task_using_project_properties'> <a href = '#sec_configuring_task_using_project_properties'>使用项目属性配置任务</a> </h2>
 
 可以根据调用时指定的项目属性来更改任务的行为。
 
@@ -394,10 +394,10 @@ build.gradle.kts
  
     gradle performRelease -PisCI=true --quiet
     Performing release actions
-<h2 id = '#sec:accessing_the_web_via_a_proxy'> <a href = '#sec:accessing_the_web_via_a_proxy'>通过HTTP代理访问网络</a> </h2>
+<h2 id = '#sec_accessing_the_web_via_a_proxy'> <a href = '#sec_accessing_the_web_via_a_proxy'>通过HTTP代理访问网络</a> </h2>
 
 通过标准的JVM系统属性来配置HTTP或HTTPS代理（例如，用于下载依赖项）。这些属性可以直接在构建脚本中设置。例如，可以使用设置HTTP代理主机`System.setProperty('http.proxyHost',
-'www.somehost.org')`。另外，可以[在gradle.properties中指定](#sec:gradle_configuration_properties)属性。
+'www.somehost.org')`。另外，可以[在gradle.properties中指定](#sec_gradle_configuration_properties)属性。
 
 使用配置HTTP代理 `gradle.properties`
 

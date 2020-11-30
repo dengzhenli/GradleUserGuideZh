@@ -3,17 +3,17 @@
 
 内容
 
-  * [用法](#sec:java_library_usage)
-  * [API与实现分离](#sec:java_library_separation)
-  * [识别API和实现依赖性](#sec:java_library_recognizing_dependencies)
-  * [Java库插件配置](#sec:java_library_configurations_graph)
-  * [Java模块系统的构建模块](#sec:java_library_modular)
-  * [使用类而不是jar进行编译](#sec:java_library_classes_usage)
-  * [分发库](#sec:library_distribution)
+  * [用法](#sec_java_library_usage)
+  * [API与实现分离](#sec_java_library_separation)
+  * [识别API和实现依赖性](#sec_java_library_recognizing_dependencies)
+  * [Java库插件配置](#sec_java_library_configurations_graph)
+  * [Java模块系统的构建模块](#sec_java_library_modular)
+  * [使用类而不是jar进行编译](#sec_java_library_classes_usage)
+  * [分发库](#sec_library_distribution)
 
 Java库插件扩展的功能[的Java插件，](https://docs.gradle.org/6.7.1/userguide/java_plugin.html)通过提供有关Java库的具体知识。特别是，Java库向使用者（即使用Java或Java库插件的其他项目）公开API。使用此插件时，Java插件公开的所有源集，任务和配置都是隐式可用的。
 
-<h2 id = '#sec:java_library_usage'> <a href = '#sec:java_library_usage'>用法</a> </h2>
+<h2 id = '#sec_java_library_usage'> <a href = '#sec_java_library_usage'>用法</a> </h2>
 
 要使用Java库插件，请在构建脚本中包括以下内容：
 
@@ -37,7 +37,7 @@ build.gradle.kts
         `java-library`
     }
 
-<h2 id = '#sec:java_library_separation'> <a href = '#sec:java_library_separation'>API与实现分离</a> </h2>
+<h2 id = '#sec_java_library_separation'> <a href = '#sec_java_library_separation'>API与实现分离</a> </h2>
 
 标准Java插件和Java库插件之间的主要区别在于，后者引入了向消费者公开的 _API_
 的概念。库是一个Java组件，打算由其他组件使用。在多项目构建中，这是一个非常常见的用例，但在您具有外部依赖关系时也是如此。
@@ -99,7 +99,7 @@ _settings.gradle_ 。
   
 ╚═════════════════════════════    
   
-<h2 id = '#sec:java_library_recognizing_dependencies'> <a href = '#sec:java_library_recognizing_dependencies'>识别API和实现依赖性</a> </h2>
+<h2 id = '#sec_java_library_recognizing_dependencies'> <a href = '#sec_java_library_recognizing_dependencies'>识别API和实现依赖性</a> </h2>
 
 本节将帮助您使用简单的经验法则来识别代码中的API和实现依赖性。第一个是：
 
@@ -212,7 +212,7 @@ build.gradle.kts
         implementation("org.apache.commons:commons-lang3:3.5")
     }
 
-<h2 id = '#sec:java_library_configurations_graph'> <a href = '#sec:java_library_configurations_graph'>Java库插件配置</a> </h2>
+<h2 id = '#sec_java_library_configurations_graph'> <a href = '#sec_java_library_configurations_graph'>Java库插件配置</a> </h2>
 
 下图描述了使用Java库插件时如何设置配置。
 
@@ -268,7 +268,7 @@ runtimeClasspath|用于执行此库|没有|是|此配置包含此库的运行时
 testCompileClasspath|用于编译该库的测试|没有|是|此配置包含此库的测试编译类路径。  
 testRuntimeClasspath|用于执行此库的测试|没有|是|此配置包含此库的测试运行时类路径  
   
-<h2 id = '#sec:java_library_modular'> <a href = '#sec:java_library_modular'>Java模块系统的构建模块</a> </h2>
+<h2 id = '#sec_java_library_modular'> <a href = '#sec_java_library_modular'>Java模块系统的构建模块</a> </h2>
 
 从Java 9开始，Java本身提供了一个
  [模块系统](https://www.oracle.com/corporate/features/understanding-java-9-modules.html),
@@ -299,7 +299,7 @@ module-info.java文件
 
   * 通过以下方式打开模块路径推断 `java. modularity.inferModulePath.set(true)`
 
-  * 实际上，我们正在构建一个模块（与传统库相反），通过添加`module-info.java`文件来表示该模块。（另一种选择是添加`Automatic-Module-Name`Jar清单属性，[如](#sec:java_library_modular_auto)后面[所述](#sec:java_library_modular_auto)。）
+  * 实际上，我们正在构建一个模块（与传统库相反），通过添加`module-info.java`文件来表示该模块。（另一种选择是添加`Automatic-Module-Name`Jar清单属性，[如](#sec_java_library_modular_auto)后面[所述](#sec_java_library_modular_auto)。）
 
   * 我们的模块所依赖的Jar本身就是一个模块，Gradles会根据Jar中是否存在`module-info.class` -模块描述符的编译版本来决定。（或者，替代地，存在`Automatic-Module-Name`Jar清单属性）
 
@@ -438,9 +438,9 @@ build.gradle.kts
 。
 [此示例](https://docs.gradle.org/6.7.1/samples/sample_java_modules_with_transform.html)包含一个小的
 _buildSrc_
-插件，该插件注册了您可以使用并根据需要进行调整的转换。如果您想构建一个完全[模块化的应用程序](/md/Java应用插件.md#sec:application_modular)并希望Java运行时将所有内容都视为一个真正的模块，那么这可能会很有趣。
+插件，该插件注册了您可以使用并根据需要进行调整的转换。如果您想构建一个完全[模块化的应用程序](/md/Java应用插件.md#sec_application_modular)并希望Java运行时将所有内容都视为一个真正的模块，那么这可能会很有趣。
 
-<h3 id = '#sec:java_library_modular_auto'> <a href = '#sec:java_library_modular_auto'>建立一个自动模块</a> </h3>
+<h3 id = '#sec_java_library_modular_auto'> <a href = '#sec_java_library_modular_auto'>建立一个自动模块</a> </h3>
 
 如果可以的话，应该始终`module-info.java`为模块编写完整的描述符。不过，在某些情况下，您可能会考虑（最初）仅为自动模块提供 _模块名称_ ：
 
@@ -481,7 +481,7 @@ Eclipse目前无法正确识别此类自动模块项目。您可以通过将为�
   
 ╚═════════════════════════════    
   
-<h2 id = '#sec:java_library_classes_usage'> <a href = '#sec:java_library_classes_usage'>使用类而不是jar进行编译</a> </h2>
+<h2 id = '#sec_java_library_classes_usage'> <a href = '#sec_java_library_classes_usage'>使用类而不是jar进行编译</a> </h2>
 
 该`java-
 library`插件的一个特点是，使用该库的项目只需要使用classes文件夹进行编译即可，而无需完整的JAR。当在开发过程中仅执行Java代码编译时，由于不再执行资源处理（`processResources`任务）和归档构建（`jar`任务），因此可以减轻项目间的依赖性。
@@ -493,17 +493,17 @@ _和已_ 处理资源。
   
 ╚═════════════════════════════    
   
-<h3 id = '#sub:java_library_known_issues_memory'> <a href = '#sub:java_library_known_issues_memory'>消费者使用的内存增加</a> </h3>
+<h3 id = '#sub_java_library_known_issues_memory'> <a href = '#sub_java_library_known_issues_memory'>消费者使用的内存增加</a> </h3>
 
 间接的结果是，最新的检查将需要更多的内存，因为Gradle会快照单个类文件而不是单个jar。这可能会导致大型项目的内存消耗增加，并具有`compileJava`在更多情况下使任务为最新状态的好处（例如，更改资源不再更改`compileJava`上游项目任务的输入）
 
-<h3 id = '#sub:java_library_known_issues_windows_performance'> <a href = '#sub:java_library_known_issues_windows_performance'>Windows上大型项目的构建性能显着下降</a> </h3>
+<h3 id = '#sub_java_library_known_issues_windows_performance'> <a href = '#sub_java_library_known_issues_windows_performance'>Windows上大型项目的构建性能显着下降</a> </h3>
 
 单个类文件快照的另一个副作用，仅影响W​​indows系统，是在编译类路径上处理大量类文件时，性能可能会大大下降。这仅涉及非常大的多项目，其中通过使用多个`api`（不推荐使用）`compile`依赖项在类路径上存在很多类。为了减轻这种情况，您可以将`org.gradle.java.compile-
 classpath-packaging`system属性设置`true`为更改Java
 Library插件的行为，以对编译类路径上的所有内容使用jar代替类文件夹。请注意，由于这会带来其他性能影响和潜在的副作用，因此通过在编译时触发所有jar任务，只有在Windows上遇到上述性能问题时，才建议激活此功能。
 
-<h2 id = '#sec:library_distribution'> <a href = '#sec:library_distribution'>分发库</a> </h2>
+<h2 id = '#sec_library_distribution'> <a href = '#sec_library_distribution'>分发库</a> </h2>
 
 除了将库[发布](/md/将项目发布为模块.md)到组件存储库之外，有时您可能还需要将库及其依赖项打包在可分发的交付中。该[Java库分布插件](https://docs.gradle.org/6.7.1/userguide/java_library_distribution_plugin.html)是在那里你做到这一点的帮助。
 

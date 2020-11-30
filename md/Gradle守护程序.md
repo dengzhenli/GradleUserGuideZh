@@ -2,14 +2,14 @@
 
 内容
 
-  * [为什么Gradle Daemon对性能很重要](#sec:why_the_daemon)
-  * [运行守护程序状态](#sec:status)
-  * [禁用守护程序](#sec:disabling_the_daemon)
-  * [停止现有的守护程序](#sec:stopping_an_existing_daemon)
+  * [为什么Gradle Daemon对性能很重要](#sec_why_the_daemon)
+  * [运行守护程序状态](#sec_status)
+  * [禁用守护程序](#sec_disabling_the_daemon)
+  * [停止现有的守护程序](#sec_stopping_an_existing_daemon)
   * [常问问题](#daemon_faq)
-  * [工具和IDE](#sec:tools_and_ides)
-  * [Gradle守护程序如何使构建更快？](#sec:how_does_the_gradle_daemon_make_builds_faster)
-  * [观看文件系统](#sec:daemon_watch_fs)
+  * [工具和IDE](#sec_tools_and_ides)
+  * [Gradle守护程序如何使构建更快？](#sec_how_does_the_gradle_daemon_make_builds_faster)
+  * [观看文件系统](#sec_daemon_watch_fs)
 
 > 守护程序是一种计算机程序，它作为后台进程运行，而不是受交互式用户的直接控制。
 
@@ -20,7 +20,7 @@ _Daemon_
 ：这是一个长期存在的后台进程，与以前相比，它可以更快地执行构建。通过避免昂贵的引导过程以及利用缓存（将有关项目的数据保留在内存中），我们可以实现这一目标。使用Daemon运行Gradle构建与没有运行没有什么不同。只需配置您是否要使用它-
 其他所有事情都由Gradle透明地处理。
 
-<h2 id = '#sec:why_the_daemon'> <a href = '#sec:why_the_daemon'>为什么Gradle Daemon对性能很重要</a> </h2>
+<h2 id = '#sec_why_the_daemon'> <a href = '#sec_why_the_daemon'>为什么Gradle Daemon对性能很重要</a> </h2>
 
 守护进程是一个长期存在的过程，因此我们不仅可以避免每次构建都需要启动JVM的成本，而且还可以在内存中缓存有关项目结构，文件，任务等的信息。
 
@@ -29,7 +29,7 @@ Daemon对您的影响。
 
 默认情况下，Gradle Daemon从Gradle 3.0开始启用，因此您无需做任何事情即可从中受益。
 
-<h2 id = '#sec:status'> <a href = '#sec:status'>运行守护程序状态</a> </h2>
+<h2 id = '#sec_status'> <a href = '#sec_status'>运行守护程序状态</a> </h2>
 
 要获取正在运行的Gradle守护程序及其状态的列表，请使用`--status`命令。
 
@@ -43,7 +43,7 @@ Daemon对您的影响。
 
 当前，给定的Gradle版本只能连接到相同版本的守护程序。这意味着状态输出将仅显示正在调用的Gradle版本的守护程序，而不显示任何其他版本的守护程序。Gradle的未来版本将解除此约束，并将显示所有Gradle版本的正在运行的守护程序。
 
-<h2 id = '#sec:disabling_the_daemon'> <a href = '#sec:disabling_the_daemon'>禁用守护程序</a> </h2>
+<h2 id = '#sec_disabling_the_daemon'> <a href = '#sec_disabling_the_daemon'>禁用守护程序</a> </h2>
 
 Gradle守护程序默认情况下处于启用状态，我们建议始终启用它。有几种方法可以禁用守护程序，但是最常见的一种方法是添加行
 
@@ -71,7 +71,7 @@ _完全_ 隔离。
   
 ╚═════════════════════════════
   
-<h2 id = '#sec:stopping_an_existing_daemon'> <a href = '#sec:stopping_an_existing_daemon'>停止现有的守护程序</a> </h2>
+<h2 id = '#sec_stopping_an_existing_daemon'> <a href = '#sec_stopping_an_existing_daemon'>停止现有的守护程序</a> </h2>
 
 如前所述，守护进程是一个后台进程。不过，您不必担心计算机上会构建Gradle进程。与可用的系统内存总量相比，每个守护程序都会监视其内存使用情况，并且在可用系统内存不足时空闲时将自行停止。如果出于任何原因要显式停止运行Daemon进程，只需使用命令`gradle
 --stop`。
@@ -80,7 +80,7 @@ _完全_ 隔离。
 
 <h2 id = '#daemon_faq'> <a href = '#daemon_faq'>常问问题</a> </h2>
 
-<h3 id = '#sec:ways_to_disable_gradle_daemon'> <a href = '#sec:ways_to_disable_gradle_daemon'>如何禁用Gradle守护程序？</a> </h3>
+<h3 id = '#sec_ways_to_disable_gradle_daemon'> <a href = '#sec_ways_to_disable_gradle_daemon'>如何禁用Gradle守护程序？</a> </h3>
 
 有两种建议的方法可以为环境持久禁用守护程序：
 
@@ -116,7 +116,7 @@ user-home`命令行开关以及`GRADLE_USER_HOME`环境变量和`org.gradle.user
 daemon`命令行选项启用和禁用守护程序用于单独的构建调用。在考虑构建环境时，这些命令行选项具有 _最高_
 优先级。通常，为环境（例如，用户帐户）启用守护程序更为方便，以便所有构建都使用守护程序而无需记住要提供该`--daemon`选项。
 
-<h3 id = '#sec:why_is_there_more_than_one_daemon_process_on_my_machine'> <a href = '#sec:why_is_there_more_than_one_daemon_process_on_my_machine'>为什么我的机器上有多个守护进程？</a> </h3>
+<h3 id = '#sec_why_is_there_more_than_one_daemon_process_on_my_machine'> <a href = '#sec_why_is_there_more_than_one_daemon_process_on_my_machine'>为什么我的机器上有多个守护进程？</a> </h3>
 
 Gradle为什么要创建一个新的守护程序，而不使用已经运行的守护程序，有几个原因。基本规则是，如果没有可用的空闲或兼容守护程序，则Gradle将启动新的守护程序。Gradle将杀死任何闲置了3小时或更长时间的守护程序，因此您不必担心手动清理它们。
 
@@ -173,18 +173,18 @@ compatible（兼容）
 
 所需的Gradle版本是所请求构建环境的另一方面。守护进程与特定的Gradle运行时耦合。在使用不同Gradle版本的会话中处理多个Gradle项目是导致有多个正在运行的Daemon进程的常见原因。
 
-<h3 id = '#sec:how_much_memory_does_the_daemon_use_and_can_i_give_it_more'> <a href = '#sec:how_much_memory_does_the_daemon_use_and_can_i_give_it_more'>守护程序使用多少内存，我可以给它更多空间吗？</a> </h3>
+<h3 id = '#sec_how_much_memory_does_the_daemon_use_and_can_i_give_it_more'> <a href = '#sec_how_much_memory_does_the_daemon_use_and_can_i_give_it_more'>守护程序使用多少内存，我可以给它更多空间吗？</a> </h3>
 
 如果请求的构建环境未指定最大堆大小，则守护程序将使用最多512MB的堆。它将使用JVM的默认最小堆大小。对于大多数构建来说，512MB绰绰有余。包含数百个子项目的较大内部版本，大量配置和源代码可能需要或在具有更多内存的情况下表现更好。
 
 要增加守护程序可以使用的内存量，请在请求的构建环境中指定适当的标志。有关详细信息，请参见[构建环境](/md/Gradle环境搭建.md#build_environment)。
 
-<h3 id = '#sec:how_can_i_stop_a_daemon'> <a href = '#sec:how_can_i_stop_a_daemon'>如何停止守护程序？</a> </h3>
+<h3 id = '#sec_how_can_i_stop_a_daemon'> <a href = '#sec_how_can_i_stop_a_daemon'>如何停止守护程序？</a> </h3>
 
 闲置3个小时或更短的时间后，守护进程将自动终止。如果您希望在此之前停止Daemon进程，则可以通过操作系统终止该进程或运行`gradle
 --stop`命令。该`--stop`开关使Gradle请求 _所有_ 正在运行 _的，与用于运行命令的Gradle版本相同的_ Daemon进程自行终止。
 
-<h3 id = '#sec:what_can_go_wrong_with_daemon'> <a href = '#sec:what_can_go_wrong_with_daemon'>守护程序会出什么问题？</a> </h3>
+<h3 id = '#sec_what_can_go_wrong_with_daemon'> <a href = '#sec_what_can_go_wrong_with_daemon'>守护程序会出什么问题？</a> </h3>
 
 在日常开发中，使Daemon健壮，透明且不引人注目的工程方面已经付出了相当大的努力。但是，守护进程有时会被破坏或耗尽。Gradle构建从多个源执行任意代码。虽然Gradle本身是为Daemon设计并经过严格测试的，但用户构建脚本和第三方插件可能会通过内存泄漏或全局状态损坏等缺陷破坏Daemon进程的稳定性。
 
@@ -197,12 +197,12 @@ monitoring`system属性设置为false来禁用此监视。
 如果怀疑Daemon进程变得不稳定，则可以将其杀死。回想一下，`--no-
 daemon`可以为构建指定开关，以防止使用守护程序。这对于诊断守护程序是否实际上是问题的元凶很有用。
 
-<h2 id = '#sec:tools_and_ides'> <a href = '#sec:tools_and_ides'>工具和IDE</a> </h2>
+<h2 id = '#sec_tools_and_ides'> <a href = '#sec_tools_and_ides'>工具和IDE</a> </h2>
 
 IDE和其他工具用于与Gradle集成的[Gradle Tooling API](/md/Gradle和第三方工具.md#embedding)
 _始终_ 使用Gradle守护程序执行构建。如果要在IDE中执行Gradle构建，则使用的是Gradle Daemon，而无需为您的环境启用它。
 
-<h2 id = '#sec:how_does_the_gradle_daemon_make_builds_faster'> <a href = '#sec:how_does_the_gradle_daemon_make_builds_faster'>Gradle守护程序如何使构建更快？</a> </h2>
+<h2 id = '#sec_how_does_the_gradle_daemon_make_builds_faster'> <a href = '#sec_how_does_the_gradle_daemon_make_builds_faster'>Gradle守护程序如何使构建更快？</a> </h2>
 
 Gradle守护程序是一个 _长期存在的_
 构建过程。在两次构建之间，它空闲地等待下一次构建。这具有明显的好处，即对于多个构建只需要一次将Gradle加载到内存中，而不是对于每个构建一次。这本身就是一项重大的性能优化，但并非止于此。
@@ -211,9 +211,9 @@ Gradle守护程序是一个 _长期存在的_
 
 守护程序还允许跨构建更有效地进行内存缓存。例如，构建所需的类（例如，插件，构建脚本）可以保存在构建之间的内存中。同样，Gradle可以维护构建数据的内存缓存，例如用于增量构建的任务输入和输出的哈希值。
 
-为了检测文件系统上的更改并计算需要重建的内容，Gradle会在每次构建过程中收集有关文件系统状态的大量信息。当[监视的文件系统](#sec:daemon_watch_fs)被启用，后台程序可以重新使用来自上次编译已经收集到的信息。这可以为增量构建节省大量时间，而两次构建之间对文件系统的更改次数通常很少。
+为了检测文件系统上的更改并计算需要重建的内容，Gradle会在每次构建过程中收集有关文件系统状态的大量信息。当[监视的文件系统](#sec_daemon_watch_fs)被启用，后台程序可以重新使用来自上次编译已经收集到的信息。这可以为增量构建节省大量时间，而两次构建之间对文件系统的更改次数通常很少。
 
-<h2 id = '#sec:daemon_watch_fs'> <a href = '#sec:daemon_watch_fs'>观看文件系统</a> </h2>
+<h2 id = '#sec_daemon_watch_fs'> <a href = '#sec_daemon_watch_fs'>观看文件系统</a> </h2>
 
 为了检测文件系统上的更改并计算需要重建的内容，Gradle会在每次构建（即 _虚拟文件系统_ ）期间收集有关内存中 _文件系统的信息_
 。通过监视文件系统，Gradle可以使虚拟文件系统与文件系统保持同步，即使在两次构建之间也是如此。这样做可以使守护程序节省时间来从磁盘重建虚拟文件系统以进行下一个构建。对于增量构建，构建之间通常只有几处更改。因此，增量构建可以重用上次构建中的大部分虚拟文件系统，并从监视文件系统中获得最大收益。
@@ -242,7 +242,7 @@ Gradle使用操作系统功能来监视文件系统。它支持以下操作系�
 
 除非使用显式禁用，否则这可以监视文件系统的所有构建`--no-watch-fs`。
 
-<h3 id = '#sec:daemon_watch_fs_troubleshooting'> <a href = '#sec:daemon_watch_fs_troubleshooting'>对文件系统监视进行故障排除</a> </h3>
+<h3 id = '#sec_daemon_watch_fs_troubleshooting'> <a href = '#sec_daemon_watch_fs_troubleshooting'>对文件系统监视进行故障排除</a> </h3>
 
 局限性
 
@@ -306,7 +306,7 @@ macOS上的打开文件过多
 如果您`java.io.IOException: Too many open
 files`在macOS上收到错误消息，则需要提高打开文件的限制，请参见[此处](https://superuser.com/a/443168/8117)。
 
-<h3 id = '#sec:inotify_watches_limit'> <a href = '#sec:inotify_watches_limit'>Linux专用说明</a> </h3>
+<h3 id = '#sec_inotify_watches_limit'> <a href = '#sec_inotify_watches_limit'>Linux专用说明</a> </h3>
 
 文件系统监视在Linux上使用[inotify](http://en.wikipedia.org/wiki/Inotify)。根据构建的大小，可能有必要增加inotify限制。如果您使用的是IDE，那么过去您可能已经不得不增加限制。
 

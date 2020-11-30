@@ -10,7 +10,7 @@
   * [集合类型](#collection_types)
 
 您可以为Gradle开发几种不同类型的“附加组件”，例如[插件](/md/开发自定义Gradle插件.md#custom_plugins)，[任务](/md/开发自定义Gradle任务类型.md#custom_tasks)，
-[项目扩展](/md/开发自定义Gradle插件.md#sec:getting_input_from_the_build)或[工件转换](/md/转换解决方案上的依赖工件.md#sec:implementing-
+[项目扩展](/md/开发自定义Gradle插件.md#sec_getting_input_from_the_build)或[工件转换](/md/转换解决方案上的依赖工件.md#sec:implementing-
 artifact-
 transforms)，它们全部实现为类和可以在JVM上运行的其他类型。本章讨论了这些类型共有的一些功能和概念。您可以使用这些功能来帮助实现自定义的Gradle类型，并为用户提供一致的DSL。
 

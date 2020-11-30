@@ -2,19 +2,19 @@
 
 内容
 
-* [先决条件](#sec:prerequisites)
+* [先决条件](#sec_prerequisites)
 * [使用软件包管理器进行安装](#installing_with_a_package_manager)
 * [手动安装](#installing_manually)
-* [验证安装](#sec:running_and_testing_your_installation)
-* [下一步](#sec:installation_next_steps)
+* [验证安装](#sec_running_and_testing_your_installation)
+* [下一步](#sec_installation_next_steps)
 
 您可以在Linux，macOS或Windows上安装Gradle构建工具。本文档涵盖使用软件包管理器（如SDKMAN）进行安装！或Homebrew，以及手动安装。
 
-建议使用[Gradle wrapper](/md/gradle_wrapper.md#sec:upgrading_wrapper) 升级Gradle。
+建议使用[Gradle wrapper](/md/gradle_wrapper.md#sec_upgrading_wrapper) 升级Gradle。
 
-您可以在“[发行版”页面](https://gradle.org/releases) 上找到所有发行版及其校验和。
+您可以在“[发行版”页面](https_//gradle.org/releases) 上找到所有发行版及其校验和。
 
-<h2 id = '#sec:prerequisites'> <a href = '#sec:prerequisites'>先决条件</a> </h2>
+<h2 id = '#sec_prerequisites'> <a href = '#sec_prerequisites'>先决条件</a> </h2>
 
 Gradle可在所有主要操作系统上运行，并且仅需要[Java开发套件](https://jdk.java.net/)版本8或更高版本即可运行。要检查，请运行`java -version`。您应该会看到以下内容：
 
@@ -47,18 +47,18 @@ Gradle使用在路径中找到的任何JDK。或者，您可以将`JAVA_HOME`环
 
 可以使用其他软件包管理器，但是它们分发的Gradle版本不受Gradle，Inc.的控制。Linux软件包管理器可能会分发与正式版本（从SDKMAN！或更低版本提供）相比不兼容或不完整的Gradle修改版。 ）。
 
-[↓继续下一步](#sec:installation_next_steps)
+[↓继续下一步](#sec_installation_next_steps)
 
 <h2 id = '#installing_manually'> <a href = '#installing_manually'>手动安装</a> </h2>
 
-<h3 id = 'https://gradle.org/releases'> <a href = 'https://gradle.org/releases'>下载</a> </h3>
+<h3 id = 'https_//gradle.org/releases'> <a href = 'https_//gradle.org/releases'>下载</a> </h3>
 
 分发ZIP文件有两种形式：
 
 * 仅二进制（bin）
 * 完整（全部）包含文档和来源
 
-需要使用旧版本吗？请参阅[发布页面](https://gradle.org/releases)。
+需要使用旧版本吗？请参阅[发布页面](https_//gradle.org/releases)。
 
 <h3 id = '#step_2_unpack_the_distribution'> <a href = '#step_2_unpack_the_distribution'>步骤2.拆开发行包</a> </h3>
 
@@ -99,9 +99,9 @@ LICENSE  NOTICE  bin  README  init.d  lib  media
 
 或者，您也可以添加环境变量`GRADLE_HOME`并将其指向未压缩的发行版。`Path`您可以`_%GRADLE_HOME%_/bin`向自己的而不是向其中添加特定版本的Gradle`Path`。当升级到其他版本的Gradle时，只需更改`GRADLE_HOME`环境变量即可。
 
-[↓继续下一步](#sec:installation_next_steps)
+[↓继续下一步](#sec_installation_next_steps)
 
-<h2 id = '#sec:running_and_testing_your_installation'> <a href = '#sec:running_and_testing_your_installation'>验证安装</a> </h2>
+<h2 id = '#sec_running_and_testing_your_installation'> <a href = '#sec_running_and_testing_your_installation'>验证安装</a> </h2>
 
 打开控制台（或Windows命令提示符）并运行`gradle \-v`以运行gradle并显示版本，例如：
 
@@ -114,12 +114,12 @@ Gradle 6.7.1
 
 (environment specific information)
 ```
-如果遇到麻烦，请参阅“[排除安装故障](/md/对构建进行故障排除.md#sec:troubleshooting_installation) ”[部分](/md/对构建进行故障排除.md#sec:troubleshooting_installation) 。
+如果遇到麻烦，请参阅“[排除安装故障](/md/对构建进行故障排除.md#sec_troubleshooting_installation) ”[部分](/md/对构建进行故障排除.md#sec_troubleshooting_installation) 。
 
 
-您可以通过下载SHA-256文件（可从[发行版中获得](https://gradle.org/releases) ）并按照以下[验证指示信息](/md/gradle_wrapper.md#sec:verification) 来验证Gradle分发的完整性。
+您可以通过下载SHA-256文件（可从[发行版中获得](https_//gradle.org/releases) ）并按照以下[验证指示信息](/md/gradle_wrapper.md#sec_verification) 来验证Gradle分发的完整性。
 
-<h2 id = '#sec:installation_next_steps'> <a href = '#sec:installation_next_steps'>下一步</a> </h2>
+<h2 id = '#sec_installation_next_steps'> <a href = '#sec_installation_next_steps'>下一步</a> </h2>
 
 现在您已经安装了Gradle，请使用以下资源进行入门：
 

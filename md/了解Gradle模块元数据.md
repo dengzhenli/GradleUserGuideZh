@@ -3,11 +3,11 @@
 
 内容
 
-  * [与其他格式的映射](#sub:mapping-with-other-formats)
-  * [与其他构建工具的交互](#sub:interactions-other-build-tools)
-  * [Gradle模块元数据验证](#sub:gmm-validation)
-  * [使Gradle模块元数据可重现](#sub:gmm-reproducible)
-  * [禁用Gradle模块元数据发布](#sub:disabling-gmm-publication)
+  * [与其他格式的映射](#sub_mapping-with-other-formats)
+  * [与其他构建工具的交互](#sub_interactions-other-build-tools)
+  * [Gradle模块元数据验证](#sub_gmm-validation)
+  * [使Gradle模块元数据可重现](#sub_gmm-reproducible)
+  * [禁用Gradle模块元数据发布](#sub_disabling-gmm-publication)
 
 Gradle模块元数据是用于序列化Gradle组件模型的格式。它类似于[Apache Maven™的POM文件](https://maven.apache.org/pom.html)
 或[Apache Ivy™ivy.xml](http://ant.apache.org/ivy/)文件。元数据文件的目标是向 _消费者_ 提供存储库中发布内容的合理模型。
@@ -18,7 +18,7 @@ Gradle模块元数据是一种独特的格式，旨在通过使其具有多平�
 
   * [丰富的版本限制](/md/声明丰富版本.md#rich-version-constraints)
 
-  * [依赖约束](/md/升级传递依赖的版本.md#sec:adding-constraints-transitive-deps)
+  * [依赖约束](/md/升级传递依赖的版本.md#sec_adding-constraints-transitive-deps)
 
   * [组件功能](/md/声明Library的能力.md#declaring-component-capabilities)
 
@@ -39,7 +39,7 @@ _不_ 支持传统`maven`和`ivy`插件。
 
 可以在[此处](https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-module-metadata-latest-specification.md)找到Gradle模块元数据规范的规范。
 
-<h2 id = '#sub:mapping-with-other-formats'> <a href = '#sub:mapping-with-other-formats'>与其他格式的映射</a> </h2>
+<h2 id = '#sub_mapping-with-other-formats'> <a href = '#sub_mapping-with-other-formats'>与其他格式的映射</a> </h2>
 
 Gradle模块元数据会自动发布在Maven或Ivy存储库中。但是，它不会替代 _pom.xml_ 或 _ivy.xml_
 文件：它与这些文件一起发布。这样做是为了最大程度地提高与第三方构建工具的兼容性。
@@ -48,11 +48,11 @@ Gradle尽其所能将Gradle特定的概念映射到Maven或Ivy。当构建文件
 
 表1. Gradle特定概念到Maven和Ivy的映射 Gradle | 马文 | Ivy | 描述  
 ---|---  |---|---    
-[依赖约束](/md/升级传递依赖的版本.md#sec:adding-constraints-transitive-deps)|`<dependencyManagement>` 依存关系|未发表|Gradle依赖项约束是可 _传递的_ ，而Maven的依赖项管理块 _不是_  
+[依赖约束](/md/升级传递依赖的版本.md#sec_adding-constraints-transitive-deps)|`<dependencyManagement>` 依存关系|未发表|Gradle依赖项约束是可 _传递的_ ，而Maven的依赖项管理块 _不是_  
 [丰富的版本限制](/md/声明丰富版本.md#rich-version-constraints)|发布 _需求_ 版本|发布了 _需求_ 版本|  
 [组件功能](/md/声明Library的能力.md#declaring-component-capabilities)|未发表|未发表|组件功能是Gradle独有的  
 [功能变体](/md/建模功能变体和可选依赖项.md)|上载变异工件，依赖性发布为_optional依赖性|已上传变体工件，未发布依赖项|功能变体很好地替代了可选的依赖项  
-[自定义组件类型](/md/定制发布.md#sec:publishing-custom-components)|工件已上传，依赖项是映射所描述的依赖项|工件已上传，相关性被忽略|在任何情况下，自定义组件类型都可能无法从Maven或Ivy中使用。它们通常存在于自定义生态系统中。  
+[自定义组件类型](/md/定制发布.md#sec_publishing-custom-components)|工件已上传，依赖项是映射所描述的依赖项|工件已上传，相关性被忽略|在任何情况下，自定义组件类型都可能无法从Maven或Ivy中使用。它们通常存在于自定义生态系统中。  
   
 <h3 id = '#disabling_metadata_compatibility_publication_warnings'> <a href = '#disabling_metadata_compatibility_publication_warnings'>禁用元数据兼容性发布警告</a> </h3>
 
@@ -88,16 +88,16 @@ build.gradle.kts
             }
         }
 
-<h2 id = '#sub:interactions-other-build-tools'> <a href = '#sub:interactions-other-build-tools'>与其他构建工具的交互</a> </h2>
+<h2 id = '#sub_interactions-other-build-tools'> <a href = '#sub_interactions-other-build-tools'>与其他构建工具的交互</a> </h2>
 
-由于Gradle模块元数据并未广泛传播，并且其目的是[最大程度地提高与其他工具的兼容性](#sub:mapping-with-other-formats)，因此Gradle做以下几件事：
+由于Gradle模块元数据并未广泛传播，并且其目的是[最大程度地提高与其他工具的兼容性](#sub_mapping-with-other-formats)，因此Gradle做以下几件事：
 
   * Gradle模块元数据与给定存储库（Maven或Ivy）的常规描述符一起系统发布
 
   * 的`pom.xml`或`ivy.xml`文件将包含一个 _标记评论_ 它告诉该Gradle模块Gradle元数据存在该模块
 
 标记的目的 _不是_ 其他工具来解析模块元数据：仅用于Gradle用户。它向Gradle解释说存在 _更好的_
-模块元数据文件，并且应该使用它。这并不意味着Maven或Ivy的消耗也将被打破，仅意味着它可以在[降级模式下工作](#sub:mapping-with-other-formats)。
+模块元数据文件，并且应该使用它。这并不意味着Maven或Ivy的消耗也将被打破，仅意味着它可以在[降级模式下工作](#sub_mapping-with-other-formats)。
 
 ╔═════════════════════════════  
 
@@ -138,7 +138,7 @@ build.gradle.kts
             }
         }
 
-<h2 id = '#sub:gmm-validation'> <a href = '#sub:gmm-validation'>Gradle模块元数据验证</a> </h2>
+<h2 id = '#sub_gmm-validation'> <a href = '#sub_gmm-validation'>Gradle模块元数据验证</a> </h2>
 
 Gradle模块元数据在发布之前先经过验证。
 
@@ -154,7 +154,7 @@ Gradle模块元数据在发布之前先经过验证。
 
 这些规则可确保生成的元数据的质量，并有助于确认使用不会有问题。
 
-<h2 id = '#sub:gmm-reproducible'> <a href = '#sub:gmm-reproducible'>使Gradle模块元数据可重现</a> </h2>
+<h2 id = '#sub_gmm-reproducible'> <a href = '#sub_gmm-reproducible'>使Gradle模块元数据可重现</a> </h2>
 
 默认情况下，Gradle模块元数据文件包含生成它的构建中的唯一ID。这意味着文件将始终是不同的。
 
@@ -199,7 +199,7 @@ DATE`由于实现方式，生成模块元数据文件的任务目前从未被Gra
   
 ╚═════════════════════════════    
   
-<h2 id = '#sub:disabling-gmm-publication'> <a href = '#sub:disabling-gmm-publication'>禁用Gradle模块元数据发布</a> </h2>
+<h2 id = '#sub_disabling-gmm-publication'> <a href = '#sub_disabling-gmm-publication'>禁用Gradle模块元数据发布</a> </h2>
 
 在某些情况下，您可能希望禁用Gradle模块元数据的发布：
 

@@ -56,7 +56,7 @@
 <h4 id = '#changing_default_excludes_during_the_execution_phase'> <a href = '#changing_default_excludes_during_the_execution_phase'>在执行阶段更改默认值排除</a> </h4>
 
 为了方便起见，Gradle的文件树应用了一些默认的排除模式-
-实际上与Ant相同。有关更多信息，请参见[用户手册](/md/编写构建脚本.md#sec:file_trees)。有时，Ant的默认排除会证明是有问题的，例如，当您要`.gitignore`在存档文件中包含时。
+实际上与Ant相同。有关更多信息，请参见[用户手册](/md/编写构建脚本.md#sec_file_trees)。有时，Ant的默认排除会证明是有问题的，例如，当您要`.gitignore`在存档文件中包含时。
 
 在执行阶段更改Gradle的默认排除项可能导致最新检查的正确性问题，因此不建议使用。仅允许您在设置脚本中更改Gradle的默认排除项，有关示例，请参见[用户手册](/md/编写构建脚本.md#sec:change_default_excludes)。
 
@@ -88,7 +88,7 @@ Gradle允许将的实例`Configuration`直接用作依赖项：
 
 <h4 id = '#dependency_substitutions_and_variant_aware_dependency_resolution'> <a href = '#dependency_substitutions_and_variant_aware_dependency_resolution'>依赖替换和变体感知依赖解析</a> </h4>
 
-在添加对表示依赖项替换中的[变体支持的支持](/md/直接自定义依赖项的解析.md#sec:variant_aware_substitutions)时，错误修复引入了某些构建可能依赖的行为更改。以前，替换的依赖项仍将使用原始选择器的[属性](/md/了解变体选择.md)，而不是替换选择器的[属性](/md/了解变体选择.md)。
+在添加对表示依赖项替换中的[变体支持的支持](/md/直接自定义依赖项的解析.md#sec_variant_aware_substitutions)时，错误修复引入了某些构建可能依赖的行为更改。以前，替换的依赖项仍将使用原始选择器的[属性](/md/了解变体选择.md)，而不是替换选择器的[属性](/md/了解变体选择.md)。
 
 有了这一更改，用丰富的选择器围绕依赖项进行的现有替换（例如平台依赖项）将不再像以前那样起作用。必须在目标选择器中定义变量识别部分。
 
@@ -100,7 +100,7 @@ Gradle允许将的实例`Configuration`直接用作依赖项：
 
   * _并_ 在这些依赖项上使用[解析规则](/md/直接自定义依赖项的解析.md)。
 
-如果您受到影响，请参阅[文档](/md/直接自定义依赖项的解析.md#sec:variant_aware_substitutions)以解决问题。
+如果您受到影响，请参阅[文档](/md/直接自定义依赖项的解析.md#sec_variant_aware_substitutions)以解决问题。
 
 <h3 id = '#deprecations_2'> <a href = '#deprecations_2'>弃用</a> </h3>
 
@@ -137,7 +137,7 @@ Gradle 6.6中未弃用。
 
 <h3 id = '#potential_breaking_changes_4'> <a href = '#potential_breaking_changes_4'>潜在的重大变化</a> </h3>
 
-<h4 id = '#upgrade:pmd_expects_6'> <a href = '#upgrade:pmd_expects_6'>PMD插件默认需要PMD6.0.0或更高版本</a> </h4>
+<h4 id = '#upgrade_pmd_expects_6'> <a href = '#upgrade_pmd_expects_6'>PMD插件默认需要PMD6.0.0或更高版本</a> </h4>
 
 Gradle 6.4默认情况下启用了增量分析。增量分析仅在PMD 6.0.0或更高版本中可用。如果要使用较旧的PMD版本，则需要禁用增量分析：
 
@@ -211,7 +211,7 @@ Gradle不再将注释处理器类路径包含为IDEA中提供的依赖项。IDEA
 <h4 id = '#rich_console_support_removed_for_some_32_bit_operating_systems'> <a href = '#rich_console_support_removed_for_some_32_bit_operating_systems'>对某些32位操作系统删除了丰富的控制台支持</a> </h4>
 
 对于32位Unix系统和旧的FreeBSD版本（早于FreeBSD 10），Gradle
-6.3不支持[丰富的控制台](/md/命令行界面.md#sec:rich_console)。Microsoft
+6.3不支持[丰富的控制台](/md/命令行界面.md#sec_rich_console)。Microsoft
 Windows 32位不受影响。
 
 Gradle将继续在32位系统上构建项目，但不再显示丰富的控制台。
@@ -226,7 +226,7 @@ Gradle将继续在32位系统上构建项目，但不再显示丰富的控制台
 虽然目前这些配置仍保留在Gradle中以实现向后兼容，但现在不建议使用它们来声明依赖项或解析依赖项。
 
 解决这些配置绝不是预期的用例，仅是可能的，因为在较早的Gradle版本中， _每个_
-配置都是可以解决的。要声明依赖关系，请使用您使用的插件提供的配置，例如[Java库插件](/md/Java库插件.md#sec:java_library_configurations_graph)。
+配置都是可以解决的。要声明依赖关系，请使用您使用的插件提供的配置，例如[Java库插件](/md/Java库插件.md#sec_java_library_configurations_graph)。
 
 <h2 id = '#changes_6.2'> <a href = '#changes_6.2'>从6.1升级</a> </h2>
 
@@ -234,7 +234,7 @@ Gradle将继续在32位系统上构建项目，但不再显示丰富的控制台
 
 <h4 id = '#compile_and_runtime_classpath_now_request_library_variants_by_default'> <a href = '#compile_and_runtime_classpath_now_request_library_variants_by_default'>现在，编译和运行时类路径默认情况下请求库变体</a> </h4>
 
-现在，JVM项目中的类路径显式请求该`org.gradle.category=library`属性。如果无法使用某些库，这将导致更清晰的错误消息。例如，当库不支持所需的Java版本时。实际的效果是，现在所有[平台依赖项](/md/Java平台插件.md#sec:java_platform_consumption)都必须这样声明。以前，当`platform()`本地平台或使用Gradle
+现在，JVM项目中的类路径显式请求该`org.gradle.category=library`属性。如果无法使用某些库，这将导致更清晰的错误消息。例如，当库不支持所需的Java版本时。实际的效果是，现在所有[平台依赖项](/md/Java平台插件.md#sec_java_platform_consumption)都必须这样声明。以前，当`platform()`本地平台或使用Gradle
 Module Metadata发布的平台省略了关键字时，平台依赖性也偶然发生了。
 
 <h4 id = '#properties_from_project_root_gradle_properties_leaking_into_buildsrc_and_included_builds'> <a href = '#properties_from_project_root_gradle_properties_leaking_into_buildsrc_and_included_builds'>项目根目录中的属性`gradle.properties`泄漏到`buildSrc`包含的构建中</a> </h4>

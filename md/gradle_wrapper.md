@@ -3,9 +3,9 @@
 
 内容
 
-  * [添加Gradle Wrap](#sec:adding_wrapper)
-  * [使用Gradle Wrap](#sec:using_wrapper)
-  * [升级Gradle Wrap](#sec:upgrading_wrapper)
+  * [添加Gradle Wrap](#sec_adding_wrapper)
+  * [使用Gradle Wrap](#sec_using_wrapper)
+  * [升级Gradle Wrap](#sec_upgrading_wrapper)
   * [自定义Gradle Wrap](#customizing_wrapper)
   * [验证Gradle Wrapper JAR的完整性](#wrapper_checksum_verification)
 
@@ -24,19 +24,19 @@ Wrapper”）的帮助下。 Wrap是一个脚本，可调用Gradle的声明版�
 
 **那么它是怎样工作的？ 对于用户而言，通常有三种不同的工作流程：**
 
-  * 您设置了一个新的Gradle项目，并希望[将 Wrap添加](#sec:adding_wrapper)到其中。
+  * 您设置了一个新的Gradle项目，并希望[将 Wrap添加](#sec_adding_wrapper)到其中。
 
-  * 您想[使用](#sec:using_wrapper)已经提供[了 Wrap](#sec:using_wrapper)程序[的项目](#sec:using_wrapper)来[运行该项目](#sec:using_wrapper)。
+  * 您想[使用](#sec_using_wrapper)已经提供[了 Wrap](#sec_using_wrapper)程序[的项目](#sec_using_wrapper)来[运行该项目](#sec_using_wrapper)。
 
-  * 您想[将 Wrap升级](#sec:upgrading_wrapper)到新版本的Gradle。
+  * 您想[将 Wrap升级](#sec_upgrading_wrapper)到新版本的Gradle。
 
 以下各节将更详细地说明这些用例。
 
-<h2 id = '#sec:adding_wrapper'> <a href = '#sec:adding_wrapper'>添加Gradle Wrap</a> </h2>
+<h2 id = '#sec_adding_wrapper'> <a href = '#sec_adding_wrapper'>添加Gradle Wrap</a> </h2>
 
 生成Wrapper文件需要在计算机上安装Gradle运行时的安装版本，如[Installation中所述](/md/安装Gradle.md#installation)。幸运的是，生成初始Wrapper文件是一个一次性的过程。
 
-每个普通的Gradle构建都带有一个称为的内置任务`wrapper`。列出任务时，您将可以在“构建安装程序任务”组下找到列出[的任务](/md/命令行界面.md#sec:listing_tasks)。执行`wrapper`任务会在项目目录中生成必要的Wrapper文件。
+每个普通的Gradle构建都带有一个称为的内置任务`wrapper`。列出任务时，您将可以在“构建安装程序任务”组下找到列出[的任务](/md/命令行界面.md#sec_listing_tasks)。执行`wrapper`任务会在项目目录中生成必要的Wrapper文件。
 
 运行 Wrap任务
 
@@ -93,7 +93,7 @@ type`过时的网址已经包含此信息。如果您想在公司网络内部托
 
     
 
-SHA256哈希和用于[验证下载的Gradle分布](#sec:verification)。
+SHA256哈希和用于[验证下载的Gradle分布](#sec_verification)。
 
 让我们假设以下用例说明了命令行选项的用法。您想生成版本为6.7.1的Wrapper，并使用该`-all`发行版来使您的IDE启用代码补全功能并能够导航到Gradle源代码。这些要求由以下命令行执行捕获：
 
@@ -156,7 +156,7 @@ Gradle项目通常为每个子项目提供一个`settings.gradle(.kts)`文件和
 
     
 
-一个属性文件，负责配置Wrapper运行时行为，例如与该版本兼容的Gradle版本。请注意，更多常规设置（例如，[将 Wrap配置为使用代理](/md/Gradle环境搭建.md#sec:accessing_the_web_via_a_proxy)）需要进入[其他文件](/md/Gradle环境搭建.md#sec:gradle_configuration_properties)。
+一个属性文件，负责配置Wrapper运行时行为，例如与该版本兼容的Gradle版本。请注意，更多常规设置（例如，[将 Wrap配置为使用代理](/md/Gradle环境搭建.md#sec_accessing_the_web_via_a_proxy)）需要进入[其他文件](/md/Gradle环境搭建.md#sec_gradle_configuration_properties)。
 
 `gradlew`， `gradlew.bat`
 
@@ -164,9 +164,9 @@ Gradle项目通常为每个子项目提供一个`settings.gradle(.kts)`文件和
 
 一个外壳脚本和一个Windows批处理脚本，用于使用 Wrap程序执行构建。
 
-您可以继续[使用 Wrap程序执行构建，](#sec:using_wrapper)而不必安装Gradle运行时。如果您正在处理的项目不包含那些Wrapper文件，则需要[生成它们](#sec:adding_wrapper)。
+您可以继续[使用 Wrap程序执行构建，](#sec_using_wrapper)而不必安装Gradle运行时。如果您正在处理的项目不包含那些Wrapper文件，则需要[生成它们](#sec_adding_wrapper)。
 
-<h2 id = '#sec:using_wrapper'> <a href = '#sec:using_wrapper'>使用Gradle Wrap</a> </h2>
+<h2 id = '#sec_using_wrapper'> <a href = '#sec_using_wrapper'>使用Gradle Wrap</a> </h2>
 
 建议始终使用 Wrap执行构建，以确保可靠，受控和标准化地执行构建。使用Wrapper看起来几乎就像使用Gradle安装来运行构建。根据操作系统的不同，您可以运行`gradlew`或`gradlew.bat`代替`gradle`命令。以下控制台输出演示了Windows机器上 Wrap程序对基于Java的项目的使用。
 
@@ -192,10 +192,10 @@ tasks`。
   
 ╚═════════════════════════════    
   
-<h2 id = '#sec:upgrading_wrapper'> <a href = '#sec:upgrading_wrapper'>升级Gradle Wrap</a> </h2>
+<h2 id = '#sec_upgrading_wrapper'> <a href = '#sec_upgrading_wrapper'>升级Gradle Wrap</a> </h2>
 
 项目通常会希望与时俱进并升级Gradle版本，以从新功能和改进中受益。升级Gradle版本的一种方法是手动更改`distributionUrl` Wrap`gradle-
-wrapper.properties`文件中的属性。更好的建议选项是运行`wrapper`任务并提供目标Gradle版本，如[添加Gradle Wrap中所述](#sec:adding_wrapper)。使用该`wrapper`任务可确保对具有该特定Gradle版本的Wrapper
+wrapper.properties`文件中的属性。更好的建议选项是运行`wrapper`任务并提供目标Gradle版本，如[添加Gradle Wrap中所述](#sec_adding_wrapper)。使用该`wrapper`任务可确保对具有该特定Gradle版本的Wrapper
 Shell脚本或批处理文件所做的任何优化都应用于项目。与往常一样，您应该将对Wrapper文件的更改提交给版本控制。
 
 请注意，仅运行一次 Wrap程序任务将`gradle-wrapper.properties`仅更新，但`gradle-
@@ -251,7 +251,7 @@ build.gradle.kts
 
 请查阅API文档，以获取有关可用配置选项的更多详细说明。您还可以在Gradle发行版中找到用于配置 Wrap的各种示例。
 
-<h3 id = '#sec:authenticated_download'> <a href = '#sec:authenticated_download'>经过身份验证的Gradle发行版下载</a> </h3>
+<h3 id = '#sec_authenticated_download'> <a href = '#sec_authenticated_download'>经过身份验证的Gradle发行版下载</a> </h3>
 
 Gradle`Wrapper`可以使用HTTP基本身份验证从服务器下载Gradle发行版。这使您可以将Gradle分发托管在受保护的私有服务器上。您可以根据使用情况以两种不同的方式指定用户名和密码：作为系统属性或直接嵌入`distributionUrl`。系统属性中的凭据优先于中嵌入的凭据`distributionUrl`。
 
@@ -263,7 +263,7 @@ HTTP基本身份验证仅应与`HTTPS`URL一起使用，而不应与普通URL一
   
 ╚═════════════════════════════    
   
-使用系统属性可以`.gradle/gradle.properties`在用户主目录中的文件中完成，也可以通过其他方式进行，请参阅[Gradle配置属性](/md/Gradle环境搭建.md#sec:gradle_configuration_properties)。
+使用系统属性可以`.gradle/gradle.properties`在用户主目录中的文件中完成，也可以通过其他方式进行，请参阅[Gradle配置属性](/md/Gradle环境搭建.md#sec_gradle_configuration_properties)。
 
 使用系统属性指定HTTP基本身份验证凭据
 
@@ -281,9 +281,9 @@ wrapper.properties`的文件也适用。请注意，此文件将提交到您的�
     
     distributionUrl=https://username:password@somehost/path/to/gradle-distribution.zip
 
-可以与已认证的代理或未认证的代理一起使用。有关如何配置使用[代理](/md/Gradle环境搭建.md#sec:accessing_the_web_via_a_proxy)的更多信息，请参见[通过代理访问网络](/md/Gradle环境搭建.md#sec:accessing_the_web_via_a_proxy)`Wrapper`。
+可以与已认证的代理或未认证的代理一起使用。有关如何配置使用[代理](/md/Gradle环境搭建.md#sec_accessing_the_web_via_a_proxy)的更多信息，请参见[通过代理访问网络](/md/Gradle环境搭建.md#sec_accessing_the_web_via_a_proxy)`Wrapper`。
 
-<h3 id = '#sec:verification'> <a href = '#sec:verification'>验证下载的Gradle发行版</a> </h3>
+<h3 id = '#sec_verification'> <a href = '#sec_verification'>验证下载的Gradle发行版</a> </h3>
 
 Gradle Wrap可通过SHA-256哈希总和比较来验证下载的Gradle分发。通过防止中间人攻击者篡改下载的Gradle发行版，提高了针对目标攻击的安全性。
 

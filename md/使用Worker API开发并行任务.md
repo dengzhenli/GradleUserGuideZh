@@ -56,7 +56,7 @@ buildSrc/build.gradle.kts
 ╚═════════════════════════════   
   
 ╔═════════════════════════════  
-如果您不熟悉`buildSrc`，这是一个特殊目录，可让您定义和构建应在构建脚本中使用的自定义类。有关更多信息，请参见[有关组织构建逻辑的部分](https://docs.gradle.org/nightly/userguide/organizing_gradle_projects.html#sec:build_sources)。  
+如果您不熟悉`buildSrc`，这是一个特殊目录，可让您定义和构建应在构建脚本中使用的自定义类。有关更多信息，请参见[有关组织构建逻辑的部分](https://docs.gradle.org/nightly/userguide/organizing_gradle_projects.html#sec_build_sources)。  
 ╚═════════════════════════════   
   
 现在，在`buildSrc/src/main/java`目录中创建一个自定义任务类。您应该为此类命名`CreateMD5`。

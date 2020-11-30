@@ -48,9 +48,9 @@ Gradle团队很高兴宣布Gradle 6.7.1。
 
 ### 监视文件系统已准备好用于生产
 
-在[增量构建中](/md/处理任务.md#sec:up_to_date_checks)，将检查输入和输出文件以确定需要重建的内容。此功能通常可以节省大量时间。但是，它增加了一些I / O开销，这在大型项目中自上次构建以来没有太大变化时就可以注意到。
+在[增量构建中](/md/处理任务.md#sec_up_to_date_checks)，将检查输入和输出文件以确定需要重建的内容。此功能通常可以节省大量时间。但是，它增加了一些I / O开销，这在大型项目中自上次构建以来没有太大变化时就可以注意到。
 
-在Gradle 6.5中，我们引入了_[监视文件系统](/md/Gradle守护程序.md#sec:daemon_watch_fs)_的功能。启用后，它使Gradle在构建期间和构建之间将所了解的文件系统保留在内存中，而不是在每次构建时都轮询文件系统。这大大减少了确定自上次构建以来已更改的内容所需的磁盘I / O数量。
+在Gradle 6.5中，我们引入了_[监视文件系统](/md/Gradle守护程序.md#sec_daemon_watch_fs)_的功能。启用后，它使Gradle在构建期间和构建之间将所了解的文件系统保留在内存中，而不是在每次构建时都轮询文件系统。这大大减少了确定自上次构建以来已更改的内容所需的磁盘I / O数量。
 
 该功能现已准备投入生产，并在Linux，Windows和macOS上受支持。您可以通过`gradle.properties`在项目根目录或Gradle用户主目录中添加以下内容来启用它：
 
@@ -66,7 +66,7 @@ org.gradle.vfs.watch=true
 
 Gradle 6.6引入了[配置缓存](/md/配置缓存.md)作为实验功能。此版本附带了配置缓存的可用性和性能改进。
 
-配置缓存的早期采用者可以使用命令行输出和HTML报告进行[故障排除](/md/配置缓存.md#config_cache:troubleshooting)。以前，尽管报告了问题，但仍保存了配置缓存状态，在某些情况下，这需要手动使缓存无效。在此版本中，由于配置缓存问题而导致构建失败时，将丢弃配置缓存。请注意，您仍然可以[忽略](/md/配置缓存.md#config_cache:usage:ignore_problem)已知问题。
+配置缓存的早期采用者可以使用命令行输出和HTML报告进行[故障排除](/md/配置缓存.md#config_cache_troubleshooting)。以前，尽管报告了问题，但仍保存了配置缓存状态，在某些情况下，这需要手动使缓存无效。在此版本中，由于配置缓存问题而导致构建失败时，将丢弃配置缓存。请注意，您仍然可以[忽略](/md/配置缓存.md#config_cache_usage:ignore_problem)已知问题。
 
 问题报告现在也更加有用。它可以更准确地报告问题的根源，并在更多情况下指出插件和脚本中有问题的位置。
 
@@ -116,7 +116,7 @@ Gradle现在支持在[Java 15](https://openjdk.java.net/projects/jdk/15/)上运�
 
 这种依赖关系的一个示例是带有在运行时未使用的批注的批注库。当注释处理器检查所有类的注释时，这些通常通常需要在库使用者的编译时可用。另一个示例是依赖关系，该依赖关系是希望在库中运行的运行时环境的一部分，但是还提供了在库的公共API中使用的类型。
 
-该[Java库插件](/md/Java库插件.md#sec:java_library_configurations_graph)现在提供_compileOnlyApi_用于此目的的配置。它有效地结合了_compileOnly_配置的主要属性（依赖关系_不会_在运行时类路径上）和api（依赖关系在编译时对于使用者是可见的）。
+该[Java库插件](/md/Java库插件.md#sec_java_library_configurations_graph)现在提供_compileOnlyApi_用于此目的的配置。它有效地结合了_compileOnly_配置的主要属性（依赖关系_不会_在运行时类路径上）和api（依赖关系在编译时对于使用者是可见的）。
 
 ```
 plugins {
@@ -174,7 +174,7 @@ repositories {
 
 ### kebab-case项目名称的缩写
 
-Gradle允许您[从命令行缩写项目和任务名称](/md/命令行界面.md#sec:name_abbreviation)。例如，您可以`compileTestJava`通过运行来执行任务`gradle cTJ`。
+Gradle允许您[从命令行缩写项目和任务名称](/md/命令行界面.md#sec_name_abbreviation)。例如，您可以`compileTestJava`通过运行来执行任务`gradle cTJ`。
 
 在此发行版之前，模糊名称匹配仅适用于驼峰名称（例如`compileTestJava`）。这是建议的任务名称约定，但对于项目名称却不常见。在Java世界中，按照惯例，目录名称通常全部为小写字母；在Gradle中，项目名称通常跟随项目所在目录的名称。
 
@@ -221,7 +221,7 @@ Enter selection [1..2] 2
 
 ### 包含的内部版本现在对buildSrc可见
 
-我们建议构建使用专门命名的[buildSrc](/md/组织Gradle项目.md#sec:build_sources)构建来组织命令式和通用构建逻辑。
+我们建议构建使用专门命名的[buildSrc](/md/组织Gradle项目.md#sec_build_sources)构建来组织命令式和通用构建逻辑。
 
 有时，您可能还需要在`buildSrc`自身和根构建之间共享构建逻辑。在以前的版本中，这是不可能的，因为`buildSrc`无法从其他包含的内部版本访问内部版本逻辑。
 
@@ -260,10 +260,10 @@ Enter selection [1..2] 2
 
 我们已经重新[编写](/md/Gradle中的多项目构建.md)了用于
 [编写多项目构建的](/md/Gradle中的多项目构建.md)文档，现在包括
-[有关如何](/md/在子项目之间共享构建逻辑.md#sec:convention_plugins)使用
+[有关如何](/md/在子项目之间共享构建逻辑.md#sec_convention_plugins)使用
 [约定插件](https://docs.gradle.org/6.7.1/samples/sample_convention_plugins.html)
-[在子项目之间共享构建逻辑](/md/在子项目之间共享构建逻辑.md#sec:convention_plugins)的
-[新指南](/md/在子项目之间共享构建逻辑.md#sec:convention_plugins)。
+[在子项目之间共享构建逻辑](/md/在子项目之间共享构建逻辑.md#sec_convention_plugins)的
+[新指南](/md/在子项目之间共享构建逻辑.md#sec_convention_plugins)。
 
 
 ## 升级功能

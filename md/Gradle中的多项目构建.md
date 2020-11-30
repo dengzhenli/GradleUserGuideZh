@@ -3,13 +3,13 @@
 
 内容
 
-  * [创建多项目构建](#sec:creating_multi_project_builds)
-  * [添加子项目](#sec:adding_subprojects)
+  * [创建多项目构建](#sec_creating_multi_project_builds)
+  * [添加子项目](#sec_adding_subprojects)
   * [命名建议](#naming_recommendations)
 
 Gradle中的多项目构建由一个根项目和一个或多个子项目组成。
 
-<h2 id = '#sec:creating_multi_project_builds'> <a href = '#sec:creating_multi_project_builds'>创建多项目构建</a> </h2>
+<h2 id = '#sec_creating_multi_project_builds'> <a href = '#sec_creating_multi_project_builds'>创建多项目构建</a> </h2>
 
 基本的多项目构建包含一个根项目和一个子项目。这是一个多项目构建的结构，其中包含一个名为的子项目`app`：
 
@@ -125,7 +125,7 @@ app / src / main / java / com / example / Hello.java
 
 这就是创建基本的多项目构建的简单程度。
 
-<h2 id = '#sec:adding_subprojects'> <a href = '#sec:adding_subprojects'>添加子项目</a> </h2>
+<h2 id = '#sec_adding_subprojects'> <a href = '#sec_adding_subprojects'>添加子项目</a> </h2>
 
 假设我们要向`lib`先前创建的项目添加另一个子项目。我们需要做的就是`include`在根设置文件中添加另一条语句：
 
@@ -188,7 +188,7 @@ Project layout
 
   1. _保留子项目的默认项目名称_ ：可以在设置文件中配置自定义项目名称。但是，对于开发人员来说，跟踪哪个项目属于哪个文件夹是不必要的额外工作。
 
-  2. _所有项目名称均使用kebab大小写格式_ ：kebab大小写格式是当所有字母均小写，单词之间用短划线（'-'）分隔时（例如`kebab-case-formatting`）。这已经是许多大型项目的实际模式。此外，Gradle支持[kebab案例名称的名称缩写](/md/命令行界面.md#sec:name_abbreviation)。
+  2. _所有项目名称均使用kebab大小写格式_ ：kebab大小写格式是当所有字母均小写，单词之间用短划线（'-'）分隔时（例如`kebab-case-formatting`）。这已经是许多大型项目的实际模式。此外，Gradle支持[kebab案例名称的名称缩写](/md/命令行界面.md#sec_name_abbreviation)。
 
   3. _在设置文件中定义根项目名称_ ：“ rootProject.name”有效地为整个构建分配一个名称，该名称用于诸如构建扫描的报告中。如果未设置根项目名称，则该名称将是容器目录名称，该名称可能不稳定（即，您可以将项目检出到任何目录）。
 

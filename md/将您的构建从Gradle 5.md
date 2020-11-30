@@ -40,7 +40,7 @@
 
 从[Gradle 3.4](https://docs.gradle.org/3.4/release-notes.html#the-java-library-plugin)开始，不鼓励在Java生态系统插件中使用`compile`和`runtime`配置。[](https://docs.gradle.org/3.4/release-notes.html#the-java-library-plugin)
 
-这些配置用于从`main`源集中编译和运行代码。其他源集创建类似的配置（例如`testCompile`和`testRuntime`用于`test`源集），也不应使用。的`implementation`，`api`，`compileOnly`和`runtimeOnly`配置应该用于依赖性和申报`compileClasspath`和`runtimeClasspath`配置，以解决依赖关系。请参阅[这些配置的关系](/md/Java库插件.md#sec:java_library_configurations_graph)。
+这些配置用于从`main`源集中编译和运行代码。其他源集创建类似的配置（例如`testCompile`和`testRuntime`用于`test`源集），也不应使用。的`implementation`，`api`，`compileOnly`和`runtimeOnly`配置应该用于依赖性和申报`compileClasspath`和`runtimeClasspath`配置，以解决依赖关系。请参阅[这些配置的关系](/md/Java库插件.md#sec_java_library_configurations_graph)。
 
 <h4 id = '#legacy_publication_system_is_deprecated_and_replaced_with_the_publish_plugins'> <a href = '#legacy_publication_system_is_deprecated_and_replaced_with_the_publish_plugins'>旧版发布系统已弃用，并替换为`*-publish`插件</a> </h4>
 
@@ -59,7 +59,7 @@
     
     Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
     Use '--warning-mode all' to show the individual deprecation warnings.
-    See https://docs.gradle.org/6.0/userguide/command_line_interface.html#sec:command_line_warnings
+    See https://docs.gradle.org/6.0/userguide/command_line_interface.html#sec_command_line_warnings
 
 无论使用哪个命令行开关，都将在每个版本的[构建扫描中](https://scans.gradle.com/s/txrptciitl2ha/deprecations)显示不赞成使用警告。
 
@@ -71,7 +71,7 @@
     Property 'inputDirectory' is declared without normalization specified. Properties of cacheable work must declare their normalization via @PathSensitive, @Classpath or @CompileClasspath. Defaulting to PathSensitivity.ABSOLUTE. This behaviour has been deprecated and is scheduled to be removed in Gradle 7.0.
     Property 'outputFile' is not annotated with an input or output annotation. This behaviour has been deprecated and is scheduled to be removed in Gradle 7.0.
 
-如果您拥有相关任务的代码，则可以[按照建议](/md/处理任务.md#sec:task_input_validation)进行修复。您还可以`--stacktrace`用来查看每个警告的源代码。
+如果您拥有相关任务的代码，则可以[按照建议](/md/处理任务.md#sec_task_input_validation)进行修复。您还可以`--stacktrace`用来查看每个警告的源代码。
 
 否则，您需要将问题报告给相关任务或插件的维护者。
 
@@ -270,7 +270,7 @@ module-metadata-latest-specification.md)中。
 以前，Gradle还将寻找默认的工件（`.jar`）。当使用多个存储库减慢构建速度时，此行为通常会导致大量不必要的请求。
 
 您可以通过添加`artifact()`
-[元数据源](/md/声明存储库.md#sec:supported_metadata_sources)来选择选定存储库的旧行为。
+[元数据源](/md/声明存储库.md#sec_supported_metadata_sources)来选择选定存储库的旧行为。
 
 <h4 id = '#changing_the_pom_packaging_property_no_longer_changes_the_artifact_extension'> <a href = '#changing_the_pom_packaging_property_no_longer_changes_the_artifact_extension'>更改pom`packaging`属性不再更改工件扩展</a> </h4>
 
@@ -297,7 +297,7 @@ module-metadata-latest-specification.md)中。
 
 以前，buildSrc项目是在应用项目的设置脚本之前构建的，并且其类在脚本中可见。现在，在设置脚本及其类对它不可见之后，将构建buildSrc。buildSrc类对于项目构建脚本和脚本插件仍然可见。
 
-可以通过[声明外部依赖项](/md/构建脚本基础.md#sec:build_script_external_dependencies)从设置脚本中使用自定义逻辑。
+可以通过[声明外部依赖项](/md/构建脚本基础.md#sec_build_script_external_dependencies)从设置脚本中使用自定义逻辑。
 
 <h4 id = '#the_pluginmanagement_block_in_settings_scripts_is_now_isolated'> <a href = '#the_pluginmanagement_block_in_settings_scripts_is_now_isolated'>`pluginManagement`现在隔离了设置脚本中的块</a> </h4>
 
@@ -501,9 +501,9 @@ Framework插件](https://gradle.github.io/playframework)。
 
   * 该`org.gradle.testfixtures.ProjectBuilder`构造已被删除。请`ProjectBuilder.builder()`改用。
 
-  * 当[增量Groovy的编译](/md/Groovy插件.md#sec:incremental_groovy_compilation)启用后，源根的错误配置或启用Java注释对Groovy现在失败的构建。在这些情况下要进行编译时，请禁用增量Groovy编译。
+  * 当[增量Groovy的编译](/md/Groovy插件.md#sec_incremental_groovy_compilation)启用后，源根的错误配置或启用Java注释对Groovy现在失败的构建。在这些情况下要进行编译时，请禁用增量Groovy编译。
 
-  * `ComponentSelectionRule`不再可以注入元数据或Ivy描述符。请改用[`ComponentSelection`参数](/md/处理随时间变化的版本.md#sec:component_selection_rules)上的方法。
+  * `ComponentSelectionRule`不再可以注入元数据或Ivy描述符。请改用[`ComponentSelection`参数](/md/处理随时间变化的版本.md#sec_component_selection_rules)上的方法。
 
   * 声明的[增量任务](/md/开发自定义Gradle任务类型.md#incremental_tasks)不宣而输出现在是一个错误。声明文件输出或改用[TaskOutputs.upToDateWhen（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-groovy.lang.Closure-)。
 
@@ -515,7 +515,7 @@ Framework插件](https://gradle.github.io/playframework)。
 
   * `TaskInputs.getProperties()`现在返回的地图不可修改。尝试修改它会导致`UnsupportedOperationException`被抛出。
 
-  * 5.6中引入的孵化[功能解析](/md/处理互斥依赖性.md#sub:selecting-between-candidates)API进行了细微更改，以允许根据变体名称选择变体
+  * 5.6中引入的孵化[功能解析](/md/处理互斥依赖性.md#sub_selecting-between-candidates)API进行了细微更改，以允许根据变体名称选择变体
 
 <h2 id = '#changes_5.6'> <a href = '#changes_5.6'>从5.5或更早版本升级</a> </h2>
 
@@ -615,7 +615,7 @@ test-sources)的属性。此更改需要Buildship 3.1.1或更高版本。
        resolutionStrategy.capabilitiesResolution.all { selectHighestVersion() }
     }
 
-有关更多选项，请参见[文档的功能部分](/md/处理互斥依赖性.md#sub:capabilities)。
+有关更多选项，请参见[文档的功能部分](/md/处理互斥依赖性.md#sub_capabilities)。
 
 <h4 id = '#file_removal_operations_dont_follow_symlinked_directories'> <a href = '#file_removal_operations_dont_follow_symlinked_directories'>文件删除操作不遵循符号链接目录</a> </h4>
 

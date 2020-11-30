@@ -61,7 +61,7 @@ Gradle团队不断致力于提高Gradle构建各个方面的性能。如果您�
 启用并行构建后，您可能会看到构建时间的巨大改进。这些改进的程度取决于您的项目结构以及它们之间有多少依赖关系。例如，执行时间由单个项目控制的构建根本不会带来太多好处。或者，由于项目间存在大量依存关系，因此几乎没有可以并行执行的任务。但是大多数多项目构建应该看到有价值的构建时间增长。
 
 ╔═════════════════════════════
-并行构建要求项目在执行时解耦，即，不同项目中的任务不得修改共享状态。在广泛使用之前，请在[多项目部分中](https://docs.gradle.org/nightly/userguide/multi_project_configuration_and_execution.html#sec:parallel_execution)阅读有关该主题的更多信息`--parallel`。还应注意，4.0之前的Gradle版本可能会运行`clean`并`build`并行执行任务，从而导致失败。在这些较旧的版本上，最好分别调用`clean`。  
+并行构建要求项目在执行时解耦，即，不同项目中的任务不得修改共享状态。在广泛使用之前，请在[多项目部分中](https://docs.gradle.org/nightly/userguide/multi_project_configuration_and_execution.html#sec_parallel_execution)阅读有关该主题的更多信息`--parallel`。还应注意，4.0之前的Gradle版本可能会运行`clean`并`build`并行执行任务，从而导致失败。在这些较旧的版本上，最好分别调用`clean`。  
 ╚═════════════════════════════  
   
 您还可以通过将以下设置添加到项目的 _gradle.properties_ 文件中，将并行构建作为项目的默认设置：
@@ -102,7 +102,7 @@ gradle.properties
     
     org.gradle.vfs.watch=true
 
-在[相应的部分中](https://docs.gradle.org/nightly/userguide/gradle_daemon.html#sec:daemon_watch_fs)阅读有关此功能的更多信息。
+在[相应的部分中](https://docs.gradle.org/nightly/userguide/gradle_daemon.html#sec_daemon_watch_fs)阅读有关此功能的更多信息。
 
 <h2 id = '#profiling_with_build_scans'> <a href = '#profiling_with_build_scans'>使用构建扫描进行性能分析</a> </h2>
 
@@ -335,7 +335,7 @@ Lint插件](https://github.com/nebula-plugins/gradle-lint-plugin)来识别此类
 
 您可以避免执行任务，即使用户需要执行任务也是如此。如果自上次运行以来任务的输入或输出均未更改，则Gradle将不会再次运行它。
 
-增量构建是Gradle赋予此功能的名称，它检查输入和输出以确定是否需要再次运行任务。Gradle提供的大多数任务都参与增量构建，因为它们是通过这种方式定义的。您还可以使自己的任务与增量构建集成。基本思想是标记任务的属性，这些属性会影响任务是否需要运行。您可以[在关于增量任务的部分中](https://docs.gradle.org/nightly/userguide/more_about_tasks.html#sec:up_to_date_checks)了解更多[信息](https://docs.gradle.org/nightly/userguide/more_about_tasks.html#sec:up_to_date_checks)。
+增量构建是Gradle赋予此功能的名称，它检查输入和输出以确定是否需要再次运行任务。Gradle提供的大多数任务都参与增量构建，因为它们是通过这种方式定义的。您还可以使自己的任务与增量构建集成。基本思想是标记任务的属性，这些属性会影响任务是否需要运行。您可以[在关于增量任务的部分中](https://docs.gradle.org/nightly/userguide/more_about_tasks.html#sec_up_to_date_checks)了解更多[信息](https://docs.gradle.org/nightly/userguide/more_about_tasks.html#sec_up_to_date_checks)。
 
 您可以通过在构建扫描中查看时间轴视图来轻松地确定参与增量构建的优秀候选人，并了解为什么任务没有达到您期望的最新状态：
 

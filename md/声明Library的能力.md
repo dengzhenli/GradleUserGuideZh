@@ -4,14 +4,14 @@
 内容
 
   * [能力是首要概念](#capabilities_as_first_level_concept)
-  * [声明外部模块的功能](#sec:declaring-capabilities-external-modules)
+  * [声明外部模块的功能](#sec_declaring-capabilities-external-modules)
   * [声明本地组件的其他功能](#declaring_additional_capabilities_for_a_local_component)
 
 <h2 id = '#capabilities_as_first_level_concept'> <a href = '#capabilities_as_first_level_concept'>能力是首要概念</a> </h2>
 
 组件提供了许多功能，这些功能通常与用于提供那些功能的软件体系结构正交。例如，一个库可能在单个工件中包含多个功能。但是，这样的库将以单个GAV（组，工件和版本）坐标发布。这意味着，在单个坐标处，可能会共存组件的不同“特征”。
 
-使用Gradle，显式声明组件提供的功能变得很有趣。为此，Gradle提供了[功能](/md/升级传递依赖的版本.md#sec:adding-constraints-transitive-deps)的概念。
+使用Gradle，显式声明组件提供的功能变得很有趣。为此，Gradle提供了[功能](/md/升级传递依赖的版本.md#sec_adding-constraints-transitive-deps)的概念。
 
 通常通过组合不同的 _功能_ 来构建 _功能_ 。
 
@@ -25,7 +25,7 @@
 
 通过对 _功能进行_ 建模，依赖关系管理引擎可以更智能，并在依赖关系图中的 _不兼容功能_ 告诉您，或者让您选择何时图中的不同模块提供相同 _功能_ 。
 
-<h2 id = '#sec:declaring-capabilities-external-modules'> <a href = '#sec:declaring-capabilities-external-modules'>声明外部模块的功能</a> </h2>
+<h2 id = '#sec_declaring-capabilities-external-modules'> <a href = '#sec_declaring-capabilities-external-modules'>声明外部模块的功能</a> </h2>
 
 值得注意的是，Gradle支持声明的功能可用于构建的组件，也可以声明外部组件的功能（如果没有）。
 
@@ -134,7 +134,7 @@ build.gradle.kts
           > Module 'log4j:log4j' has been rejected:
                Cannot select module with conflict on capability 'log4j:log4j:1.2.16' also provided by [org.slf4j:log4j-over-slf4j:1.7.10(compile)]
                
-请参阅[文档](/md/处理互斥依赖性.md#sub:selecting-between-candidates)的[功能部分，](/md/处理互斥依赖性.md#sub:selecting-between-candidates)以了解如何解决功能冲突。
+请参阅[文档](/md/处理互斥依赖性.md#sub_selecting-between-candidates)的[功能部分，](/md/处理互斥依赖性.md#sub_selecting-between-candidates)以了解如何解决功能冲突。
 
 <h2 id = '#declaring_additional_capabilities_for_a_local_component'> <a href = '#declaring_additional_capabilities_for_a_local_component'>声明本地组件的其他功能</a> </h2>
 
@@ -184,7 +184,7 @@ build.gradle.kts
     }
 
 功能必须附加到 _传出配置_ ， _传出配置_
-是组件的[消耗性配置](/md/声明依赖.md#sec:resolvable-consumable-configs)。
+是组件的[消耗性配置](/md/声明依赖.md#sec_resolvable-consumable-configs)。
 
 此示例显示我们声明了两个功能：
 
@@ -194,7 +194,7 @@ build.gradle.kts
 
 值得注意的是，我们需要执行1.，因为一旦您开始声 _明显式_ 功能，就需要声明 _所有_ 功能，包括 _隐式功能_ 。
 
-第二功能可以特定于此库，也可以对应于外部组件提供的功能。在这种情况下，如果`com.other:module`出现在相同的依赖图中，则构建将失败，并且使用者[将不得不选择要使用的模块](/md/处理互斥依赖性.md#sub:selecting-between-candidates)。
+第二功能可以特定于此库，也可以对应于外部组件提供的功能。在这种情况下，如果`com.other:module`出现在相同的依赖图中，则构建将失败，并且使用者[将不得不选择要使用的模块](/md/处理互斥依赖性.md#sub_selecting-between-candidates)。
 
 功能已发布到Gradle模块元数据。但是，它们在POM或Ivy元数据文件中 _没有等效项_
 。因此，发布此类组件时，Gradle会警告您该功能仅适用于Gradle使用者：

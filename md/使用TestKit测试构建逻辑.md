@@ -3,18 +3,18 @@
 
 内容
 
-  * [用法](#sec:testkit_usage)
-  * [使用Gradle Runner进行功能测试](#sec:functional_testing_with_the_gradle_runner)
-  * [将被测插件放入测试版本](#sub:test-kit-classpath-injection)
-  * [控制构建环境](#sec:controlling_the_build_environment)
-  * [用于测试的Gradle版本](#sub:gradle-runner-gradle-version)
-  * [调试构建逻辑](#sub:test-kit-debug)
-  * [使用构建缓存进行测试](#sub:test-kit-build-cache)
+  * [用法](#sec_testkit_usage)
+  * [使用Gradle Runner进行功能测试](#sec_functional_testing_with_the_gradle_runner)
+  * [将被测插件放入测试版本](#sub_test-kit-classpath-injection)
+  * [控制构建环境](#sec_controlling_the_build_environment)
+  * [用于测试的Gradle版本](#sub_gradle-runner-gradle-version)
+  * [调试构建逻辑](#sub_test-kit-debug)
+  * [使用构建缓存进行测试](#sub_test-kit-build-cache)
 
 Gradle TestKit（也称为TestKit）是一个有助于测试Gradle插件和一般构建逻辑的库。目前，它专注于 _功能_
 测试。也就是说，通过将其作为程序执行的构建的一部分进行测试来测试构建逻辑。随着时间的流逝，TestKit可能会扩展以方便其他类型的测试。
 
-<h2 id = '#sec:testkit_usage'> <a href = '#sec:testkit_usage'>用法</a> </h2>
+<h2 id = '#sec_testkit_usage'> <a href = '#sec_testkit_usage'>用法</a> </h2>
 
 要使用TestKit，请在插件的版本中包含以下内容：
 
@@ -61,7 +61,7 @@ build.gradle.kts
         testImplementation("junit:junit:4.13")
     }
 
-<h2 id = '#sec:functional_testing_with_the_gradle_runner'> <a href = '#sec:functional_testing_with_the_gradle_runner'>使用Gradle Runner进行功能测试</a> </h2>
+<h2 id = '#sec_functional_testing_with_the_gradle_runner'> <a href = '#sec_functional_testing_with_the_gradle_runner'>使用Gradle Runner进行功能测试</a> </h2>
 
 所述[GradleRunner](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html)便于编程执行Gradle构建，和检查结果。
 
@@ -254,21 +254,21 @@ BuildLogicFunctionalTest.groovy
 
 实施任何自定义构建逻辑（如插件和任务类型）通常是一种惯例，该逻辑本质上比独立项目中的外部类复杂。这种方法背后的主要驱动力是将编译后的代码捆绑到一个JAR文件中，将其发布到二进制存储库中，并在各个项目中重复使用。
 
-<h2 id = '#sub:test-kit-classpath-injection'> <a href = '#sub:test-kit-classpath-injection'>将被测插件放入测试版本</a> </h2>
+<h2 id = '#sub_test-kit-classpath-injection'> <a href = '#sub_test-kit-classpath-injection'>将被测插件放入测试版本</a> </h2>
 
 GradleRunner使用[Tooling
 API](/md/Gradle和第三方工具.md#embedding)执行构建。这意味着构建是在单独的过程中执行的（即，执行测试的过程不是同一过程）。因此，测试版本与测试过程不会共享相同的类路径或类加载器，并且测试代码不会隐式地提供给测试版本。
 
 从2.13版开始，Gradle提供了一种常规机制，可以将被测代码注入测试版本中。
 
-<h3 id = '#sub:test-kit-automatic-classpath-injection'> <a href = '#sub:test-kit-automatic-classpath-injection'>使用JavaGradle插件开发插件自动注入</a> </h3>
+<h3 id = '#sub_test-kit-automatic-classpath-injection'> <a href = '#sub_test-kit-automatic-classpath-injection'>使用JavaGradle插件开发插件自动注入</a> </h3>
 
 在[Java的Gradle插件开发的插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)可以用来协助Gradle插件的开发。从Gradle
 2.13版本开始，该插件提供了与TestKit的直接集成。当应用于项目时，该插件会自动将`gradleTestKit()`依赖项添加到测试编译配置中。此外，它会自动为测试中的代码生成类路径，并通过[GradleRunner.withPluginClasspath（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath--)将其注入`GradleRunner`用户创建的任何实例。重要的是要注意，该机制当前
 _仅_
-在使用[插件DSL](/md/使用Gradle插件.md#sec:plugins_block)应用被测插件
+在使用[插件DSL](/md/使用Gradle插件.md#sec_plugins_block)应用被测插件
 _时才_
-有效。如果[目标Gradle版本](#sub:gradle-runner-gradle-version) 在2.8之前的版本中，不会执行自动插件类路径注入。
+有效。如果[目标Gradle版本](#sub_gradle-runner-gradle-version) 在2.8之前的版本中，不会执行自动插件类路径注入。
 
 该插件使用以下约定来应用TestKit依赖项并注入类路径：
 
@@ -427,7 +427,7 @@ build.gradle.kts
         }
     }
 
-<h3 id = '#sec:working_with_gradle_versions_prior_to_213'> <a href = '#sec:working_with_gradle_versions_prior_to_213'>使用2.13之前的Gradle版本</a> </h3>
+<h3 id = '#sec_working_with_gradle_versions_prior_to_213'> <a href = '#sec_working_with_gradle_versions_prior_to_213'>使用2.13之前的Gradle版本</a> </h3>
 
 对于较早版本的Gradle（2.13之前的版本），可以通过一些额外的配置来手动使被测代码可用。下面的示例演示如何让生成的文件包含被测代码的实现类路径，并使其在测试运行时可用。
 
@@ -533,7 +533,7 @@ src / test / groovy / org / gradle / sample / BuildLogicFunctionalTest.groovy
 
 一些IDE提供了一个方便的选项，可以将“测试类路径的生成和执行”委派给构建。在IntelliJ中，您可以在``偏好设置...''>``构建，执行，部署''>``构建工具''>``Gradle''>``Runner''>``委派IDE生成/运行操作''中找到该选项。请查阅IDE的文档以获取更多信息。
 
-<h3 id = '#sec:working_with_gradle_versions_prior_to_28'> <a href = '#sec:working_with_gradle_versions_prior_to_28'>使用2.8之前的Gradle版本</a> </h3>
+<h3 id = '#sec_working_with_gradle_versions_prior_to_28'> <a href = '#sec_working_with_gradle_versions_prior_to_28'>使用2.8之前的Gradle版本</a> </h3>
 
 当使用早于2.8的Gradle版本执行构建时，[GradleRunner.withPluginClasspath（java.lang.Iterable）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath-
 java.lang.Iterable-)方法将不起作用（请参阅[用于测试的版本](#sub:gradle-
@@ -589,13 +589,13 @@ src / test / groovy / org / gradle / sample / BuildLogicFunctionalTest.groovy
             result.task(":helloWorld").outcome == SUCCESS
         }
 
-<h2 id = '#sec:controlling_the_build_environment'> <a href = '#sec:controlling_the_build_environment'>控制构建环境</a> </h2>
+<h2 id = '#sec_controlling_the_build_environment'> <a href = '#sec_controlling_the_build_environment'>控制构建环境</a> </h2>
 
 运行程序通过在JVM的temp目录内的目录（即`java.io.tmpdir`，通常由system属性指定的位置）中指定专用的“工作目录”，在隔离的环境中执行测试构建`/tmp`。默认的Gradle用户主目录（例如`~/.gradle/gradle.properties`）中的任何配置都不会用于测试执行。TestKit并未公开对环境的各个方面进行细粒度控制的机制（例如JDK）。未来版本的TestKit将提供改进的配置选项。
 
 TestKit使用专用的守护程序进程，这些进程在测试执行后会自动关闭。
 
-<h2 id = '#sub:gradle-runner-gradle-version'> <a href = '#sub:gradle-runner-gradle-version'>用于测试的Gradle版本</a> </h2>
+<h2 id = '#sub_gradle-runner-gradle-version'> <a href = '#sub_gradle-runner-gradle-version'>用于测试的Gradle版本</a> </h2>
 
 Gradle运行器需要Gradle发行版才能执行构建。TestKit并不依赖于Gradle的所有实现。
 
@@ -664,7 +664,7 @@ BuildLogicFunctionalTest.groovy
         }
     }
 
-<h3 id = '#sub:test-kit-compatibility'> <a href = '#sub:test-kit-compatibility'>使用不同的Gradle版本进行测试时的功能支持</a> </h3>
+<h3 id = '#sub_test-kit-compatibility'> <a href = '#sub_test-kit-compatibility'>使用不同的Gradle版本进行测试时的功能支持</a> </h3>
 
 可以使用GradleRunner在Gradle
 1.0及更高版本中执行构建。但是，早期版本不支持某些运行器功能。在这种情况下，跑步者在尝试使用功能时会抛出异常。
@@ -676,12 +676,12 @@ BuildLogicFunctionalTest.groovy
 特征 | 最低版本 | 描述  
 ---|---|---  
 检查执行的任务|2.5|使用[BuildResult.getTasks（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/BuildResult.html#getTasks--)和类似方法检查执行的任务。  
-[插件类路径注入](#sub:test-kit-classpath-injection)|2.8|通过[GradleRunner.withPluginClasspath（java.lang.Iterable）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath-java.lang.Iterable-)注入测试中的代码。  
-[在调试模式下检查构建输出](#sub:test-kit-debug)|2.9|使用[BuildResult.getOutput（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/BuildResult.html#getOutput--)在调试模式下运行时检查构建的文本输出。  
-[自动插件类路径注入](#sub:test-kit-automatic-classpath-injection)|2.13|通过应用JavaGradle插件开发插件，通过[GradleRunner.withPluginClasspath（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath--)自动注入被测代码。  
+[插件类路径注入](#sub_test-kit-classpath-injection)|2.8|通过[GradleRunner.withPluginClasspath（java.lang.Iterable）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath-java.lang.Iterable-)注入测试中的代码。  
+[在调试模式下检查构建输出](#sub_test-kit-debug)|2.9|使用[BuildResult.getOutput（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/BuildResult.html#getOutput--)在调试模式下运行时检查构建的文本输出。  
+[自动插件类路径注入](#sub_test-kit-automatic-classpath-injection)|2.13|通过应用JavaGradle插件开发插件，通过[GradleRunner.withPluginClasspath（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath--)自动注入被测代码。  
 设置构建要使用的环境变量。|3.5|Gradle Tooling API仅支持在更高版本中设置环境变量。  
   
-<h2 id = '#sub:test-kit-debug'> <a href = '#sub:test-kit-debug'>调试构建逻辑</a> </h2>
+<h2 id = '#sub_test-kit-debug'> <a href = '#sub_test-kit-debug'>调试构建逻辑</a> </h2>
 
 跑步者使用[Tooling API](/md/Gradle和第三方工具.md#embedding)执行构建。这意味着构建是在单独的过程中执行的（即，执行测试的过程不是同一过程）。因此，以调试方式执行
 _测试_ 不允许您调试调试逻辑。在IDE中设置的任何断点都不会因测试版本执行的代码而跳闸。
@@ -694,10 +694,10 @@ TestKit提供了两种不同的方式来启用调试模式：
 
 当需要启用调试支持而不对流道配置进行临时更改时，可以使用系统属性方法。大多数IDE提供了设置JVM系统属性以执行测试的功能，并且可以使用此功能来设置此系统属性。
 
-<h2 id = '#sub:test-kit-build-cache'> <a href = '#sub:test-kit-build-cache'>使用构建缓存进行测试</a> </h2>
+<h2 id = '#sub_test-kit-build-cache'> <a href = '#sub_test-kit-build-cache'>使用构建缓存进行测试</a> </h2>
 
 要在测试中启用[构建缓存](/md/构建缓存.md#build_cache)，可以将`--build-
-cache`参数传递给[GradleRunner](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html)或使用[启用构建缓存中](/md/构建缓存.md#sec:build_cache_enable)描述的其他方法之一。然后，可以在缓存插件的自定义任务时检查任务结果[TaskOutcome.FROM_CACHE](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/TaskOutcome.html#FROM_CACHE)。此结果仅对Gradle
+cache`参数传递给[GradleRunner](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html)或使用[启用构建缓存中](/md/构建缓存.md#sec_build_cache_enable)描述的其他方法之一。然后，可以在缓存插件的自定义任务时检查任务结果[TaskOutcome.FROM_CACHE](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/TaskOutcome.html#FROM_CACHE)。此结果仅对Gradle
 3.5及更高版本有效。
 
 <h3 id = '#example_testing_cacheable_tasks'> <a href = '#example_testing_cacheable_tasks'>示例：测试可缓存任务</a> </h3>

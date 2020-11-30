@@ -4,7 +4,7 @@
 内容
 
   * [什么是依赖管理？](#what_is_dependency_management)
-  * [Gradle中的依赖管理](#sec:dependency-mgmt-in-gradle)
+  * [Gradle中的依赖管理](#sec_dependency-mgmt-in-gradle)
 
 <h2 id = '#what_is_dependency_management'> <a href = '#what_is_dependency_management'>什么是依赖管理？</a> </h2>
 
@@ -16,7 +16,7 @@
   
 ╚═════════════════════════════    
   
-<h2 id = '#sec:dependency-mgmt-in-gradle'> <a href = '#sec:dependency-mgmt-in-gradle'>Gradle中的依赖管理</a> </h2>
+<h2 id = '#sec_dependency-mgmt-in-gradle'> <a href = '#sec_dependency-mgmt-in-gradle'>Gradle中的依赖管理</a> </h2>
 
 Gradle具有对依赖项管理的内置支持，并且可以完成现代软件项目中遇到的典型方案。我们将在示例项目的帮助下探索主要概念。下图将为您简要概述所有运动部件。
 
@@ -29,19 +29,19 @@ Gradle具有对依赖项管理的内置支持，并且可以完成现代软件�
 Guava和JUnit表示此项目的 _依赖_
 项。构建脚本开发人员可以[声明](/md/声明依赖.md#declaring-dependencies)
 不同范围的[依赖关系](/md/声明依赖.md#declaring-dependencies)，例如，仅用于源代码的编译或用于执行测试。
-在Gradle中，[依赖项](/md/声明依赖.md#sec:what-are-dependency-configurations)
-的[范围](/md/声明依赖.md#sec:what-are-dependency-configurations)称为 _configuration_
-。有关完整概述，请参见有关[依赖项类型](/md/声明依赖.md#sec:dependency-types)的参考资料。
+在Gradle中，[依赖项](/md/声明依赖.md#sec_what-are-dependency-configurations)
+的[范围](/md/声明依赖.md#sec_what-are-dependency-configurations)称为 _configuration_
+。有关完整概述，请参见有关[依赖项类型](/md/声明依赖.md#sec_dependency-types)的参考资料。
 
-通常，依赖项以[模块](/md/依赖管理术语.md#sub:terminology_module)的形式出现。您需要告诉Gradle在哪里可以找到那些模块，以便构建可以使用它们。存储模块的位置称为
+通常，依赖项以[模块](/md/依赖管理术语.md#sub_terminology_module)的形式出现。您需要告诉Gradle在哪里可以找到那些模块，以便构建可以使用它们。存储模块的位置称为
 _存储库_
-。通过为构建[声明存储库](/md/声明存储库.md#declaring-repositories)，Gradle将知道如何查找和检索模块。存储库可以采用不同的形式：作为本地目录或远程存储库。有关[存储库类型](/md/声明存储库.md#sec:repository-types)的参考对此主题进行了广泛介绍。
+。通过为构建[声明存储库](/md/声明存储库.md#declaring-repositories)，Gradle将知道如何查找和检索模块。存储库可以采用不同的形式：作为本地目录或远程存储库。有关[存储库类型](/md/声明存储库.md#sec_repository-types)的参考对此主题进行了广泛介绍。
 
 在运行时，如果需要执行特定任务，Gradle将定位声明的依赖项。依赖项可能需要从远程存储库下载，从本地目录检索，或者需要在多项目设置中构建另一个项目。此过程称为
 _依赖关系解析_
-。您可以在[Gradle如何下载依赖项中](/md/了解依赖性解析.md#sec:how-gradle-downloads-deps)找到详细的讨论。
+。您可以在[Gradle如何下载依赖项中](/md/了解依赖性解析.md#sec_how-gradle-downloads-deps)找到详细的讨论。
 
-解决后，解析机制[会将依赖项的基础文件存储在本地缓存](/md/了解依赖性解析.md#sec:dependency_cache)（也称为
+解决后，解析机制[会将依赖项的基础文件存储在本地缓存](/md/了解依赖性解析.md#sec_dependency_cache)（也称为
 _依赖项缓存）中_ 。将来的版本将重复使用存储在缓存中的文件，以避免不必要的网络调用。
 
 模块可以提供其他元数据。元数据是更详细地描述模块的数据，例如用于在存储库中找到模块的坐标，有关项目或其作者的信息。作为元数据的一部分，模块可以定义需要其他模块才能使其正常工作。例如，JUnit
