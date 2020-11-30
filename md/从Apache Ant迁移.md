@@ -85,7 +85,7 @@ Gradle提供了许多配置选项，可以实现高度的自定义。这些选�
 
 本章的其余部分介绍了您在迁移期间可能要处理的一些常见方案，例如依赖关系管理和使用Ant任务。
 
-<h2 id = '#migant_imported_builds'> <a href = '#migant_imported_builds'>使用导入的版本</a> </h2>
+## [使用导入的版本](#migant_imported_builds)
 
 
 许多迁移的第一步将[导入一个Ant build](/md/从Gradle使用Ant.md#sec_import_ant_build)使用`ant.importBuild()`。如果这样做，那么如何在不立即替换所有内容的情况下过渡到标准Gradle构建？
