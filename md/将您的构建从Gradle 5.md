@@ -12,7 +12,7 @@
   * [从5.0或更早版本升级](#%E4%BB%8E5.0%E6%88%96%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
 
 本章提供了将Gradle 5.x构建迁移到Gradle 6.0所需的信息。要从Gradle
-4.x迁移，请先完成从[4.x到5.0的指南](/md/将您的构建从Gradle%204.md#upgrading_version_4)。
+4.x迁移，请先完成从[4.x到5.0的指南](/md/将您的构建从Gradle 4.md#upgrading_version_4)。
 
 我们建议所有用户执行以下步骤：
 
