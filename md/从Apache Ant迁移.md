@@ -4,40 +4,40 @@ version 6.7.1
 
 内容
 
-  * [一般准则](#migant_general_guidelines)
-  * [使用导入的版本](#使用导入的版本)
-  * [管理依赖](#migant_managing_dependencies)
-  * [发布工件](#migant_ivy_publishing)
-  * [处理自定义Ant任务](#migant_custom_tasks)
-  * [处理文件](#migant_working_with_files)
-  * [迁移Ant属性](#migant_properties)
-  * [迁移多项目构建](#migant_multi_project_builds)
-  * [进一步阅读](#further_reading)
+  * [一般准则](#%E4%B8%80%E8%88%AC%E5%87%86%E5%88%99)
+  * [使用导入的版本](#%E4%BD%BF%E7%94%A8%E5%AF%BC%E5%85%A5%E7%9A%84%E7%89%88%E6%9C%AC)
+  * [管理依赖](#%E7%AE%A1%E7%90%86%E4%BE%9D%E8%B5%96)
+  * [发布工件](#%E5%8F%91%E5%B8%83%E5%B7%A5%E4%BB%B6)
+  * [处理自定义Ant任务](#%E5%A4%84%E7%90%86%E8%87%AA%E5%AE%9A%E4%B9%89Ant%E4%BB%BB%E5%8A%A1)
+  * [处理文件](#%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6)
+  * [迁移Ant属性](#%E8%BF%81%E7%A7%BBAnt%E5%B1%9E%E6%80%A7)
+  * [迁移多项目构建](#%E8%BF%81%E7%A7%BB%E5%A4%9A%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA)
+  * [进一步阅读](#%E8%BF%9B%E4%B8%80%E6%AD%A5%E9%98%85%E8%AF%BB)
 
 [Apache Ant](https://ant.apache.org/)是一个在Java世界中具有悠久历史的构建工具，尽管使用的团队越来越少，但它仍被广泛使用。虽然灵活，但缺少约定和Gradle可以提供的许多强大功能。迁移到Gradle是值得的，因此您的构建可以变得更苗条，更简单和更快，同时仍保留您使用Ant所享有的灵活性。您还将受益于对多项目构建的强大支持以及易于使用的灵活依赖管理。
 
-从Ant迁移到Gradle的最大挑战是，没有标准的Ant构建之类的东西。这使得很难提供具体说明。幸运的是，Gradle具有与Ant的强大集成功能，可以使过程相对平稳。甚至从基于[Ivy](https://ant.apache.org/ivy/)的依赖项管理迁移也不是特别困难，因为Gradle具有基于[依赖项配置](/md/依赖管理术语.md#sub_terminology_configuration)的类似模型，该模型可与Ivy兼容的存储库一起使用。
+从Ant迁移到Gradle的最大挑战是，没有标准的Ant构建之类的东西。这使得很难提供具体说明。幸运的是，Gradle具有与Ant的强大集成功能，可以使过程相对平稳。甚至从基于[Ivy](https://ant.apache.org/ivy/)的依赖项管理迁移也不是特别困难，因为Gradle具有基于[依赖项配置](/md/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%AF%E8%AF%AD.md%23%E9%85%8D%E7%BD%AE%EF%BC%88configuration%EF%BC%89)的类似模型，该模型可与Ivy兼容的存储库一起使用。
 
 我们将首先概述在将构建从Ant迁移到Gradle时应考虑的事项，并提供一些有关如何进行的一般指导。
 
-<h2 id = '#migant_general_guidelines'> <a href = '#migant_general_guidelines'>一般准则</a> </h2>
+## [一般准则](#%E4%B8%80%E8%88%AC%E5%87%86%E5%88%99)
 
 当您承诺将构建从Ant迁移到Gradle时，应牢记既有内容又要在何处结束的性质。您是否需要Gradle构建来反映现有Ant构建的结构？还是您想改用Gradle惯用的方法？您正在寻找的主要好处是什么？
 
 要了解其含义，请考虑您可以针对的两个极端端点：
 
-  * 通过导入的构建 [`ant.importBuild()`](/md/从Gradle使用Ant.md#sec_import_ant_build)
+  * 通过导入的构建 [`ant.importBuild()`](/md/%E4%BB%8EGradle%E4%BD%BF%E7%94%A8Ant.md%23%E5%AF%BC%E5%85%A5Ant%E6%9E%84%E5%BB%BA)
 
 这种方法快速，简单，并且适用于许多基于Ant的构建。您最终得到的构建实际上与原始Ant构建相同，不同的是，您的Ant目标变成了Gradle任务。甚至保留了目标之间的依赖关系。
 
-缺点是您仍在使用Ant构建，必须继续对其进行维护。您还将失去Gradle约定，许多插件，依赖管理等优点。您仍然可以使用[增量构建信息](/md/处理任务.md#sec_up_to_date_checks)来增强构建，但是比正常的Gradle构建要付出更多的努力。
+缺点是您仍在使用Ant构建，必须继续对其进行维护。您还将失去Gradle约定，许多插件，依赖管理等优点。您仍然可以使用[增量构建信息](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E6%9C%80%E6%96%B0%E6%A3%80%E6%9F%A5%EF%BC%88%E5%8F%88%E7%A7%B0%E5%A2%9E%E9%87%8F%E6%9E%84%E5%BB%BA%EF%BC%89)来增强构建，但是比正常的Gradle构建要付出更多的努力。
 
   * 惯用的Gradle构建
 
 如果您想将来对构建进行验证，那么这里就是您要结束的地方。利用Gradle的约定和插件将导致更小，更易于维护的构建，其结构对于许多Java开发人员来说都是熟悉的。您还将发现更容易利用Gradle的强大功能来提高构建性能。
 
 主要缺点是执行迁移所需的额外工作，尤其是在现有构建很复杂且具有许多项目间依赖关系的情况下。但是，这种构建通常会从转向idomatic
-Gradle的过程中受益最多。另外，Gradle提供了许多可以简化迁移的功能，例如直接从Gradle构建中[使用核心和自定义Ant任务的功能](/md/从Gradle使用Ant.md#sec_using_ant_tasks)。
+Gradle的过程中受益最多。另外，Gradle提供了许多可以简化迁移的功能，例如直接从Gradle构建中[使用核心和自定义Ant任务的功能](/md/%E4%BB%8EGradle%E4%BD%BF%E7%94%A8Ant.md%23%E5%9C%A8%E6%9E%84%E5%BB%BA%E4%B8%AD%E4%BD%BF%E7%94%A8Ant%E4%BB%BB%E5%8A%A1%E5%92%8C%E7%B1%BB%E5%9E%8B)。
 
 从长远来看，理想情况下，您希望最终接近第二种选择，但是您不必一蹴而就。
 
@@ -55,7 +55,7 @@ Gradle的过程中受益最多。另外，Gradle提供了许多可以简化迁�
 
   3. 确定您是否具有多项目构建
 
-与单项目构建相比，多项目构建通常更难迁移且需要更多的工作。我们在[迁移多项目构建](#migant_multi_project_builds)部分中提供了一些专用的建议，以帮助完成该过程。
+与单项目构建相比，多项目构建通常更难迁移且需要更多的工作。我们在[迁移多项目构建](#%E8%BF%81%E7%A7%BB%E5%A4%9A%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA)部分中提供了一些专用的建议，以帮助完成该过程。
 
   4. 找出每个项目要使用哪些插件
 
@@ -66,16 +66,16 @@ Portal](https://plugins.gradle.org/)上找到许多有用的[插件](https://plu
 
   5. 导入Ant构建或从头开始创建Gradle构建
 
-此步骤很大程度上取决于构建的要求。如果精选的Gradle插件可以完成您的Ant构建所做的大部分工作，那么创建一个不依赖于Ant构建的新鲜Gradle构建脚本可能是有意义的，或者自己实现缺少的部分或[利用现有的部分Ant任务](/md/从Gradle使用Ant.md#sec_using_ant_tasks)。
+此步骤很大程度上取决于构建的要求。如果精选的Gradle插件可以完成您的Ant构建所做的大部分工作，那么创建一个不依赖于Ant构建的新鲜Gradle构建脚本可能是有意义的，或者自己实现缺少的部分或[利用现有的部分Ant任务](/md/%E4%BB%8EGradle%E4%BD%BF%E7%94%A8Ant.md%23%E5%9C%A8%E6%9E%84%E5%BB%BA%E4%B8%AD%E4%BD%BF%E7%94%A8Ant%E4%BB%BB%E5%8A%A1%E5%92%8C%E7%B1%BB%E5%9E%8B)。
 
-另一种方法是[将Ant构建](/md/从Gradle使用Ant.md#sec_import_ant_build)导入到Gradle构建脚本中，并逐步替换Ant构建功能。这样可以使您在每个阶段都有一个有效的Gradle构建，但是要使Gradle任务与Ant任务一起正常工作还需要一些工作。您可以在[使用导入的版本中](#migant_imported_builds)了解有关此方法的更多信息。
+另一种方法是[将Ant构建](/md/%E4%BB%8EGradle%E4%BD%BF%E7%94%A8Ant.md%23%E5%AF%BC%E5%85%A5Ant%E6%9E%84%E5%BB%BA)导入到Gradle构建脚本中，并逐步替换Ant构建功能。这样可以使您在每个阶段都有一个有效的Gradle构建，但是要使Gradle任务与Ant任务一起正常工作还需要一些工作。您可以在[使用导入的版本中](#%E4%BD%BF%E7%94%A8%E5%AF%BC%E5%85%A5%E7%9A%84%E7%89%88%E6%9C%AC)了解有关此方法的更多信息。
 
   6. 为现有目录和文件结构配置构建
 
 Gradle利用约定来消除与旧版本相关联的许多样板，并使用户一旦熟悉这些约定，就可以更轻松地使用新版本。但这并不意味着您必须遵循它们。
 
 Gradle提供了许多配置选项，可以实现高度的自定义。这些选项通常可以通过提供约定的插件来使用。例如，`src/main/java`Java插件提供了用于生产Java代码的标准源目录结构
-，它允许您[配置其他源路径](/md/构建Java和JVM项目.md#sec_custom_java_source_set_paths)。可以通过[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)对象上的属性修改许多路径。
+，它允许您[配置其他源路径](/md/%E6%9E%84%E5%BB%BAJava%E5%92%8CJVM%E9%A1%B9%E7%9B%AE.md%23%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E4%BD%8D%E7%BD%AE)。可以通过[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)对象上的属性修改许多路径。
 
   7. 如果愿意，可以迁移到标准Gradle约定
 
@@ -85,10 +85,10 @@ Gradle提供了许多配置选项，可以实现高度的自定义。这些选�
 
 本章的其余部分介绍了您在迁移期间可能要处理的一些常见方案，例如依赖关系管理和使用Ant任务。
 
-## [使用导入的版本](#sdsd)
+## [使用导入的版本](#%E4%BD%BF%E7%94%A8%E5%AF%BC%E5%85%A5%E7%9A%84%E7%89%88%E6%9C%AC)
 
 
-许多迁移的第一步将[导入一个Ant build](/md/从Gradle使用Ant.md#sec_import_ant_build)使用`ant.importBuild()`。如果这样做，那么如何在不立即替换所有内容的情况下过渡到标准Gradle构建？
+许多迁移的第一步将[导入一个Ant build](/md/%E4%BB%8EGradle%E4%BD%BF%E7%94%A8Ant.md%23%E5%AF%BC%E5%85%A5Ant%E6%9E%84%E5%BB%BA)使用`ant.importBuild()`。如果这样做，那么如何在不立即替换所有内容的情况下过渡到标准Gradle构建？
 
 要记住的重要一点是，Ant目标变成了真正的Gradle任务，这意味着您可以执行诸如修改其任务依赖性，附加额外的任务动作等操作。这样，您就可以用本地Gradle任务替代等效的Ant任务，并保持与其他现有任务的任何链接。
 
@@ -167,7 +167,7 @@ build.gradle.kts
 > 将`build`目标重命名为`ant_build`并使所有其他目标保持不变  
 
   
-在[构建Java和JVM项目](/md/构建Java和JVM项目.md#sec_custom_java_source_set_paths)一章中介绍了为源配置不同的路径，同时您可以以类似的方式更改已编译类的输出目录。
+在[构建Java和JVM项目](/md/%E6%9E%84%E5%BB%BAJava%E5%92%8CJVM%E9%A1%B9%E7%9B%AE.md%23%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E4%BD%8D%E7%BD%AE)一章中介绍了为源配置不同的路径，同时您可以以类似的方式更改已编译类的输出目录。
 
 假设原始的Ant构建将这些路径存储在Ant属性中，`src.dir`用于Java源文件和`classes.dir`输出。这是配置Gradle使用这些路径的方法：
 
@@ -246,9 +246,9 @@ build.gradle.kts
 
 例如，如果Ant构建遵循相当标准的方法进行编译，静态资源，打包和单元测试，则可能值得将所有这些一起迁移。但是，如果构建对编译后的类执行了一些额外的处理，或者在处理静态资源时执行了一些独特的处理，则可能值得将这些任务分成单独的阶段。
 
-<h2 id = '#migant_managing_dependencies'> <a href = '#migant_managing_dependencies'>管理依赖</a> </h2>
+## [管理依赖](#%E7%AE%A1%E7%90%86%E4%BE%9D%E8%B5%96)
 
-Ant构建通常采用以下两种方法之一来处理二进制[依赖性](/md/依赖管理术语.md#sub_terminology_dependency)（例如库）：
+Ant构建通常采用以下两种方法之一来处理二进制[依赖性](/md/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%AF%E8%AF%AD.md%23%E4%BE%9D%E8%B5%96%EF%BC%88dependency%EF%BC%89)（例如库）：
 
   * 将它们与项目一起存储在本地“ lib”目录中
 
@@ -256,18 +256,18 @@ Ant构建通常采用以下两种方法之一来处理二进制[依赖性](/md/�
 
 他们每个人都需要使用不同的技术来迁移到Gradle，但是无论哪种情况，您都会发现过程很简单。我们将在以下各节中详细介绍每种方案。
 
-<h3 id = '#migant_filesystem_deps'> <a href = '#migant_filesystem_deps'>从目录服务依赖项</a> </h3>
+### [从目录服务依赖项](#%E4%BB%8E%E7%9B%AE%E5%BD%95%E6%9C%8D%E5%8A%A1%E4%BE%9D%E8%B5%96%E9%A1%B9)
 
 当您尝试迁移将其依赖项存储在本地或网络上的文件系统上的构建时，应考虑是否最终要使用远程存储库移至托管依赖项。这是因为您可以通过以下两种方式之一将文件系统依赖项合并到Gradle构建中：
 
-  * 定义[平面目录存储库](/md/声明存储库.md#sub_flat_dir_resolver)并使用标准依赖项声明
+  * 定义[平面目录存储库](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E5%B9%B3%E9%9D%A2%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E5%BA%93)并使用标准依赖项声明
 
-  * 将文件直接附加到适当的依赖项配置（[文件依赖项](/md/声明依赖.md#sub_file_dependencies)）
+  * 将文件直接附加到适当的依赖项配置（[文件依赖项](/md/%E5%A3%B0%E6%98%8E%E4%BE%9D%E8%B5%96.md%23%E6%96%87%E4%BB%B6%E4%BE%9D%E8%B5%96)）
 
 如果采用第一种方法，则更容易迁移到从Maven或Ivy兼容存储库提供的托管依赖项，但是这样做要求所有文件都遵循命名约定`"<moduleName>-<version>.<extension>".`
 
 >如果将依赖项存储在标准的Maven存储库布局中， `<repoDir>/<group>/<module>/<version>`则可以使用“"file://"
- URL定义[自定义Maven存储库](/md/声明存储库.md#sec_declaring_custom_repository)。  
+ URL定义[自定义Maven存储库](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E9%80%9A%E8%BF%87URL%E5%A3%B0%E6%98%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%98%E5%82%A8%E5%BA%93)。  
  
   
 为了演示这两种技术，请考虑一个`libs`目录中具有以下库JAR的项目：
@@ -280,7 +280,7 @@ Ant构建通常采用以下两种方法之一来处理二进制[依赖性](/md/�
     └──commons-io-2.1.jar
 
 该文件`our-
-custom.jar`缺少版本号，因此必须作为文件依赖项添加。但是其他两个JAR匹配所需的命名约定，因此可以声明为从平面目录存储库检索的常规[模块依赖项](/md/声明依赖.md#sub_module_dependencies)。
+custom.jar`缺少版本号，因此必须作为文件依赖项添加。但是其他两个JAR匹配所需的命名约定，因此可以声明为从平面目录存储库检索的常规[模块依赖项](/md/%E5%A3%B0%E6%98%8E%E4%BE%9D%E8%B5%96.md%23%E6%A8%A1%E5%9D%97%E4%BE%9D%E8%B5%96)。
 
 以下示例构建脚本演示了如何将所有这些库合并到构建中：
 
@@ -336,11 +336,11 @@ __ |
   
 ---|---  
   
-<h3 id = '#migant_ivy_deps'> <a href = '#migant_ivy_deps'>迁移Ivy依赖</a> </h3>
+### [迁移Ivy依赖](#%E8%BF%81%E7%A7%BBIvy%E4%BE%9D%E8%B5%96)
 
 Apache Ivy是一个独立的依赖项管理工具，已与Ant一起广泛使用。它的工作方式与Gradle类似。实际上，它们都允许您
 
-  * 定义自己的[配置](/md/依赖管理术语.md#sub_terminology_configuration)
+  * 定义自己的[配置](/md/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%AF%E8%AF%AD.md%23%E9%85%8D%E7%BD%AE%EF%BC%88configuration%EF%BC%89)
 
   * 互相扩展配置
 
@@ -361,8 +361,8 @@ custom-configurations)。
 
   * 将解析器从您的Ivy设置文件转录到构建脚本的[存储库{}](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories\(groovy.lang.Closure\))块中。
 
-有关更多信息，请参见有关[管理依赖关系配置](/md/声明依赖.md#sec_what-are-dependency-configurations)，
-[声明依赖关系](/md/声明依赖.md#sec_dependency-types)和
+有关更多信息，请参见有关[管理依赖关系配置](/md/%E5%A3%B0%E6%98%8E%E4%BE%9D%E8%B5%96.md%23%E4%BB%80%E4%B9%88%E6%98%AF%E4%BE%9D%E8%B5%96%E9%A1%B9%E9%85%8D%E7%BD%AE)，
+[声明依赖关系](/md/%E5%A3%B0%E6%98%8E%E4%BE%9D%E8%B5%96.md%23%E4%B8%8D%E5%90%8C%E7%A7%8D%E7%B1%BB%E7%9A%84%E4%BE%9D%E8%B5%96)和
 [声明存储库](/md/声明存储库.md#declaring-repositories)的章节。
 
 Ivy提供了一些Ant任务，这些任务处理Ivy的获取依赖项的过程。该过程的基本步骤包括：
@@ -392,9 +392,9 @@ Gradle的过程与此类似，但是您无需显式调用前两个步骤，因�
 
     
 
-在构建开始时，Gradle将自动解决您声明的所有依赖项并将其下载到其缓存中。它在存储库中搜索那些依赖项，搜索顺序由[存储库的声明](/md/声明存储库.md#sec_declaring_multiple_repositories)顺序定义。
+在构建开始时，Gradle将自动解决您声明的所有依赖项并将其下载到其缓存中。它在存储库中搜索那些依赖项，搜索顺序由[存储库的声明](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E5%A3%B0%E6%98%8E%E5%A4%9A%E4%B8%AA%E5%AD%98%E5%82%A8%E5%BA%93)顺序定义。
 
-值得注意的是，Gradle支持与Ivy相同的动态版本语法，因此您仍然可以使用`1.0.+`。如果需要，还可以使用特殊标签`latest.integration`和`latest.release`标签。如果决定使用这种[动态](/md/处理随时间变化的版本.md#sub_declaring_dependency_with_dynamic_version)和[变化的](/md/处理随时间变化的版本.md#sub_declaring_dependency_with_changing_version)依赖关系，则可以通过[resolutionStrategy](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.ResolutionStrategy.html)为它们配置缓存行为。
+值得注意的是，Gradle支持与Ivy相同的动态版本语法，因此您仍然可以使用`1.0.+`。如果需要，还可以使用特殊标签`latest.integration`和`latest.release`标签。如果决定使用这种[动态](/md/%E5%A4%84%E7%90%86%E9%9A%8F%E6%97%B6%E9%97%B4%E5%8F%98%E5%8C%96%E7%9A%84%E7%89%88%E6%9C%AC.md%23%E5%A3%B0%E6%98%8E%E5%8A%A8%E6%80%81%E7%89%88%E6%9C%AC)和[变化的](/md/%E5%A4%84%E7%90%86%E9%9A%8F%E6%97%B6%E9%97%B4%E5%8F%98%E5%8C%96%E7%9A%84%E7%89%88%E6%9C%AC.md%23%E5%A3%B0%E6%98%8E%E7%89%88%E6%9C%AC%E5%8F%98%E6%9B%B4)依赖关系，则可以通过[resolutionStrategy](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.ResolutionStrategy.html)为它们配置缓存行为。
 
 如果您使用动态和/或更改依赖关系，则可能还需要考虑[依赖关系锁定](/md/锁定依赖版本.md)。这是使构建更可靠并允许可[复制的构建](https://reproducible-
 builds.org/)的一种方法。
@@ -428,7 +428,7 @@ build.gradle.kts
 
 配置也是文件集合，因此为什么可以在`from()`配置中使用它。您可以使用类似的技术将配置附加到编译任务或生成文档的任务。有关更多示例和有关Gradle文件API的信息，请参见[使用文件](/md/编写构建脚本.md#working_with_files)一章。
 
-<h2 id = '#migant_ivy_publishing'> <a href = '#migant_ivy_publishing'>发布工件</a> </h2>
+## [发布工件](#%E5%8F%91%E5%B8%83%E5%B7%A5%E4%BB%B6)
 
 使用Ivy来管理依赖项的项目也经常使用它来将JAR和其他工件发布到存储库。如果您要迁移这样的构建，那么您将很高兴知道Gradle内置了对将工件发布到兼容Ivy的存储库的支持。
 
@@ -438,9 +438,9 @@ build.gradle.kts
 
   * 将[Ivy发布插件](/md/Ivy发布插件.md#publishing_ivy)应用于您的构建
 
-  * [配置至少一个发布](/md/Ivy发布插件.md#publishing_ivy_publications)，表示将发布的内容（如果需要，还包括其他工件）
+  * [配置至少一个发布](/md/Ivy%E5%8F%91%E5%B8%83%E6%8F%92%E4%BB%B6.md%23%E5%88%8A%E7%89%A9)，表示将发布的内容（如果需要，还包括其他工件）
 
-  * [配置一个或多个存储库以将工件发布到](/md/Ivy发布插件.md#publishing_ivy_repositories)
+  * [配置一个或多个存储库以将工件发布到](/md/Ivy%E5%8F%91%E5%B8%83%E6%8F%92%E4%BB%B6.md%23%E5%82%A8%E5%AD%98%E5%BA%93)
 
 完成所有操作后，您将能够为每个发布生成一个Ivy模块描述符，并将它们发布到一个或多个存储库中。
 
@@ -451,7 +451,7 @@ build.gradle.kts
   * `<publish>` → `publishMyLibraryPublicationToMyRepoRepository`
 
 还有一个方便的`publish`任务，可以将 _所有_ 出版物发布到 _所有_
-存储库。如果您想限制哪些出版物进入哪个存储库，请查看[“出版”一章](/md/定制发布.md#sec_publishing_maven_conditional_publishing)的[相关部分](/md/定制发布.md#sec_publishing_maven_conditional_publishing)。
+存储库。如果您想限制哪些出版物进入哪个存储库，请查看[“出版”一章](/md/%E5%AE%9A%E5%88%B6%E5%8F%91%E5%B8%83.md%23%E5%B0%86%E5%87%BA%E7%89%88%E7%89%A9%E9%99%90%E5%88%B6%E4%B8%BA%E7%89%B9%E5%AE%9A%E7%9A%84%E5%AD%98%E5%82%A8%E5%BA%93)的[相关部分](/md/%E5%AE%9A%E5%88%B6%E5%8F%91%E5%B8%83.md%23%E5%B0%86%E5%87%BA%E7%89%88%E7%89%A9%E9%99%90%E5%88%B6%E4%B8%BA%E7%89%B9%E5%AE%9A%E7%9A%84%E5%AD%98%E5%82%A8%E5%BA%93)。
 
 
 
@@ -464,23 +464,23 @@ build.gradle.kts
       
 
   
-<h2 id = '#migant_custom_tasks'> <a href = '#migant_custom_tasks'>处理自定义Ant任务</a> </h2>
+## [处理自定义Ant任务](#%E5%A4%84%E7%90%86%E8%87%AA%E5%AE%9A%E4%B9%89Ant%E4%BB%BB%E5%8A%A1)
 
 Ant的优点之一是创建自定义任务并将其合并到构建中相当容易。如果您有这样的任务，那么有两个主要选项可将它们迁移到Gradle构建：
 
-  * [使用](/md/从Gradle使用Ant.md#sec_using_custom_ant_tasks)Gradle构建中[的定制Ant任务](/md/从Gradle使用Ant.md#sec_using_custom_ant_tasks)
+  * [使用](/md/%E4%BB%8EGradle%E4%BD%BF%E7%94%A8Ant.md%23%E5%9C%A8%E6%9E%84%E5%BB%BA%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AE%9A%E5%88%B6%E7%9A%84Ant%E4%BB%BB%E5%8A%A1)Gradle构建中[的定制Ant任务](/md/%E4%BB%8EGradle%E4%BD%BF%E7%94%A8Ant.md%23%E5%9C%A8%E6%9E%84%E5%BB%BA%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AE%9A%E5%88%B6%E7%9A%84Ant%E4%BB%BB%E5%8A%A1)
 
   * 将任务重写为[自定义Gradle任务类型](/md/开发自定义Gradle任务类型.md#custom_tasks)
 
-第一个选项通常快速简便，但并非总是如此。而且，如果要将任务集成到增量构建中，则必须使用[增量构建运行时API](/md/处理任务.md#sec_task_input_output_runtime_api)。您还经常需要处理笨拙的Ant路径和文件集。
+第一个选项通常快速简便，但并非总是如此。而且，如果要将任务集成到增量构建中，则必须使用[增量构建运行时API](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E8%BF%90%E8%A1%8C%E6%97%B6API)。您还经常需要处理笨拙的Ant路径和文件集。
 
-如果有时间，从长远来看，第二个选项是可取的。Gradle任务类型往往比Ant任务更简单，因为它们不必使用基于XML的接口。您还可以访问Gradle的丰富API。最后，这种方法可以利用基于类型化属性的[类型安全增量构建API](/md/处理任务.md#sec_task_input_output_annotations)。
+如果有时间，从长远来看，第二个选项是可取的。Gradle任务类型往往比Ant任务更简单，因为它们不必使用基于XML的接口。您还可以访问Gradle的丰富API。最后，这种方法可以利用基于类型化属性的[类型安全增量构建API](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%BB%E5%8A%A1%E7%B1%BB%E5%9E%8B)。
 
-<h2 id = '#migant_working_with_files'> <a href = '#migant_working_with_files'>处理文件</a> </h2>
+## [处理文件](#%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6)
 
-Ant有许多处理文件的任务，其中大多数具有Gradle等效项。与从Ant到Gradle迁移的其他区域一样，您可以在Gradle构建中[使用这些Ant任务](/md/从Gradle使用Ant.md#sec_using_ant_tasks)。但是，我们强烈建议在可能的情况下迁移到本地Gradle构造，以便使该构造受益于：
+Ant有许多处理文件的任务，其中大多数具有Gradle等效项。与从Ant到Gradle迁移的其他区域一样，您可以在Gradle构建中[使用这些Ant任务](/md/%E4%BB%8EGradle%E4%BD%BF%E7%94%A8Ant.md%23%E5%9C%A8%E6%9E%84%E5%BB%BA%E4%B8%AD%E4%BD%BF%E7%94%A8Ant%E4%BB%BB%E5%8A%A1%E5%92%8C%E7%B1%BB%E5%9E%8B)。但是，我们强烈建议在可能的情况下迁移到本地Gradle构造，以便使该构造受益于：
 
-  * [增量构建](/md/处理任务.md#sec_up_to_date_checks)
+  * [增量构建](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E6%9C%80%E6%96%B0%E6%A3%80%E6%9F%A5%EF%BC%88%E5%8F%88%E7%A7%B0%E5%A2%9E%E9%87%8F%E6%9E%84%E5%BB%BA%EF%BC%89)
 
   * 易于与构建的其他部分集成，例如依赖项配置
 
@@ -510,7 +510,7 @@ API或第三方库来实现同一目的的本地Gradle任务类型。
   
 
   
-<h2 id = '#migant_properties'> <a href = '#migant_properties'>迁移Ant属性</a> </h2>
+## [迁移Ant属性](#%E8%BF%81%E7%A7%BBAnt%E5%B1%9E%E6%80%A7)
 
 Ant利用属性映射来存储可在整个构建过程中重复使用的值。这种方法的最大缺点是属性值都是字符串，并且属性本身的行为类似于全局变量。
 
@@ -518,14 +518,14 @@ Ant利用属性映射来存储可在整个构建过程中重复使用的值。�
 
     与Gradle中的Ant属性交互
     
-    有时，您可能想直接从Gradle构建中使用Ant任务，而该任务需要设置一个或多个Ant属性。如果是这样，您可以通过`ant`对象轻松设置这些属性，如[使用Gradle](/md/从Gradle使用Ant.md#sec_ant_properties)中的[Ant](/md/从Gradle使用Ant.md#sec_ant_properties)一章所述。  
+    有时，您可能想直接从Gradle构建中使用Ant任务，而该任务需要设置一个或多个Ant属性。如果是这样，您可以通过`ant`对象轻松设置这些属性，如[使用Gradle](/md/%E4%BB%8EGradle%E4%BD%BF%E7%94%A8Ant.md%23Ant%E5%B1%9E%E6%80%A7%E5%92%8C%E5%8F%82%E8%80%83)中的[Ant](/md/%E4%BB%8EGradle%E4%BD%BF%E7%94%A8Ant.md%23Ant%E5%B1%9E%E6%80%A7%E5%92%8C%E5%8F%82%E8%80%83)一章所述。  
 
   
-Gradle以[项目属性](/md/Gradle环境搭建.md#sec_project_properties)的形式使用了类似的东西，这是参数化构建的合理方法。可以从命令行，[`gradle.properties`文件](/md/Gradle环境搭建.md#sec_gradle_configuration_properties)或甚至通过特殊命名的系统属性和环境变量来设置它们。
+Gradle以[项目属性](/md/Gradle%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md%23%E9%A1%B9%E7%9B%AE%E6%80%A7%E8%B4%A8)的形式使用了类似的东西，这是参数化构建的合理方法。可以从命令行，[`gradle.properties`文件](/md/Gradle%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md%23Gradle%E5%B1%9E%E6%80%A7)或甚至通过特殊命名的系统属性和环境变量来设置它们。
 
 如果您已有现有的Ant属性文件，则可以将其内容复制到项目的`gradle.properties`文件中。请注意以下两点：
 
-  * 设置的属性`gradle.properties` **不会** 覆盖在构建脚本中定义的具有相同名称的其他[项目属性](/md/编写构建脚本.md#sec_extra_properties)
+  * 设置的属性`gradle.properties` **不会** 覆盖在构建脚本中定义的具有相同名称的其他[项目属性](/md/%E7%BC%96%E5%86%99%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC.md%23%E9%A2%9D%E5%A4%96%E7%9A%84%E5%B1%9E%E6%80%A7)
 
   * 导入的Ant任务不会自动“查看” Gradle项目属性-您必须将它们复制到Ant属性映射中才能实现
 
@@ -575,9 +575,9 @@ build.gradle.kts
 2⃣️ 使用`javadocJar`任务持有的Javadoc JAR的位置  
 3⃣️ 使用一个额外的项目属性`tmpDistDir`来定义“ dist”目录的位置  
   
-从使用的示例中可以看到`tmpDistDir`，经常仍然需要通过属性定义路径等，这就是为什么Gradle还提供了可以附加到项目，任务和某些其他类型的对象上的[额外属性](/md/编写构建脚本.md#sec_extra_properties)。
+从使用的示例中可以看到`tmpDistDir`，经常仍然需要通过属性定义路径等，这就是为什么Gradle还提供了可以附加到项目，任务和某些其他类型的对象上的[额外属性](/md/%E7%BC%96%E5%86%99%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC.md%23%E9%A2%9D%E5%A4%96%E7%9A%84%E5%B1%9E%E6%80%A7)。
 
-<h2 id = '#migant_multi_project_builds'> <a href = '#migant_multi_project_builds'>迁移多项目构建</a> </h2>
+## [迁移多项目构建](#%E8%BF%81%E7%A7%BB%E5%A4%9A%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA)
 
 多项目构建对于迁移是一个特殊的挑战，因为Ant中没有用于构建它们或处理项目间依赖关系的标准方法。他们中的大多数人可能`<ant>`以某种方式使用任务，但这仅是一个人能说的。
 
@@ -604,7 +604,7 @@ build.gradle.kts
 
 多项目构建中的某些项目将取决于该构建中一个或多个其他项目产生的工件。这样的项目需要确保它们所依赖的那些项目已经产生了工件，并且它们知道通往这些工件的路径。
 
-确保所需工件的生产通常意味着通过`<ant>`任务调用其他项目的构建。不幸的是，这会绕过Gradle构建，而忽略了您对Gradle构建脚本所做的任何更改。您将需要使用`<ant>`Gradle[任务依赖项](/md/处理任务.md#sec_adding_dependencies_to_tasks)替换使用任务的目标。
+确保所需工件的生产通常意味着通过`<ant>`任务调用其他项目的构建。不幸的是，这会绕过Gradle构建，而忽略了您对Gradle构建脚本所做的任何更改。您将需要使用`<ant>`Gradle[任务依赖项](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E5%90%91%E4%BB%BB%E5%8A%A1%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96%E9%A1%B9)替换使用任务的目标。
 
 例如，假设您有一个Web项目，该项目依赖于同一构建中的“ util”库。“ web”的Ant构建文件可能具有如下目标：
 
@@ -641,7 +641,7 @@ web/build.gradle.kts
         }
     }
 
-它不像Gradle的[项目依赖项](/md/声明子项目之间的依赖关系.md#sec_project_jar_dependencies)那样健壮或强大，但是它解决了当前的问题，而无需对构建进行大的更改。只要小心删除或覆盖对委派给其他子项目的`buildRequiredProjects`任务（如任务）的任何依赖关系即可。
+它不像Gradle的[项目依赖项](/md/%E5%A3%B0%E6%98%8E%E5%AD%90%E9%A1%B9%E7%9B%AE%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB.md%23%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96)那样健壮或强大，但是它解决了当前的问题，而无需对构建进行大的更改。只要小心删除或覆盖对委派给其他子项目的`buildRequiredProjects`任务（如任务）的任何依赖关系即可。
 
   5. 确定不依赖于其他项目的项目，并将其迁移到惯用的Gradle构建脚本。
 
@@ -657,7 +657,7 @@ web/build.gradle.kts
 
 在该过程的最后，您应该拥有一个Gradle构建，您可以确信它可以按预期工作，并且构建逻辑比以前少得多。
 
-<h2 id = '#further_reading'> <a href = '#further_reading'>进一步阅读</a> </h2>
+## [进一步阅读](#%E8%BF%9B%E4%B8%80%E6%AD%A5%E9%98%85%E8%AF%BB)
 
 本章涵盖了特定于将Ant构建迁移到Gradle的主要主题。剩下的就是迁移期间或迁移之后可能有用的其他一些方面：
 
