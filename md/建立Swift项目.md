@@ -3,21 +3,21 @@
 
 内容
 
-  * [介绍](#sec_swift_introduction)
-  * [引入构建变体](#sec_introducing_build_variants-swift)
-  * [声明您的源文件](#sec_swift_source_sets)
-  * [管理你的依赖](#sec_swift_dependency_management_overview)
-  * [编译和链接代码](#sec_swift_compile_link)
-  * [包装出版](#sec_swift_packaging)
-  * [清理构建](#sec_cleaning_swift_build)
-  * [构建Swift库](#sec_building_swift_libraries)
-  * [构建Swift应用程序](#sec_building_swift_applications)
+  * [介绍](#%E4%BB%8B%E7%BB%8D)
+  * [引入构建变体](#%E5%BC%95%E5%85%A5%E6%9E%84%E5%BB%BA%E5%8F%98%E4%BD%93)
+  * [声明您的源文件](#%E5%A3%B0%E6%98%8E%E6%82%A8%E7%9A%84%E6%BA%90%E6%96%87%E4%BB%B6)
+  * [管理你的依赖](#%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E4%BE%9D%E8%B5%96)
+  * [编译和链接代码](#%E7%BC%96%E8%AF%91%E5%92%8C%E9%93%BE%E6%8E%A5%E4%BB%A3%E7%A0%81)
+  * [包装出版](#%E5%8C%85%E8%A3%85%E5%87%BA%E7%89%88)
+  * [清理构建](#%E6%B8%85%E7%90%86%E6%9E%84%E5%BB%BA)
+  * [构建Swift库](#%E6%9E%84%E5%BB%BASwift%E5%BA%93)
+  * [构建Swift应用程序](#%E6%9E%84%E5%BB%BASwift%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F)
 
 Gradle使用约定优于配置的方法来构建本机项目。如果您来自另一个本机构建系统，那么这些概念起初可能并不陌生，但它们的目的是简化构建脚本的编写。
 
 我们将在本章中详细介绍Swift项目，但是大多数主题也将适用于其他受支持的本地语言。
 
-<h2 id = '#sec_swift_introduction'> <a href = '#sec_swift_introduction'>介绍</a> </h2>
+## [介绍](#%E4%BB%8B%E7%BB%8D)
 
 Swift项目的最简单构建脚本将应用Swift应用程序插件或Swift库插件，并可以选择设置项目版本：
 
@@ -59,7 +59,7 @@ Swift插件还将上述任务集成到标准[生命周期任务中](https://docs
 
 本章的其余部分介绍了在构建库和应用程序时根据需要自定义构建的不同方法。
 
-<h2 id = '#sec_introducing_build_variants-swift'> <a href = '#sec_introducing_build_variants-swift'>引入构建变体</a> </h2>
+## [引入构建变体](#%E5%BC%95%E5%85%A5%E6%9E%84%E5%BB%BA%E5%8F%98%E4%BD%93)
 
 本机项目通常可以产生几种不同的二进制文件，例如调试或发布的二进制文件，或针对特定平台和处理器体系结构的二进制文件。Gradle通过 _维度_ 和 _变体_
 的概念来进行管理。
@@ -70,7 +70,7 @@ Swift插件还将上述任务集成到标准[生命周期任务中](https://docs
 
 Gradle内置支持多个维度以及每个维度中的多个值。您可以在本[机插件参考章节中](/md/插件参考.md#native_languages)找到它们的列表。
 
-<h2 id = '#sec_swift_source_sets'> <a href = '#sec_swift_source_sets'>声明您的源文件</a> </h2>
+## [声明您的源文件](#%E5%A3%B0%E6%98%8E%E6%82%A8%E7%9A%84%E6%BA%90%E6%96%87%E4%BB%B6)
 
 Gradle的Swift支持使用`ConfigurableFileCollection`直接来自[应用程序](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.SwiftApplication.html)或[库](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.SwiftLibrary.html)脚本块的代码来配置要编译的源集。
 
@@ -82,7 +82,7 @@ Gradle的Swift支持使用`ConfigurableFileCollection`直接来自[应用程序]
 
 图1.源代码和Swift编译
 
-<h2 id = '#sec_swift_dependency_management_overview'> <a href = '#sec_swift_dependency_management_overview'>管理你的依赖</a> </h2>
+## [管理你的依赖](#%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E4%BE%9D%E8%B5%96)
 
 绝大多数项目都依赖于其他项目，因此管理项目的依存关系是构建任何项目的重要组成部分。依赖管理是一个大话题，因此我们在这里仅关注Swift项目的基础知识。如果您想深入了解细节，请查看[依赖管理简介](/md/Gradle中的依赖管理.md)。
 
@@ -149,19 +149,19 @@ build.gradle.kts
 
 需要进一步阅读的一些常见方案包括：
 
-  * 定义与[Maven兼容](/md/声明存储库.md#sec_repository-types)的自定义存储库
+  * 定义与[Maven兼容](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E6%94%AF%E6%8C%81%E7%9A%84%E5%AD%98%E5%82%A8%E5%BA%93%E7%B1%BB%E5%9E%8B)的自定义存储库
 
-  * 使用[变化的版本](/md/处理随时间变化的版本.md#sub_declaring_dependency_with_changing_version)（例如SNAPSHOT）和[动态的](/md/处理随时间变化的版本.md#sub_declaring_dependency_with_dynamic_version)（范围）声明依赖项
+  * 使用[变化的版本](/md/%E5%A4%84%E7%90%86%E9%9A%8F%E6%97%B6%E9%97%B4%E5%8F%98%E5%8C%96%E7%9A%84%E7%89%88%E6%9C%AC.md%23%E5%A3%B0%E6%98%8E%E7%89%88%E6%9C%AC%E5%8F%98%E6%9B%B4)（例如SNAPSHOT）和[动态的](/md/%E5%A4%84%E7%90%86%E9%9A%8F%E6%97%B6%E9%97%B4%E5%8F%98%E5%8C%96%E7%9A%84%E7%89%88%E6%9C%AC.md%23%E5%A3%B0%E6%98%8E%E5%8A%A8%E6%80%81%E7%89%88%E6%9C%AC)（范围）声明依赖项
 
-  * 将同级[项目](/md/声明依赖.md#sub_project_dependencies)声明[为依赖项](/md/声明依赖.md#sub_project_dependencies)
+  * 将同级[项目](/md/%E5%A3%B0%E6%98%8E%E4%BE%9D%E8%B5%96.md%23%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96)声明[为依赖项](/md/%E5%A3%B0%E6%98%8E%E4%BE%9D%E8%B5%96.md%23%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96)
 
   * [控制传递依赖及其版本](/md/升级传递依赖的版本.md)
 
-  * 通过[组合构建](/md/复合构建.md)测试对第三方依赖关系的修复（这是发布到[Maven Local](/md/声明存储库.md#sub_maven_local)和从[Maven Local](/md/声明存储库.md#sub_maven_local)消费的更好的替代方法）
+  * 通过[组合构建](/md/复合构建.md)测试对第三方依赖关系的修复（这是发布到[Maven Local](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E6%9C%AC%E5%9C%B0Maven%E5%AD%98%E5%82%A8%E5%BA%93)和从[Maven Local](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E6%9C%AC%E5%9C%B0Maven%E5%AD%98%E5%82%A8%E5%BA%93)消费的更好的替代方法）
 
 您会发现Gradle具有丰富的API用于处理依赖关系-一种需要花费时间来掌握的API，但对于常见的情况却很容易使用。
 
-<h2 id = '#sec_swift_compile_link'> <a href = '#sec_swift_compile_link'>编译和链接代码</a> </h2>
+## [编译和链接代码](#%E7%BC%96%E8%AF%91%E5%92%8C%E9%93%BE%E6%8E%A5%E4%BB%A3%E7%A0%81)
 
 如果遵循以下约定，则编译两个代码都非常容易：
 
@@ -179,7 +179,7 @@ build.gradle.kts
 所有[SwiftCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.tasks.SwiftCompile.html)任务都是增量的且可缓存的。  
 ╚═════════════════════════════    
   
-<h3 id = '#sec_swift_supported_tool_chain'> <a href = '#sec_swift_supported_tool_chain'>支持的工具链</a> </h3>
+### [支持的工具链](#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B7%A5%E5%85%B7%E9%93%BE)
 
 Gradle支持[适用于macOS和Linux](https://swift.org/download/)的[官方Swift工具链](https://swift.org/download/)。当您构建本机二进制文件时，Gradle会尝试找到您的计算机上安装的可以构建二进制文件的工具链。Gradle选择可以为目标操作系统，体系结构和Swift语言支持构建的第一个工具链。
 
@@ -187,7 +187,7 @@ Gradle支持[适用于macOS和Linux](https://swift.org/download/)的[官方Swift
 Gradle将使用系统PATH发现工具链。  
 ╚═════════════════════════════    
   
-<h3 id = '#sec_custom_swift_source_set_paths'> <a href = '#sec_custom_swift_source_set_paths'>自定义文件和目录位置</a> </h3>
+### [自定义文件和目录位置](#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E4%BD%8D%E7%BD%AE)
 
 假设您要迁移遵循Swift Package
 Manager布局的库项目（例如，生产代码目录）。传统的目录结构不起作用，因此您需要告诉Gradle在哪里可以找到源文件。您可以通过或脚本块执行此操作。`Sources/
@@ -217,7 +217,7 @@ build.gradle.kts
 
 现在Gradle将仅在 _Sources / Common中_ 直接搜索源。
 
-<h3 id = '#sec_custom_swift_compile_link'> <a href = '#sec_custom_swift_compile_link'>更改编译器和链接器选项</a> </h3>
+### [更改编译器和链接器选项](#%E6%9B%B4%E6%94%B9%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8C%E9%93%BE%E6%8E%A5%E5%99%A8%E9%80%89%E9%A1%B9)
 
 大多数的编译器和连接选项是通过相应的任务访问，如，和。这些任务分别为[SwiftCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.tasks.SwiftCompile.html)，[LinkSharedLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.LinkSharedLibrary.html)和[CreateStaticLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.CreateStaticLibrary.html)类型。阅读任务参考以获取最新，最全面的选项列表。`compile
 _Variant_ Swift``link _Variant_``create
@@ -287,7 +287,7 @@ build.gradle.kts
         }
     }
 
-<h3 id = '#sec_select_swift_target_machines'> <a href = '#sec_select_swift_target_machines'>选择目标机器</a> </h3>
+### [选择目标机器](#%E9%80%89%E6%8B%A9%E7%9B%AE%E6%A0%87%E6%9C%BA%E5%99%A8)
 
 默认情况下，Gradle将尝试为主机操作系统和体系结构创建Swift二进制变体。通过`TargetMachine`在`application`或`library`脚本块上指定的设置，可以覆盖此设置：
 
@@ -314,7 +314,7 @@ build.gradle.kts
         targetMachines.set(listOf(machines.linux.x86_64, machines.macOS.x86_64))
     }
 
-<h2 id = '#sec_swift_packaging'> <a href = '#sec_swift_packaging'>包装出版</a> </h2>
+## [包装出版](#%E5%8C%85%E8%A3%85%E5%87%BA%E7%89%88)
 
 在本地环境中，打包和发布Swift项目的方式有很大不同。Gradle带有默认值，但是可以实现自定义打包而没有任何问题。
 
@@ -324,11 +324,11 @@ build.gradle.kts
 
   * 对于应用程序，Gradle还支持在已知位置安装和运行具有所有共享库依赖项的可执行文件。
 
-<h2 id = '#sec_cleaning_swift_build'> <a href = '#sec_cleaning_swift_build'>清理构建</a> </h2>
+## [清理构建](#%E6%B8%85%E7%90%86%E6%9E%84%E5%BB%BA)
 
 Swift应用程序和库插件`clean`通过使用[基本插件](https://docs.gradle.org/6.7.1/userguide/base_plugin.html)将任务添加到您的项目中。此任务只是删除`$buildDir`目录中的所有内容，因此为什么要始终将构建生成的文件放在其中。该任务是Delete的一个实例，您可以通过设置其`dir`属性来更改其删除的目录。
 
-<h2 id = '#sec_building_swift_libraries'> <a href = '#sec_building_swift_libraries'>构建Swift库</a> </h2>
+## [构建Swift库](#%E6%9E%84%E5%BB%BASwift%E5%BA%93)
 
 库项目的独特之处在于它们被其他Swift项目使用（或“消耗”）。这意味着以二进制文件和标头发布的依赖元数据（以Gradle
 Module元数据的形式）至关重要。特别是，库的使用者应能够区分两种不同类型的依赖关系：仅依赖于编译库的依赖关系和也依赖于编译使用者的依赖关系。
@@ -340,7 +340,7 @@ _api_ 配置中。否则，依赖项是内部实现细节，应将其添加到 _
 
 如果不确定API和实现依赖项之间的区别，请参阅[Swift库插件](https://docs.gradle.org/6.7.1/userguide/swift_library_plugin.html#sec:swift_library_api_vs_implementation)一章中的详细说明。另外，您可以在相应的[样本中](https://docs.gradle.org/6.7.1/samples/sample_building_swift_libraries.html)看到构建Swift库的基本，实际[示例](https://docs.gradle.org/6.7.1/samples/sample_building_swift_libraries.html)。
 
-<h2 id = '#sec_building_swift_applications'> <a href = '#sec_building_swift_applications'>构建Swift应用程序</a> </h2>
+## [构建Swift应用程序](#%E6%9E%84%E5%BB%BASwift%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F)
 
 有关更多详细信息，请参见“
 [Swift应用程序插件”](https://docs.gradle.org/6.7.1/userguide/swift_application_plugin.html)一章，但这是您所获得的快速摘要：

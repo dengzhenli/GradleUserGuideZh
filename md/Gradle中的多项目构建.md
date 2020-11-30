@@ -3,13 +3,13 @@
 
 内容
 
-  * [创建多项目构建](#sec_creating_multi_project_builds)
-  * [添加子项目](#sec_adding_subprojects)
-  * [命名建议](#naming_recommendations)
+  * [创建多项目构建](#%E5%88%9B%E5%BB%BA%E5%A4%9A%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA)
+  * [添加子项目](#%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE)
+  * [命名建议](#%E5%91%BD%E5%90%8D%E5%BB%BA%E8%AE%AE)
 
 Gradle中的多项目构建由一个根项目和一个或多个子项目组成。
 
-<h2 id = '#sec_creating_multi_project_builds'> <a href = '#sec_creating_multi_project_builds'>创建多项目构建</a> </h2>
+## [创建多项目构建](#%E5%88%9B%E5%BB%BA%E5%A4%9A%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA)
 
 基本的多项目构建包含一个根项目和一个子项目。这是一个多项目构建的结构，其中包含一个名为的子项目`app`：
 
@@ -125,7 +125,7 @@ app / src / main / java / com / example / Hello.java
 
 这就是创建基本的多项目构建的简单程度。
 
-<h2 id = '#sec_adding_subprojects'> <a href = '#sec_adding_subprojects'>添加子项目</a> </h2>
+## [添加子项目](#%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE)
 
 假设我们要向`lib`先前创建的项目添加另一个子项目。我们需要做的就是`include`在根设置文件中添加另一条语句：
 
@@ -182,13 +182,13 @@ Project layout
 接下来，将探讨如何[在子项目之间共享](/md/在子项目之间共享构建逻辑.md)构建逻辑[以及子项目](/md/在子项目之间共享构建逻辑.md)
 如何[相互依赖](/md/声明子项目之间的依赖关系.md)。
 
-<h2 id = '#naming_recommendations'> <a href = '#naming_recommendations'>命名建议</a> </h2>
+## [命名建议](#%E5%91%BD%E5%90%8D%E5%BB%BA%E8%AE%AE)
 
 随着项目的发展，命名和一致性变得越来越重要。为了使您的构建可维护，我们建议以下操作：
 
   1. _保留子项目的默认项目名称_ ：可以在设置文件中配置自定义项目名称。但是，对于开发人员来说，跟踪哪个项目属于哪个文件夹是不必要的额外工作。
 
-  2. _所有项目名称均使用kebab大小写格式_ ：kebab大小写格式是当所有字母均小写，单词之间用短划线（'-'）分隔时（例如`kebab-case-formatting`）。这已经是许多大型项目的实际模式。此外，Gradle支持[kebab案例名称的名称缩写](/md/命令行界面.md#sec_name_abbreviation)。
+  2. _所有项目名称均使用kebab大小写格式_ ：kebab大小写格式是当所有字母均小写，单词之间用短划线（'-'）分隔时（例如`kebab-case-formatting`）。这已经是许多大型项目的实际模式。此外，Gradle支持[kebab案例名称的名称缩写](/md/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2.md%23%E5%90%8D%E7%A7%B0%E7%BC%A9%E5%86%99)。
 
   3. _在设置文件中定义根项目名称_ ：“ rootProject.name”有效地为整个构建分配一个名称，该名称用于诸如构建扫描的报告中。如果未设置根项目名称，则该名称将是容器目录名称，该名称可能不稳定（即，您可以将项目检出到任何目录）。
 

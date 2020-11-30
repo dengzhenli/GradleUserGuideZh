@@ -3,16 +3,16 @@
 
 内容
 
-  * [JVM语言和框架](#jvm_languages_and_frameworks)
-  * [母语](#native_languages)
-  * [包装与配送](#packaging_and_distribution)
-  * [代码分析](#code_analysis)
-  * [IDE整合](#ide_integration)
+  * [JVM语言和框架](#JVM%E8%AF%AD%E8%A8%80%E5%92%8C%E6%A1%86%E6%9E%B6)
+  * [母语](#%E6%AF%8D%E8%AF%AD)
+  * [包装与配送](#packaging+and+distribution)
+  * [代码分析](#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90)
+  * [IDE整合](#IDE%E6%95%B4%E5%90%88)
   * [效用](#utility)
 
 此页面包含Gradle本身提供的所有核心插件的链接和简短描述。
 
-<h2 id = '#jvm_languages_and_frameworks'> <a href = '#jvm_languages_and_frameworks'>JVM语言和框架</a> </h2>
+## [JVM语言和框架](#JVM%E8%AF%AD%E8%A8%80%E5%92%8C%E6%A1%86%E6%9E%B6)
 
 [Java](https://docs.gradle.org/6.7.1/userguide/java_plugin.html)
 
@@ -50,7 +50,7 @@
 
 提供对使用[ANTLR](http://www.antlr.org/)生成解析器的支持。
 
-<h2 id = '#native_languages'> <a href = '#native_languages'>母语</a> </h2>
+## [母语](#%E6%AF%8D%E8%AF%AD)
 
 [C++应用](https://docs.gradle.org/6.7.1/userguide/cpp_application_plugin.html)
 
@@ -88,7 +88,7 @@
 
 提供对在Linux和macOS上构建和运行基于XCTest的测试的支持。
 
-<h2 id = '#packaging_and_distribution'> <a href = '#packaging_and_distribution'>packaging and distribution</a> </h2>
+## [packaging and distribution](#packaging+and+distribution)
 
 [application](/md/Java应用插件.md)
 
@@ -138,7 +138,7 @@
 
 提供对创建包含其运行时依赖项的Java库项目的ZIP分发的支持。
 
-<h2 id = '#code_analysis'> <a href = '#code_analysis'>代码分析</a> </h2>
+## [代码分析](#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90)
 
 [Checkstyle](https://docs.gradle.org/6.7.1/userguide/checkstyle_plugin.html)
 
@@ -164,7 +164,7 @@
 
 使用[CodeNarc](http://codenarc.sourceforge.net/index.html)对Groovy源文件执行质量检查，并生成关联的报告。
 
-<h2 id = '#ide_integration'> <a href = '#ide_integration'>IDE整合</a> </h2>
+## [IDE整合](#IDE%E6%95%B4%E5%90%88)
 
 [Eclipse](https://docs.gradle.org/6.7.1/userguide/eclipse_plugin.html)
 
@@ -190,7 +190,7 @@
 
 为可以由IDE打开的内部版本生成Xcode工作区和项目文件。
 
-<h2 id = '#utility'> <a href = '#utility'>utility</a> </h2>
+## [utility](#utility)
 [base](https://docs.gradle.org/6.7.1/userguide/base_plugin.html)
 
     

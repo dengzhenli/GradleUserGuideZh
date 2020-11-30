@@ -3,19 +3,19 @@
 
 内容
 
-  * [用法](#publishing_ivy_usage)
-  * [任务](#publishing_ivy_tasks)
-  * [刊物](#publishing_ivy_publications)
-  * [储存库](#publishing_ivy_repositories)
-  * [完整的例子](#publishing_ivy_example)
-  * [从旧版Ivy出版物迁移](#sec_pub_ivy_legacy_migration)
+  * [用法](#%E7%94%A8%E6%B3%95)
+  * [任务](#%E4%BB%BB%E5%8A%A1)
+  * [刊物](#%E5%88%8A%E7%89%A9)
+  * [储存库](#%E5%82%A8%E5%AD%98%E5%BA%93)
+  * [完整的例子](#%E5%AE%8C%E6%95%B4%E7%9A%84%E4%BE%8B%E5%AD%90)
+  * [从旧版Ivy出版物迁移](#%E4%BB%8E%E6%97%A7%E7%89%88Ivy%E5%87%BA%E7%89%88%E7%89%A9%E8%BF%81%E7%A7%BB)
 
 Ivy Publish插件提供了以[Apache Ivy](http://ant.apache.org/ivy/)格式发布构建工件的功能，通常将其发布到存储库以供其他构建或项目使用。发布的内容是由构建创建的一个或多个工件，以及一个Ivy
 _模块描述符_ （通常为`ivy.xml`），该描述 _符_ 描述了工件及其相关性（如果有）。
 
 Gradle（请参阅[声明依赖项](/md/声明依赖.md#declaring-dependencies)）和其他了解Ivy格式的工具可以使用已发布的Ivy模块。您可以在[发布概述中](/md/将项目发布为模块.md#publishing_overview)了解发布的基础知识。
 
-<h2 id = '#publishing_ivy_usage'> <a href = '#publishing_ivy_usage'>用法</a> </h2>
+## [用法](#%E7%94%A8%E6%B3%95)
 
 要使用Ivy Publish插件，请在构建脚本中包括以下内容：
 
@@ -43,7 +43,7 @@ Ivy
 Publish插件在项目上使用扩展名`publishing`，类型为[PublishingExtension](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.PublishingExtension.html)。此扩展提供了一个命名出版物的容器和一个命名存储库的容器。Ivy
 Publish插件可与[IvyPublication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html)出版物和[IvyArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.IvyArtifactRepository.html)仓库一起使用。
 
-<h2 id = '#publishing_ivy_tasks'> <a href = '#publishing_ivy_tasks'>任务</a> </h2>
+## [任务](#%E4%BB%BB%E5%8A%A1)
 
 `generateDescriptorFileFor _PubName_ Publication`—
 [GenerateIvyDescriptor](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.tasks.GenerateIvyDescriptor.html)
@@ -68,23 +68,23 @@ _取决于_ ：所有任务`publish _PubName_ PublicationTo _RepoName_ Repositor
 
 将所有定义的发布发布到所有定义的存储库的聚合任务。
 
-<h2 id = '#publishing_ivy_publications'> <a href = '#publishing_ivy_publications'>刊物</a> </h2>
+## [刊物](#%E5%88%8A%E7%89%A9)
 
-此插件提供[出版物](/md/依赖管理术语.md#sub_terminology_publication)类型的[IvyPublication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html)。要了解如何定义和使用出版物，请参见[基本出版](/md/将项目发布为模块.md#sec_basic_publishing)部分。
+此插件提供[出版物](/md/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%AF%E8%AF%AD.md%23%E4%BD%9C%E5%93%81%EF%BC%88publication%EF%BC%89)类型的[IvyPublication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html)。要了解如何定义和使用出版物，请参见[基本出版](/md/%E5%B0%86%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E4%B8%BA%E6%A8%A1%E5%9D%97.md%23%E8%AE%BE%E7%BD%AE%E5%9F%BA%E6%9C%AC%E5%8F%91%E5%B8%83)部分。
 
 您可以在Ivy发布中配置以下四项主要内容：
 
-  * 一个[组件](/md/依赖管理术语.md#sub_terminology_component)—通过[IvyPublication.from（org.gradle.api.component.SoftwareComponent）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html#org.gradle.api.publish.ivy.IvyPublication:from\(org.gradle.api.component.SoftwareComponent\))。
+  * 一个[组件](/md/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%AF%E8%AF%AD.md%23component)—通过[IvyPublication.from（org.gradle.api.component.SoftwareComponent）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html#org.gradle.api.publish.ivy.IvyPublication:from\(org.gradle.api.component.SoftwareComponent\))。
 
-  * [自定义工件](/md/定制发布.md#sec_publishing_custom_artifacts_to_maven)-通过[IvyPublication.artifact（java.lang.Object）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html#org.gradle.api.publish.ivy.IvyPublication:artifact\(java.lang.Object\))方法。有关自定义Ivy工件的可用配置选项，请参见[IvyArtifact](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyArtifact.html)。
+  * [自定义工件](/md/%E5%AE%9A%E5%88%B6%E5%8F%91%E5%B8%83.md%23%E5%B0%86%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E5%8F%91%E5%B8%83%E4%B8%AD)-通过[IvyPublication.artifact（java.lang.Object）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html#org.gradle.api.publish.ivy.IvyPublication:artifact\(java.lang.Object\))方法。有关自定义Ivy工件的可用配置选项，请参见[IvyArtifact](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyArtifact.html)。
 
   * 标准元数据一样`module`，`organisation`和`revision`。
 
   * 模块描述符的其他内容-通过[IvyPublication.descriptor（org.gradle.api.Action）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html#org.gradle.api.publish.ivy.IvyPublication:descriptor\(org.gradle.api.Action\))。
 
-您可以在[完整的发布示例中](#publishing_ivy_example)看到所有这些内容。的API文档`IvyPublication`还有其他代码示例。
+您可以在[完整的发布示例中](#%E5%AE%8C%E6%95%B4%E7%9A%84%E4%BE%8B%E5%AD%90)看到所有这些内容。的API文档`IvyPublication`还有其他代码示例。
 
-<h3 id = '#sec_identity_values_for_the_published_project'> <a href = '#sec_identity_values_for_the_published_project'>已发布项目的标识值</a> </h3>
+### [已发布项目的标识值](#%E5%B7%B2%E5%8F%91%E5%B8%83%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%A0%87%E8%AF%86%E5%80%BC)
 
 生成的Ivy模块描述符文件包含一个`<info>`标识模块的元素。默认标识值从以下派生：
 
@@ -153,7 +153,7 @@ build.gradle.kts
   
 Gradle将处理任何有效的Unicode字符`organisation`，`module`和`revision`（以及神器的`name`，`extension`和`classifier`）。明确禁止的唯一值是`\`，`/`以及任何ISO控制字符。提供的值在发布过程的早期就得到了验证。
 
-<h3 id = '#sec_modifying_the_generated_module_descriptor'> <a href = '#sec_modifying_the_generated_module_descriptor'>自定义生成的模块描述符</a> </h3>
+### [自定义生成的模块描述符](#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%94%9F%E6%88%90%E7%9A%84%E6%A8%A1%E5%9D%97%E6%8F%8F%E8%BF%B0%E7%AC%A6)
 
 有时，从项目信息生成的模块描述符文件将需要在发布之前进行调整。Ivy Publish插件为此提供了DSL。请参阅《
 DSL参考》中的[IvyModuleDescriptorSpec](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyModuleDescriptorSpec.html)，以获取可用属性和方法的完整文档。
@@ -234,7 +234,7 @@ build.gradle.kts
 可以以不再是有效的Ivy模块描述符的方式修改描述符，因此在使用此功能时必须小心。   
 ╚═════════════════════════════    
   
-<h3 id = '#publishing_ivy_resolved_dependencies'> <a href = '#publishing_ivy_resolved_dependencies'>自定义依赖版本</a> </h3>
+### [自定义依赖版本](#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BE%9D%E8%B5%96%E7%89%88%E6%9C%AC)
 
 支持两种策略来发布依赖项：
 
@@ -302,9 +302,9 @@ build.gradle.kts
 `fromResolutionResult()`指示Gradle应该使用变体`runtimeClasspath`的默认类路径，并且是的默认类路径`java-
 runtime`。
 
-<h2 id = '#publishing_ivy_repositories'> <a href = '#publishing_ivy_repositories'>储存库</a> </h2>
+## [储存库](#%E5%82%A8%E5%AD%98%E5%BA%93)
 
-该插件提供了[IvyArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.IvyArtifactRepository.html)类型的[存储库](/md/依赖管理术语.md#sub_terminology_repository)。要了解如何定义和使用存储库进行发布，请参见“[基本发布](/md/将项目发布为模块.md#sec_basic_publishing)”部分。[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.IvyArtifactRepository.html)[](/md/将项目发布为模块.md#sec_basic_publishing)
+该插件提供了[IvyArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.IvyArtifactRepository.html)类型的[存储库](/md/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%AF%E8%AF%AD.md%23repository)。要了解如何定义和使用存储库进行发布，请参见“[基本发布](/md/%E5%B0%86%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E4%B8%BA%E6%A8%A1%E5%9D%97.md%23%E8%AE%BE%E7%BD%AE%E5%9F%BA%E6%9C%AC%E5%8F%91%E5%B8%83)”部分。[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.IvyArtifactRepository.html)[](/md/%E5%B0%86%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E4%B8%BA%E6%A8%A1%E5%9D%97.md%23%E8%AE%BE%E7%BD%AE%E5%9F%BA%E6%9C%AC%E5%8F%91%E5%B8%83)
 
 这是定义发布存储库的简单示例：
 
@@ -348,7 +348,7 @@ build.gradle.kts
 
 您还可以配置连接到存储库所需的任何身份验证详细信息。有关更多详细信息，请参见[IvyArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.IvyArtifactRepository.html)。
 
-<h2 id = '#publishing_ivy_example'> <a href = '#publishing_ivy_example'>完整的例子</a> </h2>
+## [完整的例子](#%E5%AE%8C%E6%95%B4%E7%9A%84%E4%BE%8B%E5%AD%90)
 
 下面的示例演示了使用多项目构建的发布。每个项目都发布一个Java组件，该Java组件配置为还构建和发布Javadoc和源代码工件。定制描述符文件以包括每个项目的项目描述。
 
@@ -534,22 +534,22 @@ project2/build.gradle.kts
 
   * Javadoc和Java组件的源JAR工件（因为我们配置了`withJavadocJar()`和`withSourcesJar()`）：`project1-1.0-javadoc.jar`，`project1-1.0-source.jar`。
 
-<h2 id = '#sec_pub_ivy_legacy_migration'> <a href = '#sec_pub_ivy_legacy_migration'>从旧版Ivy出版物迁移</a> </h2>
+## [从旧版Ivy出版物迁移](#%E4%BB%8E%E6%97%A7%E7%89%88Ivy%E5%87%BA%E7%89%88%E7%89%A9%E8%BF%81%E7%A7%BB)
 
 如果要迁移以前依赖于[旧版发布](https://docs.gradle.org/6.7.1/userguide/artifact_management.html)支持的项目，则会发现以下两种解决方案之间的差异。
 
-<h3 id = '#configurations_marked_as_non_transitive'> <a href = '#configurations_marked_as_non_transitive'>标记为不可传递的配置</a> </h3>
+### [标记为不可传递的配置](#%E6%A0%87%E8%AE%B0%E4%B8%BA%E4%B8%8D%E5%8F%AF%E4%BC%A0%E9%80%92%E7%9A%84%E9%85%8D%E7%BD%AE)
 
 当配置标记为时`transitive = false`，它不会映射到Ivy。
 
 Gradle将发出警告，指出已发布此类配置。如果确实需要发布此建议，则是使用依赖级别`transitive = false`。
 
-<h3 id = '#forced_dependencies_are_not_mapped'> <a href = '#forced_dependencies_are_not_mapped'>强制依赖关系未映射</a> </h3>
+### [强制依赖关系未映射](#%E5%BC%BA%E5%88%B6%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%9C%AA%E6%98%A0%E5%B0%84)
 
 虽然Ivy支持[`force`依赖项](https://ant.apache.org/ivy/history/latest-milestone/ivyfile/dependency.html#_forcing_revision)的概念，但Gradle不会将其已弃用的`force`声明映射到它。
 
-相反，建议将Gradle替换`force`为[`strictly`version](/md/声明丰富版本.md#sec:strict-version)，以提供[更好的语义](/md/降级版本并排除依赖项.md#sec_enforcing_dependency_version)并受Gradle
+相反，建议将Gradle替换`force`为[`strictly`version](/md/声明丰富版本.md#sec:strict-version)，以提供[更好的语义](/md/%E9%99%8D%E7%BA%A7%E7%89%88%E6%9C%AC%E5%B9%B6%E6%8E%92%E9%99%A4%E4%BE%9D%E8%B5%96%E9%A1%B9.md%23%E8%A6%86%E7%9B%96%E4%BC%A0%E9%80%92%E4%BE%9D%E8%B5%96%E9%A1%B9%E7%89%88%E6%9C%AC)并受Gradle
 Module元数据格式支持。
 
-请注意，如果您绝对需要发布强制，则仍然可以[修改产生的`ivy.xml`](#sec_modifying_the_generated_module_descriptor)。
+请注意，如果您绝对需要发布强制，则仍然可以[修改产生的`ivy.xml`](#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%94%9F%E6%88%90%E7%9A%84%E6%A8%A1%E5%9D%97%E6%8F%8F%E8%BF%B0%E7%AC%A6)。
 

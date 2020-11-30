@@ -4,10 +4,10 @@ version 6.9-20201127230042+0000
 
 内容
 
-  * [创建一个自定义任务类](#create_a_custom_task_class)
-  * [转换为Worker API](#converting_to_the_worker_api)
-  * [更改隔离模式](#changing_the_isolation_mode)
-  * [创建一个工人守护进程](#creating_a_worker_daemon)
+  * [创建一个自定义任务类](#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%BB%E5%8A%A1%E7%B1%BB)
+  * [转换为Worker API](#%E8%BD%AC%E6%8D%A2%E4%B8%BAWorker+API)
+  * [更改隔离模式](#%E6%9B%B4%E6%94%B9%E9%9A%94%E7%A6%BB%E6%A8%A1%E5%BC%8F)
+  * [创建一个工人守护进程](#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B7%A5%E4%BA%BA%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B)
 
 Worker
 API提供了将任务动作的执行分解为离散的工作单元，然后同时并异步执行该工作的功能。这使Gradle可以充分利用可用资源并更快地完成构建。本节将引导您完成将现有自定义任务转换为使用Worker
@@ -18,7 +18,7 @@ API的过程。
 您将首先创建一个自定义任务类，该类为可配置文件集生成MD5哈希值。然后，您将转换此自定义任务以使用Worker
 API。然后，我们将探索以不同级别的隔离度运行任务。在此过程中，您将了解Worker API的基础知识及其提供的功能。
 
-<h2 id = '#create_a_custom_task_class'> <a href = '#create_a_custom_task_class'>创建一个自定义任务类</a> </h2>
+## [创建一个自定义任务类](#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%BB%E5%8A%A1%E7%B1%BB)
 
 首先，您需要创建一个自定义任务，该任务会生成一组可配置文件的MD5哈希值。
 
@@ -56,7 +56,7 @@ buildSrc/build.gradle.kts
 ╚═════════════════════════════   
   
 ╔═════════════════════════════  
-如果您不熟悉`buildSrc`，这是一个特殊目录，可让您定义和构建应在构建脚本中使用的自定义类。有关更多信息，请参见[有关组织构建逻辑的部分](https://docs.gradle.org/nightly/userguide/organizing_gradle_projects.html#sec_build_sources)。  
+如果您不熟悉`buildSrc`，这是一个特殊目录，可让您定义和构建应在构建脚本中使用的自定义类。有关更多信息，请参见[有关组织构建逻辑的部分](https://docs.gradle.org/nightly/userguide/organizing_gradle_projects.html#sec:build_sources)。  
 ╚═════════════════════════════   
   
 现在，在`buildSrc/src/main/java`目录中创建一个自定义任务类。您应该为此类命名`CreateMD5`。
@@ -177,7 +177,7 @@ src / oppenheimer.txt
 
 在`build/md5`目录中，您现在应该看到带有`md5`扩展名的相应文件，该扩展名包含`src`目录中文件的MD5哈希。请注意，该任务至少需要9秒钟才能运行，因为它一次哈希一个文件（即，每个文件约3秒哈希3个文件）。
 
-<h2 id = '#converting_to_the_worker_api'> <a href = '#converting_to_the_worker_api'>转换为Worker API</a> </h2>
+## [转换为Worker API](#%E8%BD%AC%E6%8D%A2%E4%B8%BAWorker+API)
 
 尽管此任务按顺序处理每个文件，但是每个文件的处理都独立于任何其他文件。如果这项工作并行完成，并且可以利用多个处理器，那就太好了。这是Worker
 API可以提供帮助的地方。
@@ -293,7 +293,7 @@ buildSrc / src / main / java / CreateMD5.java
 尽管工作单元是并行执行的，但MD5哈希文件的生成顺序可能不同，结果应与以前相同。但是，您应该注意的一件事是任务运行得更快。这是因为Worker
 API对每个文件并行而不是按顺序执行MD5计算。
 
-<h2 id = '#changing_the_isolation_mode'> <a href = '#changing_the_isolation_mode'>更改隔离模式</a> </h2>
+## [更改隔离模式](#%E6%9B%B4%E6%94%B9%E9%9A%94%E7%A6%BB%E6%A8%A1%E5%BC%8F)
 
 隔离模式控制Gradle将工作项彼此隔离以及与Gradle运行时的其余部分隔离的强烈程度。有三种方法，`WorkerExecutor`即控制这样的：
 `noIsolation()`，`classLoaderIsolation()`和`processIsolation()`。的`noIsolation()`模式是最低的隔离级别，它将阻止工作单元更改项目状态。这是最快的隔离模式，因为它需要最少的开销来设置要执行的工作项，因此您可能希望在简单的情况下使用此模式。但是，它将对所有工作单元使用单个共享的类加载器。这意味着每个工作单元都可能通过静态类状态相互影响。这也意味着每个工作单元都使用buildscript类路径上相同版本的库。如果希望用户能够将任务配置为与其他（但兼容）版本的
@@ -460,7 +460,7 @@ build.gradle.kts
     BUILD SUCCESSFUL in 0s
     1 actionable task: 1 executed
 
-<h2 id = '#creating_a_worker_daemon'> <a href = '#creating_a_worker_daemon'>创建一个工人守护进程</a> </h2>
+## [创建一个工人守护进程](#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B7%A5%E4%BA%BA%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B)
 
 有时，在执行工作项时需要进一步隔离。例如，外部库可能依赖于要设置的某些系统属性，这些属性可能在工作项之间发生冲突。或者库可能与Gradle所运行的JDK版本不兼容，并且可能需要与其他版本一起运行。Worker
 API可以使用`processIsolation()`导致工作在单独的“
