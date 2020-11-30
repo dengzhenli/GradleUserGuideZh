@@ -33,7 +33,7 @@
   4. 尝试使用《[故障排除指南》](/md/对构建进行故障排除.md#troubleshooting)运行项目并调试所有错误。
 
 <h2 id = '#changes_6_0'> <a href = '#changes_6_0'>从5.6及更早版本升级</a> </h2>
-
+## [](#changes_6_0) [从5.6及更早版本升级](#changes_6_0)
 <h3 id = '#deprecations'> <a href = '#deprecations'>弃用</a> </h3>
 
 <h4 id = '#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations'> <a href = '#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations'>不再应该使用`compile`和`runtime`配置声明依赖项</a> </h4>
