@@ -32,17 +32,17 @@
 
   4. 尝试使用《[故障排除指南》](/md/对构建进行故障排除.md#troubleshooting)运行项目并调试所有错误。
 
-## [](#changes_6.0)[从5.6及更早版本升级](#changes_6.0)
+<h2 id = '#changes_6.0'> <a href = '#changes_6.0'>从5.6及更早版本升级</a> </h2>
 
-### [](#deprecations)[弃用](#deprecations)
+<h3 id = '#deprecations'> <a href = '#deprecations'>弃用</a> </h3>
 
-#### [](#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations)[不再应该使用`compile`和`runtime`配置声明依赖项](#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations)
+<h4 id = '#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations'> <a href = '#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations'>不再应该使用`compile`和`runtime`配置声明依赖项</a> </h4>
 
 从[Gradle 3.4](https://docs.gradle.org/3.4/release-notes.html#the-java-library-plugin)开始，不鼓励在Java生态系统插件中使用`compile`和`runtime`配置。[](https://docs.gradle.org/3.4/release-notes.html#the-java-library-plugin)
 
 这些配置用于从`main`源集中编译和运行代码。其他源集创建类似的配置（例如`testCompile`和`testRuntime`用于`test`源集），也不应使用。的`implementation`，`api`，`compileOnly`和`runtimeOnly`配置应该用于依赖性和申报`compileClasspath`和`runtimeClasspath`配置，以解决依赖关系。请参阅[这些配置的关系](/md/Java库插件.md#sec:java_library_configurations_graph)。
 
-#### [](#legacy_publication_system_is_deprecated_and_replaced_with_the_publish_plugins)[旧版发布系统已弃用，并替换为`*-publish`插件](#legacy_publication_system_is_deprecated_and_replaced_with_the_publish_plugins)
+<h4 id = '#legacy_publication_system_is_deprecated_and_replaced_with_the_publish_plugins'> <a href = '#legacy_publication_system_is_deprecated_and_replaced_with_the_publish_plugins'>旧版发布系统已弃用，并替换为`*-publish`插件</a> </h4>
 
 该`uploadArchives`任务和`maven`插件已被弃用。
 
@@ -51,7 +51,7 @@
 
 发布系统也是确保[Gradle Module元数据](/md/了解Gradle模块元数据.md)发布的唯一方法。
 
-#### [](#problems_with_tasks_emit_deprecation_warnings)[任务问题会发出弃用警告](#problems_with_tasks_emit_deprecation_warnings)
+<h4 id = '#problems_with_tasks_emit_deprecation_warnings'> <a href = '#problems_with_tasks_emit_deprecation_warnings'>任务问题会发出弃用警告</a> </h4>
 
 当Gradle检测到任务定义问题（例如错误定义的输入或输出）时，它将在控制台上显示以下消息：
 
@@ -75,32 +75,32 @@
 
 否则，您需要将问题报告给相关任务或插件的维护者。
 
-#### [](#old_api_for_incremental_tasks_incrementaltaskinputs_has_been_deprecated)[`IncrementalTaskInputs`不推荐使用用于增量任务的旧API，](#old_api_for_incremental_tasks_incrementaltaskinputs_has_been_deprecated)
+<h4 id = '#old_api_for_incremental_tasks_incrementaltaskinputs_has_been_deprecated'> <a href = '#old_api_for_incremental_tasks_incrementaltaskinputs_has_been_deprecated'>`IncrementalTaskInputs`不推荐使用用于增量任务的旧API，</a> </h4>
 
 在Gradle
 5.4中，我们引入了用于实现[增量任务](/md/开发自定义Gradle任务类型.md#incremental_tasks)的新API
 ：[InputChanges](https://docs.gradle.org/6.7.1/dsl/org.gradle.work.InputChanges.html)。基于的旧API`IncrementalTaskInputs`已被弃用。
 
-#### [](#forced_dependencies)[强制依赖](#forced_dependencies)
+<h4 id = '#forced_dependencies'> <a href = '#forced_dependencies'>强制依赖</a> </h4>
 
 不建议`force = true`在第一级依赖项上使用强制性依赖项版本。
 
 强制同时具有语义和顺序问题，可以通过使用[严格的版本约束](/md/声明丰富版本.md#rich-
 version-constraints)来避免。
 
-#### [](#search_upwards_related_apis_in_startparameter_have_been_deprecated)[`StartParameter`不建议使用向上搜索相关的API](#search_upwards_related_apis_in_startparameter_have_been_deprecated)
+<h4 id = '#search_upwards_related_apis_in_startparameter_have_been_deprecated'> <a href = '#search_upwards_related_apis_in_startparameter_have_been_deprecated'>`StartParameter`不建议使用向上搜索相关的API</a> </h4>
 
 在Gradle 5.0中，我们删除了`--no-search-upward`CLI参数。
 
 `StartParameter`（如`isSearchUpwards()`）中的相关API现在已弃用。
 
-#### [](#apis_buildlistener_buildstarted_and_gradle_buildstarted_have_been_deprecated)[API`BuildListener.buildStarted`和`Gradle.buildStarted`已被弃用](#apis_buildlistener_buildstarted_and_gradle_buildstarted_have_been_deprecated)
+<h4 id = '#apis_buildlistener_buildstarted_and_gradle_buildstarted_have_been_deprecated'> <a href = '#apis_buildlistener_buildstarted_and_gradle_buildstarted_have_been_deprecated'>API`BuildListener.buildStarted`和`Gradle.buildStarted`已被弃用</a> </h4>
 
 这些方法当前无法按预期方式工作，因为在构建开始之后将永远不会调用回调。
 
 不推荐使用这些方法以避免混淆。
 
-#### [](#implicit_duplicate_strategy_for_copy_or_archive_tasks_has_been_deprecated)[不建议使用隐式重复策略`Copy`或存档任务](#implicit_duplicate_strategy_for_copy_or_archive_tasks_has_been_deprecated)
+<h4 id = '#implicit_duplicate_strategy_for_copy_or_archive_tasks_has_been_deprecated'> <a href = '#implicit_duplicate_strategy_for_copy_or_archive_tasks_has_been_deprecated'>不建议使用隐式重复策略`Copy`或存档任务</a> </h4>
 
 存档任务`Tar`，`Zip`默认情况下允许在创建的存档中存在同一路径的多个条目。这可能会导致[“严重无效的zip文件”，从而触发zip炸弹检测](https://github.com/gradle/gradle/issues/9990)。
 
@@ -117,17 +117,17 @@ version-constraints)来避免。
         ...
     }
 
-#### [](#executing_gradle_without_a_settings_file_has_been_deprecated)[在不使用设置文件的情况下执行Gradle已被弃用](#executing_gradle_without_a_settings_file_has_been_deprecated)
+<h4 id = '#executing_gradle_without_a_settings_file_has_been_deprecated'> <a href = '#executing_gradle_without_a_settings_file_has_been_deprecated'>在不使用设置文件的情况下执行Gradle已被弃用</a> </h4>
 
 Gradle构建由`settings.gradle[.kts]`当前或父目录中的文件定义。没有设置文件，Gradle构建是未定义的，并且将发出弃用警告。
 
 在Gradle 7.0中，Gradle仅允许您使用未定义的构建调用`init`任务或诊断命令行标志，例如`--version`。
 
-#### [](#calling_project_afterevaluate_on_an_evaluated_project_has_been_deprecated)[不建议调用`Project.afterEvaluate`评估项目](#calling_project_afterevaluate_on_an_evaluated_project_has_been_deprecated)
+<h4 id = '#calling_project_afterevaluate_on_an_evaluated_project_has_been_deprecated'> <a href = '#calling_project_afterevaluate_on_an_evaluated_project_has_been_deprecated'>不建议调用`Project.afterEvaluate`评估项目</a> </h4>
 
 评估项目后，Gradle会忽略传递给它的所有配置`Project#afterEvaluate`并发出弃用警告。这种情况将成为Gradle 7.0中的错误。
 
-#### [](#deprecated_plugins)[不推荐使用的插件](#deprecated_plugins)
+<h4 id = '#deprecated_plugins'> <a href = '#deprecated_plugins'>不推荐使用的插件</a> </h4>
 
 以下捆绑插件从未发布过，它们将在Gradle的下一个主要版本中删除：
 
@@ -143,18 +143,18 @@ Gradle构建由`settings.gradle[.kts]`当前或父目录中的文件定义。没
 
 其中一些插件可能会在[插件门户](https://plugins.gradle.org/)上进行替换。
 
-### [](#potential_breaking_changes)[潜在的重大变化](#potential_breaking_changes)
+<h3 id = '#potential_breaking_changes'> <a href = '#potential_breaking_changes'>潜在的重大变化</a> </h3>
 
-#### [](#android_gradle_plugin_3_3_and_earlier_is_no_longer_supported)[不再支持Android Gradle Plugin 3.3和更早版本](#android_gradle_plugin_3_3_and_earlier_is_no_longer_supported)
+<h4 id = '#android_gradle_plugin_3_3_and_earlier_is_no_longer_supported'> <a href = '#android_gradle_plugin_3_3_and_earlier_is_no_longer_supported'>不再支持Android Gradle Plugin 3.3和更早版本</a> </h4>
 
 Gradle 6.0支持Android Gradle插件版本3.4及更高版本。
 
-#### [](#build_scan_plugin_2_x_is_no_longer_supported)[不再支持构建扫描插件2.x](#build_scan_plugin_2_x_is_no_longer_supported)
+<h4 id = '#build_scan_plugin_2_x_is_no_longer_supported'> <a href = '#build_scan_plugin_2_x_is_no_longer_supported'>不再支持构建扫描插件2.x</a> </h4>
 
 对于Gradle 6，必须使用Gradle
 Enterprise插件替换对构建扫描插件的使用。这还需要更改插件的应用方式。请参阅[https://gradle.com/help/gradle-6-build-scan-plugin](https://gradle.com/help/gradle-6-build-scan-plugin)了解更多信息。
 
-#### [](#updates_to_bundled_gradle_dependencies)[更新捆绑的Gradle依赖项](#updates_to_bundled_gradle_dependencies)
+<h4 id = '#updates_to_bundled_gradle_dependencies'> <a href = '#updates_to_bundled_gradle_dependencies'>更新捆绑的Gradle依赖项</a> </h4>
 
   * Groovy已更新为[Groovy 2.5.8](http://groovy-lang.org/changelogs/changelog-2.5.8.html)。
 
@@ -162,7 +162,7 @@ Enterprise插件替换对构建扫描插件的使用。这还需要更改插件�
 
   * Ant已更新为[Ant 1.10.7](https://archive.apache.org/dist/ant/RELEASE-NOTES-1.10.7.html)。
 
-#### [](#updates_to_default_integration_versions)[更新为默认集成版本](#updates_to_default_integration_versions)
+<h4 id = '#updates_to_default_integration_versions'> <a href = '#updates_to_default_integration_versions'>更新为默认集成版本</a> </h4>
 
   * Checkstyle已更新至[Checkstyle 8.24](https://checkstyle.org/releasenotes.html#Release_8.24)。
 
@@ -172,7 +172,7 @@ Enterprise插件替换对构建扫描插件的使用。这还需要更改插件�
 
   * JaCoCo已更新至[0.8.5](http://www.jacoco.org/jacoco/trunk/doc/changes.html)。由[Evgeny Mandrikov](https://github.com/Godin)贡献[](https://github.com/Godin)
 
-#### [](#changes_to_build_and_task_names_in_composite_builds)[复合构建中对构建和任务名称的更改](#changes_to_build_and_task_names_in_composite_builds)
+<h4 id = '#changes_to_build_and_task_names_in_composite_builds'> <a href = '#changes_to_build_and_task_names_in_composite_builds'>复合构建中对构建和任务名称的更改</a> </h4>
 
 以前，Gradle使用根项目的名称作为所包含构建的构建名称。现在，使用构建的根目录名称，并且如果不相同，则不考虑根项目名称。如果通过设置文件包含构建，则可以为构建指定其他名称。
 
@@ -184,15 +184,14 @@ Enterprise插件替换对构建扫描插件的使用。这还需要更改插件�
 
 先前的行为是有问题的，因为它导致在构建期间的不同时间使用不同的名称。
 
-#### [](#buildsrc_is_now_reserved_as_a_project_and_subproject_build_name)[现在，将buildSrc保留为项目和子项目的内部版本名称](#buildsrc_is_now_reserved_as_a_project_and_subproject_build_name)
+<h4 id = '#buildsrc_is_now_reserved_as_a_project_and_subproject_build_name'> <a href = '#buildsrc_is_now_reserved_as_a_project_and_subproject_build_name'>现在，将buildSrc保留为项目和子项目的内部版本名称</a> </h4>
 
 以前，Gradle并未阻止将名称“ buildSrc”用于多项目构建的子项目或包含的构建的名称。现在，这是不允许的。现在，将名称“
 buildSrc”保留给构建额外构建逻辑的常规buildSrc项目。
 
 buildSrc的典型用法不受此更改的影响。仅当您的设置文件指定`include("buildSrc")`或时，您才会受到影响`includeBuild("buildSrc")`。
 
-#### [](#scala_zinc_compiler)[Scala
-Zinc编译器](#scala_zinc_compiler)
+<h4 id = '#scala_zinc_compiler'> <a href = '#scala_zinc_compiler'>Scala Zinc编译器</a> </h4>
 
 Zinc编译器已升级到版本1.3.0。Gradle不再支持为Scala 2.9构建。
 
@@ -208,9 +207,9 @@ Gradle支持的最小Zinc编译器为1.2.0，最大测试版本为1.3.0。
 
 请删除您添加到`zinc`配置中的所有显式依赖项，并改用此属性。如果您尝试使用`com.typesafe.zinc:zinc`依赖项，Gradle将切换到新的Zinc实现。
 
-#### [](#changes_to_build_cache)[对构建缓存的更改](#changes_to_build_cache)
+<h4 id = '#changes_to_build_cache'> <a href = '#changes_to_build_cache'>对构建缓存的更改</a> </h4>
 
-#### [](#local_build_cache_is_always_a_directory_cache)[本地构建缓存始终是目录缓存](#local_build_cache_is_always_a_directory_cache)
+<h4 id = '#local_build_cache_is_always_a_directory_cache'> <a href = '#local_build_cache_is_always_a_directory_cache'>本地构建缓存始终是目录缓存</a> </h4>
 
 过去，可以将任何构建高速缓存实现用作`local`高速缓存。由于本地缓存必须始终为，因此不再允许这样做`DirectoryBuildCache`。
 
@@ -218,7 +217,7 @@ Gradle支持的最小Zinc编译器为1.2.0，最大测试版本为1.3.0。
 
 使用`getLocal()`和`local(Action)`代替。
 
-#### [](#failing_to_pack_or_unpack_cached_results_will_now_fail_the_build)[无法打包或解包缓存的结果现在将使构建失败](#failing_to_pack_or_unpack_cached_results_will_now_fail_the_build)
+<h4 id = '#failing_to_pack_or_unpack_cached_results_will_now_fail_the_build'> <a href = '#failing_to_pack_or_unpack_cached_results_will_now_fail_the_build'>无法打包或解包缓存的结果现在将使构建失败</a> </h4>
 
 过去，当Gradle在打包缓存任务的结果时遇到问题时，Gradle会忽略该问题并继续运行构建。
 
@@ -228,13 +227,13 @@ Gradle支持的最小Zinc编译器为1.2.0，最大测试版本为1.3.0。
 
 在Gradle 6.0中，打包和解包错误都会导致构建失败，因此这些问题将更容易得到解决。
 
-#### [](#buildsrc_projects_automatically_use_build_cache_configuration)[buildSrc项目自动使用构建缓存配置](#buildsrc_projects_automatically_use_build_cache_configuration)
+<h4 id = '#buildsrc_projects_automatically_use_build_cache_configuration'> <a href = '#buildsrc_projects_automatically_use_build_cache_configuration'>buildSrc项目自动使用构建缓存配置</a> </h4>
 
 以前，为了将构建缓存用于buildSrc构建，您需要在buildSrc构建中复制构建缓存配置。现在，它会自动使用顶级设置脚本定义的构建缓存配置。
 
-#### [](#changes_to_dependency_management)[依赖管理的变化](#changes_to_dependency_management)
+<h4 id = '#changes_to_dependency_management'> <a href = '#changes_to_dependency_management'>依赖管理的变化</a> </h4>
 
-#### [](#gradle_module_metadata_is_always_published)[Gradle模块元数据总是发布](#gradle_module_metadata_is_always_published)
+<h4 id = '#gradle_module_metadata_is_always_published'> <a href = '#gradle_module_metadata_is_always_published'>Gradle模块元数据总是发布</a> </h4>
 
 在Gradle5.3正式出台，[Gradle模块元数据](https://blog.gradle.org/gradle-
 metadata-1.0)的建立是为了解决许多有多年困扰依赖管理，特别是问题，但不完全是在Java生态系统。
@@ -246,7 +245,7 @@ metadata-1.0)的建立是为了解决许多有多年困扰依赖管理，特别�
 
 传统的元数据文件将包含一个标记，以便Gradle知道还有其他元数据要使用。
 
-#### [](#gradle_module_metadata_has_stricter_validation)[Gradle模块元数据具有更严格的验证](#gradle_module_metadata_has_stricter_validation)
+<h4 id = '#gradle_module_metadata_has_stricter_validation'> <a href = '#gradle_module_metadata_has_stricter_validation'>Gradle模块元数据具有更严格的验证</a> </h4>
 
 发布Gradle模块元数据时，将验证以下规则：
 
@@ -261,7 +260,7 @@ metadata-1.0)的建立是为了解决许多有多年困扰依赖管理，特别�
 这些也记录在[规范](https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-
 module-metadata-latest-specification.md)中。
 
-#### [](#maven_or_ivy_repositories_are_no_longer_queried_for_artifacts_without_metadata_by_default)[默认情况下，不再向Maven或Ivy存储库查询没有元数据的工件](#maven_or_ivy_repositories_are_no_longer_queried_for_artifacts_without_metadata_by_default)
+<h4 id = '#maven_or_ivy_repositories_are_no_longer_queried_for_artifacts_without_metadata_by_default'> <a href = '#maven_or_ivy_repositories_are_no_longer_queried_for_artifacts_without_metadata_by_default'>默认情况下，不再向Maven或Ivy存储库查询没有元数据的工件</a> </h4>
 
 如果Gradle无法在本节中定义的存储库中找到模块的元数据文件（`.pom`或`ivy.xml`）`repositories {
 }`，则现在假定该模块在该存储库中不存在。
@@ -273,7 +272,7 @@ module-metadata-latest-specification.md)中。
 您可以通过添加`artifact()`
 [元数据源](/md/声明存储库.md#sec:supported_metadata_sources)来选择选定存储库的旧行为。
 
-#### [](#changing_the_pom_packaging_property_no_longer_changes_the_artifact_extension)[更改pom`packaging`属性不再更改工件扩展](#changing_the_pom_packaging_property_no_longer_changes_the_artifact_extension)
+<h4 id = '#changing_the_pom_packaging_property_no_longer_changes_the_artifact_extension'> <a href = '#changing_the_pom_packaging_property_no_longer_changes_the_artifact_extension'>更改pom`packaging`属性不再更改工件扩展</a> </h4>
 
 以前，如果pom包装不是 _jar_ ， _ejb_ ， _bundle_ 或 _maven-plugin_
 ，则在发布过程中会更改发布到Maven存储库的主要工件的扩展名，以匹配pom包装。
@@ -283,7 +282,7 @@ module-metadata-latest-specification.md)中。
 创建工件时，构建作者可以更改工件名称，以获得与以前相同的结果-
 例如，通过`jar.archiveExtension.set(pomPackaging)`显式设置。
 
-#### [](#an_ivy_xml_published_for_java_libraries_contains_more_information)[`ivy.xml`Java库的出版物包含更多信息](#an_ivy_xml_published_for_java_libraries_contains_more_information)
+<h4 id = '#an_ivy_xml_published_for_java_libraries_contains_more_information'> <a href = '#an_ivy_xml_published_for_java_libraries_contains_more_information'>`ivy.xml`Java库的出版物包含更多信息</a> </h4>
 
 已进行了许多修复，以`ivy.xml`在`ivy-publish`插件中生成更正确的元数据。
 
@@ -292,15 +291,15 @@ module-metadata-latest-specification.md)中。
 
 通常，建议用户从迁移`ivy.xml`到新的Gradle模块元数据格式。
 
-#### [](#changes_to_plugins_and_build_scripts)[插件和构建脚本的更改](#changes_to_plugins_and_build_scripts)
+<h4 id = '#changes_to_plugins_and_build_scripts'> <a href = '#changes_to_plugins_and_build_scripts'>插件和构建脚本的更改</a> </h4>
 
-#### [](#classes_from_buildsrc_are_no_longer_visible_to_settings_scripts)[`buildSrc`设置脚本不再可见来自的类](#classes_from_buildsrc_are_no_longer_visible_to_settings_scripts)
+<h4 id = '#classes_from_buildsrc_are_no_longer_visible_to_settings_scripts'> <a href = '#classes_from_buildsrc_are_no_longer_visible_to_settings_scripts'>`buildSrc`设置脚本不再可见来自的类</a> </h4>
 
 以前，buildSrc项目是在应用项目的设置脚本之前构建的，并且其类在脚本中可见。现在，在设置脚本及其类对它不可见之后，将构建buildSrc。buildSrc类对于项目构建脚本和脚本插件仍然可见。
 
 可以通过[声明外部依赖项](/md/构建脚本基础.md#sec:build_script_external_dependencies)从设置脚本中使用自定义逻辑。
 
-#### [](#the_pluginmanagement_block_in_settings_scripts_is_now_isolated)[`pluginManagement`现在隔离了设置脚本中的块](#the_pluginmanagement_block_in_settings_scripts_is_now_isolated)
+<h4 id = '#the_pluginmanagement_block_in_settings_scripts_is_now_isolated'> <a href = '#the_pluginmanagement_block_in_settings_scripts_is_now_isolated'>`pluginManagement`现在隔离了设置脚本中的块</a> </h4>
 
 以前，`pluginManagement {}`设置脚本中的所有块都是在脚本的正常执行期间执行的。
 
@@ -308,7 +307,7 @@ module-metadata-latest-specification.md)中。
 
 进行了此更改，以便`pluginManagement`在解析设置脚本本身的插件时也可以应用配置。
 
-#### [](#plugins_and_classes_loaded_in_settings_scripts_are_visible_to_project_scripts_and_buildsrc)[设置脚本中加载的插件和类对项目脚本可见，并且`buildSrc`](#plugins_and_classes_loaded_in_settings_scripts_are_visible_to_project_scripts_and_buildsrc)
+<h4 id = '#plugins_and_classes_loaded_in_settings_scripts_are_visible_to_project_scripts_and_buildsrc'> <a href = '#plugins_and_classes_loaded_in_settings_scripts_are_visible_to_project_scripts_and_buildsrc'>设置脚本中加载的插件和类对项目脚本可见，并且`buildSrc`</a> </h4>
 
 以前，通过使用脚本添加到a设置脚本中的任何类`buildscript {}`在脚本外部都不可见。现在，它们对于所有项目构建脚本都是可见的。
 
@@ -316,7 +315,7 @@ module-metadata-latest-specification.md)中。
 
 进行了此更改，以便应用于设置脚本的插件可以为整个构建贡献逻辑。
 
-#### [](#plugin_validation_changes)[插件验证更改](#plugin_validation_changes)
+<h4 id = '#plugin_validation_changes'> <a href = '#plugin_validation_changes'>插件验证更改</a> </h4>
 
   * `validateTaskProperties`现在不推荐使用该任务，请`validatePlugins`改用。新名称更好地反映了以下事实：它还可以验证工件转换参数和其他非属性定义。
 
@@ -332,9 +331,9 @@ module-metadata-latest-specification.md)中。
 
     * 任务属性带有不允许用于任务的属性注释，例如`@InputArtifact`。
 
-#### [](#changes_to_kotlin_dsl)[对Kotlin DSL的更改](#changes_to_kotlin_dsl)
+<h4 id = '#changes_to_kotlin_dsl'> <a href = '#changes_to_kotlin_dsl'>对Kotlin DSL的更改</a> </h4>
 
-#### [](#using_the_embedded_kotlin_plugin_now_requires_a_repository)[`embedded-kotlin`现在使用插件需要一个存储库](#using_the_embedded_kotlin_plugin_now_requires_a_repository)
+<h4 id = '#using_the_embedded_kotlin_plugin_now_requires_a_repository'> <a href = '#using_the_embedded_kotlin_plugin_now_requires_a_repository'>`embedded-kotlin`现在使用插件需要一个存储库</a> </h4>
 
 就像使用`kotlin-dsl`插件时一样，现在需要声明一个存储库，如果您应用该`embedded-kotlin`插件，则可以在其中找到Kotlin依赖项。
 
@@ -348,12 +347,12 @@ module-metadata-latest-specification.md)中。
         jcenter()
     }
 
-#### [](#kotlin_dsl_ide_support_now_requires_kotlin_intellij_plugin_1_3_50)[Kotlin DSL IDE支持现在需要> = 1.3.50的Kotlin IntelliJ插件](#kotlin_dsl_ide_support_now_requires_kotlin_intellij_plugin_1_3_50)
+<h4 id = '#kotlin_dsl_ide_support_now_requires_kotlin_intellij_plugin_1_3_50'> <a href = '#kotlin_dsl_ide_support_now_requires_kotlin_intellij_plugin_1_3_50'>Kotlin DSL IDE支持现在需要> = 1.3.50的Kotlin IntelliJ插件</a> </h4>
 
 对于1.3.50之前的Kotlin IntelliJ插件版本，当 _Gradle JVM_ 设置为不同于 _Project SDK中_
 的版本时，将错误地突出显示Kotlin DSL脚本。只需将您的IDE插件升级到> = 1.3.50，即可恢复正确的Kotlin DSL脚本突出显示行为。
 
-#### [](#kotlin_dsl_script_base_types_no_longer_extend_project_settings_or_gradle)[Kotlin DSL脚本基本类型不再扩展`Project`，`Settings`或者`Gradle`](#kotlin_dsl_script_base_types_no_longer_extend_project_settings_or_gradle)
+<h4 id = '#kotlin_dsl_script_base_types_no_longer_extend_project_settings_or_gradle'> <a href = '#kotlin_dsl_script_base_types_no_longer_extend_project_settings_or_gradle'>Kotlin DSL脚本基本类型不再扩展`Project`，`Settings`或者`Gradle`</a> </h4>
 
 在以前的版本中，Kotlin
 DSL脚本被编译为实现三个Gradle核心配置接口之一的类，以便向脚本隐式公开其API。`org.gradle.api.Project`用于项目脚本，`org.gradle.api.initialization.Settings`设置脚本和`org.gradle.api.invocation.Gradle`初始化脚本。
@@ -370,22 +369,22 @@ _隐式接收器_ 使用。换句话说，项目脚本的行为就像脚本的�
 
 作为更改的一部分，该`SettingsScriptApi`接口不再由设置脚本实现，并且该`InitScriptApi`接口不再由初始化脚本实现。应将它们替换为相应的模型对象接口`Settings`和`Gradle`。
 
-#### [](#miscellaneous)[miscellaneous](#miscellaneous)
+<h4 id = '#miscellaneous'> <a href = '#miscellaneous'>miscellaneous</a> </h4>
 
-#### [](#javadoc_and_groovydoc_dont_include_timestamps_by_default)[Javadoc和Groovydoc默认不包含时间戳](#javadoc_and_groovydoc_dont_include_timestamps_by_default)
+<h4 id = '#javadoc_and_groovydoc_dont_include_timestamps_by_default'> <a href = '#javadoc_and_groovydoc_dont_include_timestamps_by_default'>Javadoc和Groovydoc默认不包含时间戳</a> </h4>
 
 生成的文档中的时间戳实际用途非常有限，但是它们使得无法构建可重复的文档。因此，`Javadoc`和`Groovydoc`任务现在已配置为默认情况下不再包括时间戳。
 
-#### [](#user_provided_config_loc_properties_are_ignored_by_checkstyle)[用户提供的'config_loc'属性被Checkstyle忽略](#user_provided_config_loc_properties_are_ignored_by_checkstyle)
+<h4 id = '#user_provided_config_loc_properties_are_ignored_by_checkstyle'> <a href = '#user_provided_config_loc_properties_are_ignored_by_checkstyle'>用户提供的'config_loc'属性被Checkstyle忽略</a> </h4>
 
 `configDirectory`运行Checkstyle时，Gradle始终将其用作“ config_loc”的值。
 
-#### [](#new_tooling_api_progress_event)[新的Tooling API进度事件](#new_tooling_api_progress_event)
+<h4 id = '#new_tooling_api_progress_event'> <a href = '#new_tooling_api_progress_event'>新的Tooling API进度事件</a> </h4>
 
 在Gradle
 6.0中，我们引入了一个新的进度事件（[org.gradle.tooling.events.test.TestOutputEvent](https://docs.gradle.org/6.7.1/javadoc/org/gradle/tooling/events/test/TestOutputEvent.html)）以公开测试执行的输出。这个新事件打破了用`StartEvent`-`FinisEvent`对表示进度的惯例。`TaskOutputEvent`很简单`ProgressEvent`。
 
-#### [](#changes_to_the_task_container_behavior)[任务容器行为的更改](#changes_to_the_task_container_behavior)
+<h4 id = '#changes_to_the_task_container_behavior'> <a href = '#changes_to_the_task_container_behavior'>任务容器行为的更改</a> </h4>
 
 现在，任务容器上的以下不推荐使用的方法会导致错误：
 
@@ -411,9 +410,9 @@ _隐式接收器_ 使用。换句话说，项目脚本的行为就像脚本的�
 
   * 替换从未注册的任务。
 
-#### [](#replaced_and_removed_apis)[替换和删除的API](#replaced_and_removed_apis)
+<h4 id = '#replaced_and_removed_apis'> <a href = '#replaced_and_removed_apis'>替换和删除的API</a> </h4>
 
-#### [](#methods_on_defaulttask_and_projectlayout_replaced_with_objectfactory)[方法打开`DefaultTask`并`ProjectLayout`替换为`ObjectFactory`](#methods_on_defaulttask_and_projectlayout_replaced_with_objectfactory)
+<h4 id = '#methods_on_defaulttask_and_projectlayout_replaced_with_objectfactory'> <a href = '#methods_on_defaulttask_and_projectlayout_replaced_with_objectfactory'>方法打开`DefaultTask`并`ProjectLayout`替换为`ObjectFactory`</a> </h4>
 
 使用`ObjectFactory.fileProperty()`代替现在已删除的以下方法：
 
@@ -431,38 +430,38 @@ _隐式接收器_ 使用。换句话说，项目脚本的行为就像脚本的�
 
   * `ProjectLayout.directoryProperty()`
 
-#### [](#annotation_nullable_has_been_removed)[注释`@Nullable`已删除](#annotation_nullable_has_been_removed)
+<h4 id = '#annotation_nullable_has_been_removed'> <a href = '#annotation_nullable_has_been_removed'>注释`@Nullable`已删除</a> </h4>
 
 该`org.gradle.api.Nullable`注释类型已被删除。请改用`javax.annotation.Nullable`JSR-305。
 
-#### [](#the_findbugs_plugin_has_been_removed)[FindBugs插件已被删除](#the_findbugs_plugin_has_been_removed)
+<h4 id = '#the_findbugs_plugin_has_been_removed'> <a href = '#the_findbugs_plugin_has_been_removed'>FindBugs插件已被删除</a> </h4>
 
 不推荐使用的FindBugs插件已被删除。作为替代方案，可以使用[SpotBugs插件](https://plugins.gradle.org/plugin/com.github.spotbugs)从[Gradle插件门户](https://plugins.gradle.org/search?term=spotbugs)。
 
-#### [](#the_jdepend_plugin_has_been_removed)[JDepend插件已被删除](#the_jdepend_plugin_has_been_removed)
+<h4 id = '#the_jdepend_plugin_has_been_removed'> <a href = '#the_jdepend_plugin_has_been_removed'>JDepend插件已被删除</a> </h4>
 
 不推荐使用的JDepend插件已被删除。[Gradle插件门户](https://plugins.gradle.org/)上有许多社区提供的用于代码和体系结构分析的[插件](https://plugins.gradle.org/)。
 
-#### [](#the_osgi_plugin_has_been_removed)[OSGI插件已被删除](#the_osgi_plugin_has_been_removed)
+<h4 id = '#the_osgi_plugin_has_been_removed'> <a href = '#the_osgi_plugin_has_been_removed'>OSGI插件已被删除</a> </h4>
 
 不推荐使用的OSGI插件已被删除。[Gradle插件门户](https://plugins.gradle.org/search?term=osgi)上有许多社区提供的OSGI插件。
 
-#### [](#the_announce_and_build_announcements_plugins_have_been_removed)[公告和构建公告插件已被删除](#the_announce_and_build_announcements_plugins_have_been_removed)
+<h4 id = '#the_announce_and_build_announcements_plugins_have_been_removed'> <a href = '#the_announce_and_build_announcements_plugins_have_been_removed'>公告和构建公告插件已被删除</a> </h4>
 
 不推荐使用的announce和build-
 announcements插件已被删除。[Gradle插件门户](https://plugins.gradle.org/)上有许多社区提供的用于发送通知的[插件](https://plugins.gradle.org/)。
 
-#### [](#the_compare_gradle_builds_plugin_has_been_removed)[比较Gradle构建插件已被删除](#the_compare_gradle_builds_plugin_has_been_removed)
+<h4 id = '#the_compare_gradle_builds_plugin_has_been_removed'> <a href = '#the_compare_gradle_builds_plugin_has_been_removed'>比较Gradle构建插件已被删除</a> </h4>
 
 不推荐使用的Compare Gradle
 Builds插件已被删除。请使用[构建扫描](https://scans.gradle.com/)进行构建分析和比较。
 
-#### [](#the_play_plugins_have_been_removed)[Play插件已被删除](#the_play_plugins_have_been_removed)
+<h4 id = '#the_play_plugins_have_been_removed'> <a href = '#the_play_plugins_have_been_removed'>Play插件已被删除</a> </h4>
 
 不推荐使用的Play插件已被删除。可从插件门户网站获得外部替代品[Play
 Framework插件](https://gradle.github.io/playframework)。
 
-#### [](#method_abstractcompile_compile_method_has_been_removed)[方法`AbstractCompile.compile()`method已删除](#method_abstractcompile_compile_method_has_been_removed)
+<h4 id = '#method_abstractcompile_compile_method_has_been_removed'> <a href = '#method_abstractcompile_compile_method_has_been_removed'>方法`AbstractCompile.compile()`method已删除</a> </h4>
 
 `compile()`不再声明abstract方法`AbstractCompile`。
 
@@ -470,7 +469,7 @@ Framework插件](https://gradle.github.io/playframework)。
 
 他们还可以自由添加一种`@TaskAction`使用`InputChanges`参数进行注释的方法，而不必也实现无参数方法。
 
-#### [](#other_deprecated_behaviors_and_apis)[其他不建议使用的行为和API](#other_deprecated_behaviors_and_apis)
+<h4 id = '#other_deprecated_behaviors_and_apis'> <a href = '#other_deprecated_behaviors_and_apis'>其他不建议使用的行为和API</a> </h4>
 
   * 在`org.gradle.util.GUtil.savePropertiesNoDateComment`已被删除。此内部方法没有公共替代方法。
 
@@ -518,45 +517,45 @@ Framework插件](https://gradle.github.io/playframework)。
 
   * 5.6中引入的孵化[功能解析](/md/处理互斥依赖性.md#sub:selecting-between-candidates)API进行了细微更改，以允许根据变体名称选择变体
 
-## [](#changes_5.6)[从5.5或更早版本升级](#changes_5.6)
+<h2 id = '#changes_5.6'> <a href = '#changes_5.6'>从5.5或更早版本升级</a> </h2>
 
-### [](#deprecations_2)[弃用](#deprecations_2)
+<h3 id = '#deprecations_2'> <a href = '#deprecations_2'>弃用</a> </h3>
 
-#### [](#changing_the_contents_of_configurablefilecollection_task_properties_after_task_starts_execution)[`ConfigurableFileCollection`任务开始执行后更改任务属性的内容](#changing_the_contents_of_configurablefilecollection_task_properties_after_task_starts_execution)
+<h4 id = '#changing_the_contents_of_configurablefilecollection_task_properties_after_task_starts_execution'> <a href = '#changing_the_contents_of_configurablefilecollection_task_properties_after_task_starts_execution'>`ConfigurableFileCollection`任务开始执行后更改任务属性的内容</a> </h4>
 
 当task属性具有type时`ConfigurableFileCollection`，一旦任务开始执行，该属性引用的文件集合将忽略对该集合内容所做的更改。这有两个好处。首先，这可以防止在任务执行期间意外更改属性值，这可能导致Gradle进行最新检查并使用与任务操作使用的值不同的值来构建缓存查找。其次，这提高了性能，因为Gradle可以一次计算值并缓存结果。
 
 这将成为Gradle 6.0中的错误。
 
-#### [](#creating_signoperation_instances)[创建`SignOperation`实例](#creating_signoperation_instances)
+<h4 id = '#creating_signoperation_instances'> <a href = '#creating_signoperation_instances'>创建`SignOperation`实例</a> </h4>
 
 `SignOperation`现在不建议直接创建实例。而是`SigningExtension`应使用方法来创建这些实例。
 
 这将成为Gradle 6.0中的错误。
 
-#### [](#declaring_an_incremental_task_without_outputs)[声明没有输出的增量任务](#declaring_an_incremental_task_without_outputs)
+<h4 id = '#declaring_an_incremental_task_without_outputs'> <a href = '#declaring_an_incremental_task_without_outputs'>声明没有输出的增量任务</a> </h4>
 
 现在不建议声明[增量任务](/md/开发自定义Gradle任务类型.md#incremental_tasks)而不声明输出。声明文件输出或改用[TaskOutputs.upToDateWhen（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-
 groovy.lang.Closure-)。
 
 这将成为Gradle 6.0中的错误。
 
-#### [](#method_workerexecutor_submit_is_deprecated)[方法`WorkerExecutor.submit()`已弃用](#method_workerexecutor_submit_is_deprecated)
+<h4 id = '#method_workerexecutor_submit_is_deprecated'> <a href = '#method_workerexecutor_submit_is_deprecated'>方法`WorkerExecutor.submit()`已弃用</a> </h4>
 
 `WorkerExecutor.submit()`现在不建议使用该方法。新的`noIsolation()`，`classLoaderIsolation()`和`processIsolation()`方法现在应该用于提交工作。见[的userguide](/md/开发自定义Gradle任务类型.md#using-
 the-worker-api)上使用这些方法的详细信息。
 
 `WorkerExecutor.submit()` 将在Gradle 7.0中删除。
 
-### [](#potential_breaking_changes_2)[潜在的重大变化](#potential_breaking_changes_2)
+<h3 id = '#potential_breaking_changes_2'> <a href = '#potential_breaking_changes_2'>潜在的重大变化</a> </h3>
 
-#### [](#task_dependencies_are_honored_for_task_input_properties_whose_value_is_a_property)[任务依赖关系受其`@Input`值为a的任务属性的尊重`Property`](#task_dependencies_are_honored_for_task_input_properties_whose_value_is_a_property)
+<h4 id = '#task_dependencies_are_honored_for_task_input_properties_whose_value_is_a_property'> <a href = '#task_dependencies_are_honored_for_task_input_properties_whose_value_is_a_property'>任务依赖关系受其`@Input`值为a的任务属性的尊重`Property`</a> </h4>
 
 以前，任务相关`@Input`性对于type的任务属性将被忽略`Property<T>`。现在，这些已被接受，因此可以将任务输出属性附加到任务`@Input`属性。
 
 这可能会在任务依赖关系图中引入意外的周期，在该图中，输出属性的值将被映射以产生输入属性的值。
 
-#### [](#declaring_task_dependencies_using_a_file_provider_that_does_not_represent_a_task_output)[使用`Provider`不代表任务输出的文件声明任务依赖关系](#declaring_task_dependencies_using_a_file_provider_that_does_not_represent_a_task_output)
+<h4 id = '#declaring_task_dependencies_using_a_file_provider_that_does_not_represent_a_task_output'> <a href = '#declaring_task_dependencies_using_a_file_provider_that_does_not_represent_a_task_output'>使用`Provider`不代表任务输出的文件声明任务依赖关系</a> </h4>
 
 此前，有可能通过`Task.dependsOn()`一个`Provider<File>`，`Provider<RegularFile>`或`Provider<Directory>`实例并不代表任务输出。这些提供程序将被默默忽略。
 
@@ -567,38 +566,38 @@ the-worker-api)上使用这些方法的详细信息。
 { it.outputDirectory
 })`，当`Provider`是一个注释`@OutputFile`或`@OutputDirectory`任务的性质。
 
-#### [](#setting_property_value_to_null_uses_the_property_convention)[设置`Property`值以`null`使用属性约定](#setting_property_value_to_null_uses_the_property_convention)
+<h4 id = '#setting_property_value_to_null_uses_the_property_convention'> <a href = '#setting_property_value_to_null_uses_the_property_convention'>设置`Property`值以`null`使用属性约定</a> </h4>
 
 以前，调用`Property.set(null)`总是将属性的值重置为“未定义”。现在，将使用该`convention()`方法与属性相关联的约定来确定属性的值。
 
-#### [](#enhanced_validation_of_names_for_publishing_publications_and_publishing_repositories)[`publishing.publications`和的名称验证得到增强`publishing.repositories`](#enhanced_validation_of_names_for_publishing_publications_and_publishing_repositories)
+<h4 id = '#enhanced_validation_of_names_for_publishing_publications_and_publishing_repositories'> <a href = '#enhanced_validation_of_names_for_publishing_publications_and_publishing_repositories'>`publishing.publications`和的名称验证得到增强`publishing.repositories`</a> </h4>
 
 存储库名称和发布名称用于构造要发布的任务名称。可以提供一个导致无效任务名称的名称。出版物和存储库的名称现在限制为`[A-Za-z0-9_\\-.]+`。
 
-#### [](#restricted_worker_api_classloader_and_process_classpath)[受限制的Worker API类加载器和进程类路径](#restricted_worker_api_classloader_and_process_classpath)
+<h4 id = '#restricted_worker_api_classloader_and_process_classpath'> <a href = '#restricted_worker_api_classloader_and_process_classpath'>受限制的Worker API类加载器和进程类路径</a> </h4>
 
 Gradle现在可以防止内部依赖项（例如Guava）泄漏到Worker
 API操作使用的类路径中。这解决了工作者需要使用Gradle内部也使用的依赖项[的问题](https://github.com/gradle/gradle/issues/3698)。
 
 在以前的版本中，可能依赖于这些泄漏的类。现在，依赖此行为的插件将失败。要修复插件，工作程序应在其类路径中明确包含所有必需的依赖项。
 
-#### [](#default_pmd_version_upgraded_to_6_15_0)[默认PMD版本已升级到6.15.0](#default_pmd_version_upgraded_to_6_15_0)
+<h4 id = '#default_pmd_version_upgraded_to_6_15_0'> <a href = '#default_pmd_version_upgraded_to_6_15_0'>默认PMD版本已升级到6.15.0</a> </h4>
 
 [](https://docs.gradle.org/6.7.1/userguide/pmd_plugin.html#pmd_plugin)默认情况下[，PMD插件](https://docs.gradle.org/6.7.1/userguide/pmd_plugin.html#pmd_plugin)已升级为使用[PMD版本6.15.0](https://pmd.github.io/pmd-6.15.0/pmd_release_notes.html)而不是6.8.0。
 
 由[wreulicke](https://github.com/wreulicke)贡献[](https://github.com/wreulicke)
 
-#### [](#configuration_copies_have_unique_names)[配置副本具有唯一的名称](#configuration_copies_have_unique_names)
+<h4 id = '#configuration_copies_have_unique_names'> <a href = '#configuration_copies_have_unique_names'>配置副本具有唯一的名称</a> </h4>
 
 以前，配置的所有副本始终使用名称`<OriginConfigurationName>Copy`。现在，当创建多个副本时，通过从第二个副本开始添加索引，每个副本将具有唯一的名称。（例如`CompileOnlyCopy2`）
 
-#### [](#changed_classpath_filtering_for_eclipse)[更改了Eclipse的类路径过滤](#changed_classpath_filtering_for_eclipse)
+<h4 id = '#changed_classpath_filtering_for_eclipse'> <a href = '#changed_classpath_filtering_for_eclipse'>更改了Eclipse的类路径过滤</a> </h4>
 
 Gradle
 5.6不再在Eclipse模型中提供自定义类路径属性。相反，它提供了[Eclipse测试源](https://www.eclipse.org/eclipse/news/4.8/jdt.php#jdt-
 test-sources)的属性。此更改需要Buildship 3.1.1或更高版本。
 
-#### [](#embedded_kotlin_upgraded_to_1_3_41)[嵌入式Kotlin升级到1.3.41](#embedded_kotlin_upgraded_to_1_3_41)
+<h4 id = '#embedded_kotlin_upgraded_to_1_3_41'> <a href = '#embedded_kotlin_upgraded_to_1_3_41'>嵌入式Kotlin升级到1.3.41</a> </h4>
 
 `kotlin-dsl`现在使用Kotlin 1.3.41编译使用该插件编写的Gradle Kotlin DSL脚本和Gradle插件。
 
@@ -606,7 +605,7 @@ test-sources)的属性。此更改需要Buildship 3.1.1或更高版本。
 
 现在支持的最低Kotlin Gradle插件版本为1.2.31。以前是1.2.21。
 
-#### [](#automatic_capability_conflict_resolution)[自动能力冲突解决](#automatic_capability_conflict_resolution)
+<h4 id = '#automatic_capability_conflict_resolution'> <a href = '#automatic_capability_conflict_resolution'>自动能力冲突解决</a> </h4>
 
 如果发生功能冲突，Gradle的早期版本将自动选择具有最高功能版本的模块。从5.6开始，这是一种可以选择使用以下行为激活的行为：
 
@@ -618,36 +617,36 @@ test-sources)的属性。此更改需要Buildship 3.1.1或更高版本。
 
 有关更多选项，请参见[文档的功能部分](/md/处理互斥依赖性.md#sub:capabilities)。
 
-#### [](#file_removal_operations_dont_follow_symlinked_directories)[文件删除操作不遵循符号链接目录](#file_removal_operations_dont_follow_symlinked_directories)
+<h4 id = '#file_removal_operations_dont_follow_symlinked_directories'> <a href = '#file_removal_operations_dont_follow_symlinked_directories'>文件删除操作不遵循符号链接目录</a> </h4>
 
 当Gradle由于各种原因不得不删除任务的输出文件时，它将不会遵循符号链接目录。符号链接本身将被删除，但链接目录的内容将保持不变。
 
-### [](#disabled_debug_argument_parsing_in_javaexec)[禁用JavaExec中的调试参数解析](#disabled_debug_argument_parsing_in_javaexec)
+<h3 id = '#disabled_debug_argument_parsing_in_javaexec'> <a href = '#disabled_debug_argument_parsing_in_javaexec'>禁用JavaExec中的调试参数解析</a> </h3>
 
 Gradle
 5.6引入了一个新的DSL元素（`JavaForkOptions.debugOptions(Action<JavaDebugOptions>)`），用于配置分支Java进程的调试属性。由于此更改，Gradle不再解析与调试相关的JVM参数。因此，如果为流程指定或参数，则`JavaForkOptions.getDebu()`不再返回。`true``-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005``-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005`
 
-### [](#scala_2_9_and_zinc_compiler)[Scala 2.9和Zinc编译器](#scala_2_9_and_zinc_compiler)
+<h3 id = '#scala_2_9_and_zinc_compiler'> <a href = '#scala_2_9_and_zinc_compiler'>Scala 2.9和Zinc编译器</a> </h3>
 
 Gradle不再支持使用Scala 2.9构建应用程序。
 
-## [](#changes_5.5)[从5.4或更早版本升级](#changes_5.5)
+<h2 id = '#changes_5.5'> <a href = '#changes_5.5'>从5.4或更早版本升级</a> </h2>
 
-### [](#deprecations_3)[弃用](#deprecations_3)
+<h3 id = '#deprecations_3'> <a href = '#deprecations_3'>弃用</a> </h3>
 
-#### [](#play)[玩](#play)
+<h4 id = '#play'> <a href = '#play'>玩</a> </h4>
 
 内置的[Play插件](https://docs.gradle.org/6.7.1/userguide/play_plugin.html#play_plugin) 被弃用，将由插件门户提供的新的[Play Framework插件](https://gradle.github.io/playframework)代替。
 
-#### [](#build_comparison)[构建比较](#build_comparison)
+<h4 id = '#build_comparison'> <a href = '#build_comparison'>构建比较</a> </h4>
 
 该 _构造比较_ 插件已经被弃用，并将在Gradle的下一个主要版本中删除。
 
 [构建扫描](https://gradle.com/build-scans)显示了对[构建的](https://gradle.com/build-scans) 更深入了解，您可以使用[Gradle Enterprise](https://gradle.com/)直接比较两个构建的构建扫描。
 
-### [](#potential_breaking_changes_3)[潜在的重大变化](#potential_breaking_changes_3)
+<h3 id = '#potential_breaking_changes_3'> <a href = '#potential_breaking_changes_3'>潜在的重大变化</a> </h3>
 
-#### [](#user_supplied_eclipse_project_names_may_be_ignored_on_conflict)[用户提供的Eclipse项目名称可能在冲突时被忽略](#user_supplied_eclipse_project_names_may_be_ignored_on_conflict)
+<h4 id = '#user_supplied_eclipse_project_names_may_be_ignored_on_conflict'> <a href = '#user_supplied_eclipse_project_names_may_be_ignored_on_conflict'>用户提供的Eclipse项目名称可能在冲突时被忽略</a> </h4>
 
 [`EclipseProject.setName(…​)`](https://docs.gradle.org/6.7.1/javadoc/org/gradle/plugins/ide/eclipse/model/EclipseProject.html)即使在名称引起冲突和导入/同步错误的情况下，在所有情况下，Gradle和Buildship都会使用通过配置的项目名称来纪念。
 
@@ -657,62 +656,61 @@ Gradle不再支持使用Scala 2.9构建应用程序。
 
 由[ChristianFränkel](https://github.com/fraenkelc) 贡献[](https://github.com/fraenkelc)
 
-#### [](#default_jacoco_version_upgraded_to_0_8_4)[JaCoCo的默认版本已升级到0.8.4](#default_jacoco_version_upgraded_to_0_8_4)
+<h4 id = '#default_jacoco_version_upgraded_to_0_8_4'> <a href = '#default_jacoco_version_upgraded_to_0_8_4'>JaCoCo的默认版本已升级到0.8.4</a> </h4>
 
 [JaCoCo插件](https://docs.gradle.org/6.7.1/userguide/jacoco_plugin.html#jacoco_plugin)已升级为默认使用[JaCoCo版本0.8.4](http://www.jacoco.org/jacoco/trunk/doc/changes.html)而不是0.8.3。
 
 由[Evgeny Mandrikov](https://github.com/Godin)贡献[](https://github.com/Godin)
 
-#### [](#embedded_ant_version_upgraded_to_1_9_14)[嵌入式Ant版本已升级到1.9.14](#embedded_ant_version_upgraded_to_1_9_14)
+<h4 id = '#embedded_ant_version_upgraded_to_1_9_14'> <a href = '#embedded_ant_version_upgraded_to_1_9_14'>嵌入式Ant版本已升级到1.9.14</a> </h4>
 
 与Gradle分发的Ant版本已经升级到了[14年9月1日](https://archive.apache.org/dist/ant/RELEASE-
 NOTES-1.9.14.html)从1.9.13。
 
-#### [](#type_dependencyhandler_now_statically_exposes_extensionaware)[键入`DependencyHandler`现在静态自曝`ExtensionAware`](#type_dependencyhandler_now_statically_exposes_extensionaware)
+<h4 id = '#type_dependencyhandler_now_statically_exposes_extensionaware'> <a href = '#type_dependencyhandler_now_statically_exposes_extensionaware'>键入`DependencyHandler`现在静态自曝`ExtensionAware`</a> </h4>
 
 这会影响Kotlin DSL构建脚本，该脚本使用`ExtensionAware`扩展成员，例如块`extra`内的属性访问器`dependencies
 {}`。这些成员的接收者将不再是封闭的`Project`实例，而是`dependencies`对象本身，即最内在的`ExtensionAware`接收者。为了解决接收器`Project`内部`dependencies
 {}`的其他属性，必须显式地限定接收器，`project.extra`而不是just
 `extra`。受影响的扩展名还包括`the<T>()`和`configure<T>(T.() → Unit)`。
 
-#### [](#improved_processing_of_dependency_excludes)[改进的依赖性处理排除](#improved_processing_of_dependency_excludes)
+<h4 id = '#improved_processing_of_dependency_excludes'> <a href = '#improved_processing_of_dependency_excludes'>改进的依赖性处理排除</a> </h4>
 
 当存在大量排除项时，在某些复杂的依赖图中，Gradle的早期版本可能会产生错误的结果或随机的依赖顺序。为了减轻这种情况，计算排除的算法已被重写。在少数情况下，由于正确性的改变，这可能会导致分辨率有所不同。
 
-#### [](#improved_classpath_separation_for_worker_processes)[改进了工作进程的类路径分离](#improved_classpath_separation_for_worker_processes)
+<h4 id = '#improved_classpath_separation_for_worker_processes'> <a href = '#improved_classpath_separation_for_worker_processes'>改进了工作进程的类路径分离</a> </h4>
 
 使用隔离时由[Worker
 API](/md/开发自定义Gradle任务类型.md#worker_api)启动的工作守护程序的系统类路径`PROCESS`已减少为Gradle基础结构的最小集合。用户代码仍被隔离到单独的类加载器中，以将其与Gradle运行时隔离。对于使用worker
 API的任务，这应该是透明的更改，但是Gradle的早期版本在worker进程中混合了用户代码和Gradle内部。依赖于`java.class.path`系统属性`java.class.path`之类的工作者动作可能会受到影响，因为现在仅代表Gradle内部结构的类路径。
 
-## [](#changes_5.4)[从5.3或更早版本升级](#changes_5.4)
+<h2 id = '#changes_5.4'> <a href = '#changes_5.4'>从5.3或更早版本升级</a> </h2>
 
-### [](#deprecations_4)[弃用](#deprecations_4)
+<h3 id = '#deprecations_4'> <a href = '#deprecations_4'>弃用</a> </h3>
 
-#### [](#using_custom_local_build_cache_implementations)[使用自定义本地构建缓存实现](#using_custom_local_build_cache_implementations)
+<h4 id = '#using_custom_local_build_cache_implementations'> <a href = '#using_custom_local_build_cache_implementations'>使用自定义本地构建缓存实现</a> </h4>
 
 现在不建议将自定义生成缓存实现用于本地生成缓存。唯一允许的类型将是`DirectoryBuildCache`前进。使用自定义构建缓存实现作为远程构建缓存的支持没有变化。
 
-### [](#potential_breaking_changes_4)[潜在的重大变化](#potential_breaking_changes_4)
+<h3 id = '#potential_breaking_changes_4'> <a href = '#potential_breaking_changes_4'>潜在的重大变化</a> </h3>
 
-#### [](#use_https_when_configuring_google_hosted_libraries_via_googleapis)[通过配置Google托管库时使用HTTPS
-`googleApis()`](#use_https_when_configuring_google_hosted_libraries_via_googleapis)
+<h4 id = '#use_https_when_configuring_google_hosted_libraries_via_googleapis'> <a href = '#use_https_when_configuring_google_hosted_libraries_via_googleapis'>通过配置Google托管库时使用HTTPS `googleApis()`</a> </h4>
 
 通过可以访问的Google Hosted Libraries
 URL`JavaScriptRepositoriesExtension#GOOGLE_APIS_REPO_URL`已更改为使用HTTPS协议。更改还会影响通过进行配置的Ivy存储库`googleApis()`。
 
-## [](#changes_5.3)[从5.2或更早版本升级](#changes_5.3)
+<h2 id = '#changes_5.3'> <a href = '#changes_5.3'>从5.2或更早版本升级</a> </h2>
 
-### [](#potential_breaking_changes_5)[潜在的重大变化](#potential_breaking_changes_5)
+<h3 id = '#potential_breaking_changes_5'> <a href = '#potential_breaking_changes_5'>潜在的重大变化</a> </h3>
 
-#### [](#bug_fixes_in_platform_resolution)[修复了平台分辨率中的错误](#bug_fixes_in_platform_resolution)
+<h4 id = '#bug_fixes_in_platform_resolution'> <a href = '#bug_fixes_in_platform_resolution'>修复了平台分辨率中的错误</a> </h4>
 
 从Gradle
 5.0到5.2.1（包括）存在一个错误，其中强制平台可能包含依赖性而不是约束。只要POM文件同时定义了依赖关系和“约束”（通过`<dependencyManagement>`）并且您使用了它，就会发生这种情况`enforcedPlatform`。Gradle
 5.3修复了此错误，这意味着如果您依赖此无效行为，则分辨率结果可能会有所不同。同样，Gradle 5.3将不再尝试下载jar`platform`和和jars
 `enforcedPlatform`（因为它们只能引入约束）。
 
-#### [](#automatic_target_jvm_version)[自动目标JVM版本](#automatic_target_jvm_version)
+<h4 id = '#automatic_target_jvm_version'> <a href = '#automatic_target_jvm_version'>自动目标JVM版本</a> </h4>
 
 如果您使用任何Java插件，Gradle现在将尽力选择与正在编译的模块的目标兼容性相匹配的依赖项。实际上，这意味着如果您具有为Java
 8构建的模块A和为Java 8构建的模块B，则没有任何变化。但是，如果B是为Java 9+构建的，则它不再与二进制兼容，并且Gradle会抱怨如下错误消息：
@@ -738,17 +736,17 @@ URL`JavaScriptRepositoriesExtension#GOOGLE_APIS_REPO_URL`已更改为使用HTTPS
        disableAutoTargetJvm()
     }
 
-#### [](#bug_fix_in_maven_ivy_interoperability_with_dependency_substitution)[通过依赖替换在Maven/Ivy互操作性中的错误修复](#bug_fix_in_maven_ivy_interoperability_with_dependency_substitution)
+<h4 id = '#bug_fix_in_maven_ivy_interoperability_with_dependency_substitution'> <a href = '#bug_fix_in_maven_ivy_interoperability_with_dependency_substitution'>通过依赖替换在Maven/Ivy互操作性中的错误修复</a> </h4>
 
 如果你有一个Maven依赖指向Ivy依赖在`default`配置依赖性不匹配`compile`\+ `runtime`+`master`那些 _和_
 Ivy依赖性取代（使用`resolutionStrategy.force`，`resolutionStrategy.eachDependency`或`resolutionStrategy.dependencySubstitution`），则此修复程序会影响你。5.0之前的Gradle的旧行为仍然存在，而不是被改进的pom支持所引入的更改所取代。
 
-#### [](#delete_operations_correctly_handle_symbolic_links_on_windows)[删除操作可以正确处理Windows上的符号链接](#delete_operations_correctly_handle_symbolic_links_on_windows)
+<h4 id = '#delete_operations_correctly_handle_symbolic_links_on_windows'> <a href = '#delete_operations_correctly_handle_symbolic_links_on_windows'>删除操作可以正确处理Windows上的符号链接</a> </h4>
 
 在存在连接点和符号链接的情况下，Gradle不再忽略`followSymlink`Windows上的`clean`任务，所有`Delete`任务和`project.delete
 {}`操作选项。
 
-#### [](#fix_in_publication_of_additional_artifacts)[修复其他工件的发布](#fix_in_publication_of_additional_artifacts)
+<h4 id = '#fix_in_publication_of_additional_artifacts'> <a href = '#fix_in_publication_of_additional_artifacts'>修复其他工件的发布</a> </h4>
 
 在以前的Gradle版本中，在项目级别注册的其他工件没有被发布，`maven-publish`或者`ivy-
 publish`除非它们也已作为工件添加到发布配置中，否则不会发布。
@@ -757,15 +755,15 @@ publish`除非它们也已作为工件添加到发布配置中，否则不会发
 
 这意味着在项目 _和_ 发布（Ivy或Maven）上都注册的工件会导致发布失败，因为它将创建重复的条目。解决方法是从发布配置中删除这些工件。
 
-## [](#changes_5.2)[从5.1或更早版本升级](#changes_5.2)
+<h2 id = '#changes_5.2'> <a href = '#changes_5.2'>从5.1或更早版本升级</a> </h2>
 
-### [](#potential_breaking_changes_6)[潜在的重大变化](#potential_breaking_changes_6)
+<h3 id = '#potential_breaking_changes_6'> <a href = '#potential_breaking_changes_6'>潜在的重大变化</a> </h3>
 
 没有
 
-## [](#changes_5.1)[从5.0或更早版本升级](#changes_5.1)
+<h2 id = '#changes_5.1'> <a href = '#changes_5.1'>从5.0或更早版本升级</a> </h2>
 
-### [](#deprecations_5)[弃用](#deprecations_5)
+<h3 id = '#deprecations_5'> <a href = '#deprecations_5'>弃用</a> </h3>
 
 按照API链接了解如何处理这些弃用（如果此处未提供其他信息）：
 
@@ -778,26 +776,26 @@ publish`除非它们也已作为工件添加到发布配置中，否则不会发
         validateTaskProperties.getClasses（）。setFrom（fileCollection）
         validateTaskProperties.getClasspath（）。setFrom（fileCollection）
 
-### [](#potential_breaking_changes_7)[潜在的重大变化](#potential_breaking_changes_7)
+<h3 id = '#potential_breaking_changes_7'> <a href = '#potential_breaking_changes_7'>潜在的重大变化</a> </h3>
 
 以前不建议过以下更改：
 
-#### [](#signing_api_changes)[签名API更改](#signing_api_changes)
+<h4 id = '#signing_api_changes'> <a href = '#signing_api_changes'>签名API更改</a> </h4>
 
 `Sign`现在分别通过`Signature.getToSign()`和跟踪任务的输入和输出文件`Signature.getFile()`。
 
-#### [](#collection_properties_default_to_empty_collection)[集合属性默认为空集合](#collection_properties_default_to_empty_collection)
+<h4 id = '#collection_properties_default_to_empty_collection'> <a href = '#collection_properties_default_to_empty_collection'>集合属性默认为空集合</a> </h4>
 
 在Gradle
 5.0中，使用创建的collection属性实例`ObjectFactory`将没有定义值，要求插件作者明确设置初始值。事实证明这很尴尬且容易出错，因此`ObjectFactory`现在返回带有空集合的实例作为其初始值。
 
-#### [](#worker_api_working_directory_of_a_worker_can_no_longer_be_set)[Worker API：无法再设置工人的工作目录](#worker_api_working_directory_of_a_worker_can_no_longer_be_set)
+<h4 id = '#worker_api_working_directory_of_a_worker_can_no_longer_be_set'> <a href = '#worker_api_working_directory_of_a_worker_can_no_longer_be_set'>Worker API：无法再设置工人的工作目录</a> </h4>
 
 由于JDK
 11不再支持更改正在运行的进程的工作目录，因此现在禁止通过其fork选项设置工作程序的工作目录。现在，所有工作程序都使用相同的工作目录来启用重用。请改为将文件和目录作为参数传递。请参阅[Worker
 API文档](/md/开发自定义Gradle任务类型.md#worker_api)中的示例。
 
-#### [](#changes_to_native_linking_tasks)[更改本机链接任务](#changes_to_native_linking_tasks)
+<h4 id = '#changes_to_native_linking_tasks'> <a href = '#changes_to_native_linking_tasks'>更改本机链接任务</a> </h4>
 
 为了扩展我们惯用的[Provider
 API](/md/延迟配置.md)做法，`org.gradle.nativeplatform.tasks.LinkSharedLibrary`此更改将影响from的安装名称属性。
@@ -806,7 +804,7 @@ API](/md/延迟配置.md)做法，`org.gradle.nativeplatform.tasks.LinkSharedLib
 
   * `setInstallName(String)`去掉了。使用`Property.set()`代替。
 
-#### [](#passing_arguments_to_windows_resource_compiler)[将参数传递给Windows Resource Compiler](#passing_arguments_to_windows_resource_compiler)
+<h4 id = '#passing_arguments_to_windows_resource_compiler'> <a href = '#passing_arguments_to_windows_resource_compiler'>将参数传递给Windows Resource Compiler</a> </h4>
 
 为了扩展我们惯用的[Provider
 API](/md/延迟配置.md)实践，`WindowsResourceCompile`已将任务转换为使用Provider
@@ -814,23 +812,23 @@ API。
 
 现在，传递附加的编译器参数遵循与`CppCompile`和其他任务相同的模式。
 
-#### [](#copied_configuration_no_longer_shares_a_list_of_beforeresolve_actions_with_original)[复制的配置不再`beforeResolve`与原始配置共享操作列表](#copied_configuration_no_longer_shares_a_list_of_beforeresolve_actions_with_original)
+<h4 id = '#copied_configuration_no_longer_shares_a_list_of_beforeresolve_actions_with_original'> <a href = '#copied_configuration_no_longer_shares_a_list_of_beforeresolve_actions_with_original'>复制的配置不再`beforeResolve`与原始配置共享操作列表</a> </h4>
 
 `beforeResolve`操作列表不再在复制的配置和原始配置之间共享。取而代之的是，复制的配置会在进行复制时接收`beforeResolve`操作的复制。`beforeResolve`复制后（添加到任一配置）添加的任何操作都不会在原始副本和副本之间共享。这可能会破坏依赖于先前行为的插件。
 
-#### [](#changes_to_incubating_pom_customization_types)[孵化POM定制类型的更改](#changes_to_incubating_pom_customization_types)
+<h4 id = '#changes_to_incubating_pom_customization_types'> <a href = '#changes_to_incubating_pom_customization_types'>孵化POM定制类型的更改</a> </h4>
 
   * 的类型`MavenPomDeveloper.properties`已从更改`Property<Map<String, String>>`为`MapProperty<String, String>`。
 
   * 的类型`MavenPomContributor.properties`已从更改`Property<Map<String, String>>`为`MapProperty<String, String>`。
 
-#### [](#changes_to_specifying_operating_system_for_native_projects)[对本机项目指定操作系统的更改](#changes_to_specifying_operating_system_for_native_projects)
+<h4 id = '#changes_to_specifying_operating_system_for_native_projects'> <a href = '#changes_to_specifying_operating_system_for_native_projects'>对本机项目指定操作系统的更改</a> </h4>
 
 `operatingSystems`本地组件的孵化属性已替换为[targetMachines](https://docs.gradle.org/6.7.1/javadoc/org/gradle/language/cpp/CppComponent.html#getTargetMachines\(\))属性。
 
-#### [](#changes_for_archive_tasks_zip_jar_war_ear_tar)[归档任务的变化（`Zip`，`Jar`，`War`，`Ear`，`Tar`）](#changes_for_archive_tasks_zip_jar_war_ear_tar)
+<h4 id = '#changes_for_archive_tasks_zip_jar_war_ear_tar'> <a href = '#changes_for_archive_tasks_zip_jar_war_ear_tar'>归档任务的变化（`Zip`，`Jar`，`War`，`Ear`，`Tar`）</a> </h4>
 
-##### [](#change_in_behavior_for_tasks_extending_abstractarchivetask)[行为变化以扩展任务 `AbstractArchiveTask`](#change_in_behavior_for_tasks_extending_abstractarchivetask)
+<h5 id = '#change_in_behavior_for_tasks_extending_abstractarchivetask'> <a href = '#change_in_behavior_for_tasks_extending_abstractarchivetask'>行为变化以扩展任务 `AbstractArchiveTask`</a> </h5>
 
 在`AbstractArchiveTask`具有使用了一些新的特性[提供API](/md/延迟配置.md#lazy_configuration_reference)。扩展这些类型并从基类覆盖方法的插件可能不再具有相同的行为。在内部，相`AbstractArchiveTask`对于新属性，更喜欢新属性和方法，例如`getArchiveName()`外观。
 

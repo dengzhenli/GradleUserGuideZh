@@ -17,7 +17,7 @@ Gradle使用约定优于配置的方法来构建本机项目。如果您来自�
 
 我们将在本章中详细介绍Swift项目，但是大多数主题也将适用于其他受支持的本地语言。
 
-## [](#sec:swift_introduction)[介绍](#sec:swift_introduction)
+<h2 id = '#sec:swift_introduction'> <a href = '#sec:swift_introduction'>介绍</a> </h2>
 
 Swift项目的最简单构建脚本将应用Swift应用程序插件或Swift库插件，并可以选择设置项目版本：
 
@@ -59,7 +59,7 @@ Swift插件还将上述任务集成到标准[生命周期任务中](https://docs
 
 本章的其余部分介绍了在构建库和应用程序时根据需要自定义构建的不同方法。
 
-## [](#sec:introducing_build_variants-swift)[引入构建变体](#sec:introducing_build_variants-swift)
+<h2 id = '#sec:introducing_build_variants-swift'> <a href = '#sec:introducing_build_variants-swift'>引入构建变体</a> </h2>
 
 本机项目通常可以产生几种不同的二进制文件，例如调试或发布的二进制文件，或针对特定平台和处理器体系结构的二进制文件。Gradle通过 _维度_ 和 _变体_
 的概念来进行管理。
@@ -70,7 +70,7 @@ Swift插件还将上述任务集成到标准[生命周期任务中](https://docs
 
 Gradle内置支持多个维度以及每个维度中的多个值。您可以在本[机插件参考章节中](/md/插件参考.md#native_languages)找到它们的列表。
 
-## [](#sec:swift_source_sets)[声明您的源文件](#sec:swift_source_sets)
+<h2 id = '#sec:swift_source_sets'> <a href = '#sec:swift_source_sets'>声明您的源文件</a> </h2>
 
 Gradle的Swift支持使用`ConfigurableFileCollection`直接来自[应用程序](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.SwiftApplication.html)或[库](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.SwiftLibrary.html)脚本块的代码来配置要编译的源集。
 
@@ -82,7 +82,7 @@ Gradle的Swift支持使用`ConfigurableFileCollection`直接来自[应用程序]
 
 图1.源代码和Swift编译
 
-## [](#sec:swift_dependency_management_overview)[管理你的依赖](#sec:swift_dependency_management_overview)
+<h2 id = '#sec:swift_dependency_management_overview'> <a href = '#sec:swift_dependency_management_overview'>管理你的依赖</a> </h2>
 
 绝大多数项目都依赖于其他项目，因此管理项目的依存关系是构建任何项目的重要组成部分。依赖管理是一个大话题，因此我们在这里仅关注Swift项目的基础知识。如果您想深入了解细节，请查看[依赖管理简介](/md/Gradle中的依赖管理.md)。
 
@@ -161,7 +161,7 @@ build.gradle.kts
 
 您会发现Gradle具有丰富的API用于处理依赖关系-一种需要花费时间来掌握的API，但对于常见的情况却很容易使用。
 
-## [](#sec:swift_compile_link)[编译和链接代码](#sec:swift_compile_link)
+<h2 id = '#sec:swift_compile_link'> <a href = '#sec:swift_compile_link'>编译和链接代码</a> </h2>
 
 如果遵循以下约定，则编译两个代码都非常容易：
 
@@ -179,7 +179,7 @@ build.gradle.kts
 所有[SwiftCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.tasks.SwiftCompile.html)任务都是增量的且可缓存的。  
 ╚═════════════════════════════    
   
-### [](#sec:swift_supported_tool_chain)[支持的工具链](#sec:swift_supported_tool_chain)
+<h3 id = '#sec:swift_supported_tool_chain'> <a href = '#sec:swift_supported_tool_chain'>支持的工具链</a> </h3>
 
 Gradle支持[适用于macOS和Linux](https://swift.org/download/)的[官方Swift工具链](https://swift.org/download/)。当您构建本机二进制文件时，Gradle会尝试找到您的计算机上安装的可以构建二进制文件的工具链。Gradle选择可以为目标操作系统，体系结构和Swift语言支持构建的第一个工具链。
 
@@ -187,7 +187,7 @@ Gradle支持[适用于macOS和Linux](https://swift.org/download/)的[官方Swift
 Gradle将使用系统PATH发现工具链。  
 ╚═════════════════════════════    
   
-### [](#sec:custom_swift_source_set_paths)[自定义文件和目录位置](#sec:custom_swift_source_set_paths)
+<h3 id = '#sec:custom_swift_source_set_paths'> <a href = '#sec:custom_swift_source_set_paths'>自定义文件和目录位置</a> </h3>
 
 假设您要迁移遵循Swift Package
 Manager布局的库项目（例如，生产代码目录）。传统的目录结构不起作用，因此您需要告诉Gradle在哪里可以找到源文件。您可以通过或脚本块执行此操作。`Sources/
@@ -217,7 +217,7 @@ build.gradle.kts
 
 现在Gradle将仅在 _Sources / Common中_ 直接搜索源。
 
-### [](#sec:custom_swift_compile_link)[更改编译器和链接器选项](#sec:custom_swift_compile_link)
+<h3 id = '#sec:custom_swift_compile_link'> <a href = '#sec:custom_swift_compile_link'>更改编译器和链接器选项</a> </h3>
 
 大多数的编译器和连接选项是通过相应的任务访问，如，和。这些任务分别为[SwiftCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.tasks.SwiftCompile.html)，[LinkSharedLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.LinkSharedLibrary.html)和[CreateStaticLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.CreateStaticLibrary.html)类型。阅读任务参考以获取最新，最全面的选项列表。`compile
 _Variant_ Swift``link _Variant_``create
@@ -287,7 +287,7 @@ build.gradle.kts
         }
     }
 
-### [](#sec:select_swift_target_machines)[选择目标机器](#sec:select_swift_target_machines)
+<h3 id = '#sec:select_swift_target_machines'> <a href = '#sec:select_swift_target_machines'>选择目标机器</a> </h3>
 
 默认情况下，Gradle将尝试为主机操作系统和体系结构创建Swift二进制变体。通过`TargetMachine`在`application`或`library`脚本块上指定的设置，可以覆盖此设置：
 
@@ -314,7 +314,7 @@ build.gradle.kts
         targetMachines.set(listOf(machines.linux.x86_64, machines.macOS.x86_64))
     }
 
-## [](#sec:swift_packaging)[包装出版](#sec:swift_packaging)
+<h2 id = '#sec:swift_packaging'> <a href = '#sec:swift_packaging'>包装出版</a> </h2>
 
 在本地环境中，打包和发布Swift项目的方式有很大不同。Gradle带有默认值，但是可以实现自定义打包而没有任何问题。
 
@@ -324,11 +324,11 @@ build.gradle.kts
 
   * 对于应用程序，Gradle还支持在已知位置安装和运行具有所有共享库依赖项的可执行文件。
 
-## [](#sec:cleaning_swift_build)[清理构建](#sec:cleaning_swift_build)
+<h2 id = '#sec:cleaning_swift_build'> <a href = '#sec:cleaning_swift_build'>清理构建</a> </h2>
 
 Swift应用程序和库插件`clean`通过使用[基本插件](https://docs.gradle.org/6.7.1/userguide/base_plugin.html)将任务添加到您的项目中。此任务只是删除`$buildDir`目录中的所有内容，因此为什么要始终将构建生成的文件放在其中。该任务是Delete的一个实例，您可以通过设置其`dir`属性来更改其删除的目录。
 
-## [](#sec:building_swift_libraries)[构建Swift库](#sec:building_swift_libraries)
+<h2 id = '#sec:building_swift_libraries'> <a href = '#sec:building_swift_libraries'>构建Swift库</a> </h2>
 
 库项目的独特之处在于它们被其他Swift项目使用（或“消耗”）。这意味着以二进制文件和标头发布的依赖元数据（以Gradle
 Module元数据的形式）至关重要。特别是，库的使用者应能够区分两种不同类型的依赖关系：仅依赖于编译库的依赖关系和也依赖于编译使用者的依赖关系。
@@ -340,7 +340,7 @@ _api_ 配置中。否则，依赖项是内部实现细节，应将其添加到 _
 
 如果不确定API和实现依赖项之间的区别，请参阅[Swift库插件](https://docs.gradle.org/6.7.1/userguide/swift_library_plugin.html#sec:swift_library_api_vs_implementation)一章中的详细说明。另外，您可以在相应的[样本中](https://docs.gradle.org/6.7.1/samples/sample_building_swift_libraries.html)看到构建Swift库的基本，实际[示例](https://docs.gradle.org/6.7.1/samples/sample_building_swift_libraries.html)。
 
-## [](#sec:building_swift_applications)[构建Swift应用程序](#sec:building_swift_applications)
+<h2 id = '#sec:building_swift_applications'> <a href = '#sec:building_swift_applications'>构建Swift应用程序</a> </h2>
 
 有关更多详细信息，请参见“
 [Swift应用程序插件”](https://docs.gradle.org/6.7.1/userguide/swift_application_plugin.html)一章，但这是您所获得的快速摘要：

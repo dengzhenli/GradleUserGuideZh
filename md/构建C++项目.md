@@ -20,7 +20,7 @@ Gradle使用约定优于配置的方法来构建本机项目。如果您来自�
 
 本章[介绍](https://blog.gradle.org/introducing-the-new-cpp-plugins)的C++插件[于2018年引入](https://blog.gradle.org/introducing-the-new-cpp-plugins)，我们建议用户在您可能会找到参考[的旧版Native插件](https://docs.gradle.org/6.7.1/userguide/native_software.html)上使用这些插件。
 
-## [](#sec:cpp_introduction)[介绍](#sec:cpp_introduction)
+<h2 id = '#sec:cpp_introduction'> <a href = '#sec:cpp_introduction'>介绍</a> </h2>
 
 C ++项目的最简单构建脚本将应用C ++应用程序插件或C ++库插件，并可以选择设置项目版本：
 
@@ -62,7 +62,7 @@ C++插件还将上述任务集成到标准[生命周期任务中](https://docs.g
 
 本章的其余部分介绍了在构建库和应用程序时根据需要自定义构建的不同方法。
 
-## [](#sec:introducing_build_variants-cpp)[引入构建变体](#sec:introducing_build_variants-cpp)
+<h2 id = '#sec:introducing_build_variants-cpp'> <a href = '#sec:introducing_build_variants-cpp'>引入构建变体</a> </h2>
 
 本机项目通常可以产生几种不同的二进制文件，例如调试或发布的二进制文件，或针对特定平台和处理器体系结构的二进制文件。Gradle通过 _维度_ 和 _变体_
 的概念来进行管理。
@@ -73,7 +73,7 @@ C++插件还将上述任务集成到标准[生命周期任务中](https://docs.g
 
 Gradle内置支持多个维度以及每个维度中的多个值。您可以在本[机插件参考章节中](/md/插件参考.md#native_languages)找到它们的列表。
 
-## [](#sec:cpp_source_sets)[声明您的源文件](#sec:cpp_source_sets)
+<h2 id = '#sec:cpp_source_sets'> <a href = '#sec:cpp_source_sets'>声明您的源文件</a> </h2>
 
 Gradle的C++支持使用`ConfigurableFileCollection`直接来自[应用程序](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.cpp.CppApplication.html)或[库](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.cpp.CppLibrary.html)脚本块的代码来配置要编译的源集。
 
@@ -87,7 +87,7 @@ Gradle的C++支持使用`ConfigurableFileCollection`直接来自[应用程序](h
 
 在每个测试套件脚本块上配置测试源。请参阅[测试C++项目](/md/在C++项目中进行测试.md)一章。
 
-## [](#sec:cpp_dependency_management_overview)[管理你的依赖](#sec:cpp_dependency_management_overview)
+<h2 id = '#sec:cpp_dependency_management_overview'> <a href = '#sec:cpp_dependency_management_overview'>管理你的依赖</a> </h2>
 
 绝大多数项目都依赖于其他项目，因此管理项目的依存关系是构建任何项目的重要组成部分。依赖管理是一个大话题，因此我们在这里仅关注C
 ++项目的基础知识。如果您想深入了解细节，请查看[依赖管理简介](/md/Gradle中的依赖管理.md)。
@@ -168,7 +168,7 @@ build.gradle.kts
 
 您会发现Gradle具有丰富的API用于处理依赖关系-一种需要花费时间来掌握的API，但对于常见的情况却很容易使用。
 
-## [](#sec:cpp_compile_link)[编译和链接代码](#sec:cpp_compile_link)
+<h2 id = '#sec:cpp_compile_link'> <a href = '#sec:cpp_compile_link'>编译和链接代码</a> </h2>
 
 如果遵循以下约定，则编译两个代码都非常容易：
 
@@ -186,7 +186,7 @@ build.gradle.kts
 所有[CppCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.cpp.tasks.CppCompile.html)任务都是增量的并且可缓存。  
 ╚═════════════════════════════    
   
-### [](#sec:cpp_supported_tool_chain)[支持的工具链](#sec:cpp_supported_tool_chain)
+<h3 id = '#sec:cpp_supported_tool_chain'> <a href = '#sec:cpp_supported_tool_chain'>支持的工具链</a> </h3>
 
 Gradle提供了使用不同工具链执行相同构建的功能。当您构建本机二进制文件时，Gradle会尝试找到您的计算机上安装的可以构建二进制文件的工具链。Gradle选择可以为目标操作系统和体系结构构建的第一个工具链。将来，Gradle在选择工具链时将考虑源和ABI兼容性。
 
@@ -198,14 +198,14 @@ Gradle对主要操作系统上的三个主要工具链具有普遍支持：Clang
 [4](#_footnotedef_4
 "查看脚注。") ]（仅Windows）。据报道，使用Macports和Homebrew安装的GCC和Clang可以正常工作，但是尚未对此进行持续测试。
 
-#### [](#windows)[视窗](#windows)
+<h4 id = '#windows'> <a href = '#windows'>视窗</a> </h4>
 
 要在Windows上构建，请安装兼容版本的Visual Studio。C ++插件将发现Visual
 Studio安装并选择最新版本。无需弄乱环境变量或批处理脚本。在Cygwin Shell或Windows命令行中，此功能正常运行。
 
 或者，您可以将Cygwin或MinGW与GCC一起安装。目前不支持Clang。
 
-#### [](#macos)[苹果系统](#macos)
+<h4 id = '#macos'> <a href = '#macos'>苹果系统</a> </h4>
 
 要在macOS上构建，您应该安装Xcode。C ++插件将使用系统PATH发现Xcode的安装。
 
@@ -214,11 +214,11 @@ C ++插件还可以与Macports或Homebrew [
 "查看脚注。") ]一起安装的GCC和Clang一起使用。要使用Macports或Homebrew之一，您需要将Macports /
 Homebrew添加到系统PATH。
 
-#### [](#linux)[的Linux](#linux)
+<h4 id = '#linux'> <a href = '#linux'>的Linux</a> </h4>
 
 要在Linux上构建，请安装兼容版本的GCC或Clang。C ++插件将使用系统PATH发现GCC或Clang。
 
-### [](#sec:custom_cpp_source_set_paths)[自定义文件和目录位置](#sec:custom_cpp_source_set_paths)
+<h3 id = '#sec:custom_cpp_source_set_paths'> <a href = '#sec:custom_cpp_source_set_paths'>自定义文件和目录位置</a> </h3>
 
 假设您有一个旧版库项目，该项目将 _src_ 目录用于生产代码和专用标头，并 _包含_
 用于导出标头的目录。传统的目录结构不起作用，因此您需要告诉Gradle在哪里可以找到源文件和头文件。您可以通过`application`或`library`脚本块执行此操作。
@@ -251,7 +251,7 @@ build.gradle.kts
 
 现在Gradle将只在 _src中_ 直接搜索源和私有头，在 _include中_ 搜索公共头。
 
-### [](#sec:custom_cpp_compile_link)[更改编译器和链接器选项](#sec:custom_cpp_compile_link)
+<h3 id = '#sec:custom_cpp_compile_link'> <a href = '#sec:custom_cpp_compile_link'>更改编译器和链接器选项</a> </h3>
 
 大多数的编译器和连接选项是通过相应的任务访问，如，和。这些任务分别为[CppCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.cpp.tasks.CppCompile.html)，[LinkSharedLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.LinkSharedLibrary.html)和[CreateStaticLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.CreateStaticLibrary.html)类型。阅读任务参考以获取最新，最全面的选项列表。`compile
 _Variant_ Cpp``link _Variant_``create
@@ -353,7 +353,7 @@ build.gradle.kts
         }
     }
 
-### [](#sec:select_cpp_target_machines)[选择目标机器](#sec:select_cpp_target_machines)
+<h3 id = '#sec:select_cpp_target_machines'> <a href = '#sec:select_cpp_target_machines'>选择目标机器</a> </h3>
 
 默认情况下，Gradle将尝试为主机操作系统和体系结构创建C
 ++二进制变体。通过`TargetMachine`在`application`或`library`脚本块上指定的设置，可以覆盖此设置：
@@ -382,7 +382,7 @@ build.gradle.kts
         targetMachines.set(listOf(machines.windows.x86, machines.windows.x86_64, machines.macOS.x86_64, machines.linux.x86_64))
     }
 
-## [](#sec:cpp_packaging)[包装出版](#sec:cpp_packaging)
+<h2 id = '#sec:cpp_packaging'> <a href = '#sec:cpp_packaging'>包装出版</a> </h2>
 
 在本地环境中，打包和发布C ++项目的方式差异很大。Gradle带有默认值，但是可以实现自定义打包而没有任何问题。
 
@@ -392,11 +392,11 @@ build.gradle.kts
 
   * 对于应用程序，Gradle还支持在已知位置安装和运行具有所有共享库依赖项的可执行文件。
 
-## [](#sec:cleaning_cpp_build)[清理构建](#sec:cleaning_cpp_build)
+<h2 id = '#sec:cleaning_cpp_build'> <a href = '#sec:cleaning_cpp_build'>清理构建</a> </h2>
 
 C++应用程序和库插件`clean`通过使用[基本插件](https://docs.gradle.org/6.7.1/userguide/base_plugin.html)将任务添加到项目中。此任务只是删除`$buildDir`目录中的所有内容，因此为什么要始终将构建生成的文件放在其中。该任务是Delete的一个实例，您可以通过设置其`dir`属性来更改其删除的目录。
 
-## [](#sec:building_cpp_libraries)[构建C++库](#sec:building_cpp_libraries)
+<h2 id = '#sec:building_cpp_libraries'> <a href = '#sec:building_cpp_libraries'>构建C++库</a> </h2>
 
 库项目的独特之处在于它们被其他C ++项目使用（或“消耗”）。这意味着以二进制文件和标头发布的依赖元数据（以Gradle
 Module元数据的形式）至关重要。特别是，库的使用者应能够区分两种不同类型的依赖关系：仅依赖于编译库的依赖关系和也依赖于编译使用者的依赖关系。
@@ -407,7 +407,7 @@ _api_ 配置中。否则，依赖项是内部实现细节，应将其添加到 _
 
 如果不确定API和实现依赖项之间的区别，请参阅[C++库插件](https://docs.gradle.org/6.7.1/userguide/cpp_library_plugin.html#sec:cpp_library_api_vs_implementation)一章的详细说明。另外，您可以在相应的[样本中](https://docs.gradle.org/6.7.1/samples/sample_building_cpp_libraries.html)看到构建C++库的基本，实际[示例](https://docs.gradle.org/6.7.1/samples/sample_building_cpp_libraries.html)。
 
-## [](#sec:building_cpp_applications)[构建C++应用程序](#sec:building_cpp_applications)
+<h2 id = '#sec:building_cpp_applications'> <a href = '#sec:building_cpp_applications'>构建C++应用程序</a> </h2>
 
 有关更多详细信息，请参见“ [C++应用程序插件”](https://docs.gradle.org/6.7.1/userguide/cpp_application_plugin.html)一章，但这是您所获得内容的快速摘要：
 

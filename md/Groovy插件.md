@@ -21,7 +21,7 @@ _联合编译_
 请注意，如果您希望从[API/实现分离中](/md/Java库插件.md#sec:java_library_separation)受益，则还可以将`java-
 library`插件应用于Groovy项目。
 
-## [](#sec:groovy_usage)[用法](#sec:groovy_usage)
+<h2 id = '#sec:groovy_usage'> <a href = '#sec:groovy_usage'>用法</a> </h2>
 
 要使用Groovy插件，请在构建脚本中包含以下内容：
 
@@ -45,7 +45,7 @@ build.gradle.kts
         groovy
     }
 
-## [](#sec:groovy_tasks)[任务](#sec:groovy_tasks)
+<h2 id = '#sec:groovy_tasks'> <a href = '#sec:groovy_tasks'>任务</a> </h2>
 
 Groovy插件将以下任务添加到项目中。在[此处](/md/构建Java和JVM项目.md#sec:building_jvm_lang)可以找到有关更改对Java编译任务的依赖性的信息。
 
@@ -97,7 +97,7 @@ Groovy插件将以下依赖项添加到Java插件添加的任务中。
 
 图1. Groovy插件-任务
 
-## [](#sec:groovy_project_layout)[项目布局](#sec:groovy_project_layout)
+<h2 id = '#sec:groovy_project_layout'> <a href = '#sec:groovy_project_layout'>项目布局</a> </h2>
 
 Groovy插件采用了[Groovy Layout中](#groovylayout)所示的项目[布局](#groovylayout)。所有Groovy源目录都可以包含Groovy
 _和_ Java代码。Java源目录只能包含Java源代码。[[1](#_footnotedef_1"查看脚注。") ]这些目录都不需要存在或其中没有任何内容；Groovy插件将简单地编译找到的任何内容。
@@ -156,7 +156,7 @@ _和_ Java代码。Java源目录只能包含Java源代码。[[1](#_footnotedef_1
 
 给定源集的Groovy源文件。也可能包含用于联合编译的Java源文件。
 
-### [](#sec:changing_groovy_project_layout)[更改项目布局](#sec:changing_groovy_project_layout)
+<h3 id = '#sec:changing_groovy_project_layout'> <a href = '#sec:changing_groovy_project_layout'>更改项目布局</a> </h3>
 
 就像Java插件一样，Groovy插件允许您配置Groovy生产和测试源文件的自定义位置。
 
@@ -204,7 +204,7 @@ build.gradle.kts
         }
     }
 
-## [](#sec:groovy_dependency_management)[依赖管理](#sec:groovy_dependency_management)
+<h2 id = '#sec:groovy_dependency_management'> <a href = '#sec:groovy_dependency_management'>依赖管理</a> </h2>
 
 因为Gradle的构建语言是基于Groovy的，并且Gradle的某些部分是在Groovy中实现的，所以Gradle已经附带了Groovy库。尽管如此，Groovy项目仍需要显式声明一个Groovy依赖项。然后将在编译和运行时类路径上使用此依赖项。它还将分别用于掌握Groovy编译器和Groovydoc工具。
 
@@ -328,7 +328,7 @@ build.gradle.kts
         })
     }
 
-## [](#sec:automatic_configuration_of_groovyclasspath)[groovyClasspath的自动配置](#sec:automatic_configuration_of_groovyclasspath)
+<h2 id = '#sec:automatic_configuration_of_groovyclasspath'> <a href = '#sec:automatic_configuration_of_groovyclasspath'>groovyClasspath的自动配置</a> </h2>
 
 在`GroovyCompile`和`Groovydoc`任务消耗两个方面Groovy代码：对他们`classpath`，以及他们`groovyClasspath`。前者用于查找源代码引用的类，通常将包含Groovy库以及其他库。后者分别用于加载和执行Groovy编译器和Groovydoc工具，并且应仅包含Groovy库及其依赖项。
 
@@ -342,15 +342,15 @@ build.gradle.kts
 
 请注意，`-indy`每个jar的“ ”变体均指带有`invokedynamic`支持的版本。
 
-## [](#sec:groovy_convention_properties)[公约属性](#sec:groovy_convention_properties)
+<h2 id = '#sec:groovy_convention_properties'> <a href = '#sec:groovy_convention_properties'>公约属性</a> </h2>
 
 Groovy插件不会向项目添加任何约定属性。
 
-## [](#sec:groovy_source_set_properties)[源集属性](#sec:groovy_source_set_properties)
+<h2 id = '#sec:groovy_source_set_properties'> <a href = '#sec:groovy_source_set_properties'>源集属性</a> </h2>
 
 Groovy插件将以下约定属性添加到项目中的每个源集。您可以在构建脚本中使用这些属性，就像它们是源集对象的属性一样。
 
-### [](#groovy_plugin_source_set_properties)[Groovy插件—源集属性](#groovy_plugin_source_set_properties)
+<h3 id = '#groovy_plugin_source_set_properties'> <a href = '#groovy_plugin_source_set_properties'>Groovy插件—源集属性</a> </h3>
 
 `groovy`—
 [SourceDirectorySet](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.file.SourceDirectorySet.html)（只读）
@@ -382,14 +382,14 @@ _默认值_ ：不为空
 
 Groovy插件还修改了一些源集属性：
 
-### [](#groovy_plugin_modified_source_set_properties)[Groovy插件-修改的源集属性](#groovy_plugin_modified_source_set_properties)
+<h3 id = '#groovy_plugin_modified_source_set_properties'> <a href = '#groovy_plugin_modified_source_set_properties'>Groovy插件-修改的源集属性</a> </h3>
 
 物业名称 | 更改  
 ---|---   
 `allJava`|添加`.java`在Groovy源目录中找到的所有文件。  
 `allSource`|添加在Groovy源目录中找到的所有源文件。  
   
-## [](#sec:groovyCompile)[Groovy编译](#sec:groovyCompile)
+<h2 id = '#sec:groovyCompile'> <a href = '#sec:groovyCompile'>Groovy编译</a> </h2>
 
 Groovy插件为项目中的每个源集添加了一个[GroovyCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.compile.GroovyCompile.html)任务。任务类型扩展了`JavaCompile`任务（请参阅[相关的Java插件部分](/md/构建Java和JVM项目.md#sec:compile)）。该`GroovyCompile`任务支持官方Groovy编译器的大多数配置选项。
 
@@ -402,7 +402,7 @@ Groovy插件为项目中的每个源集添加了一个[GroovyCompile](https://do
 `destinationDir`|`File`。|`_sourceSet_.groovy.outputDir`  
 `groovyClasspath`|[文件集](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/FileCollection.html)|`groovy`非空配置；在`classpath`其他地方找到Groovy库  
   
-### [](#sec:groovy_compilation_avoidance)[避免编译](#sec:groovy_compilation_avoidance)
+<h3 id = '#sec:groovy_compilation_avoidance'> <a href = '#sec:groovy_compilation_avoidance'>避免编译</a> </h3>
 
 _注意：自Gradle 5.6起，避免Groovy编译是一个令人振奋的功能。 存在已知的错误，因此请自行承担风险。_
 
@@ -454,7 +454,7 @@ build.gradle.kts
         astTransformationClasspath.from(astTransformation)
     }
 
-## [](#sec:incremental_groovy_compilation)[Groovy增量编译](#sec:incremental_groovy_compilation)
+<h2 id = '#sec:incremental_groovy_compilation'> <a href = '#sec:incremental_groovy_compilation'>Groovy增量编译</a> </h2>
 
 从5.6开始，Gradle引入了实验性的Groovy增量编译器。要为Groovy启用增量编译，您需要：
 
@@ -494,17 +494,17 @@ buildSrc/src/main/kotlin/myproject.groovy-conventions.gradle.kts
 
   * Groovy编译器不保留`@Retention`生成的注释类字节码（[GROOVY-9185](https://issues.apache.org/jira/browse/GROOVY-9185)），因此所有注释均为`RUNTIME`。这意味着对源保留批注的更改将不会触发完全重新编译。
 
-### [](#sec:incremental_groovy_compilation_known_issues)[已知的问题](#sec:incremental_groovy_compilation_known_issues)
+<h3 id = '#sec:incremental_groovy_compilation_known_issues'> <a href = '#sec:incremental_groovy_compilation_known_issues'>已知的问题</a> </h3>
 
 另请参阅[增量Java编译的已知问题](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#sec:incremental_compilation_known_issues)。
 
   * 对资源的更改不会触发重新编译，这可能会导致某些不正确的情况，例如[扩展模块](https://mrhaki.blogspot.com/2013/01/groovy-goodness-adding-extra-methods.html)。
 
-## [](#sec:groovy_cross_compilation)[针对Java 6或Java 7进行编译和测试](#sec:groovy_cross_compilation)
+<h2 id = '#sec:groovy_cross_compilation'> <a href = '#sec:groovy_cross_compilation'>针对Java 6或Java 7进行编译和测试</a> </h2>
 
 Groovy编译器将始终与用于启动Gradle的Java版本一起执行。您应该将`sourceCompatibility`和设置`targetCompatibility`为`1.6`或`1.7`。如果您还具有Java源文件，则可以按照与[Java插件](/md/构建Java和JVM项目.md#sec:java_cross_compilation)相同的步骤进行操作，以确保使用正确的Java编译器。
 
-### [](#example_configure_java_6_build_for_groovy)[示例：为Groovy配置Java 6构建](#example_configure_java_6_build_for_groovy)
+<h3 id = '#example_configure_java_6_build_for_groovy'> <a href = '#example_configure_java_6_build_for_groovy'>示例：为Groovy配置Java 6构建</a> </h3>
 
 gradle.properties
 

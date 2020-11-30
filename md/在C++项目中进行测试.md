@@ -15,7 +15,7 @@
 
 但是首先，我们看一下Gradle中本机测试的基础。
 
-## [](#sec:cpp_testing_basics)[基础知识](#sec:cpp_testing_basics)
+<h2 id = '#sec:cpp_testing_basics'> <a href = '#sec:cpp_testing_basics'>基础知识</a> </h2>
 
 所有C
 ++测试都围绕一种任务类型运行：[RunTestExecutable](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.tasks.RunTestExecutable.html)。这将运行使用任何测试框架构建的单个测试可执行文件，并使用可执行文件的退出代码断言执行成功。没有收集测试用例结果，也没有生成报告。
@@ -34,7 +34,7 @@
 
 该[RunTestExecutable](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.tasks.RunTestExecutable.html)任务有许多配置选项。在本章的其余部分中，我们将介绍其中的一些。
 
-## [](#sec:cpp_test_execution)[测试执行](#sec:cpp_test_execution)
+<h2 id = '#sec:cpp_test_execution'> <a href = '#sec:cpp_test_execution'>测试执行</a> </h2>
 
 Gradle在单独的（“分叉”）过程中执行测试。
 

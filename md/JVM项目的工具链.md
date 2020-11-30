@@ -17,7 +17,7 @@
 Java工具链（从现在开始简称为工具链）是一组工具，通常取自本地JRE /
 JDK安装，用于配置构建的不同方面。编译任务可以`javac`用作其编译器，而test和exec任务可以使用该`java`命令，同时`javadoc`将用于生成文档。
 
-## [](#sec:consuming)[消费工具链](#sec:consuming)
+<h2 id = '#sec:consuming'> <a href = '#sec:consuming'>消费工具链</a> </h2>
 
 构建可以通过声明所需的Java语言版本来全局定义其目标工具链：
 
@@ -60,7 +60,7 @@ _运行测试_ 可以利用工具链的支持`Test`。
   
 ╚═════════════════════════════    
   
-## [](#specify_custom_toolchains_for_individual_tasks)[为个别任务指定自定义工具链](#specify_custom_toolchains_for_individual_tasks)
+<h2 id = '#specify_custom_toolchains_for_individual_tasks'> <a href = '#specify_custom_toolchains_for_individual_tasks'>为个别任务指定自定义工具链</a> </h2>
 
 如果要调整用于特定任务的工具链，可以指定任务使用的确切工具。例如，该`Test`任务公开了一个`JavaLauncher`属性，该属性定义了用于启动测试的java可执行文件。
 
@@ -111,7 +111,7 @@ list/build.gradle.kts
 
   * A`JavadocTool`是`Javadoc`任务使用的工具
 
-### [](#integration_with_tasks_relying_on_a_java_executable_or_java_home)[与依赖Java可执行文件或Java主目录的任务集成](#integration_with_tasks_relying_on_a_java_executable_or_java_home)
+<h3 id = '#integration_with_tasks_relying_on_a_java_executable_or_java_home'> <a href = '#integration_with_tasks_relying_on_a_java_executable_or_java_home'>与依赖Java可执行文件或Java主目录的任务集成</a> </h3>
 
 可以使用Java可执行文件的路径或Java主目录配置的任何任务都可以从工具链中受益。
 
@@ -147,7 +147,7 @@ build.gradle.kts
 
 同样，这样做`compiler.get().executablePath`会为您`javac`提供给定工具链的完整路径。但是请注意，这可能会急切地实现（并提供）工具链。
 
-## [](#sec:auto_detection)[自动检测已安装的工具链](#sec:auto_detection)
+<h2 id = '#sec:auto_detection'> <a href = '#sec:auto_detection'>自动检测已安装的工具链</a> </h2>
 
 默认情况下，Gradle自动检测本地JRE / JDK安装，因此用户不需要进一步的配置。以下是JVM自动检测支持的常见程序包管理器和位置的列表。
 
@@ -167,7 +167,7 @@ build.gradle.kts
 
   * [SDKMAN！](https://sdkman.io/)
 
-### [](#sub:disable_auto_detect)[如何禁用自动检测](#sub:disable_auto_detect)
+<h3 id = '#sub:disable_auto_detect'> <a href = '#sub:disable_auto_detect'>如何禁用自动检测</a> </h3>
 
 为了禁用自动检测，可以使用`org.gradle.java.installations.auto-detect`Gradle属性：
 
@@ -175,7 +175,7 @@ build.gradle.kts
 
   * 或放入`org.gradle.java.installations.auto-detect=false`您的`gradle.properties`文件中。
 
-## [](#sec:provisioning)[自动配置](#sec:provisioning)
+<h2 id = '#sec:provisioning'> <a href = '#sec:provisioning'>自动配置</a> </h2>
 
 如果Gradle找不到与构建要求匹配的本地可用工具链，它将自动尝试从AdoptOpenJDK下载它。默认情况下，它将请求与当前操作系统和体系结构匹配的HotSpot
 JDK。预配JDK安装在[Gradle用户主目录中](/md/Gradle目录和文件的使用.md#dir:gradle_user_home)。
@@ -200,7 +200,7 @@ v3兼容的另一台服务器，则可以使Gradle使用其他主机。为此，
   
 ╚═════════════════════════════    
   
-### [](#sub:disable_auto_provision)[如何禁用自动配置](#sub:disable_auto_provision)
+<h3 id = '#sub:disable_auto_provision'> <a href = '#sub:disable_auto_provision'>如何禁用自动配置</a> </h3>
 
 为了禁用自动配置，可以使用`org.gradle.java.installations.auto-download`Gradle属性：
 
@@ -208,7 +208,7 @@ v3兼容的另一台服务器，则可以使Gradle使用其他主机。为此，
 
   * 或把`org.gradle.java.installations.auto-download=false`成一个`gradle.properties`文件。
 
-## [](#sec:custom_loc)[自定义工具链位置](#sec:custom_loc)
+<h2 id = '#sec:custom_loc'> <a href = '#sec:custom_loc'>自定义工具链位置</a> </h2>
 
 如果自动检测本地工具链不足或被禁用，则可以通过其他方法让Gradle知道已安装的工具链。
 
@@ -224,7 +224,7 @@ v3兼容的另一台服务器，则可以使Gradle使用其他主机。为此，
     
     org.gradle.java.installations.paths = / custom / path / jdk1.8，/ shared / jre11
 
-## [](#sec:plugins)[插件作者的工具链](#sec:plugins)
+<h2 id = '#sec:plugins'> <a href = '#sec:plugins'>插件作者的工具链</a> </h2>
 
 需要JDK中的工具的自定义任务应将`Property<T>`带有所需工具的公开为通用类型。通过`JavaToolchainService`在插件或任务中注入，也可以通过`JavaToolchainSpec`从`java`项目扩展名中获取来在这些属性中连接约定。下面的示例展示了如何使用默认工具链作为约定，同时允许用户针对每个任务单独配置工具链。
 

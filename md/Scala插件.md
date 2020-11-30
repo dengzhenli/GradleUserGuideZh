@@ -26,7 +26,7 @@ _联合编译_
 请注意，如果您希望从[API/实现分离中](/md/Java库插件.md#sec:java_library_separation)受益，还可以将`java-
 library`插件应用于Scala项目。
 
-## [](#sec:scala_usage)[用法](#sec:scala_usage)
+<h2 id = '#sec:scala_usage'> <a href = '#sec:scala_usage'>用法</a> </h2>
 
 要使用Scala插件，请在构建脚本中包含以下内容：
 
@@ -50,7 +50,7 @@ build.gradle.kts
         scala
     }
 
-## [](#sec:scala_tasks)[任务](#sec:scala_tasks)
+<h2 id = '#sec:scala_tasks'> <a href = '#sec:scala_tasks'>任务</a> </h2>
 
 Scala插件将以下任务添加到项目中。在[此处](/md/构建Java和JVM项目.md#sec:building_jvm_lang)可以找到有关更改对Java编译任务的依赖性的信息。
 
@@ -100,7 +100,7 @@ Scala插件将以下依赖项添加到Java插件添加的任务中。
 
 图1. Scala插件-任务
 
-## [](#sec:scala_project_layout)[项目布局](#sec:scala_project_layout)
+<h2 id = '#sec:scala_project_layout'> <a href = '#sec:scala_project_layout'>项目布局</a> </h2>
 
 Scala插件采用如下所示的项目布局。所有的Scala源目录都可以包含Scala _和_
 Java代码。Java源目录只能包含Java源代码。这些目录都不需要存在或包含任何内容。Scala插件将简单地编译找到的任何内容。
@@ -159,7 +159,7 @@ Java代码。Java源目录只能包含Java源代码。这些目录都不需要�
 
 给定源集的Scala源文件。也可能包含用于联合编译的Java源文件。
 
-### [](#sec:changing_scala_project_layout)[更改项目布局](#sec:changing_scala_project_layout)
+<h3 id = '#sec:changing_scala_project_layout'> <a href = '#sec:changing_scala_project_layout'>更改项目布局</a> </h3>
 
 就像Java插件一样，Scala插件允许您配置Scala生产和测试源文件的自定义位置。
 
@@ -205,7 +205,7 @@ build.gradle.kts
         }
     }
 
-## [](#sec:scala_dependency_management)[依赖管理](#sec:scala_dependency_management)
+<h2 id = '#sec:scala_dependency_management'> <a href = '#sec:scala_dependency_management'>依赖管理</a> </h2>
 
 Scala项目需要声明一个`scala-
 library`依赖项。然后将在编译和运行时类路径上使用此依赖项。它还将分别用于获取Scala编译器和Scaladoc工具。[[1](#_footnotedef_1"查看脚注。") ]
@@ -266,7 +266,7 @@ build.gradle.kts
         testImplementation("org.scala-lang:scala-library:2.11.1")
     }
 
-## [](#sec:configure_scala_classpath)[自动配置scalaClasspath](#sec:configure_scala_classpath)
+<h2 id = '#sec:configure_scala_classpath'> <a href = '#sec:configure_scala_classpath'>自动配置scalaClasspath</a> </h2>
 
 在`ScalaCompile`和`ScalaDoc`任务消耗两个方面Scala代码：对他们`classpath`，以及他们`scalaClasspath`。前者用于查找源代码引用的类，通常将`scala-
 library`与其他库一起包含。后者分别用于加载和执行Scala编译器和Scaladoc工具，并且应仅包含`scala-compiler`库及其依赖项。
@@ -277,7 +277,7 @@ library`与其他库一起包含。后者分别用于加载和执行Scala编译�
 
   * 否则，任务的执行将失败，并显示一条消息，提示`scalaClasspath`无法推断。
 
-## [](#sec:configure_zinc_compiler)[配置Zinc编译器](#sec:configure_zinc_compiler)
+<h2 id = '#sec:configure_zinc_compiler'> <a href = '#sec:configure_zinc_compiler'>配置Zinc编译器</a> </h2>
 
 Scala插件使用名为的配置`zinc`来解析[Zinc编译器](https://github.com/typesafehub/zinc)及其依赖项。Gradle将提供Zinc的默认版本，但是如果您需要使用特定的Zinc版本，则可以对其进行更改。Gradle支持Zinc及更高版本的1.2.0。
 
@@ -313,7 +313,7 @@ Gradle版本 | 支持的锌版本 | 锌座标 | 所需的Scala版本 | 支持的
 6.0及更高版本|[SBT锌](https://github.com/sbt/zinc)。1.2.0及更高版本。|`org.scala-sbt:zinc_2.12`|_运行_ Zinc`2.12.x`需要Scala 。 __|`2.10.x`通过Scala`2.13.x`可以编译。  
 1.x至5.x|[**不推荐使用的** TypesafeZinc编译器。](https://github.com/typesafehub/zinc)版本0.3.0及更高版本，但0.3.2至0.3.5.2除外。|`com.typesafe.zinc:zinc`|_运行_ Zinc`2.10.x`需要Scala 。 __|`2.9.x`通过Scala`2.12.x`可以编译。  
   
-## [](#sec:scala_compiler_plugins)[将插件添加到Scala编译器](#sec:scala_compiler_plugins)
+<h2 id = '#sec:scala_compiler_plugins'> <a href = '#sec:scala_compiler_plugins'>将插件添加到Scala编译器</a> </h2>
 
 Scala插件添加了一个名为的配置`scalaCompilerPlugins`，该配置用于声明和解析可选的编译器插件。
 
@@ -339,11 +339,11 @@ build.gradle.kts
         scalaCompilerPlugins("org.typelevel:kind-projector_2.13.1:0.11.0")
     }
 
-## [](#sec:scala_convention_properties)[公约属性](#sec:scala_convention_properties)
+<h2 id = '#sec:scala_convention_properties'> <a href = '#sec:scala_convention_properties'>公约属性</a> </h2>
 
 Scala插件不会向项目添加任何约定属性。
 
-## [](#sec:scala_source_set_properties)[源集属性](#sec:scala_source_set_properties)
+<h2 id = '#sec:scala_source_set_properties'> <a href = '#sec:scala_source_set_properties'>源集属性</a> </h2>
 
 Scala插件将以下约定属性添加到项目中的每个源集。您可以在构建脚本中使用这些属性，就像它们是源集对象的属性一样。
 
@@ -379,7 +379,7 @@ Scala插件还修改了一些源集属性：
 `allJava`|添加`.java`在Scala源目录中找到的所有文件。  
 `allSource`|添加在Scala源目录中找到的所有源文件。  
   
-## [](#sec:scala_compiling_in_external_process)[在外部过程中进行编译](#sec:scala_compiling_in_external_process)
+<h2 id = '#sec:scala_compiling_in_external_process'> <a href = '#sec:scala_compiling_in_external_process'>在外部过程中进行编译</a> </h2>
 
 Scala编译在外部过程中进行。
 
@@ -411,7 +411,7 @@ build.gradle.kts
         }
     }
 
-## [](#sec:scala_incremental_compilation)[增量编译](#sec:scala_incremental_compilation)
+<h2 id = '#sec:scala_incremental_compilation'> <a href = '#sec:scala_incremental_compilation'>增量编译</a> </h2>
 
 通过仅编译自上次编译以来其源代码已更改的类以及受这些更改影响的类，增量编译可以显着减少Scala编译时间。如开发时经常这样做，当频繁编译较小的代码增量时，它特别有效。
 
@@ -451,7 +451,7 @@ DATE`照常执行该任务。
 
 请注意，不支持Zinc基于Nailgun的守护程序模式。取而代之的是，我们计划增强Gradle自己的编译器守护进程，以在Gradle调用中保持活动状态，并重用相同的Scala编译器。预计这将为Scala编译带来另一个显着的加速。
 
-## [](#sec:scala_cross_compilation)[针对Java 6或Java 7进行编译和测试](#sec:scala_cross_compilation)
+<h2 id = '#sec:scala_cross_compilation'> <a href = '#sec:scala_cross_compilation'>针对Java 6或Java 7进行编译和测试</a> </h2>
 
 Scala编译器会忽略Gradle的`targetCompatibility`和`sourceCompatibility`设置。在Scala
 2.11中，Scala编译器始终将其编译为与Java 6兼容的字节码。在Scala 2.12中，Scala编译器始终将其编译为Java
@@ -531,11 +531,11 @@ build.gradle.kts
         executable = javaExecutable("javadoc")
     }
 
-## [](#sec:eclipse_integration)[Eclipse整合](#sec:eclipse_integration)
+<h2 id = '#sec:eclipse_integration'> <a href = '#sec:eclipse_integration'>Eclipse整合</a> </h2>
 
 当Eclipse插件遇到Scala项目时，它会添加其他配置，以使该项目可以立即使用Scala IDE。具体来说，该插件添加了Scala性质和依赖项容器。
 
-## [](#sec:intellij_idea_integration)[IntelliJ IDEA集成](#sec:intellij_idea_integration)
+<h2 id = '#sec:intellij_idea_integration'> <a href = '#sec:intellij_idea_integration'>IntelliJ IDEA集成</a> </h2>
 
 当IDEA插件遇到Scala项目时，它会添加其他配置，以使该项目开箱即可使用IDEA。具体来说，该插件添加了一个Scala SDK（IntelliJ
 IDEA 14+）和一个Scala编译器库，该库与项目的类路径上的Scala版本匹配。Scala插件与IntelliJ

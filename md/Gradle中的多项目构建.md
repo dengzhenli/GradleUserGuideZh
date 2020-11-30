@@ -9,7 +9,7 @@
 
 Gradle中的多项目构建由一个根项目和一个或多个子项目组成。
 
-## [](#sec:creating_multi_project_builds)[创建多项目构建](#sec:creating_multi_project_builds)
+<h2 id = '#sec:creating_multi_project_builds'> <a href = '#sec:creating_multi_project_builds'>创建多项目构建</a> </h2>
 
 基本的多项目构建包含一个根项目和一个子项目。这是一个多项目构建的结构，其中包含一个名为的子项目`app`：
 
@@ -125,7 +125,7 @@ app / src / main / java / com / example / Hello.java
 
 这就是创建基本的多项目构建的简单程度。
 
-## [](#sec:adding_subprojects)[添加子项目](#sec:adding_subprojects)
+<h2 id = '#sec:adding_subprojects'> <a href = '#sec:adding_subprojects'>添加子项目</a> </h2>
 
 假设我们要向`lib`先前创建的项目添加另一个子项目。我们需要做的就是`include`在根设置文件中添加另一条语句：
 
@@ -182,7 +182,7 @@ Project layout
 接下来，将探讨如何[在子项目之间共享](/md/在子项目之间共享构建逻辑.md)构建逻辑[以及子项目](/md/在子项目之间共享构建逻辑.md)
 如何[相互依赖](/md/声明子项目之间的依赖关系.md)。
 
-## [](#naming_recommendations)[命名建议](#naming_recommendations)
+<h2 id = '#naming_recommendations'> <a href = '#naming_recommendations'>命名建议</a> </h2>
 
 随着项目的发展，命名和一致性变得越来越重要。为了使您的构建可维护，我们建议以下操作：
 

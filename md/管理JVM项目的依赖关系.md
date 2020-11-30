@@ -11,7 +11,7 @@
 
 本章说明如何将基本的依赖管理概念应用于基于JVM的项目。有关依赖管理的详细介绍，请参见[Gradle中的依赖管理](/md/Gradle中的依赖管理.md)。
 
-## [](#sec:setting_up_a_standard_build_script_java_tutorial)[剖析典型的构建脚本](#sec:setting_up_a_standard_build_script_java_tutorial)
+<h2 id = '#sec:setting_up_a_standard_build_script_java_tutorial'> <a href = '#sec:setting_up_a_standard_build_script_java_tutorial'>剖析典型的构建脚本</a> </h2>
 
 让我们看一下基于JVM的项目的非常简单的构建脚本。它应用了[Java库插件](/md/Java库插件.md#java_library_plugin)，该[插件](/md/Java库插件.md#java_library_plugin)会自动引入标准项目布局，提供执行典型工作的任务以及对依赖项管理的充分支持。
 
@@ -61,7 +61,7 @@ build.gradle.kts
 {}](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories\(groovy.lang.Closure\))定义的Maven
 Central存储库中进行查找。以下各节将更详细地说明每个方面。
 
-## [](#sec:module_dependencies_java_tutorial)[声明模块依赖性](#sec:module_dependencies_java_tutorial)
+<h2 id = '#sec:module_dependencies_java_tutorial'> <a href = '#sec:module_dependencies_java_tutorial'>声明模块依赖性</a> </h2>
 
 有多种[类型的依赖关系](/md/声明依赖.md#sec:dependency-
 types)，你可以声明。一种这样的类型是 _模块依赖性_
@@ -92,7 +92,7 @@ build.gradle.kts
 
 要了解有关定义依赖项的更多信息，请[参阅声明依赖项](/md/声明依赖.md)。
 
-## [](#sec:configurations_java_tutorial)[使用依赖项配置](#sec:configurations_java_tutorial)
+<h2 id = '#sec:configurations_java_tutorial'> <a href = '#sec:configurations_java_tutorial'>使用依赖项配置</a> </h2>
 
 一个[配置](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.Configuration.html)是一组命名的依赖和文物。有一个三个主要目的
 _配置_ ：
@@ -138,7 +138,7 @@ api
 
 各种插件添加了进一步的标准配置。您还可以通过[Project.configurations{}](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:configurations\(groovy.lang.Closure\))在构建中定义自己的自定义配置。有关定义和自定义依赖项配置的详细信息，请参阅[什么是](/md/声明依赖.md#sec:what-are-dependency-configurations)依赖项配置。
 
-## [](#sec:repositories_java_tutorial)[声明通用Java存储库](#sec:repositories_java_tutorial)
+<h2 id = '#sec:repositories_java_tutorial'> <a href = '#sec:repositories_java_tutorial'>声明通用Java存储库</a> </h2>
 
 Gradle如何知道在哪里可以找到外部依赖文件？Gradle在 _存储库中_
 查找它们。库是模块，通过组织的集合`group`，`name`和`version`。Gradle了解不同的[存储库类型](/md/声明存储库.md#sec:repository-
@@ -198,7 +198,7 @@ build.gradle.kts
 
 要了解有关定义存储库的更多信息，请[参阅声明存储库](/md/声明存储库.md)。
 
-## [](#sec:publishing_artifacts_java_tutorial)[发布工件](#sec:publishing_artifacts_java_tutorial)
+<h2 id = '#sec:publishing_artifacts_java_tutorial'> <a href = '#sec:publishing_artifacts_java_tutorial'>发布工件</a> </h2>
 
 要了解有关发布工件的更多信息，请查看[发布插件](/md/将项目发布为模块.md)。
 

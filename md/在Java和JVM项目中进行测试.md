@@ -34,7 +34,7 @@
 
 但是首先，我们看一下Gradle中JVM测试的基础。
 
-## [](#sec:java_testing_basics)[基础知识](#sec:java_testing_basics)
+<h2 id = '#sec:java_testing_basics'> <a href = '#sec:java_testing_basics'>基础知识</a> </h2>
 
 所有JVM测试都围绕一种任务类型：[Test](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)。这将使用任何受支持的测试库（JUnit，JUnit
 Platform或TestNG）运行一系列测试用例，并整理结果。然后，您可以通过[TestReport](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.TestReport.html)任务类型的实例将这些结果转换为报告。
@@ -95,7 +95,7 @@ build.gradle.kts
 
 如果要`Test`使用自己的测试类集来设置自己的任务，那么最简单的方法是创建自己的源集和`Test`任务实例，如[配置集成测试中](#sec:configuring_java_integration_tests)所示。
 
-## [](#sec:test_execution)[测试执行](#sec:test_execution)
+<h2 id = '#sec:test_execution'> <a href = '#sec:test_execution'>测试执行</a> </h2>
 
 Gradle在独立于主构建过程的单独（“分叉”）JVM中执行测试。这样可以防止类路径污染和构建过程中过多的内存消耗。它还允许您使用与构建使用的JVM参数不同的JVM参数运行测试。
 
@@ -148,7 +148,7 @@ Gradle在独立于主构建过程的单独（“分叉”）JVM中执行测试�
   
 ╚═════════════════════════════    
   
-## [](#test_filtering)[测试过滤](#test_filtering)
+<h2 id = '#test_filtering'> <a href = '#test_filtering'>测试过滤</a> </h2>
 
 运行测试套件的子集是常见的要求，例如，当您修复错误或开发新的测试用例时。Gradle提供了两种机制来执行此操作：
 
@@ -218,7 +218,7 @@ build.gradle.kts
   
 以下两节介绍简单类/方法名称和完全限定名称的特殊情况。
 
-### [](#simple_name_pattern)[简单名称模式](#simple_name_pattern)
+<h3 id = '#simple_name_pattern'> <a href = '#simple_name_pattern'>简单名称模式</a> </h3>
 
 从4.7开始，Gradle将以大写字母开头的模式作为简单的类名或类名+方法名。例如，以下命令行运行测试用例中的所有`SomeTestClass`测试，也可以只运行其中的一个，而不管它位于哪个程序包中：
 
@@ -232,7 +232,7 @@ build.gradle.kts
     
     gradle test --tests SomeTestClass.*someMethod*
 
-### [](#full_qualified_name_pattern)[完全限定的名称模式](#full_qualified_name_pattern)
+<h3 id = '#full_qualified_name_pattern'> <a href = '#full_qualified_name_pattern'>完全限定的名称模式</a> </h3>
 
 在4.7之前，或者如果模式不是以大写字母开头，则Gradle会将模式视为完全合格。因此，如果要使用测试类名称而不考虑其包，请使用`--tests
 *.SomeTestClass`。这里还有更多示例：
@@ -273,7 +273,7 @@ com.mypackage.foo”包或子包中的所有测试：
     
     gradle test --continuous --tests "com.mypackage.foo.*"
 
-## [](#test_reporting)[测试报告](#test_reporting)
+<h2 id = '#test_reporting'> <a href = '#test_reporting'>测试报告</a> </h2>
 
 该`Test`任务默认情况下会生成以下结果：
 
@@ -444,7 +444,7 @@ conventions`将项目的测试结果暴露给Gradle的[变体感知依赖管理�
 
 您应该注意，该`TestReport`类型合并了多个测试任务的结果，并且需要汇总各个测试类的结果。这意味着，如果给定的测试类由多个测试任务执行，则测试报告将包括该类的执行，但是很难区分该类的各个执行及其输出。
 
-## [](#sec:test_detection)[测试检测](#sec:test_detection)
+<h2 id = '#sec:test_detection'> <a href = '#sec:test_detection'>测试检测</a> </h2>
 
 默认情况下，Gradle将运行它检测到的所有测试，这是通过检查编译的测试类来完成的。根据所使用的测试框架，此检测使用不同的标准。
 
@@ -471,7 +471,7 @@ guide)，仅`includes`和`excludes`用于过滤测试类-`scanForTestClasses`无
   
 ╚═════════════════════════════    
   
-## [](#test_grouping)[测试分组](#test_grouping)
+<h2 id = '#test_grouping'> <a href = '#test_grouping'>测试分组</a> </h2>
 
 JUnit，JUnit Platform和TestNG允许对测试方法进行复杂的分组。
 
@@ -560,7 +560,7 @@ build.gradle.kts
         }
     }
 
-## [](#using_junit5)[使用JUnit5](#using_junit5)
+<h2 id = '#using_junit5'> <a href = '#using_junit5'>使用JUnit5</a> </h2>
 
 [JUnit 5](http://junit.org/junit5)是著名的JUnit测试框架的最新版本。与之前的版本不同，JUnit5是模块化的，并且由几个模块组成：
 
@@ -605,7 +605,7 @@ build.gradle.kts
   
 ╚═════════════════════════════    
   
-### [](#compiling_and_executing_junit_jupiter_tests)[编译和执行JUnitJupiter测试](#compiling_and_executing_junit_jupiter_tests)
+<h3 id = '#compiling_and_executing_junit_jupiter_tests'> <a href = '#compiling_and_executing_junit_jupiter_tests'>编译和执行JUnitJupiter测试</a> </h3>
 
 要在Gradle中启用JUnit Jupiter支持，您需要做的就是添加以下依赖项：
 
@@ -633,7 +633,7 @@ build.gradle.kts
 
 然后，您可以像平常一样将测试用例放入 _src / test / java中_ ，并使用执行它们`gradle test`。
 
-### [](#executing_legacy_tests_with_junit_vintage)[使用JUnitVintage执行旧式测试](#executing_legacy_tests_with_junit_vintage)
+<h3 id = '#executing_legacy_tests_with_junit_vintage'> <a href = '#executing_legacy_tests_with_junit_vintage'>使用JUnitVintage执行旧式测试</a> </h3>
 
 如果要在JUnit Platform上运行JUnit 3/4测试，或者甚至将它们与Jupiter测试混合使用，则应添加额外的JUnit Vintage
 Engine依赖项：
@@ -666,7 +666,7 @@ build.gradle.kts
 
 这样，您可以用来`gradle test`在JUnit Platform上测试JUnit 3/4测试，而无需重写它们。
 
-### [](#filtering_test_engine)[过滤测试引擎](#filtering_test_engine)
+<h3 id = '#filtering_test_engine'> <a href = '#filtering_test_engine'>过滤测试引擎</a> </h3>
 
 JUnit Platform允许您使用不同的测试引擎。JUnit当前提供了两种`TestEngine`开箱即用的实现： 
 [junit-jupiter-engine](https://junit.org/junit5/docs/current/api/org.junit.jupiter.engine/module-summary.html)和[junit-vintage-engine](https://junit.org/junit5/docs/current/api/org.junit.vintage.engine/module-summary.html)。
@@ -700,7 +700,7 @@ build.gradle.kts
         }
     }
 
-## [](#test_execution_order)[TestNG中的测试执行顺序](#test_execution_order)
+<h2 id = '#test_execution_order'> <a href = '#test_execution_order'>TestNG中的测试执行顺序</a> </h2>
 
 当您使用 _testng.xml_
 文件时，TestNG允许显式控制测试的执行顺序。没有这样的文件（或由[TestNGOptions.getSuiteXmlBuilder（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html#getSuiteXmlBuilder--)配置的等效文件[）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html#getSuiteXmlBuilder--)，您将无法指定测试执行顺序。但是，您
@@ -763,7 +763,7 @@ build.gradle.kts
         }
     }
 
-### [](#testNgParameterizedReporting)[TestNG参数化方法和报告](#testNgParameterizedReporting)
+<h3 id = '#testNgParameterizedReporting'> <a href = '#testNgParameterizedReporting'>TestNG参数化方法和报告</a> </h3>
 
 TestNG支持[参数化测试方法](http://testng.org/doc/documentation-
 main.html#parameters)，允许使用不同的输入多次执行特定的测试方法。Gradle在其测试方法执行的报告中包括参数值。
@@ -771,7 +771,7 @@ main.html#parameters)，允许使用不同的输入多次执行特定的测试�
 给定名为的参数化测试方法`aTestMethod`，该方法带有两个参数，将以name报告`aTestMethod(toStringValueOfParam1,
 toStringValueOfParam2)`。这使得识别特定迭代的参数值变得​​容易。
 
-## [](#sec:configuring_java_integration_tests)[配置集成测试](#sec:configuring_java_integration_tests)
+<h2 id = '#sec:configuring_java_integration_tests'> <a href = '#sec:configuring_java_integration_tests'>配置集成测试</a> </h2>
 
 项目的常见要求是以一种或另一种形式合并集成测试。他们的目的是验证项目的各个部分是否正常工作。与单元测试相比，这通常意味着它们需要特殊的执行设置和依赖性。
 
@@ -900,14 +900,14 @@ build.gradle.kts
 
 用户通常希望在单元测试之后运行集成测试，因为它们通常运行速度较慢，并且您希望构建在单元测试之前失败而不是在集成测试之后失败。这就是上面的示例添加一个`shouldRunAfter()`声明的原因。相对`mustRunAfter()`于此，它是首选的，以便Gradle在并行执行构建时具有更大的灵活性。
 
-## [](#sec:java_testing_modular)[测试Java模块](#sec:java_testing_modular)
+<h2 id = '#sec:java_testing_modular'> <a href = '#sec:java_testing_modular'>测试Java模块</a> </h2>
 
 如果您正在[开发Java模块](/md/Java库插件.md)，则本章中描述的所有内容仍然适用，并且可以使用任何受支持的测试框架。但是，根据测试执行期间是否需要可用的模块信息以及要强制执行的模块边界，需要考虑一些事项。在这种情况下，经常使用术语“
 _白盒测试”_ （停用或放宽模块边界）和“ _黑盒测试”_ （已设置模块边界）。白盒测试用于/需要用于单元测试，黑盒测试符合功能或集成测试要求。
 
 样本：[具有集成测试的JavaModules多项目](https://docs.gradle.org/6.7.1/samples/sample_java_modules_multi_project_with_integration_tests.html)
 
-### [](#whitebox_unit_test_execution_on_the_classpath)[在类路径上执行白盒单元测试](#whitebox_unit_test_execution_on_the_classpath)
+<h3 id = '#whitebox_unit_test_execution_on_the_classpath'> <a href = '#whitebox_unit_test_execution_on_the_classpath'>在类路径上执行白盒单元测试</a> </h3>
 
 为模块中的函数或类编写单元测试的最简单设置是在测试执行期间 _不_ 使用模块规范。为此，您只需要以与普通库一样的方式编写测试即可。如果您`module-
 info.java`的测试源集中（`src/test/java`）中没有文件，则在编译和测试运行时，该源集将被视为传统Java库。这意味着，所有依赖项（包括带有模块信息的Jar）都放在类路径上。好处是，您（或其他）模块的所有内部类都可以在测试中直接访问。对于单元测试，这可能是完全有效的设置，在这里，我们不必关心较大的模块结构，而只关心测试单个功能。
@@ -918,7 +918,7 @@ info.java`的测试源集中（`src/test/java`）中没有文件，则在编译�
   
 ╚═════════════════════════════    
   
-### [](#blackbox_integration_testing)[黑盒集成测试](#blackbox_integration_testing)
+<h3 id = '#blackbox_integration_testing'> <a href = '#blackbox_integration_testing'>黑盒集成测试</a> </h3>
 
 对于集成测试，您可以选择将测试集本身定义为附加模块。您可以通过将`module-
 info.java`文件添加到相应的源集（例如`integrationTests/java/module-
@@ -932,7 +932,7 @@ info.java`）中的方式类似于将主要源变成模块的方式。
   
 ╚═════════════════════════════    
   
-### [](#sec:java_testing_modular_patching)[白盒测试执行与模块修补](#sec:java_testing_modular_patching)
+<h3 id = '#sec:java_testing_modular_patching'> <a href = '#sec:java_testing_modular_patching'>白盒测试执行与模块修补</a> </h3>
 
 白盒测试的另一种方法是通过将测试 _修补_
 到被测模块中来保留在模块世界中。这样，模块边界保持不变，但是测试本身成为被测试模块的一部分，然后可以访问模块的内部。
@@ -981,7 +981,7 @@ build.gradle.kts
   
 ╚═════════════════════════════    
   
-## [](#sec:skipping_java_tests)[跳过测试](#sec:skipping_java_tests)
+<h2 id = '#sec:skipping_java_tests'> <a href = '#sec:skipping_java_tests'>跳过测试</a> </h2>
 
 如果要在运行构建时跳过测试，则有几种选择。您可以通过[命令行参数](/md/命令行界面.md#sec:excluding_tasks_from_the_command_line)或[在构建脚本中进行操作](/md/处理任务.md#sec:skipping_tasks)。要在命令行上执行此操作，可以使用`-x`或`--exclude-
 task`选项，如下所示：
@@ -1013,7 +1013,7 @@ build.gradle.kts
 
 在这种情况下，Gradle会将跳过的测试标记为“跳过”，而不是从构建中排除它们。
 
-## [](#sec:forcing_java_tests_to_run)[强制测试运行](#sec:forcing_java_tests_to_run)
+<h2 id = '#sec:forcing_java_tests_to_run'> <a href = '#sec:forcing_java_tests_to_run'>强制测试运行</a> </h2>
 
 在定义良好的版本中，您可以依靠Gradle仅在测试本身或生产代码发生更改时运行测试。但是，您可能会遇到测试依赖第三方服务或可能会更改但无法在构建中建模的其他情况。
 
@@ -1028,7 +1028,7 @@ _任何_
 任务。[](https://docs.gradle.org/6.7.1/userguide/base_plugin.html#sec:base_tasks)
 __
 
-## [](#sec:debugging_java_tests)[运行测试时进行调试](#sec:debugging_java_tests)
+<h2 id = '#sec:debugging_java_tests'> <a href = '#sec:debugging_java_tests'>运行测试时进行调试</a> </h2>
 
 在少数情况下，您想在测试运行时调试代码，如果可以在此时附加调试器，则可能会有所帮助。您可以将[Test.getDebug（）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:debug)属性设置为`true`或使用`--debug-
 jvm`命令行选项。
@@ -1050,9 +1050,9 @@ jvm`命令行选项。
 
 使用此配置，测试JVM的行为就像传递`--debug-jvm`参数时一样，但是它将侦听端口4455。
 
-## [](#sec:java_test_fixtures)[使用测试治具](#sec:java_test_fixtures)
+<h2 id = '#sec:java_test_fixtures'> <a href = '#sec:java_test_fixtures'>使用测试治具</a> </h2>
 
-### [](#producing_and_using_test_fixtures_within_a_single_project)[在单个项目中生产和使用测试夹具](#producing_and_using_test_fixtures_within_a_single_project)
+<h3 id = '#producing_and_using_test_fixtures_within_a_single_project'> <a href = '#producing_and_using_test_fixtures_within_a_single_project'>在单个项目中生产和使用测试夹具</a> </h3>
 
 测试装置通常用于设置被测代码，或提供旨在促进组件测试的实用程序。`java-test-
 fixtures`除了`java`或插件，Java项目还可以通过应用插件来启用测试装置支持`java-library`：
@@ -1150,7 +1150,7 @@ src / testFixtures / java / com / acme / Simpsons.java
     
         // ...
 
-### [](#declaring_dependencies_of_test_fixtures)[声明测试夹具的依赖性](#declaring_dependencies_of_test_fixtures)
+<h3 id = '#declaring_dependencies_of_test_fixtures'> <a href = '#declaring_dependencies_of_test_fixtures'>声明测试夹具的依赖性</a> </h3>
 
 与[Java库插件](/md/Java库插件.md)类似，测试装置公开了API和实现配置：
 
@@ -1189,7 +1189,7 @@ lib/build.gradle.kts
 值得注意的是，如果依赖性是测试夹具的 _实现_ 依赖性，那么 _在编译依赖于那些测试夹具_ 的 _测试时_ ，实现依赖性 _不会泄漏_
 到编译类路径中。这样可以改善关注点分离并更好地避免编译。
 
-### [](#consuming_test_fixtures_of_another_project)[消耗另一个项目的测试装置](#consuming_test_fixtures_of_another_project)
+<h3 id = '#consuming_test_fixtures_of_another_project'> <a href = '#consuming_test_fixtures_of_another_project'>消耗另一个项目的测试装置</a> </h3>
 
 测试装置不限于单个项目。通常，从属项目测试也需要依赖项的测试装置。使用`testFixtures`关键字可以很容易地做到这一点：
 
@@ -1219,7 +1219,7 @@ build.gradle.kts
         testImplementation(testFixtures(project(":lib")))
     }
 
-### [](#publishing_test_fixtures)[发布测试装置](#publishing_test_fixtures)
+<h3 id = '#publishing_test_fixtures'> <a href = '#publishing_test_fixtures'>发布测试装置</a> </h3>
 
 使用该`java-test-fixtures`插件的优点之一是发布了测试装置。按照惯例，测试装置将与具有`test-
 fixtures`分类器的工件一起发布。对于Maven和Ivy，带有该分类器的工件都将与常规工件一起简单发布。但是，如果使用`maven-

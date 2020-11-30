@@ -17,7 +17,7 @@
 
 应用Application插件还隐式应用[Distribution插件](https://docs.gradle.org/6.7.1/userguide/distribution_plugin.html#distribution_plugin)。一个`main`分布创建包起来的应用程序，包括代码依赖关系和生成的启动脚本。
 
-## [](#sec:application_usage)[构建JVM应用程序](#sec:application_usage)
+<h2 id = '#sec:application_usage'> <a href = '#sec:application_usage'>构建JVM应用程序</a> </h2>
 
 要使用应用程序插件，请在构建脚本中包括以下内容：
 
@@ -118,7 +118,7 @@ build.gradle.kts
         executableDir = "custom_bin_dir"
     }
 
-## [](#sec:application_modular)[使用Java模块系统构建应用程序](#sec:application_modular)
+<h2 id = '#sec:application_modular'> <a href = '#sec:application_modular'>使用Java模块系统构建应用程序</a> </h2>
 
 Gradle支持[Java模块](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)[插件文档](/md/Java库插件.md#sec:java_library_modular)的[相应部分中所述](/md/Java库插件.md#sec:java_library_modular)的[Java模块](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)的构建。Java模块也可以运行，并且您可以使用应用程序插件来运行和打包此类模块化应用程序。为此，除了要对非模块化应用程序进行操作之外，还需要做两件事。
 
@@ -182,7 +182,7 @@ build.gradle.kts
         modularity.inferModulePath.set(true)
     }
 
-## [](#sec:the_distribution)[建立发行版](#sec:the_distribution)
+<h2 id = '#sec:the_distribution'> <a href = '#sec:the_distribution'>建立发行版</a> </h2>
 
 可以通过[Distribution插件](https://docs.gradle.org/6.7.1/userguide/distribution_plugin.html#distribution_plugin)（自动应用）创建应用程序的[发行版](https://docs.gradle.org/6.7.1/userguide/distribution_plugin.html#distribution_plugin)。一个`main`分布与以下内容创建：
 
@@ -252,14 +252,14 @@ build.gradle.kts
 installDist`以创建应用程序的映像。您可以运行以创建包含发行版的ZIP，创建应用程序TAR或同时构建两者。`build/install/
 _projectName_``gradle distZip``gradle distTar``gradle assemble`
 
-### [](#sec:customizing_start_script_generation)[自定义启动脚本生成](#sec:customizing_start_script_generation)
+<h3 id = '#sec:customizing_start_script_generation'> <a href = '#sec:customizing_start_script_generation'>自定义启动脚本生成</a> </h3>
 
 该应用程序插件可以立即生成Unix（适用于Linux，macOS等）和Windows启动脚本。启动脚本使用定义为原始构建和运行时环境（例如`JAVA_OPTS`env
 var）的一部分的指定设置启动JVM 。默认脚本模板基于用于启动Gradle本身的相同脚本，这些脚本作为Gradle发行版的一部分提供。
 
 启动脚本是完全可定制的。有关更多详细信息和自定义示例，请参考[CreateStartScripts](https://docs.gradle.org/6.7.1/dsl/org.gradle.jvm.application.tasks.CreateStartScripts.html) 文档。
 
-## [](#sec:application_tasks)[任务](#sec:application_tasks)
+<h2 id = '#sec:application_tasks'> <a href = '#sec:application_tasks'>任务</a> </h2>
 
 Application插件将以下任务添加到项目中。
 
@@ -305,7 +305,7 @@ _取决于_ ：`jar`，`startScripts`
 
 创建完整的发行版TAR归档文件，包括运行时库和特定于OS的脚本。
 
-## [](#sec:application_extension)[应用扩展](#sec:application_extension)
+<h2 id = '#sec:application_extension'> <a href = '#sec:application_extension'>应用扩展</a> </h2>
 
 应用程序插件将扩展添加到项目中，您可以使用它来配置其行为。有关扩展中可用属性的更多信息，请参见[JavaApplication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.plugins.JavaApplication.html)
 DSL文档。
@@ -330,11 +330,11 @@ build.gradle.kts
         executableDir = "custom_bin_dir"
     }
 
-## [](#sec:application_licensing)[发牌](#sec:application_licensing)
+<h2 id = '#sec:application_licensing'> <a href = '#sec:application_licensing'>发牌</a> </h2>
 
 与您的应用程序捆绑在一起的Gradle启动脚本已获得[Apache 2.0软件许可的许可](https://www.apache.org/licenses/LICENSE-2.0) 。这不会影响您的应用程序，您可以选择许可该应用程序。
 
-## [](#sec:application_convention_properties)[约定属性（已弃用）](#sec:application_convention_properties)
+<h2 id = '#sec:application_convention_properties'> <a href = '#sec:application_convention_properties'>约定属性（已弃用）</a> </h2>
 
 该插件还向项目添加了一些约定属性，您可以使用它们来配置其行为。这些 **已** 被上述扩展 **弃用**
 并被其取代。有关它们的信息，请参阅[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#N14FED)

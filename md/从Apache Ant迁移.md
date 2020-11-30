@@ -20,8 +20,7 @@ version 6.7.1
 
 我们将首先概述在将构建从Ant迁移到Gradle时应考虑的事项，并提供一些有关如何进行的一般指导。
 
-##
-[](#migant:general_guidelines)[一般准则](#migant:general_guidelines)
+<h2 id = '#migant:general_guidelines'> <a href = '#migant:general_guidelines'>一般准则</a> </h2>
 
 当您承诺将构建从Ant迁移到Gradle时，应牢记既有内容又要在何处结束的性质。您是否需要Gradle构建来反映现有Ant构建的结构？还是您想改用Gradle惯用的方法？您正在寻找的主要好处是什么？
 
@@ -86,8 +85,7 @@ Gradle提供了许多配置选项，可以实现高度的自定义。这些选�
 
 本章的其余部分介绍了您在迁移期间可能要处理的一些常见方案，例如依赖关系管理和使用Ant任务。
 
-##
-[](#migant:imported_builds)[使用导入的版本](#migant:imported_builds)
+<h2 id = '#migant:imported_builds'> <a href = '#migant:imported_builds'>使用导入的版本</a> </h2>
 
 
 许多迁移的第一步将[导入一个Ant build](/md/从Gradle使用Ant.md#sec:import_ant_build)使用`ant.importBuild()`。如果这样做，那么如何在不立即替换所有内容的情况下过渡到标准Gradle构建？
@@ -248,8 +246,7 @@ build.gradle.kts
 
 例如，如果Ant构建遵循相当标准的方法进行编译，静态资源，打包和单元测试，则可能值得将所有这些一起迁移。但是，如果构建对编译后的类执行了一些额外的处理，或者在处理静态资源时执行了一些独特的处理，则可能值得将这些任务分成单独的阶段。
 
-##
-[](#migant:managing_dependencies)[管理依赖](#migant:managing_dependencies)
+<h2 id = '#migant:managing_dependencies'> <a href = '#migant:managing_dependencies'>管理依赖</a> </h2>
 
 Ant构建通常采用以下两种方法之一来处理二进制[依赖性](/md/依赖管理术语.md#sub:terminology_dependency)（例如库）：
 
@@ -259,8 +256,7 @@ Ant构建通常采用以下两种方法之一来处理二进制[依赖性](/md/�
 
 他们每个人都需要使用不同的技术来迁移到Gradle，但是无论哪种情况，您都会发现过程很简单。我们将在以下各节中详细介绍每种方案。
 
-###
-[](#migant:filesystem_deps)[从目录服务依赖项](#migant:filesystem_deps)
+<h3 id = '#migant:filesystem_deps'> <a href = '#migant:filesystem_deps'>从目录服务依赖项</a> </h3>
 
 当您尝试迁移将其依赖项存储在本地或网络上的文件系统上的构建时，应考虑是否最终要使用远程存储库移至托管依赖项。这是因为您可以通过以下两种方式之一将文件系统依赖项合并到Gradle构建中：
 
@@ -340,8 +336,7 @@ __ |
   
 ---|---  
   
-###
-[](#migant:ivy_deps)[迁移Ivy依赖](#migant:ivy_deps)
+<h3 id = '#migant:ivy_deps'> <a href = '#migant:ivy_deps'>迁移Ivy依赖</a> </h3>
 
 Apache Ivy是一个独立的依赖项管理工具，已与Ant一起广泛使用。它的工作方式与Gradle类似。实际上，它们都允许您
 
@@ -433,8 +428,7 @@ build.gradle.kts
 
 配置也是文件集合，因此为什么可以在`from()`配置中使用它。您可以使用类似的技术将配置附加到编译任务或生成文档的任务。有关更多示例和有关Gradle文件API的信息，请参见[使用文件](/md/编写构建脚本.md#working_with_files)一章。
 
-##
-[](#migant:ivy_publishing)[发布工件](#migant:ivy_publishing)
+<h2 id = '#migant:ivy_publishing'> <a href = '#migant:ivy_publishing'>发布工件</a> </h2>
 
 使用Ivy来管理依赖项的项目也经常使用它来将JAR和其他工件发布到存储库。如果您要迁移这样的构建，那么您将很高兴知道Gradle内置了对将工件发布到兼容Ivy的存储库的支持。
 
@@ -470,7 +464,7 @@ build.gradle.kts
       
 
   
-##[](#migant:custom_tasks)[处理自定义Ant任务](#migant:custom_tasks)
+<h2 id = '#migant:custom_tasks'> <a href = '#migant:custom_tasks'>处理自定义Ant任务</a> </h2>
 
 Ant的优点之一是创建自定义任务并将其合并到构建中相当容易。如果您有这样的任务，那么有两个主要选项可将它们迁移到Gradle构建：
 
@@ -482,7 +476,7 @@ Ant的优点之一是创建自定义任务并将其合并到构建中相当容�
 
 如果有时间，从长远来看，第二个选项是可取的。Gradle任务类型往往比Ant任务更简单，因为它们不必使用基于XML的接口。您还可以访问Gradle的丰富API。最后，这种方法可以利用基于类型化属性的[类型安全增量构建API](/md/处理任务.md#sec:task_input_output_annotations)。
 
-##[](#migant:working_with_files)[处理文件](#migant:working_with_files)
+<h2 id = '#migant:working_with_files'> <a href = '#migant:working_with_files'>处理文件</a> </h2>
 
 Ant有许多处理文件的任务，其中大多数具有Gradle等效项。与从Ant到Gradle迁移的其他区域一样，您可以在Gradle构建中[使用这些Ant任务](/md/从Gradle使用Ant.md#sec:using_ant_tasks)。但是，我们强烈建议在可能的情况下迁移到本地Gradle构造，以便使该构造受益于：
 
@@ -516,8 +510,7 @@ API或第三方库来实现同一目的的本地Gradle任务类型。
   
 
   
-##
-[](#migant:properties)[迁移Ant属性](#migant:properties)
+<h2 id = '#migant:properties'> <a href = '#migant:properties'>迁移Ant属性</a> </h2>
 
 Ant利用属性映射来存储可在整个构建过程中重复使用的值。这种方法的最大缺点是属性值都是字符串，并且属性本身的行为类似于全局变量。
 
@@ -584,8 +577,7 @@ build.gradle.kts
   
 从使用的示例中可以看到`tmpDistDir`，经常仍然需要通过属性定义路径等，这就是为什么Gradle还提供了可以附加到项目，任务和某些其他类型的对象上的[额外属性](/md/编写构建脚本.md#sec:extra_properties)。
 
-##
-[](#migant:multi_project_builds)[迁移多项目构建](#migant:multi_project_builds)
+<h2 id = '#migant:multi_project_builds'> <a href = '#migant:multi_project_builds'>迁移多项目构建</a> </h2>
 
 多项目构建对于迁移是一个特殊的挑战，因为Ant中没有用于构建它们或处理项目间依赖关系的标准方法。他们中的大多数人可能`<ant>`以某种方式使用任务，但这仅是一个人能说的。
 
@@ -665,7 +657,7 @@ web/build.gradle.kts
 
 在该过程的最后，您应该拥有一个Gradle构建，您可以确信它可以按预期工作，并且构建逻辑比以前少得多。
 
-##[](#further_reading)[进一步阅读](#further_reading)
+<h2 id = '#further_reading'> <a href = '#further_reading'>进一步阅读</a> </h2>
 
 本章涵盖了特定于将Ant构建迁移到Gradle的主要主题。剩下的就是迁移期间或迁移之后可能有用的其他一些方面：
 

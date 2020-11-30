@@ -7,7 +7,7 @@
   * [声明外部模块的功能](#sec:declaring-capabilities-external-modules)
   * [声明本地组件的其他功能](#declaring_additional_capabilities_for_a_local_component)
 
-## [](#capabilities_as_first_level_concept)[能力是首要概念](#capabilities_as_first_level_concept)
+<h2 id = '#capabilities_as_first_level_concept'> <a href = '#capabilities_as_first_level_concept'>能力是首要概念</a> </h2>
 
 组件提供了许多功能，这些功能通常与用于提供那些功能的软件体系结构正交。例如，一个库可能在单个工件中包含多个功能。但是，这样的库将以单个GAV（组，工件和版本）坐标发布。这意味着，在单个坐标处，可能会共存组件的不同“特征”。
 
@@ -25,7 +25,7 @@
 
 通过对 _功能进行_ 建模，依赖关系管理引擎可以更智能，并在依赖关系图中的 _不兼容功能_ 告诉您，或者让您选择何时图中的不同模块提供相同 _功能_ 。
 
-## [](#sec:declaring-capabilities-external-modules)[声明外部模块的功能](#sec:declaring-capabilities-external-modules)
+<h2 id = '#sec:declaring-capabilities-external-modules'> <a href = '#sec:declaring-capabilities-external-modules'>声明外部模块的功能</a> </h2>
 
 值得注意的是，Gradle支持声明的功能可用于构建的组件，也可以声明外部组件的功能（如果没有）。
 
@@ -136,7 +136,7 @@ build.gradle.kts
                
 请参阅[文档](/md/处理互斥依赖性.md#sub:selecting-between-candidates)的[功能部分，](/md/处理互斥依赖性.md#sub:selecting-between-candidates)以了解如何解决功能冲突。
 
-## [](#declaring_additional_capabilities_for_a_local_component)[声明本地组件的其他功能](#declaring_additional_capabilities_for_a_local_component)
+<h2 id = '#declaring_additional_capabilities_for_a_local_component'> <a href = '#declaring_additional_capabilities_for_a_local_component'>声明本地组件的其他功能</a> </h2>
 
 所有组件都具有与该组件相同的GAV坐标对应的 _隐式功能_ 。只要在不同GAV坐标处发布的库是同一API的 _替代实现_
 ，就很方便。但是，也可以为组件声明其他 _显式功能_ ：

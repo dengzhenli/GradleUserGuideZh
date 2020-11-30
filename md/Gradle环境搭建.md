@@ -32,7 +32,7 @@ Gradle提供了多种机制来配置Gradle本身和特定项目的行为。以�
 除了配置构建环境外，您还可以使用[Project属性](#sec:project_properties)
 （例如）配置给定的项目构建`-PreleaseType=final`。
 
-## [](#sec:gradle_configuration_properties)[Gradle属性](#sec:gradle_configuration_properties)
+<h2 id = '#sec:gradle_configuration_properties'> <a href = '#sec:gradle_configuration_properties'>Gradle属性</a> </h2>
 
 Gradle提供了多个选项，可以轻松配置将用于执行构建的Java流程。尽管可以通过`GRADLE_OPTS`或在本地环境中配置这些`JAVA_OPTS`设置，但将某些设置（例如JVM内存配置和Java主目录位置）存储在版本控制中非常有用，这样整个团队就可以在一致的环境中工作。
 
@@ -198,7 +198,7 @@ build.gradle.kts
     systemPropertyValue
     systemValue
 
-## [](#sec:gradle_system_properties)[系统属性](#sec:gradle_system_properties)
+<h2 id = '#sec:gradle_system_properties'> <a href = '#sec:gradle_system_properties'>系统属性</a> </h2>
 
 使用`-D`命令行选项，可以将系统属性传递给运行Gradle的JVM。在`-D`该选项的`gradle`命令有作为的效果相同`-D`的选项的`java`命令。
 
@@ -234,7 +234,7 @@ build.gradle.kts
 在多项目构建中，`systemProp.`除根目录以外的任何项目中设置的“
 ”属性都将被忽略。也就是说，`gradle.properties`将仅检查根项目的文件中以“ `systemProp.`”开头的属性。
 
-## [](#sec:gradle_environment_variables)[环境变量](#sec:gradle_environment_variables)
+<h2 id = '#sec:gradle_environment_variables'> <a href = '#sec:gradle_environment_variables'>环境变量</a> </h2>
 
 以下环境变量可用于该`gradle`命令。请注意，命令行选项和系统属性优先于环境变量。
 
@@ -256,7 +256,7 @@ build.gradle.kts
 
 指定要用于客户端VM的JDK安装目录。除非使用Gradle属性文件指定了另一个虚拟机，否则此虚拟机也用于守护程序`org.gradle.java.home`。
 
-## [](#sec:project_properties)[项目性质](#sec:project_properties)
+<h2 id = '#sec:project_properties'> <a href = '#sec:project_properties'>项目性质</a> </h2>
 
 您可以通过命令行选项将属性直接添加到[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)对象`-P`。
 
@@ -292,7 +292,7 @@ Tip：
       
 
   
-## [](#sec:configuring_jvm_memory)[配置JVM内存](#sec:configuring_jvm_memory)
+<h2 id = '#sec:configuring_jvm_memory'> <a href = '#sec:configuring_jvm_memory'>配置JVM内存</a> </h2>
 
 您可以通过以下方式调整Gradle的JVM选项：
 
@@ -352,7 +352,7 @@ API文档中的其他示例，以及[Java插件参考中的测试执行](/md/在
 
 [![构建扫描中的构建环境](img/build-scan-infrastructure.png)](https://scans.gradle.com/s/sample/cpp-parallel/infrastructure)
 
-## [](#sec:configuring_task_using_project_properties)[使用项目属性配置任务](#sec:configuring_task_using_project_properties)
+<h2 id = '#sec:configuring_task_using_project_properties'> <a href = '#sec:configuring_task_using_project_properties'>使用项目属性配置任务</a> </h2>
 
 可以根据调用时指定的项目属性来更改任务的行为。
 
@@ -394,7 +394,7 @@ build.gradle.kts
  
     gradle performRelease -PisCI=true --quiet
     Performing release actions
-## [](#sec:accessing_the_web_via_a_proxy)[通过HTTP代理访问网络](#sec:accessing_the_web_via_a_proxy)
+<h2 id = '#sec:accessing_the_web_via_a_proxy'> <a href = '#sec:accessing_the_web_via_a_proxy'>通过HTTP代理访问网络</a> </h2>
 
 通过标准的JVM系统属性来配置HTTP或HTTPS代理（例如，用于下载依赖项）。这些属性可以直接在构建脚本中设置。例如，可以使用设置HTTP代理主机`System.setProperty('http.proxyHost',
 'www.somehost.org')`。另外，可以[在gradle.properties中指定](#sec:gradle_configuration_properties)属性。
@@ -427,7 +427,7 @@ HTTPS有单独的设置。
 
   * [JDK 7网络属性](http://download.oracle.com/javase/7/docs/technotes/guides/net/properties.html)
 
-### [](#ntlm_authentication)[NTLM身份验证](#ntlm_authentication)
+<h3 id = '#ntlm_authentication'> <a href = '#ntlm_authentication'>NTLM身份验证</a> </h3>
 
 如果您的代理服务器需要NTLM身份验证，则可能需要提供身份验证域以及用户名和密码。您可以通过两种方式提供用于向NTLM代理进行身份验证的域：
 

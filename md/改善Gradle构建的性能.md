@@ -24,7 +24,7 @@ dive/?bid=guides-performance)我们的构建缓存培训课程，以了解Gradle
 
 所有这些都意味着值得花费一些时间和精力来使构建速度尽可能快。本节提供了几种方法可以探索以加快构建速度，并提供大量详细信息，说明哪些因素会降低构建性能以及原因。
 
-## [](#build_scans)[构建扫描](#build_scans)
+<h2 id = '#build_scans'> <a href = '#build_scans'>构建扫描</a> </h2>
 
 [构建扫描](https://gradle.com/build-
 scans)是运行构建时发生的事情的持久且可共享的记录。通过构建扫描，您可以获得有关构建的深刻见解，以识别和修复性能瓶颈。
@@ -42,11 +42,11 @@ Gradle在构建执行结束时显示可进行构建扫描的URL：
 
 接下来，本节将介绍一些快速改进，这些改进可以提高构建的性能。之后，将更深入地研究如何使用构建扫描对构建进行概要分析。
 
-## [](#easy_improvements)[轻松改进](#easy_improvements)
+<h2 id = '#easy_improvements'> <a href = '#easy_improvements'>轻松改进</a> </h2>
 
 关于性能调优的部分通常从概要分析开始，而过早优化则是万恶之源。性能分析绝对重要，本节稍后将进行讨论，但是您可以做一些事情，这些事情会影响您的所有构建，因此只需轻轻一点就可以使性能更好。
 
-### [](#use_latest_gradle_and_jvm_versions)[使用最新的Gradle和JVM版本](#use_latest_gradle_and_jvm_versions)
+<h3 id = '#use_latest_gradle_and_jvm_versions'> <a href = '#use_latest_gradle_and_jvm_versions'>使用最新的Gradle和JVM版本</a> </h3>
 
 Gradle团队不断致力于提高Gradle构建各个方面的性能。如果您使用的是Gradle的旧版本，则会错过该工作的好处。始终跟上Gradle版本升级。这样做是低风险的，因为Gradle团队可确保Gradle的次要版本之间向后兼容。保持最新状态也使过渡到下一个主要版本更加容易，因为您会收到早期弃用警告。
 
@@ -54,7 +54,7 @@ Gradle团队不断致力于提高Gradle构建各个方面的性能。如果您�
 
 当Gradle在JVM上运行时，后者性能的提高通常会使Gradle受益。因此，您应该考虑使用JVM的最新主要版本运行Gradle。
 
-### [](#parallel_execution)[并行执行](#parallel_execution)
+<h3 id = '#parallel_execution'> <a href = '#parallel_execution'>并行执行</a> </h3>
 
 大多数构建包含一个以上的项目，其中一些项目通常彼此独立。然而，无论项目结构如何，默认情况下，Gradle一次只能运行一项任务（此问题将很快得到改善）。通过使用该`--parallel`开关，您可以强制Gradle并行执行任务，只要这些任务位于不同的项目中即可。
 
@@ -88,7 +88,7 @@ gradle.properties
 
 那就是快速胜利的终点。从现在开始，提高构建性能将需要一些肘部润滑脂。首先，也许是最重要的步骤：找出构建过程中哪些缓慢，为什么？
 
-### [](#enable_file_system_watching)[启用文件系统监视](#enable_file_system_watching)
+<h3 id = '#enable_file_system_watching'> <a href = '#enable_file_system_watching'>启用文件系统监视</a> </h3>
 
 Gradle与文件系统进行了大量交谈，尤其是在尝试解析构建的输入和输出状态时。为了避免不必要的I / O，在整个构建过程中都会维护内存中的 _虚拟文件系统_
 。该 _文件系统看_ 功能允许Gradle保持这个内存数据之间架起，进一步减少I
@@ -104,7 +104,7 @@ gradle.properties
 
 在[相应的部分中](https://docs.gradle.org/nightly/userguide/gradle_daemon.html#sec:daemon_watch_fs)阅读有关此功能的更多信息。
 
-## [](#profiling_with_build_scans)[使用构建扫描进行性能分析](#profiling_with_build_scans)
+<h2 id = '#profiling_with_build_scans'> <a href = '#profiling_with_build_scans'>使用构建扫描进行性能分析</a> </h2>
 
 在对构建进行概要分析的情况下使用构建扫描时，在诊断的早期阶段主要关注的领域是性能页面。要到达此位置，请  在左侧导航菜单中单击 _“性能”_
 ，或单击构建扫描主页的以下屏幕截图中突出显示的链接：
@@ -121,7 +121,7 @@ gradle.properties
 
 除了构建执行的顶级性能摘要之外，您还可以在性能页面的不同选项卡中进一步深入研究影响构建性能的各个方面。
 
-## [](#configuration)[组态](#configuration)
+<h2 id = '#configuration'> <a href = '#configuration'>组态</a> </h2>
 
 如[构建生命周期一章所述](https://docs.gradle.org/nightly/userguide/build_lifecycle.html)，Gradle的构建经历三个阶段：初始化，配置和执行。这里要了解的重要一点是，无论要运行哪些任务，配置代码始终会执行。这意味着在配置过程中执行的所有昂贵工作都会降低每次调用的速度，即使是像`gradle
 help`和这样的简单调用也是如此`gradle tasks`。
@@ -145,7 +145,7 @@ scan-performance)，您可以看到构建配置耗时超过16秒。单击  页�
 
 接下来的几小节将介绍有助于缩短配置时间并解释其工作原理的技术。
 
-### [](#apply_plugins_judiciously)[明智地应用插件](#apply_plugins_judiciously)
+<h3 id = '#apply_plugins_judiciously'> <a href = '#apply_plugins_judiciously'>明智地应用插件</a> </h3>
 
 您应用于项目的每个插件和脚本都会增加总体配置时间。一些插件比其他插件具有更大的影响。这并不意味着您应该避免使用插件，但应注意仅在需要的地方应用它们。例如，很容易通过对插件适用于所有项目`allprojects
 {}`或`subprojects {}`即使不是每一个项目都需要它们。
@@ -160,11 +160,11 @@ scan-performance)，您可以看到构建配置耗时超过16秒。单击  页�
 
 理想情况下，插件和脚本不应花费大量的配置时间。如果这样做，重点应该放在改进它们上。尽管如此，在具有许多模块和大量配置时间的项目中，您应该花一点时间来确定所有具有显着影响的插件。
 
-### [](#avoid_expensive_or_blocking_work)[避免昂贵或阻碍工作](#avoid_expensive_or_blocking_work)
+<h3 id = '#avoid_expensive_or_blocking_work'> <a href = '#avoid_expensive_or_blocking_work'>避免昂贵或阻碍工作</a> </h3>
 
 如您所见，您将希望避免在配置阶段进行耗时的工作，但是有时它可能会在不明显的地方潜入您的构建中。如果代码在构建文件中，则在配置过程中加密数据或调用远程服务时通常很清楚。但是类似的逻辑通常在插件和自定义任务类中找到。插件的`apply()`方法或任务的构造函数中任何昂贵的工作都应该是一个危险信号。最常见且不太明显的错误是在配置时解决依赖关系，这将在下面的单独章节中介绍。
 
-### [](#statically_compile_tasks_and_plugins)[静态编译任务和插件](#statically_compile_tasks_and_plugins)
+<h3 id = '#statically_compile_tasks_and_plugins'> <a href = '#statically_compile_tasks_and_plugins'>静态编译任务和插件</a> </h3>
 
 ╔═════════════════════════════  如果您的构建逻辑由用静态编译的JVM语言（例如Java或Kotlin）编写的插件以及使用Gradle Kotlin
 DSL编写的构建脚本组成，那么您可以跳过此步骤并继续进行[下一部分](#dependency_resolution)。  
@@ -190,11 +190,11 @@ src / main / groovy / MyPlugin.groovy
 
 如果您决定使用静态编译，则由于类型，属性和方法无法识别，使用IDE可以快速显示错误。您还将获得自动完成功能，这总是很方便的。
 
-## [](#dependency_resolution)[依赖解析](#dependency_resolution)
+<h2 id = '#dependency_resolution'> <a href = '#dependency_resolution'>依赖解析</a> </h2>
 
 软件项目依靠依赖关系解析来简化第三方库和其他依赖关系到构建中的集成。这确实是有代价的，因为Gradle必须联系远程服务器以查找这些依赖项并在必要时下载它们。高级缓存有助于极大地加快处理速度，但是您仍然需要注意接下来要讨论的一些陷阱。
 
-### [](#minimize_dynamic_and_snapshot_versions)[最小化动态和快照版本](#minimize_dynamic_and_snapshot_versions)
+<h3 id = '#minimize_dynamic_and_snapshot_versions'> <a href = '#minimize_dynamic_and_snapshot_versions'>最小化动态和快照版本</a> </h3>
 
 动态版本（例如“ 2.
 +”）和快照（或更改）版本会强制Gradle与远程存储库联系，以查找是否有新版本或快照可用。默认情况下，Gradle只会每24小时执行一次检查，但是可以更改。查找出`cacheDynamicVersionsFor`与`cacheChangingModulesFor`在你的情况下生成文件和初始化脚本将它们设置为非常短的时间或完全禁用。否则，您可能会谴责构建用户使用比正常情况更慢的构建，而不是每天进行一次比正常情况更慢的构建。
@@ -208,7 +208,7 @@ src / main / groovy / MyPlugin.groovy
 您可能可以使用固定版本，例如“ 1.2”和“
 3.0.3.GA”，在这种情况下，Gradle将始终使用缓存的版本。但是，如果您需要使用动态版本和快照版本，请确保调整缓存设置以最好地满足您的需求。
 
-### [](#dont_resolve_dependencies_at_configuration_time)[不要在配置时解决依赖关系](#dont_resolve_dependencies_at_configuration_time)
+<h3 id = '#dont_resolve_dependencies_at_configuration_time'> <a href = '#dont_resolve_dependencies_at_configuration_time'>不要在配置时解决依赖关系</a> </h3>
 
 无论是在I /
 O还是计算方面，依赖性解析都是一个昂贵的过程。Gradle通过明智的缓存减少了（并在某些情况下消除了）所需的网络流量，但是仍然需要做一些工作。为什么这很重要？因为如果在配置阶段触发依赖项解析，那么您将对运行的每个构建都增加一个损失。
@@ -278,20 +278,20 @@ configurations)本身用作参数，而不是其文件。该`Copy`任务处理�
 在这里，您可以快速确定造成此特定性能问题的原因。在 _“项目配置”_ 期间解决依赖关系所花费的时间
 应为0秒，并且此示例显示构建在生命周期的早期解决依赖关系。同样在“性能”页面上是“设置和建议”选项卡，该选项卡将向您显示在项目配置过程中正在解决哪些依赖关系。
 
-### [](#avoid_unnecessary_and_unused_dependencies)[避免不必要和未使用的依赖项](#avoid_unnecessary_and_unused_dependencies)
+<h3 id = '#avoid_unnecessary_and_unused_dependencies'> <a href = '#avoid_unnecessary_and_unused_dependencies'>避免不必要和未使用的依赖项</a> </h3>
 
 有时您会遇到仅使用第三方库中一个或两个方法或类的情况。发生这种情况时，您应该认真考虑在项目中自己实现所需的代码，或者如果可以的话，可以从开源库中复制所需的代码。请记住，管理第三方库及其可传递依赖项不会增加项目维护和构建时间的成本。
 
 需要注意的另一件事是 _未使用的依赖项_ 的存在。代码重构后，当第三方库停止使用但未从依赖项列表中删除时，很容易发生这种情况。您可以使用[Gradle
 Lint插件](https://github.com/nebula-plugins/gradle-lint-plugin)来识别此类依赖性。
 
-### [](#minimize_repository_count)[最小化仓库数量](#minimize_repository_count)
+<h3 id = '#minimize_repository_count'> <a href = '#minimize_repository_count'>最小化仓库数量</a> </h3>
 
 当Gradle尝试解决依赖关系时，它将按照声明它们的顺序搜索每个存储库，直到找到该依赖关系为止。通常，这意味着您要先声明存储最大数量依赖关系的存储库，以便在大多数情况下仅搜索该存储库。您还应将已声明的存储库数量限制为最小可用数量，以使构建正常工作。
 
 如果您使用的是自定义存储库服务器，则可用的一种技术是创建将多个实际存储库聚合在一起的虚拟存储库。然后，您可以仅将该存储库添加到您的构建文件中，从而进一步减少Gradle在依赖关系解析期间发送的HTTP请求的数量。
 
-### [](#be_careful_with_custom_dependency_resolution_logic)[注意自定义依赖项解析逻辑](#be_careful_with_custom_dependency_resolution_logic)
+<h3 id = '#be_careful_with_custom_dependency_resolution_logic'> <a href = '#be_careful_with_custom_dependency_resolution_logic'>注意自定义依赖项解析逻辑</a> </h3>
 
 依赖性解析是一个很难解决的问题，要使其表现良好，只会增加挑战。但是，Gradle仍然需要允许用户以最适合他们的方式对依赖关系解析进行建模。这就是为什么它具有强大的API来自定义依赖项解析如何工作的原因。
 
@@ -299,7 +299,7 @@ Lint插件](https://github.com/nebula-plugins/gradle-lint-plugin)来识别此类
 
 您应该使用构建扫描或概要文件报告来检查构建中具有的任何自定义依赖关系解析逻辑不会对依赖关系解析时间产生重大不利影响。请注意，这可能是您自己编写的自定义逻辑，也可能是您正在使用的插件的一部分。
 
-### [](#identify_slow_or_unexpected_dependency_downloads)[识别缓慢或意外的依赖项下载](#identify_slow_or_unexpected_dependency_downloads)
+<h3 id = '#identify_slow_or_unexpected_dependency_downloads'> <a href = '#identify_slow_or_unexpected_dependency_downloads'>识别缓慢或意外的依赖项下载</a> </h3>
 
 依赖项下载速度慢（可能是由于Internet连接速度慢，存储库服务器过载或类似原因引起的）会影响整体构建性能。构建扫描在“​​性能”页面上提供了“网络活动”选项卡，其中列出了有用的信息，例如花费时间下载依赖关系，整个构建中依赖关系下载的总体传输率以及按下载时间排序的下载列表。
 
@@ -311,11 +311,11 @@ Lint插件](https://github.com/nebula-plugins/gradle-lint-plugin)来识别此类
 
 您还可以检查下载列表，以确保在构建执行过程中没有意外的依赖项下载。例如，您可能会看到由使用动态版本的依赖项引起的意外下载。
 
-## [](#task_execution)[任务执行](#task_execution)
+<h2 id = '#task_execution'> <a href = '#task_execution'>任务执行</a> </h2>
 
 最快的任务是不执行的任务。如果您找到了跳过不需要运行的任务的方法，那么最终将获得更快的总体构建速度。本节将讨论在Gradle构建中实现避免任务的几种方法。
 
-### [](#different_people_different_builds)[不同的人，不同的体形](#different_people_different_builds)
+<h3 id = '#different_people_different_builds'> <a href = '#different_people_different_builds'>不同的人，不同的体形</a> </h3>
 
 将构建视为全包或全包似乎是很普遍的。每个用户必须学习由构建定义的相同任务集。在许多情况下，这没有任何意义。想象一下，您同时拥有前端和后端开发人员：他们是否希望从构建中获得相同的东西？当然不是，特别是如果一侧是HTML，CSS和JavaScript，而另一侧是Java和servlet。
 
@@ -331,7 +331,7 @@ Lint插件](https://github.com/nebula-plugins/gradle-lint-plugin)来识别此类
 
 肯定需要一些努力和时间上的投入以制定合适的构建视图，但要考虑用户运行构建的频率。如果可以每天节省用户时间，那么投资无疑是值得的。
 
-### [](#incremental_build)[增量构建](#incremental_build)
+<h3 id = '#incremental_build'> <a href = '#incremental_build'>增量构建</a> </h3>
 
 您可以避免执行任务，即使用户需要执行任务也是如此。如果自上次运行以来任务的输入或输出均未更改，则Gradle将不会再次运行它。
 
@@ -347,7 +347,7 @@ Lint插件](https://github.com/nebula-plugins/gradle-lint-plugin)来识别此类
 
 还可以先按最长持续时间对任务进行排序，从而轻松挑选最慢的任务。选择最慢的自定义任务，使其参与增量构建，然后再次进行测量并重复。
 
-### [](#caching_task_outputs)[缓存任务输出](#caching_task_outputs)
+<h3 id = '#caching_task_outputs'> <a href = '#caching_task_outputs'>缓存任务输出</a> </h3>
 
 基于任务的先前执行，增量构建在本地工作。Gradle还可以将任务输出存储在 _构建缓存中，_
 并在稍后将执行具有相同输入的相同任务时检索它们。您可以使用本地缓存在计算机上重用任务输出。这有助于减少切换分支时的构建时间。
@@ -377,9 +377,9 @@ cache/)服务。共享缓存可以通过重用其他位置已经生成的输出�
 
 随后，在“时间轴”屏幕上按任务持续时间排序将突出显示具有极大节省时间潜力的任务。上面的构建扫描显示了，`:task1`并且`:task3`可以对其进行改进并使其可缓存，并明确说明了将其视为不可缓存的原因。
 
-## [](#daemon)[守护进程](#daemon)
+<h2 id = '#daemon'> <a href = '#daemon'>守护进程</a> </h2>
 
-### [](#enable_the_daemon_on_old_gradle_versions)[在旧的Gradle版本上启用守护程序](#enable_the_daemon_on_old_gradle_versions)
+<h3 id = '#enable_the_daemon_on_old_gradle_versions'> <a href = '#enable_the_daemon_on_old_gradle_versions'>在旧的Gradle版本上启用守护程序</a> </h3>
 
 Gradle守护程序是一种用于提高Gradle性能的机制。从Gradle
 3.0开始，该守护程序默认情况下处于启用状态，但是如果您使用的是旧版本，则一定要在本地开发人员计算机上启用它。这样，您会发现构建速度有了很大的提高。您可以在[本节中](https://docs.gradle.org/nightly/userguide/gradle_daemon.html)学习如何做。
@@ -387,7 +387,7 @@ Gradle守护程序是一种用于提高Gradle性能的机制。从Gradle
 在CI计算机上，可以从守护程序获得的收益取决于您的设置。如果您拥有长期的CI代理，并且构建了许多都使用相同Gradle版本和JVM参数的小型项目，那么该守护程序可以减少周转时间。如果您的项目规模更大或更多样化，那么您可能不会看到太多好处。通常，保留守护程序是安全的，因为Gradle
 3.0引入了运行状况监视，它将关闭守护程序以减少内存压力。
 
-### [](#adjust_the_daemons_heap_size)[调整守护程序的堆大小](#adjust_the_daemons_heap_size)
+<h3 id = '#adjust_the_daemons_heap_size'> <a href = '#adjust_the_daemons_heap_size'>调整守护程序的堆大小</a> </h3>
 
 默认情况下，Gradle将为您的构建保留1GB的堆空间，这对于大多数项目来说已经足够了，尤其是如果您在本节的后续部分中遵循我们对分叉编译的建议。但是，某些非常大的构建可能需要更多内存来保存Gradle的模型和缓存。如果是这种情况，则可以在
 _gradle.properties_ 文件中检入更大的内存要求：
@@ -398,11 +398,11 @@ gradle.properties
     
     org.gradle.jvmargs=-Xmx2048M
 
-## [](#suggestions_for_java_projects)[Java项目建议](#suggestions_for_java_projects)
+<h2 id = '#suggestions_for_java_projects'> <a href = '#suggestions_for_java_projects'>Java项目建议</a> </h2>
 
 以下建议特定于使用`java`插件或其他JVM语言之一的项目。
 
-### [](#running_tests)[运行测试](#running_tests)
+<h3 id = '#running_tests'> <a href = '#running_tests'>运行测试</a> </h3>
 
 在许多项目中，大部分构建时间都由运行的测试任务组成。这些可能是单元测试和集成测试的混合，后者通常要慢得多。构建扫描可以帮助您确定最慢的测试，这应该是性能改进的主要重点。
 
@@ -422,7 +422,7 @@ Gradle有几种方法可以帮助您更快地完成测试：
 
 让我们依次看看这些。
 
-#### [](#parallel_test_execution)[并行测试执行](#parallel_test_execution)
+<h4 id = '#parallel_test_execution'> <a href = '#parallel_test_execution'>并行测试执行</a> </h4>
 
 Gradle会愉快地并行运行多个测试用例，当您有多个CPU内核并且不想浪费它们中的大多数时，这很有用。要启用此功能，只需在相关`Test`任务上使用以下配置设置：
 
@@ -466,7 +466,7 @@ build.gradle.kts
 
 请注意，如果确实并行运行测试，则必须确保它们是独立的，即不共享资源，无论是文件，数据库还是其他资源。否则，测试可能会以随机且不可预测的方式相互干扰。
 
-#### [](#forking_options)[分叉选项](#forking_options)
+<h4 id = '#forking_options'> <a href = '#forking_options'>分叉选项</a> </h4>
 
 默认情况下，Gradle将在单个分叉的VM中运行所有测试。如果有很多测试或一些非常消耗内存的测试，这可能会成问题。一种选择是使用大堆运行测试，但是您仍然会受到系统内存的限制，并且可能会遇到大量垃圾回收，从而降低了测试速度。
 
@@ -492,7 +492,7 @@ build.gradle.kts
 
 请注意，分叉VM是一项相对昂贵的操作，因此此处的小值将严重影响测试的性能。
 
-#### [](#report_generation)[报告生成](#report_generation)
+<h4 id = '#report_generation'> <a href = '#report_generation'>报告生成</a> </h4>
 
 Gradle默认会自动创建测试报告，无论您是否要查看它们。生成报告需要时间，从而降低了总体构建速度。报表肯定有用，但是每次运行构建时都需要报表吗？也许您只关心测试是否成功。另外，如果您使用的是构建扫描，则无需在本地生成报告。
 
@@ -544,7 +544,7 @@ build.gradle.kts
         }
     }
 
-### [](#compiling_java)[编译Java](#compiling_java)
+<h3 id = '#compiling_java'> <a href = '#compiling_java'>编译Java</a> </h3>
 
 Java编译器非常快，特别是与JVM上的其他语言相比。但是，如果您要编译数百个非平凡的Java类，那么即使是很短的编译时间也会加起来很重要。当然，您可以升级硬件以加快编译速度，但这可能是一个昂贵的解决方案。Gradle提供了一些基于软件的解决方案，可能更适合您：
 
@@ -554,7 +554,7 @@ Java编译器非常快，特别是与JVM上的其他语言相比。但是，如�
 
   * 增量编译
 
-### [](#compiler_daemon)[编译器守护程序](#compiler_daemon)
+<h3 id = '#compiler_daemon'> <a href = '#compiler_daemon'>编译器守护程序</a> </h3>
 
 Gradle Java插件允许您通过对任何`JavaCompile`任务使用以下配置，将编译器作为单独的进程运行：
 
@@ -596,14 +596,14 @@ build.gradle.kts
 
 它对于小型项目不太可能有用，但是如果单个任务将近一千个或更多的源文件一起编译，则一定要考虑使用它。
 
-### [](#compile_avoidance)[避免编译](#compile_avoidance)
+<h3 id = '#compile_avoidance'> <a href = '#compile_avoidance'>避免编译</a> </h3>
 
 很多时候，您只是在更改代码的内部实现细节，例如，编辑方法主体。从Gradle
 3.4开始，这些所谓的ABI兼容更改不再触发下游项目的重新编译。在具有深层依赖链的大型多项目构建中，这尤其可以缩短构建时间。
 
 注意：如果使用注释处理器，则需要显式声明它们，以便避免编译。在[避免编译](https://docs.gradle.org/nightly/userguide/java_plugin.html#sec:java_compile_avoidance)部分中了解更多有关此内容的信息。
 
-### [](#the_java_library_plugin)[Java库插件](#the_java_library_plugin)
+<h3 id = '#the_java_library_plugin'> <a href = '#the_java_library_plugin'>Java库插件</a> </h3>
 
 长期以来，您将使用该`compile`配置声明您的编译时依赖关系，所有这些依赖关系都将泄漏到下游项目中。从Gradle
 3.4开始，您现在可以清楚地区分哪些依赖项是您的一部分，`api`而哪些只是`implementation`细节。实现依赖项不会泄漏到下游项目的编译类路径中，这意味着当此类实现细节发生更改时，它们将不再被重新编译。
@@ -632,7 +632,7 @@ build.gradle.kts
 `api`依赖只能由应该使用[`java-
 library`](https://docs.gradle.org/nightly/userguide/java_library_plugin.html)插件的库定义。
 
-### [](#incremental_compilation)[增量编译](#incremental_compilation)
+<h3 id = '#incremental_compilation'> <a href = '#incremental_compilation'>增量编译</a> </h3>
 
 Gradle可以分析直至单个类级别的依赖关系，以便仅重新编译受更改影响的类。自Gradle 4.10起，增量编译是默认设置。在旧版本中，您可以这样激活它：
 
@@ -654,13 +654,13 @@ build.gradle.kts
         options.incremental = true
     }
 
-## [](#low_level_profiling)[低级分析](#low_level_profiling)
+<h2 id = '#low_level_profiling'> <a href = '#low_level_profiling'>低级分析</a> </h2>
 
 有时，即使您的构建脚本可以正确完成所有工作，您的构建也会变慢。这通常归结为插件和自定义任务效率低下或资源受限。查找此类瓶颈的最佳方法是使用[Gradle
 Profiler](https://github.com/gradle/gradle-profiler)。Gradle
 Profiler允许您定义诸如“在进行ABI重大更改后运行'汇编'”之类的方案，然后自动运行构建几次以对其进行预热并收集性能分析数据。它可用于生成构建扫描，或与其他主要的探查器（如JProfiler和YourKit）一起使用。使用这些方法级别的探查器通常可以帮助您在自定义插件中找到效率低下的算法。如果您发现Gradle本身的某些功能在减慢您的构建速度，请不要犹豫在以下位置发送探查器快照：[performance@gradle.com](mailto:performance@gradle.com)。
 
-### [](#profile_report)[个人资料报告](#profile_report)
+<h3 id = '#profile_report'> <a href = '#profile_report'>个人资料报告</a> </h3>
 
 如果您无法访问互联网或出于其他原因不使用构建扫描，则可以使用`--profile`命令行选项：
 
@@ -677,11 +677,11 @@ Profiler允许您定义诸如“在进行ABI重大更改后运行'汇编'”之�
 
 图17.一个示例概要报告
 
-### [](#understanding_the_performance_categories)[了解效果类别](#understanding_the_performance_categories)
+<h3 id = '#understanding_the_performance_categories'> <a href = '#understanding_the_performance_categories'>了解效果类别</a> </h3>
 
 构建扫描和本地配置文件报告都将构建执行划分为相同的类别，下面将对其进行详细说明。
 
-#### [](#startup)[启动](#startup)
+<h4 id = '#startup'> <a href = '#startup'>启动</a> </h4>
 
 这反映了Gradle的初始化时间，其中主要包括
 
@@ -695,8 +695,7 @@ Profiler允许您定义诸如“在进行ABI重大更改后运行'汇编'”之�
 
 即使构建执行的启动时间很长，通常在后续运行中启动时间也会急剧下降。构建的启动时间持续缓慢的主要原因是您的初始化脚本中存在问题。仔细检查您正在做的工作是否必要且性能尽可能好。
 
-#### [](#settings_and_buildsrc)[设置和
-_buildSrc_](#settings_and_buildsrc)
+<h4 id = '#settings_and_buildsrc'> <a href = '#settings_and_buildsrc'>设置和 _buildSrc_</a> </h4>
 
 Gradle启动并运行后不久，它将初始化您的项目。这通常仅意味着处理设置文件，但是如果您在 _buildSrc_
 目录中具有自定义构建逻辑，则也将对其进行构建。
@@ -708,18 +707,18 @@ Gradle启动并运行后不久，它将初始化您的项目。这通常仅意�
 设置文件中很少包含计算或IO昂贵的代码。如果发现Gradle需要大量时间来处理它，则应使用更传统的配置方法，例如[Gradle
 Profiler](https://github.com/gradle/gradle-profiler)来确定原因。
 
-#### [](#loading_projects)[载入项目](#loading_projects)
+<h4 id = '#loading_projects'> <a href = '#loading_projects'>载入项目</a> </h4>
 
 通常，加载项目不会花费大量时间，您也无法对其进行任何控制。花费的时间基本上取决于构建中项目的数量。
 
-## [](#suggestions_for_android_builds)[Android版本建议](#suggestions_for_android_builds)
+<h2 id = '#suggestions_for_android_builds'> <a href = '#suggestions_for_android_builds'>Android版本建议</a> </h2>
 
 到目前为止讨论的所有内容也适用于Android构建，因为它们基于Gradle。Android也引入了自己的性能因素。Android
 Studio团队已编写了自己的出色[性能指南](https://developer.android.com/studio/build/optimize-
 your-build.html)。您还可以[观看](https://www.youtube.com/watch?v=7ll-rkLCtyk)Google
 IO 2017[附带的演讲](https://www.youtube.com/watch?v=7ll-rkLCtyk)。
 
-## [](#summary)[概要](#summary)
+<h2 id = '#summary'> <a href = '#summary'>概要</a> </h2>
 
 性能并不是构建过程中的事后考虑，它是影响团队生产力和幸福感的关键功能。Gradle团队专注于尽可能快地实现Gradle构建，因为他们知道您的时间很宝贵。即使这样，Gradle也支持各种各样的构建，这意味着有时默认设置并不总是适合
 _您的_ 项目。为了帮助您优化构建，本节向您介绍了设置和选项，使您可以自定义Gradle的行为以最适合您的特定构建。

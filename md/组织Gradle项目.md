@@ -14,7 +14,7 @@
 
 每个软件项目的源代码和构建逻辑都应以有意义的方式进行组织。该页面列出了导致可读性，可维护性项目的最佳实践。以下各节还探讨了常见问题以及如何避免它们。
 
-## [](#sec:separate_language_source_files)[特定于语言的单独源文件](#sec:separate_language_source_files)
+<h2 id = '#sec:separate_language_source_files'> <a href = '#sec:separate_language_source_files'>特定于语言的单独源文件</a> </h2>
 
 Gradle的语言插件建立了发现和编译源代码的约定。例如，应用[Java插件](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_plugin)的项目将自动编译directory目录中的代码`src/main/java`。其他语言插件遵循相同的模式。目录路径的最后部分通常指示源文件的预期语言。
 
@@ -45,14 +45,14 @@ Gradle的语言插件建立了发现和编译源代码的约定。例如，应�
             └── kotlin
                 └── Utils.kt
 
-## [](#sec:separate_test_type_source_files)[每种测试类型的源文件分开](#sec:separate_test_type_source_files)
+<h2 id = '#sec:separate_test_type_source_files'> <a href = '#sec:separate_test_type_source_files'>每种测试类型的源文件分开</a> </h2>
 
 一个项目定义并执行不同类型的测试是很常见的，例如单元测试，集成测试，功能测试或冒烟测试。最好将每种测试类型的测试源代码存储在专用的源目录中。分离的测试源代码对可维护性和关注点分离有积极的影响，因为您可以彼此独立地运行测试类型。
 
 看一下该[示例](https://docs.gradle.org/6.7.1/samples/sample_jvm_multi_project_with_additional_test_types.html)
 ，该[示例](https://docs.gradle.org/6.7.1/samples/sample_jvm_multi_project_with_additional_test_types.html)演示如何将单独的集成测试配置添加到基于Java的项目中。
 
-## [](#sec:use_standard_conventions)[尽可能使用标准约定](#sec:use_standard_conventions)
+<h2 id = '#sec:use_standard_conventions'> <a href = '#sec:use_standard_conventions'>尽可能使用标准约定</a> </h2>
 
 所有Gradle核心插件[在配置方面均](https://en.wikipedia.org/wiki/Convention_over_configuration)遵循软件工程范例[约定](https://en.wikipedia.org/wiki/Convention_over_configuration)。插件逻辑可在特定上下文中为用户提供合理的默认值和标准，约定。让我们以[Java插件](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_plugin)为例。
 
@@ -62,7 +62,7 @@ Gradle的语言插件建立了发现和编译源代码的约定。例如，应�
 
 通过遵循默认约定，项目的新开发人员立即知道如何找到解决方法。尽管可以重新配置这些约定，但使构建脚本用户和作者来管理构建逻辑及其结果变得更加困难。除非您需要适应旧项目的布局，否则请尽量遵循默认约定。请参阅相关插件的参考页面以了解其默认约定。
 
-## [](#always_define_a_settings_file)[始终定义一个设置文件](#always_define_a_settings_file)
+<h2 id = '#always_define_a_settings_file'> <a href = '#always_define_a_settings_file'>始终定义一个设置文件</a> </h2>
 
 Gradle会在每次调用构建时尝试找到一个`settings.gradle`（Groovy
 DSL）或`settings.gradle.kts`（Kotlin
@@ -91,7 +91,7 @@ DSL）文件。为此，运行时将目录树的层次结构移至根目录。�
     └── subproject-two
         └── build.gradle.kts
 
-## [](#sec:build_sources)[用`buildSrc`抽象逻辑势在必行](#sec:build_sources)
+<h2 id = '#sec:build_sources'> <a href = '#sec:build_sources'>用`buildSrc`抽象逻辑势在必行</a> </h2>
 
 复杂的构建逻辑通常很适合作为自定义任务或二进制插件进行封装。自定义任务和插件实现不应存在于构建脚本中。`buildSrc`只要不需要在多个独立项目之间共享代码，就可以非常方便地使用该代码。
 
@@ -183,7 +183,7 @@ buildSrc/build.gradle.kts
 rebuild`命令行选项](/md/命令行界面.md#sec:command_line_execution_options)通常有助于获得更快的反馈。不过请记住要定期或至少在完成后运行完整版本。  
 ╚═════════════════════════════  
   
-## [](#declare_properties_in_gradle_properties_file)[声明`gradle.properties`文件中的属性](#declare_properties_in_gradle_properties_file)
+<h2 id = '#declare_properties_in_gradle_properties_file'> <a href = '#declare_properties_in_gradle_properties_file'>声明`gradle.properties`文件中的属性</a> </h2>
 
 在Gradle中，可以在构建脚本中，`gradle.properties`文件中或命令行中将属性定义为参数。
 
@@ -212,13 +212,13 @@ rebuild`命令行选项](/md/命令行界面.md#sec:command_line_execution_optio
     └── subproject-b
         └── build.gradle.kts
 
-## [](#avoid_overlapping_task_outputs)[避免任务输出重叠](#avoid_overlapping_task_outputs)
+<h2 id = '#avoid_overlapping_task_outputs'> <a href = '#avoid_overlapping_task_outputs'>避免任务输出重叠</a> </h2>
 
 任务应该定义输入和输出，以获得[增量构建功能](/md/处理任务.md#sec:up_to_date_checks)的性能优势。在声明任务的输出时，请确保用于写入输出的目录在项目中的所有任务中都是唯一的。
 
 混合或覆盖由不同任务生成的输出文件会损害最新的检查，从而导致构建速度变慢。反过来，这些文件系统更改可能会阻止Gradle的[构建缓存](/md/构建缓存.md#build_cache)正确识别和缓存本来可以缓存的任务。
 
-## [](#sec:custom_gradle_distribution)[使用自定义Gradle发行版对构建进行标准化](#sec:custom_gradle_distribution)
+<h2 id = '#sec:custom_gradle_distribution'> <a href = '#sec:custom_gradle_distribution'>使用自定义Gradle发行版对构建进行标准化</a> </h2>
 
 企业通常希望通过定义通用约定或规则来标准化组织中所有项目的构建平台。您可以借助初始化脚本来实现。
 [初始化脚本](/md/初始化脚本.md#init_scripts)使在单个计算机上的所有项目中应用构建逻辑变得极为容易。例如，声明内部存储库及其凭证。

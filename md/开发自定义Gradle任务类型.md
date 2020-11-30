@@ -21,7 +21,7 @@ Gradle支持两种类型的任务。一种这样的类型是简单任务，您�
 在Gradle中实现自己的自定义任务类很容易。您可以使用任何您喜欢的语言来实现自定义任务类，只要最终将其编译为JVM字节码即可。在我们的示例中，我们将使用Groovy作为实现语言。Groovy，Java或Kotlin都是用于实现任务类的语言，都是不错的选择，因为Gradle
 API被设计为可以与这些语言很好地配合使用。通常，使用Java或Kotlin（静态类型）实现的任务将比使用Groovy实现的任务执行得更好。
 
-## [](#sec:packaging_a_task_class)[打包任务类](#sec:packaging_a_task_class)
+<h2 id = '#sec:packaging_a_task_class'> <a href = '#sec:packaging_a_task_class'>打包任务类</a> </h2>
 
 您可以在几个地方放置任务类的源代码。
 
@@ -49,7 +49,7 @@ API被设计为可以与这些语言很好地配合使用。通常，使用Java�
 
 在我们的示例中，我们将从构建脚本中的任务类开始，以使事情变得简单。然后，我们将考虑创建一个独立的项目。
 
-## [](#sec:writing_a_simple_task_class)[编写一个简单的任务类](#sec:writing_a_simple_task_class)
+<h2 id = '#sec:writing_a_simple_task_class'> <a href = '#sec:writing_a_simple_task_class'>编写一个简单的任务类</a> </h2>
 
 要实现自定义任务类，可以扩展[DefaultTask](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.DefaultTask.html)。
 
@@ -170,7 +170,7 @@ build.gradle.kts
     hello from GreetingTask
     greetings from GreetingTask
 
-## [](#sec:custom_tasks_standalone_project)[一个独立的项目](#sec:custom_tasks_standalone_project)
+<h2 id = '#sec:custom_tasks_standalone_project'> <a href = '#sec:custom_tasks_standalone_project'>一个独立的项目</a> </h2>
 
 现在，我们将把任务移到一个独立的项目中，以便我们可以发布它并与他人共享它。这个项目只是一个Groovy项目，它产生一个包含任务类的JAR。这是该项目的简单构建脚本。它应用了Groovy插件，并将Gradle
 API添加为编译时依赖项。
@@ -205,7 +205,7 @@ build.gradle.kts
 
 我们只是遵循任务类源应该放在哪里的约定。
 
-### [](#example_a_custom_task)[示例：自定义任务](#example_a_custom_task)
+<h3 id = '#example_a_custom_task'> <a href = '#example_a_custom_task'>示例：自定义任务</a> </h3>
 
 src / main / groovy / org / gradle / GreetingTask.groovy
 
@@ -228,7 +228,7 @@ src / main / groovy / org / gradle / GreetingTask.groovy
         }
     }
 
-### [](#sec:using_your_task_class_in_another_project)[在另一个项目中使用您的任务类](#sec:using_your_task_class_in_another_project)
+<h3 id = '#sec:using_your_task_class_in_another_project'> <a href = '#sec:using_your_task_class_in_another_project'>在另一个项目中使用您的任务类</a> </h3>
 
 要在构建脚本中使用任务类，您需要将该类添加到构建脚本的类路径中。为此，请使用一个`buildscript {
 }`块，如[构建脚本的外部依赖项中所述](/md/构建脚本基础.md#sec:build_script_external_dependencies)。以下示例显示了包含任务类的JAR已发布到本地存储库时如何执行此操作：
@@ -275,11 +275,11 @@ build.gradle.kts
         greeting = "howdy!"
     }
 
-### [](#sec:writing_tests_for_your_task_class)[为任务类编写测试](#sec:writing_tests_for_your_task_class)
+<h3 id = '#sec:writing_tests_for_your_task_class'> <a href = '#sec:writing_tests_for_your_task_class'>为任务类编写测试</a> </h3>
 
 您可以使用[ProjectBuilder](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testfixtures/ProjectBuilder.html)类创建在测试任务类时要使用的[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)实例。
 
-### [](#example_testing_a_custom_task)[示例：测试自定义任务](#example_testing_a_custom_task)
+<h3 id = '#example_testing_a_custom_task'> <a href = '#example_testing_a_custom_task'>示例：测试自定义任务</a> </h3>
 
 src / test / groovy / org / gradle / GreetingTaskTest.groovy
 
@@ -294,7 +294,7 @@ src / test / groovy / org / gradle / GreetingTaskTest.groovy
         }
     }
 
-## [](#incremental_tasks)[增量任务](#incremental_tasks)
+<h2 id = '#incremental_tasks'> <a href = '#incremental_tasks'>增量任务</a> </h2>
 
 使用Gradle，实现一个在所有输入和输出都是最新的情况下将被跳过的任务非常简单（请参阅“[增量构建”](/md/处理任务.md#sec:up_to_date_checks)）。但是，自上次执行以来，有时只有少数输入文件已更改，因此您希望避免重新处理所有未更改的输入。这对于将输入文件按1：1转换为输出文件的转换器任务特别有用。
 
@@ -308,7 +308,7 @@ API，它取代了旧的API并解决了其缺点。如果需要使用旧的API�
   
 ╚═════════════════════════════    
   
-### [](#sec:implementing_an_incremental_task)[实施增量任务](#sec:implementing_an_incremental_task)
+<h3 id = '#sec:implementing_an_incremental_task'> <a href = '#sec:implementing_an_incremental_task'>实施增量任务</a> </h3>
 
 为了使任务增量处理输入，该任务必须包含 _增量任务action_
 。这是一个具有单个[InputChanges](https://docs.gradle.org/6.7.1/dsl/org.gradle.work.InputChanges.html)参数的任务操作方法。该参数告诉Gradle该操作仅想处理更改的输入。另外，任务需要使用[@Incremental](https://docs.gradle.org/6.7.1/javadoc/org/gradle/work/Incremental.html)或[@SkipWhenEmpty](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/SkipWhenEmpty.html)声明至少一个增量文件输入属性。
@@ -422,7 +422,7 @@ tasks`，所有文件都报告为`ADDED`。在这种情况下，Gradle会自动�
   
 ╚═════════════════════════════    
   
-### [](#sec:which_inputs_are_considered_out_of_date)[哪些输入被认为是过时的？](#sec:which_inputs_are_considered_out_of_date)
+<h3 id = '#sec:which_inputs_are_considered_out_of_date'> <a href = '#sec:which_inputs_are_considered_out_of_date'>哪些输入被认为是过时的？</a> </h3>
 
 当以前执行任务时，自执行以来唯一的更改是增量输入文件属性，则Gradle能够确定需要处理哪些输入文件（增量执行）。在这种情况下，[InputChanges.getFileChanges（）](https://docs.gradle.org/6.7.1/dsl/org.gradle.work.InputChanges.html#org.gradle.work.InputChanges:getFileChanges\(org.gradle.api.file.FileCollection\))方法返回
 _添加_ ， _修改_ 或 _删除_ 的给定属性的所有输入文件的详细信息。
@@ -445,7 +445,7 @@ _添加_ ， _修改_ 或 _删除_ 的给定属性的所有输入文件的详细
 
 您可以使用[InputChanges.isIncremental（）](https://docs.gradle.org/6.7.1/dsl/org.gradle.work.InputChanges.html#org.gradle.work.InputChanges.html##org.gradle.work.InputChanges:incremental)方法检查任务执行是否为增量执行。
 
-### [](#sec:an_incremental_task_in_action)[增量任务](#sec:an_incremental_task_in_action)
+<h3 id = '#sec:an_incremental_task_in_action'> <a href = '#sec:an_incremental_task_in_action'>增量任务</a> </h3>
 
 给出的例子增量任务执行[上面](#taskDefinition)，通过基于它的一些场景，让我们走。
 
@@ -640,25 +640,25 @@ _所有_
     ADDED: 2.txt
     ADDED: 3.txt
 
-### [](#sec:storing_incremental_task_state)[为缓存的任务存储增量状态](#sec:storing_incremental_task_state)
+<h3 id = '#sec:storing_incremental_task_state'> <a href = '#sec:storing_incremental_task_state'>为缓存的任务存储增量状态</a> </h3>
 
 使用Gradle`InputChanges`并不是创建自上次执行以来仅对更改起作用的任务的唯一方法。诸如Kotlin编译器之类的工具将增量性作为内置功能提供。通常的实现方式是该工具将有关先前执行状态的分析数据存储在某个文件中。如果此类状态文件可[重定位](/md/构建缓存.md#sec:task_output_caching_inputs)，则可以将其声明为任务的输出。这样，当从缓存加载任务的结果时，下一次执行也可以使用从缓存加载的分析数据。
 
 但是，如果状态文件不可重定位，则无法通过构建缓存共享它们。确实，从高速缓存加载任务时，必须清除所有此类状态文件，以防止过时的状态在下一次执行期间使工具混乱。如果通过[task.localState.register（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskLocalState.html#register-
 java.lang.Object...-)声明了旧文件，或者使用[@LocalState](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/LocalState.html)批注标记了属性，Gradle可以确保删除这些旧文件。
 
-## [](#sec:declaring_and_using_command_line_options)[声明和使用命令行选项](#sec:declaring_and_using_command_line_options)
+<h2 id = '#sec:declaring_and_using_command_line_options'> <a href = '#sec:declaring_and_using_command_line_options'>声明和使用命令行选项</a> </h2>
 
 有时，用户希望在命令行而不是构建脚本上声明公开的任务属性的值。如果更频繁地更改属性值，则在命令行上传递它们特别有用。任务API支持一种用于标记属性的机制，以在运行时自动生成具有特定名称的相应命令行参数。
 
-### [](#sec:declaring_task_option)[声明命令行选项](#sec:declaring_task_option)
+<h3 id = '#sec:declaring_task_option'> <a href = '#sec:declaring_task_option'>声明命令行选项</a> </h3>
 
 为任务属性公开新的命令行选项非常简单。您只需要使用[Option](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/options/Option.html)注释属性的相应setter方法即可。一个选项需要一个强制标识符。此外，您可以提供可选的描述。任务可以公开与类中可用属性一样多的命令行选项。
 
 让我们看一个示例来说明功能。定制任务`UrlVerify`通过发出HTTP调用并检查响应代码来验证是否可以解析给定的URL。可以通过属性配置要验证的URL
 `url`。该属性的setter方法使用[@Option](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/options/Option.html)注释。
 
-### [](#example_declaring_a_command_line_option)[示例：声明命令行选项](#example_declaring_a_command_line_option)
+<h3 id = '#example_declaring_a_command_line_option'> <a href = '#example_declaring_a_command_line_option'>示例：声明命令行选项</a> </h3>
 
 UrlVerify.java
 
@@ -689,7 +689,7 @@ UrlVerify.java
 
 通过运行任务和选项，可以将为任务声明的所有选项[呈现为控制台输出](#sec:listing_task_options)。`help``--task`
 
-### [](#sec:using_task_option_command_line)[在命令行上使用选项](#sec:using_task_option_command_line)
+<h3 id = '#sec:using_task_option_command_line'> <a href = '#sec:using_task_option_command_line'>在命令行上使用选项</a> </h3>
 
 在命令行上使用选项必须遵守以下规则：
 
@@ -724,7 +724,7 @@ build.gradle.kts
     > gradle -q verifyUrl --url=http://www.google.com/
     Verifying URL 'http://www.google.com/'
 
-### [](#sec:supported_task_option_data_types)[选项支持的数据类型](#sec:supported_task_option_data_types)
+<h3 id = '#sec:supported_task_option_data_types'> <a href = '#sec:supported_task_option_data_types'>选项支持的数据类型</a> </h3>
 
 Gradle限制了可用于声明命令行选项的数据类型集。命令行上的用法因类型而异。
 
@@ -754,7 +754,7 @@ Gradle限制了可用于声明命令行选项的数据类型集。命令行上�
 描述可以采用给定类型的多个值的选项。该选项的值必须作为多个声明提供，例如`--image-id=123 --image-
 id=456`。当前不支持其他表示法，例如以逗号分隔的列表或由空格字符分隔的多个值。
 
-### [](#sec:documenting_available_task_option_values)[记录选项的可用值](#sec:documenting_available_task_option_values)
+<h3 id = '#sec:documenting_available_task_option_values'> <a href = '#sec:documenting_available_task_option_values'>记录选项的可用值</a> </h3>
 
 理论上，属性类型的选项`String`或`List<String>`可以接受任意值。可以在注释[OptionValues](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/options/OptionValues.html)的帮助下以编程方式记录此选项的期望值。可以将此注释分配给任何返回`List`支持的数据类型之一的方法。另外，您必须提供选项标识符以指示选项和可用值之间的关系。
 
@@ -766,7 +766,7 @@ id=456`。当前不支持其他表示法，例如以逗号分隔的列表或由�
   
 本示例说明了单个任务使用多个选项的情况。任务实现提供了该选项的可用值列表`output-type`。
 
-### [](#example_declaring_available_values_for_an_option)[示例：声明选项的可用值](#example_declaring_available_values_for_an_option)
+<h3 id = '#example_declaring_available_values_for_an_option'> <a href = '#example_declaring_available_values_for_an_option'>示例：声明选项的可用值</a> </h3>
 
 UrlProcess.java
 
@@ -816,11 +816,11 @@ UrlProcess.java
         }
     }
 
-### [](#sec:listing_task_options)[列出命令行选项](#sec:listing_task_options)
+<h3 id = '#sec:listing_task_options'> <a href = '#sec:listing_task_options'>列出命令行选项</a> </h3>
 
 使用注释[Option](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/options/Option.html)和[OptionValues的](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/options/OptionValues.html)命令行选项是自记录的。您将在任务的控制台输出中看到[声明的选项](#sec:declaring_task_option)及其[可用值](#sec:documenting_available_task_option_values)`help`。输出以字母顺序呈现选项。
 
-### [](#example_listing_available_values_for_option)[示例：列出选项的可用值](#example_listing_available_values_for_option)
+<h3 id = '#example_listing_available_values_for_option'> <a href = '#example_listing_available_values_for_option'>示例：列出选项的可用值</a> </h3>
 
 输出 **`gradle -q help --task processUrl`**
 
@@ -849,7 +849,7 @@ UrlProcess.java
     Group
          -
 
-### [](#limitations)[局限性](#limitations)
+<h3 id = '#limitations'> <a href = '#limitations'>局限性</a> </h3>
 
 当前支持声明命令行选项有一些限制。
 
@@ -859,7 +859,7 @@ UrlProcess.java
 
   * 在命令行上分配选项时，需要显式地说明公开该选项的任务，例如`gradle check --tests abc`，即使该`check`任务取决于任务，该`test`任务也不起作用。
 
-## [](#worker_api)[工作者API](#worker_api)
+<h2 id = '#worker_api'> <a href = '#worker_api'>工作者API</a> </h2>
 
 ╔═════════════════════════════  
 
@@ -874,7 +874,7 @@ Worker API提供了一种完成此操作的机制。它允许在任务动作期�
 API的好处不仅限于并行执行任务。您还可以配置所需的隔离级别，以便可以在隔离的类加载器甚至隔离的进程中执行工作。此外，好处甚至超出了执行单个任务的范围。默认情况下，使用Worker
 API，Gradle可以开始并行执行任务。换句话说，一旦任务提交了要异步执行的工作并退出了任务动作，Gradle便可以并行开始执行其他独立任务，即使这些任务在同一项目中也是如此。
 
-### [](#using-the-worker-api)[使用Worker API](#using-the-worker-api)
+<h3 id = '#using-the-worker-api'> <a href = '#using-the-worker-api'>使用Worker API</a> </h3>
 
 为了将工作提交给Worker API，必须提供两件事：工作单元的实现以及工作单元的参数。
 
@@ -1058,7 +1058,7 @@ build.gradle.kts
             workQueue.await()
             logger.lifecycle("Created ${outputDir.listFiles().size} reversed files in ${outputDir.toRelativeString(projectLayout.projectDirectory.asFile)}")
 
-### [](#isolation-modes)[隔离模式](#isolation-modes)
+<h3 id = '#isolation-modes'> <a href = '#isolation-modes'>隔离模式</a> </h3>
 
 Gradle提供了可以在创建时被配置三种隔离模式[工作队列](https://docs.gradle.org/6.7.1/javadoc/org/gradle/workers/WorkQueue.html)上使用下列方法中的一个被指定和[WorkerExecutor](https://docs.gradle.org/6.7.1/javadoc/org/gradle/workers/WorkerExecutor.html)：
 
@@ -1082,7 +1082,7 @@ Gradle提供了可以在创建时被配置三种隔离模式[工作队列](https
 _工作守护程序_ ，该 _守护程序_
 将保持活动状态，并可以重复用于将来可能具有相同要求的工作项。可以使用[ProcessWorkerSpec.forkOptions（org.gradle.api.Action）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/workers/ProcessWorkerSpec.html#forkOptions-org.gradle.api.Action-)使用与Gradle JVM不同的设置来配置此过程。
 
-### [](#worker-daemons)[工人守护进程](#worker-daemons)
+<h3 id = '#worker-daemons'> <a href = '#worker-daemons'>工人守护进程</a> </h3>
 
 使用时`processIsolation()`，gradle将启动一个长期存在的 _Worker Daemon_ 进程，该进程可用于将来的工作项。
 
@@ -1198,12 +1198,12 @@ jvm参数
 
 辅助守护程序将一直运行，直到启动它们的构建守护程序停止或系统内存不足为止。当可用系统内存不足时，Gradle将开始停止工作程序守护程序，以尽量减少内存消耗。
 
-## [](#cancellation_and_timeouts)[取消和超时](#cancellation_and_timeouts)
+<h2 id = '#cancellation_and_timeouts'> <a href = '#cancellation_and_timeouts'>取消和超时</a> </h2>
 
 为了支持取消操作（例如，当用户使用CTRL +
 C停止构建时）和任务超时，自定义任务应对被中断的执行线程做出反应。通过工作人员API提交的工作项也是如此。如果任务在10秒内未响应中断，则守护程序将关闭以释放系统资源。
 
-## [](#more_details)[更多细节](#more_details)
+<h2 id = '#more_details'> <a href = '#more_details'>更多细节</a> </h2>
 
 在自定义Gradle插件中打包自定义任务类型通常是一种好方法。该插件可以为任务类型提供有用的默认值和约定，并提供一种从构建脚本或其他插件使用任务类型的便捷方法。请参阅[开发自定义Gradle插件](/md/开发自定义Gradle插件.md#custom_plugins)以获取更多详细信息。
 

@@ -23,7 +23,7 @@
 
 转换构建可能会很吓人，但您不必一个人做。您可以从[help.gradle.org](https://gradle.org/help)搜索文档，论坛和StackOverflow，或者在[遇到麻烦时](https://gradle.org/help)访问[Gradle社区](https://discuss.gradle.org/c/help-discuss)。
 
-## [](#migmvn:making_a_case)[进行迁移](#migmvn:making_a_case)
+<h2 id = '#migmvn:making_a_case'> <a href = '#migmvn:making_a_case'>进行迁移</a> </h2>
 
 Gradle和Maven之间的主要区别是灵活性，性能，用户体验和依赖性管理。[Maven与Gradle功能比较中](https://gradle.org/maven-vs-gradle)提供了这些方面的直观概述。
 
@@ -32,7 +32,7 @@ Gradle和Maven之间的主要区别是灵活性，性能，用户体验和依赖
 [避免编译](https://blog.gradle.org/incremental-compiler-avoidance) 和改进的增量Java编译器等功能。对于大多数项目，即使不使用构建缓存，
 Gradle的速度也比Maven快2-10倍。可以在[此处](https://gradle.org/gradle-vs-maven-performance/) 找到有关从Maven切换到Gradle的深入性能比较和业务案例。
 
-## [](#migmvn:general_guidelines)[一般准则](#migmvn:general_guidelines)
+<h2 id = '#migmvn:general_guidelines'> <a href = '#migmvn:general_guidelines'>一般准则</a> </h2>
 
 Gradle和Maven对如何构建项目有根本不同的看法。Gradle提供了一种灵活且可扩展的构建模型，该模型将实际工作委托给[_任务依赖关系图_](/md/什么是Gradle.md#the_core_model_is_based_on_tasks)
 。Maven使用固定的线性阶段模型，可以在其中附加目标（完成工作的事物）。这可能会使两者之间的迁移看起来令人生畏，但迁移可能出奇的容易，因为Gradle遵循许多与Maven相同的约定（例如[标准项目结构）](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#sec:java_project_layout)
@@ -81,7 +81,7 @@ Plugin Portal](https://plugins.gradle.org/)上是否有合适的社区插件。
 
 本章的其余部分更详细地介绍了将构建从Maven迁移到Gradle的特定方面。
 
-## [](#migmvn:build_lifecycle)[了解构建生命周期](#migmvn:build_lifecycle)
+<h2 id = '#migmvn:build_lifecycle'> <a href = '#migmvn:build_lifecycle'>了解构建生命周期</a> </h2>
 
 Maven构建基于[_构建生命周期_](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
 的概念，该概念由一组固定阶段组成。这可能会成为用户迁移到Gradle的障碍，因为它的构建生命周期[有所不同](/md/构建生命周期.md#build_lifecycle)，
@@ -146,7 +146,7 @@ Gradle还允许您解决对本地Maven缓存的依赖关系，如“[声明存�
 ，但是可以按照[构建Java项目的指南中的](/md/构建Java和JVM项目.md#sec:java_packaging)说明轻松激活它。
 __[](/md/构建Java和JVM项目.md#sec:java_packaging)
 
-## [](#migmvn:automatic_conversion)[执行自动转换](#migmvn:automatic_conversion)
+<h2 id = '#migmvn:automatic_conversion'> <a href = '#migmvn:automatic_conversion'>执行自动转换</a> </h2>
 
 Gradle的[`init`任务](https://docs.gradle.org/6.7.1/userguide/build_init_plugin.html#build_init_plugin)通常用于创建新的骨架项目，但是您也可以使用它来将现有的Maven构建自动转换为Gradle。将Gradle[安装到系统上后](/md/安装Gradle.md#installation)，只需执行以下命令
 
@@ -187,7 +187,7 @@ Gradle还将创建一个设置脚本。
 
 迁移完成后。这将运行测试并产生所需的工件，而您无需任何额外的干预。
 
-## [](#migmvn:migrating_deps)[迁移依赖项](#migmvn:migrating_deps)
+<h2 id = '#migmvn:migrating_deps'> <a href = '#migmvn:migrating_deps'>迁移依赖项</a> </h2>
 
 Gradle的依赖项管理系统比Maven的依赖项管理系统更灵活，但它仍支持相同的存储库，声明的依赖项，
 范围（Gradle中的[依赖项配置](/md/声明依赖.md#sec:what-are-dependency-configurations) ）和可传递依赖项的概念。
@@ -199,7 +199,7 @@ Gradle的依赖项管理系统比Maven的依赖项管理系统更灵活，但它
   
 在以下各节中，我们将向您展示如何迁移Maven构建的依赖管理信息中最常见的元素。
 
-### [](#migmvn:declaring_deps)[声明依赖](#migmvn:declaring_deps)
+<h3 id = '#migmvn:declaring_deps'> <a href = '#migmvn:declaring_deps'>声明依赖</a> </h3>
 
 Gradle使用与Maven相同的依赖项标识符组件：组ID，工件ID和版本。它还支持分类器。因此，您需要做的就是将标识符的依赖项信息替换为Gradle的语法，这在“[声明依赖项”](/md/声明依赖.md)一章中进行了介绍。
 
@@ -312,7 +312,7 @@ build.gradle.kts
 这样的结果将是将POM中的所有`compile`和`runtime`范围依赖项`groovy-
 all`添加到测试运行时类路径，而仅将`compile`范围依赖项添加到测试编译类路径。与其他作用域的依赖关系将被忽略。
 
-### [](#migmvn:declaring_repos)[声明存储库](#migmvn:declaring_repos)
+<h3 id = '#migmvn:declaring_repos'> <a href = '#migmvn:declaring_repos'>声明存储库</a> </h3>
 
 Gradle允许您从任何与Maven兼容或与Ivy兼容的存储库中检索已声明的依赖项。与Maven不同，它没有默认存储库，因此您必须声明至少一个。为了具有与Maven构建相同的行为，只需在Gradle构建中配置[Maven
 Central](/md/声明存储库.md#sub:maven_central)，如下所示：
@@ -344,7 +344,7 @@ build.gradle.kts
 
 您可能还对学习Gradle自己的[依赖项缓存](/md/了解依赖性解析.md#sec:dependency_cache)感兴趣，该[缓存的](/md/了解依赖性解析.md#sec:dependency_cache)行为比Maven的可靠，并且可以被多个并发的Gradle进程安全地使用。
 
-### [](#migmvn:controlling_dep_versions)[控制依赖项版本](#migmvn:controlling_dep_versions)
+<h3 id = '#migmvn:controlling_dep_versions'> <a href = '#migmvn:controlling_dep_versions'>控制依赖项版本</a> </h3>
 
 传递依赖项的存在意味着您可以轻松地在依赖关系图中最终获得同一依赖项的多个版本。默认情况下，Gradle将在图中选择依赖关系的最新版本，但这并不总是正确的解决方案。这就是为什么它提供了几种机制来控制解决给定依赖项的哪个版本的原因。
 
@@ -361,7 +361,7 @@ build.gradle.kts
 如果要确保多项目构建中所有项目之间版本的一致性（类似于`<dependencyManagement>`Maven中的块的工作方式），可以使用[Java Platform Plugin](/md/Java平台插件.md#java_platform_plugin) 。这允许您声明一组可以应用于多个项目的依赖项约束。您甚至可以将平台发布为Maven
 BOM或使用Gradle的元数据格式发布。有关如何执行此操作的更多信息，请参见插件页面，尤其是在使用[平台](/md/Java平台插件.md#sec:java_platform_consumption)部分，以了解如何将平台应用于同一构建中的其他项目。
 
-### [](#migmvn:excluding_deps)[排除传递依赖](#migmvn:excluding_deps)
+<h3 id = '#migmvn:excluding_deps'> <a href = '#migmvn:excluding_deps'>排除传递依赖</a> </h3>
 
 Maven构建使用排除项将不需要的依赖关系或不需要的依赖关系 _版本_ 排除在依赖关系图中。您可以使用Gradle做同样的事情，但这不一定是 _正确的_
 事情。Gradle提供了其他一些选项，这些选项可能更适合给定的情况，因此您确实需要了解 _为什么_ 要适当地设置排除项。
@@ -370,7 +370,7 @@ Maven构建使用排除项将不需要的依赖关系或不需要的依赖关系
 
 如果您对控制实际解决依赖关系的版本更感兴趣，请参阅上一节。
 
-### [](#migmvn:optional_deps)[处理可选的依赖](#migmvn:optional_deps)
+<h3 id = '#migmvn:optional_deps'> <a href = '#migmvn:optional_deps'>处理可选的依赖</a> </h3>
 
 关于可选依赖项，您可能会遇到两种情况：
 
@@ -382,7 +382,7 @@ Maven构建使用排除项将不需要的依赖关系或不需要的依赖关系
 
 至于将依赖项发布为可选的，Gradle提供了一个更丰富的模型，称为[Feature Variants](/md/建模功能变体和可选依赖项.md#feature_variants)，它可以让您声明库提供的“可选功能”。
 
-## [](#migmvn:using_boms)[使用物料清单（BOM）](#migmvn:using_boms)
+<h2 id = '#migmvn:using_boms'> <a href = '#migmvn:using_boms'>使用物料清单（BOM）</a> </h2>
 
 Maven允许您通过在`<dependencyManagement>`打包类型为的POM文件的一部分内定义依赖项来共享依赖项约束`pom`。然后可以将这种特殊类型的POM（物料清单）导入其他POM中，以便您在项目中拥有一致的库版本。
 
@@ -425,7 +425,7 @@ BOM导入版本的建议](/md/在项目之间共享依赖版本.md#sub:bom_impor
 您可以使用此功能将`<dependencyManagement>`来自任何依赖项的POM的信息应用于Gradle构建，即使那些没有打包类型为的信息也是如此`pom`。双方`platform()`并`enforcedPlatform()`会忽略声明的依赖`<dependencies>`块。  
 ╚═════════════════════════════    
   
-## [](#migmvn:multimodule_builds)[迁移多模块构建（项目聚合）](#migmvn:multimodule_builds)
+<h2 id = '#migmvn:multimodule_builds'> <a href = '#migmvn:multimodule_builds'>迁移多模块构建（项目聚合）</a> </h2>
 
 Maven的多模块构建与Gradle的[多项目构建](/md/Gradle中的多项目构建.md#multi_project_builds)很好地映射。尝试相应的[示例，](https://docs.gradle.org/6.7.1/samples/sample_jvm_multi_project_build.html)以了解如何设置基本的多项目Gradle构建。
 
@@ -487,12 +487,12 @@ settings.gradle.kts
 
 这基本上涉及创建一个根项目构建脚本，该脚本将共享配置注入到适当的子项目中。
 
-### [](#migmvn:sub:sharing-versions)[跨项目共享版本](#migmvn:sub:sharing-versions)
+<h3 id = '#migmvn:sub:sharing-versions'> <a href = '#migmvn:sub:sharing-versions'>跨项目共享版本</a> </h3>
 
 如果要复制在`dependencyManagement`根POM文件的部分中声明的具有依赖项版本的Maven模式，最好的方法是利用`java-
 platform`插件。您将需要为此添加一个专用项目，并在构建的常规项目中使用它。有关此模式的更多详细信息，请参见[文档](/md/Java平台插件.md)。
 
-## [](#migmvn:profiles_and_properties)[迁移Maven配置文件和属性](#migmvn:profiles_and_properties)
+<h2 id = '#migmvn:profiles_and_properties'> <a href = '#migmvn:profiles_and_properties'>迁移Maven配置文件和属性</a> </h2>
 
 Maven允许您使用各种属性对构建进行参数化。一些是项目模型的只读属性，其他是用户在POM中定义的属性。它甚至允许您将系统属性视为项目属性。
 
@@ -610,7 +610,7 @@ profile-prod.gradle.kts
 有关在Gradle中使用Maven概要文件的冗长讨论，请参阅[此博客文章](https://blog.gradle.org/maven-pom-
 profiles)。
 
-## [](#migmvn:filtering_resources)[筛选资源](#migmvn:filtering_resources)
+<h2 id = '#migmvn:filtering_resources'> <a href = '#migmvn:filtering_resources'>筛选资源</a> </h2>
 
 Maven有一个称为的阶段，默认情况下`process-
 resources`目标已`resources:resources`绑定到该阶段。这为构建作者提供了对各种文件（例如Web资源，打包的属性文件等）执行变量替换的机会。
@@ -644,7 +644,7 @@ build.gradle.kts
 
 请参阅[CopySpec](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/CopySpec.html)的API文档以查看所有可用选项。
 
-## [](#migmvn:integration_tests)[配置集成测试](#migmvn:integration_tests)
+<h2 id = '#migmvn:integration_tests'> <a href = '#migmvn:integration_tests'>配置集成测试</a> </h2>
 
 许多Maven的建立某种形式的一体化集成测试，它的Maven通过一组额外的阶段的支持：`pre-integration-
 test`，`integration-test`，`post-integration-
@@ -656,7 +656,7 @@ test`，和`verify`。它还使用Failsafe插件代替Surefire，以便失败的
 
 源集还为您在集成测试中放置源文件的位置提供了很大的灵活性。您可以轻松地将它们保存在与单元测试相同的目录中，或者更可取的是将它们保存在单独的源目录中，例如`src/integTest/java`。要支持其他类型的测试，您只需添加更多源集和[测试](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)任务！
 
-## [](#migmvn:common_plugins)[迁移常用插件](#migmvn:common_plugins)
+<h2 id = '#migmvn:common_plugins'> <a href = '#migmvn:common_plugins'>迁移常用插件</a> </h2>
 
 Maven和Gradle共享一种通过插件扩展构建的通用方法。尽管表面上的插件系统有很大不同，但是它们共享许多基于功能的插件，例如：
 
@@ -751,7 +751,7 @@ build.gradle.kts
 
 从Maven迁移项目时，请不要忘记源集。与Maven相比，它们通常为处理集成测试或生成的源提供了更优雅的解决方案，因此您应将它们纳入迁移计划中。
 
-### [](#ant_goals)[Ant目标](#ant_goals)
+<h3 id = '#ant_goals'> <a href = '#ant_goals'>Ant目标</a> </h3>
 
 许多Maven构建依赖于AntRun插件来自定义构建，而无需实现自定义Maven插件的开销。Gradle没有等效的插件，因为Ant通过该`ant`对象是Gradle构建中的一等公民。例如，您可以使用Ant的Echo任务，如下所示：
 
@@ -789,12 +789,12 @@ build.gradle.kts
   
 ╚═════════════════════════════    
   
-## [](#migmvn:unnecessary_plugins)[了解您不需要哪些插件](#migmvn:unnecessary_plugins)
+<h2 id = '#migmvn:unnecessary_plugins'> <a href = '#migmvn:unnecessary_plugins'>了解您不需要哪些插件</a> </h2>
 
 值得记住的是，Gradle版本通常比Maven版本更易于扩展和自定义。在这种情况下，这意味着您可能不需要Gradle插件来替换Maven。例如，Maven
 Enforcer插件允许您控制依赖项版本和环境因素，但是可以在常规Gradle构建脚本中轻松配置这些内容。
 
-## [](#migmvn:custom_plugins)[处理不常见和自定义的插件](#migmvn:custom_plugins)
+<h2 id = '#migmvn:custom_plugins'> <a href = '#migmvn:custom_plugins'>处理不常见和自定义的插件</a> </h2>
 
 您可能会遇到在Gradle中没有对应版本的Maven插件，特别是如果您或组织中的某人已编写了自定义插件。这种情况取决于您了解Gradle（以及可能的Maven）的工作方式，因为您通常必须编写自己的插件。
 
@@ -811,7 +811,7 @@ Enforcer插件允许您控制依赖项版本和环境因素，但是可以在常
 如果确实需要通过构建脚本或插件来实现自定义逻辑，请查看[与插件开发相关](https://gradle.org/guides/?q=Plugin%20Development)的[指南](https://gradle.org/guides/?q=Plugin%20Development)。另外，请务必熟悉Gradle的[Groovy
 DSL参考](https://docs.gradle.org/6.7.1/dsl/)，该[参考](https://docs.gradle.org/6.7.1/dsl/)提供了有关您将使用的API的全面文档。它详细介绍了标准配置块（以及支持他们的对象），系统（核心类型`Project`，`Task`等等），和一组标准的任务类型。主要的入口点是[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)接口，因为它是支持构建脚本的顶级对象。
 
-## [](#further_reading)[进一步阅读](#further_reading)
+<h2 id = '#further_reading'> <a href = '#further_reading'>进一步阅读</a> </h2>
 
 本章涵盖了将Maven构建迁移到Gradle的主要主题。剩下的就是迁移期间或迁移之后可能有用的其他一些方面：
 

@@ -5,7 +5,7 @@
 * [总览](#gradle_overview)
 * [您需要了解有关Gradle的五件事](#five_things)
 
-## [](#gradle_overview)[总览](#gradle_overview)
+<h2 id = '#gradle_overview'> <a href = '#gradle_overview'>总览</a> </h2>
 
 Gradle是一个开放源代码的[构建自动化](https://en.wikipedia.org/wiki/Build_automation)工具，旨在灵活地构建几乎任何类型的软件。以下是其一些最重要功能的高级概述：
 
@@ -37,17 +37,17 @@ IDE支持
 
 [构建扫描](https://scans.gradle.com/)提供了有关构建运行的广泛信息，可用于识别构建问题。他们特别擅长帮助您确定构建性能的问题。您还可以与其他人共享构建扫描，如果您需要咨询以解决构建问题，这将特别有用。
 
-## [](#five_things)[您需要了解有关Gradle的五件事](#five_things)
+<h2 id = '#five_things'> <a href = '#five_things'>您需要了解有关Gradle的五件事</a> </h2>
 
 Gradle是一种灵活而强大的构建工具，在您初次启动时会很容易感到恐惧。但是，了解以下核心原则将使Gradle更加容易上手，并且您将在不了解该工具的情况下熟练掌握该工具。
 
-### [](#1_gradle_is_a_general_purpose_build_tool)[1\. Gradle是通用的构建工具](#1_gradle_is_a_general_purpose_build_tool)
+<h3 id = '#1_gradle_is_a_general_purpose_build_tool'> <a href = '#1_gradle_is_a_general_purpose_build_tool'>1\. Gradle是通用的构建工具</a> </h3>
 
 Gradle允许您构建任何软件，因为它对正在尝试构建的内容或应如何完成的工作做出很少的假设。最明显的限制是，依赖项管理当前仅支持与Maven和Ivy兼容的存储库以及文件系统。
 
 这并不意味着您需要做很多工作来创建构建。Gradle通过添加一层约定和通过[_插件_](/md/使用Gradle插件.md#plugins)预先构建的功能，使构建通用类型的项目（例如Java库）变得容易。您甚至可以创建和发布自定义插件来封装自己的约定并构建功能。
 
-### [](#the_core_model_is_based_on_tasks)[2.核心模型基于任务](#the_core_model_is_based_on_tasks)
+<h3 id = '#the_core_model_is_based_on_tasks'> <a href = '#the_core_model_is_based_on_tasks'>2.核心模型基于任务</a> </h3>
 
 Gradle将其构建模型建模为任务（工作单元）的有向无环图（DAG）。这意味着构建实质上配置了一组任务，并根据它们的依赖关系将它们连接在一起以创建该DAG。创建任务图后，Gradle将确定需要按顺序运行的任务，然后继续执行它们。
 
@@ -70,7 +70,7 @@ Gradle将其构建模型建模为任务（工作单元）的有向无环图（DA
 
 最后一件事：Gradle的[增量构建](/md/处理任务.md#sec:up_to_date_checks)支持是可靠且可靠的，因此，`clean`除非您确实想执行清理操作，否则避免执行该任务以保持构建快速运行。
 
-### [](#3_gradle_has_several_fixed_build_phases)[3\. Gradle有几个固定的构建阶段](#3_gradle_has_several_fixed_build_phases)
+<h3 id = '#3_gradle_has_several_fixed_build_phases'> <a href = '#3_gradle_has_several_fixed_build_phases'>3\. Gradle有几个固定的构建阶段</a> </h3>
 
 重要的是要了解Gradle分三个阶段评估和执行构建脚本：
 
@@ -92,7 +92,7 @@ Gradle将其构建模型建模为任务（工作单元）的有向无环图（DA
 
 配置阶段的另一个重要方面是，_每次构建运行时都要_评估其中涉及的所有内容。这就是为什么最佳做法是[在配置阶段避免昂贵的工作](/md/创作可维护版本的最佳实践.md#sec:minimize_logic_executed_configuration_phase)。[构建扫描](https://scans.gradle.com/)可以帮助您识别此类热点。
 
-### [](#4_gradle_is_extensible_in_more_ways_than_one)[4\. Gradle的扩展方式不止一种](#4_gradle_is_extensible_in_more_ways_than_one)
+<h3 id = '#4_gradle_is_extensible_in_more_ways_than_one'> <a href = '#4_gradle_is_extensible_in_more_ways_than_one'>4\. Gradle的扩展方式不止一种</a> </h3>
 
 如果您可以仅使用Gradle捆绑的构建逻辑来构建项目，那将是很好的，但这几乎是不可能的。大多数构建都有一些特殊要求，这意味着您需要添加自定义构建逻辑。
 
@@ -115,7 +115,7 @@ Gradle提供了多种机制来扩展它，例如：
 
   Gradle允许您在任务，文件和依赖项配置之外将新概念引入构建。您可以在大多数语言插件中看到这一点，这些插件将[_源集_](/md/构建Java和JVM项目.md#sec:java_source_sets)的概念添加到了构建中。构建过程的适当建模可以大大提高构建的易用性及其效率。
 
-### [](#5_build_scripts_operate_against_an_api)[5.构建脚本针对API运行](#5_build_scripts_operate_against_an_api)
+<h3 id = '#5_build_scripts_operate_against_an_api'> <a href = '#5_build_scripts_operate_against_an_api'>5.构建脚本针对API运行</a> </h3>
 
 将Gradle的构建脚本视为可执行代码很容易，因为它们本来就是。但是，这是一个实现细节：设计良好的构建脚本描述了构建软件需要哪些步骤，而不是这些步骤应该如何完成工作。那是自定义任务类型和插件的工作。
 >  有一个普遍的误解，认为Gradle的强大和灵活性来自于它的构建脚本是代码这一事实。事实并不是这样，提供功能的是底层模型和API。

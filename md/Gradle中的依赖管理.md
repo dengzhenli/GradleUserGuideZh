@@ -6,7 +6,7 @@
   * [什么是依赖管理？](#what_is_dependency_management)
   * [Gradle中的依赖管理](#sec:dependency-mgmt-in-gradle)
 
-## [](#what_is_dependency_management)[什么是依赖管理？](#what_is_dependency_management)
+<h2 id = '#what_is_dependency_management'> <a href = '#what_is_dependency_management'>什么是依赖管理？</a> </h2>
 
 软件项目很少单独工作。在大多数情况下，项目依赖于库形式的可重用功能，或者分解为单个组件以构成模块化系统。依赖性管理是一种用于以自动化方式声明，解决和使用项目所需依赖性的技术。
 
@@ -16,7 +16,7 @@
   
 ╚═════════════════════════════    
   
-## [](#sec:dependency-mgmt-in-gradle)[Gradle中的依赖管理](#sec:dependency-mgmt-in-gradle)
+<h2 id = '#sec:dependency-mgmt-in-gradle'> <a href = '#sec:dependency-mgmt-in-gradle'>Gradle中的依赖管理</a> </h2>
 
 Gradle具有对依赖项管理的内置支持，并且可以完成现代软件项目中遇到的典型方案。我们将在示例项目的帮助下探索主要概念。下图将为您简要概述所有运动部件。
 

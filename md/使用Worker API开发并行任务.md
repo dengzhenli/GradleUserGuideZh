@@ -18,7 +18,7 @@ API的过程。
 您将首先创建一个自定义任务类，该类为可配置文件集生成MD5哈希值。然后，您将转换此自定义任务以使用Worker
 API。然后，我们将探索以不同级别的隔离度运行任务。在此过程中，您将了解Worker API的基础知识及其提供的功能。
 
-## [](#create_a_custom_task_class)[创建一个自定义任务类](#create_a_custom_task_class)
+<h2 id = '#create_a_custom_task_class'> <a href = '#create_a_custom_task_class'>创建一个自定义任务类</a> </h2>
 
 首先，您需要创建一个自定义任务，该任务会生成一组可配置文件的MD5哈希值。
 
@@ -177,8 +177,7 @@ src / oppenheimer.txt
 
 在`build/md5`目录中，您现在应该看到带有`md5`扩展名的相应文件，该扩展名包含`src`目录中文件的MD5哈希。请注意，该任务至少需要9秒钟才能运行，因为它一次哈希一个文件（即，每个文件约3秒哈希3个文件）。
 
-## [](#converting_to_the_worker_api)[转换为Worker
-API](#converting_to_the_worker_api)
+<h2 id = '#converting_to_the_worker_api'> <a href = '#converting_to_the_worker_api'>转换为Worker API</a> </h2>
 
 尽管此任务按顺序处理每个文件，但是每个文件的处理都独立于任何其他文件。如果这项工作并行完成，并且可以利用多个处理器，那就太好了。这是Worker
 API可以提供帮助的地方。
@@ -294,7 +293,7 @@ buildSrc / src / main / java / CreateMD5.java
 尽管工作单元是并行执行的，但MD5哈希文件的生成顺序可能不同，结果应与以前相同。但是，您应该注意的一件事是任务运行得更快。这是因为Worker
 API对每个文件并行而不是按顺序执行MD5计算。
 
-## [](#changing_the_isolation_mode)[更改隔离模式](#changing_the_isolation_mode)
+<h2 id = '#changing_the_isolation_mode'> <a href = '#changing_the_isolation_mode'>更改隔离模式</a> </h2>
 
 隔离模式控制Gradle将工作项彼此隔离以及与Gradle运行时的其余部分隔离的强烈程度。有三种方法，`WorkerExecutor`即控制这样的：
 `noIsolation()`，`classLoaderIsolation()`和`processIsolation()`。的`noIsolation()`模式是最低的隔离级别，它将阻止工作单元更改项目状态。这是最快的隔离模式，因为它需要最少的开销来设置要执行的工作项，因此您可能希望在简单的情况下使用此模式。但是，它将对所有工作单元使用单个共享的类加载器。这意味着每个工作单元都可能通过静态类状态相互影响。这也意味着每个工作单元都使用buildscript类路径上相同版本的库。如果希望用户能够将任务配置为与其他（但兼容）版本的
@@ -461,7 +460,7 @@ build.gradle.kts
     BUILD SUCCESSFUL in 0s
     1 actionable task: 1 executed
 
-## [](#creating_a_worker_daemon)[创建一个工人守护进程](#creating_a_worker_daemon)
+<h2 id = '#creating_a_worker_daemon'> <a href = '#creating_a_worker_daemon'>创建一个工人守护进程</a> </h2>
 
 有时，在执行工作项时需要进一步隔离。例如，外部库可能依赖于要设置的某些系统属性，这些属性可能在工作项之间发生冲突。或者库可能与Gradle所运行的JDK版本不兼容，并且可能需要与其他版本一起运行。Worker
 API可以使用`processIsolation()`导致工作在单独的“

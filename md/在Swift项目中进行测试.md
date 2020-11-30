@@ -14,7 +14,7 @@
 
 但是首先，我们看一下Gradle中本机测试的基础。
 
-## [](#sec:swift_testing_basics)[基础知识](#sec:swift_testing_basics)
+<h2 id = '#sec:swift_testing_basics'> <a href = '#sec:swift_testing_basics'>基础知识</a> </h2>
 
 Gradle支持与Swift语言的XCTest测试框架进行深度集成，并围绕[XCTest](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)任务类型展开。这将在macOS上使用[XcodeXCTest](https://developer.apple.com/documentation/xctest)或在Linux上使用[开源Swift核心库替代方案](https://github.com/apple/swift-corelibs-xctest)运行一系列测试用例，并整理结果。然后，您可以通过[TestReport](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.TestReport.html)任务类型的实例将这些结果转换为报告。
 
@@ -28,7 +28,7 @@ Gradle支持与Swift语言的XCTest测试框架进行深度集成，并围绕[XC
 
 该[XCTest](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)任务有许多配置选项。在本章的其余部分中，我们将讨论很多。
 
-## [](#test_execution)[测试执行](#test_execution)
+<h2 id = '#test_execution'> <a href = '#test_execution'>测试执行</a> </h2>
 
 Gradle在单独的（“分叉”）过程中执行测试。
 
@@ -48,7 +48,7 @@ Gradle在单独的（“分叉”）过程中执行测试。
 
 有关所有可用配置选项的详细信息，请参见[XCTest](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)。
 
-## [](#sec:swift_test_filtering)[测试过滤](#sec:swift_test_filtering)
+<h2 id = '#sec:swift_test_filtering'> <a href = '#sec:swift_test_filtering'>测试过滤</a> </h2>
 
 运行测试套件的子集是常见的要求，例如，当您修复错误或开发新的测试用例时。Gradle为此提供了过滤。您可以根据以下条件选择要运行的测试：
 
@@ -96,7 +96,7 @@ build.gradle.kts
   
 以下部分介绍简单类/方法名称的特殊情况。
 
-### [](#sec:swift_test_filtering_simple_name_pattern)[简单名称模式](#sec:swift_test_filtering_simple_name_pattern)
+<h3 id = '#sec:swift_test_filtering_simple_name_pattern'> <a href = '#sec:swift_test_filtering_simple_name_pattern'>简单名称模式</a> </h3>
 
 Gradle支持简单的类名，或类名+方法名的测试过滤。例如，以下命令行运行测试用例中的所有测试或仅运行其中一个`SomeTestClass`测试：
 
@@ -117,7 +117,7 @@ SomeTestClass”测试类中的所有测试：
     
     gradle test --continuous --tests SomeTestClass
 
-## [](#sec:swift_test_reporting)[测试报告](#sec:swift_test_reporting)
+<h2 id = '#sec:swift_test_reporting'> <a href = '#sec:swift_test_reporting'>测试报告</a> </h2>
 
 该[XCTest](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)任务默认生成的结果如下：
 

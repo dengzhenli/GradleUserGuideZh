@@ -32,7 +32,7 @@ Wrapper”）的帮助下。 Wrap是一个脚本，可调用Gradle的声明版�
 
 以下各节将更详细地说明这些用例。
 
-## [](#sec:adding_wrapper)[添加Gradle Wrap](#sec:adding_wrapper)
+<h2 id = '#sec:adding_wrapper'> <a href = '#sec:adding_wrapper'>添加Gradle Wrap</a> </h2>
 
 生成Wrapper文件需要在计算机上安装Gradle运行时的安装版本，如[Installation中所述](/md/安装Gradle.md#installation)。幸运的是，生成初始Wrapper文件是一个一次性的过程。
 
@@ -166,7 +166,7 @@ Gradle项目通常为每个子项目提供一个`settings.gradle(.kts)`文件和
 
 您可以继续[使用 Wrap程序执行构建，](#sec:using_wrapper)而不必安装Gradle运行时。如果您正在处理的项目不包含那些Wrapper文件，则需要[生成它们](#sec:adding_wrapper)。
 
-## [](#sec:using_wrapper)[使用Gradle Wrap](#sec:using_wrapper)
+<h2 id = '#sec:using_wrapper'> <a href = '#sec:using_wrapper'>使用Gradle Wrap</a> </h2>
 
 建议始终使用 Wrap执行构建，以确保可靠，受控和标准化地执行构建。使用Wrapper看起来几乎就像使用Gradle安装来运行构建。根据操作系统的不同，您可以运行`gradlew`或`gradlew.bat`代替`gradle`命令。以下控制台输出演示了Windows机器上 Wrap程序对基于Java的项目的使用。
 
@@ -192,7 +192,7 @@ tasks`。
   
 ╚═════════════════════════════    
   
-## [](#sec:upgrading_wrapper)[升级Gradle Wrap](#sec:upgrading_wrapper)
+<h2 id = '#sec:upgrading_wrapper'> <a href = '#sec:upgrading_wrapper'>升级Gradle Wrap</a> </h2>
 
 项目通常会希望与时俱进并升级Gradle版本，以从新功能和改进中受益。升级Gradle版本的一种方法是手动更改`distributionUrl` Wrap`gradle-
 wrapper.properties`文件中的属性。更好的建议选项是运行`wrapper`任务并提供目标Gradle版本，如[添加Gradle Wrap中所述](#sec:adding_wrapper)。使用该`wrapper`任务可确保对具有该特定Gradle版本的Wrapper
@@ -214,7 +214,7 @@ wrapper.jar`不影响 Wrap程序本身。这通常很好，因为即使使用古
     在4秒钟内成功建立
     1个可执行的任务：1个已执行
 
-## [](#customizing_wrapper)[自定义Gradle Wrap](#customizing_wrapper)
+<h2 id = '#customizing_wrapper'> <a href = '#customizing_wrapper'>自定义Gradle Wrap</a> </h2>
 
 Gradle的大多数用户对Wrapper的默认运行时行为感到满意。但是，组织策略，安全性约束或个人喜好可能需要您更深入地定制 Wrap。幸运的是，内置`wrapper`任务提供了许多选项，可以使运行时行为适应您的需求。大多数配置选项由基础任务类型[Wrapper](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.wrapper.Wrapper.html)公开。
 
@@ -251,7 +251,7 @@ build.gradle.kts
 
 请查阅API文档，以获取有关可用配置选项的更多详细说明。您还可以在Gradle发行版中找到用于配置 Wrap的各种示例。
 
-### [](#sec:authenticated_download)[经过身份验证的Gradle发行版下载](#sec:authenticated_download)
+<h3 id = '#sec:authenticated_download'> <a href = '#sec:authenticated_download'>经过身份验证的Gradle发行版下载</a> </h3>
 
 Gradle`Wrapper`可以使用HTTP基本身份验证从服务器下载Gradle发行版。这使您可以将Gradle分发托管在受保护的私有服务器上。您可以根据使用情况以两种不同的方式指定用户名和密码：作为系统属性或直接嵌入`distributionUrl`。系统属性中的凭据优先于中嵌入的凭据`distributionUrl`。
 
@@ -283,13 +283,13 @@ wrapper.properties`的文件也适用。请注意，此文件将提交到您的�
 
 可以与已认证的代理或未认证的代理一起使用。有关如何配置使用[代理](/md/Gradle环境搭建.md#sec:accessing_the_web_via_a_proxy)的更多信息，请参见[通过代理访问网络](/md/Gradle环境搭建.md#sec:accessing_the_web_via_a_proxy)`Wrapper`。
 
-### [](#sec:verification)[验证下载的Gradle发行版](#sec:verification)
+<h3 id = '#sec:verification'> <a href = '#sec:verification'>验证下载的Gradle发行版</a> </h3>
 
 Gradle Wrap可通过SHA-256哈希总和比较来验证下载的Gradle分发。通过防止中间人攻击者篡改下载的Gradle发行版，提高了针对目标攻击的安全性。
 
 要启用此功能，请下载`.sha256`与要验证的Gradle发行版关联的文件。
 
-#### [](#downloading_the_sha_256_file)[下载SHA-256文件](#downloading_the_sha_256_file)
+<h4 id = '#downloading_the_sha_256_file'> <a href = '#downloading_the_sha_256_file'>下载SHA-256文件</a> </h4>
 
 您可以`.sha256`从[稳定发行版](https://services.gradle.org/distributions/)
 或[候选](https://services.gradle.org/distributions-snapshots/)
@@ -298,7 +298,7 @@ Gradle Wrap可通过SHA-256哈希总和比较来验证下载的Gradle分发。�
 
 您还可以参考[Gradle分布校验和列表](https://gradle.org/release-checksums/)。
 
-#### [](#configuring_checksum_verification)[配置校验和验证](#configuring_checksum_verification)
+<h4 id = '#configuring_checksum_verification'> <a href = '#configuring_checksum_verification'>配置校验和验证</a> </h4>
 
 将下载的哈希值添加到`gradle-wrapper.properties`使用`distributionSha256Sum`属性或`--gradle-
 distribution-sha256-sum`在命令行上使用。
@@ -311,7 +311,7 @@ distribution-sha256-sum`在命令行上使用。
 
 如果配置的校验和与在托管发行版的服务器上找到的校验和不匹配，则Gradle将报告构建失败。仅当尚未下载已配置的 Wrap发行版时才执行校验和验证。
 
-## [](#wrapper_checksum_verification)[验证Gradle Wrapper JAR的完整性](#wrapper_checksum_verification)
+<h2 id = '#wrapper_checksum_verification'> <a href = '#wrapper_checksum_verification'>验证Gradle Wrapper JAR的完整性</a> </h2>
 
  WrapJAR是一个二进制文件，将在开发人员和构建服务器的计算机上执行。与所有此类文件一样，在执行文件之前，应确保它是可信任的。由于通常将Wrapper
 JAR检查到项目的版本控制系统中，恶意参与者有可能通过提交貌似仅升级Gradle版本的拉取请求来用修改后的JAR替换原始JAR。
@@ -322,11 +322,11 @@ JAR检查到项目的版本控制系统中，恶意参与者有可能通过提�
 的[校验和](https://gradle.org/release-checksums/)
 （3.3至4.0.2版除外，该版本不会生成可复制的JAR），因此您可以手动验证 WrapJAR的完整性。
 
-### [](#automatically_verifying_the_gradle_wrapper_jar_on_github)[在GitHub上自动验证Gradle Wrapper JAR](#automatically_verifying_the_gradle_wrapper_jar_on_github)
+<h3 id = '#automatically_verifying_the_gradle_wrapper_jar_on_github'> <a href = '#automatically_verifying_the_gradle_wrapper_jar_on_github'>在GitHub上自动验证Gradle Wrapper JAR</a> </h3>
 
 在[GitHub的行动](https://github.com/marketplace/actions/gradle-wrapper-validation)是从Gradle单独发布，所以请检查其如何将其应用到你的项目文档。
 
-### [](#manually_verifying_the_gradle_wrapper_jar)[手动验证Gradle Wrapper JAR](#manually_verifying_the_gradle_wrapper_jar)
+<h3 id = '#manually_verifying_the_gradle_wrapper_jar'> <a href = '#manually_verifying_the_gradle_wrapper_jar'>手动验证Gradle Wrapper JAR</a> </h3>
 
 您可以通过在主要操作系统之一上运行以下命令来手动验证Wrapper JAR的校验和，以确保未被篡改：
 
@@ -361,7 +361,7 @@ JAR检查到项目的版本控制系统中，恶意参与者有可能通过提�
     > @{$true = 'OK: Checksum match'; $false = "ERROR: Checksum mismatch!`nExpected: $expected`nActual:   $actual"}[$actual -eq $expected]
     OK: Checksum match
 
-### [](#troubleshooting_a_checksum_mismatch)[对校验和不匹配进行故障排除](#troubleshooting_a_checksum_mismatch)
+<h3 id = '#troubleshooting_a_checksum_mismatch'> <a href = '#troubleshooting_a_checksum_mismatch'>对校验和不匹配进行故障排除</a> </h3>
 
 如果校验和与您期望的校验和不匹配，则可能是`wrapper`升级的Gradle发行版未执行任务。因此，您应该首先检查实际校验和是否与其他Gradle版本之一匹配。您可以在主要操作系统上运行以下命令来生成Wrapper
 JAR的实际校验和：

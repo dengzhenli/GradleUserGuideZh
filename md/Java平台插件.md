@@ -29,7 +29,7 @@ library`插件结合使用。从概念上一个项目或者是一个平台，没
   
 ╚═════════════════════════════    
   
-## [](#sec:java_platform_usage)[用法](#sec:java_platform_usage)
+<h2 id = '#sec:java_platform_usage'> <a href = '#sec:java_platform_usage'>用法</a> </h2>
 
 要使用Java Platform插件，请在构建脚本中包括以下内容：
 
@@ -53,7 +53,7 @@ build.gradle.kts
         `java-platform`
     }
 
-## [](#sec:java_platform_separation)[API和运行时分离](#sec:java_platform_separation)
+<h2 id = '#sec:java_platform_separation'> <a href = '#sec:java_platform_separation'>API和运行时分离</a> </h2>
 
 Maven
 BOM和Java平台之间的主要区别在于，在Gradle中，依赖项和[约束](/md/依赖管理术语.md#sub:terminology_dependency_constraint)被声明并确定范围为配置以及扩展配置。尽管许多用户只关心声明
@@ -121,7 +121,7 @@ build.gradle.kts
         allowDependencies()
     }
 
-## [](#sec:java_platform_project_constraints)[本地项目约束](#sec:java_platform_project_constraints)
+<h2 id = '#sec:java_platform_project_constraints'> <a href = '#sec:java_platform_project_constraints'>本地项目约束</a> </h2>
 
 如果您有一个多项目构建，并希望发布一个链接到子项目的平台，则可以通过声明属于该平台的子项目的约束来做到这一点，如下例所示：
 
@@ -153,7 +153,7 @@ build.gradle.kts
 
 项目符号将成为`group:name:version`发布的元数据中的经典符号。
 
-## [](#sec:java_platform_bom_import)[来自其他平台的采购约束](#sec:java_platform_bom_import)
+<h2 id = '#sec:java_platform_bom_import'> <a href = '#sec:java_platform_bom_import'>来自其他平台的采购约束</a> </h2>
 
 有时，您定义的平台是另一个现有平台的扩展。
 
@@ -187,7 +187,7 @@ build.gradle.kts
         api(platform("com.fasterxml.jackson:jackson-bom:2.9.8"))
     }
 
-## [](#sec:java_platform_publishing)[发布平台](#sec:java_platform_publishing)
+<h2 id = '#sec:java_platform_publishing'> <a href = '#sec:java_platform_publishing'>发布平台</a> </h2>
 
 通过应用`maven-publish`插件并配置使用该`javaPlatform`组件的Maven发布来完成Java平台的发布：
 
@@ -221,7 +221,7 @@ build.gradle.kts
 
 这将为平台生成一个BOM表文件，并在`<dependencyManagement>`其中包含一个`<dependencies>`与平台模块中定义的约束相对应的块。
 
-## [](#sec:java_platform_consumption)[消费平台](#sec:java_platform_consumption)
+<h2 id = '#sec:java_platform_consumption'> <a href = '#sec:java_platform_consumption'>消费平台</a> </h2>
 
 因为Java平台是一种特殊的组件，所以必须使用`platform`or`enforcedPlatform`关键字声明对Java平台的依赖关系，如[管理传递依赖关系](/md/在项目之间共享依赖版本.md#sub:bom_import)部分中所述。例如，如果要在子项目之间共享依赖版本，则可以定义一个平台模块来声明所有版本：
 

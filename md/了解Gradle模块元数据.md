@@ -39,7 +39,7 @@ _不_ 支持传统`maven`和`ivy`插件。
 
 可以在[此处](https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-module-metadata-latest-specification.md)找到Gradle模块元数据规范的规范。
 
-## [](#sub:mapping-with-other-formats)[与其他格式的映射](#sub:mapping-with-other-formats)
+<h2 id = '#sub:mapping-with-other-formats'> <a href = '#sub:mapping-with-other-formats'>与其他格式的映射</a> </h2>
 
 Gradle模块元数据会自动发布在Maven或Ivy存储库中。但是，它不会替代 _pom.xml_ 或 _ivy.xml_
 文件：它与这些文件一起发布。这样做是为了最大程度地提高与第三方构建工具的兼容性。
@@ -54,7 +54,7 @@ Gradle尽其所能将Gradle特定的概念映射到Maven或Ivy。当构建文件
 [功能变体](/md/建模功能变体和可选依赖项.md)|上载变异工件，依赖性发布为_optional依赖性|已上传变体工件，未发布依赖项|功能变体很好地替代了可选的依赖项  
 [自定义组件类型](/md/定制发布.md#sec:publishing-custom-components)|工件已上传，依赖项是映射所描述的依赖项|工件已上传，相关性被忽略|在任何情况下，自定义组件类型都可能无法从Maven或Ivy中使用。它们通常存在于自定义生态系统中。  
   
-### [](#disabling_metadata_compatibility_publication_warnings)[禁用元数据兼容性发布警告](#disabling_metadata_compatibility_publication_warnings)
+<h3 id = '#disabling_metadata_compatibility_publication_warnings'> <a href = '#disabling_metadata_compatibility_publication_warnings'>禁用元数据兼容性发布警告</a> </h3>
 
 如果要禁止显示警告，可以使用以下API来禁止显示：
 
@@ -88,7 +88,7 @@ build.gradle.kts
             }
         }
 
-## [](#sub:interactions-other-build-tools)[与其他构建工具的交互](#sub:interactions-other-build-tools)
+<h2 id = '#sub:interactions-other-build-tools'> <a href = '#sub:interactions-other-build-tools'>与其他构建工具的交互</a> </h2>
 
 由于Gradle模块元数据并未广泛传播，并且其目的是[最大程度地提高与其他工具的兼容性](#sub:mapping-with-other-formats)，因此Gradle做以下几件事：
 
@@ -138,7 +138,7 @@ build.gradle.kts
             }
         }
 
-## [](#sub:gmm-validation)[Gradle模块元数据验证](#sub:gmm-validation)
+<h2 id = '#sub:gmm-validation'> <a href = '#sub:gmm-validation'>Gradle模块元数据验证</a> </h2>
 
 Gradle模块元数据在发布之前先经过验证。
 
@@ -154,7 +154,7 @@ Gradle模块元数据在发布之前先经过验证。
 
 这些规则可确保生成的元数据的质量，并有助于确认使用不会有问题。
 
-## [](#sub:gmm-reproducible)[使Gradle模块元数据可重现](#sub:gmm-reproducible)
+<h2 id = '#sub:gmm-reproducible'> <a href = '#sub:gmm-reproducible'>使Gradle模块元数据可重现</a> </h2>
 
 默认情况下，Gradle模块元数据文件包含生成它的构建中的唯一ID。这意味着文件将始终是不同的。
 
@@ -199,7 +199,7 @@ DATE`由于实现方式，生成模块元数据文件的任务目前从未被Gra
   
 ╚═════════════════════════════    
   
-## [](#sub:disabling-gmm-publication)[禁用Gradle模块元数据发布](#sub:disabling-gmm-publication)
+<h2 id = '#sub:disabling-gmm-publication'> <a href = '#sub:disabling-gmm-publication'>禁用Gradle模块元数据发布</a> </h2>
 
 在某些情况下，您可能希望禁用Gradle模块元数据的发布：
 
