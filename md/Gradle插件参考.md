@@ -202,7 +202,7 @@
     
 
 生成指定类型的新Gradle构建，例如Java库。它还可以从Maven POM生成构建脚本-
-有关更多详细信息，请参见[从Maven迁移到Gradle](/md/从Apache Maven迁移.md)。
+有关更多详细信息，请参见[从Maven迁移到Gradle](/md/从Apache%20Maven迁移.md)。
 
 [签名](https://docs.gradle.org/6.7.1/userguide/signing_plugin.html)
 

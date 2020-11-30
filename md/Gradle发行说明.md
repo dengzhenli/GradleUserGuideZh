@@ -217,7 +217,7 @@ Split functionality across multiple subprojects?:
 Enter selection [1..2] 2
 ```
 
-对于从[Maven到Gradle的转换](/md/从Apache Maven迁移.md)，此版本增加了对生成Kotlin DSL脚本的支持。
+对于从[Maven到Gradle的转换](/md/从Apache%20Maven迁移.md)，此版本增加了对生成Kotlin DSL脚本的支持。
 
 ### 包含的内部版本现在对buildSrc可见
 
