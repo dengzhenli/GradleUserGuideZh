@@ -541,7 +541,7 @@ runner-gradle-version)），因为在此类Gradle版本中不支持此功能。
 
 相反，必须通过构建脚本本身注入代码。下面的示例演示了如何完成此操作。
 
-### [示例：将测试类下的代码注入2.8之前的Gradle版本的测试版本中](#%E7%A4%BA%E4%BE%8B%EF%BC%9A%E5%B0%86%E6%B5%8B%E8%AF%95%E7%B1%BB%E4%B8%8B%E7%9A%84%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A52.8%E4%B9%8B%E5%89%8D%E7%9A%84Gradle%E7%89%88%E6%9C%AC%E7%9A%84%E6%B5%8B%E8%AF%95%E7%89%88%E6%9C%AC%E4%B8%AD)
+### [示例：将测试类下的代码注入2.8之前的Gradle版本的测试版本中](#%E7%A4%BA%E4%BE%8B%EF%BC%9A%E5%B0%86%E6%B5%8B%E8%AF%95%E7%B1%BB%E4%B8%8B%E7%9A%84%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5%E6%B5%8B%E8%AF%95%E7%89%88%E6%9C%AC_for_gradle_versions_prior_to_2_8)
 
 src / test / groovy / org / gradle / sample / BuildLogicFunctionalTest.groovy
 

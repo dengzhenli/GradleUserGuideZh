@@ -91,12 +91,12 @@ build.gradle.kts
 
 ╔═════════════════════════════  
 目前，测试过滤仅支持XCTest兼容过滤器。这意味着同一过滤器在macOS和Linux之间会有所不同。在macOS上，捆绑软件的基本名称需要添加到过滤器的前面，例如`TestBundle.SomeTest`，有关有效过滤模式的更多信息，`TestBundle.SomeTest.someMethod`
-请参见下面的“[简单名称模式”](#%E7%AE%80%E5%8D%95%E5%90%8D%E7%A7%B0%E6%A8%A1%E5%BC%8F)部分。  
+请参见下面的“[简单名称模式”](#%E6%B5%8B%E8%AF%95%E8%BF%87%E6%BB%A4_simple_name_pattern)部分。  
 ╚═════════════════════════════    
   
 以下部分介绍简单类/方法名称的特殊情况。
 
-### [简单名称模式](#%E7%AE%80%E5%8D%95%E5%90%8D%E7%A7%B0%E6%A8%A1%E5%BC%8F)
+### [简单名称模式](#%E6%B5%8B%E8%AF%95%E8%BF%87%E6%BB%A4_simple_name_pattern)
 
 Gradle支持简单的类名，或类名+方法名的测试过滤。例如，以下命令行运行测试用例中的所有测试或仅运行其中一个`SomeTestClass`测试：
 

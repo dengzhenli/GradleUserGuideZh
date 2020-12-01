@@ -18,7 +18,7 @@
 
   1. 尝试运行`gradle help --scan`并查看生成的构建扫描的[弃用视图](https://gradle.com/enterprise/releases/2018.4/#identify-usages-of-deprecated-gradle-functionality)。
 
-![Gradle构建扫描的弃用视图](img/%E5%BC%83%E7%94%A8.png)
+![Gradle构建扫描的弃用视图](img/deprecations.png)
 
 这样一来，您就可以看到适用于您的构建的所有弃用警告。
 
@@ -78,7 +78,7 @@ Gradle允许将的实例`Configuration`直接用作依赖项：
 
 ## [从6.5升级](#%E4%BB%8E6.5%E5%8D%87%E7%BA%A7)
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_2)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
 #### [更新捆绑的Gradle依赖项](#%E6%9B%B4%E6%96%B0%E6%8D%86%E7%BB%91%E7%9A%84Gradle%E4%BE%9D%E8%B5%96%E9%A1%B9)
 
@@ -108,7 +108,7 @@ Gradle 6.6中未弃用。
 
 ## [从6.4升级](#%E4%BB%8E6.4%E5%8D%87%E7%BA%A7)
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_3)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
 #### [更新捆绑的Gradle依赖项](#%E6%9B%B4%E6%96%B0%E6%8D%86%E7%BB%91%E7%9A%84Gradle%E4%BE%9D%E8%B5%96%E9%A1%B9_2)
 
@@ -116,7 +116,7 @@ Gradle 6.6中未弃用。
 
   * Groovy已更新为[Groovy 2.5.11](https://groovy-lang.org/changelogs/changelog-2.5.11.html)。
 
-#### [更新到默认工具集成版本](#%E6%9B%B4%E6%96%B0%E5%88%B0%E9%BB%98%E8%AE%A4%E5%B7%A5%E5%85%B7%E9%9B%86%E6%88%90%E7%89%88%E6%9C%AC)
+#### [更新到默认工具集成版本](#%E6%9B%B4%E6%96%B0%E5%88%B0%E9%BB%98%E8%AE%A4%E5%B7%A5%E5%85%B7%E9%9B%86%E6%88%90%E7%89%88%E6%9C%AC_2)
 
   * PMD已更新至[PMD 6.23.0](https://github.com/pmd/pmd/releases/tag/pmd_releases%2F6.23.0)。
 
@@ -135,7 +135,7 @@ Gradle 6.6中未弃用。
 
 ## [从6.3升级](#%E4%BB%8E6.3%E5%8D%87%E7%BA%A7)
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_4)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
 #### [PMD插件默认需要PMD6.0.0或更高版本](#PMD%E6%8F%92%E4%BB%B6%E9%BB%98%E8%AE%A4%E9%9C%80%E8%A6%81PMD6.0.0%E6%88%96%E6%9B%B4%E9%AB%98%E7%89%88%E6%9C%AC)
 
@@ -188,7 +188,7 @@ Gradle 6.3和6.4之间没有弃用。
 
 ## [从6.2升级](#%E4%BB%8E6.2%E5%8D%87%E7%BA%A7)
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_5)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
 #### [IDEA中可用的依赖项更少](#IDEA%E4%B8%AD%E5%8F%AF%E7%94%A8%E7%9A%84%E4%BE%9D%E8%B5%96%E9%A1%B9%E6%9B%B4%E5%B0%91)
 
@@ -202,7 +202,7 @@ Gradle不再将注释处理器类路径包含为IDEA中提供的依赖项。IDEA
 
   * Groovy已更新至[Groovy 2.5.10](http://groovy-lang.org/changelogs/changelog-2.5.10.html)。
 
-#### [更新到默认工具集成版本](#%E6%9B%B4%E6%96%B0%E5%88%B0%E9%BB%98%E8%AE%A4%E5%B7%A5%E5%85%B7%E9%9B%86%E6%88%90%E7%89%88%E6%9C%AC)
+#### [更新到默认工具集成版本](#%E6%9B%B4%E6%96%B0%E5%88%B0%E9%BB%98%E8%AE%A4%E5%B7%A5%E5%85%B7%E9%9B%86%E6%88%90%E7%89%88%E6%9C%AC_3)
 
   * PMD已更新至[PMD 6.21.0](https://pmd.github.io/pmd-6.21.0/pmd_release_notes.html#24-january-2020---6210)。
 
@@ -230,7 +230,7 @@ Gradle将继续在32位系统上构建项目，但不再显示丰富的控制台
 
 ## [从6.1升级](#%E4%BB%8E6.1%E5%8D%87%E7%BA%A7)
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_6)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
 #### [现在，编译和运行时类路径默认情况下请求库变体](#%E7%8E%B0%E5%9C%A8%EF%BC%8C%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%B1%BB%E8%B7%AF%E5%BE%84%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%E8%AF%B7%E6%B1%82%E5%BA%93%E5%8F%98%E4%BD%93)
 
@@ -300,7 +300,7 @@ Gradle
 lang`，`scala-lang`，`jvm-component`，`jvm-resources`，`junit-test-
 suite`）请查阅文档[构建Java和JVM的项目](/md/构建Java和JVM项目.md)，以确定其稳定的JVM插件是适合您的项目。
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_7)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
 #### [`ProjectLayout` 不再可用于工作者作为服务的行为](#%60ProjectLayout%60+%E4%B8%8D%E5%86%8D%E5%8F%AF%E7%94%A8%E4%BA%8E%E5%B7%A5%E4%BD%9C%E8%80%85%E4%BD%9C%E4%B8%BA%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%A1%8C%E4%B8%BA)
 
@@ -313,7 +313,7 @@ suite`）请查阅文档[构建Java和JVM的项目](/md/构建Java和JVM项目.m
 
   * Kotlin已更新至[Kotlin 1.3.61](https://blog.jetbrains.com/kotlin/2019/11/kotlin-1-3-60-released/)。
 
-#### [更新到默认工具集成版本](#%E6%9B%B4%E6%96%B0%E5%88%B0%E9%BB%98%E8%AE%A4%E5%B7%A5%E5%85%B7%E9%9B%86%E6%88%90%E7%89%88%E6%9C%AC)
+#### [更新到默认工具集成版本](#%E6%9B%B4%E6%96%B0%E5%88%B0%E9%BB%98%E8%AE%A4%E5%B7%A5%E5%85%B7%E9%9B%86%E6%88%90%E7%89%88%E6%9C%AC_4)
 
   * Checkstyle已更新至[Checkstyle 8.27](https://checkstyle.org/releasenotes.html#Release_8.27)。
 

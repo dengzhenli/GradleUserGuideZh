@@ -18,7 +18,7 @@
 
   1. 尝试运行`gradle help --scan`并查看生成的构建扫描的[弃用视图](https://gradle.com/enterprise/releases/2018.4/#identify-usages-of-deprecated-gradle-functionality)。
 
-![Gradle构建扫描的弃用视图](img/%E5%BC%83%E7%94%A8.png)
+![Gradle构建扫描的弃用视图](img/deprecations.png)
 
 这样一来，您就可以看到适用于您的构建的所有弃用警告。
 
@@ -61,7 +61,7 @@
     Use '--warning-mode all' to show the individual deprecation warnings.
     See https://docs.gradle.org/6.0/userguide/command_line_interface.html#sec:command_line_warnings
 
-无论使用哪个命令行开关，都将在每个版本的[构建扫描中](https://scans.gradle.com/s/txrptciitl2ha/%E5%BC%83%E7%94%A8)显示不赞成使用警告。
+无论使用哪个命令行开关，都将在每个版本的[构建扫描中](https://scans.gradle.com/s/txrptciitl2ha/deprecations)显示不赞成使用警告。
 
 当使用构建执行时`--warning-mode all`，将显示单个警告：
 
@@ -456,10 +456,10 @@ announcements插件已被删除。[Gradle插件门户](https://plugins.gradle.or
 不推荐使用的Compare Gradle
 Builds插件已被删除。请使用[构建扫描](https://scans.gradle.com/)进行构建分析和比较。
 
-#### [Play插件已被删除](#the_%E7%8E%A9_plugins_have_been_removed)
+#### [Play插件已被删除](#Play%E6%8F%92%E4%BB%B6%E5%B7%B2%E8%A2%AB%E5%88%A0%E9%99%A4)
 
 不推荐使用的Play插件已被删除。可从插件门户网站获得外部替代品[Play
-Framework插件](https://gradle.github.io/%E7%8E%A9framework)。
+Framework插件](https://gradle.github.io/playframework)。
 
 #### [方法`AbstractCompile.compile()`method已删除](#%E6%96%B9%E6%B3%95%60AbstractCompile.compile%28%29%60method%E5%B7%B2%E5%88%A0%E9%99%A4)
 
@@ -547,7 +547,7 @@ the-worker-api)上使用这些方法的详细信息。
 
 `WorkerExecutor.submit()` 将在Gradle 7.0中删除。
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_2)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
 #### [任务依赖关系受其`@Input`值为a的任务属性的尊重`Property`](#%E4%BB%BB%E5%8A%A1%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E5%8F%97%E5%85%B6%60%40Input%60%E5%80%BC%E4%B8%BAa%E7%9A%84%E4%BB%BB%E5%8A%A1%E5%B1%9E%E6%80%A7%E7%9A%84%E5%B0%8A%E9%87%8D%60Property%60)
 
@@ -636,7 +636,7 @@ Gradle不再支持使用Scala 2.9构建应用程序。
 
 #### [玩](#%E7%8E%A9)
 
-内置的[Play插件](https://docs.gradle.org/6.7.1/userguide/%E7%8E%A9_plugin.html#%E7%8E%A9_plugin) 被弃用，将由插件门户提供的新的[Play Framework插件](https://gradle.github.io/%E7%8E%A9framework)代替。
+内置的[Play插件](https://docs.gradle.org/6.7.1/userguide/play_plugin.html#%E7%8E%A9_plugin) 被弃用，将由插件门户提供的新的[Play Framework插件](https://gradle.github.io/playframework)代替。
 
 #### [构建比较](#%E6%9E%84%E5%BB%BA%E6%AF%94%E8%BE%83)
 
@@ -644,7 +644,7 @@ Gradle不再支持使用Scala 2.9构建应用程序。
 
 [构建扫描](https://gradle.com/build-scans)显示了对[构建的](https://gradle.com/build-scans) 更深入了解，您可以使用[Gradle Enterprise](https://gradle.com/)直接比较两个构建的构建扫描。
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_3)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
 #### [用户提供的Eclipse项目名称可能在冲突时被忽略](#%E7%94%A8%E6%88%B7%E6%8F%90%E4%BE%9B%E7%9A%84Eclipse%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0%E5%8F%AF%E8%83%BD%E5%9C%A8%E5%86%B2%E7%AA%81%E6%97%B6%E8%A2%AB%E5%BF%BD%E7%95%A5)
 
@@ -692,7 +692,7 @@ API的任务，这应该是透明的更改，但是Gradle的早期版本在worke
 
 现在不建议将自定义生成缓存实现用于本地生成缓存。唯一允许的类型将是`DirectoryBuildCache`前进。使用自定义构建缓存实现作为远程构建缓存的支持没有变化。
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_4)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
 #### [通过配置Google托管库时使用HTTPS `googleApis()`](#%E9%80%9A%E8%BF%87%E9%85%8D%E7%BD%AEGoogle%E6%89%98%E7%AE%A1%E5%BA%93%E6%97%B6%E4%BD%BF%E7%94%A8HTTPS+%60googleApis%28%29%60)
 
@@ -701,7 +701,7 @@ URL`JavaScriptRepositoriesExtension#GOOGLE_APIS_REPO_URL`已更改为使用HTTPS
 
 ## [从5.2或更早版本升级](#%E4%BB%8E5.2%E6%88%96%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_5)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
 #### [修复了平台分辨率中的错误](#%E4%BF%AE%E5%A4%8D%E4%BA%86%E5%B9%B3%E5%8F%B0%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%AD%E7%9A%84%E9%94%99%E8%AF%AF)
 
@@ -757,7 +757,7 @@ publish`除非它们也已作为工件添加到发布配置中，否则不会发
 
 ## [从5.1或更早版本升级](#%E4%BB%8E5.1%E6%88%96%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_6)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
 没有
 
@@ -776,7 +776,7 @@ publish`除非它们也已作为工件添加到发布配置中，否则不会发
         validateTaskProperties.getClasses（）。setFrom（fileCollection）
         validateTaskProperties.getClasspath（）。setFrom（fileCollection）
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_7)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
 以前不建议过以下更改：
 

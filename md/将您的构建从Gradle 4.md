@@ -5,7 +5,7 @@
 
   * [对于所有用户](#%E5%AF%B9%E4%BA%8E%E6%89%80%E6%9C%89%E7%94%A8%E6%88%B7)
   * [从4.10及更早版本升级](#%E4%BB%8E4.10%E5%8F%8A%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
-  * [从4.9或更早版本升级](#%E4%BB%8E4.0%E5%8D%87%E7%BA%A70)
+  * [从4.9或更早版本升级](#%E4%BB%8E4.9%E6%88%96%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
   * [从4.8或更早版本升级](#%E4%BB%8E4.8%E6%88%96%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
   * [从4.7或更早版本升级](#%E4%BB%8E4.7%E6%88%96%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
   * [从4.6及更早版本升级](#%E4%BB%8E4.6%E5%8F%8A%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
@@ -27,11 +27,11 @@
   
 ## [对于所有用户](#%E5%AF%B9%E4%BA%8E%E6%89%80%E6%9C%89%E7%94%A8%E6%88%B7)
 
-  1. 如果尚未使用最新的4.10.x版本，请阅读以下各节[，](#%E4%BB%8E4.0%E5%8D%87%E7%BA%A70)以帮助您将项目升级到最新的4.10.x版本。我们建议升级到最新的4.10.x版本以获取最有用的警告和弃用信息，然后再升级到5.0。避免同时升级Gradle并迁移到Kotlin DSL，以便在出现潜在问题时简化故障排除。
+  1. 如果尚未使用最新的4.10.x版本，请阅读以下各节[，](#%E4%BB%8E4.9%E6%88%96%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)以帮助您将项目升级到最新的4.10.x版本。我们建议升级到最新的4.10.x版本以获取最有用的警告和弃用信息，然后再升级到5.0。避免同时升级Gradle并迁移到Kotlin DSL，以便在出现潜在问题时简化故障排除。
 
   2. 尝试运行`gradle help --scan`并查看生成的构建扫描的[弃用视图](https://gradle.com/enterprise/releases/2018.4/#identify-usages-of-deprecated-gradle-functionality)。如果没有警告，则不会出现“弃用”选项卡。
 
-![Gradle构建扫描的弃用视图](img/%E5%BC%83%E7%94%A8.png)
+![Gradle构建扫描的弃用视图](img/deprecations.png)
 
 这样一来，您就可以看到适用于您的构建的所有弃用警告。如果您尝试直接升级到Gradle 5.x，它将生成（可能不太明显）错误。
 
@@ -312,7 +312,7 @@ dsl-samples/releases/tag/v1.0.2#breaking-changes)以获取更多信息以及如�
 
   * [对DefaultTask](#%5B5.0%5D%E5%AF%B9%E5%B1%9E%E6%80%A7%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E7%9A%84%E6%9B%B4%E6%94%B9%60DefaultTask%60)上的[属性工厂方法进行](#%5B5.0%5D%E5%AF%B9%E5%B1%9E%E6%80%A7%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E7%9A%84%E6%9B%B4%E6%94%B9%60DefaultTask%60)了一些更改，这些更改可能会影响自定义任务的创建。
 
-## [从4.9或更早版本升级](#%E4%BB%8E4.0%E5%8D%87%E7%BA%A70)
+## [从4.9或更早版本升级](#%E4%BB%8E4.9%E6%88%96%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
 
 如果您尚未安装4.9版，请跳至适用于当前Gradle版本的部分，然后逐步升级，直至到达此处。然后，在升级到Gradle 4.10时应用这些更改。
 
@@ -322,7 +322,7 @@ dsl-samples/releases/tag/v1.0.2#breaking-changes)以获取更多信息以及如�
 
   * `TaskContainer.add()`和`TaskContainer.addAll()`-使用[TaskContainer.create（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskContainer.html#create-java.lang.String-java.lang.Class-org.gradle.api.Action-)或[TaskContainer.register（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskContainer.html#register-java.lang.String-java.lang.Class-org.gradle.api.Action-)代替
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_2)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
   * Kotlin DSL中存在一些潜在的重大更改—请参阅该[项目的发行说明中](https://github.com/gradle/kotlin-dsl/releases/tag/v1.0-RC3)的 _“重大更改”_ 部分。[](https://github.com/gradle/kotlin-dsl/releases/tag/v1.0-RC3)
 
@@ -338,7 +338,7 @@ dsl-samples/releases/tag/v1.0.2#breaking-changes)以获取更多信息以及如�
 
   * [考虑尝试使用惰性API进行任务创建和配置](#%5B4.9%5D%E8%80%83%E8%99%91%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8%E6%83%B0%E6%80%A7API%E8%BF%9B%E8%A1%8C%E4%BB%BB%E5%8A%A1%E5%88%9B%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE)
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_3)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
   * 您不能再将GPath语法与[task.withType（）一起使用](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskCollection.html#withType-java.lang.Class-)。
 
@@ -355,7 +355,7 @@ lang.org/latest/html/documentation/#_spread_operator)。例如，您将替换`ta
 
   * 如果当前正在为此目的使用插件或自定义解决方案，请考虑迁移到内置的[依赖项锁定机制](/md/锁定依赖版本.md)
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_4)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
   * 现在，如果找不到指定的初始化脚本，构建将失败。
 
@@ -380,7 +380,7 @@ notes.html#overwriting-gradle's-built-in-tasks)。
 
 ## [从4.6及更早版本升级](#%E4%BB%8E4.6%E5%8F%8A%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_5)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
   * 按照约定，Gradle现在将在根项目的 _config / checkstyle_ 目录中查找Checkstyle配置文件。
 
@@ -412,7 +412,7 @@ notes.html#overwriting-gradle's-built-in-tasks)。
 
   * 使用[CommandLineArgumentProvider](https://docs.gradle.org/6.7.1/javadoc/org/gradle/process/CommandLineArgumentProvider.html)代替[CompilerArgumentProvider](https://docs.gradle.org/4.10.3/javadoc/org/gradle/api/tasks/compile/CompilerArgumentProvider.html)。
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_6)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
   * Java插件现在` _sourceSet_ AnnotationProcessor`为每个源集添加一个配置，如果其中任何一个与您现有的配置相匹配，则该配置可能会中断。我们建议您删除冲突的配置声明。
 
@@ -430,7 +430,7 @@ notes.html#overwriting-gradle's-built-in-tasks)。
 
   * Gradle现在忽略包含的构建（[复合构建](/md/复合构建.md)）的构建缓存配置，而是对所有构建使用根构建的配置。
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_7)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
   * `ValidateTaskProperties.setOutputFile()`删除了两个重载方法。当从构建脚本访问任务时，它们会被自动生成的setter替换，但是构建脚本之外的插件和其他代码不会出现这种情况。
 
@@ -446,7 +446,7 @@ notes.html#overwriting-gradle's-built-in-tasks)。
 
 ## [从4.3或更早版本升级](#%E4%BB%8E4.3%E6%88%96%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_8)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
   * [](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.AbstractTestTask.html)现在，非JVM测试任务以及[Test](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)扩展了[AbstractTestTask](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.AbstractTestTask.html)。因此，插件应注意配置所有类型的任务`AbstractTestTask`。
 
@@ -473,7 +473,7 @@ Studio版本的安装目录来绕过工具链发现。
 
   * `plugins {}`现在，该块可以[用于子项目中](/md/%E4%BD%BF%E7%94%A8Gradle%E6%8F%92%E4%BB%B6.md%23%E5%B0%86%E5%85%B7%E6%9C%89%E7%9B%B8%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%A4%96%E9%83%A8%E6%8F%92%E4%BB%B6%E5%BA%94%E7%94%A8%E4%BA%8E%E5%AD%90%E9%A1%B9%E7%9B%AE)，也可以[用于](/md/%E4%BD%BF%E7%94%A8Gradle%E6%8F%92%E4%BB%B6.md%23%E5%B0%86%E5%85%B7%E6%9C%89%E7%9B%B8%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%A4%96%E9%83%A8%E6%8F%92%E4%BB%B6%E5%BA%94%E7%94%A8%E4%BA%8E%E5%AD%90%E9%A1%B9%E7%9B%AE)[ _buildSrc_](/md/%E4%BD%BF%E7%94%A8Gradle%E6%8F%92%E4%BB%B6.md%23%E4%BB%8E_buildSrc_%E7%9B%AE%E5%BD%95%E5%BA%94%E7%94%A8%E6%8F%92%E4%BB%B6)[ 目录中的](/md/%E4%BD%BF%E7%94%A8Gradle%E6%8F%92%E4%BB%B6.md%23%E4%BB%8E_buildSrc_%E7%9B%AE%E5%BD%95%E5%BA%94%E7%94%A8%E6%8F%92%E4%BB%B6)[插件 __](/md/%E4%BD%BF%E7%94%A8Gradle%E6%8F%92%E4%BB%B6.md%23%E4%BB%8E_buildSrc_%E7%9B%AE%E5%BD%95%E5%BA%94%E7%94%A8%E6%8F%92%E4%BB%B6)。
 
-### [其他折旧](#other_%E5%BC%83%E7%94%A8)
+### [其他折旧](#%E5%85%B6%E4%BB%96%E6%8A%98%E6%97%A7)
 
   * 您不应再通过Tooling API运行2.6之前的Gradle版本。
 
@@ -481,7 +481,7 @@ Studio版本的安装目录来绕过工具链发现。
 
   * 您不应再链接[TaskInputs.property（String，Object）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskInputs.html#property-java.lang.String-java.lang.Object-)和[TaskInputs.properties（Map）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskInputs.html#properties-java.util.Map-)方法。
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_9)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
   * [DefaultTask.newOutputDirectory（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/DefaultTask.html#newOutputDirectory--)现在返回`DirectoryProperty`而不是`DirectoryVar`。
 
@@ -512,7 +512,7 @@ module`找到了版本范围为的依存关系，`[3,6]`并且也可传递范围
 
 ## [从4.1及更早版本升级](#%E4%BB%8E4.1%E5%8F%8A%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_10)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
   * [TaskFilePropertyBuilder](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskFilePropertyBuilder.html)和[TaskOutputFilePropertyBuilder](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskOutputFilePropertyBuilder.html)`withPathSensitivity()`上的方法已删除。[](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskFilePropertyBuilder.html)[](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskOutputFilePropertyBuilder.html)
 
@@ -524,13 +524,13 @@ module`找到了版本范围为的依存关系，`[3,6]`并且也可传递范围
 
   * 考虑使用新的[Worker API](/md/%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89Gradle%E4%BB%BB%E5%8A%A1%E7%B1%BB%E5%9E%8B.md%23%E5%B7%A5%E4%BD%9C%E8%80%85API)来使构建中的工作单元并行运行。
 
-### [不推荐使用的类，方法和属性](#%E4%B8%8D%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%E7%9A%84%E7%B1%BB%EF%BC%8C%E6%96%B9%E6%B3%95%E5%92%8C%E5%B1%9E%E6%80%A7)
+### [不推荐使用的类，方法和属性](#%E4%B8%8D%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%E7%9A%84%E7%B1%BB%EF%BC%8C%E6%96%B9%E6%B3%95%E5%92%8C%E5%B1%9E%E6%80%A7_2)
 
 按照API链接了解如何处理这些弃用（如果此处未提供其他信息）：
 
   * [可空](https://docs.gradle.org/4.10.3/javadoc/org/gradle/api/Nullable.html)
 
-### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96_11)
+### [潜在的重大变化](#%E6%BD%9C%E5%9C%A8%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96)
 
   * 与Java项目有[项目依赖性](/md/%E5%A3%B0%E6%98%8E%E4%BE%9D%E8%B5%96.md%23%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96)的非Java项目现在`runtimeElements`默认使用配置而不是`default`配置。
 

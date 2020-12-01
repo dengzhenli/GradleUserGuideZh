@@ -65,11 +65,11 @@ JetBrains支持[使用Gradle](https://blog.jetbrains.com/clion/2018/05/clion-sta
 
 我们有专门的指南，向您展示如何将Gradle项目与以下CI平台集成：
 
-  * [詹金斯](https://gu%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.gradle.org/executing-gradle-builds-on-jenkins)
+  * [詹金斯](https://guides.gradle.org/executing-gradle-builds-on-jenkins)
 
-  * [团队城市](https://gu%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.gradle.org/executing-gradle-builds-on-teamcity)
+  * [团队城市](https://guides.gradle.org/executing-gradle-builds-on-teamcity)
 
-  * [特拉维斯CI](https://gu%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.gradle.org/executing-gradle-builds-on-travisci)
+  * [特拉维斯CI](https://guides.gradle.org/executing-gradle-builds-on-travisci)
 
 即使您不使用上述方法之一，您也几乎可以确定将CI平台配置为使用[Gradle Wrapper](/md/gradle_wrapper.md)脚本。
 
@@ -121,12 +121,12 @@ API的版本新或旧的版本。Tooling API支持Gradle包装器，默认情况
 
   * 该实现是轻量级的，仅具有少量依赖性。它也是一个行为良好的库，并且不对您的类加载器结构或日志记录配置进行任何假设。这使该API易于嵌入到您的应用程序中。
 
-### [工具API和Gradle Build守护进程](#sec:%E4%BD%BF%E7%94%A8Tooling+API%E5%B5%8C%E5%85%A5Gradle_daemon)
+### [工具API和Gradle Build守护进程](#%E5%B7%A5%E5%85%B7API%E5%92%8CGradle+Build%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B)
 
 工具API始终使用Gradle守护程序。这意味着随后对Tooling
 API的调用，无论是模型构建请求还是任务执行请求，都将在相同的长期过程中执行。[Gradle守护程序](/md/Gradle守护程序.md#gradle_daemon)包含有关该守护程序的更多详细信息，尤其是有关分派新守护程序时的情况的信息。
 
-### [快速开始](#sec:%E4%BD%BF%E7%94%A8Tooling+API%E5%B5%8C%E5%85%A5Gradle_quickstart)
+### [快速开始](#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B)
 
 由于Tooling API是开发人员的接口，因此Javadoc是其主要文档。
 
@@ -168,7 +168,7 @@ Tooling
 API的主要入口点是[GradleConnector](https://docs.gradle.org/6.7.1/javadoc/org/gradle/tooling/GradleConnector.html)。您可以从那里导航以找到代码示例，并浏览可用的Tooling
 API模型。您可以使用[GradleConnector.connect（）](https://docs.gradle.org/nightly/javadoc/org/gradle/tooling/GradleConnector.html#connect--)创建一个[ProjectConnection](https://docs.gradle.org/6.7.1/javadoc/org/gradle/tooling/ProjectConnection.html)。A`ProjectConnection`连接到单个Gradle项目。使用该连接，您可以执行任务，测试并检索与该项目相关的模型。
 
-### [Java和Gradle版本的兼容性](#sec:%E4%BD%BF%E7%94%A8Tooling+API%E5%B5%8C%E5%85%A5Gradle_compatibility)
+### [Java和Gradle版本的兼容性](#Java%E5%92%8CGradle%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7)
 
 工具API需要Java
 8或更高版本。构建使用的Gradle版本可能会强加[其他Java版本要求](/md/兼容性说明.md)。

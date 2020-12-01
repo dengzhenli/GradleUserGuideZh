@@ -368,8 +368,8 @@ build.gradle
     
     application {
         targetMachines = [
-            machines.%E7%9A%84Linux.x86_64,
-            machines.%E8%A7%86%E7%AA%97.x86, machines.%E8%A7%86%E7%AA%97.x86_64,
+            machines.linux.x86_64,
+            machines.windows.x86, machines.windows.x86_64,
             machines.macOS.x86_64
         ]
     }
@@ -379,7 +379,7 @@ build.gradle.kts
     
     
     application {
-        targetMachines.set(listOf(machines.%E8%A7%86%E7%AA%97.x86, machines.%E8%A7%86%E7%AA%97.x86_64, machines.macOS.x86_64, machines.%E7%9A%84Linux.x86_64))
+        targetMachines.set(listOf(machines.windows.x86, machines.windows.x86_64, machines.macOS.x86_64, machines.linux.x86_64))
     }
 
 ## [包装出版](#%E5%8C%85%E8%A3%85%E5%87%BA%E7%89%88)

@@ -61,7 +61,7 @@ Gradle团队不断致力于提高Gradle构建各个方面的性能。如果您�
 启用并行构建后，您可能会看到构建时间的巨大改进。这些改进的程度取决于您的项目结构以及它们之间有多少依赖关系。例如，执行时间由单个项目控制的构建根本不会带来太多好处。或者，由于项目间存在大量依存关系，因此几乎没有可以并行执行的任务。但是大多数多项目构建应该看到有价值的构建时间增长。
 
 ╔═════════════════════════════
-并行构建要求项目在执行时解耦，即，不同项目中的任务不得修改共享状态。在广泛使用之前，请在[多项目部分中](https://docs.gradle.org/nightly/userguide/multi_project_%E7%BB%84%E6%80%81_and_execution.html#sec:%E5%B9%B6%E8%A1%8C%E6%89%A7%E8%A1%8C)阅读有关该主题的更多信息`--parallel`。还应注意，4.0之前的Gradle版本可能会运行`clean`并`build`并行执行任务，从而导致失败。在这些较旧的版本上，最好分别调用`clean`。  
+并行构建要求项目在执行时解耦，即，不同项目中的任务不得修改共享状态。在广泛使用之前，请在[多项目部分中](https://docs.gradle.org/nightly/userguide/multi_project_configuration_and_execution.html#sec:parallel_execution)阅读有关该主题的更多信息`--parallel`。还应注意，4.0之前的Gradle版本可能会运行`clean`并`build`并行执行任务，从而导致失败。在这些较旧的版本上，最好分别调用`clean`。  
 ╚═════════════════════════════  
   
 您还可以通过将以下设置添加到项目的 _gradle.properties_ 文件中，将并行构建作为项目的默认设置：
@@ -102,7 +102,7 @@ gradle.properties
     
     org.gradle.vfs.watch=true
 
-在[相应的部分中](https://docs.gradle.org/nightly/userguide/gradle_%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B.html#sec:%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B_watch_fs)阅读有关此功能的更多信息。
+在[相应的部分中](https://docs.gradle.org/nightly/userguide/gradle_daemon.html#sec:daemon_watch_fs)阅读有关此功能的更多信息。
 
 ## [使用构建扫描进行性能分析](#%E4%BD%BF%E7%94%A8%E6%9E%84%E5%BB%BA%E6%89%AB%E6%8F%8F%E8%BF%9B%E8%A1%8C%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90)
 
@@ -130,7 +130,7 @@ help`和这样的简单调用也是如此`gradle tasks`。
 scan-performance)，您可以看到构建配置耗时超过16秒。单击  页面顶部的 _“配置”_
 选项卡将把此阶段分解为各个组成部分，以揭示造成任何缓慢的原因。
 
-![构建扫描配置故障](img/build-scan-%E7%BB%84%E6%80%81-breakdown.png)
+![构建扫描配置故障](img/build-scan-configuration-breakdown.png)
 
 图6.构建扫描配置分解
 
@@ -183,7 +183,7 @@ src / main / groovy / MyPlugin.groovy
     
     project.tasks.register('copyFiles', Copy) { Task t ->
         t.into(project.layout.buildDirectory.dir('output'))
-        t.from(project.%E7%BB%84%E6%80%81s.getByName('compile'))
+        t.from(project.configurations.getByName('compile'))
     }
 
 您可以看到该示例如何使用`register()`和`getByName()`方法，这些方法在所有Gradle“域对象容器”上都可用，例如任务，配置，依赖项，扩展等。某些集合具有专用的类型（`TaskContainer`其中之一）具有有用的额外方法。就像`create()`上面采用任务类型的方法一样。
@@ -208,7 +208,7 @@ src / main / groovy / MyPlugin.groovy
 您可能可以使用固定版本，例如“ 1.2”和“
 3.0.3.GA”，在这种情况下，Gradle将始终使用缓存的版本。但是，如果您需要使用动态版本和快照版本，请确保调整缓存设置以最好地满足您的需求。
 
-### [不要在配置时解决依赖关系](#dont_resolve_dependencies_at_%E7%BB%84%E6%80%81_time)
+### [不要在配置时解决依赖关系](#%E4%B8%8D%E8%A6%81%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%97%B6%E8%A7%A3%E5%86%B3%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB)
 
 无论是在I /
 O还是计算方面，依赖性解析都是一个昂贵的过程。Gradle通过明智的缓存减少了（并在某些情况下消除了）所需的网络流量，但是仍然需要做一些工作。为什么这很重要？因为如果在配置阶段触发依赖项解析，那么您将对运行的每个构建都增加一个损失。
@@ -222,9 +222,9 @@ build.gradle
     
     
     tasks.register('copyFiles', Copy) {
-        println ">> Compilation deps: ${%E7%BB%84%E6%80%81s.compileClasspath.files}"
+        println ">> Compilation deps: ${configurations.compileClasspath.files}"
         into(layout.buildDirectory.dir('output'))
-        from(%E7%BB%84%E6%80%81s.compileClasspath)
+        from(configurations.compileClasspath)
     }
 
 build.gradle.kts
@@ -232,9 +232,9 @@ build.gradle.kts
     
     
     tasks.register<Copy>("copyFiles") {
-        println(">> Compilation deps: ${%E7%BB%84%E6%80%81s.compileClasspath.get().files}")
+        println(">> Compilation deps: ${configurations.compileClasspath.get().files}")
         into(layout.buildDirectory.dir("output"))
-        from(%E7%BB%84%E6%80%81s.compileClasspath)
+        from(configurations.compileClasspath)
     }
 
 该`files`属性将强制Gradle解析依赖关系，并且在此示例中，这是在配置阶段发生的。现在，每次运行构建时，无论执行什么任务，都会从该配置的依赖项解析中获得性能上的损失。最好将其添加到`doFirst()`操作中。
@@ -247,9 +247,9 @@ build.gradle
     
     tasks.register('copyFiles', Copy) {
         into(layout.buildDirectory.dir('output'))
-        from(%E7%BB%84%E6%80%81s.compileClasspath)
+        from(configurations.compileClasspath)
         doFirst {
-            println ">> Compilation deps: ${%E7%BB%84%E6%80%81s.compileClasspath.files}"
+            println ">> Compilation deps: ${configurations.compileClasspath.files}"
         }
     }
 
@@ -259,15 +259,15 @@ build.gradle.kts
     
     tasks.register<Copy>("copyFiles") {
         into(layout.buildDirectory.dir("output"))
-        from(%E7%BB%84%E6%80%81s.compileClasspath)
+        from(configurations.compileClasspath)
         doFirst {
-            println(">> Compilation deps: ${%E7%BB%84%E6%80%81s.compileClasspath.get().files}")
+            println(">> Compilation deps: ${configurations.compileClasspath.get().files}")
         }
     }
 
 请注意，`from()`声明不会解析依赖关系，因为您将[依赖关系配置](https://docs.gradle.org/nightly/userguide/declaring_dependencies.html#sec:what-
 are-dependency-
-%E7%BB%84%E6%80%81s)本身用作参数，而不是其文件。该`Copy`任务处理配置本身的任务执行，而这正是你想要的东西时的分辨率。
+configurations)本身用作参数，而不是其文件。该`Copy`任务处理配置本身的任务执行，而这正是你想要的东西时的分辨率。
 
 构建扫描的性能页面上的“依赖关系解决方案”选项卡明确显示了如何在项目配置和任务执行之间分配依赖关系解决时间：
 
@@ -291,7 +291,7 @@ Lint插件](https://github.com/nebula-plugins/gradle-lint-plugin)来识别此类
 
 如果您使用的是自定义存储库服务器，则可用的一种技术是创建将多个实际存储库聚合在一起的虚拟存储库。然后，您可以仅将该存储库添加到您的构建文件中，从而进一步减少Gradle在依赖关系解析期间发送的HTTP请求的数量。
 
-### [注意自定义依赖项解析逻辑](#be_careful_with_custom_%E4%BE%9D%E8%B5%96%E8%A7%A3%E6%9E%90_logic)
+### [注意自定义依赖项解析逻辑](#%E6%B3%A8%E6%84%8F%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BE%9D%E8%B5%96%E9%A1%B9%E8%A7%A3%E6%9E%90%E9%80%BB%E8%BE%91)
 
 依赖性解析是一个很难解决的问题，要使其表现良好，只会增加挑战。但是，Gradle仍然需要允许用户以最适合他们的方式对依赖关系解析进行建模。这就是为什么它具有强大的API来自定义依赖项解析如何工作的原因。
 
@@ -382,12 +382,12 @@ cache/)服务。共享缓存可以通过重用其他位置已经生成的输出�
 ### [在旧的Gradle版本上启用守护程序](#%E5%9C%A8%E6%97%A7%E7%9A%84Gradle%E7%89%88%E6%9C%AC%E4%B8%8A%E5%90%AF%E7%94%A8%E5%AE%88%E6%8A%A4%E7%A8%8B%E5%BA%8F)
 
 Gradle守护程序是一种用于提高Gradle性能的机制。从Gradle
-3.0开始，该守护程序默认情况下处于启用状态，但是如果您使用的是旧版本，则一定要在本地开发人员计算机上启用它。这样，您会发现构建速度有了很大的提高。您可以在[本节中](https://docs.gradle.org/nightly/userguide/gradle_%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B.html)学习如何做。
+3.0开始，该守护程序默认情况下处于启用状态，但是如果您使用的是旧版本，则一定要在本地开发人员计算机上启用它。这样，您会发现构建速度有了很大的提高。您可以在[本节中](https://docs.gradle.org/nightly/userguide/gradle_daemon.html)学习如何做。
 
 在CI计算机上，可以从守护程序获得的收益取决于您的设置。如果您拥有长期的CI代理，并且构建了许多都使用相同Gradle版本和JVM参数的小型项目，那么该守护程序可以减少周转时间。如果您的项目规模更大或更多样化，那么您可能不会看到太多好处。通常，保留守护程序是安全的，因为Gradle
 3.0引入了运行状况监视，它将关闭守护程序以减少内存压力。
 
-### [调整守护程序的堆大小](#adjust_the_%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8Bs_heap_size)
+### [调整守护程序的堆大小](#%E8%B0%83%E6%95%B4%E5%AE%88%E6%8A%A4%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%A0%86%E5%A4%A7%E5%B0%8F)
 
 默认情况下，Gradle将为您的构建保留1GB的堆空间，这对于大多数项目来说已经足够了，尤其是如果您在本节的后续部分中遵循我们对分叉编译的建议。但是，某些非常大的构建可能需要更多内存来保存Gradle的模型和缓存。如果是这种情况，则可以在
 _gradle.properties_ 文件中检入更大的内存要求：
@@ -601,7 +601,7 @@ build.gradle.kts
 很多时候，您只是在更改代码的内部实现细节，例如，编辑方法主体。从Gradle
 3.4开始，这些所谓的ABI兼容更改不再触发下游项目的重新编译。在具有深层依赖链的大型多项目构建中，这尤其可以缩短构建时间。
 
-注意：如果使用注释处理器，则需要显式声明它们，以便避免编译。在[避免编译](https://docs.gradle.org/nightly/userguide/java_plugin.html#sec:java_%E9%81%BF%E5%85%8D%E7%BC%96%E8%AF%91)部分中了解更多有关此内容的信息。
+注意：如果使用注释处理器，则需要显式声明它们，以便避免编译。在[避免编译](https://docs.gradle.org/nightly/userguide/java_plugin.html#sec:java_compile_avoidance)部分中了解更多有关此内容的信息。
 
 ### [Java库插件](#Java%E5%BA%93%E6%8F%92%E4%BB%B6)
 
