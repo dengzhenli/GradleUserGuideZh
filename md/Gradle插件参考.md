@@ -3,16 +3,16 @@
 
 内容
 
-  * [JVM语言和框架](#JVM%E8%AF%AD%E8%A8%80%E5%92%8C%E6%A1%86%E6%9E%B6)
-  * [母语](#%E6%AF%8D%E8%AF%AD)
-  * [包装与配送](#packaging+and+distribution)
-  * [代码分析](#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90)
-  * [IDE整合](#IDE%E6%95%B4%E5%90%88)
+  * [JVM语言和框架](#JVM语言和框架)
+  * [母语](#母语)
+  * [包装与配送](#packaging%20and%20distribution)
+  * [代码分析](#代码分析)
+  * [IDE整合](#IDE整合)
   * [效用](#utility)
 
 此页面包含Gradle本身提供的所有核心插件的链接和简短描述。
 
-## [JVM语言和框架](#JVM%E8%AF%AD%E8%A8%80%E5%92%8C%E6%A1%86%E6%9E%B6)
+## [JVM语言和框架](#JVM语言和框架)
 
 [Java](https://docs.gradle.org/6.7.1/userguide/java_plugin.html)
 
@@ -50,7 +50,7 @@
 
 提供对使用[ANTLR](http://www.antlr.org/)生成解析器的支持。
 
-## [母语](#%E6%AF%8D%E8%AF%AD)
+## [母语](#母语)
 
 [C++应用](https://docs.gradle.org/6.7.1/userguide/cpp_application_plugin.html)
 
@@ -88,7 +88,7 @@
 
 提供对在Linux和macOS上构建和运行基于XCTest的测试的支持。
 
-## [packaging and distribution](#packaging+and+distribution)
+## [packaging%20and%20distribution](#packaging%20and%20distribution)
 
 [application](/md/Java应用插件.md)
 
@@ -138,7 +138,7 @@
 
 提供对创建包含其运行时依赖项的Java库项目的ZIP分发的支持。
 
-## [代码分析](#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90)
+## [代码分析](#代码分析)
 
 [Checkstyle](https://docs.gradle.org/6.7.1/userguide/checkstyle_plugin.html)
 
@@ -164,7 +164,7 @@
 
 使用[CodeNarc](http://codenarc.sourceforge.net/index.html)对Groovy源文件执行质量检查，并生成关联的报告。
 
-## [IDE整合](#IDE%E6%95%B4%E5%90%88)
+## [IDE整合](#IDE整合)
 
 [Eclipse](https://docs.gradle.org/6.7.1/userguide/eclipse_plugin.html)
 

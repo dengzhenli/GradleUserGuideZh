@@ -3,10 +3,10 @@
 
 内容
 
-  * [基础知识](#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
-  * [测试执行](#%E6%B5%8B%E8%AF%95%E6%89%A7%E8%A1%8C)
-  * [测试过滤](#%E6%B5%8B%E8%AF%95%E8%BF%87%E6%BB%A4)
-  * [测试报告](#%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A)
+  * [基础知识](#基础知识)
+  * [测试执行](#测试执行)
+  * [测试过滤](#测试过滤)
+  * [测试报告](#测试报告)
 
 在本地生态系统中进行测试是一个丰富的主题。有许多不同的测试库和框架，以及许多不同类型的测试。无论它们是频繁执行还是不频繁执行，所有这些都需要成为构建的一部分。本章专门说明Gradle如何处理内部版本之间以及内部内部的不同要求，并广泛介绍了Gradle如何与macOS和Linux上的XCTest集成。
 
@@ -14,7 +14,7 @@
 
 但是首先，我们看一下Gradle中本机测试的基础。
 
-## [基础知识](#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
+## [基础知识](#基础知识)
 
 Gradle支持与Swift语言的XCTest测试框架进行深度集成，并围绕[XCTest](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)任务类型展开。这将在macOS上使用[XcodeXCTest](https://developer.apple.com/documentation/xctest)或在Linux上使用[开源Swift核心库替代方案](https://github.com/apple/swift-corelibs-xctest)运行一系列测试用例，并整理结果。然后，您可以通过[TestReport](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.TestReport.html)任务类型的实例将这些结果转换为报告。
 
@@ -28,7 +28,7 @@ Gradle支持与Swift语言的XCTest测试框架进行深度集成，并围绕[XC
 
 该[XCTest](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)任务有许多配置选项。在本章的其余部分中，我们将讨论很多。
 
-## [测试执行](#%E6%B5%8B%E8%AF%95%E6%89%A7%E8%A1%8C)
+## [测试执行](#测试执行)
 
 Gradle在单独的（“分叉”）过程中执行测试。
 
@@ -48,7 +48,7 @@ Gradle在单独的（“分叉”）过程中执行测试。
 
 有关所有可用配置选项的详细信息，请参见[XCTest](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)。
 
-## [测试过滤](#%E6%B5%8B%E8%AF%95%E8%BF%87%E6%BB%A4)
+## [测试过滤](#测试过滤)
 
 运行测试套件的子集是常见的要求，例如，当您修复错误或开发新的测试用例时。Gradle为此提供了过滤。您可以根据以下条件选择要运行的测试：
 
@@ -91,12 +91,12 @@ build.gradle.kts
 
 ╔═════════════════════════════  
 目前，测试过滤仅支持XCTest兼容过滤器。这意味着同一过滤器在macOS和Linux之间会有所不同。在macOS上，捆绑软件的基本名称需要添加到过滤器的前面，例如`TestBundle.SomeTest`，有关有效过滤模式的更多信息，`TestBundle.SomeTest.someMethod`
-请参见下面的“[简单名称模式”](#%E6%B5%8B%E8%AF%95%E8%BF%87%E6%BB%A4_simple_name_pattern)部分。  
+请参见下面的“[简单名称模式”](#测试过滤_simple_name_pattern)部分。  
 ╚═════════════════════════════    
   
 以下部分介绍简单类/方法名称的特殊情况。
 
-### [简单名称模式](#%E6%B5%8B%E8%AF%95%E8%BF%87%E6%BB%A4_simple_name_pattern)
+### [简单名称模式](#测试过滤_simple_name_pattern)
 
 Gradle支持简单的类名，或类名+方法名的测试过滤。例如，以下命令行运行测试用例中的所有测试或仅运行其中一个`SomeTestClass`测试：
 
@@ -110,14 +110,14 @@ Gradle支持简单的类名，或类名+方法名的测试过滤。例如，以�
     gradle xcTest --tests TestBundle.SomeTestClass.someSpecificMethod
     # or `gradle xcTest --tests TestBundle.SomeTestClass.someSpecificMethod` on macOS
 
-您还可以将在命令行中定义的过滤器与[连续构建结合使用，](/md/命令行界面.md#sec:continuous_build)以在每次对生产或测试源文件进行更改后立即重新执行测试的子集。每当更改触发测试运行时，以下命令将执行“
+您还可以将在命令行中定义的过滤器与[连续构建结合使用，](/md/命令行界面_md#持续构建)以在每次对生产或测试源文件进行更改后立即重新执行测试的子集。每当更改触发测试运行时，以下命令将执行“
 SomeTestClass”测试类中的所有测试：
 
     
     
     gradle test --continuous --tests SomeTestClass
 
-## [测试报告](#%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A)
+## [测试报告](#测试报告)
 
 该[XCTest](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)任务默认生成的结果如下：
 
