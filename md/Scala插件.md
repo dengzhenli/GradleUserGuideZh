@@ -14,16 +14,16 @@
   * [源集属性](#源集属性)
   * [在外部过程中进行编译](#在外部过程中进行编译)
   * [增量编译](#增量编译)
-  * [针对Java 6或Java 7进行编译和测试](#针对Java%206或Java%207进行编译和测试)
+  * [针对Java 6或Java 7进行编译和测试](#针对Java_6或Java_7进行编译和测试)
   * [Eclipse整合](#Eclipse整合)
-  * [IntelliJ IDEA集成](#IntelliJ%20IDEA集成)
+  * [IntelliJ IDEA集成](#IntelliJ_IDEA集成)
 
 Scala插件扩展了[Java插件，](https://docs.gradle.org/6.7.1/userguide/java_plugin.html)以添加对[Scala](https://www.scala-
 lang.org/)项目的支持。它可以处理Scala代码，Scala和Java混合代码，甚至是纯Java代码（尽管我们不一定建议将其用于后者）。该插件支持
 _联合编译_
 ，可让您自由地混合和匹配Scala和Java代码，并具有双向依赖性。例如，Scala类可以扩展Java类，而Java类又可以扩展Scala类。这样就可以为作业使用最佳语言，并在需要时用其他语言重写任何类。
 
-请注意，如果您希望从[API/实现分离中](/md/Java库插件_md#API与实现分离)受益，还可以将`java-
+请注意，如果您希望从[API/实现分离中](/md/Java库插件.md#API与实现分离)受益，还可以将`java-
 library`插件应用于Scala项目。
 
 ## [用法](#用法)
@@ -52,7 +52,7 @@ build.gradle.kts
 
 ## [任务](#任务)
 
-Scala插件将以下任务添加到项目中。在[此处](/md/构建Java和JVM项目_md#构建其他JVM语言项目)可以找到有关更改对Java编译任务的依赖性的信息。
+Scala插件将以下任务添加到项目中。在[此处](/md/构建Java和JVM项目.md#构建其他JVM语言项目)可以找到有关更改对Java编译任务的依赖性的信息。
 
 `compileScala`—
 [ScalaCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.scala.ScalaCompile.html)
@@ -451,11 +451,11 @@ DATE`照常执行该任务。
 
 请注意，不支持Zinc基于Nailgun的守护程序模式。取而代之的是，我们计划增强Gradle自己的编译器守护进程，以在Gradle调用中保持活动状态，并重用相同的Scala编译器。预计这将为Scala编译带来另一个显着的加速。
 
-## [针对Java%206或Java%207进行编译和测试](#针对Java%206或Java%207进行编译和测试)
+## [针对Java_6或Java_7进行编译和测试](#针对Java_6或Java_7进行编译和测试)
 
 Scala编译器会忽略Gradle的`targetCompatibility`和`sourceCompatibility`设置。在Scala
 2.11中，Scala编译器始终将其编译为与Java 6兼容的字节码。在Scala 2.12中，Scala编译器始终将其编译为Java
-8兼容的字节码。如果您也有Java源代码，则可以按照与[Java插件](/md/构建Java和JVM项目_md#定位特定的Java版本)相同的步骤进行操作，以确保使用正确的Java编译器。
+8兼容的字节码。如果您也有Java源代码，则可以按照与[Java插件](/md/构建Java和JVM项目.md#定位特定的Java版本)相同的步骤进行操作，以确保使用正确的Java编译器。
 
 gradle.properties
 
@@ -535,7 +535,7 @@ build.gradle.kts
 
 当Eclipse插件遇到Scala项目时，它会添加其他配置，以使该项目可以立即使用Scala IDE。具体来说，该插件添加了Scala性质和依赖项容器。
 
-## [IntelliJ%20IDEA集成](#IntelliJ%20IDEA集成)
+## [IntelliJ_IDEA集成](#IntelliJ_IDEA集成)
 
 当IDEA插件遇到Scala项目时，它会添加其他配置，以使该项目开箱即可使用IDEA。具体来说，该插件添加了一个Scala SDK（IntelliJ
 IDEA 14+）和一个Scala编译器库，该库与项目的类路径上的Scala版本匹配。Scala插件与IntelliJ

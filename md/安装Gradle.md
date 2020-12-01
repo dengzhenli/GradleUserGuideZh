@@ -10,7 +10,7 @@
 
 您可以在Linux，macOS或Windows上安装Gradle构建工具。本文档涵盖使用软件包管理器（如SDKMAN）进行安装！或Homebrew，以及手动安装。
 
-建议使用[Gradle wrapper](/md/gradle_wrapper_md#升级Gradle%20Wrap) 升级Gradle。
+建议使用[Gradle wrapper](/md/gradle_wrapper.md#升级Gradle_Wrap) 升级Gradle。
 
 您可以在“[发行版”页面](https://gradle.org/releases) 上找到所有发行版及其校验和。
 
@@ -71,7 +71,7 @@ Gradle使用在路径中找到的任何JDK。或者，您可以将`JAVA_HOME`环
 ❯ ls /opt/gradle/gradle-6.7.1
 LICENSE  NOTICE  bin  README  init.d  lib  media
 ```
-#### [Microsoft%20Windows用户](#Microsoft%20Windows用户)
+#### [Microsoft_Windows用户](#Microsoft_Windows用户)
 
 用文件管理器创建`C:\Gradle`目录。
 
@@ -91,7 +91,7 @@ LICENSE  NOTICE  bin  README  init.d  lib  media
 ```
 或者，您也可以添加环境变量`GRADLE_HOME`并将其指向未压缩的发行版。`PATH`您可以`_$GRADLE_HOME_/bin`向自己的而不是向其中添加特定版本的Gradle`PATH`。当升级到其他版本的Gradle时，只需更改`GRADLE_HOME`环境变量即可。
 
-#### [Microsoft%20Windows用户](#Microsoft%20Windows用户_2)
+#### [Microsoft_Windows用户](#Microsoft_Windows用户_2)
 
 在**文件管理器**上单击鼠标右键`This PC`（或`Computer`）图标，然后点击`Properties`→交通`Advanced System Settings`→交通`Environmental Variables`。
 
@@ -114,10 +114,10 @@ Gradle 6.7.1
 
 (environment specific information)
 ```
-如果遇到麻烦，请参阅“[排除安装故障](/md/对构建进行故障排除_md#对Gradle安装进行故障排除) ”[部分](/md/对构建进行故障排除_md#对Gradle安装进行故障排除) 。
+如果遇到麻烦，请参阅“[排除安装故障](/md/对构建进行故障排除.md#对Gradle安装进行故障排除) ”[部分](/md/对构建进行故障排除.md#对Gradle安装进行故障排除) 。
 
 
-您可以通过下载SHA-256文件（可从[发行版中获得](https://gradle.org/releases) ）并按照以下[验证指示信息](/md/gradle_wrapper_md#验证下载的Gradle发行版) 来验证Gradle分发的完整性。
+您可以通过下载SHA-256文件（可从[发行版中获得](https://gradle.org/releases) ）并按照以下[验证指示信息](/md/gradle_wrapper.md#验证下载的Gradle发行版) 来验证Gradle分发的完整性。
 
 ## [下一步](#下一步)
 

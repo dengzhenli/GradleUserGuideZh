@@ -3,11 +3,11 @@
 
 内容
 
-  * [添加Gradle Wrap](#添加Gradle%20Wrap)
-  * [使用Gradle Wrap](#使用Gradle%20Wrap)
-  * [升级Gradle Wrap](#升级Gradle%20Wrap)
-  * [自定义Gradle Wrap](#自定义Gradle%20Wrap)
-  * [验证Gradle Wrapper JAR的完整性](#验证Gradle%20Wrapper%20JAR的完整性)
+  * [添加Gradle Wrap](#添加Gradle_Wrap)
+  * [使用Gradle Wrap](#使用Gradle_Wrap)
+  * [升级Gradle Wrap](#升级Gradle_Wrap)
+  * [自定义Gradle Wrap](#自定义Gradle_Wrap)
+  * [验证Gradle Wrapper JAR的完整性](#验证Gradle_Wrapper_JAR的完整性)
 
 建议执行任何Gradle构建的方法是在Gradle Wrapper（简称为“
 Wrapper”）的帮助下。 Wrap是一个脚本，可调用Gradle的声明版本，并在必要时预先下载。因此，开发人员可以快速启动并运行Gradle项目，而无需遵循手动安装过程，从而节省了公司的时间和金钱。
@@ -24,19 +24,19 @@ Wrapper”）的帮助下。 Wrap是一个脚本，可调用Gradle的声明版�
 
 **那么它是怎样工作的？ 对于用户而言，通常有三种不同的工作流程：**
 
-  * 您设置了一个新的Gradle项目，并希望[将 Wrap添加](#添加Gradle%20Wrap)到其中。
+  * 您设置了一个新的Gradle项目，并希望[将 Wrap添加](#添加Gradle_Wrap)到其中。
 
-  * 您想[使用](#使用Gradle%20Wrap)已经提供[了 Wrap](#使用Gradle%20Wrap)程序[的项目](#使用Gradle%20Wrap)来[运行该项目](#使用Gradle%20Wrap)。
+  * 您想[使用](#使用Gradle_Wrap)已经提供[了 Wrap](#使用Gradle_Wrap)程序[的项目](#使用Gradle_Wrap)来[运行该项目](#使用Gradle_Wrap)。
 
-  * 您想[将 Wrap升级](#升级Gradle%20Wrap)到新版本的Gradle。
+  * 您想[将 Wrap升级](#升级Gradle_Wrap)到新版本的Gradle。
 
 以下各节将更详细地说明这些用例。
 
-## [添加Gradle%20Wrap](#添加Gradle%20Wrap)
+## [添加Gradle_Wrap](#添加Gradle_Wrap)
 
 生成Wrapper文件需要在计算机上安装Gradle运行时的安装版本，如[Installation中所述](/md/安装Gradle.md#installation)。幸运的是，生成初始Wrapper文件是一个一次性的过程。
 
-每个普通的Gradle构建都带有一个称为的内置任务`wrapper`。列出任务时，您将可以在“构建安装程序任务”组下找到列出[的任务](/md/命令行界面_md#上市任务)。执行`wrapper`任务会在项目目录中生成必要的Wrapper文件。
+每个普通的Gradle构建都带有一个称为的内置任务`wrapper`。列出任务时，您将可以在“构建安装程序任务”组下找到列出[的任务](/md/命令行界面.md#上市任务)。执行`wrapper`任务会在项目目录中生成必要的Wrapper文件。
 
 运行 Wrap任务
 
@@ -156,7 +156,7 @@ Gradle项目通常为每个子项目提供一个`settings.gradle(.kts)`文件和
 
     
 
-一个属性文件，负责配置Wrapper运行时行为，例如与该版本兼容的Gradle版本。请注意，更多常规设置（例如，[将 Wrap配置为使用代理](/md/Gradle环境搭建_md#通过HTTP代理访问网络)）需要进入[其他文件](/md/Gradle环境搭建_md#Gradle属性)。
+一个属性文件，负责配置Wrapper运行时行为，例如与该版本兼容的Gradle版本。请注意，更多常规设置（例如，[将 Wrap配置为使用代理](/md/Gradle环境搭建.md#通过HTTP代理访问网络)）需要进入[其他文件](/md/Gradle环境搭建.md#Gradle属性)。
 
 `gradlew`， `gradlew.bat`
 
@@ -164,9 +164,9 @@ Gradle项目通常为每个子项目提供一个`settings.gradle(.kts)`文件和
 
 一个外壳脚本和一个Windows批处理脚本，用于使用 Wrap程序执行构建。
 
-您可以继续[使用 Wrap程序执行构建，](#使用Gradle%20Wrap)而不必安装Gradle运行时。如果您正在处理的项目不包含那些Wrapper文件，则需要[生成它们](#添加Gradle%20Wrap)。
+您可以继续[使用 Wrap程序执行构建，](#使用Gradle_Wrap)而不必安装Gradle运行时。如果您正在处理的项目不包含那些Wrapper文件，则需要[生成它们](#添加Gradle_Wrap)。
 
-## [使用Gradle%20Wrap](#使用Gradle%20Wrap)
+## [使用Gradle_Wrap](#使用Gradle_Wrap)
 
 建议始终使用 Wrap执行构建，以确保可靠，受控和标准化地执行构建。使用Wrapper看起来几乎就像使用Gradle安装来运行构建。根据操作系统的不同，您可以运行`gradlew`或`gradlew.bat`代替`gradle`命令。以下控制台输出演示了Windows机器上 Wrap程序对基于Java的项目的使用。
 
@@ -192,10 +192,10 @@ tasks`。
   
 ╚═════════════════════════════    
   
-## [升级Gradle%20Wrap](#升级Gradle%20Wrap)
+## [升级Gradle_Wrap](#升级Gradle_Wrap)
 
 项目通常会希望与时俱进并升级Gradle版本，以从新功能和改进中受益。升级Gradle版本的一种方法是手动更改`distributionUrl` Wrap`gradle-
-wrapper.properties`文件中的属性。更好的建议选项是运行`wrapper`任务并提供目标Gradle版本，如[添加Gradle Wrap中所述](#添加Gradle%20Wrap)。使用该`wrapper`任务可确保对具有该特定Gradle版本的Wrapper
+wrapper.properties`文件中的属性。更好的建议选项是运行`wrapper`任务并提供目标Gradle版本，如[添加Gradle Wrap中所述](#添加Gradle_Wrap)。使用该`wrapper`任务可确保对具有该特定Gradle版本的Wrapper
 Shell脚本或批处理文件所做的任何优化都应用于项目。与往常一样，您应该将对Wrapper文件的更改提交给版本控制。
 
 请注意，仅运行一次 Wrap程序任务将`gradle-wrapper.properties`仅更新，但`gradle-
@@ -214,7 +214,7 @@ wrapper.jar`不影响 Wrap程序本身。这通常很好，因为即使使用古
     在4秒钟内成功建立
     1个可执行的任务：1个已执行
 
-## [自定义Gradle%20Wrap](#自定义Gradle%20Wrap)
+## [自定义Gradle_Wrap](#自定义Gradle_Wrap)
 
 Gradle的大多数用户对Wrapper的默认运行时行为感到满意。但是，组织策略，安全性约束或个人喜好可能需要您更深入地定制 Wrap。幸运的是，内置`wrapper`任务提供了许多选项，可以使运行时行为适应您的需求。大多数配置选项由基础任务类型[Wrapper](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.wrapper.Wrapper.html)公开。
 
@@ -263,7 +263,7 @@ HTTP基本身份验证仅应与`HTTPS`URL一起使用，而不应与普通URL一
   
 ╚═════════════════════════════    
   
-使用系统属性可以`.gradle/gradle.properties`在用户主目录中的文件中完成，也可以通过其他方式进行，请参阅[Gradle配置属性](/md/Gradle环境搭建_md#Gradle属性)。
+使用系统属性可以`.gradle/gradle.properties`在用户主目录中的文件中完成，也可以通过其他方式进行，请参阅[Gradle配置属性](/md/Gradle环境搭建.md#Gradle属性)。
 
 使用系统属性指定HTTP基本身份验证凭据
 
@@ -281,7 +281,7 @@ wrapper.properties`的文件也适用。请注意，此文件将提交到您的�
     
     distributionUrl=https://username:password@somehost/path/to/gradle-distribution.zip
 
-可以与已认证的代理或未认证的代理一起使用。有关如何配置使用[代理](/md/Gradle环境搭建_md#通过HTTP代理访问网络)的更多信息，请参见[通过代理访问网络](/md/Gradle环境搭建_md#通过HTTP代理访问网络)`Wrapper`。
+可以与已认证的代理或未认证的代理一起使用。有关如何配置使用[代理](/md/Gradle环境搭建.md#通过HTTP代理访问网络)的更多信息，请参见[通过代理访问网络](/md/Gradle环境搭建.md#通过HTTP代理访问网络)`Wrapper`。
 
 ### [验证下载的Gradle发行版](#验证下载的Gradle发行版)
 
@@ -311,7 +311,7 @@ distribution-sha256-sum`在命令行上使用。
 
 如果配置的校验和与在托管发行版的服务器上找到的校验和不匹配，则Gradle将报告构建失败。仅当尚未下载已配置的 Wrap发行版时才执行校验和验证。
 
-## [验证Gradle%20Wrapper%20JAR的完整性](#验证Gradle%20Wrapper%20JAR的完整性)
+## [验证Gradle_Wrapper_JAR的完整性](#验证Gradle_Wrapper_JAR的完整性)
 
  WrapJAR是一个二进制文件，将在开发人员和构建服务器的计算机上执行。与所有此类文件一样，在执行文件之前，应确保它是可信任的。由于通常将Wrapper
 JAR检查到项目的版本控制系统中，恶意参与者有可能通过提交貌似仅升级Gradle版本的拉取请求来用修改后的JAR替换原始JAR。
@@ -322,11 +322,11 @@ JAR检查到项目的版本控制系统中，恶意参与者有可能通过提�
 的[校验和](https://gradle.org/release-checksums/)
 （3.3至4.0.2版除外，该版本不会生成可复制的JAR），因此您可以手动验证 WrapJAR的完整性。
 
-### [在GitHub上自动验证Gradle%20Wrapper%20JAR](#在GitHub上自动验证Gradle%20Wrapper%20JAR)
+### [在GitHub上自动验证Gradle_Wrapper_JAR](#在GitHub上自动验证Gradle_Wrapper_JAR)
 
 在[GitHub的行动](https://github.com/marketplace/actions/gradle-wrapper-validation)是从Gradle单独发布，所以请检查其如何将其应用到你的项目文档。
 
-### [手动验证Gradle%20Wrapper%20JAR](#手动验证Gradle%20Wrapper%20JAR)
+### [手动验证Gradle_Wrapper_JAR](#手动验证Gradle_Wrapper_JAR)
 
 您可以通过在主要操作系统之一上运行以下命令来手动验证Wrapper JAR的校验和，以确保未被篡改：
 

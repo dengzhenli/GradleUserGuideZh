@@ -59,19 +59,19 @@ _取第一个_ ：
 
     
 
-设置为true时，单个输入属性哈希值和每个任务的构建缓存键都记录在控制台上。了解有关[任务输出缓存的](/md/构建缓存_md#任务输出缓存)更多信息。
+设置为true时，单个输入属性哈希值和每个任务的构建缓存键都记录在控制台上。了解有关[任务输出缓存的](/md/构建缓存.md#任务输出缓存)更多信息。
 
 `org.gradle.configureondemand=(true,false)`
 
     
 
-启用[按需](/md/配置时间和执行时间_md#按需配置)孵化[配置](/md/配置时间和执行时间_md#按需配置)，Gradle将尝试仅配置必要的项目。
+启用[按需](/md/配置时间和执行时间.md#按需配置)孵化[配置](/md/配置时间和执行时间.md#按需配置)，Gradle将尝试仅配置必要的项目。
 
 `org.gradle.console=(auto,plain,rich,verbose)`
 
     
 
-自定义控制台输出的颜色或详细程度。默认值取决于Gradle的调用方式。有关其他详细信息，请参见[命令行日志记录](/md/命令行界面_md#记录选项)。
+自定义控制台输出的颜色或详细程度。默认值取决于Gradle的调用方式。有关其他详细信息，请参见[命令行日志记录](/md/命令行界面.md#记录选项)。
 
 `org.gradle.daemon=(true,false)`
 
@@ -107,7 +107,7 @@ _取第一个_ ：
 
     
 
-当设置为安静，警告，生命周期，信息或调试时，Gradle将使用此日志级别。这些值不区分大小写。该`lifecycle`级别是默认级别。请参阅[选择日志级别](/md/使用记录_md#选择日志级别)。
+当设置为安静，警告，生命周期，信息或调试时，Gradle将使用此日志级别。这些值不区分大小写。该`lifecycle`级别是默认级别。请参阅[选择日志级别](/md/使用记录.md#选择日志级别)。
 
 `org.gradle.parallel=(true,false)`
 
@@ -119,32 +119,32 @@ _取第一个_ ：
 
     
 
-指定Gradle守护程序及其启动的所有进程的调度优先级。默认值为`normal`。另请参阅[性能命令行选项](/md/命令行界面_md#性能选项)。
+指定Gradle守护程序及其启动的所有进程的调度优先级。默认值为`normal`。另请参阅[性能命令行选项](/md/命令行界面.md#性能选项)。
 
 `org.gradle.vfs.verbose=(true,false)`
 
     
 
-在[监视文件系统](/md/Gradle守护程序_md#观看文件系统)时配置详细日志记录。
+在[监视文件系统](/md/Gradle守护程序.md#观看文件系统)时配置详细日志记录。
 _默认为关闭_ 。
 
 `org.gradle.vfs.watch=(true,false)`
 
     
-切换[观看文件系统](/md/Gradle守护程序_md#观看文件系统)。允许Gradle在下一个版本中重用有关文件系统的信息。
+切换[观看文件系统](/md/Gradle守护程序.md#观看文件系统)。允许Gradle在下一个版本中重用有关文件系统的信息。
 _默认为关闭_ 。
 
 `org.gradle.warning.mode=(all,fail,summary,none)`
 
     
 
-当设置为`all`，`summary`或者`none`，Gradle会使用不同的预警类型的显示器。有关详细信息，请参见[命令行日志记录选项](/md/命令行界面_md#记录选项)。
+当设置为`all`，`summary`或者`none`，Gradle会使用不同的预警类型的显示器。有关详细信息，请参见[命令行日志记录选项](/md/命令行界面.md#记录选项)。
 
 `org.gradle.workers.max=(max # of worker processes)`
 
     
 
-配置后，Gradle将最多使用给定数量的工人。默认值为CPU处理器数。另请参阅[性能命令行选项](/md/命令行界面_md#性能选项)。
+配置后，Gradle将最多使用给定数量的工人。默认值为CPU处理器数。另请参阅[性能命令行选项](/md/命令行界面.md#性能选项)。
 
 下面的示例演示各种属性的用法。
 
@@ -217,7 +217,7 @@ build.gradle.kts
 
     
 
-指定用户名以使用HTTP基本认证从服务器下载Gradle发行版。在[身份验证的包装下载中](/md/gradle_wrapper_md#经过身份验证的Gradle发行版下载)了解更多信息。
+指定用户名以使用HTTP基本认证从服务器下载Gradle发行版。在[身份验证的包装下载中](/md/gradle_wrapper.md#经过身份验证的Gradle发行版下载)了解更多信息。
 
 `gradle.wrapperPassword=(mypassword)`
 
@@ -346,7 +346,7 @@ build.gradle.kts
     }
 
 请参阅[Test](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)
-API文档中的其他示例，以及[Java插件参考中的测试执行](/md/在Java和JVM项目中进行测试_md#测试执行)。
+API文档中的其他示例，以及[Java插件参考中的测试执行](/md/在Java和JVM项目中进行测试.md#测试执行)。
 
 [](https://scans.gradle.com/)使用该`--scan`选项时，[构建扫描](https://scans.gradle.com/)将告诉您有关执行构建的JVM的信息。
 

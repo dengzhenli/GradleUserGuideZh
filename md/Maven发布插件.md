@@ -7,7 +7,7 @@
   * [任务](#任务)
   * [刊物](#刊物)
   * [储存库](#储存库)
-  * [发布到Maven Local](#发布到Maven%20Local)
+  * [发布到Maven Local](#发布到Maven_Local)
   * [完整的例子](#完整的例子)
   * [删除延迟的配置行为](#删除延迟的配置行为)
 
@@ -84,13 +84,13 @@ _取决于_ ：所有任务`publish _PubName_ PublicationToMavenLocal`
 
 ## [刊物](#刊物)
 
-此插件提供[出版物](/md/依赖管理术语_md#作品（publication）)类型的[MavenPublication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html)。要了解如何定义和使用出版物，请参见[基本出版](/md/将项目发布为模块_md#设置基本发布)部分。
+此插件提供[出版物](/md/依赖管理术语.md#作品（publication）)类型的[MavenPublication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html)。要了解如何定义和使用出版物，请参见[基本出版](/md/将项目发布为模块.md#设置基本发布)部分。
 
 您可以在Maven发布中配置以下四项主要内容：
 
-  * 一个[组件](/md/依赖管理术语_md#component)—通过[MavenPublication.from（org.gradle.api.component.SoftwareComponent）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html#org.gradle.api.publish.maven.MavenPublication:from\(org.gradle.api.component.SoftwareComponent\))。
+  * 一个[组件](/md/依赖管理术语.md#component)—通过[MavenPublication.from（org.gradle.api.component.SoftwareComponent）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html#org.gradle.api.publish.maven.MavenPublication:from\(org.gradle.api.component.SoftwareComponent\))。
 
-  * [自定义工件](/md/定制发布_md#将自定义工件添加到发布中)-通过[MavenPublication.artifact（java.lang.Object）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html#org.gradle.api.publish.maven.MavenPublication:artifact\(java.lang.Object\))方法。有关自定义Maven工件的可用配置选项，请参见[MavenArtifact](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenArtifact.html)。
+  * [自定义工件](/md/定制发布.md#将自定义工件添加到发布中)-通过[MavenPublication.artifact（java.lang.Object）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html#org.gradle.api.publish.maven.MavenPublication:artifact\(java.lang.Object\))方法。有关自定义Maven工件的可用配置选项，请参见[MavenArtifact](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenArtifact.html)。
 
   * 标准元数据一样`artifactId`，`groupId`和`version`。
 
@@ -315,7 +315,7 @@ runtime`。
 
 ## [储存库](#储存库)
 
-该插件提供了[MavenArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)类型的[存储库](/md/依赖管理术语_md#repository)。要了解如何定义和使用存储库进行发布，请参见“[基本发布](/md/将项目发布为模块_md#设置基本发布)”部分。[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)[](/md/将项目发布为模块_md#设置基本发布)
+该插件提供了[MavenArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)类型的[存储库](/md/依赖管理术语.md#repository)。要了解如何定义和使用存储库进行发布，请参见“[基本发布](/md/将项目发布为模块.md#设置基本发布)”部分。[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)[](/md/将项目发布为模块.md#设置基本发布)
 
 这是定义发布存储库的简单示例：
 
@@ -431,7 +431,7 @@ build.gradle.kts
         }
     }
 
-## [发布到Maven%20Local](#发布到Maven%20Local)
+## [发布到Maven_Local](#发布到Maven_Local)
 
 为了与本地Maven安装集成，有时将模块及其POM文件和其他元数据发布到Maven本地存储库（通常位于 _$ USER_HOME / .m2 /
 repository中_ ） _很有_ 用。用Maven的话来说，这就是“安装”模块。

@@ -2,7 +2,7 @@
 
 内容
 
-  * [为什么Gradle Daemon对性能很重要](#为什么Gradle%20Daemon对性能很重要)
+  * [为什么Gradle Daemon对性能很重要](#为什么Gradle_Daemon对性能很重要)
   * [运行守护程序状态](#运行守护程序状态)
   * [禁用守护程序](#禁用守护程序)
   * [停止现有的守护程序](#停止现有的守护程序)
@@ -20,7 +20,7 @@ _Daemon_
 ：这是一个长期存在的后台进程，与以前相比，它可以更快地执行构建。通过避免昂贵的引导过程以及利用缓存（将有关项目的数据保留在内存中），我们可以实现这一目标。使用Daemon运行Gradle构建与没有运行没有什么不同。只需配置您是否要使用它-
 其他所有事情都由Gradle透明地处理。
 
-## [为什么Gradle%20Daemon对性能很重要](#为什么Gradle%20Daemon对性能很重要)
+## [为什么Gradle_Daemon对性能很重要](#为什么Gradle_Daemon对性能很重要)
 
 守护进程是一个长期存在的过程，因此我们不仅可以避免每次构建都需要启动JVM的成本，而且还可以在内存中缓存有关项目结构，文件，任务等的信息。
 
@@ -199,7 +199,7 @@ daemon`可以为构建指定开关，以防止使用守护程序。这对于诊�
 
 ## [工具和IDE](#工具和IDE)
 
-IDE和其他工具用于与Gradle集成的[Gradle Tooling API](/md/Gradle和第三方工具_md#使用Tooling%20API嵌入Gradle)
+IDE和其他工具用于与Gradle集成的[Gradle Tooling API](/md/Gradle和第三方工具.md#使用Tooling_API嵌入Gradle)
 _始终_ 使用Gradle守护程序执行构建。如果要在IDE中执行Gradle构建，则使用的是Gradle Daemon，而无需为您的环境启用它。
 
 ## [Gradle守护程序如何使构建更快？](#Gradle守护程序如何使构建更快？)

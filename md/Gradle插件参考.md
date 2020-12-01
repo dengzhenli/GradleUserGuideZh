@@ -5,7 +5,7 @@
 
   * [JVM语言和框架](#JVM语言和框架)
   * [母语](#母语)
-  * [包装与配送](#packaging%20and%20distribution)
+  * [包装与配送](#packaging_and_distribution)
   * [代码分析](#代码分析)
   * [IDE整合](#IDE整合)
   * [效用](#utility)
@@ -88,7 +88,7 @@
 
 提供对在Linux和macOS上构建和运行基于XCTest的测试的支持。
 
-## [packaging%20and%20distribution](#packaging%20and%20distribution)
+## [packaging_and_distribution](#packaging_and_distribution)
 
 [application](/md/Java应用插件.md)
 

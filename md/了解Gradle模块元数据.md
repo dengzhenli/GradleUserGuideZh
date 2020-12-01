@@ -18,7 +18,7 @@ Gradle模块元数据是一种独特的格式，旨在通过使其具有多平�
 
   * [丰富的版本限制](/md/声明丰富版本.md#rich-version-constraints)
 
-  * [依赖约束](/md/升级传递依赖的版本_md#在传递依赖项上添加约束)
+  * [依赖约束](/md/升级传递依赖的版本.md#在传递依赖项上添加约束)
 
   * [组件功能](/md/声明Library的能力.md#declaring-component-capabilities)
 
@@ -28,7 +28,7 @@ Gradle模块元数据是一种独特的格式，旨在通过使其具有多平�
 
   * 通过检测[不兼容的模块来](/md/声明Library的能力.md#declaring-component-capabilities)尽早发现问题[](/md/声明Library的能力.md#declaring-component-capabilities)
 
-  * 一致选择[特定于平台的依赖项](/md/在项目之间共享输出_md#针对不同的平台)
+  * 一致选择[特定于平台的依赖项](/md/在项目之间共享输出.md#针对不同的平台)
 
   * 本机[依赖版本对齐](/md/对齐依赖版本.md#version_alignment)
 
@@ -48,11 +48,11 @@ Gradle尽其所能将Gradle特定的概念映射到Maven或Ivy。当构建文件
 
 表1. Gradle特定概念到Maven和Ivy的映射 Gradle | 马文 | Ivy | 描述  
 ---|---  |---|---    
-[依赖约束](/md/升级传递依赖的版本_md#在传递依赖项上添加约束)|`<dependencyManagement>` 依存关系|未发表|Gradle依赖项约束是可 _传递的_ ，而Maven的依赖项管理块 _不是_  
+[依赖约束](/md/升级传递依赖的版本.md#在传递依赖项上添加约束)|`<dependencyManagement>` 依存关系|未发表|Gradle依赖项约束是可 _传递的_ ，而Maven的依赖项管理块 _不是_  
 [丰富的版本限制](/md/声明丰富版本.md#rich-version-constraints)|发布 _需求_ 版本|发布了 _需求_ 版本|  
 [组件功能](/md/声明Library的能力.md#declaring-component-capabilities)|未发表|未发表|组件功能是Gradle独有的  
 [功能变体](/md/建模功能变体和可选依赖项.md)|上载变异工件，依赖性发布为_optional依赖性|已上传变体工件，未发布依赖项|功能变体很好地替代了可选的依赖项  
-[自定义组件类型](/md/定制发布_md#创建和发布自定义组件)|工件已上传，依赖项是映射所描述的依赖项|工件已上传，相关性被忽略|在任何情况下，自定义组件类型都可能无法从Maven或Ivy中使用。它们通常存在于自定义生态系统中。  
+[自定义组件类型](/md/定制发布.md#创建和发布自定义组件)|工件已上传，依赖项是映射所描述的依赖项|工件已上传，相关性被忽略|在任何情况下，自定义组件类型都可能无法从Maven或Ivy中使用。它们通常存在于自定义生态系统中。  
   
 ### [禁用元数据兼容性发布警告](#禁用元数据兼容性发布警告)
 

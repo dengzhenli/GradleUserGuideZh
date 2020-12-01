@@ -341,7 +341,7 @@ Gradle提供了一些类型，您可以在任务实现和扩展中使用这些�
 
 ## [一个独立的项目](#一个独立的项目)
 
-现在，我们将插件移至独立项目，以便我们可以发布它并与他人共享。这个项目只是一个Java项目，它产生包含插件类的JAR。打包和发布插件的最简单且推荐的方法是使用[Java Gradle插件开发插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)。该插件将自动应用[Java插件](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_plugin)，将`gradleApi()`依赖项添加到api配置中，在生成的JAR文件中生成所需的插件描述符，并配置要在发布时使用的[插件标记工件](/md/使用Gradle插件_md#插件标记工件)。这是该项目的简单构建脚本。
+现在，我们将插件移至独立项目，以便我们可以发布它并与他人共享。这个项目只是一个Java项目，它产生包含插件类的JAR。打包和发布插件的最简单且推荐的方法是使用[Java Gradle插件开发插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)。该插件将自动应用[Java插件](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_plugin)，将`gradleApi()`依赖项添加到api配置中，在生成的JAR文件中生成所需的插件描述符，并配置要在发布时使用的[插件标记工件](/md/使用Gradle插件.md#插件标记工件)。这是该项目的简单构建脚本。
 
 例子5.一个自定义插件的构建
 
@@ -466,7 +466,7 @@ build.gradle.kts
 #### [不带插件发布的注释`java-gradle-plugin`](#不带插件发布的注释`java-gradle-plugin`)
 
 如果您的插件是在未使用[Java Gradle插件开发插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)的情况下发布的，
-则该出版物将缺少[PluginMarker Artifact](/md/使用Gradle插件_md#插件标记工件)，这是[插件DSL](/md/使用Gradle插件_md#通过插件DSL应用插件)查找插件所需的。在这种情况下，建议在另一个项目中解析该插件的方法是在该项目的设置文件`resolutionStrategy`的`pluginManagement
+则该出版物将缺少[PluginMarker Artifact](/md/使用Gradle插件.md#插件标记工件)，这是[插件DSL](/md/使用Gradle插件.md#通过插件DSL应用插件)查找插件所需的。在这种情况下，建议在另一个项目中解析该插件的方法是在该项目的设置文件`resolutionStrategy`的`pluginManagement
 {}`块中添加一个部分，如下所示。
 
 例子7.没有插件标记工件的插件的解析策略
@@ -733,7 +733,7 @@ src / test / java / org / gradle / GreetingPluginTest.java
 Gradle提供了许多在开发Gradle类型（包括插件）时有用的功能。有关更多详细信息，请参见[开发自定义Gradle类型](/md/开发自定义Gradle类型.md#custom_gradle_types)。
 
 ╔═════════════════════════════  
-在开发Gradle插件时，将信息记录到构建日志中时请务必小心。记录敏感信息（例如凭据，令牌，某些环境变量）被[视为安全漏洞](/md/使用记录_md#记录敏感信息)。公共持续集成服务的构建日志在世界范围内可见，并且可以公开此敏感信息。  
+在开发Gradle插件时，将信息记录到构建日志中时请务必小心。记录敏感信息（例如凭据，令牌，某些环境变量）被[视为安全漏洞](/md/使用记录.md#记录敏感信息)。公共持续集成服务的构建日志在世界范围内可见，并且可以公开此敏感信息。  
 ╚═════════════════════════════    
   
 ## [幕后花絮](#幕后花絮)

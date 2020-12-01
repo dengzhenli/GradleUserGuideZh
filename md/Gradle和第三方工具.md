@@ -6,7 +6,7 @@
   * [集成开发环境](#集成开发环境)
   * [持续集成](#持续集成)
   * [如何与Gradle集成](#如何与Gradle集成)
-  * [使用Tooling API嵌入Gradle](#使用Tooling%20API嵌入Gradle)
+  * [使用Tooling API嵌入Gradle](#使用Tooling_API嵌入Gradle)
 
 Gradle可以与许多不同的第三方工具集成，例如IDE和持续集成平台。在这里，我们看一些更常见的工具，以及如何将自己的工具与Gradle集成。
 
@@ -84,7 +84,7 @@ JetBrains支持[使用Gradle](https://blog.jetbrains.com/clion/2018/05/clion-sta
 前一种情况通常[实现为Gradle插件](/md/开发自定义Gradle插件.md)。后者可通过如下所述通过Tooling
 API嵌入Gradle来实现。
 
-## [使用Tooling%20API嵌入Gradle](#使用Tooling%20API嵌入Gradle)
+## [使用Tooling_API嵌入Gradle](#使用Tooling_API嵌入Gradle)
 
 ### [工具API简介](#工具API简介)
 
@@ -121,7 +121,7 @@ API的版本新或旧的版本。Tooling API支持Gradle包装器，默认情况
 
   * 该实现是轻量级的，仅具有少量依赖性。它也是一个行为良好的库，并且不对您的类加载器结构或日志记录配置进行任何假设。这使该API易于嵌入到您的应用程序中。
 
-### [工具API和Gradle%20Build守护进程](#工具API和Gradle%20Build守护进程)
+### [工具API和Gradle_Build守护进程](#工具API和Gradle_Build守护进程)
 
 工具API始终使用Gradle守护程序。这意味着随后对Tooling
 API的调用，无论是模型构建请求还是任务执行请求，都将在相同的长期过程中执行。[Gradle守护程序](/md/Gradle守护程序.md#gradle_daemon)包含有关该守护程序的更多详细信息，尤其是有关分派新守护程序时的情况的信息。
