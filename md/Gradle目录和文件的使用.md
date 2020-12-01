@@ -3,12 +3,12 @@
 
 内容
 
-  * [Gradle用户主目录](#Gradle%E7%94%A8%E6%88%B7%E4%B8%BB%E7%9B%AE%E5%BD%95)
-  * [项目根目录](#%E9%A1%B9%E7%9B%AE%E6%A0%B9%E7%9B%AE%E5%BD%95)
+  * [Gradle用户主目录](#Gradle用户主目录)
+  * [项目根目录](#项目根目录)
 
-Gradle使用两个主要目录来执行和管理其工作：[Gradle用户主目录](#Gradle%E7%94%A8%E6%88%B7%E4%B8%BB%E7%9B%AE%E5%BD%95)和[Project根目录](#%E9%A1%B9%E7%9B%AE%E6%A0%B9%E7%9B%AE%E5%BD%95)。以下两节描述了每个文件中存储的内容以及如何清理临时文件和目录。
+Gradle使用两个主要目录来执行和管理其工作：[Gradle用户主目录](#Gradle用户主目录)和[Project根目录](#项目根目录)。以下两节描述了每个文件中存储的内容以及如何清理临时文件和目录。
 
-## [Gradle用户主目录](#Gradle%E7%94%A8%E6%88%B7%E4%B8%BB%E7%9B%AE%E5%BD%95)
+## [Gradle用户主目录](#Gradle用户主目录)
 
 Gradle用户主目录（`$USER_HOME/.gradle`默认情况下）用于存储全局配置属性和初始化脚本以及缓存和日志文件。它的大致结构如下：
 
@@ -43,12 +43,12 @@ Gradle用户主目录（`$USER_HOME/.gradle`默认情况下）用于存储全局
 ③  共享缓存（例如，依赖项的工件）  
 ④ [Gradle守护程序的](/md/Gradle守护程序.md#gradle_daemon) 注册表和日志[](/md/Gradle守护程序.md#gradle_daemon)  
 ⑤ 全局[初始化脚本](/md/初始化脚本.md#init_scripts)  
-⑥ [工具链支持](/md/JVM%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B7%A5%E5%85%B7%E9%93%BE.md%23%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE) 下载的JDK[](/md/JVM%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B7%A5%E5%85%B7%E9%93%BE.md%23%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE)  
+⑥ [工具链支持](/md/JVM项目的工具链.md#自动配置) 下载的JDK[](/md/JVM项目的工具链.md#自动配置)  
 ⑦  [Gradle Wrapper](/md/gradle_wrapper.md#gradle_wrapper) 下载的发行版[](/md/gradle_wrapper.md#gradle_wrapper)  
-⑧ 全局[Gradle配置属性](/md/Gradle%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md%23Gradle%E5%B1%9E%E6%80%A7)  
+⑧ 全局[Gradle配置属性](/md/Gradle环境搭建.md#Gradle属性)  
 
 ╚═════════════════════════════    
-### [清理缓存和分发](#%E6%B8%85%E7%90%86%E7%BC%93%E5%AD%98%E5%92%8C%E5%88%86%E5%8F%91)
+### [清理缓存和分发](#清理缓存和分发)
 
 从版本4.10开始，Gradle会自动清除其用户主目录。当Gradle守护程序停止或关闭时，清理将在后台运行。如果使用`--no-
 daemon`，它将在带有可视进度指示器的构建会话之后在前台运行。
@@ -63,7 +63,7 @@ daemon`，它将在带有可视进度指示器的构建会话之后在前台运�
 
   * `wrapper/dists/`检查Gradle发行版中是否仍在使用它们，即是否存在相应的特定于版本的缓存目录。未使用的发行版将被删除。
 
-## [项目根目录](#%E9%A1%B9%E7%9B%AE%E6%A0%B9%E7%9B%AE%E5%BD%95)
+## [项目根目录](#项目根目录)
 
 项目根目录包含项目中所有的源文件。此外，它还包含Gradle生成的文件和目录，例如`.gradle`和`build`。通常前者通常签入到源代码管理中，而后者是Gradle用于支持增量构建等功能的临时文件。总体而言，典型项目根目录的结构大致如下：
 
@@ -90,14 +90,14 @@ daemon`，它将在带有可视进度指示器的构建会话之后在前台运�
 ②  特定于版本的缓存（例如，支持增量构建）  
 ③  Gradle在其中生成所有构建工件的该项目的构建目录。  
 ④ 包含JAR文件和[Gradle包装器的](/md/gradle_wrapper.md#gradle_wrapper) 配置[](/md/gradle_wrapper.md#gradle_wrapper)  
-⑤ 项目特定的[Gradle配置属性](/md/Gradle%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md%23Gradle%E5%B1%9E%E6%80%A7)  
+⑤ 项目特定的[Gradle配置属性](/md/Gradle环境搭建.md#Gradle属性)  
 ⑥  使用[Gradle Wrapper](/md/gradle_wrapper.md#gradle_wrapper) 执行构建的脚本[](/md/gradle_wrapper.md#gradle_wrapper)  
-⑦ 该项目的[设置文件](/md/%E6%9E%84%E5%BB%BA%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.md%23%E8%AE%BE%E5%AE%9A%E6%A1%A3) ， 其中定义子项目的列表  
+⑦ 该项目的[设置文件](/md/构建生命周期.md#设定档) ， 其中定义子项目的列表  
 ⑧  通常，一个项目被组织成一个或多个子项目  
 ⑨  每个子项目都有自己的Gradle构建脚本  
   
 ╚═════════════════════════════    
-### [项目缓存清理](#%E9%A1%B9%E7%9B%AE%E7%BC%93%E5%AD%98%E6%B8%85%E7%90%86)
+### [项目缓存清理](#项目缓存清理)
 
 从版本4.10开始，Gradle会自动清除特定于项目的缓存目录。构建项目后，`.gradle/<gradle-
 version>/`将定期（最多每24小时）检查特定于版本的缓存目录中是否仍在使用它们。如果7天未使用它们，则将其删除。

@@ -3,10 +3,10 @@
 
 内容
 
-  * [在构建中使用Ant任务和类型](#%E5%9C%A8%E6%9E%84%E5%BB%BA%E4%B8%AD%E4%BD%BF%E7%94%A8Ant%E4%BB%BB%E5%8A%A1%E5%92%8C%E7%B1%BB%E5%9E%8B)
-  * [导入Ant构建](#%E5%AF%BC%E5%85%A5Ant%E6%9E%84%E5%BB%BA)
-  * [Ant属性和参考](#Ant%E5%B1%9E%E6%80%A7%E5%92%8C%E5%8F%82%E8%80%83)
-  * [Ant记录](#Ant%E8%AE%B0%E5%BD%95)
+  * [在构建中使用Ant任务和类型](#在构建中使用Ant任务和类型)
+  * [导入Ant构建](#导入Ant构建)
+  * [Ant属性和参考](#Ant属性和参考)
+  * [Ant记录](#Ant记录)
   * [API](#API)
 
 Gradle提供了与Ant的出色集成。您可以在Gradle构建中使用单个Ant任务或整个Ant构建。实际上，您会发现，在Gradle构建脚本中使用Ant任务比使用Ant的XML格式要容易得多，功能更强大。您甚至可以简单地将Gradle用作强大的Ant任务脚本工具。
@@ -19,7 +19,7 @@ Ant的第二层是其丰富的Ant任务和类型，如`javac`，`copy`或`jar`�
 
 您可以使用Gradle的Ant集成作为将构建从Ant迁移到Gradle的路径。例如，您可以从导入现有的Ant构建开始。然后，您可以将依赖项声明从Ant脚本移至构建文件。最后，您可以将任务移到构建文件中，或将其替换为Gradle的某些插件。随着时间的流逝，此过程可以分几步完成，并且在整个过程中，您都可以使用有效的Gradle构建。
 
-## [在构建中使用Ant任务和类型](#%E5%9C%A8%E6%9E%84%E5%BB%BA%E4%B8%AD%E4%BD%BF%E7%94%A8Ant%E4%BB%BB%E5%8A%A1%E5%92%8C%E7%B1%BB%E5%9E%8B)
+## [在构建中使用Ant任务和类型](#在构建中使用Ant任务和类型)
 
 在您的构建脚本中，`ant`Gradle提供了一个名为的属性。这是对[AntBuilder](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/AntBuilder.html)实例的引用。这`AntBuilder`用于从构建脚本访问Ant任务，类型和属性。从Ant`build.xml`格式到Groovy有一个非常简单的映射，下面将进行解释。
 
@@ -186,7 +186,7 @@ build.gradle.kts
 有关更多信息，请`AntBuilder`参见“ Groovy in Action” 8.4或[Groovy Wiki](https://groovy-
 lang.org/scripting-ant.html)。
 
-### [在构建中使用定制的Ant任务](#%E5%9C%A8%E6%9E%84%E5%BB%BA%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AE%9A%E5%88%B6%E7%9A%84Ant%E4%BB%BB%E5%8A%A1)
+### [在构建中使用定制的Ant任务](#在构建中使用定制的Ant任务)
 
 要使自定义任务在构建中可用，可以像使用文件一样使用`taskdef`（通常更容易）或`typedef`Ant任务`build.xml`。然后，您可以像内置Ant任务一样引用自定义Ant任务。
 
@@ -302,7 +302,7 @@ build.gradle.kts
         }
     }
 
-## [导入Ant构建](#%E5%AF%BC%E5%85%A5Ant%E6%9E%84%E5%BB%BA)
+## [导入Ant构建](#导入Ant构建)
 
 您可以使用该`ant.importBuild()`方法将Ant构建导入到Gradle项目中。导入Ant构建时，每个Ant目标都被视为Gradle任务。这意味着您可以按照与Gradle任务完全相同的方式来操纵和执行Ant目标。
 
@@ -536,7 +536,7 @@ build.xml
 请注意，尽管此方法的第二个参数应该是[Transformer](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/Transformer.html)，但在Groovy中进行编程时，由于[Groovy支持将闭包自动强制转换为单抽象方法类型，因此](http://mrhaki.blogspot.ie/2013/11/groovy-
 goodness-implicit-closure.html)我们可以简单地使用闭包而不是匿名内部类（或类似的内部类）。
 
-## [Ant属性和参考](#Ant%E5%B1%9E%E6%80%A7%E5%92%8C%E5%8F%82%E8%80%83)
+## [Ant属性和参考](#Ant属性和参考)
 
 有几种方法可以设置Ant属性，以便Ant任务可以使用该属性。您可以直接在`AntBuilder`实例上设置属性。Ant属性也可以作为Map来使用，您可以对其进行更改。您还可以使用Ant`property`任务。以下是一些有关如何执行此操作的示例。
 
@@ -646,7 +646,7 @@ build.gradle.kts
     println(ant.references.get("antPath"))
     println(ant.references["antPath"])
 
-## [Ant记录](#Ant%E8%AE%B0%E5%BD%95)
+## [Ant记录](#Ant记录)
 
 Gradle将Ant消息优先级映射到Gradle日志级别，以便从Ant记录的消息出现在Gradle输出中。默认情况下，这些映射如下：
 
@@ -660,7 +660,7 @@ _INFO_|`INFO`
 _WARN_|`WARN`  
 _ERROR_|`ERROR`  
   
-### [微调Ant日志记录](#%E5%BE%AE%E8%B0%83Ant%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95)
+### [微调Ant日志记录](#微调Ant日志记录)
 
 Ant消息优先级到Gradle日志级别的默认映射有时可能会出现问题。例如，没有消息优先级直接映射到`LIFECYCLE`日志级别，这是Gradle的默认值。许多Ant任务以
 _INFO_ 优先级记录消息，这意味着要从Gradle公开这些消息，必须在将日志级别设置为的情况下运行构建`INFO`，从而可能记录比期望更多的输出。
