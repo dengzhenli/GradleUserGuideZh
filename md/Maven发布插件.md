@@ -3,17 +3,17 @@
 
 内容
 
-  * [用法](#用法)
-  * [任务](#任务)
-  * [刊物](#刊物)
-  * [储存库](#储存库)
-  * [发布到Maven Local](#发布到Maven%20Local)
-  * [完整的例子](#完整的例子)
-  * [删除延迟的配置行为](#删除延迟的配置行为)
+  * [用法](#%E7%94%A8%E6%B3%95)
+  * [任务](#%E4%BB%BB%E5%8A%A1)
+  * [刊物](#%E5%88%8A%E7%89%A9)
+  * [储存库](#%E5%82%A8%E5%AD%98%E5%BA%93)
+  * [发布到Maven Local](#%E5%8F%91%E5%B8%83%E5%88%B0Maven+Local)
+  * [完整的例子](#%E5%AE%8C%E6%95%B4%E7%9A%84%E4%BE%8B%E5%AD%90)
+  * [删除延迟的配置行为](#%E5%88%A0%E9%99%A4%E5%BB%B6%E8%BF%9F%E7%9A%84%E9%85%8D%E7%BD%AE%E8%A1%8C%E4%B8%BA)
 
 Maven发布插件提供了将构建工件发布到[Apache Maven](http://maven.apache.org/)存储库的功能。发布到Maven存储库的模块可由Maven，Gradle（请参阅[声明依赖项](/md/声明依赖.md)）和其他了解Maven存储库格式的工具使用。您可以在[发布概述中](/md/将项目发布为模块.md#publishing_overview)了解发布的基础知识。
 
-## [用法](#用法)
+## [用法](#%E7%94%A8%E6%B3%95)
 
 要使用Maven Publish插件，请在构建脚本中包括以下内容：
 
@@ -41,7 +41,7 @@ Maven
 Publish插件在项目上使用扩展名`publishing`，类型为[PublishingExtension](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.PublishingExtension.html)。此扩展提供了一个命名出版物的容器和一个命名存储库的容器。Maven
 Publish插件可与[MavenPublication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html)出版物和[MavenArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)存储库一起使用。
 
-## [任务](#任务)
+## [任务](#%E4%BB%BB%E5%8A%A1)
 
 `generatePomFileFor _PubName_ Publication`—
 [GenerateMavenPom](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.tasks.GenerateMavenPom.html)
@@ -82,7 +82,7 @@ _取决于_ ：所有任务`publish _PubName_ PublicationToMavenLocal`
 
 将所有已定义的发布（包括其元数据（POM文件等））复制到本地Maven缓存中。
 
-## [刊物](#刊物)
+## [刊物](#%E5%88%8A%E7%89%A9)
 
 此插件提供[出版物](/md/依赖管理术语.md#作品（publication）)类型的[MavenPublication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html)。要了解如何定义和使用出版物，请参见[基本出版](/md/将项目发布为模块.md#设置基本发布)部分。
 
@@ -96,9 +96,9 @@ _取决于_ ：所有任务`publish _PubName_ PublicationToMavenLocal`
 
   * POM文件的其他内容-通过[MavenPublication.pom（org.gradle.api.Action）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html#org.gradle.api.publish.maven.MavenPublication:pom\(org.gradle.api.Action\))。
 
-您可以在[完整的发布示例中](#完整的例子)看到所有这些内容。的API文档`MavenPublication`还有其他代码示例。
+您可以在[完整的发布示例中](#%E5%AE%8C%E6%95%B4%E7%9A%84%E4%BE%8B%E5%AD%90)看到所有这些内容。的API文档`MavenPublication`还有其他代码示例。
 
-### [生成的POM中的标识值](#生成的POM中的标识值)
+### [生成的POM中的标识值](#%E7%94%9F%E6%88%90%E7%9A%84POM%E4%B8%AD%E7%9A%84%E6%A0%87%E8%AF%86%E5%80%BC)
 
 生成的POM文件的属性将包含从以下项目属性派生的标识值：
 
@@ -156,7 +156,7 @@ Maven的限制`groupId`和`artifactId`有限字符集（`[A-Za-z0-9_\\-.]+`）�
 
 被明令禁止，唯一的Unicode值`\`，`/`以及任何ISO控制字符。提供的值在发布早期就得到了验证。
 
-### [自定义生成的POM](#自定义生成的POM)
+### [自定义生成的POM](#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%94%9F%E6%88%90%E7%9A%84POM)
 
 可以在发布之前自定义生成的POM文件。例如，将库发布到Maven Central时，您需要设置某些元数据。Maven发布插件为此提供了DSL。请参阅《
 DSL参考》中的[MavenPom](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPom.html)，以获取可用属性和方法的完整文档。下面的示例演示如何使用最常见的方法：
@@ -241,7 +241,7 @@ build.gradle.kts
         }
     }
 
-### [自定义依赖版本](#自定义依赖版本)
+### [自定义依赖版本](#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BE%9D%E8%B5%96%E7%89%88%E6%9C%AC)
 
 支持两种策略来发布依赖项：
 
@@ -313,7 +313,7 @@ build.gradle.kts
 `fromResolutionResult()`指示Gradle应该使用变体`runtimeClasspath`的默认类路径，并且是的默认类路径`java-
 runtime`。
 
-## [储存库](#储存库)
+## [储存库](#%E5%82%A8%E5%AD%98%E5%BA%93)
 
 该插件提供了[MavenArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)类型的[存储库](/md/依赖管理术语.md#repository)。要了解如何定义和使用存储库进行发布，请参见“[基本发布](/md/将项目发布为模块.md#设置基本发布)”部分。[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)[](/md/将项目发布为模块.md#设置基本发布)
 
@@ -359,7 +359,7 @@ build.gradle.kts
 
 您还可以配置连接到存储库所需的任何身份验证详细信息。有关更多详细信息，请参见[MavenArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)。
 
-### [快照和版本库](#快照和版本库)
+### [快照和版本库](#%E5%BF%AB%E7%85%A7%E5%92%8C%E7%89%88%E6%9C%AC%E5%BA%93)
 
 将快照和发行版发布到不同的Maven存储库是一种常见的做法。一种简单的方法是根据项目版本配置存储库URL。下面的示例对以“
 SNAPSHOT”结尾的版本使用一个URL，对其余版本使用不同的URL：
@@ -431,7 +431,7 @@ build.gradle.kts
         }
     }
 
-## [发布到Maven Local](#发布到Maven%20Local)
+## [发布到Maven Local](#%E5%8F%91%E5%B8%83%E5%88%B0Maven+Local)
 
 为了与本地Maven安装集成，有时将模块及其POM文件和其他元数据发布到Maven本地存储库（通常位于 _$ USER_HOME / .m2 /
 repository中_ ） _很有_ 用。用Maven的话来说，这就是“安装”模块。
@@ -440,7 +440,7 @@ Maven的发布插件使得这很容易做到通过自动创建[PublishToMavenLoc
 _PubName_
 PublicationToMavenLocal``publishToMavenLocal``mavenLocal()``publishing.repositories`
 
-## [完整的例子](#完整的例子)
+## [完整的例子](#%E5%AE%8C%E6%95%B4%E7%9A%84%E4%BE%8B%E5%AD%90)
 
 以下示例演示如何签名和发布Java库，包括源，Javadoc和自定义的POM：
 
@@ -621,7 +621,7 @@ build.gradle.kts
 
 该[签名插件](https://docs.gradle.org/6.7.1/userguide/signing_plugin.html#signing_plugin)被用来生成每个工件的签名文件。此外，还将为所有工件和签名文件生成校验和文件。
 
-## [删除延迟的配置行为](#删除延迟的配置行为)
+## [删除延迟的配置行为](#%E5%88%A0%E9%99%A4%E5%BB%B6%E8%BF%9F%E7%9A%84%E9%85%8D%E7%BD%AE%E8%A1%8C%E4%B8%BA)
 
 在Gradle 5.0之前，`publishing
 {}`（默认情况下）对块进行隐式处理，就好像在评估项目后已执行了其中的所有逻辑一样。此行为引起了很多混乱，在Gradle

@@ -3,12 +3,12 @@
 
 内容
 
-  * [消费工具链](#消费工具链)
-  * [为个别任务指定自定义工具链](#为个别任务指定自定义工具链)
-  * [自动检测已安装的工具链](#自动检测已安装的工具链)
-  * [自动配置](#自动配置)
-  * [自定义工具链位置](#自定义工具链位置)
-  * [插件作者的工具链](#插件作者的工具链)
+  * [消费工具链](#%E6%B6%88%E8%B4%B9%E5%B7%A5%E5%85%B7%E9%93%BE)
+  * [为个别任务指定自定义工具链](#%E4%B8%BA%E4%B8%AA%E5%88%AB%E4%BB%BB%E5%8A%A1%E6%8C%87%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E9%93%BE)
+  * [自动检测已安装的工具链](#%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B%E5%B7%B2%E5%AE%89%E8%A3%85%E7%9A%84%E5%B7%A5%E5%85%B7%E9%93%BE)
+  * [自动配置](#%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE)
+  * [自定义工具链位置](#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E9%93%BE%E4%BD%8D%E7%BD%AE)
+  * [插件作者的工具链](#%E6%8F%92%E4%BB%B6%E4%BD%9C%E8%80%85%E7%9A%84%E5%B7%A5%E5%85%B7%E9%93%BE)
 
 默认情况下，Gradle使用相同的Java版本来运行Gradle本身和构建JVM项目。
 
@@ -17,7 +17,7 @@
 Java工具链（从现在开始简称为工具链）是一组工具，通常取自本地JRE /
 JDK安装，用于配置构建的不同方面。编译任务可以`javac`用作其编译器，而test和exec任务可以使用该`java`命令，同时`javadoc`将用于生成文档。
 
-## [消费工具链](#消费工具链)
+## [消费工具链](#%E6%B6%88%E8%B4%B9%E5%B7%A5%E5%85%B7%E9%93%BE)
 
 构建可以通过声明所需的Java语言版本来全局定义其目标工具链：
 
@@ -47,7 +47,7 @@ buildSrc/src/main/kotlin/myproject.java-conventions.gradle.kts
 
   1. 设置所有编译，测试和javadoc任务以使用已定义的工具链，该工具链可能与Gradle本身使用的工具链不同
 
-  2. Gradle检测[本地安装的JVM](#自动检测已安装的工具链)
+  2. Gradle检测[本地安装的JVM](#%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B%E5%B7%B2%E5%AE%89%E8%A3%85%E7%9A%84%E5%B7%A5%E5%85%B7%E9%93%BE)
 
   3. Gradle选择符合构建要求的JRE / JDK（在这种情况下，JVM支持Java 14）
 
@@ -60,7 +60,7 @@ _运行测试_ 可以利用工具链的支持`Test`。
   
 ╚═════════════════════════════    
   
-## [为个别任务指定自定义工具链](#为个别任务指定自定义工具链)
+## [为个别任务指定自定义工具链](#%E4%B8%BA%E4%B8%AA%E5%88%AB%E4%BB%BB%E5%8A%A1%E6%8C%87%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E9%93%BE)
 
 如果要调整用于特定任务的工具链，可以指定任务使用的确切工具。例如，该`Test`任务公开了一个`JavaLauncher`属性，该属性定义了用于启动测试的java可执行文件。
 
@@ -111,7 +111,7 @@ list/build.gradle.kts
 
   * A`JavadocTool`是`Javadoc`任务使用的工具
 
-### [与依赖Java可执行文件或Java主目录的任务集成](#与依赖Java可执行文件或Java主目录的任务集成)
+### [与依赖Java可执行文件或Java主目录的任务集成](#%E4%B8%8E%E4%BE%9D%E8%B5%96Java%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E6%88%96Java%E4%B8%BB%E7%9B%AE%E5%BD%95%E7%9A%84%E4%BB%BB%E5%8A%A1%E9%9B%86%E6%88%90)
 
 可以使用Java可执行文件的路径或Java主目录配置的任何任务都可以从工具链中受益。
 
@@ -147,7 +147,7 @@ build.gradle.kts
 
 同样，这样做`compiler.get().executablePath`会为您`javac`提供给定工具链的完整路径。但是请注意，这可能会急切地实现（并提供）工具链。
 
-## [自动检测已安装的工具链](#自动检测已安装的工具链)
+## [自动检测已安装的工具链](#%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B%E5%B7%B2%E5%AE%89%E8%A3%85%E7%9A%84%E5%B7%A5%E5%85%B7%E9%93%BE)
 
 默认情况下，Gradle自动检测本地JRE / JDK安装，因此用户不需要进一步的配置。以下是JVM自动检测支持的常见程序包管理器和位置的列表。
 
@@ -167,7 +167,7 @@ build.gradle.kts
 
   * [SDKMAN！](https://sdkman.io/)
 
-### [如何禁用自动检测](#如何禁用自动检测)
+### [如何禁用自动检测](#%E5%A6%82%E4%BD%95%E7%A6%81%E7%94%A8%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B)
 
 为了禁用自动检测，可以使用`org.gradle.java.installations.auto-detect`Gradle属性：
 
@@ -175,7 +175,7 @@ build.gradle.kts
 
   * 或放入`org.gradle.java.installations.auto-detect=false`您的`gradle.properties`文件中。
 
-## [自动配置](#自动配置)
+## [自动配置](#%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE)
 
 如果Gradle找不到与构建要求匹配的本地可用工具链，它将自动尝试从AdoptOpenJDK下载它。默认情况下，它将请求与当前操作系统和体系结构匹配的HotSpot
 JDK。预配JDK安装在[Gradle用户主目录中](/md/Gradle目录和文件的使用.md#Gradle用户主目录)。
@@ -200,7 +200,7 @@ v3兼容的另一台服务器，则可以使Gradle使用其他主机。为此，
   
 ╚═════════════════════════════    
   
-### [如何禁用自动配置](#如何禁用自动配置)
+### [如何禁用自动配置](#%E5%A6%82%E4%BD%95%E7%A6%81%E7%94%A8%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE)
 
 为了禁用自动配置，可以使用`org.gradle.java.installations.auto-download`Gradle属性：
 
@@ -208,7 +208,7 @@ v3兼容的另一台服务器，则可以使Gradle使用其他主机。为此，
 
   * 或把`org.gradle.java.installations.auto-download=false`成一个`gradle.properties`文件。
 
-## [自定义工具链位置](#自定义工具链位置)
+## [自定义工具链位置](#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E9%93%BE%E4%BD%8D%E7%BD%AE)
 
 如果自动检测本地工具链不足或被禁用，则可以通过其他方法让Gradle知道已安装的工具链。
 
@@ -224,7 +224,7 @@ v3兼容的另一台服务器，则可以使Gradle使用其他主机。为此，
     
     org.gradle.java.installations.paths = / custom / path / jdk1.8，/ shared / jre11
 
-## [插件作者的工具链](#插件作者的工具链)
+## [插件作者的工具链](#%E6%8F%92%E4%BB%B6%E4%BD%9C%E8%80%85%E7%9A%84%E5%B7%A5%E5%85%B7%E9%93%BE)
 
 需要JDK中的工具的自定义任务应将`Property<T>`带有所需工具的公开为通用类型。通过`JavaToolchainService`在插件或任务中注入，也可以通过`JavaToolchainSpec`从`java`项目扩展名中获取来在这些属性中连接约定。下面的示例展示了如何使用默认工具链作为约定，同时允许用户针对每个任务单独配置工具链。
 

@@ -3,14 +3,14 @@
 
 内容
 
-  * [集成开发环境](#集成开发环境)
-  * [持续集成](#持续集成)
-  * [如何与Gradle集成](#如何与Gradle集成)
-  * [使用Tooling API嵌入Gradle](#使用Tooling%20API嵌入Gradle)
+  * [集成开发环境](#%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83)
+  * [持续集成](#%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90)
+  * [如何与Gradle集成](#%E5%A6%82%E4%BD%95%E4%B8%8EGradle%E9%9B%86%E6%88%90)
+  * [使用Tooling API嵌入Gradle](#%E4%BD%BF%E7%94%A8Tooling+API%E5%B5%8C%E5%85%A5Gradle)
 
 Gradle可以与许多不同的第三方工具集成，例如IDE和持续集成平台。在这里，我们看一些更常见的工具，以及如何将自己的工具与Gradle集成。
 
-## [集成开发环境](#集成开发环境)
+## [集成开发环境](#%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83)
 
 Android Studio
 
@@ -61,7 +61,7 @@ CLion
 JetBrains支持[使用Gradle](https://blog.jetbrains.com/clion/2018/05/clion-starts-2018-2-eap-sanitizers-gradle-db-performance/)
 构建[C++项目](https://blog.jetbrains.com/clion/2018/05/clion-starts-2018-2-eap-sanitizers-gradle-db-performance/)。
 
-## [持续集成](#持续集成)
+## [持续集成](#%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90)
 
 我们有专门的指南，向您展示如何将Gradle项目与以下CI平台集成：
 
@@ -73,7 +73,7 @@ JetBrains支持[使用Gradle](https://blog.jetbrains.com/clion/2018/05/clion-sta
 
 即使您不使用上述方法之一，您也几乎可以确定将CI平台配置为使用[Gradle Wrapper](/md/gradle_wrapper.md)脚本。
 
-## [如何与Gradle集成](#如何与Gradle集成)
+## [如何与Gradle集成](#%E5%A6%82%E4%BD%95%E4%B8%8EGradle%E9%9B%86%E6%88%90)
 
 将工具与Gradle集成的主要方法有两种：
 
@@ -84,9 +84,9 @@ JetBrains支持[使用Gradle](https://blog.jetbrains.com/clion/2018/05/clion-sta
 前一种情况通常[实现为Gradle插件](/md/开发自定义Gradle插件.md)。后者可通过如下所述通过Tooling
 API嵌入Gradle来实现。
 
-## [使用Tooling API嵌入Gradle](#使用Tooling%20API嵌入Gradle)
+## [使用Tooling API嵌入Gradle](#%E4%BD%BF%E7%94%A8Tooling+API%E5%B5%8C%E5%85%A5Gradle)
 
-### [工具API简介](#工具API简介)
+### [工具API简介](#%E5%B7%A5%E5%85%B7API%E7%AE%80%E4%BB%8B)
 
 Gradle提供了一个称为Tooling
 API的编程API，可用于将Gradle嵌入到自己的软件中。该API允许您执行和监视构建，并向Gradle查询构建的详细信息。该API的主要受众是IDE，CI服务器和其他UI作者；但是，该API对需要将Gradle嵌入其应用程序的任何人都是开放的。
@@ -97,7 +97,7 @@ API的编程API，可用于将Gradle嵌入到自己的软件中。该API允许�
 
   * [IntelliJ IDEA](https://www.jetbrains.com/idea/)使用Tooling API导入Gradle项目并运行任务。
 
-### [工具API功能](#工具API功能)
+### [工具API功能](#%E5%B7%A5%E5%85%B7API%E5%8A%9F%E8%83%BD)
 
 Tooling
 API的基本特征是它以与版本无关的方式运行。这意味着您可以使用相同的API来处理使用不同版本的Gradle的版本，包括比所使用的Tooling
@@ -121,12 +121,12 @@ API的版本新或旧的版本。Tooling API支持Gradle包装器，默认情况
 
   * 该实现是轻量级的，仅具有少量依赖性。它也是一个行为良好的库，并且不对您的类加载器结构或日志记录配置进行任何假设。这使该API易于嵌入到您的应用程序中。
 
-### [工具API和Gradle Build守护进程](#工具API和Gradle%20Build守护进程)
+### [工具API和Gradle Build守护进程](#%E5%B7%A5%E5%85%B7API%E5%92%8CGradle+Build%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B)
 
 工具API始终使用Gradle守护程序。这意味着随后对Tooling
 API的调用，无论是模型构建请求还是任务执行请求，都将在相同的长期过程中执行。[Gradle守护程序](/md/Gradle守护程序.md#gradle_daemon)包含有关该守护程序的更多详细信息，尤其是有关分派新守护程序时的情况的信息。
 
-### [快速开始](#快速开始)
+### [快速开始](#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B)
 
 由于Tooling API是开发人员的接口，因此Javadoc是其主要文档。
 
@@ -168,7 +168,7 @@ Tooling
 API的主要入口点是[GradleConnector](https://docs.gradle.org/6.7.1/javadoc/org/gradle/tooling/GradleConnector.html)。您可以从那里导航以找到代码示例，并浏览可用的Tooling
 API模型。您可以使用[GradleConnector.connect（）](https://docs.gradle.org/nightly/javadoc/org/gradle/tooling/GradleConnector.html#connect--)创建一个[ProjectConnection](https://docs.gradle.org/6.7.1/javadoc/org/gradle/tooling/ProjectConnection.html)。A`ProjectConnection`连接到单个Gradle项目。使用该连接，您可以执行任务，测试并检索与该项目相关的模型。
 
-### [Java和Gradle版本的兼容性](#Java和Gradle版本的兼容性)
+### [Java和Gradle版本的兼容性](#Java%E5%92%8CGradle%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7)
 
 工具API需要Java
 8或更高版本。构建使用的Gradle版本可能会强加[其他Java版本要求](/md/兼容性说明.md)。

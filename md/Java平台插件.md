@@ -3,12 +3,12 @@
 
 内容
 
-  * [用法](#用法)
-  * [API和运行时分离](#API和运行时分离)
-  * [本地项目约束](#本地项目约束)
-  * [来自其他平台的采购约束](#来自其他平台的采购约束)
-  * [发布平台](#发布平台)
-  * [消费平台](#消费平台)
+  * [用法](#%E7%94%A8%E6%B3%95)
+  * [API和运行时分离](#API%E5%92%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E5%88%86%E7%A6%BB)
+  * [本地项目约束](#%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E7%BA%A6%E6%9D%9F)
+  * [来自其他平台的采购约束](#%E6%9D%A5%E8%87%AA%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0%E7%9A%84%E9%87%87%E8%B4%AD%E7%BA%A6%E6%9D%9F)
+  * [发布平台](#%E5%8F%91%E5%B8%83%E5%B9%B3%E5%8F%B0)
+  * [消费平台](#%E6%B6%88%E8%B4%B9%E5%B9%B3%E5%8F%B0)
 
 Java Platform插件带来了声明Java生态系统平台的能力。平台可用于不同目的：
 
@@ -16,7 +16,7 @@ Java Platform插件带来了声明Java生态系统平台的能力。平台可用
 
   * 异构库的一组推荐版本。一个典型的例子包括[Spring Boot BOM](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-build-systems.html#using-boot-dependency-management)
 
-  * [](#消费平台)在子项目之间[共享一组依赖版本](#消费平台)
+  * [](#%E6%B6%88%E8%B4%B9%E5%B9%B3%E5%8F%B0)在子项目之间[共享一组依赖版本](#%E6%B6%88%E8%B4%B9%E5%B9%B3%E5%8F%B0)
 
 平台是一种特殊的软件组件，不包含任何资源：它仅用于引用其他库，因此它们在依赖关系解析期间可以很好地协同工作。
 
@@ -29,7 +29,7 @@ library`插件结合使用。从概念上一个项目或者是一个平台，没
   
 ╚═════════════════════════════    
   
-## [用法](#用法)
+## [用法](#%E7%94%A8%E6%B3%95)
 
 要使用Java Platform插件，请在构建脚本中包括以下内容：
 
@@ -53,7 +53,7 @@ build.gradle.kts
         `java-platform`
     }
 
-## [API和运行时分离](#API和运行时分离)
+## [API和运行时分离](#API%E5%92%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E5%88%86%E7%A6%BB)
 
 Maven
 BOM和Java平台之间的主要区别在于，在Gradle中，依赖项和[约束](/md/依赖管理术语.md#依赖（dependency）_constraint)被声明并确定范围为配置以及扩展配置。尽管许多用户只关心声明
@@ -121,7 +121,7 @@ build.gradle.kts
         allowDependencies()
     }
 
-## [本地项目约束](#本地项目约束)
+## [本地项目约束](#%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E7%BA%A6%E6%9D%9F)
 
 如果您有一个多项目构建，并希望发布一个链接到子项目的平台，则可以通过声明属于该平台的子项目的约束来做到这一点，如下例所示：
 
@@ -153,7 +153,7 @@ build.gradle.kts
 
 项目符号将成为`group:name:version`发布的元数据中的经典符号。
 
-## [来自其他平台的采购约束](#来自其他平台的采购约束)
+## [来自其他平台的采购约束](#%E6%9D%A5%E8%87%AA%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0%E7%9A%84%E9%87%87%E8%B4%AD%E7%BA%A6%E6%9D%9F)
 
 有时，您定义的平台是另一个现有平台的扩展。
 
@@ -187,7 +187,7 @@ build.gradle.kts
         api(platform("com.fasterxml.jackson:jackson-bom:2.9.8"))
     }
 
-## [发布平台](#发布平台)
+## [发布平台](#%E5%8F%91%E5%B8%83%E5%B9%B3%E5%8F%B0)
 
 通过应用`maven-publish`插件并配置使用该`javaPlatform`组件的Maven发布来完成Java平台的发布：
 
@@ -221,7 +221,7 @@ build.gradle.kts
 
 这将为平台生成一个BOM表文件，并在`<dependencyManagement>`其中包含一个`<dependencies>`与平台模块中定义的约束相对应的块。
 
-## [消费平台](#消费平台)
+## [消费平台](#%E6%B6%88%E8%B4%B9%E5%B9%B3%E5%8F%B0)
 
 因为Java平台是一种特殊的组件，所以必须使用`platform`or`enforcedPlatform`关键字声明对Java平台的依赖关系，如[管理传递依赖关系](/md/在项目之间共享依赖版本.md#导入Maven%20BOM)部分中所述。例如，如果要在子项目之间共享依赖版本，则可以定义一个平台模块来声明所有版本：
 

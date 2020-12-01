@@ -3,19 +3,19 @@
 
 内容
 
-  * [基础知识](#基础知识)
-  * [测试执行](#测试执行)
+  * [基础知识](#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
+  * [测试执行](#%E6%B5%8B%E8%AF%95%E6%89%A7%E8%A1%8C)
 
 在原生生态系统中进行测试有多种形式。
 
 有不同的测试库和框架，以及许多不同类型的测试。无论它们是频繁执行还是不频繁执行，所有这些都需要成为构建的一部分。本章致力于说明Gradle如何处理内部版本之间以及内部内部的不同要求，并大量介绍了Gradle如何与基于可执行文件的测试框架（例如[Google Test）](https://github.com/google/googletest)集成。
 
 与[在Java和JVM项目中](/md/在Java和JVM项目中进行测试.md#java_testing)进行[测试](/md/在Java和JVM项目中进行测试.md#java_testing)相比，在Gradle中测试C
-++项目非常有限。在本章中，我们解释了控制测试运行方式的方法（[测试执行](#测试执行)）。
+++项目非常有限。在本章中，我们解释了控制测试运行方式的方法（[测试执行](#%E6%B5%8B%E8%AF%95%E6%89%A7%E8%A1%8C)）。
 
 但是首先，我们看一下Gradle中本机测试的基础。
 
-## [基础知识](#基础知识)
+## [基础知识](#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
 
 所有C
 ++测试都围绕一种任务类型运行：[RunTestExecutable](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.tasks.RunTestExecutable.html)。这将运行使用任何测试框架构建的单个测试可执行文件，并使用可执行文件的退出代码断言执行成功。没有收集测试用例结果，也没有生成报告。
@@ -34,7 +34,7 @@
 
 该[RunTestExecutable](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.tasks.RunTestExecutable.html)任务有许多配置选项。在本章的其余部分中，我们将介绍其中的一些。
 
-## [测试执行](#测试执行)
+## [测试执行](#%E6%B5%8B%E8%AF%95%E6%89%A7%E8%A1%8C)
 
 Gradle在单独的（“分叉”）过程中执行测试。
 

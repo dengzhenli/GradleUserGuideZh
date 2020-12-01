@@ -4,13 +4,13 @@ version 6.7.1
 
 内容
 
-  * [Gradle属性](#Gradle属性)
-  * [系统属性](#系统属性)
-  * [环境变量](#环境变量)
-  * [项目性质](#项目性质)
-  * [配置JVM内存](#配置JVM内存)
-  * [使用项目属性配置任务](#使用项目属性配置任务)
-  * [通过HTTP代理访问网络](#通过HTTP代理访问网络)
+  * [Gradle属性](#Gradle%E5%B1%9E%E6%80%A7)
+  * [系统属性](#%E7%B3%BB%E7%BB%9F%E5%B1%9E%E6%80%A7)
+  * [环境变量](#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
+  * [项目性质](#%E9%A1%B9%E7%9B%AE%E6%80%A7%E8%B4%A8)
+  * [配置JVM内存](#%E9%85%8D%E7%BD%AEJVM%E5%86%85%E5%AD%98)
+  * [使用项目属性配置任务](#%E4%BD%BF%E7%94%A8%E9%A1%B9%E7%9B%AE%E5%B1%9E%E6%80%A7%E9%85%8D%E7%BD%AE%E4%BB%BB%E5%8A%A1)
+  * [通过HTTP代理访问网络](#%E9%80%9A%E8%BF%87HTTP%E4%BB%A3%E7%90%86%E8%AE%BF%E9%97%AE%E7%BD%91%E7%BB%9C)
 
 
 Gradle提供了多种机制来配置Gradle本身和特定项目的行为。以下是使用这些机制的参考。
@@ -20,19 +20,19 @@ Gradle提供了多种机制来配置Gradle本身和特定项目的行为。以�
   * [命令行标志](/md/命令行界面.md#command_line_interface)
   例如`--build-cache`。这些优先于属性和环境变量。
 
-  * [系统属性](#系统属性)
+  * [系统属性](#%E7%B3%BB%E7%BB%9F%E5%B1%9E%E6%80%A7)
   例如`systemProp.http.proxyHost=somehost.org`存储在`gradle.properties`文件中。
 
-  * [Gradle属性](#Gradle属性)
-  例如`org.gradle.caching=true`通常存储在`gradle.properties`项目根目录或`GRADLE_USER_HOME`环境变量中的文件中的[属性](#Gradle属性)。
+  * [Gradle属性](#Gradle%E5%B1%9E%E6%80%A7)
+  例如`org.gradle.caching=true`通常存储在`gradle.properties`项目根目录或`GRADLE_USER_HOME`环境变量中的文件中的[属性](#Gradle%E5%B1%9E%E6%80%A7)。
 
-  * [环境变量](#环境变量)
+  * [环境变量](#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
   例如`GRADLE_OPTS`由执行Gradle的环境派生的。
 
-除了配置构建环境外，您还可以使用[Project属性](#项目性质)
+除了配置构建环境外，您还可以使用[Project属性](#%E9%A1%B9%E7%9B%AE%E6%80%A7%E8%B4%A8)
 （例如）配置给定的项目构建`-PreleaseType=final`。
 
-## [Gradle属性](#Gradle属性)
+## [Gradle属性](#Gradle%E5%B1%9E%E6%80%A7)
 
 Gradle提供了多个选项，可以轻松配置将用于执行构建的Java流程。尽管可以通过`GRADLE_OPTS`或在本地环境中配置这些`JAVA_OPTS`设置，但将某些设置（例如JVM内存配置和Java主目录位置）存储在版本控制中非常有用，这样整个团队就可以在一致的环境中工作。
 
@@ -95,13 +95,13 @@ _取第一个_ ：
 
     
 
-指定用于Gradle构建过程的Java主页。可以将值设置为`jdk`或`jre`位置，但是，根据您的构建方式，使用JDK更安全。如果未指定设置，则从您的环境（`JAVA_HOME`或的路径`java`）派生合理的默认值。这不会影响用于启动Gradle客户端VM的Java版本（[请参阅环境变量](#环境变量)）。
+指定用于Gradle构建过程的Java主页。可以将值设置为`jdk`或`jre`位置，但是，根据您的构建方式，使用JDK更安全。如果未指定设置，则从您的环境（`JAVA_HOME`或的路径`java`）派生合理的默认值。这不会影响用于启动Gradle客户端VM的Java版本（[请参阅环境变量](#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)）。
 
 `org.gradle.jvmargs=(JVM arguments)`
 
     
 
-指定用于Gradle守护程序的JVM参数。该设置对于[配置JVM内存设置](#配置JVM内存)以提高构建性能特别有用。这不会影响Gradle客户端VM的JVM设置。
+指定用于Gradle守护程序的JVM参数。该设置对于[配置JVM内存设置](#%E9%85%8D%E7%BD%AEJVM%E5%86%85%E5%AD%98)以提高构建性能特别有用。这不会影响Gradle客户端VM的JVM设置。
 
 `org.gradle.logging.level=(quiet,warn,lifecycle,info,debug)`
 
@@ -198,7 +198,7 @@ build.gradle.kts
     systemPropertyValue
     systemValue
 
-## [系统属性](#系统属性)
+## [系统属性](#%E7%B3%BB%E7%BB%9F%E5%B1%9E%E6%80%A7)
 
 使用`-D`命令行选项，可以将系统属性传递给运行Gradle的JVM。在`-D`该选项的`gradle`命令有作为的效果相同`-D`的选项的`java`命令。
 
@@ -234,7 +234,7 @@ build.gradle.kts
 在多项目构建中，`systemProp.`除根目录以外的任何项目中设置的“
 ”属性都将被忽略。也就是说，`gradle.properties`将仅检查根项目的文件中以“ `systemProp.`”开头的属性。
 
-## [环境变量](#环境变量)
+## [环境变量](#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
 
 以下环境变量可用于该`gradle`命令。请注意，命令行选项和系统属性优先于环境变量。
 
@@ -256,7 +256,7 @@ build.gradle.kts
 
 指定要用于客户端VM的JDK安装目录。除非使用Gradle属性文件指定了另一个虚拟机，否则此虚拟机也用于守护程序`org.gradle.java.home`。
 
-## [项目性质](#项目性质)
+## [项目性质](#%E9%A1%B9%E7%9B%AE%E6%80%A7%E8%B4%A8)
 
 您可以通过命令行选项将属性直接添加到[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)对象`-P`。
 
@@ -292,7 +292,7 @@ Tip：
       
 
   
-## [配置JVM内存](#配置JVM内存)
+## [配置JVM内存](#%E9%85%8D%E7%BD%AEJVM%E5%86%85%E5%AD%98)
 
 您可以通过以下方式调整Gradle的JVM选项：
 
@@ -352,7 +352,7 @@ API文档中的其他示例，以及[Java插件参考中的测试执行](/md/在
 
 [![构建扫描中的构建环境](img/build-scan-infrastructure.png)](https://scans.gradle.com/s/sample/cpp-parallel/infrastructure)
 
-## [使用项目属性配置任务](#使用项目属性配置任务)
+## [使用项目属性配置任务](#%E4%BD%BF%E7%94%A8%E9%A1%B9%E7%9B%AE%E5%B1%9E%E6%80%A7%E9%85%8D%E7%BD%AE%E4%BB%BB%E5%8A%A1)
 
 可以根据调用时指定的项目属性来更改任务的行为。
 
@@ -394,10 +394,10 @@ build.gradle.kts
  
     gradle performRelease -PisCI=true --quiet
     Performing release actions
-## [通过HTTP代理访问网络](#通过HTTP代理访问网络)
+## [通过HTTP代理访问网络](#%E9%80%9A%E8%BF%87HTTP%E4%BB%A3%E7%90%86%E8%AE%BF%E9%97%AE%E7%BD%91%E7%BB%9C)
 
 通过标准的JVM系统属性来配置HTTP或HTTPS代理（例如，用于下载依赖项）。这些属性可以直接在构建脚本中设置。例如，可以使用设置HTTP代理主机`System.setProperty('http.proxyHost',
-'www.somehost.org')`。另外，可以[在gradle.properties中指定](#Gradle属性)属性。
+'www.somehost.org')`。另外，可以[在gradle.properties中指定](#Gradle%E5%B1%9E%E6%80%A7)属性。
 
 使用配置HTTP代理 `gradle.properties`
 
@@ -427,7 +427,7 @@ HTTPS有单独的设置。
 
   * [JDK 7网络属性](http://download.oracle.com/javase/7/docs/technotes/guides/net/properties.html)
 
-### [NTLM身份验证](#NTLM身份验证)
+### [NTLM身份验证](#NTLM%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81)
 
 如果您的代理服务器需要NTLM身份验证，则可能需要提供身份验证域以及用户名和密码。您可以通过两种方式提供用于向NTLM代理进行身份验证的域：
 

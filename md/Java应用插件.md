@@ -3,13 +3,13 @@
 
 内容
 
-  * [构建JVM应用程序](#构建JVM应用程序)
-  * [使用Java模块系统构建应用程序](#使用Java模块系统构建应用程序)
-  * [建立发行版](#建立发行版)
-  * [任务](#任务)
-  * [应用扩展](#应用扩展)
-  * [发牌](#发牌)
-  * [约定属性（已弃用）](#约定属性（已弃用）)
+  * [构建JVM应用程序](#%E6%9E%84%E5%BB%BAJVM%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F)
+  * [使用Java模块系统构建应用程序](#%E4%BD%BF%E7%94%A8Java%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F)
+  * [建立发行版](#%E5%BB%BA%E7%AB%8B%E5%8F%91%E8%A1%8C%E7%89%88)
+  * [任务](#%E4%BB%BB%E5%8A%A1)
+  * [应用扩展](#%E5%BA%94%E7%94%A8%E6%89%A9%E5%B1%95)
+  * [发牌](#%E5%8F%91%E7%89%8C)
+  * [约定属性（已弃用）](#%E7%BA%A6%E5%AE%9A%E5%B1%9E%E6%80%A7%EF%BC%88%E5%B7%B2%E5%BC%83%E7%94%A8%EF%BC%89)
 
 应用程序插件有助于创建可执行的JVM应用程序。它使在开发过程中本地启动应用程序以及将应用程序打包为TAR和/或ZIP（包括操作系统特定的启动脚本）变得容易。
 
@@ -17,7 +17,7 @@
 
 应用Application插件还隐式应用[Distribution插件](https://docs.gradle.org/6.7.1/userguide/distribution_plugin.html#distribution_plugin)。一个`main`分布创建包起来的应用程序，包括代码依赖关系和生成的启动脚本。
 
-## [构建JVM应用程序](#构建JVM应用程序)
+## [构建JVM应用程序](#%E6%9E%84%E5%BB%BAJVM%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F)
 
 要使用应用程序插件，请在构建脚本中包括以下内容：
 
@@ -118,7 +118,7 @@ build.gradle.kts
         executableDir = "custom_bin_dir"
     }
 
-## [使用Java模块系统构建应用程序](#使用Java模块系统构建应用程序)
+## [使用Java模块系统构建应用程序](#%E4%BD%BF%E7%94%A8Java%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F)
 
 Gradle支持[Java模块](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)[插件文档](/md/Java库插件.md#Java模块系统的构建模块)的[相应部分中所述](/md/Java库插件.md#Java模块系统的构建模块)的[Java模块](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)的构建。Java模块也可以运行，并且您可以使用应用程序插件来运行和打包此类模块化应用程序。为此，除了要对非模块化应用程序进行操作之外，还需要做两件事。
 
@@ -149,7 +149,7 @@ build.gradle.kts
         mainClass.set("org.gradle.sample.Main")
     }
 
-就这样。如果运行应用程序，通过执行`run`任务或通过[生成的启动脚本](#建立发行版)，它将作为模块运行，并在运行时遵守模块边界。例如，从另一个模块反射访问内部包装可能会失败。
+就这样。如果运行应用程序，通过执行`run`任务或通过[生成的启动脚本](#%E5%BB%BA%E7%AB%8B%E5%8F%91%E8%A1%8C%E7%89%88)，它将作为模块运行，并在运行时遵守模块边界。例如，从另一个模块反射访问内部包装可能会失败。
 
 配置的 _主类_ 也被烘焙到`module-
 info.class`应用程序Jar的文件中。如果直接使用`java`命令运行模块化应用程序，则只需提供模块名称即可。
@@ -182,7 +182,7 @@ build.gradle.kts
         modularity.inferModulePath.set(true)
     }
 
-## [建立发行版](#建立发行版)
+## [建立发行版](#%E5%BB%BA%E7%AB%8B%E5%8F%91%E8%A1%8C%E7%89%88)
 
 可以通过[Distribution插件](https://docs.gradle.org/6.7.1/userguide/distribution_plugin.html#distribution_plugin)（自动应用）创建应用程序的[发行版](https://docs.gradle.org/6.7.1/userguide/distribution_plugin.html#distribution_plugin)。一个`main`分布与以下内容创建：
 
@@ -252,14 +252,14 @@ build.gradle.kts
 installDist`以创建应用程序的映像。您可以运行以创建包含发行版的ZIP，创建应用程序TAR或同时构建两者。`build/install/
 _projectName_``gradle distZip``gradle distTar``gradle assemble`
 
-### [自定义启动脚本生成](#自定义启动脚本生成)
+### [自定义启动脚本生成](#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90)
 
 该应用程序插件可以立即生成Unix（适用于Linux，macOS等）和Windows启动脚本。启动脚本使用定义为原始构建和运行时环境（例如`JAVA_OPTS`env
 var）的一部分的指定设置启动JVM 。默认脚本模板基于用于启动Gradle本身的相同脚本，这些脚本作为Gradle发行版的一部分提供。
 
 启动脚本是完全可定制的。有关更多详细信息和自定义示例，请参考[CreateStartScripts](https://docs.gradle.org/6.7.1/dsl/org.gradle.jvm.application.tasks.CreateStartScripts.html) 文档。
 
-## [任务](#任务)
+## [任务](#%E4%BB%BB%E5%8A%A1)
 
 Application插件将以下任务添加到项目中。
 
@@ -305,7 +305,7 @@ _取决于_ ：`jar`，`startScripts`
 
 创建完整的发行版TAR归档文件，包括运行时库和特定于OS的脚本。
 
-## [应用扩展](#应用扩展)
+## [应用扩展](#%E5%BA%94%E7%94%A8%E6%89%A9%E5%B1%95)
 
 应用程序插件将扩展添加到项目中，您可以使用它来配置其行为。有关扩展中可用属性的更多信息，请参见[JavaApplication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.plugins.JavaApplication.html)
 DSL文档。
@@ -330,11 +330,11 @@ build.gradle.kts
         executableDir = "custom_bin_dir"
     }
 
-## [发牌](#发牌)
+## [发牌](#%E5%8F%91%E7%89%8C)
 
 与您的应用程序捆绑在一起的Gradle启动脚本已获得[Apache 2.0软件许可的许可](https://www.apache.org/licenses/LICENSE-2.0) 。这不会影响您的应用程序，您可以选择许可该应用程序。
 
-## [约定属性（已弃用）](#约定属性（已弃用）)
+## [约定属性（已弃用）](#%E7%BA%A6%E5%AE%9A%E5%B1%9E%E6%80%A7%EF%BC%88%E5%B7%B2%E5%BC%83%E7%94%A8%EF%BC%89)
 
 该插件还向项目添加了一些约定属性，您可以使用它们来配置其行为。这些 **已** 被上述扩展 **弃用**
 并被其取代。有关它们的信息，请参阅[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#N14FED)

@@ -3,15 +3,15 @@
 
 内容
 
-  * [剖析典型的构建脚本](#剖析典型的构建脚本)
-  * [声明模块依赖性](#声明模块依赖性)
-  * [使用依赖项配置](#使用依赖项配置)
-  * [声明通用Java存储库](#声明通用Java存储库)
-  * [发布工件](#发布工件)
+  * [剖析典型的构建脚本](#%E5%89%96%E6%9E%90%E5%85%B8%E5%9E%8B%E7%9A%84%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC)
+  * [声明模块依赖性](#%E5%A3%B0%E6%98%8E%E6%A8%A1%E5%9D%97%E4%BE%9D%E8%B5%96%E6%80%A7)
+  * [使用依赖项配置](#%E4%BD%BF%E7%94%A8%E4%BE%9D%E8%B5%96%E9%A1%B9%E9%85%8D%E7%BD%AE)
+  * [声明通用Java存储库](#%E5%A3%B0%E6%98%8E%E9%80%9A%E7%94%A8Java%E5%AD%98%E5%82%A8%E5%BA%93)
+  * [发布工件](#%E5%8F%91%E5%B8%83%E5%B7%A5%E4%BB%B6)
 
 本章说明如何将基本的依赖管理概念应用于基于JVM的项目。有关依赖管理的详细介绍，请参见[Gradle中的依赖管理](/md/Gradle中的依赖管理.md)。
 
-## [剖析典型的构建脚本](#剖析典型的构建脚本)
+## [剖析典型的构建脚本](#%E5%89%96%E6%9E%90%E5%85%B8%E5%9E%8B%E7%9A%84%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC)
 
 让我们看一下基于JVM的项目的非常简单的构建脚本。它应用了[Java库插件](/md/Java库插件.md#java_library_plugin)，该[插件](/md/Java库插件.md#java_library_plugin)会自动引入标准项目布局，提供执行典型工作的任务以及对依赖项管理的充分支持。
 
@@ -61,14 +61,14 @@ build.gradle.kts
 {}](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories\(groovy.lang.Closure\))定义的Maven
 Central存储库中进行查找。以下各节将更详细地说明每个方面。
 
-## [声明模块依赖性](#声明模块依赖性)
+## [声明模块依赖性](#%E5%A3%B0%E6%98%8E%E6%A8%A1%E5%9D%97%E4%BE%9D%E8%B5%96%E6%80%A7)
 
 有多种[类型的依赖关系](/md/声明依赖.md#sec:dependency-
 types)，你可以声明。一种这样的类型是 _模块依赖性_
 。一个[模块依赖](/md/声明依赖.md#模块依赖)代表与当前构建建外特定版本模块的依赖关系。模块通常存储在存储库中，例如Maven
 Central，公司Maven或Ivy存储库或本地文件系统中的目录。
 
-要定义模块依赖项，请将其添加到[依赖项配置中](#使用依赖项配置)：
+要定义模块依赖项，请将其添加到[依赖项配置中](#%E4%BD%BF%E7%94%A8%E4%BE%9D%E8%B5%96%E9%A1%B9%E9%85%8D%E7%BD%AE)：
 
 例子2.模块依赖关系的定义
 
@@ -92,7 +92,7 @@ build.gradle.kts
 
 要了解有关定义依赖项的更多信息，请[参阅声明依赖项](/md/声明依赖.md)。
 
-## [使用依赖项配置](#使用依赖项配置)
+## [使用依赖项配置](#%E4%BD%BF%E7%94%A8%E4%BE%9D%E8%B5%96%E9%A1%B9%E9%85%8D%E7%BD%AE)
 
 一个[配置](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.Configuration.html)是一组命名的依赖和文物。有一个三个主要目的
 _配置_ ：
@@ -138,7 +138,7 @@ api
 
 各种插件添加了进一步的标准配置。您还可以通过[Project.configurations{}](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:configurations\(groovy.lang.Closure\))在构建中定义自己的自定义配置。有关定义和自定义依赖项配置的详细信息，请参阅[什么是](/md/声明依赖.md#什么是依赖项配置)依赖项配置。
 
-## [声明通用Java存储库](#声明通用Java存储库)
+## [声明通用Java存储库](#%E5%A3%B0%E6%98%8E%E9%80%9A%E7%94%A8Java%E5%AD%98%E5%82%A8%E5%BA%93)
 
 Gradle如何知道在哪里可以找到外部依赖文件？Gradle在 _存储库中_
 查找它们。库是模块，通过组织的集合`group`，`name`和`version`。Gradle了解不同的[存储库类型](/md/声明存储库.md#sec:repository-
@@ -198,7 +198,7 @@ build.gradle.kts
 
 要了解有关定义存储库的更多信息，请[参阅声明存储库](/md/声明存储库.md)。
 
-## [发布工件](#发布工件)
+## [发布工件](#%E5%8F%91%E5%B8%83%E5%B7%A5%E4%BB%B6)
 
 要了解有关发布工件的更多信息，请查看[发布插件](/md/将项目发布为模块.md)。
 
