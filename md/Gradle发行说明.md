@@ -38,7 +38,7 @@ Gradle团队很高兴宣布Gradle 6.7.1。
 
 `./gradlew wrapper \--gradle-version=6.7.1`
 
-请参阅[Gradle 6.x升级指南](/md/将您的构建从Gradle%s6.md)以了解有关升级到Gradle 6.7.1时的弃用，重大更改和其他注意事项的信息。
+请参阅[Gradle 6.x升级指南](/md/将您的构建从Gradle%206.md)以了解有关升级到Gradle 6.7.1时的弃用，重大更改和其他注意事项的信息。
 
 注意：Gradle 6.7拥有**一个**修补程序版本，它修复了原始版本中的多个问题。我们建议始终使用最新的修补程序版本。
 
