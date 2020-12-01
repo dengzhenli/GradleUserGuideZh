@@ -120,10 +120,10 @@ build.gradle.kts
 
 ## [使用Java模块系统构建应用程序](#%E4%BD%BF%E7%94%A8Java%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F)
 
-Gradle支持[Java模块](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)[插件文档](/md/Java%E5%BA%93%E6%8F%92%E4%BB%B6.md%23Java%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9D%97)的[相应部分中所述](/md/Java%E5%BA%93%E6%8F%92%E4%BB%B6.md%23Java%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9D%97)的[Java模块](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)的构建。Java模块也可以运行，并且您可以使用应用程序插件来运行和打包此类模块化应用程序。为此，除了要对非模块化应用程序进行操作之外，还需要做两件事。
+Gradle支持[Java模块](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)[插件文档](/md/Java库插件.md#sec:java_library_modular)的[相应部分中所述](/md/Java库插件.md#sec:java_library_modular)的[Java模块](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)的构建。Java模块也可以运行，并且您可以使用应用程序插件来运行和打包此类模块化应用程序。为此，除了要对非模块化应用程序进行操作之外，还需要做两件事。
 
 首先，您需要添加一个`module-
-info.java`文件来描述您的应用程序模块。有关此主题的更多详细信息，请参阅[Java库插件文档](/md/Java%E5%BA%93%E6%8F%92%E4%BB%B6.md%23Java%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9D%97)。
+info.java`文件来描述您的应用程序模块。有关此主题的更多详细信息，请参阅[Java库插件文档](/md/Java库插件.md#sec:java_library_modular)。
 
 其次，除了像这样的主类名称之外，还需要告诉Gradle您要运行的模块的名称：
 
@@ -246,7 +246,7 @@ build.gradle.kts
         }
     }
 
-通过指定发行版应包含任务的输出文件（请参阅[关于](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E4%BB%BB%E5%8A%A1%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA)task的[更多信息](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E4%BB%BB%E5%8A%A1%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA)），Gradle知道在组装发行版之前必须先调用生成文件的任务，并将为您解决这一问题。
+通过指定发行版应包含任务的输出文件（请参阅[关于](/md/处理任务.md#sec:task_inputs_outputs)task的[更多信息](/md/处理任务.md#sec:task_inputs_outputs)），Gradle知道在组装发行版之前必须先调用生成文件的任务，并将为您解决这一问题。
 
 您可以在中运行`gradle
 installDist`以创建应用程序的映像。您可以运行以创建包含发行版的ZIP，创建应用程序TAR或同时构建两者。`build/install/

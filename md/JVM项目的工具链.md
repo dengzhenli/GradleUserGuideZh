@@ -178,7 +178,7 @@ build.gradle.kts
 ## [自动配置](#%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE)
 
 如果Gradle找不到与构建要求匹配的本地可用工具链，它将自动尝试从AdoptOpenJDK下载它。默认情况下，它将请求与当前操作系统和体系结构匹配的HotSpot
-JDK。预配JDK安装在[Gradle用户主目录中](/md/Gradle%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8.md%23Gradle%E7%94%A8%E6%88%B7%E4%B8%BB%E7%9B%AE%E5%BD%95)。
+JDK。预配JDK安装在[Gradle用户主目录中](/md/Gradle目录和文件的使用.md#dir:gradle_user_home)。
 
 ╔═════════════════════════════  
 

@@ -39,7 +39,7 @@ build.gradle.kts
     }
 
 其中`gradleTestKit()`包含TestKit的类以及[Gradle Tooling
-API客户端](/md/Gradle%E5%92%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7.md%23%E4%BD%BF%E7%94%A8Tooling+API%E5%B5%8C%E5%85%A5Gradle)。它不包括[JUnit](http://junit.org/)，[TestNG](http://testng.org/)或任何其他测试执行框架的版本。必须明确声明这种依赖性。
+API客户端](/md/Gradle和第三方工具.md#embedding)。它不包括[JUnit](http://junit.org/)，[TestNG](http://testng.org/)或任何其他测试执行框架的版本。必须明确声明这种依赖性。
 
 示例2.声明JUnit依赖项
 
@@ -257,7 +257,7 @@ BuildLogicFunctionalTest.groovy
 ## [将被测插件放入测试版本](#%E5%B0%86%E8%A2%AB%E6%B5%8B%E6%8F%92%E4%BB%B6%E6%94%BE%E5%85%A5%E6%B5%8B%E8%AF%95%E7%89%88%E6%9C%AC)
 
 GradleRunner使用[Tooling
-API](/md/Gradle%E5%92%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7.md%23%E4%BD%BF%E7%94%A8Tooling+API%E5%B5%8C%E5%85%A5Gradle)执行构建。这意味着构建是在单独的过程中执行的（即，执行测试的过程不是同一过程）。因此，测试版本与测试过程不会共享相同的类路径或类加载器，并且测试代码不会隐式地提供给测试版本。
+API](/md/Gradle和第三方工具.md#embedding)执行构建。这意味着构建是在单独的过程中执行的（即，执行测试的过程不是同一过程）。因此，测试版本与测试过程不会共享相同的类路径或类加载器，并且测试代码不会隐式地提供给测试版本。
 
 从2.13版开始，Gradle提供了一种常规机制，可以将被测代码注入测试版本中。
 
@@ -266,7 +266,7 @@ API](/md/Gradle%E5%92%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7.md%23%E4%B
 在[Java的Gradle插件开发的插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)可以用来协助Gradle插件的开发。从Gradle
 2.13版本开始，该插件提供了与TestKit的直接集成。当应用于项目时，该插件会自动将`gradleTestKit()`依赖项添加到测试编译配置中。此外，它会自动为测试中的代码生成类路径，并通过[GradleRunner.withPluginClasspath（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath--)将其注入`GradleRunner`用户创建的任何实例。重要的是要注意，该机制当前
 _仅_
-在使用[插件DSL](/md/%E4%BD%BF%E7%94%A8Gradle%E6%8F%92%E4%BB%B6.md%23%E9%80%9A%E8%BF%87%E6%8F%92%E4%BB%B6DSL%E5%BA%94%E7%94%A8%E6%8F%92%E4%BB%B6)应用被测插件
+在使用[插件DSL](/md/使用Gradle插件.md#sec:plugins_block)应用被测插件
 _时才_
 有效。如果[目标Gradle版本](#%E7%94%A8%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84Gradle%E7%89%88%E6%9C%AC) 在2.8之前的版本中，不会执行自动插件类路径注入。
 
@@ -683,7 +683,7 @@ BuildLogicFunctionalTest.groovy
   
 ## [调试构建逻辑](#%E8%B0%83%E8%AF%95%E6%9E%84%E5%BB%BA%E9%80%BB%E8%BE%91)
 
-跑步者使用[Tooling API](/md/Gradle%E5%92%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7.md%23%E4%BD%BF%E7%94%A8Tooling+API%E5%B5%8C%E5%85%A5Gradle)执行构建。这意味着构建是在单独的过程中执行的（即，执行测试的过程不是同一过程）。因此，以调试方式执行
+跑步者使用[Tooling API](/md/Gradle和第三方工具.md#embedding)执行构建。这意味着构建是在单独的过程中执行的（即，执行测试的过程不是同一过程）。因此，以调试方式执行
 _测试_ 不允许您调试调试逻辑。在IDE中设置的任何断点都不会因测试版本执行的代码而跳闸。
 
 TestKit提供了两种不同的方式来启用调试模式：
@@ -697,7 +697,7 @@ TestKit提供了两种不同的方式来启用调试模式：
 ## [使用构建缓存进行测试](#%E4%BD%BF%E7%94%A8%E6%9E%84%E5%BB%BA%E7%BC%93%E5%AD%98%E8%BF%9B%E8%A1%8C%E6%B5%8B%E8%AF%95)
 
 要在测试中启用[构建缓存](/md/构建缓存.md#build_cache)，可以将`--build-
-cache`参数传递给[GradleRunner](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html)或使用[启用构建缓存中](/md/%E6%9E%84%E5%BB%BA%E7%BC%93%E5%AD%98.md%23%E5%90%AF%E7%94%A8%E6%9E%84%E5%BB%BA%E7%BC%93%E5%AD%98)描述的其他方法之一。然后，可以在缓存插件的自定义任务时检查任务结果[TaskOutcome.FROM_CACHE](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/TaskOutcome.html#FROM_CACHE)。此结果仅对Gradle
+cache`参数传递给[GradleRunner](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html)或使用[启用构建缓存中](/md/构建缓存.md#sec:build_cache_enable)描述的其他方法之一。然后，可以在缓存插件的自定义任务时检查任务结果[TaskOutcome.FROM_CACHE](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/TaskOutcome.html#FROM_CACHE)。此结果仅对Gradle
 3.5及更高版本有效。
 
 ### [示例：测试可缓存任务](#%E7%A4%BA%E4%BE%8B%EF%BC%9A%E6%B5%8B%E8%AF%95%E5%8F%AF%E7%BC%93%E5%AD%98%E4%BB%BB%E5%8A%A1)

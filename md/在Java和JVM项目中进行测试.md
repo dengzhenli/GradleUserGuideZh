@@ -52,7 +52,7 @@ Platform或TestNG）运行一系列测试用例，并整理结果。然后，您
   * 一个`test`类型的任务`Test`运行这些单元测试
 
 JVM语言插件使用源集来配置具有适当执行类路径和包含已编译测试类的目录的任务。另外，他们将`test`任务附加到`check`
-[生命周期任务](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1)。
+[生命周期任务](/md/处理任务.md#sec:lifecycle_tasks)。
 
 这也是考虑到值得铭记的是，`test`源集合自动创建[相应的依赖关系配置](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_source_set_configurations)-其中最有用的是`testImplementation`和`testRuntimeOnly`-该插件扎入`test`任务的类路径。
 
@@ -266,7 +266,7 @@ build.gradle.kts
 请注意，通配符“ *”对“。”没有特殊的了解。包装分离器。它是纯粹基于文本的。因此`--tests
 *.SomeTestClass`将匹配任何程序包，无论其“深度”如何。
 
-您还可以将在命令行中定义的过滤器与[连续构建结合使用，](/md/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2.md%23%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA)以在每次对生产或测试源文件进行更改后立即重新执行测试的子集。每当更改触发测试运行时，以下命令将执行“
+您还可以将在命令行中定义的过滤器与[连续构建结合使用，](/md/命令行界面.md#sec:continuous_build)以在每次对生产或测试源文件进行更改后立即重新执行测试的子集。每当更改触发测试运行时，以下命令将执行“
 com.mypackage.foo”包或子包中的所有测试：
 
     
@@ -777,7 +777,7 @@ toStringValueOfParam2)`。这使得识别特定迭代的参数值变得​​容
 
 将集成测试添加到构建中的最简单方法是采取以下步骤：
 
-  1. 为他们创建一个新的[源集](/md/%E6%9E%84%E5%BB%BAJava%E5%92%8CJVM%E9%A1%B9%E7%9B%AE.md%23%E9%80%9A%E8%BF%87%E6%BA%90%E9%9B%86%E5%A3%B0%E6%98%8E%E6%BA%90%E6%96%87%E4%BB%B6)
+  1. 为他们创建一个新的[源集](/md/构建Java和JVM项目.md#sec:java_source_sets)
 
   2. 将所需的依赖项添加到该源集的适当配置中
 
@@ -983,7 +983,7 @@ build.gradle.kts
   
 ## [跳过测试](#%E8%B7%B3%E8%BF%87%E6%B5%8B%E8%AF%95)
 
-如果要在运行构建时跳过测试，则有几种选择。您可以通过[命令行参数](/md/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2.md%23%E4%BB%8E%E6%89%A7%E8%A1%8C%E4%B8%AD%E6%8E%92%E9%99%A4%E4%BB%BB%E5%8A%A1)或[在构建脚本中进行操作](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E8%B7%B3%E8%BF%87%E4%BB%BB%E5%8A%A1)。要在命令行上执行此操作，可以使用`-x`或`--exclude-
+如果要在运行构建时跳过测试，则有几种选择。您可以通过[命令行参数](/md/命令行界面.md#sec:excluding_tasks_from_the_command_line)或[在构建脚本中进行操作](/md/处理任务.md#sec:skipping_tasks)。要在命令行上执行此操作，可以使用`-x`或`--exclude-
 task`选项，如下所示：
 
     
@@ -1023,7 +1023,7 @@ build.gradle.kts
     
     gradle cleanTest test
 
-`cleanTest`基于[基础插件](https://docs.gradle.org/6.7.1/userguide/base_plugin.html#sec:base_tasks)提供的[任务规则](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E4%BB%BB%E5%8A%A1%E8%A7%84%E5%88%99)。您可以将其用于
+`cleanTest`基于[基础插件](https://docs.gradle.org/6.7.1/userguide/base_plugin.html#sec:base_tasks)提供的[任务规则](/md/处理任务.md#sec:task_rules)。您可以将其用于
 _任何_
 任务。[](https://docs.gradle.org/6.7.1/userguide/base_plugin.html#sec:base_tasks)
 __

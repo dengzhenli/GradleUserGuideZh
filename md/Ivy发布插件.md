@@ -70,13 +70,13 @@ _取决于_ ：所有任务`publish _PubName_ PublicationTo _RepoName_ Repositor
 
 ## [刊物](#%E5%88%8A%E7%89%A9)
 
-此插件提供[出版物](/md/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%AF%E8%AF%AD.md%23%E4%BD%9C%E5%93%81%EF%BC%88publication%EF%BC%89)类型的[IvyPublication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html)。要了解如何定义和使用出版物，请参见[基本出版](/md/%E5%B0%86%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E4%B8%BA%E6%A8%A1%E5%9D%97.md%23%E8%AE%BE%E7%BD%AE%E5%9F%BA%E6%9C%AC%E5%8F%91%E5%B8%83)部分。
+此插件提供[出版物](/md/依赖管理术语.md#sub:terminology_publication)类型的[IvyPublication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html)。要了解如何定义和使用出版物，请参见[基本出版](/md/将项目发布为模块.md#sec:basic_publishing)部分。
 
 您可以在Ivy发布中配置以下四项主要内容：
 
-  * 一个[组件](/md/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%AF%E8%AF%AD.md%23component)—通过[IvyPublication.from（org.gradle.api.component.SoftwareComponent）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html#org.gradle.api.publish.ivy.IvyPublication:from\(org.gradle.api.component.SoftwareComponent\))。
+  * 一个[组件](/md/依赖管理术语.md#sub:terminology_component)—通过[IvyPublication.from（org.gradle.api.component.SoftwareComponent）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html#org.gradle.api.publish.ivy.IvyPublication:from\(org.gradle.api.component.SoftwareComponent\))。
 
-  * [自定义工件](/md/%E5%AE%9A%E5%88%B6%E5%8F%91%E5%B8%83.md%23%E5%B0%86%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E5%8F%91%E5%B8%83%E4%B8%AD)-通过[IvyPublication.artifact（java.lang.Object）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html#org.gradle.api.publish.ivy.IvyPublication:artifact\(java.lang.Object\))方法。有关自定义Ivy工件的可用配置选项，请参见[IvyArtifact](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyArtifact.html)。
+  * [自定义工件](/md/定制发布.md#sec:publishing_custom_artifacts_to_maven)-通过[IvyPublication.artifact（java.lang.Object）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyPublication.html#org.gradle.api.publish.ivy.IvyPublication:artifact\(java.lang.Object\))方法。有关自定义Ivy工件的可用配置选项，请参见[IvyArtifact](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.ivy.IvyArtifact.html)。
 
   * 标准元数据一样`module`，`organisation`和`revision`。
 
@@ -304,7 +304,7 @@ runtime`。
 
 ## [储存库](#%E5%82%A8%E5%AD%98%E5%BA%93)
 
-该插件提供了[IvyArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.IvyArtifactRepository.html)类型的[存储库](/md/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%AF%E8%AF%AD.md%23repository)。要了解如何定义和使用存储库进行发布，请参见“[基本发布](/md/%E5%B0%86%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E4%B8%BA%E6%A8%A1%E5%9D%97.md%23%E8%AE%BE%E7%BD%AE%E5%9F%BA%E6%9C%AC%E5%8F%91%E5%B8%83)”部分。[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.IvyArtifactRepository.html)[](/md/%E5%B0%86%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E4%B8%BA%E6%A8%A1%E5%9D%97.md%23%E8%AE%BE%E7%BD%AE%E5%9F%BA%E6%9C%AC%E5%8F%91%E5%B8%83)
+该插件提供了[IvyArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.IvyArtifactRepository.html)类型的[存储库](/md/依赖管理术语.md#sub:terminology_repository)。要了解如何定义和使用存储库进行发布，请参见“[基本发布](/md/将项目发布为模块.md#sec:basic_publishing)”部分。[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.IvyArtifactRepository.html)[](/md/将项目发布为模块.md#sec:basic_publishing)
 
 这是定义发布存储库的简单示例：
 
@@ -548,7 +548,7 @@ Gradle将发出警告，指出已发布此类配置。如果确实需要发布�
 
 虽然Ivy支持[`force`依赖项](https://ant.apache.org/ivy/history/latest-milestone/ivyfile/dependency.html#_forcing_revision)的概念，但Gradle不会将其已弃用的`force`声明映射到它。
 
-相反，建议将Gradle替换`force`为[`strictly`version](/md/声明丰富版本.md#sec:strict-version)，以提供[更好的语义](/md/%E9%99%8D%E7%BA%A7%E7%89%88%E6%9C%AC%E5%B9%B6%E6%8E%92%E9%99%A4%E4%BE%9D%E8%B5%96%E9%A1%B9.md%23%E8%A6%86%E7%9B%96%E4%BC%A0%E9%80%92%E4%BE%9D%E8%B5%96%E9%A1%B9%E7%89%88%E6%9C%AC)并受Gradle
+相反，建议将Gradle替换`force`为[`strictly`version](/md/声明丰富版本.md#sec:strict-version)，以提供[更好的语义](/md/降级版本并排除依赖项.md#sec:enforcing_dependency_version)并受Gradle
 Module元数据格式支持。
 
 请注意，如果您绝对需要发布强制，则仍然可以[修改产生的`ivy.xml`](#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%94%9F%E6%88%90%E7%9A%84%E6%A8%A1%E5%9D%97%E6%8F%8F%E8%BF%B0%E7%AC%A6)。

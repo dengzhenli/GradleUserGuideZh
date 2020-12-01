@@ -65,7 +65,7 @@ Central存储库中进行查找。以下各节将更详细地说明每个方面�
 
 有多种[类型的依赖关系](/md/声明依赖.md#sec:dependency-
 types)，你可以声明。一种这样的类型是 _模块依赖性_
-。一个[模块依赖](/md/%E5%A3%B0%E6%98%8E%E4%BE%9D%E8%B5%96.md%23%E6%A8%A1%E5%9D%97%E4%BE%9D%E8%B5%96)代表与当前构建建外特定版本模块的依赖关系。模块通常存储在存储库中，例如Maven
+。一个[模块依赖](/md/声明依赖.md#sub:module_dependencies)代表与当前构建建外特定版本模块的依赖关系。模块通常存储在存储库中，例如Maven
 Central，公司Maven或Ivy存储库或本地文件系统中的目录。
 
 要定义模块依赖项，请将其添加到[依赖项配置中](#%E4%BD%BF%E7%94%A8%E4%BE%9D%E8%B5%96%E9%A1%B9%E9%85%8D%E7%BD%AE)：
@@ -116,7 +116,7 @@ Web框架依赖项来编译源代码。
 
 插件使用配置来定义它生成供其他项目使用的 _工件_ 。例如，该项目希望将其打包在JAR文件中的已编译源代码发布到内部Artifactory存储库中。
 
-考虑到这三个目的，让我们看一下[Java库插件定义](/md/Java%E5%BA%93%E6%8F%92%E4%BB%B6.md%23Java%E5%BA%93%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE)的一些[标准配置](/md/Java%E5%BA%93%E6%8F%92%E4%BB%B6.md%23Java%E5%BA%93%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE)。
+考虑到这三个目的，让我们看一下[Java库插件定义](/md/Java库插件.md#sec:java_library_configurations_graph)的一些[标准配置](/md/Java库插件.md#sec:java_library_configurations_graph)。
 
 实作
 
@@ -136,7 +136,7 @@ api
 
 编译和运行项目的测试源所需的依赖项。例如，该项目决定使用测试框架JUnit编写测试代码。
 
-各种插件添加了进一步的标准配置。您还可以通过[Project.configurations{}](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:configurations\(groovy.lang.Closure\))在构建中定义自己的自定义配置。有关定义和自定义依赖项配置的详细信息，请参阅[什么是](/md/%E5%A3%B0%E6%98%8E%E4%BE%9D%E8%B5%96.md%23%E4%BB%80%E4%B9%88%E6%98%AF%E4%BE%9D%E8%B5%96%E9%A1%B9%E9%85%8D%E7%BD%AE)依赖项配置。
+各种插件添加了进一步的标准配置。您还可以通过[Project.configurations{}](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:configurations\(groovy.lang.Closure\))在构建中定义自己的自定义配置。有关定义和自定义依赖项配置的详细信息，请参阅[什么是](/md/声明依赖.md#sec:what-are-dependency-configurations)依赖项配置。
 
 ## [声明通用Java存储库](#%E5%A3%B0%E6%98%8E%E9%80%9A%E7%94%A8Java%E5%AD%98%E5%82%A8%E5%BA%93)
 

@@ -95,8 +95,8 @@ DSL）文件。为此，运行时将目录树的层次结构移至根目录。�
 
 复杂的构建逻辑通常很适合作为自定义任务或二进制插件进行封装。自定义任务和插件实现不应存在于构建脚本中。`buildSrc`只要不需要在多个独立项目之间共享代码，就可以非常方便地使用该代码。
 
-该目录`buildSrc`被视为[包含的构建](/md/%E5%A4%8D%E5%90%88%E6%9E%84%E5%BB%BA.md%23%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E6%9E%84%E5%BB%BA%EF%BC%9F)。发现目录后，Gradle会自动编译并测试此代码，并将其放入构建脚本的类路径中。对于多项目构建，只能有一个`buildSrc`目录，该目录必须位于根项目目录中。
-`buildSrc`应该比[脚本插件](/md/%E4%BD%BF%E7%94%A8Gradle%E6%8F%92%E4%BB%B6.md%23%E8%84%9A%E6%9C%AC%E6%8F%92%E4%BB%B6)更可取，因为它更易于维护，重构和测试代码。
+该目录`buildSrc`被视为[包含的构建](/md/复合构建.md#composite_build_intro)。发现目录后，Gradle会自动编译并测试此代码，并将其放入构建脚本的类路径中。对于多项目构建，只能有一个`buildSrc`目录，该目录必须位于根项目目录中。
+`buildSrc`应该比[脚本插件](/md/使用Gradle插件.md#sec:script_plugins)更可取，因为它更易于维护，重构和测试代码。
 
 `buildSrc`使用适用于Java和Groovy项目的相同[源代码约定](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#javalayout)。它还提供对Gradle
 API的直接访问。其他依赖项可以在专用的`build.gradle`下声明`buildSrc`。
@@ -180,14 +180,14 @@ buildSrc/build.gradle.kts
 
 ╔═════════════════════════════   
 更改`buildSrc`会导致整个项目过时。因此，当进行小的增量更改时，[`--no-
-rebuild`命令行选项](/md/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2.md%23%E6%89%A7%E8%A1%8C%E9%80%89%E9%A1%B9)通常有助于获得更快的反馈。不过请记住要定期或至少在完成后运行完整版本。  
+rebuild`命令行选项](/md/命令行界面.md#sec:command_line_execution_options)通常有助于获得更快的反馈。不过请记住要定期或至少在完成后运行完整版本。  
 ╚═════════════════════════════  
   
 ## [声明`gradle.properties`文件中的属性](#%E5%A3%B0%E6%98%8E%60gradle.properties%60%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%B1%9E%E6%80%A7)
 
 在Gradle中，可以在构建脚本中，`gradle.properties`文件中或命令行中将属性定义为参数。
 
-在临时方案中，通常在命令行上声明属性。例如，您可能希望仅针对构建的这一调用传递一个特定的属性值来控制运行时行为。构建脚本中的属性很容易引起维护麻烦，并且使构建脚本逻辑复杂化。`gradle.properties`将属性与构建脚本分开的帮助，应作为可行的选项加以探讨。这是放置[控制构建环境的属性](/md/Gradle%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md%23Gradle%E5%B1%9E%E6%80%A7)的好位置。
+在临时方案中，通常在命令行上声明属性。例如，您可能希望仅针对构建的这一调用传递一个特定的属性值来控制运行时行为。构建脚本中的属性很容易引起维护麻烦，并且使构建脚本逻辑复杂化。`gradle.properties`将属性与构建脚本分开的帮助，应作为可行的选项加以探讨。这是放置[控制构建环境的属性](/md/Gradle环境搭建.md#sec:gradle_configuration_properties)的好位置。
 
 典型的项目设置将`gradle.properties`文件放置在构建的根目录中。另外，`GRADLE_USER_HOME`如果您想将该文件应用于计算机上的所有内部版本，则该文件也可以位于目录中。
 
@@ -214,7 +214,7 @@ rebuild`命令行选项](/md/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2.md%23
 
 ## [避免任务输出重叠](#%E9%81%BF%E5%85%8D%E4%BB%BB%E5%8A%A1%E8%BE%93%E5%87%BA%E9%87%8D%E5%8F%A0)
 
-任务应该定义输入和输出，以获得[增量构建功能](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E6%9C%80%E6%96%B0%E6%A3%80%E6%9F%A5%EF%BC%88%E5%8F%88%E7%A7%B0%E5%A2%9E%E9%87%8F%E6%9E%84%E5%BB%BA%EF%BC%89)的性能优势。在声明任务的输出时，请确保用于写入输出的目录在项目中的所有任务中都是唯一的。
+任务应该定义输入和输出，以获得[增量构建功能](/md/处理任务.md#sec:up_to_date_checks)的性能优势。在声明任务的输出时，请确保用于写入输出的目录在项目中的所有任务中都是唯一的。
 
 混合或覆盖由不同任务生成的输出文件会损害最新的检查，从而导致构建速度变慢。反过来，这些文件系统更改可能会阻止Gradle的[构建缓存](/md/构建缓存.md#build_cache)正确识别和缓存本来可以缓存的任务。
 
@@ -227,7 +227,7 @@ rebuild`命令行选项](/md/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2.md%23
 
 自定义Gradle发行版是解决此问题的实用方法。自定义Gradle发行版由标准Gradle发行版以及一个或多个自定义初始化脚本组成。初始化脚本与发行版捆绑在一起，并在每次运行构建时应用。开发人员仅需要将其签入的[Wrapper](/md/gradle_wrapper.md#gradle_wrapper)文件指向自定义Gradle发行版的URL。
 
-自定义Gradle发行版还可能`gradle.properties`在发行版的根目录中包含一个文件，该文件提供了组织范围[内控制构建环境的一组属性](/md/Gradle%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md%23Gradle%E5%B1%9E%E6%80%A7)。
+自定义Gradle发行版还可能`gradle.properties`在发行版的根目录中包含一个文件，该文件提供了组织范围[内控制构建环境的一组属性](/md/Gradle环境搭建.md#sec:gradle_configuration_properties)。
 
 以下步骤是创建自定义Gradle发行版的典型步骤：
 

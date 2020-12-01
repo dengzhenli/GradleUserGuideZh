@@ -149,15 +149,15 @@ build.gradle.kts
 
 需要进一步阅读的一些常见方案包括：
 
-  * 定义与[Maven兼容](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E6%94%AF%E6%8C%81%E7%9A%84%E5%AD%98%E5%82%A8%E5%BA%93%E7%B1%BB%E5%9E%8B)的自定义存储库
+  * 定义与[Maven兼容](/md/声明存储库.md#sec:repository-types)的自定义存储库
 
-  * 使用[变化的版本](/md/%E5%A4%84%E7%90%86%E9%9A%8F%E6%97%B6%E9%97%B4%E5%8F%98%E5%8C%96%E7%9A%84%E7%89%88%E6%9C%AC.md%23%E5%A3%B0%E6%98%8E%E7%89%88%E6%9C%AC%E5%8F%98%E6%9B%B4)（例如SNAPSHOT）和[动态的](/md/%E5%A4%84%E7%90%86%E9%9A%8F%E6%97%B6%E9%97%B4%E5%8F%98%E5%8C%96%E7%9A%84%E7%89%88%E6%9C%AC.md%23%E5%A3%B0%E6%98%8E%E5%8A%A8%E6%80%81%E7%89%88%E6%9C%AC)（范围）声明依赖项
+  * 使用[变化的版本](/md/处理随时间变化的版本.md#sub:declaring_dependency_with_changing_version)（例如SNAPSHOT）和[动态的](/md/处理随时间变化的版本.md#sub:declaring_dependency_with_dynamic_version)（范围）声明依赖项
 
-  * 将同级[项目](/md/%E5%A3%B0%E6%98%8E%E4%BE%9D%E8%B5%96.md%23%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96)声明[为依赖项](/md/%E5%A3%B0%E6%98%8E%E4%BE%9D%E8%B5%96.md%23%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96)
+  * 将同级[项目](/md/声明依赖.md#sub:project_dependencies)声明[为依赖项](/md/声明依赖.md#sub:project_dependencies)
 
   * [控制传递依赖及其版本](/md/升级传递依赖的版本.md)
 
-  * 通过[组合构建](/md/复合构建.md)测试对第三方依赖关系的修复（这是发布到[Maven Local](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E6%9C%AC%E5%9C%B0Maven%E5%AD%98%E5%82%A8%E5%BA%93)和从[Maven Local](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E6%9C%AC%E5%9C%B0Maven%E5%AD%98%E5%82%A8%E5%BA%93)消费的更好的替代方法）
+  * 通过[组合构建](/md/复合构建.md)测试对第三方依赖关系的修复（这是发布到[Maven Local](/md/声明存储库.md#sub:maven_local)和从[Maven Local](/md/声明存储库.md#sub:maven_local)消费的更好的替代方法）
 
 您会发现Gradle具有丰富的API用于处理依赖关系-一种需要花费时间来掌握的API，但对于常见的情况却很容易使用。
 

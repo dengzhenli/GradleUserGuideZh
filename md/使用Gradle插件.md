@@ -68,7 +68,7 @@ Gradle插件的特殊之处在于它们提供了简短的名称，例如`'java'`
 
   * 包括来自定义为buildscript依赖项的外部jar中的插件（请参阅[使用buildscript块应用插件](#%E4%BD%BF%E7%94%A8%E5%B8%A6%E6%9C%89buildscript%E5%9D%97%E7%9A%84%E6%8F%92%E4%BB%B6)）。
 
-  * 在项目的buildSrc目录下将插件定义为源文件（请参阅[使用buildSrc提取功能逻辑](/md/%E7%BB%84%E7%BB%87Gradle%E9%A1%B9%E7%9B%AE.md%23%E7%94%A8%60buildSrc%60%E6%8A%BD%E8%B1%A1%E9%80%BB%E8%BE%91%E5%8A%BF%E5%9C%A8%E5%BF%85%E8%A1%8C)）。
+  * 在项目的buildSrc目录下将插件定义为源文件（请参阅[使用buildSrc提取功能逻辑](/md/组织Gradle项目.md#sec:build_sources)）。
 
   * 在构建脚本中将插件定义为内联类声明。
 
@@ -282,7 +282,7 @@ goodbye-c/build.gradle.kts
         id("com.example.goodbye")
     }
 
-更好的是，您可以使用自己的[约定插件](/md/%E5%9C%A8%E5%AD%90%E9%A1%B9%E7%9B%AE%E4%B9%8B%E9%97%B4%E5%85%B1%E4%BA%AB%E6%9E%84%E5%BB%BA%E9%80%BB%E8%BE%91.md%23%E7%BA%A6%E5%AE%9A%E6%8F%92%E4%BB%B6)通过组合构建逻辑来封装外部插件的版本。
+更好的是，您可以使用自己的[约定插件](/md/在子项目之间共享构建逻辑.md#sec:convention_plugins)通过组合构建逻辑来封装外部插件的版本。
 
 #### [从_buildSrc_目录应用插件](#%E4%BB%8E_buildSrc_%E7%9B%AE%E5%BD%95%E5%BA%94%E7%94%A8%E6%8F%92%E4%BB%B6)
 
@@ -717,8 +717,8 @@ literal in Kotlin instead of `.class` in Java.
 
 #### [使用带有buildscript块的插件](#%E4%BD%BF%E7%94%A8%E5%B8%A6%E6%9C%89buildscript%E5%9D%97%E7%9A%84%E6%8F%92%E4%BB%B6)
 
-通过将插件添加到构建脚本类路径中，然后应用该插件，可以将已发布为外部jar文件的二进制插件添加到项目中。可以使用构建脚本的[外部依赖项中所述](/md/%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80.md%23%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC%E7%9A%84%E5%A4%96%E9%83%A8%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB)的`buildscript
-{}`块将外部jar添加到构建脚本类路径中。[](/md/%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80.md%23%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC%E7%9A%84%E5%A4%96%E9%83%A8%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB)
+通过将插件添加到构建脚本类路径中，然后应用该插件，可以将已发布为外部jar文件的二进制插件添加到项目中。可以使用构建脚本的[外部依赖项中所述](/md/构建脚本基础.md#sec:build_script_external_dependencies)的`buildscript
+{}`块将外部jar添加到构建脚本类路径中。[](/md/构建脚本基础.md#sec:build_script_external_dependencies)
 
 例子13.使用带有buildscript块的插件
 

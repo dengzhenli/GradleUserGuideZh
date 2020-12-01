@@ -110,7 +110,7 @@ Gradle支持简单的类名，或类名+方法名的测试过滤。例如，以�
     gradle xcTest --tests TestBundle.SomeTestClass.someSpecificMethod
     # or `gradle xcTest --tests TestBundle.SomeTestClass.someSpecificMethod` on macOS
 
-您还可以将在命令行中定义的过滤器与[连续构建结合使用，](/md/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2.md%23%E6%8C%81%E7%BB%AD%E6%9E%84%E5%BB%BA)以在每次对生产或测试源文件进行更改后立即重新执行测试的子集。每当更改触发测试运行时，以下命令将执行“
+您还可以将在命令行中定义的过滤器与[连续构建结合使用，](/md/命令行界面.md#sec:continuous_build)以在每次对生产或测试源文件进行更改后立即重新执行测试的子集。每当更改触发测试运行时，以下命令将执行“
 SomeTestClass”测试类中的所有测试：
 
     

@@ -231,7 +231,7 @@ src / main / groovy / org / gradle / GreetingTask.groovy
 ### [在另一个项目中使用您的任务类](#%E5%9C%A8%E5%8F%A6%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%82%A8%E7%9A%84%E4%BB%BB%E5%8A%A1%E7%B1%BB)
 
 要在构建脚本中使用任务类，您需要将该类添加到构建脚本的类路径中。为此，请使用一个`buildscript {
-}`块，如[构建脚本的外部依赖项中所述](/md/%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80.md%23%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC%E7%9A%84%E5%A4%96%E9%83%A8%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB)。以下示例显示了包含任务类的JAR已发布到本地存储库时如何执行此操作：
+}`块，如[构建脚本的外部依赖项中所述](/md/构建脚本基础.md#sec:build_script_external_dependencies)。以下示例显示了包含任务类的JAR已发布到本地存储库时如何执行此操作：
 
 例子5.在另一个项目中使用自定义任务
 
@@ -296,7 +296,7 @@ src / test / groovy / org / gradle / GreetingTaskTest.groovy
 
 ## [增量任务](#%E5%A2%9E%E9%87%8F%E4%BB%BB%E5%8A%A1)
 
-使用Gradle，实现一个在所有输入和输出都是最新的情况下将被跳过的任务非常简单（请参阅“[增量构建”](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E6%9C%80%E6%96%B0%E6%A3%80%E6%9F%A5%EF%BC%88%E5%8F%88%E7%A7%B0%E5%A2%9E%E9%87%8F%E6%9E%84%E5%BB%BA%EF%BC%89)）。但是，自上次执行以来，有时只有少数输入文件已更改，因此您希望避免重新处理所有未更改的输入。这对于将输入文件按1：1转换为输出文件的转换器任务特别有用。
+使用Gradle，实现一个在所有输入和输出都是最新的情况下将被跳过的任务非常简单（请参阅“[增量构建”](/md/处理任务.md#sec:up_to_date_checks)）。但是，自上次执行以来，有时只有少数输入文件已更改，因此您希望避免重新处理所有未更改的输入。这对于将输入文件按1：1转换为输出文件的转换器任务特别有用。
 
 如果您想优化构建，以便仅处理过时的输入文件，则可以使用 _增量任务来完成_ 。
 
@@ -317,7 +317,7 @@ API，它取代了旧的API并解决了其缺点。如果需要使用旧的API�
 
 要查询输入文件属性的增量更改，该属性始终需要返回相同的实例。完成此操作的最简单方法是对此类属性使用以下类型之一：[RegularFileProperty](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/RegularFileProperty.html)，[DirectoryProperty](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/DirectoryProperty.html)或[ConfigurableFileCollection](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/ConfigurableFileCollection.html)。
 
-您可以详细了解`RegularFileProperty`，并`DirectoryProperty`在[懒惰配置](/md/延迟配置.md#lazy_configuration)一章，特别是在部分[使用只读和可配置性](/md/%E5%BB%B6%E8%BF%9F%E9%85%8D%E7%BD%AE.md%23%E6%83%B0%E6%80%A7%E9%9B%86%E5%90%88)和[懒惰的文件属性](/md/%E5%BB%B6%E8%BF%9F%E9%85%8D%E7%BD%AE.md%23%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6)。  
+您可以详细了解`RegularFileProperty`，并`DirectoryProperty`在[懒惰配置](/md/延迟配置.md#lazy_configuration)一章，特别是在部分[使用只读和可配置性](/md/延迟配置.md#lazy_properties)和[懒惰的文件属性](/md/延迟配置.md#working_with_files_in_lazy_properties)。  
   
 ╚═════════════════════════════    
   
@@ -642,7 +642,7 @@ _所有_
 
 ### [为缓存的任务存储增量状态](#%E4%B8%BA%E7%BC%93%E5%AD%98%E7%9A%84%E4%BB%BB%E5%8A%A1%E5%AD%98%E5%82%A8%E5%A2%9E%E9%87%8F%E7%8A%B6%E6%80%81)
 
-使用Gradle`InputChanges`并不是创建自上次执行以来仅对更改起作用的任务的唯一方法。诸如Kotlin编译器之类的工具将增量性作为内置功能提供。通常的实现方式是该工具将有关先前执行状态的分析数据存储在某个文件中。如果此类状态文件可[重定位](/md/%E6%9E%84%E5%BB%BA%E7%BC%93%E5%AD%98.md%23%E5%A3%B0%E6%98%8E%E4%BB%BB%E5%8A%A1%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA)，则可以将其声明为任务的输出。这样，当从缓存加载任务的结果时，下一次执行也可以使用从缓存加载的分析数据。
+使用Gradle`InputChanges`并不是创建自上次执行以来仅对更改起作用的任务的唯一方法。诸如Kotlin编译器之类的工具将增量性作为内置功能提供。通常的实现方式是该工具将有关先前执行状态的分析数据存储在某个文件中。如果此类状态文件可[重定位](/md/构建缓存.md#sec:task_output_caching_inputs)，则可以将其声明为任务的输出。这样，当从缓存加载任务的结果时，下一次执行也可以使用从缓存加载的分析数据。
 
 但是，如果状态文件不可重定位，则无法通过构建缓存共享它们。确实，从高速缓存加载任务时，必须清除所有此类状态文件，以防止过时的状态在下一次执行期间使工具混乱。如果通过[task.localState.register（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskLocalState.html#register-
 java.lang.Object...-)声明了旧文件，或者使用[@LocalState](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/LocalState.html)批注标记了属性，Gradle可以确保删除这些旧文件。
@@ -878,7 +878,7 @@ API，Gradle可以开始并行执行任务。换句话说，一旦任务提交�
 
 为了将工作提交给Worker API，必须提供两件事：工作单元的实现以及工作单元的参数。
 
-工作单元的参数定义为实现[WorkParameters](https://docs.gradle.org/6.7.1/javadoc/org/gradle/workers/WorkParameters.html)的接口或抽象类。参数类型必须是[托管类型](/md/%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89Gradle%E7%B1%BB%E5%9E%8B.md%23%E6%89%98%E7%AE%A1%E7%B1%BB%E5%9E%8B)。
+工作单元的参数定义为实现[WorkParameters](https://docs.gradle.org/6.7.1/javadoc/org/gradle/workers/WorkParameters.html)的接口或抽象类。参数类型必须是[托管类型](/md/开发自定义Gradle类型.md#managed_types)。
 
 您可以在[开发自定义Gradle类型中](/md/开发自定义Gradle类型.md#custom_gradle_types)找到有关实现工作参数的更多信息。
 
@@ -940,7 +940,7 @@ build.gradle.kts
         }
     }
 
-一个`WorkAction`实现可以注入提供工作执行过程中的功能，如服务[FileSystemOperations](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/FileSystemOperations.html)在上面的示例服务。有关注入服务类型的更多信息，请参见[服务注入](/md/%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89Gradle%E7%B1%BB%E5%9E%8B.md%23%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%85%A5)。
+一个`WorkAction`实现可以注入提供工作执行过程中的功能，如服务[FileSystemOperations](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/FileSystemOperations.html)在上面的示例服务。有关注入服务类型的更多信息，请参见[服务注入](/md/开发自定义Gradle类型.md#service_injection)。
 
 为了提交工作单元，必须首先获得[WorkerExecutor](https://docs.gradle.org/6.7.1/javadoc/org/gradle/workers/WorkerExecutor.html)。要做到这一点，一个任务应该有注释构造与`javax.inject.Inject`接受一个[WorkerExecutor](https://docs.gradle.org/6.7.1/javadoc/org/gradle/workers/WorkerExecutor.html)参数。创建任务时，Gradle将在运行时注入[WorkerExecutor](https://docs.gradle.org/6.7.1/javadoc/org/gradle/workers/WorkerExecutor.html)的实例。然后可以创建一个[WorkQueue](https://docs.gradle.org/6.7.1/javadoc/org/gradle/workers/WorkQueue.html)对象，并可以提交各个工作项。
 

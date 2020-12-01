@@ -10,7 +10,7 @@
 
 您可以在Linux，macOS或Windows上安装Gradle构建工具。本文档涵盖使用软件包管理器（如SDKMAN）进行安装！或Homebrew，以及手动安装。
 
-建议使用[Gradle wrapper](/md/gradle_wrapper.md%23%E5%8D%87%E7%BA%A7Gradle+Wrap) 升级Gradle。
+建议使用[Gradle wrapper](/md/gradle_wrapper.md#sec:upgrading_wrapper) 升级Gradle。
 
 您可以在“[发行版”页面](https://gradle.org/releases) 上找到所有发行版及其校验和。
 
@@ -114,10 +114,10 @@ Gradle 6.7.1
 
 (environment specific information)
 ```
-如果遇到麻烦，请参阅“[排除安装故障](/md/%E5%AF%B9%E6%9E%84%E5%BB%BA%E8%BF%9B%E8%A1%8C%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4.md%23%E5%AF%B9Gradle%E5%AE%89%E8%A3%85%E8%BF%9B%E8%A1%8C%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4) ”[部分](/md/%E5%AF%B9%E6%9E%84%E5%BB%BA%E8%BF%9B%E8%A1%8C%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4.md%23%E5%AF%B9Gradle%E5%AE%89%E8%A3%85%E8%BF%9B%E8%A1%8C%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4) 。
+如果遇到麻烦，请参阅“[排除安装故障](/md/对构建进行故障排除.md#sec:troubleshooting_installation) ”[部分](/md/对构建进行故障排除.md#sec:troubleshooting_installation) 。
 
 
-您可以通过下载SHA-256文件（可从[发行版中获得](https://gradle.org/releases) ）并按照以下[验证指示信息](/md/gradle_wrapper.md%23%E9%AA%8C%E8%AF%81%E4%B8%8B%E8%BD%BD%E7%9A%84Gradle%E5%8F%91%E8%A1%8C%E7%89%88) 来验证Gradle分发的完整性。
+您可以通过下载SHA-256文件（可从[发行版中获得](https://gradle.org/releases) ）并按照以下[验证指示信息](/md/gradle_wrapper.md#sec:verification) 来验证Gradle分发的完整性。
 
 ## [下一步](#%E4%B8%8B%E4%B8%80%E6%AD%A5)
 
