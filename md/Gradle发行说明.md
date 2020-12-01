@@ -20,17 +20,17 @@ Gradle团队很高兴宣布Gradle 6.7.1。
 
 ## 目录
 
-* [升级说明](#upgrade-instructions)
-* [性能提升](#performance-improvements)
-* [JVM生态系统新功能](#new-jvm-ecosystem-features)
-* [新的依赖项管理功能](#new-dependency-management-features)
-* [其他新功能和可用性改进](#other-new-features-and-usability-improvements)
-* [文档改进](#documentation-improvements)
-* [升级功能](#promoted-features)
-* [已解决的问题](#fixed-issues)
-* [已知的问题](#known-issues)
-* [外部捐款](#external-contributions)
-* [报告问题](#reporting-problems)
+* [升级说明](#升级说明)
+* [性能提升](#性能提升)
+* [JVM生态系统新功能](#JVM生态系统新功能)
+* [新的依赖项管理功能](#新的依赖项管理功能)
+* [其他新功能和可用性改进](#其他新功能和可用性改进)
+* [文档改进](#文档改进)
+* [升级功能](#升级功能)
+* [已解决的问题](#已解决的问题)
+* [已知的问题](#已知的问题)
+* [外部捐款](#外部捐款)
+* [报告问题](#报告问题)
 
 ## 升级说明
 
@@ -234,10 +234,6 @@ Enter selection [1..2] 2
 ### 新样品
 
 该[样本指数]()包括新样本，对如何开始使用Gradle开始为不同的项目类型和编程语言一步一步的说明：
-
-* 使用库构建应用程序：[Java]()，[Groovy]()，[Scala]()，[Kotlin]()
-* 构建一个简单的应用程序：[Java]()，[Groovy]()，[Scala]()，[Kotlin]()，[C ++]()，[Swift]()
-* 构建单个库：[Java]()，[Groovy]()，[Scala]()，[Kotlin]()，[C ++]()，[Swift]()
 
   * 使用库构建应用程序：[Java](https://docs.gradle.org/6.7.1/samples/sample_building_java_applications_multi_project.html)，
   [Groovy](https://docs.gradle.org/6.7.1/samples/sample_building_groovy_applications_multi_project.html)，
