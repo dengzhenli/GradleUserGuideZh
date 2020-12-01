@@ -10,7 +10,7 @@
   * [集合类型](#%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B)
 
 您可以为Gradle开发几种不同类型的“附加组件”，例如[插件](/md/开发自定义Gradle插件.md#custom_plugins)，[任务](/md/开发自定义Gradle任务类型.md#custom_tasks)，
-[项目扩展](/md/开发自定义Gradle插件.md#使插件可配置)或[工件转换](/md/转换解决方案上的依赖工件.md#sec:implementing-
+[项目扩展](/md/%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89Gradle%E6%8F%92%E4%BB%B6.md%23%E4%BD%BF%E6%8F%92%E4%BB%B6%E5%8F%AF%E9%85%8D%E7%BD%AE)或[工件转换](/md/转换解决方案上的依赖工件.md#sec:implementing-
 artifact-
 transforms)，它们全部实现为类和可以在JVM上运行的其他类型。本章讨论了这些类型共有的一些功能和概念。您可以使用这些功能来帮助实现自定义的Gradle类型，并为用户提供一致的DSL。
 
@@ -196,7 +196,7 @@ java.lang.Class-)创建的插件和容器的元素。
 ## [服务注入](#%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%85%A5)
 
 Gradle提供了许多可用于自定义Gradle类型的有用服务。例如，任务可以使用[WorkerExecutor](https://docs.gradle.org/6.7.1/javadoc/org/gradle/workers/WorkerExecutor.html)服务来并行运行工作，如[worker
-API](/md/开发自定义Gradle任务类型.md#工作者API)部分所示。通过
+API](/md/%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89Gradle%E4%BB%BB%E5%8A%A1%E7%B1%BB%E5%9E%8B.md%23%E5%B7%A5%E4%BD%9C%E8%80%85API)部分所示。通过
 _服务注入_ 提供 _服务_ 。
 
 ### [可用服务](#%E5%8F%AF%E7%94%A8%E6%9C%8D%E5%8A%A1)
@@ -205,11 +205,11 @@ _服务注入_ 提供 _服务_ 。
 
   * [ObjectFactory-](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/model/ObjectFactory.html)允许创建模型对象。有关更多详细信息，请参见[创建嵌套对象](#%E5%88%9B%E5%BB%BA%E5%B5%8C%E5%A5%97%E5%AF%B9%E8%B1%A1)。
 
-  * [ProjectLayout-](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/ProjectLayout.html)提供对关键项目位置的访问。有关更多详细信息，请参见[延迟配置](/md/延迟配置.md#处理文件)。该服务在Worker API操作中不可用。
+  * [ProjectLayout-](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/ProjectLayout.html)提供对关键项目位置的访问。有关更多详细信息，请参见[延迟配置](/md/%E5%BB%B6%E8%BF%9F%E9%85%8D%E7%BD%AE.md%23%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6)。该服务在Worker API操作中不可用。
 
   * [ProviderFactory-](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/provider/ProviderFactory.html)创建`Provider`实例。有关更多详细信息，请参见[延迟配置](/md/延迟配置.md#lazy_configuration)。
 
-  * [WorkerExecutor-](https://docs.gradle.org/6.7.1/javadoc/org/gradle/workers/WorkerExecutor.html)允许任务并行运行工作。有关更多详细信息，请参见[worker API](/md/开发自定义Gradle任务类型.md#工作者API)。
+  * [WorkerExecutor-](https://docs.gradle.org/6.7.1/javadoc/org/gradle/workers/WorkerExecutor.html)允许任务并行运行工作。有关更多详细信息，请参见[worker API](/md/%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89Gradle%E4%BB%BB%E5%8A%A1%E7%B1%BB%E5%9E%8B.md%23%E5%B7%A5%E4%BD%9C%E8%80%85API)。
 
   * [FileSystemOperations-](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/file/FileSystemOperations.html)允许任务在文件系统上运行操作，例如删除文件，复制文件或同步目录。
 

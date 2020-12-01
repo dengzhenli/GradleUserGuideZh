@@ -18,7 +18,7 @@ Groovy插件扩展了[Java插件，](https://docs.gradle.org/6.7.1/userguide/jav
 _联合编译_
 ，可让您自由混合并匹配Groovy和Java代码，并具有双向依赖性。例如，Groovy类可以扩展Java类，而Java类又可以扩展Groovy类。这样就可以为作业使用最佳语言，并在需要时用其他语言重写任何类。
 
-请注意，如果您希望从[API/实现分离中](/md/Java库插件.md#API与实现分离)受益，则还可以将`java-
+请注意，如果您希望从[API/实现分离中](/md/Java%E5%BA%93%E6%8F%92%E4%BB%B6.md%23API%E4%B8%8E%E5%AE%9E%E7%8E%B0%E5%88%86%E7%A6%BB)受益，则还可以将`java-
 library`插件应用于Groovy项目。
 
 ## [用法](#%E7%94%A8%E6%B3%95)
@@ -47,7 +47,7 @@ build.gradle.kts
 
 ## [任务](#%E4%BB%BB%E5%8A%A1)
 
-Groovy插件将以下任务添加到项目中。在[此处](/md/构建Java和JVM项目.md#构建其他JVM语言项目)可以找到有关更改对Java编译任务的依赖性的信息。
+Groovy插件将以下任务添加到项目中。在[此处](/md/%E6%9E%84%E5%BB%BAJava%E5%92%8CJVM%E9%A1%B9%E7%9B%AE.md%23%E6%9E%84%E5%BB%BA%E5%85%B6%E4%BB%96JVM%E8%AF%AD%E8%A8%80%E9%A1%B9%E7%9B%AE)可以找到有关更改对Java编译任务的依赖性的信息。
 
 `compileGroovy`—
 [GroovyCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.compile.GroovyCompile.html)
@@ -391,7 +391,7 @@ Groovy插件还修改了一些源集属性：
   
 ## [Groovy编译](#Groovy%E7%BC%96%E8%AF%91)
 
-Groovy插件为项目中的每个源集添加了一个[GroovyCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.compile.GroovyCompile.html)任务。任务类型扩展了`JavaCompile`任务（请参阅[相关的Java插件部分](/md/构建Java和JVM项目.md#编译代码)）。该`GroovyCompile`任务支持官方Groovy编译器的大多数配置选项。
+Groovy插件为项目中的每个源集添加了一个[GroovyCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.compile.GroovyCompile.html)任务。任务类型扩展了`JavaCompile`任务（请参阅[相关的Java插件部分](/md/%E6%9E%84%E5%BB%BAJava%E5%92%8CJVM%E9%A1%B9%E7%9B%AE.md%23%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81)）。该`GroovyCompile`任务支持官方Groovy编译器的大多数配置选项。
 
 表2. Groovy插件-GroovyCompile属性 
 
@@ -502,7 +502,7 @@ buildSrc/src/main/kotlin/myproject.groovy-conventions.gradle.kts
 
 ## [针对Java 6或Java 7进行编译和测试](#%E9%92%88%E5%AF%B9Java+6%E6%88%96Java+7%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E5%92%8C%E6%B5%8B%E8%AF%95)
 
-Groovy编译器将始终与用于启动Gradle的Java版本一起执行。您应该将`sourceCompatibility`和设置`targetCompatibility`为`1.6`或`1.7`。如果您还具有Java源文件，则可以按照与[Java插件](/md/构建Java和JVM项目.md#定位特定的Java版本)相同的步骤进行操作，以确保使用正确的Java编译器。
+Groovy编译器将始终与用于启动Gradle的Java版本一起执行。您应该将`sourceCompatibility`和设置`targetCompatibility`为`1.6`或`1.7`。如果您还具有Java源文件，则可以按照与[Java插件](/md/%E6%9E%84%E5%BB%BAJava%E5%92%8CJVM%E9%A1%B9%E7%9B%AE.md%23%E5%AE%9A%E4%BD%8D%E7%89%B9%E5%AE%9A%E7%9A%84Java%E7%89%88%E6%9C%AC)相同的步骤进行操作，以确保使用正确的Java编译器。
 
 ### [示例：为Groovy配置Java 6构建](#%E7%A4%BA%E4%BE%8B%EF%BC%9A%E4%B8%BAGroovy%E9%85%8D%E7%BD%AEJava+6%E6%9E%84%E5%BB%BA)
 

@@ -84,13 +84,13 @@ _取决于_ ：所有任务`publish _PubName_ PublicationToMavenLocal`
 
 ## [刊物](#%E5%88%8A%E7%89%A9)
 
-此插件提供[出版物](/md/依赖管理术语.md#作品（publication）)类型的[MavenPublication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html)。要了解如何定义和使用出版物，请参见[基本出版](/md/将项目发布为模块.md#设置基本发布)部分。
+此插件提供[出版物](/md/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%AF%E8%AF%AD.md%23%E4%BD%9C%E5%93%81%EF%BC%88publication%EF%BC%89)类型的[MavenPublication](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html)。要了解如何定义和使用出版物，请参见[基本出版](/md/%E5%B0%86%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E4%B8%BA%E6%A8%A1%E5%9D%97.md%23%E8%AE%BE%E7%BD%AE%E5%9F%BA%E6%9C%AC%E5%8F%91%E5%B8%83)部分。
 
 您可以在Maven发布中配置以下四项主要内容：
 
-  * 一个[组件](/md/依赖管理术语.md#component)—通过[MavenPublication.from（org.gradle.api.component.SoftwareComponent）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html#org.gradle.api.publish.maven.MavenPublication:from\(org.gradle.api.component.SoftwareComponent\))。
+  * 一个[组件](/md/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%AF%E8%AF%AD.md%23component)—通过[MavenPublication.from（org.gradle.api.component.SoftwareComponent）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html#org.gradle.api.publish.maven.MavenPublication:from\(org.gradle.api.component.SoftwareComponent\))。
 
-  * [自定义工件](/md/定制发布.md#将自定义工件添加到发布中)-通过[MavenPublication.artifact（java.lang.Object）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html#org.gradle.api.publish.maven.MavenPublication:artifact\(java.lang.Object\))方法。有关自定义Maven工件的可用配置选项，请参见[MavenArtifact](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenArtifact.html)。
+  * [自定义工件](/md/%E5%AE%9A%E5%88%B6%E5%8F%91%E5%B8%83.md%23%E5%B0%86%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E5%8F%91%E5%B8%83%E4%B8%AD)-通过[MavenPublication.artifact（java.lang.Object）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPublication.html#org.gradle.api.publish.maven.MavenPublication:artifact\(java.lang.Object\))方法。有关自定义Maven工件的可用配置选项，请参见[MavenArtifact](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenArtifact.html)。
 
   * 标准元数据一样`artifactId`，`groupId`和`version`。
 
@@ -315,7 +315,7 @@ runtime`。
 
 ## [储存库](#%E5%82%A8%E5%AD%98%E5%BA%93)
 
-该插件提供了[MavenArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)类型的[存储库](/md/依赖管理术语.md#repository)。要了解如何定义和使用存储库进行发布，请参见“[基本发布](/md/将项目发布为模块.md#设置基本发布)”部分。[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)[](/md/将项目发布为模块.md#设置基本发布)
+该插件提供了[MavenArtifactRepository](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)类型的[存储库](/md/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%AF%E8%AF%AD.md%23repository)。要了解如何定义和使用存储库进行发布，请参见“[基本发布](/md/%E5%B0%86%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E4%B8%BA%E6%A8%A1%E5%9D%97.md%23%E8%AE%BE%E7%BD%AE%E5%9F%BA%E6%9C%AC%E5%8F%91%E5%B8%83)”部分。[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.artifacts.repositories.MavenArtifactRepository.html)[](/md/%E5%B0%86%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E4%B8%BA%E6%A8%A1%E5%9D%97.md%23%E8%AE%BE%E7%BD%AE%E5%9F%BA%E6%9C%AC%E5%8F%91%E5%B8%83)
 
 这是定义发布存储库的简单示例：
 

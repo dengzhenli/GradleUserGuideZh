@@ -118,7 +118,7 @@ _不必位于同一目录中_ ！
 
   * 源文件及其位置
 
-  * 编译类路径，包括任何必需的依赖项（通过Gradle[配置](/md/依赖管理术语.md#配置（configuration）)）
+  * 编译类路径，包括任何必需的依赖项（通过Gradle[配置](/md/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E6%9C%AF%E8%AF%AD.md%23%E9%85%8D%E7%BD%AE%EF%BC%88configuration%EF%BC%89)）
 
   * 放置已编译的类文件的位置
 
@@ -155,13 +155,13 @@ _SourceSet_ Resources``processResources``main`
 
   * 不同的测试类型需要不同的编译或运行时类路径或设置上的其他差异
 
-您可以在Java测试一章中看到这种方法的示例，该示例向您[展示了如何](/md/在Java和JVM项目中进行测试.md#配置集成测试)在项目中[设置集成测试](/md/在Java和JVM项目中进行测试.md#配置集成测试)。
+您可以在Java测试一章中看到这种方法的示例，该示例向您[展示了如何](/md/%E5%9C%A8Java%E5%92%8CJVM%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%BF%9B%E8%A1%8C%E6%B5%8B%E8%AF%95.md%23%E9%85%8D%E7%BD%AE%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95)在项目中[设置集成测试](/md/%E5%9C%A8Java%E5%92%8CJVM%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%BF%9B%E8%A1%8C%E6%B5%8B%E8%AF%95.md%23%E9%85%8D%E7%BD%AE%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95)。
 
 您将了解有关源集及其提供的功能的更多信息：
 
   * [自定义文件和目录位置](#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E4%BD%8D%E7%BD%AE)
 
-  * [配置Java集成测试](/md/在Java和JVM项目中进行测试.md#配置集成测试)
+  * [配置Java集成测试](/md/%E5%9C%A8Java%E5%92%8CJVM%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%BF%9B%E8%A1%8C%E6%B5%8B%E8%AF%95.md%23%E9%85%8D%E7%BD%AE%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95)
 
 ## [管理你的依赖](#%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E4%BE%9D%E8%B5%96)
 
@@ -245,17 +245,17 @@ Java库插件在历史上一直使用该`compile`配置作为编译和运行项�
   
 我们仅在此处进行了介绍，因此，一旦您熟悉使用Gradle构建Java项目的基础知识，我们建议您阅读专用的依赖管理章节。需要进一步阅读的一些常见方案包括：
 
-  * 定义与[Maven](/md/声明存储库.md#Maven仓库)或[Ivy兼容](/md/声明存储库.md#Ivy仓库)的自定义存储库
+  * 定义与[Maven](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23Maven%E4%BB%93%E5%BA%93)或[Ivy兼容](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23Ivy%E4%BB%93%E5%BA%93)的自定义存储库
 
-  * 使用[本地文件系统目录中的](/md/声明存储库.md#平面目录存储库)依赖项[](/md/声明存储库.md#平面目录存储库)
+  * 使用[本地文件系统目录中的](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E5%B9%B3%E9%9D%A2%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E5%BA%93)依赖项[](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E5%B9%B3%E9%9D%A2%E7%9B%AE%E5%BD%95%E5%AD%98%E5%82%A8%E5%BA%93)
 
-  * 使用[变化的版本](/md/处理随时间变化的版本.md#声明版本变更)（例如SNAPSHOT）和[动态的](/md/处理随时间变化的版本.md#声明动态版本)（范围）声明依赖项
+  * 使用[变化的版本](/md/%E5%A4%84%E7%90%86%E9%9A%8F%E6%97%B6%E9%97%B4%E5%8F%98%E5%8C%96%E7%9A%84%E7%89%88%E6%9C%AC.md%23%E5%A3%B0%E6%98%8E%E7%89%88%E6%9C%AC%E5%8F%98%E6%9B%B4)（例如SNAPSHOT）和[动态的](/md/%E5%A4%84%E7%90%86%E9%9A%8F%E6%97%B6%E9%97%B4%E5%8F%98%E5%8C%96%E7%9A%84%E7%89%88%E6%9C%AC.md%23%E5%A3%B0%E6%98%8E%E5%8A%A8%E6%80%81%E7%89%88%E6%9C%AC)（范围）声明依赖项
 
-  * 将同级[项目](/md/声明依赖.md#项目依赖)声明[为依赖项](/md/声明依赖.md#项目依赖)
+  * 将同级[项目](/md/%E5%A3%B0%E6%98%8E%E4%BE%9D%E8%B5%96.md%23%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96)声明[为依赖项](/md/%E5%A3%B0%E6%98%8E%E4%BE%9D%E8%B5%96.md%23%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96)
 
   * [控制传递依赖及其版本](/md/升级传递依赖的版本.md)
 
-  * 通过[组合构建](/md/复合构建.md#composite_builds)测试对第三方依赖关系的修复（这是发布到[Maven Local](/md/声明存储库.md#本地Maven存储库)和从[Maven Local](/md/声明存储库.md#本地Maven存储库)消费的更好的替代方法）
+  * 通过[组合构建](/md/复合构建.md#composite_builds)测试对第三方依赖关系的修复（这是发布到[Maven Local](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E6%9C%AC%E5%9C%B0Maven%E5%AD%98%E5%82%A8%E5%BA%93)和从[Maven Local](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E6%9C%AC%E5%9C%B0Maven%E5%AD%98%E5%82%A8%E5%BA%93)消费的更好的替代方法）
 
 您会发现Gradle具有丰富的API用于处理依赖关系-一种需要花费时间来掌握的API，但对于常见的情况却很容易使用。
 
@@ -487,13 +487,13 @@ build.gradle.kts
     }
 
 唯一的要求是必须安装Java 7，并且该Java
-7必须[位于Gradle可以自动检测](/md/JVM项目的工具链.md#自动检测已安装的工具链)或[显式配置的位置](/md/JVM项目的工具链.md#自定义工具链位置)。
+7必须[位于Gradle可以自动检测](/md/JVM%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B7%A5%E5%85%B7%E9%93%BE.md%23%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B%E5%B7%B2%E5%AE%89%E8%A3%85%E7%9A%84%E5%B7%A5%E5%85%B7%E9%93%BE)或[显式配置的位置](/md/JVM%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%B7%A5%E5%85%B7%E9%93%BE.md%23%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E9%93%BE%E4%BD%8D%E7%BD%AE)。
 
 ### [分别编译独立的源](#%E5%88%86%E5%88%AB%E7%BC%96%E8%AF%91%E7%8B%AC%E7%AB%8B%E7%9A%84%E6%BA%90)
 
 大多数项目至少有两个独立的源集：生产代码和测试代码。Gradle已经将此场景作为其Java约定的一部分，但是如果您有其他来源的话该怎么办？最常见的情况之一是当您进行某种形式或其他形式的单独集成测试时。在这种情况下，自定义源集可能正是您所需要的。
 
-您可以在[Java测试一章中](/md/在Java和JVM项目中进行测试.md#配置集成测试)看到设置集成测试的完整示例。您可以设置以相同方式担当不同角色的其他源集。问题就变成了：您何时应该定义自定义源集？
+您可以在[Java测试一章中](/md/%E5%9C%A8Java%E5%92%8CJVM%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%BF%9B%E8%A1%8C%E6%B5%8B%E8%AF%95.md%23%E9%85%8D%E7%BD%AE%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95)看到设置集成测试的完整示例。您可以设置以相同方式担当不同角色的其他源集。问题就变成了：您何时应该定义自定义源集？
 
 要回答该问题，请考虑以下来源：
 
@@ -525,7 +525,7 @@ Resources``processResources``main` __
 
 ### [Java属性文件和可复制的内部版本](#Java%E5%B1%9E%E6%80%A7%E6%96%87%E4%BB%B6%E5%92%8C%E5%8F%AF%E5%A4%8D%E5%88%B6%E7%9A%84%E5%86%85%E9%83%A8%E7%89%88%E6%9C%AC)
 
-您可以通过[WriteProperties](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.WriteProperties.html)任务轻松创建Java属性文件，该任务解决了一个众所周知的问题，`Properties.store()`即降低[增量构建](/md/处理任务.md#最新检查（又称增量构建）)的用处。
+您可以通过[WriteProperties](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.WriteProperties.html)任务轻松创建Java属性文件，该任务解决了一个众所周知的问题，`Properties.store()`即降低[增量构建](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E6%9C%80%E6%96%B0%E6%A3%80%E6%9F%A5%EF%BC%88%E5%8F%88%E7%A7%B0%E5%A2%9E%E9%87%8F%E6%9E%84%E5%BB%BA%EF%BC%89)的用处。
 
 即使使用相同的属性和值，用于编写属性文件的标准Java
 API也会每次生成一个唯一的文件，因为注释中包括了时间戳。`WriteProperties`如果所有属性均未更改，则Gradle的任务逐字节生成完全相同的输出。这是通过对属性文件的生成方式进行一些调整来实现的：
@@ -920,7 +920,7 @@ Gradle通过[Java库插件](/md/Java库插件.md#java_library_plugin)来管理�
 _实现_ 之外，还引入了 _api_ 配置。如果依赖项的类型出现在库的公共类的公共字段或方法中，则该依赖项将通过库的公共API公开，因此应将其添加到
 _api_ 配置中。否则，依赖项是内部实现细节，应将其添加到 _Implementation中_ 。 __ __ __
 
-如果不确定API和实现依赖项之间的区别，请参阅[Java库插件一章](/md/Java库插件.md#识别API和实现依赖性)中的详细说明。另外，您可以探索[构建Java库](https://docs.gradle.org/6.7.1/samples/sample_building_java_libraries.html)的基本，实际[示例](https://docs.gradle.org/6.7.1/samples/sample_building_java_libraries.html)。
+如果不确定API和实现依赖项之间的区别，请参阅[Java库插件一章](/md/Java%E5%BA%93%E6%8F%92%E4%BB%B6.md%23%E8%AF%86%E5%88%ABAPI%E5%92%8C%E5%AE%9E%E7%8E%B0%E4%BE%9D%E8%B5%96%E6%80%A7)中的详细说明。另外，您可以探索[构建Java库](https://docs.gradle.org/6.7.1/samples/sample_building_java_libraries.html)的基本，实际[示例](https://docs.gradle.org/6.7.1/samples/sample_building_java_libraries.html)。
 
 ## [构建Java应用程序](#%E6%9E%84%E5%BB%BAJava%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F)
 

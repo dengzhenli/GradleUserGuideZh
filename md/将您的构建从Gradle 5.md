@@ -40,7 +40,7 @@
 
 从[Gradle 3.4](https://docs.gradle.org/3.4/release-notes.html#the-java-library-plugin)开始，不鼓励在Java生态系统插件中使用`compile`和`runtime`配置。[](https://docs.gradle.org/3.4/release-notes.html#the-java-library-plugin)
 
-这些配置用于从`main`源集中编译和运行代码。其他源集创建类似的配置（例如`testCompile`和`testRuntime`用于`test`源集），也不应使用。的`implementation`，`api`，`compileOnly`和`runtimeOnly`配置应该用于依赖性和申报`compileClasspath`和`runtimeClasspath`配置，以解决依赖关系。请参阅[这些配置的关系](/md/Java库插件.md#Java库插件配置)。
+这些配置用于从`main`源集中编译和运行代码。其他源集创建类似的配置（例如`testCompile`和`testRuntime`用于`test`源集），也不应使用。的`implementation`，`api`，`compileOnly`和`runtimeOnly`配置应该用于依赖性和申报`compileClasspath`和`runtimeClasspath`配置，以解决依赖关系。请参阅[这些配置的关系](/md/Java%E5%BA%93%E6%8F%92%E4%BB%B6.md%23Java%E5%BA%93%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE)。
 
 #### [旧版发布系统已弃用，并替换为`*-publish`插件](#%E6%97%A7%E7%89%88%E5%8F%91%E5%B8%83%E7%B3%BB%E7%BB%9F%E5%B7%B2%E5%BC%83%E7%94%A8%EF%BC%8C%E5%B9%B6%E6%9B%BF%E6%8D%A2%E4%B8%BA%60*-publish%60%E6%8F%92%E4%BB%B6)
 
@@ -71,14 +71,14 @@
     Property 'inputDirectory' is declared without normalization specified. Properties of cacheable work must declare their normalization via @PathSensitive, @Classpath or @CompileClasspath. Defaulting to PathSensitivity.ABSOLUTE. This behaviour has been deprecated and is scheduled to be removed in Gradle 7.0.
     Property 'outputFile' is not annotated with an input or output annotation. This behaviour has been deprecated and is scheduled to be removed in Gradle 7.0.
 
-如果您拥有相关任务的代码，则可以[按照建议](/md/处理任务.md#运行时验证)进行修复。您还可以`--stacktrace`用来查看每个警告的源代码。
+如果您拥有相关任务的代码，则可以[按照建议](/md/%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1.md%23%E8%BF%90%E8%A1%8C%E6%97%B6%E9%AA%8C%E8%AF%81)进行修复。您还可以`--stacktrace`用来查看每个警告的源代码。
 
 否则，您需要将问题报告给相关任务或插件的维护者。
 
 #### [`IncrementalTaskInputs`不推荐使用用于增量任务的旧API，](#%60IncrementalTaskInputs%60%E4%B8%8D%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%E7%94%A8%E4%BA%8E%E5%A2%9E%E9%87%8F%E4%BB%BB%E5%8A%A1%E7%9A%84%E6%97%A7API%EF%BC%8C)
 
 在Gradle
-5.4中，我们引入了用于实现[增量任务](/md/开发自定义Gradle任务类型.md#增量任务)的新API
+5.4中，我们引入了用于实现[增量任务](/md/%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89Gradle%E4%BB%BB%E5%8A%A1%E7%B1%BB%E5%9E%8B.md%23%E5%A2%9E%E9%87%8F%E4%BB%BB%E5%8A%A1)的新API
 ：[InputChanges](https://docs.gradle.org/6.7.1/dsl/org.gradle.work.InputChanges.html)。基于的旧API`IncrementalTaskInputs`已被弃用。
 
 #### [强制依赖](#%E5%BC%BA%E5%88%B6%E4%BE%9D%E8%B5%96)
@@ -270,7 +270,7 @@ module-metadata-latest-specification.md)中。
 以前，Gradle还将寻找默认的工件（`.jar`）。当使用多个存储库减慢构建速度时，此行为通常会导致大量不必要的请求。
 
 您可以通过添加`artifact()`
-[元数据源](/md/声明存储库.md#支持的元数据源)来选择选定存储库的旧行为。
+[元数据源](/md/%E5%A3%B0%E6%98%8E%E5%AD%98%E5%82%A8%E5%BA%93.md%23%E6%94%AF%E6%8C%81%E7%9A%84%E5%85%83%E6%95%B0%E6%8D%AE%E6%BA%90)来选择选定存储库的旧行为。
 
 #### [更改pom`packaging`属性不再更改工件扩展](#%E6%9B%B4%E6%94%B9pom%60packaging%60%E5%B1%9E%E6%80%A7%E4%B8%8D%E5%86%8D%E6%9B%B4%E6%94%B9%E5%B7%A5%E4%BB%B6%E6%89%A9%E5%B1%95)
 
@@ -297,7 +297,7 @@ module-metadata-latest-specification.md)中。
 
 以前，buildSrc项目是在应用项目的设置脚本之前构建的，并且其类在脚本中可见。现在，在设置脚本及其类对它不可见之后，将构建buildSrc。buildSrc类对于项目构建脚本和脚本插件仍然可见。
 
-可以通过[声明外部依赖项](/md/构建脚本基础.md#构建脚本的外部依赖关系)从设置脚本中使用自定义逻辑。
+可以通过[声明外部依赖项](/md/%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80.md%23%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC%E7%9A%84%E5%A4%96%E9%83%A8%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB)从设置脚本中使用自定义逻辑。
 
 #### [`pluginManagement`现在隔离了设置脚本中的块](#%60pluginManagement%60%E7%8E%B0%E5%9C%A8%E9%9A%94%E7%A6%BB%E4%BA%86%E8%AE%BE%E7%BD%AE%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E5%9D%97)
 
@@ -501,11 +501,11 @@ Framework插件](https://gradle.github.io/playframework)。
 
   * 该`org.gradle.testfixtures.ProjectBuilder`构造已被删除。请`ProjectBuilder.builder()`改用。
 
-  * 当[增量Groovy的编译](/md/Groovy插件.md#Groovy增量编译)启用后，源根的错误配置或启用Java注释对Groovy现在失败的构建。在这些情况下要进行编译时，请禁用增量Groovy编译。
+  * 当[增量Groovy的编译](/md/Groovy%E6%8F%92%E4%BB%B6.md%23Groovy%E5%A2%9E%E9%87%8F%E7%BC%96%E8%AF%91)启用后，源根的错误配置或启用Java注释对Groovy现在失败的构建。在这些情况下要进行编译时，请禁用增量Groovy编译。
 
-  * `ComponentSelectionRule`不再可以注入元数据或Ivy描述符。请改用[`ComponentSelection`参数](/md/处理随时间变化的版本.md#使用组件选择规则)上的方法。
+  * `ComponentSelectionRule`不再可以注入元数据或Ivy描述符。请改用[`ComponentSelection`参数](/md/%E5%A4%84%E7%90%86%E9%9A%8F%E6%97%B6%E9%97%B4%E5%8F%98%E5%8C%96%E7%9A%84%E7%89%88%E6%9C%AC.md%23%E4%BD%BF%E7%94%A8%E7%BB%84%E4%BB%B6%E9%80%89%E6%8B%A9%E8%A7%84%E5%88%99)上的方法。
 
-  * 声明的[增量任务](/md/开发自定义Gradle任务类型.md#增量任务)不宣而输出现在是一个错误。声明文件输出或改用[TaskOutputs.upToDateWhen（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-groovy.lang.Closure-)。
+  * 声明的[增量任务](/md/%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89Gradle%E4%BB%BB%E5%8A%A1%E7%B1%BB%E5%9E%8B.md%23%E5%A2%9E%E9%87%8F%E4%BB%BB%E5%8A%A1)不宣而输出现在是一个错误。声明文件输出或改用[TaskOutputs.upToDateWhen（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-groovy.lang.Closure-)。
 
   * 该`getEffectiveAnnotationProcessorPath()`方法已从`JavaCompile`和`ScalaCompile`任务中删除。
 
@@ -515,7 +515,7 @@ Framework插件](https://gradle.github.io/playframework)。
 
   * `TaskInputs.getProperties()`现在返回的地图不可修改。尝试修改它会导致`UnsupportedOperationException`被抛出。
 
-  * 5.6中引入的孵化[功能解析](/md/处理互斥依赖性.md#在候选人之间进行选择)API进行了细微更改，以允许根据变体名称选择变体
+  * 5.6中引入的孵化[功能解析](/md/%E5%A4%84%E7%90%86%E4%BA%92%E6%96%A5%E4%BE%9D%E8%B5%96%E6%80%A7.md%23%E5%9C%A8%E5%80%99%E9%80%89%E4%BA%BA%E4%B9%8B%E9%97%B4%E8%BF%9B%E8%A1%8C%E9%80%89%E6%8B%A9)API进行了细微更改，以允许根据变体名称选择变体
 
 ## [从5.5或更早版本升级](#%E4%BB%8E5.5%E6%88%96%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
 
@@ -535,7 +535,7 @@ Framework插件](https://gradle.github.io/playframework)。
 
 #### [声明没有输出的增量任务](#%E5%A3%B0%E6%98%8E%E6%B2%A1%E6%9C%89%E8%BE%93%E5%87%BA%E7%9A%84%E5%A2%9E%E9%87%8F%E4%BB%BB%E5%8A%A1)
 
-现在不建议声明[增量任务](/md/开发自定义Gradle任务类型.md#增量任务)而不声明输出。声明文件输出或改用[TaskOutputs.upToDateWhen（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-
+现在不建议声明[增量任务](/md/%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89Gradle%E4%BB%BB%E5%8A%A1%E7%B1%BB%E5%9E%8B.md%23%E5%A2%9E%E9%87%8F%E4%BB%BB%E5%8A%A1)而不声明输出。声明文件输出或改用[TaskOutputs.upToDateWhen（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskOutputs.html#upToDateWhen-
 groovy.lang.Closure-)。
 
 这将成为Gradle 6.0中的错误。
@@ -615,7 +615,7 @@ test-sources)的属性。此更改需要Buildship 3.1.1或更高版本。
        resolutionStrategy.capabilitiesResolution.all { selectHighestVersion() }
     }
 
-有关更多选项，请参见[文档的功能部分](/md/处理互斥依赖性.md#组件功能介绍)。
+有关更多选项，请参见[文档的功能部分](/md/%E5%A4%84%E7%90%86%E4%BA%92%E6%96%A5%E4%BE%9D%E8%B5%96%E6%80%A7.md%23%E7%BB%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D)。
 
 #### [文件删除操作不遵循符号链接目录](#%E6%96%87%E4%BB%B6%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C%E4%B8%8D%E9%81%B5%E5%BE%AA%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5%E7%9B%AE%E5%BD%95)
 
@@ -681,7 +681,7 @@ NOTES-1.9.14.html)从1.9.13。
 #### [改进了工作进程的类路径分离](#%E6%94%B9%E8%BF%9B%E4%BA%86%E5%B7%A5%E4%BD%9C%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%B1%BB%E8%B7%AF%E5%BE%84%E5%88%86%E7%A6%BB)
 
 使用隔离时由[Worker
-API](/md/开发自定义Gradle任务类型.md#工作者API)启动的工作守护程序的系统类路径`PROCESS`已减少为Gradle基础结构的最小集合。用户代码仍被隔离到单独的类加载器中，以将其与Gradle运行时隔离。对于使用worker
+API](/md/%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89Gradle%E4%BB%BB%E5%8A%A1%E7%B1%BB%E5%9E%8B.md%23%E5%B7%A5%E4%BD%9C%E8%80%85API)启动的工作守护程序的系统类路径`PROCESS`已减少为Gradle基础结构的最小集合。用户代码仍被隔离到单独的类加载器中，以将其与Gradle运行时隔离。对于使用worker
 API的任务，这应该是透明的更改，但是Gradle的早期版本在worker进程中混合了用户代码和Gradle内部。依赖于`java.class.path`系统属性`java.class.path`之类的工作者动作可能会受到影响，因为现在仅代表Gradle内部结构的类路径。
 
 ## [从5.3或更早版本升级](#%E4%BB%8E5.3%E6%88%96%E6%9B%B4%E6%97%A9%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7)
@@ -793,7 +793,7 @@ publish`除非它们也已作为工件添加到发布配置中，否则不会发
 
 由于JDK
 11不再支持更改正在运行的进程的工作目录，因此现在禁止通过其fork选项设置工作程序的工作目录。现在，所有工作程序都使用相同的工作目录来启用重用。请改为将文件和目录作为参数传递。请参阅[Worker
-API文档](/md/开发自定义Gradle任务类型.md#工作者API)中的示例。
+API文档](/md/%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89Gradle%E4%BB%BB%E5%8A%A1%E7%B1%BB%E5%9E%8B.md%23%E5%B7%A5%E4%BD%9C%E8%80%85API)中的示例。
 
 #### [更改本机链接任务](#%E6%9B%B4%E6%94%B9%E6%9C%AC%E6%9C%BA%E9%93%BE%E6%8E%A5%E4%BB%BB%E5%8A%A1)
 

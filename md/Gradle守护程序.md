@@ -199,7 +199,7 @@ daemon`可以为构建指定开关，以防止使用守护程序。这对于诊�
 
 ## [工具和IDE](#%E5%B7%A5%E5%85%B7%E5%92%8CIDE)
 
-IDE和其他工具用于与Gradle集成的[Gradle Tooling API](/md/Gradle和第三方工具.md#使用Tooling%20API嵌入Gradle)
+IDE和其他工具用于与Gradle集成的[Gradle Tooling API](/md/Gradle%E5%92%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7.md%23%E4%BD%BF%E7%94%A8Tooling+API%E5%B5%8C%E5%85%A5Gradle)
 _始终_ 使用Gradle守护程序执行构建。如果要在IDE中执行Gradle构建，则使用的是Gradle Daemon，而无需为您的环境启用它。
 
 ## [Gradle守护程序如何使构建更快？](#Gradle%E5%AE%88%E6%8A%A4%E7%A8%8B%E5%BA%8F%E5%A6%82%E4%BD%95%E4%BD%BF%E6%9E%84%E5%BB%BA%E6%9B%B4%E5%BF%AB%EF%BC%9F)

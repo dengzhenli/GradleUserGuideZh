@@ -59,19 +59,19 @@ _取第一个_ ：
 
     
 
-设置为true时，单个输入属性哈希值和每个任务的构建缓存键都记录在控制台上。了解有关[任务输出缓存的](/md/构建缓存.md#任务输出缓存)更多信息。
+设置为true时，单个输入属性哈希值和每个任务的构建缓存键都记录在控制台上。了解有关[任务输出缓存的](/md/%E6%9E%84%E5%BB%BA%E7%BC%93%E5%AD%98.md%23%E4%BB%BB%E5%8A%A1%E8%BE%93%E5%87%BA%E7%BC%93%E5%AD%98)更多信息。
 
 `org.gradle.configureondemand=(true,false)`
 
     
 
-启用[按需](/md/配置时间和执行时间.md#按需配置)孵化[配置](/md/配置时间和执行时间.md#按需配置)，Gradle将尝试仅配置必要的项目。
+启用[按需](/md/%E9%85%8D%E7%BD%AE%E6%97%B6%E9%97%B4%E5%92%8C%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4.md%23%E6%8C%89%E9%9C%80%E9%85%8D%E7%BD%AE)孵化[配置](/md/%E9%85%8D%E7%BD%AE%E6%97%B6%E9%97%B4%E5%92%8C%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4.md%23%E6%8C%89%E9%9C%80%E9%85%8D%E7%BD%AE)，Gradle将尝试仅配置必要的项目。
 
 `org.gradle.console=(auto,plain,rich,verbose)`
 
     
 
-自定义控制台输出的颜色或详细程度。默认值取决于Gradle的调用方式。有关其他详细信息，请参见[命令行日志记录](/md/命令行界面.md#记录选项)。
+自定义控制台输出的颜色或详细程度。默认值取决于Gradle的调用方式。有关其他详细信息，请参见[命令行日志记录](/md/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2.md%23%E8%AE%B0%E5%BD%95%E9%80%89%E9%A1%B9)。
 
 `org.gradle.daemon=(true,false)`
 
@@ -107,7 +107,7 @@ _取第一个_ ：
 
     
 
-当设置为安静，警告，生命周期，信息或调试时，Gradle将使用此日志级别。这些值不区分大小写。该`lifecycle`级别是默认级别。请参阅[选择日志级别](/md/使用记录.md#选择日志级别)。
+当设置为安静，警告，生命周期，信息或调试时，Gradle将使用此日志级别。这些值不区分大小写。该`lifecycle`级别是默认级别。请参阅[选择日志级别](/md/%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95.md%23%E9%80%89%E6%8B%A9%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB)。
 
 `org.gradle.parallel=(true,false)`
 
@@ -119,32 +119,32 @@ _取第一个_ ：
 
     
 
-指定Gradle守护程序及其启动的所有进程的调度优先级。默认值为`normal`。另请参阅[性能命令行选项](/md/命令行界面.md#性能选项)。
+指定Gradle守护程序及其启动的所有进程的调度优先级。默认值为`normal`。另请参阅[性能命令行选项](/md/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2.md%23%E6%80%A7%E8%83%BD%E9%80%89%E9%A1%B9)。
 
 `org.gradle.vfs.verbose=(true,false)`
 
     
 
-在[监视文件系统](/md/Gradle守护程序.md#观看文件系统)时配置详细日志记录。
+在[监视文件系统](/md/Gradle%E5%AE%88%E6%8A%A4%E7%A8%8B%E5%BA%8F.md%23%E8%A7%82%E7%9C%8B%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F)时配置详细日志记录。
 _默认为关闭_ 。
 
 `org.gradle.vfs.watch=(true,false)`
 
     
-切换[观看文件系统](/md/Gradle守护程序.md#观看文件系统)。允许Gradle在下一个版本中重用有关文件系统的信息。
+切换[观看文件系统](/md/Gradle%E5%AE%88%E6%8A%A4%E7%A8%8B%E5%BA%8F.md%23%E8%A7%82%E7%9C%8B%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F)。允许Gradle在下一个版本中重用有关文件系统的信息。
 _默认为关闭_ 。
 
 `org.gradle.warning.mode=(all,fail,summary,none)`
 
     
 
-当设置为`all`，`summary`或者`none`，Gradle会使用不同的预警类型的显示器。有关详细信息，请参见[命令行日志记录选项](/md/命令行界面.md#记录选项)。
+当设置为`all`，`summary`或者`none`，Gradle会使用不同的预警类型的显示器。有关详细信息，请参见[命令行日志记录选项](/md/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2.md%23%E8%AE%B0%E5%BD%95%E9%80%89%E9%A1%B9)。
 
 `org.gradle.workers.max=(max # of worker processes)`
 
     
 
-配置后，Gradle将最多使用给定数量的工人。默认值为CPU处理器数。另请参阅[性能命令行选项](/md/命令行界面.md#性能选项)。
+配置后，Gradle将最多使用给定数量的工人。默认值为CPU处理器数。另请参阅[性能命令行选项](/md/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2.md%23%E6%80%A7%E8%83%BD%E9%80%89%E9%A1%B9)。
 
 下面的示例演示各种属性的用法。
 
@@ -217,7 +217,7 @@ build.gradle.kts
 
     
 
-指定用户名以使用HTTP基本认证从服务器下载Gradle发行版。在[身份验证的包装下载中](/md/gradle_wrapper.md#经过身份验证的Gradle发行版下载)了解更多信息。
+指定用户名以使用HTTP基本认证从服务器下载Gradle发行版。在[身份验证的包装下载中](/md/gradle_wrapper.md%23%E7%BB%8F%E8%BF%87%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%9A%84Gradle%E5%8F%91%E8%A1%8C%E7%89%88%E4%B8%8B%E8%BD%BD)了解更多信息。
 
 `gradle.wrapperPassword=(mypassword)`
 
@@ -346,7 +346,7 @@ build.gradle.kts
     }
 
 请参阅[Test](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)
-API文档中的其他示例，以及[Java插件参考中的测试执行](/md/在Java和JVM项目中进行测试.md#测试执行)。
+API文档中的其他示例，以及[Java插件参考中的测试执行](/md/%E5%9C%A8Java%E5%92%8CJVM%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%BF%9B%E8%A1%8C%E6%B5%8B%E8%AF%95.md%23%E6%B5%8B%E8%AF%95%E6%89%A7%E8%A1%8C)。
 
 [](https://scans.gradle.com/)使用该`--scan`选项时，[构建扫描](https://scans.gradle.com/)将告诉您有关执行构建的JVM的信息。
 

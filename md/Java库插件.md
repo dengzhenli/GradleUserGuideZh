@@ -438,7 +438,7 @@ build.gradle.kts
 。
 [此示例](https://docs.gradle.org/6.7.1/samples/sample_java_modules_with_transform.html)包含一个小的
 _buildSrc_
-插件，该插件注册了您可以使用并根据需要进行调整的转换。如果您想构建一个完全[模块化的应用程序](/md/Java应用插件.md#使用Java模块系统构建应用程序)并希望Java运行时将所有内容都视为一个真正的模块，那么这可能会很有趣。
+插件，该插件注册了您可以使用并根据需要进行调整的转换。如果您想构建一个完全[模块化的应用程序](/md/Java%E5%BA%94%E7%94%A8%E6%8F%92%E4%BB%B6.md%23%E4%BD%BF%E7%94%A8Java%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F)并希望Java运行时将所有内容都视为一个真正的模块，那么这可能会很有趣。
 
 ### [建立一个自动模块](#%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E6%A8%A1%E5%9D%97)
 

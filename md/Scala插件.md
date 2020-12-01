@@ -23,7 +23,7 @@ lang.org/)项目的支持。它可以处理Scala代码，Scala和Java混合代�
 _联合编译_
 ，可让您自由地混合和匹配Scala和Java代码，并具有双向依赖性。例如，Scala类可以扩展Java类，而Java类又可以扩展Scala类。这样就可以为作业使用最佳语言，并在需要时用其他语言重写任何类。
 
-请注意，如果您希望从[API/实现分离中](/md/Java库插件.md#API与实现分离)受益，还可以将`java-
+请注意，如果您希望从[API/实现分离中](/md/Java%E5%BA%93%E6%8F%92%E4%BB%B6.md%23API%E4%B8%8E%E5%AE%9E%E7%8E%B0%E5%88%86%E7%A6%BB)受益，还可以将`java-
 library`插件应用于Scala项目。
 
 ## [用法](#%E7%94%A8%E6%B3%95)
@@ -52,7 +52,7 @@ build.gradle.kts
 
 ## [任务](#%E4%BB%BB%E5%8A%A1)
 
-Scala插件将以下任务添加到项目中。在[此处](/md/构建Java和JVM项目.md#构建其他JVM语言项目)可以找到有关更改对Java编译任务的依赖性的信息。
+Scala插件将以下任务添加到项目中。在[此处](/md/%E6%9E%84%E5%BB%BAJava%E5%92%8CJVM%E9%A1%B9%E7%9B%AE.md%23%E6%9E%84%E5%BB%BA%E5%85%B6%E4%BB%96JVM%E8%AF%AD%E8%A8%80%E9%A1%B9%E7%9B%AE)可以找到有关更改对Java编译任务的依赖性的信息。
 
 `compileScala`—
 [ScalaCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.scala.ScalaCompile.html)
@@ -455,7 +455,7 @@ DATE`照常执行该任务。
 
 Scala编译器会忽略Gradle的`targetCompatibility`和`sourceCompatibility`设置。在Scala
 2.11中，Scala编译器始终将其编译为与Java 6兼容的字节码。在Scala 2.12中，Scala编译器始终将其编译为Java
-8兼容的字节码。如果您也有Java源代码，则可以按照与[Java插件](/md/构建Java和JVM项目.md#定位特定的Java版本)相同的步骤进行操作，以确保使用正确的Java编译器。
+8兼容的字节码。如果您也有Java源代码，则可以按照与[Java插件](/md/%E6%9E%84%E5%BB%BAJava%E5%92%8CJVM%E9%A1%B9%E7%9B%AE.md%23%E5%AE%9A%E4%BD%8D%E7%89%B9%E5%AE%9A%E7%9A%84Java%E7%89%88%E6%9C%AC)相同的步骤进行操作，以确保使用正确的Java编译器。
 
 gradle.properties
 
