@@ -52,16 +52,26 @@ _取第一个_ ：
 
 
 ---
-`org.gradle.caching=(true,false)`   
+`org.gradle.caching=(true,false)`
+
+
 当设置为true时，Gradle将在可能的情况下重用任何先前构建的任务输出，从而使构建速度更快。了解有关[使用构建缓存的](/md/构建缓存.md#build_cache)更多信息。
+
 ---
 
-`org.gradle.caching.debug=(true,false)`   
+`org.gradle.caching.debug=(true,false)`
+
+
+
 设置为true时，单个输入属性哈希值和每个任务的构建缓存键都记录在控制台上。了解有关[任务输出缓存的](/md/构建缓存.md#任务输出缓存)更多信息。
+
 ---
 
-`org.gradle.configureondemand=(true,false)`   
+`org.gradle.configureondemand=(true,false)`
+
+
 启用[按需](/md/配置时间和执行时间.md#按需配置)孵化[配置](/md/配置时间和执行时间.md#按需配置)，Gradle将尝试仅配置必要的项目。
+
 ---
 `org.gradle.console=(auto,plain,rich,verbose)`
 
