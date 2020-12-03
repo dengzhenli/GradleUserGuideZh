@@ -60,7 +60,7 @@ Gradle使用在路径中找到的任何JDK。或者，您可以将`JAVA_HOME`环
 
 需要使用旧版本吗？请参阅[发布页面](https://gradle.org/releases)。
 
-### [步骤2_拆开发行包](#步骤2_拆开发行包)
+### [步骤2_解压发行包](#步骤2_解压发行包)
 
 #### [Linux和MacOS用户](#Linux和MacOS用户)
 
