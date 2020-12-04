@@ -76,7 +76,7 @@ _完全_ 隔离。
 如前所述，守护进程是一个后台进程。不过，您不必担心计算机上会构建Gradle进程。与可用的系统内存总量相比，每个守护程序都会监视其内存使用情况，并且在可用系统内存不足时空闲时将自行停止。如果出于任何原因要显式停止运行Daemon进程，只需使用命令`gradle
 --stop`。
 
-这将终止所有与用于执行命令的相同Gradle版本一起启动的Daemon进程。如果安装了Java开发工具包（JDK），则可以通过运行`jps`命令轻松地验证守护程序是否已停止。您会看到名称为的所有正在运行的守护程序`GradleDaemon`。
+这将终止所有与用于执行命令的相同Gradle版本一起启动的Daemon进程。如果安装了Java开发工具包（JDK），则可以通过运行`jps`命令轻松地验证守护程序是否已停止。您会看到名称为`GradleDaemon`的所有正在运行的守护程序。
 
 ## [常问问题](#常问问题)
 
@@ -139,11 +139,11 @@ compatible（兼容）
 
   * file.encoding
 
-  * 用户语言
+  * user.language
 
-  * 用户国家
+  * user.country
 
-  * 用户变量
+  * user.variant
 
   * java.io.tmpdir
 
@@ -160,6 +160,9 @@ compatible（兼容）
   * javax.net.ssl.trustStoreType
 
   * com.sun.management.jmxremote
+  
+
+
 
 由启动参数控制的以下JVM属性也实际上是不可变的。为了使守护程序兼容，请求的构建环境和守护程序的环境的相应属性必须完全匹配。
 
