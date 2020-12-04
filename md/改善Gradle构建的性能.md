@@ -16,9 +16,7 @@ version 6.9-20201126230040+0000
   * [Android版本建议](#Android版本建议)
   * [概要](#概要)
 
-╔═════════════════════════════  需要更快的Gradle构建？[在此处注册](https://gradle.com/training/build-cache-deep-
-dive/?bid=guides-performance)我们的构建缓存培训课程，以了解Gradle Enterprise如何将构建速度提高多达90％。  
-╚═════════════════════════════  
+
   
 构建性能对您的生产力至关重要。构建花费的时间越长，您从开发流程中退出的可能性就越大。最重要的是，由于您每天都要运行该构建多次，因此即使是很少的等待时间也可能导致严重的中断。在CI上运行的构建也是如此：它们越快，您对新问题的反应就越快，您进行创新实验的能力也就越大。
 
@@ -26,13 +24,10 @@ dive/?bid=guides-performance)我们的构建缓存培训课程，以了解Gradle
 
 ## [构建扫描](#构建扫描)
 
-[构建扫描](https://gradle.com/build-
-scans)是运行构建时发生的事情的持久且可共享的记录。通过构建扫描，您可以获得有关构建的深刻见解，以识别和修复性能瓶颈。
+[构建扫描](https://gradle.com/build-scans) 是运行构建时发生的事情的持久且可共享的记录。通过构建扫描，您可以获得有关构建的深刻见解，以识别和修复性能瓶颈。
 
 如果您使用的是Gradle 4.3+，则可以使用`--scan`命令行选项（例如）轻松创建构建扫描`gradle build
---scan`。对于较早的Gradle版本，请参阅《[Build Scan
-Plugin用户手册》，](https://docs.gradle.com/build-scan-
-plugin/#getting_set_up)以了解如何启用构建扫描。
+--scan`。对于较早的Gradle版本，请参阅《[Build ScanPlugin用户手册》，](https://docs.gradle.com/build-scan-plugin/#getting_set_up) 以了解如何启用构建扫描。
 
 Gradle在构建执行结束时显示可进行构建扫描的URL：
 
@@ -60,7 +55,7 @@ Gradle团队不断致力于提高Gradle构建各个方面的性能。如果您�
 
 启用并行构建后，您可能会看到构建时间的巨大改进。这些改进的程度取决于您的项目结构以及它们之间有多少依赖关系。例如，执行时间由单个项目控制的构建根本不会带来太多好处。或者，由于项目间存在大量依存关系，因此几乎没有可以并行执行的任务。但是大多数多项目构建应该看到有价值的构建时间增长。
 
-╔═════════════════════════════
+╔═════════════════════════════   
 并行构建要求项目在执行时解耦，即，不同项目中的任务不得修改共享状态。在广泛使用之前，请在[多项目部分中](https://docs.gradle.org/nightly/userguide/multi_project_configuration_and_execution.html#sec:parallel_execution)阅读有关该主题的更多信息`--parallel`。还应注意，4.0之前的Gradle版本可能会运行`clean`并`build`并行执行任务，从而导致失败。在这些较旧的版本上，最好分别调用`clean`。  
 ╚═════════════════════════════  
   
@@ -166,7 +161,8 @@ scan-performance)，您可以看到构建配置耗时超过16秒。单击  页�
 
 ### [静态编译任务和插件](#静态编译任务和插件)
 
-╔═════════════════════════════  如果您的构建逻辑由用静态编译的JVM语言（例如Java或Kotlin）编写的插件以及使用Gradle Kotlin
+╔═════════════════════════════  
+如果您的构建逻辑由用静态编译的JVM语言（例如Java或Kotlin）编写的插件以及使用Gradle Kotlin
 DSL编写的构建脚本组成，那么您可以跳过此步骤并继续进行[下一部分](#依赖解析)。  
 ╚═════════════════════════════  
   
@@ -265,9 +261,7 @@ build.gradle.kts
         }
     }
 
-请注意，`from()`声明不会解析依赖关系，因为您将[依赖关系配置](https://docs.gradle.org/nightly/userguide/declaring_dependencies.html#sec:what-
-are-dependency-
-configurations)本身用作参数，而不是其文件。该`Copy`任务处理配置本身的任务执行，而这正是你想要的东西时的分辨率。
+请注意，`from()`声明不会解析依赖关系，因为您将[依赖关系配置](https://docs.gradle.org/nightly/userguide/declaring_dependencies.html#sec:what-are-dependency-configurations) 本身用作参数，而不是其文件。该`Copy`任务处理配置本身的任务执行，而这正是你想要的东西时的分辨率。
 
 构建扫描的性能页面上的“依赖关系解决方案”选项卡明确显示了如何在项目配置和任务执行之间分配依赖关系解决时间：
 
