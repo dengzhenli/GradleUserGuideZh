@@ -99,6 +99,8 @@ type`过时的网址已经包含此信息。如果您想在公司网络内部托
 
 SHA256哈希和用于[验证下载的Gradle分布](#验证下载的Gradle发行版)。
 
+---
+
 让我们假设以下用例说明了命令行选项的用法。您想生成版本为6.7.1的Wrapper，并使用该`-all`发行版来使您的IDE启用代码补全功能并能够导航到Gradle源代码。这些要求由以下命令行执行捕获：
 
 提供 Wrap任务的选项
@@ -201,22 +203,25 @@ tasks`。
   
 ## [升级Gradle_Wrap](#升级Gradle_Wrap)
 
-项目通常会希望与时俱进并升级Gradle版本，以从新功能和改进中受益。升级Gradle版本的一种方法是手动更改`distributionUrl` Wrap`gradle-
-wrapper.properties`文件中的属性。更好的建议选项是运行`wrapper`任务并提供目标Gradle版本，如[添加Gradle Wrap中所述](#添加Gradle_Wrap)。使用该`wrapper`任务可确保对具有该特定Gradle版本的Wrapper
+项目通常会希望与时俱进并升级Gradle版本，以从新功能和改进中受益。升级Gradle版本的一种方法是手动更改Wrap
+`gradle-wrapper.properties`文件中的`distributionUrl` 属性。
+更好的建议选项是运行`wrapper`任务并提供目标Gradle版本，如[添加Gradle Wrap中所述](#添加Gradle_Wrap)。
+使用该`wrapper`任务可确保对具有该特定Gradle版本的Wrapper
 Shell脚本或批处理文件所做的任何优化都应用于项目。与往常一样，您应该将对Wrapper文件的更改提交给版本控制。
 
-请注意，仅运行一次 Wrap程序任务将`gradle-wrapper.properties`仅更新，但`gradle-
-wrapper.jar`不影响 Wrap程序本身。这通常很好，因为即使使用古老的 Wrap文件也可以运行Gradle的新版本。但是，如果您希望 **所有**
+请注意，仅运行一次 Wrap程序任务将`gradle-wrapper.properties`仅更新，
+但`gradle-wrapper.jar`不影响 Wrap程序本身。这通常很好，因为即使使用古老的 Wrap文件也可以运行Gradle的新版本。
+但是，如果您希望 **所有**
  Wrap文件都完全是最新的，则需要再次运行该`wrapper`任务。
 
-使用Gradle`wrapper`任务生成 Wrap，指定版本。默认为当前版本。升级 Wrap程序后，可以通过执行来检查它是否是您期望的版本`./gradlew
---version`。
+使用Gradle`wrapper`任务生成 Wrap，指定版本。默认为当前版本。
+升级 Wrap程序后，可以通过执行来检查它是否是您期望的版本`./gradlew --version`。
 
 示例：升级 Wrap版本
 
     
     
-    $ ./gradlew Wrap--gradle-version 6.7.1
+    $ ./gradlew wrap --gradle-version 6.7.1
     
     在4秒钟内成功建立
     1个可执行的任务：1个已执行
