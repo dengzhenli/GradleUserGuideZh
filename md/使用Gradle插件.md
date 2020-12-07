@@ -372,7 +372,7 @@ settings.gradle
     }
     rootProject.name = 'plugin-management'
 
-初始化等级
+init.gradle
 
     
     
