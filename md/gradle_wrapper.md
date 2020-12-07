@@ -70,18 +70,21 @@ Wrapper”）的帮助下。 Wrap是一个脚本，可调用Gradle的声明版�
 
 所有这些方面都可以在以下命令行选项的帮助下配置 Wrap文件时进行配置。
 
+---
 `--gradle-version`
 
     
 
 用于下载和执行 Wrap程序的Gradle版本。
 
+---
 `--distribution-type`
 
     
 
  Wrap使用的Gradle分布类型。可用的选项是`bin`和`all`。默认值为`bin`。
 
+---
 `--gradle-distribution-url`
 
     
@@ -89,6 +92,7 @@ Wrapper”）的帮助下。 Wrap是一个脚本，可调用Gradle的声明版�
 指向Gradle分发ZIP文件的完整URL。使用此选项，`--gradle-version`并且`--distribution-
 type`过时的网址已经包含此信息。如果您想在公司网络内部托管Gradle发行版，则此选项非常有价值。
 
+---
 `--gradle-distribution-sha256-sum`
 
     
@@ -146,23 +150,26 @@ SHA256哈希和用于[验证下载的Gradle分布](#验证下载的Gradle发行�
 
 Gradle项目通常为每个子项目提供一个`settings.gradle(.kts)`文件和一个`build.gradle(.kts)`文件。 Wrap程序文件位于项目的`gradle`目录和根目录中。以下列表说明了它们的用途。
 
+---
 `gradle-wrapper.jar`
 
     
 
  WrapJAR文件，其中包含用于下载Gradle发行版的代码。
 
+---
 `gradle-wrapper.properties`
 
     
 
 一个属性文件，负责配置Wrapper运行时行为，例如与该版本兼容的Gradle版本。请注意，更多常规设置（例如，[将 Wrap配置为使用代理](/md/Gradle环境搭建.md#通过HTTP代理访问网络)）需要进入[其他文件](/md/Gradle环境搭建.md#Gradle属性)。
 
+---
 `gradlew`， `gradlew.bat`
 
     
 
-一个外壳脚本和一个Windows批处理脚本，用于使用 Wrap程序执行构建。
+一个shell脚本和一个Windows批处理脚本，用于使用 Wrap程序执行构建。
 
 您可以继续[使用 Wrap程序执行构建，](#使用Gradle_Wrap)而不必安装Gradle运行时。如果您正在处理的项目不包含那些Wrapper文件，则需要[生成它们](#添加Gradle_Wrap)。
 
