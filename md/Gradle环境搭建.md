@@ -51,13 +51,13 @@ _取第一个_ ：
 
 
 
----
+╔═════════════════════════════  
 `org.gradle.caching=(true,false)`
 
 
 当设置为true时，Gradle将在可能的情况下重用任何先前构建的任务输出，从而使构建速度更快。了解有关[使用构建缓存的](/md/构建缓存.md#build_cache)更多信息。
 
----
+═════════════════════════════  
 
 `org.gradle.caching.debug=(true,false)`
 
@@ -65,63 +65,63 @@ _取第一个_ ：
 
 设置为true时，单个输入属性哈希值和每个任务的构建缓存键都记录在控制台上。了解有关[任务输出缓存的](/md/构建缓存.md#任务输出缓存)更多信息。
 
----
+═════════════════════════════  
 
 `org.gradle.configureondemand=(true,false)`
 
 
 启用[按需](/md/配置时间和执行时间.md#按需配置)孵化[配置](/md/配置时间和执行时间.md#按需配置)，Gradle将尝试仅配置必要的项目。
 
----
+═════════════════════════════  
 `org.gradle.console=(auto,plain,rich,verbose)`
 
     
 
 自定义控制台输出的颜色或详细程度。默认值取决于Gradle的调用方式。有关其他详细信息，请参见[命令行日志记录](/md/命令行界面.md#记录选项)。
 
----
+═════════════════════════════  
 `org.gradle.daemon=(true,false)`
 
     
 
 当设置`true`的[Gradle守护进程](/md/Gradle守护程序.md#gradle_daemon)来运行构建。默认值为`true`。
 
----
+═════════════════════════════  
 `org.gradle.daemon.idletimeout=(# of idle millis)`
 
     
 
 在指定的空闲毫秒数后，Gradle守护程序将自行终止。默认值为`10800000`（3小时）。
 
----
+═════════════════════════════  
 `org.gradle.debug=(true,false)`
 
     
 
 设置`true`为时，Gradle将在启用远程调试的情况下运行构建，侦听端口5005。请注意，这等同于添加`-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005`到JVM命令行，并且将挂起虚拟机，直到连接了调试器。默认值为`false`。
 
----
+═════════════════════════════  
 `org.gradle.java.home=(path to JDK home)`
 
     
 
 指定用于Gradle构建过程的Java主页。可以将值设置为`jdk`或`jre`位置，但是，根据您的构建方式，使用JDK更安全。如果未指定设置，则从您的环境（`JAVA_HOME`或的路径`java`）派生合理的默认值。这不会影响用于启动Gradle客户端VM的Java版本（[请参阅环境变量](#环境变量)）。
 
----
+═════════════════════════════  
 `org.gradle.jvmargs=(JVM arguments)`
 
     
 
 指定用于Gradle守护程序的JVM参数。该设置对于[配置JVM内存设置](#配置JVM内存)以提高构建性能特别有用。这不会影响Gradle客户端VM的JVM设置。
 
----
+═════════════════════════════  
 `org.gradle.logging.level=(quiet,warn,lifecycle,info,debug)`
 
     
 
 当设置为quiet,warn,lifecycle,info或debug时，Gradle将使用此日志级别。这些值不区分大小写。该`lifecycle`级别是默认级别。请参阅[选择日志级别](/md/使用记录.md#选择日志级别)。
 
----
+═════════════════════════════  
 
 `org.gradle.parallel=(true,false)`
 
@@ -130,14 +130,14 @@ _取第一个_ ：
 
 配置后，Gradle将分叉到`org.gradle.workers.max`JVM以并行执行项目。要了解有关并行任务执行的更多信息，请参阅[Gradle性能指南](https://guides.gradle.org/performance/#parallel_execution)。
 
----
+═════════════════════════════  
 `org.gradle.priority=(low,normal)`
 
     
 
 指定Gradle守护程序及其启动的所有进程的调度优先级。默认值为`normal`。另请参阅[性能命令行选项](/md/命令行界面.md#性能选项)。
 
----
+═════════════════════════════  
 `org.gradle.vfs.verbose=(true,false)`
 
     
@@ -145,27 +145,27 @@ _取第一个_ ：
 在[监视文件系统](/md/Gradle守护程序.md#观看文件系统)时配置详细日志记录。
 _默认为关闭_ 。
 
----
+═════════════════════════════  
 `org.gradle.vfs.watch=(true,false)`
 
     
 切换[观看文件系统](/md/Gradle守护程序.md#观看文件系统)。允许Gradle在下一个版本中重用有关文件系统的信息。
 _默认为关闭_ 。
 
----
+═════════════════════════════  
 `org.gradle.warning.mode=(all,fail,summary,none)`
 
     
 
 当设置为`all`，`summary`或者`none`，Gradle会使用不同的预警类型的显示器。有关详细信息，请参见[命令行日志记录选项](/md/命令行界面.md#记录选项)。
 
----
+═════════════════════════════  
 `org.gradle.workers.max=(max # of worker processes)`
 
 
 配置后，Gradle将最多使用给定数量的工人。默认值为CPU处理器数。另请参阅[性能命令行选项](/md/命令行界面.md#性能选项)。
 
----
+╚═════════════════════════════  
 下面的示例演示各种属性的用法。
 
 例子1.用gradle.properties文件设置属性
@@ -238,22 +238,22 @@ build.gradle.kts
 
 
 
-╔═════════════════════════════
+╔═════════════════════════════  
 `gradle.wrapperUser=(myuser)`
 
 指定用户名以使用HTTP基本认证从服务器下载Gradle发行版。在[身份验证的包装下载中](/md/gradle_wrapper.md#经过身份验证的Gradle发行版下载)了解更多信息。
 
----
+═════════════════════════════  
 `gradle.wrapperPassword=(mypassword)`
 
 指定使用Gradle Wrapper下载Gradle发行版的密码。
 
----
+═════════════════════════════  
 `gradle.user.home=(path to directory)`
  
 指定Gradle用户的主目录。
 
-╚═════════════════════════════
+╚═════════════════════════════  
 
 在多项目构建中，`systemProp.`除根目录以外的任何项目中设置的“
 ”属性都将被忽略。也就是说，`gradle.properties`将仅检查根项目的文件中以“ `systemProp.`”开头的属性。
@@ -261,25 +261,25 @@ build.gradle.kts
 ## [环境变量](#环境变量)
 
 以下环境变量可用于`gradle`命令。请注意，命令行选项和系统属性优先于环境变量。
-
+╔═════════════════════════════  
 `GRADLE_OPTS`
 
     
 
 指定启动Gradle客户端VM时要使用的JVM参数。客户端VM仅处理命令行输入/输出，因此很少需要更改其VM选项。实际的构建由Gradle守护程序运行，不受此环境变量的影响。
-
+═════════════════════════════  
 `GRADLE_USER_HOME`
 
     
 
-指定Gradle用户的主目录（`$USER_HOME/.gradle`如果未设置，则默认为）。
-
+指定Gradle用户的主目录（如果未设置，则默认为`$USER_HOME/.gradle`）。
+═════════════════════════════  
 `JAVA_HOME`
 
     
 
 指定要用于客户端VM的JDK安装目录。除非Gradle属性文件使用`org.gradle.java.home`指定了另一个虚拟机，否则此虚拟机也用于守护程序。
-
+╚═════════════════════════════  
 ## [项目性质](#项目性质)
 
 您可以通过`-P`命令行选项将属性直接添加到[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)对象。
