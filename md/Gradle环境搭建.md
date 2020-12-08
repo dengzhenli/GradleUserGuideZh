@@ -233,7 +233,12 @@ build.gradle.kts
 
 以下系统属性可用。请注意，命令行选项优先于系统属性。
 
----
+
+
+
+
+
+╔═════════════════════════════
 `gradle.wrapperUser=(myuser)`
 
 指定用户名以使用HTTP基本认证从服务器下载Gradle发行版。在[身份验证的包装下载中](/md/gradle_wrapper.md#经过身份验证的Gradle发行版下载)了解更多信息。
@@ -248,14 +253,14 @@ build.gradle.kts
  
 指定Gradle用户的主目录。
 
----
+╚═════════════════════════════
 
 在多项目构建中，`systemProp.`除根目录以外的任何项目中设置的“
 ”属性都将被忽略。也就是说，`gradle.properties`将仅检查根项目的文件中以“ `systemProp.`”开头的属性。
 
 ## [环境变量](#环境变量)
 
-以下环境变量可用于该`gradle`命令。请注意，命令行选项和系统属性优先于环境变量。
+以下环境变量可用于`gradle`命令。请注意，命令行选项和系统属性优先于环境变量。
 
 `GRADLE_OPTS`
 
@@ -278,9 +283,6 @@ build.gradle.kts
 ## [项目性质](#项目性质)
 
 您可以通过`-P`命令行选项将属性直接添加到[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)对象。
-
-当Gradle看到特别命名的系统属性或环境变量时，它也可以设置项目属性。如果环境变量名称看起来像，则Gradle将在项目对象上设置一个属性，值为。Gradle也为系统属性支持此功能，但是具有不同的命名模式，看起来像。以下两项都将Project对象上的属性设置为。`ORG_GRADLE_PROJECT
-__prop_ =somevalue``prop``somevalue``org.gradle.project. _prop_``foo``"bar"`
 
 当Gradle收到特殊命名的系统属性或环境变量时，它也可以设置项目属性。
 如果环境变量的名字看起来类似ORG_GRADLE_PROJECT_prop=somevalue，
