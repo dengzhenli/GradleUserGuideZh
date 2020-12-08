@@ -273,17 +273,24 @@ build.gradle.kts
 
     
 
-指定要用于客户端VM的JDK安装目录。除非使用Gradle属性文件指定了另一个虚拟机，否则此虚拟机也用于守护程序`org.gradle.java.home`。
+指定要用于客户端VM的JDK安装目录。除非Gradle属性文件使用`org.gradle.java.home`指定了另一个虚拟机，否则此虚拟机也用于守护程序。
 
 ## [项目性质](#项目性质)
 
-您可以通过命令行选项将属性直接添加到[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)对象`-P`。
+您可以通过`-P`命令行选项将属性直接添加到[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)对象。
 
 当Gradle看到特别命名的系统属性或环境变量时，它也可以设置项目属性。如果环境变量名称看起来像，则Gradle将在项目对象上设置一个属性，值为。Gradle也为系统属性支持此功能，但是具有不同的命名模式，看起来像。以下两项都将Project对象上的属性设置为。`ORG_GRADLE_PROJECT
 __prop_ =somevalue``prop``somevalue``org.gradle.project. _prop_``foo``"bar"`
 
-通过系统属性设置项目属性
+当Gradle收到特殊命名的系统属性或环境变量时，它也可以设置项目属性。
+如果环境变量的名字看起来类似ORG_GRADLE_PROJECT_prop=somevalue，
+那么Gradle就会在你的项目对象上设置一个prop属性，其值为somevalue。
+Gradle对系统属性也支持这样做，但采用了不同的命名模式，
+类似org.gradle.project.prop。
+下面两个都会将你的Project对象上的foo属性设置为 "bar"。
 
+
+通过系统属性设置项目属性
     
     
     org.gradle.project.foo = bar
