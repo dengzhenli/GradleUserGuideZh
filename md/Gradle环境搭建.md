@@ -41,11 +41,11 @@ _取第一个_ ：
 
   * 系统属性，例如在`-Dgradle.user.home`命令行上设置的时间。
 
-  * `gradle.properties`在`GRADLE_USER_HOME`目录中。
+  * `GRADLE_USER_HOME`目录中的`gradle.properties`。
 
-  * `gradle.properties` 在项目根目录中。
+  * 项目根目录中的`gradle.properties` 。
 
-  * `gradle.properties` 在Gradle安装目录中。
+  * Gradle安装目录中的`gradle.properties` 。
 
 以下属性可用于配置Gradle构建环境：
 
@@ -119,7 +119,7 @@ _取第一个_ ：
 
     
 
-当设置为安静，警告，生命周期，信息或调试时，Gradle将使用此日志级别。这些值不区分大小写。该`lifecycle`级别是默认级别。请参阅[选择日志级别](/md/使用记录.md#选择日志级别)。
+当设置为quiet,warn,lifecycle,info或debug时，Gradle将使用此日志级别。这些值不区分大小写。该`lifecycle`级别是默认级别。请参阅[选择日志级别](/md/使用记录.md#选择日志级别)。
 
 ---
 
@@ -220,9 +220,9 @@ build.gradle.kts
 
 ## [系统属性](#系统属性)
 
-使用`-D`命令行选项，可以将系统属性传递给运行Gradle的JVM。在`-D`该选项的`gradle`命令有作为的效果相同`-D`的选项的`java`命令。
+使用`-D`命令行选项，可以将系统属性传递给运行Gradle的JVM。 `gradle`的`-D`该命令选项与`java`的`-D`选项作用相同。
 
-您还可以在`gradle.properties`带有前缀的文件中设置系统属性`systemProp.`
+您还可以在`gradle.properties`文件中使用前缀`systemProp.`设置系统属性
 
 在中指定系统属性 `gradle.properties`
 
@@ -233,23 +233,22 @@ build.gradle.kts
 
 以下系统属性可用。请注意，命令行选项优先于系统属性。
 
+---
 `gradle.wrapperUser=(myuser)`
-
-    
 
 指定用户名以使用HTTP基本认证从服务器下载Gradle发行版。在[身份验证的包装下载中](/md/gradle_wrapper.md#经过身份验证的Gradle发行版下载)了解更多信息。
 
+---
 `gradle.wrapperPassword=(mypassword)`
 
-    
+指定使用Gradle Wrapper下载Gradle发行版的密码。
 
-指定使用Gradle包装器下载Gradle发行版的密码。
-
+---
 `gradle.user.home=(path to directory)`
-
-    
-
+ 
 指定Gradle用户的主目录。
+
+---
 
 在多项目构建中，`systemProp.`除根目录以外的任何项目中设置的“
 ”属性都将被忽略。也就是说，`gradle.properties`将仅检查根项目的文件中以“ `systemProp.`”开头的属性。
