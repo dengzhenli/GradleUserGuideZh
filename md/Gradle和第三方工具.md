@@ -101,7 +101,7 @@ API的编程API，可用于将Gradle嵌入到自己的软件中。该API允许�
 
 Tooling
 API的基本特征是它以与版本无关的方式运行。这意味着您可以使用相同的API来处理使用不同版本的Gradle的版本，包括比所使用的Tooling
-API的版本新或旧的版本。Tooling API支持Gradle包装器，默认情况下，使用与由包装器支持的版本使用的Gradle版本相同的Gradle版本。
+API的版本新或旧的版本。Tooling API支持Gradle Wrapper，默认情况下，使用与由 Wrapper支持的版本使用的Gradle版本相同的Gradle版本。
 
 工具API提供的一些功能：
 
@@ -117,7 +117,7 @@ API的版本新或旧的版本。Tooling API支持Gradle包装器，默认情况
 
   * 将多个单独的Gradle构建合并到一个复合构建中。
 
-  * Tooling API可以下载并安装适当的Gradle版本，类似于包装程序。
+  * Tooling API可以下载并安装适当的Gradle版本，类似于wrapper程序。
 
   * 该实现是轻量级的，仅具有少量依赖性。它也是一个行为良好的库，并且不对您的类加载器结构或日志记录配置进行任何假设。这使该API易于嵌入到您的应用程序中。
 

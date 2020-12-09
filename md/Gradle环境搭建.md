@@ -7,7 +7,7 @@ version 6.7.1
   * [Gradle属性](#Gradle属性)
   * [系统属性](#系统属性)
   * [环境变量](#环境变量)
-  * [项目性质](#项目性质)
+  * [项目性质](#项目属性)
   * [配置JVM内存](#配置JVM内存)
   * [使用项目属性配置任务](#使用项目属性配置任务)
   * [通过HTTP代理访问网络](#通过HTTP代理访问网络)
@@ -29,7 +29,7 @@ Gradle提供了多种机制来配置Gradle本身和特定项目的行为。以�
   * [环境变量](#环境变量)
   例如`GRADLE_OPTS`由执行Gradle的环境派生的。
 
-除了配置构建环境外，您还可以使用[Project属性](#项目性质)
+除了配置构建环境外，您还可以使用[Project属性](#项目属性)
 （例如）配置给定的项目构建`-PreleaseType=final`。
 
 ## [Gradle属性](#Gradle属性)
@@ -241,7 +241,7 @@ build.gradle.kts
 ╔═════════════════════════════  
 `gradle.wrapperUser=(myuser)`
 
-指定用户名以使用HTTP基本认证从服务器下载Gradle发行版。在[身份验证的包装下载中](/md/gradle_wrapper.md#经过身份验证的Gradle发行版下载)了解更多信息。
+指定用户名以使用HTTP基本认证从服务器下载Gradle发行版。在[身份验证的Wrapper下载中](/md/gradle_wrapper.md#经过身份验证的Gradle发行版下载)了解更多信息。
 
 ═════════════════════════════  
 `gradle.wrapperPassword=(mypassword)`
@@ -255,8 +255,8 @@ build.gradle.kts
 
 ╚═════════════════════════════  
 
-在多项目构建中，`systemProp.`除根目录以外的任何项目中设置的“
-”属性都将被忽略。也就是说，`gradle.properties`将仅检查根项目的文件中以“ `systemProp.`”开头的属性。
+在多项目构建中，除根目录以外的任何项目中设置的`systemProp.`属性都将被忽略。
+也就是说，将仅检查根项目的`gradle.properties`文件中以“ `systemProp.`”开头的属性。
 
 ## [环境变量](#环境变量)
 
@@ -286,7 +286,7 @@ build.gradle.kts
 
 
 ╚═════════════════════════════  
-## [项目性质](#项目性质)
+## [项目属性](#项目属性)
 
 您可以通过`-P`命令行选项将属性直接添加到[Project](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)对象。
 

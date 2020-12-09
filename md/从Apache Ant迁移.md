@@ -521,7 +521,7 @@ Ant利用属性映射来存储可在整个构建过程中重复使用的值。�
     有时，您可能想直接从Gradle构建中使用Ant任务，而该任务需要设置一个或多个Ant属性。如果是这样，您可以通过`ant`对象轻松设置这些属性，如[使用Gradle](/md/从Gradle使用Ant.md#Ant属性和参考)中的[Ant](/md/从Gradle使用Ant.md#Ant属性和参考)一章所述。  
 
   
-Gradle以[项目属性](/md/Gradle环境搭建.md#项目性质)的形式使用了类似的东西，这是参数化构建的合理方法。可以从命令行，[`gradle.properties`文件](/md/Gradle环境搭建.md#Gradle属性)或甚至通过特殊命名的系统属性和环境变量来设置它们。
+Gradle以[项目属性](/md/Gradle环境搭建.md#项目属性)的形式使用了类似的东西，这是参数化构建的合理方法。可以从命令行，[`gradle.properties`文件](/md/Gradle环境搭建.md#Gradle属性)或甚至通过特殊命名的系统属性和环境变量来设置它们。
 
 如果您已有现有的Ant属性文件，则可以将其内容复制到项目的`gradle.properties`文件中。请注意以下两点：
 

@@ -89,7 +89,7 @@ daemon`，它将在带有可视进度指示器的构建会话之后在前台运�
 ①  Gradle生成的特定于项目的缓存目录  
 ②  特定于版本的缓存（例如，支持增量构建）  
 ③  Gradle在其中生成所有构建工件的该项目的构建目录。  
-④ 包含JAR文件和[Gradle包装器的](/md/gradle_wrapper.md#gradle_wrapper) 配置[](/md/gradle_wrapper.md#gradle_wrapper)  
+④ 包含JAR文件和[Gradle Wrapper的](/md/gradle_wrapper.md#gradle_wrapper) 配置[](/md/gradle_wrapper.md#gradle_wrapper)  
 ⑤ 项目特定的[Gradle配置属性](/md/Gradle环境搭建.md#Gradle属性)  
 ⑥  使用[Gradle Wrapper](/md/gradle_wrapper.md#gradle_wrapper) 执行构建的脚本[](/md/gradle_wrapper.md#gradle_wrapper)  
 ⑦ 该项目的[设置文件](/md/构建生命周期.md#设定档) ， 其中定义子项目的列表  
