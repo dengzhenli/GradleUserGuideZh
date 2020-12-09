@@ -16,7 +16,8 @@ version 6.9-20201126230040+0000
   * [Android版本建议](#Android版本建议)
   * [概要](#概要)
 
-╔═════════════════════════════  需要更快的Gradle构建？[在此处注册](https://gradle.com/training/build-cache-deep-
+╔═════════════════════════════  
+需要更快的Gradle构建？[在此处注册](https://gradle.com/training/build-cache-deep-
 dive/?bid=guides-performance)我们的构建缓存培训课程，以了解Gradle Enterprise如何将构建速度提高多达90％。  
 ╚═════════════════════════════  
   
