@@ -7,7 +7,7 @@ version 6.9-20201126230040+0000
   * [构建扫描](#构建扫描)
   * [轻松改进](#轻松改进)
   * [使用构建扫描进行性能分析](#使用构建扫描进行性能分析)
-  * [组态](#配置)
+  * [配置](#配置)
   * [依赖解析](#依赖解析)
   * [任务执行](#任务执行)
   * [守护进程](#守护进程)
@@ -277,10 +277,9 @@ build.gradle.kts
         }
     }
 
-请注意，`from()`声明不会解析依赖关系，因为您将[依赖关系配置](https://docs.gradle.org/nightly/userguide/declaring_dependencies.html#sec:what-
-are-dependency-
-configurations)本身用作参数，而不是其文件。该`Copy`任务处理配置本身的任务执行，而这正是你想要的东西时的分辨率。
-
+请注意，`from()`声明不会解析依赖关系，
+因为您将[依赖关系配置](https://docs.gradle.org/nightly/userguide/declaring_dependencies.html#sec:what-are-dependency-configurations) 本身用作参数，而不是其文件。
+如你所愿，`Copy`复制任务在任务执行过程中处理配置本身的解析。
 构建扫描的性能页面上的“依赖关系解决方案”选项卡明确显示了如何在项目配置和任务执行之间分配依赖关系解决时间：
 
 ![不良的依存关系解决方案](img/bad-dependency-resolution.png)
@@ -313,7 +312,9 @@ Lint插件](https://github.com/nebula-plugins/gradle-lint-plugin)来识别此类
 
 ### [识别缓慢或意外的依赖项下载](#识别缓慢或意外的依赖项下载)
 
-依赖项下载速度慢（可能是由于Internet连接速度慢，存储库服务器过载或类似原因引起的）会影响整体构建性能。构建扫描在“​​性能”页面上提供了“网络活动”选项卡，其中列出了有用的信息，例如花费时间下载依赖关系，整个构建中依赖关系下载的总体传输率以及按下载时间排序的下载列表。
+依赖项下载速度慢（可能是由于Internet连接速度慢，存储库服务器过载或类似原因引起的）会影响整体构建性能。
+构建扫描在“Performance”页面上提供了“Network Activity”选项卡，其中列出了有用的信息，
+例如花费时间下载依赖关系，整个构建中依赖关系下载的总体传输率以及按下载时间排序的下载列表。
 
 在这里，您可以看到两次缓慢的依赖项下载，耗时分别为20和40秒，并降低了构建的整体性能：
 
@@ -327,7 +328,7 @@ Lint插件](https://github.com/nebula-plugins/gradle-lint-plugin)来识别此类
 
 最快的任务是不执行的任务。如果您找到了跳过不需要运行的任务的方法，那么最终将获得更快的总体构建速度。本节将讨论在Gradle构建中实现避免任务的几种方法。
 
-### [不同的人，不同的体形](#不同的人，不同的体形)
+### [不同的人，不同的构建](#不同的人，不同的构建)
 
 将构建视为全包或全包似乎是很普遍的。每个用户必须学习由构建定义的相同任务集。在许多情况下，这没有任何意义。想象一下，您同时拥有前端和后端开发人员：他们是否希望从构建中获得相同的东西？当然不是，特别是如果一侧是HTML，CSS和JavaScript，而另一侧是Java和servlet。
 
@@ -364,8 +365,7 @@ Lint插件](https://github.com/nebula-plugins/gradle-lint-plugin)来识别此类
 基于任务的先前执行，增量构建在本地工作。Gradle还可以将任务输出存储在 _构建缓存中，_
 并在稍后将执行具有相同输入的相同任务时检索它们。您可以使用本地缓存在计算机上重用任务输出。这有助于减少切换分支时的构建时间。
 
-也可以使用共享的构建缓存服务，例如[Gradle Enterprise提供的](https://gradle.com/build-
-cache/)服务。共享缓存可以通过重用其他位置已经生成的输出来减少您需要执行的任务数量。这可以大大减少CI和开发人员的构建时间。
+也可以使用共享的构建缓存服务，例如[Gradle Enterprise提供的](https://gradle.com/build-cache/) 服务。共享缓存可以通过重用其他位置已经生成的输出来减少您需要执行的任务数量。这可以大大减少CI和开发人员的构建时间。
 
 有关在构建中利用构建缓存的大量信息，请查阅有关[使用构建缓存](https://docs.gradle.org/nightly/userguide/build_cache_use_cases.html)的文档。它涵盖了可以改善缓存的不同方案，并详细讨论了为构建启用缓存时需要注意的不同警告。
 
@@ -641,8 +641,7 @@ build.gradle.kts
     }
 
 这可以大大减少大型多项目构建中的单个更改的“涟漪”效应。该`implementation`配置在`java`插件中可用。
-`api`依赖只能由应该使用[`java-
-library`](https://docs.gradle.org/nightly/userguide/java_library_plugin.html)插件的库定义。
+`api`依赖只能由应该使用 [java-library](https://docs.gradle.org/nightly/userguide/java_library_plugin.html) 插件的库定义。
 
 ### [增量编译](#增量编译)
 
@@ -726,9 +725,10 @@ Profiler](https://github.com/gradle/gradle-profiler)来确定原因。
 ## [Android版本建议](#Android版本建议)
 
 到目前为止讨论的所有内容也适用于Android构建，因为它们基于Gradle。Android也引入了自己的性能因素。Android
-Studio团队已编写了自己的出色[性能指南](https://developer.android.com/studio/build/optimize-
-your-build.html)。您还可以[观看](https://www.youtube.com/watch?v=7ll-rkLCtyk)Google
-IO 2017[附带的演讲](https://www.youtube.com/watch?v=7ll-rkLCtyk)。
+Studio团队已编写了自己的出色
+[性能指南](https://developer.android.com/studio/build/optimize-your-build.html)。
+您还可以[观看](https://www.youtube.com/watch?v=7ll-rkLCtyk)
+Google IO 2017[附带的演讲](https://www.youtube.com/watch?v=7ll-rkLCtyk)。
 
 ## [概要](#概要)
 
