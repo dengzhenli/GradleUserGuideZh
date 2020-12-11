@@ -525,7 +525,7 @@ Resources``processResources``main` __
 
 ### [Java属性文件和可复制的内部版本](#Java属性文件和可复制的内部版本)
 
-您可以通过[WriteProperties](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.WriteProperties.html)任务轻松创建Java属性文件，该任务解决了一个众所周知的问题，`Properties.store()`即降低[增量构建](/md/处理任务.md#最新检查（又称增量构建）)的用处。
+您可以通过[WriteProperties](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.WriteProperties.html)任务轻松创建Java属性文件，该任务解决了一个众所周知的问题，`Properties.store()`即降低[增量构建](/md/处理任务.md#检查最新（又称增量构建）)的用处。
 
 即使使用相同的属性和值，用于编写属性文件的标准Java
 API也会每次生成一个唯一的文件，因为注释中包括了时间戳。`WriteProperties`如果所有属性均未更改，则Gradle的任务逐字节生成完全相同的输出。这是通过对属性文件的生成方式进行一些调整来实现的：

@@ -226,7 +226,7 @@ Java构建
 
   * 该`Task.deleteAllActions()`方法已删除，无法替代。
 
-  * 该`Task.dependsOnTaskDidWork()`方法已删除-改用[声明的输入和输出](/md/处理任务.md#最新检查（又称增量构建）)。
+  * 该`Task.dependsOnTaskDidWork()`方法已删除-改用[声明的输入和输出](/md/处理任务.md#检查最新（又称增量构建）)。
 
   * `TaskInternal`已删除以下属性和方法-使用任务依赖项，任务规则，可重用的实用程序方法或[Worker API](/md/开发自定义Gradle任务类型.md#工作者API)代替直接执行任务。
 
