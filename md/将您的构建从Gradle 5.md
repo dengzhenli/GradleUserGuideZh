@@ -736,7 +736,7 @@ URL`JavaScriptRepositoriesExtension#GOOGLE_APIS_REPO_URL`已更改为使用HTTPS
        disableAutoTargetJvm()
     }
 
-#### [通过依赖替换在Maven/Ivy互操作性中的错误修复](#通过依赖替换在Maven/Ivy互操作性中的错误修复)
+#### [通过依赖替换在Maven╱Ivy互操作性中的错误修复](#通过依赖替换在Maven╱Ivy互操作性中的错误修复)
 
 如果你有一个Maven依赖指向Ivy依赖在`default`配置依赖性不匹配`compile`\+ `runtime`+`master`那些 _和_
 Ivy依赖性取代（使用`resolutionStrategy.force`，`resolutionStrategy.eachDependency`或`resolutionStrategy.dependencySubstitution`），则此修复程序会影响你。5.0之前的Gradle的旧行为仍然存在，而不是被改进的pom支持所引入的更改所取代。
