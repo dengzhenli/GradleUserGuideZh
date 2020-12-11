@@ -105,7 +105,7 @@ Gradle提供了多种机制来扩展它，例如：
 
   您可以通过[Task.doFirst（）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Task.html#org.gradle.api.Task:doFirst\(org.gradle.api.Action\))
   和[Task.doLast（）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Task.html#org.gradle.api.Task:doLast\(org.gradle.api.Action\))方法附加在任务之前或之后执行的自定义构建逻辑。
-* 项目和任务的[额外属性](/md/编写构建脚本.md#额外的属性)。  
+* 项目和任务的[额外属性](/md/编写构建脚本.md#额外属性)。  
 
   这些允许您将自己的属性添加到项目或任务中，然后可以从您自己的自定义操作或任何其他构建逻辑中使用它们。额外的属性甚至可以应用于您未明确创建的任务，例如Gradle的核心插件创建的任务。
 * 自定义约束。  

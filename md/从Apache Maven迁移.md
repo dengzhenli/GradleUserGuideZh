@@ -515,7 +515,7 @@ if”语句。并且由于Gradle具有更强大的声明条件的方法，因此
 default.gradle`，`profile-test.gradle`，和`profile-
 prod.gradle`。然后，您可以根据自己选择的[项目属性](/md/Gradle环境搭建.md#项目属性)有条件地应用这些概要文件脚本之一。
 
-下面的例子演示了如何使用称为项目属性的基本技术`buildProfile`和配置文件脚本，简单地初始化一个[额外的项目属性](/md/编写构建脚本.md#额外的属性)称为`message`：
+下面的例子演示了如何使用称为项目属性的基本技术`buildProfile`和配置文件脚本，简单地初始化一个[额外的项目属性](/md/编写构建脚本.md#额外属性)称为`message`：
 
 例子6.模仿Gradle中的Maven配置文件的行为
 
