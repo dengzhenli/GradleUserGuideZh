@@ -18,13 +18,12 @@
   * [Eclipse整合](#Eclipse整合)
   * [IntelliJ IDEA集成](#IntelliJ_IDEA集成)
 
-Scala插件扩展了[Java插件，](https://docs.gradle.org/6.7.1/userguide/java_plugin.html)以添加对[Scala](https://www.scala-
-lang.org/)项目的支持。它可以处理Scala代码，Scala和Java混合代码，甚至是纯Java代码（尽管我们不一定建议将其用于后者）。该插件支持
+Scala插件扩展了[Java插件，](https://docs.gradle.org/6.7.1/userguide/java_plugin.html)
+以添加对[Scala](https://www.scala-lang.org/)项目的支持。它可以处理Scala代码，Scala和Java混合代码，甚至是纯Java代码（尽管我们不一定建议将其用于后者）。该插件支持
 _联合编译_
 ，可让您自由地混合和匹配Scala和Java代码，并具有双向依赖性。例如，Scala类可以扩展Java类，而Java类又可以扩展Scala类。这样就可以为作业使用最佳语言，并在需要时用其他语言重写任何类。
 
-请注意，如果您希望从[API/实现分离中](/md/Java库插件.md#API与实现分离)受益，还可以将`java-
-library`插件应用于Scala项目。
+请注意，如果您希望从[API/实现分离中](/md/Java库插件.md#API与实现分离)受益，还可以将`java-library`插件应用于Scala项目。
 
 ## [用法](#用法)
 
@@ -59,7 +58,7 @@ Scala插件将以下任务添加到项目中。在[此处](/md/构建Java和JVM�
 
     
 
-_取决于_ ：`compileJava`
+_Depends on_ ：`compileJava`
 
 编译生产Scala源文件。
 
@@ -68,7 +67,7 @@ _取决于_ ：`compileJava`
 
     
 
-_取决于_ ：`compileTestJava`
+_Depends on_ ：`compileTestJava`
 
 编译测试Scala源文件。
 
@@ -77,7 +76,7 @@ _取决于_ ：`compileTestJava`
 
     
 
-_取决于_ ：`compile _SourceSet_ Java`
+_Depends on_ ：`compile _SourceSet_ Java`
 
 编译给定源集的Scala源文件。
 
@@ -207,10 +206,10 @@ build.gradle.kts
 
 ## [依赖管理](#依赖管理)
 
-Scala项目需要声明一个`scala-
-library`依赖项。然后将在编译和运行时类路径上使用此依赖项。它还将分别用于获取Scala编译器和Scaladoc工具。[[1](#_footnotedef_1"查看脚注。") ]
+Scala项目需要声明一个`scala-library`依赖项。
+然后将在编译和运行时类路径上使用此依赖项。它还将分别用于获取Scala编译器和Scaladoc工具。[[1](#_footnotedef_1"查看脚注。") ]
 
-如果将Scala用于生产代码，`scala-library`则应将依赖项添加到`compile`配置中：
+如果将Scala用于生产代码，则应将`scala-library`依赖项添加到`compile`配置中：
 
 例子3.声明生产代码的Scala依赖
 
@@ -244,7 +243,7 @@ build.gradle.kts
         testImplementation("junit:junit:4.13")
     }
 
-如果Scala仅用于测试代码，`scala-library`则应将依赖项添加到`testCompile`配置中：
+如果Scala仅用于测试代码，则应将`scala-library`依赖项添加到`testCompile`配置中：
 
 例子4.声明测试代码的Scala依赖
 
@@ -268,18 +267,22 @@ build.gradle.kts
 
 ## [自动配置scalaClasspath](#自动配置scalaClasspath)
 
-在`ScalaCompile`和`ScalaDoc`任务消耗两个方面Scala代码：对他们`classpath`，以及他们`scalaClasspath`。前者用于查找源代码引用的类，通常将`scala-
-library`与其他库一起包含。后者分别用于加载和执行Scala编译器和Scaladoc工具，并且应仅包含`scala-compiler`库及其依赖项。
+`ScalaCompile`和`ScalaDoc`任务两个方式消耗Scala代码：
+对他们`classpath`，以及他们`scalaClasspath`。
+前者用于查找源代码引用的类，通常将`scala-library`与其他库一起包含。
+后者分别用于加载和执行Scala编译器和Scaladoc工具，并且应仅包含`scala-compiler`库及其依赖项。
 
-除非`scalaClasspath`明确配置了任务的，否则Scala（基本）插件将尝试从任务的中推断出它`classpath`。这样做如下：
+除非`scalaClasspath`明确配置了任务的，否则Scala（基本）插件将尝试从任务的`classpath`中推断出它。这样做如下：
 
-  * 如果在`scala-library`上找到了jar `classpath`，并且项目中至少声明了一个存储库，`scala-compiler`则将向中添加相应的存储库依赖项`scalaClasspath`。
+  * 如果在`classpath`上找到了`scala-library`jar ，并且项目中至少声明了一个存储库，
+  则将向`scalaClasspath`中添加相应的`scala-compiler`存储库依赖项。
 
   * 否则，任务的执行将失败，并显示一条消息，提示`scalaClasspath`无法推断。
 
 ## [配置Zinc编译器](#配置Zinc编译器)
 
-Scala插件使用名为的配置`zinc`来解析[Zinc编译器](https://github.com/typesafehub/zinc)及其依赖项。Gradle将提供Zinc的默认版本，但是如果您需要使用特定的Zinc版本，则可以对其进行更改。Gradle支持Zinc及更高版本的1.2.0。
+Scala插件使用名为`zinc`的配置来解析[Zinc编译器](https://github.com/typesafehub/zinc)及其依赖项。
+Gradle将提供Zinc的默认版本，但是如果您需要使用特定的Zinc版本，则可以对其进行更改。Gradle支持Zinc及更高版本的1.2.0。
 
 例子5.声明要使用的Zinc编译器版本
 
@@ -301,21 +304,21 @@ build.gradle.kts
         zincVersion.set("1.2.1")
     }
 
-Zinc编译器本身需要兼容的版本，`scala-library`该版本可能与您的应用程序所需的版本不同。Gradle会`scala-
-library`为您指定兼容版本。 [[2](#_footnotedef_2"查看脚注。") ]
+Zinc编译器本身需要兼容的版本，该`scala-library`版本可能与您的应用程序所需的版本不同。
+Gradle会为您指定兼容`scala-library`版本。 [[2](#_footnotedef_2"查看脚注。") ]
 
-可以诊断出通过运行选择的锌编译器的版本问题[dependencyInsight](/md/查看和调试依赖项.md)的`zinc`配置。
+可以诊断出通过运行选择的Zinc编译器的版本问题[dependencyInsight](/md/查看和调试依赖项.md)的`zinc`配置。
 
-表2.锌兼容性表 
+表2.Zinc兼容性表 
 
-Gradle版本 | 支持的锌版本 | 锌座标 | 所需的Scala版本 | 支持的Scala编译版本  
+Gradle版本 | 支持的Zinc版本 | Zinc座标 | 所需的Scala版本 | 支持的Scala编译版本  
 ---|---  |---|---  |---  
-6.0及更高版本|[SBT锌](https://github.com/sbt/zinc)。1.2.0及更高版本。|`org.scala-sbt:zinc_2.12`|_运行_ Zinc`2.12.x`需要Scala 。 __|`2.10.x`通过Scala`2.13.x`可以编译。  
+6.0及更高版本|[SBT Zinc](https://github.com/sbt/zinc)。1.2.0及更高版本。|`org.scala-sbt:zinc_2.12`|_运行_ Zinc`2.12.x`需要Scala 。 __|`2.10.x`通过Scala`2.13.x`可以编译。  
 1.x至5.x|[**不推荐使用的** TypesafeZinc编译器。](https://github.com/typesafehub/zinc)版本0.3.0及更高版本，但0.3.2至0.3.5.2除外。|`com.typesafe.zinc:zinc`|_运行_ Zinc`2.10.x`需要Scala 。 __|`2.9.x`通过Scala`2.12.x`可以编译。  
   
 ## [将插件添加到Scala编译器](#将插件添加到Scala编译器)
 
-Scala插件添加了一个名为的配置`scalaCompilerPlugins`，该配置用于声明和解析可选的编译器插件。
+Scala插件添加了一个名为`scalaCompilerPlugins`的配置，该配置用于声明和解析可选的编译器插件。
 
 示例6.在Scala编译器插件上添加依赖项
 
@@ -374,7 +377,7 @@ Scala插件还修改了一些源集属性：
 
 表3. Scala插件-源集属性
 
- 物业名称 | 更改  
+ 属性名称 | 更改  
 ---|---    
 `allJava`|添加`.java`在Scala源目录中找到的所有文件。  
 `allSource`|添加在Scala源目录中找到的所有源文件。  
@@ -383,7 +386,7 @@ Scala插件还修改了一些源集属性：
 
 Scala编译在外部过程中进行。
 
-外部进程的内存设置默认为JVM的默认值。要调整内存设置，请`scalaCompileOptions.forkOptions`根据需要配置属性：
+外部进程的内存设置默认为JVM的默认值。要调整内存设置，请根据需要配置`scalaCompileOptions.forkOptions`属性：
 
 示例7.调整内存设置
 
@@ -413,10 +416,12 @@ build.gradle.kts
 
 ## [增量编译](#增量编译)
 
-通过仅编译自上次编译以来其源代码已更改的类以及受这些更改影响的类，增量编译可以显着减少Scala编译时间。如开发时经常这样做，当频繁编译较小的代码增量时，它特别有效。
+通过仅编译自上次编译以来其源代码已更改的类以及受这些更改影响的类，增量编译可以显着减少Scala编译时间。
+如开发时经常这样做，当频繁编译较小的代码增量时，它特别有效。
 
-通过与[Zinc](https://github.com/typesafehub/zinc)集成，Scala插件默认为增量编译，它是[sbt](https://github.com/harrah/xsbt)增量Scala编译器的独立版本。如果要禁用增量编译，请`force
-= true`在构建文件中进行设置：
+通过与[Zinc](https://github.com/typesafehub/zinc)集成，Scala插件默认为增量编译，
+它是[sbt](https://github.com/harrah/xsbt)增量Scala编译器的独立版本。如果要禁用增量编译，
+请在构建文件中进行`force=true`设置：
 
 例子8.强制所有代码被编译
 
@@ -442,14 +447,22 @@ build.gradle.kts
         }
     }
 
-_注意：_ 仅当至少一个输入源文件已更改时，这才会导致重新编译所有类。如果源文件没有任何更改，`compileScala`则仍将`UP-TO-
-DATE`照常执行该任务。
+_注意：_ 仅当至少一个输入源文件已更改时，这才会导致重新编译所有类。如果源文件没有任何更改，
+`compileScala`则仍将照常执行`UP-TO-DATE`任务。
 
-基于Zinc的Scala编译器支持Java和Scala代码的联合编译。默认情况下，所有Java和Scala代码`src/main/scala`都将参与联合编译。甚至Java代码也将以增量方式编译。
+基于Zinc的Scala编译器支持Java和Scala代码的联合编译。默认情况下，`src/main/scala`所有Java和Scala代码都将参与联合编译。甚至Java代码也将以增量方式编译。
 
-增量编译需要对源代码进行依赖性分析。分析结果存储在指定的文件中`scalaCompileOptions.incrementalOptions.analysisFile`（该文件具有明智的默认值）。在多项目构建中，分析文件将传递到下游`ScalaCompile`任务，以实现跨项目边界的增量编译。对于`ScalaCompile`Scala插件添加的任务，无需进行配置即可完成此工作。对于`ScalaCompile`您可能添加的其他任务，`scalaCompileOptions.incrementalOptions.publishedCode`需要将该属性配置为指向classes文件夹或Jar存档，通过该文件夹传递代码以编译下游`ScalaCompile`任务的类路径。请注意，如果`publishedCode`设置不正确，下游任务可能不会重新编译受上游更改影响的代码，从而导致错误的编译结果。
+增量编译需要对源代码进行依赖性分析。分析结果存储在`scalaCompileOptions.incrementalOptions.analysisFile`指定的文件中
+（该文件具有明智的默认值）。
+在多项目构建中，分析文件将传递到下游`ScalaCompile`任务，以实现跨项目边界的增量编译。
+对于Scala插件添加的`ScalaCompile`任务，无需进行配置即可完成此工作。
+对于其他您可能添加的`ScalaCompile`任务，需要将`scalaCompileOptions.incrementalOptions.publishedCode`属性配置为指向classes文件夹或Jar存档，
+通过该文件夹传递代码以编译下游`ScalaCompile`任务的类路径。
+请注意，如果`publishedCode`设置不正确，下游任务可能不会重新编译受上游更改影响的代码，从而导致错误的编译结果。
 
-请注意，不支持Zinc基于Nailgun的守护程序模式。取而代之的是，我们计划增强Gradle自己的编译器守护进程，以在Gradle调用中保持活动状态，并重用相同的Scala编译器。预计这将为Scala编译带来另一个显着的加速。
+
+请注意，不支持Zinc基于Nailgun的守护程序模式。取而代之的是，我们计划增强Gradle自己的编译器守护进程，
+以在Gradle调用中保持活动状态，并重用相同的Scala编译器。预计这将为Scala编译带来另一个显着的加速。
 
 ## [针对Java_6或Java_7进行编译和测试](#针对Java_6或Java_7进行编译和测试)
 

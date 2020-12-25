@@ -8,15 +8,15 @@
   * [建立发行版](#建立发行版)
   * [任务](#任务)
   * [应用扩展](#应用扩展)
-  * [发牌](#发牌)
+  * [licensing](#licensing)
   * [约定属性（已弃用）](#约定属性（已弃用）)
 
 应用程序插件有助于创建可执行的JVM应用程序。它使在开发过程中本地启动应用程序以及将应用程序打包为TAR和/或ZIP（包括操作系统特定的启动脚本）变得容易。
 
 应用Application插件也隐式应用[Java插件](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_plugin)。该`main`源集是有效的“应用程序”。
 
-应用Application插件还隐式应用[Distribution插件](https://docs.gradle.org/6.7.1/userguide/distribution_plugin.html#distribution_plugin)。一个`main`分布创建包起来的应用程序，包括代码依赖关系和生成的启动脚本。
-
+应用Application插件还隐式应用[Distribution插件](https://docs.gradle.org/6.7.1/userguide/distribution_plugin.html#distribution_plugin)。
+一个`main`发行版会被创建，它打包了应用程序，包括代码依赖关系和生成的启动脚本。
 ## [构建JVM应用程序](#构建JVM应用程序)
 
 要使用应用程序插件，请在构建脚本中包括以下内容：
@@ -41,7 +41,7 @@ build.gradle.kts
         application
     }
 
-插件的唯一必需配置是应用程序的主类（即入口点）的规范。
+插件的唯一必需配置是应用程序的Main类（即入口点）的规范。
 
 例子2.配置应用程序主类
 
@@ -65,14 +65,14 @@ build.gradle.kts
 
 您可以通过执行`run`任务
 （类型：[JavaExec](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/JavaExec.html)）
-来运行应用程序。这将编译主源集，并使用指定的主类启动一个新的JVM，并将其类（以及所有运行时依赖项）作为类路径。
+来运行应用程序。这将编译main源集，并使用指定的Main类启动一个新的JVM，并将其类（以及所有运行时依赖项）作为类路径。
 您可以使用`gradlerun --debug-jvm`
 （请参阅[JavaExec.setDebug（boolean）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/JavaExec.html#setDebug-boolean-)）
 以调试模式启动应用程序。
 
-从Gradle 4.9开始，可以使用传递命令行参数`--args`。例如，如果要使用命令行参数启动应用程序`foo --bar`，则可以使用`gradle
-run --args="foo
---bar"`（请参阅[JavaExec.setArgsString（java.lang.String）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/JavaExec.html#setArgsString-java.lang.String-)。
+从Gradle 4.9开始，可以使用传递命令行参数`--args`。
+例如，如果要使用命令行参数启动应用程序`foo --bar`，
+则可以使用`gradle run --args="foo --bar"`（请参阅[JavaExec.setArgsString（java.lang.String）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/JavaExec.html#setArgsString-java.lang.String-)。
 
 如果您的应用程序需要一组特定的JVM设置或系统属性，则可以配置该`applicationDefaultJvmArgs`属性。这些JVM参数将应用于`run`任务，并且还会在发行版的生成的启动脚本中予以考虑。
 
@@ -122,8 +122,8 @@ build.gradle.kts
 
 Gradle支持[Java模块](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)[插件文档](/md/Java库插件.md#Java模块系统的构建模块)的[相应部分中所述](/md/Java库插件.md#Java模块系统的构建模块)的[Java模块](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)的构建。Java模块也可以运行，并且您可以使用应用程序插件来运行和打包此类模块化应用程序。为此，除了要对非模块化应用程序进行操作之外，还需要做两件事。
 
-首先，您需要添加一个`module-
-info.java`文件来描述您的应用程序模块。有关此主题的更多详细信息，请参阅[Java库插件文档](/md/Java库插件.md#Java模块系统的构建模块)。
+首先，您需要添加一个`module-info.java`文件来描述您的应用程序模块。
+有关此主题的更多详细信息，请参阅[Java库插件文档](/md/Java库插件.md#Java模块系统的构建模块)。
 
 其次，除了像这样的主类名称之外，还需要告诉Gradle您要运行的模块的名称：
 
@@ -248,9 +248,8 @@ build.gradle.kts
 
 通过指定发行版应包含任务的输出文件（请参阅[关于](/md/处理任务.md#任务输入和输出)task的[更多信息](/md/处理任务.md#任务输入和输出)），Gradle知道在组装发行版之前必须先调用生成文件的任务，并将为您解决这一问题。
 
-您可以在中运行`gradle
-installDist`以创建应用程序的映像。您可以运行以创建包含发行版的ZIP，创建应用程序TAR或同时构建两者。`build/install/
-_projectName_``gradle distZip``gradle distTar``gradle assemble`
+您可以在`build/install/projectName`中运行`gradle installDist`以创建应用程序的映像。
+您可以运行`gradle distZip`以创建包含发行版的ZIP，`gradle distTar`以创建应用程序TAR或`gradle assemble`同时构建两者。
 
 ### [自定义启动脚本生成](#自定义启动脚本生成)
 
@@ -330,7 +329,7 @@ build.gradle.kts
         executableDir = "custom_bin_dir"
     }
 
-## [发牌](#发牌)
+## [licensing](#licensing)
 
 与您的应用程序捆绑在一起的Gradle启动脚本已获得[Apache 2.0软件许可的许可](https://www.apache.org/licenses/LICENSE-2.0) 。这不会影响您的应用程序，您可以选择许可该应用程序。
 

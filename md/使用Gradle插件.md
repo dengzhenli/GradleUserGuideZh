@@ -49,8 +49,8 @@ Gradle中的插件一般有两种类型，二进制插件和脚本插件。
 要使用封装在插件中的构建逻辑，Gradle需要执行两个步骤。首先，它需要 _解析_ 插件，然后需要 _将_
 插件应用于目标（通常是[Project）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html)。
 
-_解决_
-插件意味着找到包含给定插件的jar的正确版本，并将其添加为脚本类路径。插件解决后，即可在构建脚本中使用其API。脚本插件是自解析的，因为它们是从应用它们时提供的特定文件路径或URL解析的。作为Gradle发行的一部分提供的核心二进制插件会自动解决。
+_解析_
+插件意味着找到包含给定插件的jar的正确版本，并将其添加为脚本类路径。插件解析后，即可在构建脚本中使用其API。脚本插件是自解析的，因为它们是从应用它们时提供的特定文件路径或URL解析的。作为Gradle发行的一部分提供的核心二进制插件会自动解决。
 
 _应用_
 插件意味着在要使用插件增强的项目上实际执行插件的[Plugin.apply（T）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/Plugin.html#apply-T-)。应用插件是
@@ -182,22 +182,24 @@ version»`必须为常数的地方，文字，字符串和`apply`带有的语句
 
 如果要使用变量定义插件版本，请参见[插件版本管理](#插件版本管理)。
 
-该`plugins {}`块还必须是buildscript中的顶级语句。它不能嵌套在另一个构造中（例如，if语句或for循环）。
+`plugins {}`块还必须是buildscript中的顶级语句。它不能嵌套在另一个构造中（例如，if语句或for循环）。
 
 ##### [只能在构建脚本和设置文件中使用](#只能在构建脚本和设置文件中使用)
 
-该`plugins {}`块当前只能在项目的构建脚本和settings.gradle文件中使用。不能在脚本插件或初始化脚本中使用。
+`plugins {}`块当前只能在项目的构建脚本和settings.gradle文件中使用。不能在脚本插件或初始化脚本中使用。
 
 _Gradle的未来版本将删除此限制。_
 
-如果该`plugins {}`块的限制令人望而却步，则建议的方法是使用[buildscript
+如果`plugins {}`块的限制令人望而却步，则建议的方法是使用[buildscript
 {}块](#使用带有buildscript块的插件)来应用插件。
 
 #### [将具有相同版本的外部插件应用于子项目](#将具有相同版本的外部插件应用于子项目)
 
-如果您具有[多项目构建](/md/Gradle中的多项目构建.md#multi_project_builds)，则可能希望将插件应用于[构建](/md/Gradle中的多项目构建.md#multi_project_builds)中的部分或全部子项目，而不是应用于`root`项目。该`plugins
-{}`块的默认行为是立即`resolve` _和_ `apply`插件。但是，您可以使用`apply
-false`语法告诉Gradle不要将插件应用于当前项目，然后`plugins {}`在子项目的构建脚本中使用不带版本的块：
+如果您具有[多项目构建](/md/Gradle中的多项目构建.md#multi_project_builds)，
+则可能希望将插件应用于[构建](/md/Gradle中的多项目构建.md#multi_project_builds)中的部分或全部子项目，
+而不是应用于`root`项目。`plugins
+{}`块的默认行为是立即解析(resolve)和应用(apply)插件。。但是，您可以使用`apply
+false`语法告诉Gradle不要将插件应用于当前项目，然后在子项目的构建脚本中使用不带版本的`plugins {}`块：
 
 例子3.仅在某些子项目上应用插件
 
@@ -220,7 +222,7 @@ build.gradle
         id 'com.example.goodbye' version '1.0.0' apply false
     }
 
-你好-a / build.gradle
+hello-a/build.gradle
 
     
     
@@ -236,7 +238,7 @@ hello-b / build.gradle
         id 'com.example.hello'
     }
 
-再见-c / build.gradle
+hello-a/build.gradle
 
     
     
@@ -244,6 +246,8 @@ hello-b / build.gradle
         id 'com.example.goodbye'
     }
 
+
+============Kotlin===========================  
 settings.gradle.kts
 
     
@@ -289,8 +293,8 @@ goodbye-c/build.gradle.kts
 
 #### [从_buildSrc_目录应用插件](#从_buildSrc_目录应用插件)
 
-您可以应用驻留在项目的 _buildSrc_ 目录中的插件，只要它们具有已定义的ID即可。以下示例显示了如何将插件实现类（`my.MyPlugin`在
-_buildSrc中_ 定义）与ID“ my-plugin”相关联：
+您可以应用驻留在项目的 _buildSrc_ 目录中的插件，只要它们具有已定义的ID即可。
+以下示例显示了如何将插件实现类（在 _buildSrc中_ 定义`my.MyPlugin`）与ID“ my-plugin”相关联：
 
 例子4.定义一个带有ID的buildSrc插件
 
@@ -354,7 +358,7 @@ build.gradle.kts
 
 #### [插件管理](#插件管理)
 
-该`pluginManagement
+`pluginManagement
 {}`块只能出现在`settings.gradle`文件中，该文件必须是文件中的第一个块，也可以出现在[初始化脚本中](/md/初始化脚本.md#init_scripts)。
 
 例子6.为每个项目和全局配置pluginManagement
@@ -424,7 +428,7 @@ init.gradle.kts
 默认情况下，`plugins
 {}`DSL从公共[Gradle插件门户](https://plugins.gradle.org/)解析插件[。](https://plugins.gradle.org/)许多构建作者还希望从私有Maven或Ivy存储库中解析插件，因为这些插件包含专有的实现细节，或者只是为了更好地控制其构建可用的插件。
 
-要指定自定义插件存储库，请使用其中的`repositories {}`块`pluginManagement {}`：
+要指定自定义插件存储库，请使用`repositories {}`块其中的`pluginManagement {}`：
 
 示例7.示例：使用来自自定义插件存储库的插件。
 
@@ -464,12 +468,13 @@ repo`将检查Ivy存储库。
 
 ##### [插件版本管理](#插件版本管理)
 
-`plugins {}`内部的一个块`pluginManagement
-{}`允许将构建的所有插件版本定义在一个位置。然后可以通过ID将插件按ID应用于任何构建脚本`plugins {}`。
+`pluginManagement {}`内部的一个`plugins {}`块允许将构建的所有插件版本定义在一个位置。
+然后可以通过ID将插件按ID应用于任何构建脚本`plugins {}`。
 
-通过这种方式设置插件版本的好处之一是，`pluginManagement.plugins
-{}`它们的[语法](#约束语法)与构建脚本`plugins
-{}`块的[约束语法不同](#约束语法)。这允许从中获取插件版本`gradle.properties`，或通过其他机制加载。
+通过这种方式设置插件版本的好处之一是，
+`pluginManagement.plugins {}`的[语法](#约束语法)与构建脚本`plugins
+{}`块的[约束语法不同](#约束语法)。
+这允许从`gradle.properties`中获取插件版本，或通过其他机制加载。
 
 示例8.示例：通过管理插件版本`pluginManagement`。
 
@@ -518,7 +523,7 @@ gradle.properties
 
 插件解析规则允许您修改以`plugins {}`块为单位的插件请求，例如，更改请求的版本或显式指定实现工件坐标。
 
-要添加解析规则，请使用`resolutionStrategy {}`内部`pluginManagement {}`块：
+要添加解析规则，请使用`pluginManagement {}`内部`resolutionStrategy {}`块：
 
 示例9.插件解析策略。
 
@@ -581,9 +586,18 @@ Plugin](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gra
 
 ### [插件标记工件](#插件标记工件)
 
-由于`plugins{}`DSL块仅允许通过其全局唯一的插件`id`和`version`属性来声明插件，因此Gradle需要一种方法来查找插件实现工件的坐标。为此，Gradle将寻找具有坐标的插件标记工件`plugin.id:plugin.id.gradle.plugin:plugin.version`。该标记需要依赖于实际的插件实现。这些标记的发布由[java-gradle-plugin](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)自动执行。
+由于`plugins{}`DSL块仅允许通过其全局唯一的插件`id`和`version`属性来声明插件，
+因此Gradle需要一种方法来查找插件实现工件的坐标。
+为此，Gradle将寻找具有`plugin.id:plugin.id.gradle.plugin:plugin.version`坐标的插件标记工件。
+该标记需要依赖于实际的插件实现。
+这些标记的发布由[java-gradle-plugin](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin) 自动执行。
 
-例如，下面的`sample-plugins`项目完整示例显示了如何使用[java-gradle-plugin](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)，[maven-publish](/md/Maven发布插件.md#publishing_maven)插件和[ivy-publish](/md/Ivy发布插件.md#publishing_ivy)插件的组合将`com.example.hello`插件和`com.example.goodbye`插件发布到Ivy和Maven存储库。[](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)[](/md/Maven发布插件.md#publishing_maven)[](/md/Ivy发布插件.md#publishing_ivy)
+例如，下面的`sample-plugins`项目完整示例显示了如何使用[java-gradle-plugin](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin) ，
+[maven-publish](/md/Maven发布插件.md#publishing_maven) 插件和
+[ivy-publish](/md/Ivy发布插件.md#publishing_ivy)插件的组合
+将`com.example.hello`插件和`com.example.goodbye`插件发布到Ivy和Maven存储库。
+[](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin) 
+[](/md/Maven发布插件.md#publishing_maven) [](/md/Ivy发布插件.md#publishing_ivy)
 
 例子10.完整的插件发布样本
 

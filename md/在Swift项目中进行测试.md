@@ -10,7 +10,11 @@
 
 在本地生态系统中进行测试是一个丰富的主题。有许多不同的测试库和框架，以及许多不同类型的测试。无论它们是频繁执行还是不频繁执行，所有这些都需要成为构建的一部分。本章专门说明Gradle如何处理内部版本之间以及内部内部的不同要求，并广泛介绍了Gradle如何与macOS和Linux上的XCTest集成。
 
-它解释了：-控制测试运行方式的方法（测试执行）-如何选择要运行的特定测试（测试过滤）-生成了哪些测试报告以及如何影响过程（测试报告）-Gradle如何找到要运行的测试运行（测试检测）
+它解释了：
+- 控制测试运行方式的方法（测试执行）
+- 如何选择要运行的特定测试（测试过滤）
+- 生成了哪些测试报告以及如何影响过程（测试报告）
+- Gradle如何找到要运行的测试运行（测试检测）
 
 但是首先，我们看一下Gradle中本机测试的基础。
 
@@ -18,11 +22,16 @@
 
 Gradle支持与Swift语言的XCTest测试框架进行深度集成，并围绕[XCTest](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)任务类型展开。这将在macOS上使用[XcodeXCTest](https://developer.apple.com/documentation/xctest)或在Linux上使用[开源Swift核心库替代方案](https://github.com/apple/swift-corelibs-xctest)运行一系列测试用例，并整理结果。然后，您可以通过[TestReport](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.TestReport.html)任务类型的实例将这些结果转换为报告。
 
-为了进行操作，[XCTest](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)任务类型需要三条信息：-在哪里找到构建的可测试包（在macOS上）或可执行文件（在Linux上）（属性：[XCTest.getTestInstalledDirectory（）](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html#org.gradle.nativeplatform.test.xctest.tasks.XCTest:testInstallDirectory)）-用于执行包的运行脚本或可执行文件（属性：[XCTest.getRunScriptFile（）](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html#org.gradle.nativeplatform.test.xctest.tasks.XCTest:runScriptFile)）-执行捆绑或可执行文件的工作目录（属性：[XCTest.getWorkingDirectory（）](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html#org.gradle.nativeplatform.test.xctest.tasks.XCTest:workingDirectory)）
+为了进行操作，[XCTest](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)任务类型需要三条信息：
+- 在哪里找到构建的可测试包（在macOS上）或可执行文件（在Linux上）（属性：[XCTest.getTestInstalledDirectory（）](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html#org.gradle.nativeplatform.test.xctest.tasks.XCTest:testInstallDirectory)）
+- 用于执行包的运行脚本或可执行文件（属性：[XCTest.getRunScriptFile（）](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html#org.gradle.nativeplatform.test.xctest.tasks.XCTest:runScriptFile)）
+- 执行捆绑或可执行文件的工作目录（属性：[XCTest.getWorkingDirectory（）](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html#org.gradle.nativeplatform.test.xctest.tasks.XCTest:workingDirectory)） 
 
-使用[XCTest插件时](https://docs.gradle.org/6.7.1/userguide/xctest_plugin.html)，将自动获得以下内容：-用于配置测试组件及其变体的[SwiftXCTestSuite](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.SwiftXCTestSuite.html)`xctest`类型的专用扩展-
-运行那些单元测试的[XCTest](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)类型的任务-
-与主程序链接的可测试包或可执行文件组件的目标文件[](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.SwiftXCTestSuite.html)`xcTest`[](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)
+
+使用[XCTest插件时](https://docs.gradle.org/6.7.1/userguide/xctest_plugin.html)，将自动获得以下内容：
+- 用于配置测试组件及其变体的[SwiftXCTestSuite](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.SwiftXCTestSuite.html)`xctest`类型的专用扩展
+- 运行那些单元测试的[XCTest](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)类型的任务
+- 与主程序链接的可测试包或可执行文件组件的目标文件[](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.SwiftXCTestSuite.html)`xcTest`[](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.test.xctest.tasks.XCTest.html)
 
 测试插件会适当配置所需的信息。此外，它们还将`xcTest`或`run`任务附加到`check`生命周期任务。它还创建`testImplementation`依赖项配置。只能将测试编译，链接和运行时所需的依赖项添加到此配置中。该`xctest`脚本块的行为类似于一个`application`或`library`脚本块。
 

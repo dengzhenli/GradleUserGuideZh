@@ -7,7 +7,7 @@ version 6.9-20201127230042+0000
   * [创建一个自定义任务类](#创建一个自定义任务类)
   * [转换为Worker API](#转换为Worker_API)
   * [更改隔离模式](#更改隔离模式)
-  * [创建一个工人守护进程](#创建一个工人守护进程)
+  * [创建一个worker守护进程](#创建一个worker守护进程)
 
 Worker
 API提供了将任务动作的执行分解为离散的工作单元，然后同时并异步执行该工作的功能。这使Gradle可以充分利用可用资源并更快地完成构建。本节将引导您完成将现有自定义任务转换为使用Worker
@@ -103,11 +103,11 @@ buildSrc / src / main / java / CreateMD5.java
 ═════════════════════════════  
 ① [SourceTask](https://docs.gradle.org/nightly/javadoc/org/gradle/api/tasks/SourceTask.html)是一种便利类型，用于对一组源文件进行操作的任务。  
 ②  任务的输出将进入已配置的目录。  
-③  该任务遍历定义为“源文件”的所有文件，并为每个文件创建MD5哈希。  
-④  插入人工睡眠以模拟对大型文件进行哈希处理（示例文件不会那么大）。  
+③  该任务遍历定义为“source files”的所有文件，并为每个文件创建MD5哈希。  
+④  手动插入睡眠以模拟对大型文件进行哈希处理（示例文件不会那么大）。  
 ⑤  每个文件的MD5哈希将写入输出目录中，扩展名为“ md5”。  
 ╚═════════════════════════════  
-接下来，创建一个`build.gradle(.kts)`注册新`CreateMD5`任务的。
+接下来，创建一个`build.gradle(.kts)`注册新的`CreateMD5`任务。
 
 `Groovy``Kotlin`
 
@@ -233,8 +233,7 @@ buildSrc / src / main / java / GenerateMD5.java
 ①  不要实现该`getParameters()`方法-Gradle将在运行时注入此方法。  
 ╚═════════════════════════════  
   
-现在，您应该更改自定义任务类，以将工作提交给{api-reference} org / gradle / workers /
-WorkerExecutor.html [WorkerExecutor]，而不是自己完成工作。
+现在，您应该更改自定义任务类，以将工作提交给WorkerExecutor(org/gradle/workers/WorkerExecutor)，而不是自己完成工作。
 
 buildSrc / src / main / java / CreateMD5.java
 
@@ -295,10 +294,10 @@ API对每个文件并行而不是按顺序执行MD5计算。
 
 ## [更改隔离模式](#更改隔离模式)
 
-隔离模式控制Gradle将工作项彼此隔离以及与Gradle运行时的其余部分隔离的强烈程度。有三种方法，`WorkerExecutor`即控制这样的：
-`noIsolation()`，`classLoaderIsolation()`和`processIsolation()`。的`noIsolation()`模式是最低的隔离级别，它将阻止工作单元更改项目状态。这是最快的隔离模式，因为它需要最少的开销来设置要执行的工作项，因此您可能希望在简单的情况下使用此模式。但是，它将对所有工作单元使用单个共享的类加载器。这意味着每个工作单元都可能通过静态类状态相互影响。这也意味着每个工作单元都使用buildscript类路径上相同版本的库。如果希望用户能够将任务配置为与其他（但兼容）版本的
-[Apache Commons Codec](https://commons.apache.org/proper/commons-
-codec/)库一起运行，则需要使用其他隔离模式。
+隔离模式控制Gradle将工作项彼此隔离以及与Gradle运行时的其余部分隔离的强烈程度。
+有三种方法，`WorkerExecutor`即控制这样的：
+`noIsolation()`，`classLoaderIsolation()`和`processIsolation()`。`noIsolation()`模式是最低的隔离级别，它将阻止工作单元更改项目状态。这是最快的隔离模式，因为它需要最少的开销来设置要执行的工作项，因此您可能希望在简单的情况下使用此模式。但是，它将对所有工作单元使用单个共享的类加载器。这意味着每个工作单元都可能通过静态类状态相互影响。这也意味着每个工作单元都使用buildscript类路径上相同版本的库。如果希望用户能够将任务配置为与其他（但兼容）版本的
+[Apache Commons Codec](https://commons.apache.org/proper/commons-codec/) 库一起运行，则需要使用其他隔离模式。
 
 首先，您需要将依赖项更改`buildSrc/build.gradle`为`compileOnly`。这告诉Gradle在构建类时应使用此依赖项，但不应将其放在构建脚本的类路径中。
 
@@ -460,13 +459,14 @@ build.gradle.kts
     BUILD SUCCESSFUL in 0s
     1 actionable task: 1 executed
 
-## [创建一个工人守护进程](#创建一个工人守护进程)
+## [创建一个worker守护进程](#创建一个worker守护进程)
 
-有时，在执行工作项时需要进一步隔离。例如，外部库可能依赖于要设置的某些系统属性，这些属性可能在工作项之间发生冲突。或者库可能与Gradle所运行的JDK版本不兼容，并且可能需要与其他版本一起运行。Worker
-API可以使用`processIsolation()`导致工作在单独的“
-worker守护程序”中执行的方法来容纳这一点。这些工作程序守护程序进程将在构建之间持久存在，并且可以在后续构建中重用。但是，如果系统资源不足，Gradle将停止所有未使用的工作程序守护程序。
+有时，在执行工作项时需要进一步隔离。例如，外部库可能依赖于要设置的某些系统属性，这些属性可能在工作项之间发生冲突。
+或者库可能与Gradle所运行的JDK版本不兼容，并且可能需要与其他版本一起运行。Worker
+ Worker API可以使用processIsolation()方法来适应这种情况，该方法使工作在一个单独的 "worker daemon "中执行。
+。这些工作程序守护程序进程将在构建之间持久存在，并且可以在后续构建中重用。但是，如果系统资源不足，Gradle将停止所有未使用的工作程序守护程序。
 
-要利用worker守护程序，只需`processIsolation()`在创建时使用方法`WorkQueue`。您可能还需要为新过程配置自定义设置。
+要利用worker守护程序，只需在创建`WorkQueue`时使用`processIsolation()`方法。您可能还需要为新过程配置自定义设置。
 
 buildSrc / src / main / java / CreateMD5.java
 
@@ -517,7 +517,7 @@ buildSrc / src / main / java / CreateMD5.java
     }
 ════════════════════════════  
 ①  将隔离模式更改为`PROCESS`。  
-②  为新过程设置`{api-reference}org/gradle/process/JavaForkOptions.html[JavaForkOptions]`
+②  为新过程设置`{api-reference}org/gradle/process/JavaForkOptions.html[JavaForkOptions]`  
 ╚═════════════════════════════  
 现在，您应该能够运行您的任务，它将按预期运行，但可以使用辅助守护程序：
 

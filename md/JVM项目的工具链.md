@@ -153,17 +153,17 @@ build.gradle.kts
 
 操作系统特定的位置：
 
-  * 的Linux
+  * Linux
 
-  * 苹果系统
+  * macOs
 
-  * 视窗
+  * Windows
 
 支持的软件包管理器：
 
-  * [音频文件](https://asdf-vm.com/#/)
+  * [Asdf-vm](https://asdf-vm.com/#/)
 
-  * [贾巴](https://github.com/shyiko/jabba)
+  * [Jabba](https://github.com/shyiko/jabba)
 
   * [SDKMAN！](https://sdkman.io/)
 
@@ -173,7 +173,7 @@ build.gradle.kts
 
   * 要么使用开始gradle `-Porg.gradle.java.installations.auto-detect=false`
 
-  * 或放入`org.gradle.java.installations.auto-detect=false`您的`gradle.properties`文件中。
+  * 或放入`org.gradle.java.installations.auto-detect=false`到您的`gradle.properties`文件中。
 
 ## [自动配置](#自动配置)
 
@@ -196,7 +196,7 @@ v3兼容的另一台服务器，则可以使Gradle使用其他主机。为此，
 
 ╔═════════════════════════════  
 
-仅`https`接受像这样的安全协议。这是确保没有人可以篡改飞行中的下载所必需的。  
+仅`https`接受像这样的安全协议。这是确保没有人可以篡改中途的下载所必需的。  
   
 ╚═════════════════════════════    
   
@@ -204,9 +204,9 @@ v3兼容的另一台服务器，则可以使Gradle使用其他主机。为此，
 
 为了禁用自动配置，可以使用`org.gradle.java.installations.auto-download`Gradle属性：
 
-  * 要么使用开始gradle `-Porg.gradle.java.installations.auto-download=false`
+  * 启动gradle `-Porg.gradle.java.installations.auto-download=false`
 
-  * 或把`org.gradle.java.installations.auto-download=false`成一个`gradle.properties`文件。
+  * 或`gradle.properties`文件设置`org.gradle.java.installations.auto-download=false`
 
 ## [自定义工具链位置](#自定义工具链位置)
 

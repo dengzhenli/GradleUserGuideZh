@@ -10,7 +10,8 @@
   * [完整的例子](#完整的例子)
   * [从旧版Ivy出版物迁移](#从旧版Ivy出版物迁移)
 
-Ivy Publish插件提供了以[Apache Ivy](http://ant.apache.org/ivy/)格式发布构建工件的功能，通常将其发布到存储库以供其他构建或项目使用。发布的内容是由构建创建的一个或多个工件，以及一个Ivy
+Ivy Publish插件提供了以[Apache Ivy](http://ant.apache.org/ivy/)格式发布构建工件的功能，
+通常将其发布到存储库以供其他构建或项目使用。发布的内容是由构建创建的一个或多个工件，以及一个Ivy
 _模块描述符_ （通常为`ivy.xml`），该描述 _符_ 描述了工件及其相关性（如果有）。
 
 Gradle（请参阅[声明依赖项](/md/声明依赖.md#declaring-dependencies)）和其他了解Ivy格式的工具可以使用已发布的Ivy模块。您可以在[发布概述中](/md/将项目发布为模块.md#publishing_overview)了解发布的基础知识。

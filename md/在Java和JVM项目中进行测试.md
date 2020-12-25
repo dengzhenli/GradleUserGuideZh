@@ -16,7 +16,7 @@
   * [跳过测试](#跳过测试)
   * [强制测试运行](#强制测试运行)
   * [运行测试时进行调试](#运行测试时进行调试)
-  * [使用测试治具](#使用测试治具)
+  * [使用测试夹具](#使用测试夹具)
 
 在JVM上进行测试是一个很丰富的主题。有许多不同的测试库和框架，以及许多不同类型的测试。无论它们是频繁执行还是不频繁执行，所有这些都需要成为构建的一部分。本章致力于解释Gradle如何处理内部版本之间以及内部内部的不同需求，并广泛介绍了Gradle如何与两个最常见的测试框架[JUnit](https://junit.org/)和[TestNG](https://testng.org/)集成。
 
@@ -49,7 +49,7 @@ Platform或TestNG）运行一系列测试用例，并整理结果。然后，您
 
   * `test`用于单元测试的专用源集
 
-  * 一个`test`类型的任务`Test`运行这些单元测试
+  * 一个`Test`类型的`test`任务以运行这些单元测试
 
 JVM语言插件使用源集来配置具有适当执行类路径和包含已编译测试类的目录的任务。另外，他们将`test`任务附加到`check`
 [生命周期任务](/md/处理任务.md#生命周期任务)。
@@ -59,7 +59,7 @@ JVM语言插件使用源集来配置具有适当执行类路径和包含已编�
 在大多数情况下，您要做的就是配置适当的编译和运行时依赖项，并将任何必要的配置添加到`test`任务中。以下示例显示了一个简单的设置，该设置使用JUnit
 4.x，并将测试JVM的最大堆大小更改为1 GB：
 
-示例1.“测试”任务的基本配置
+示例1.“test”任务的基本配置
 
 `Groovy``Kotlin`
 
@@ -101,41 +101,61 @@ Gradle在独立于主构建过程的单独（“分叉”）JVM中执行测试�
 
 您可以通过`Test`任务的多个属性来控制如何启动测试过程，包括以下内容：
 
+---
+
 `maxParallelForks` —默认值：1
 
     
 
-您可以通过将此属性设置为大于1的值来并行运行测试。这可能会使您的测试套件更快地完成，尤其是在多核CPU上运行它们时。使用并行测试执行时，请确保您的测试正确地相互隔离。与文件系统交互的测试特别容易发生冲突，从而导致间歇性的测试失败。
+您可以通过将此属性设置为大于1的值来并行运行测试。
+这可能会使您的测试套件更快地完成，尤其是在多核CPU上运行它们时。
+使用并行测试执行时，请确保您的测试正确地相互隔离。
+与文件系统交互的测试特别容易发生冲突，从而导致间歇性的测试失败。
 
-您的测试可以通过使用`org.gradle.test.worker`属性值来区分并行测试过程，该属性值对于每个过程都是唯一的。您可以将其用于任何所需的内容，但是对于文件名和其他资源标识符尤其有用，它可以防止我们刚才提到的那种冲突。
+您的测试可以通过使用`org.gradle.test.worker`属性值来区分并行测试过程，该属性值对于每个过程都是唯一的。
+您可以将其用于任何所需的内容，但是对于文件名和其他资源标识符尤其有用，它可以防止我们刚才提到的那种冲突。
+
+---
 
 `forkEvery` —默认值：0（无最大值）
 
     
 
-此属性指定Gradle在处置之前应创建的新测试类的最大数量。这主要用作管理泄漏测试或框架的静态状态，这些静态状态无法在测试之间清除或重置。
+此属性指定Gradle在处置之前应创建的新测试类的最大数量。
+这主要用作管理泄漏测试或框架的静态状态，这些静态状态无法在测试之间清除或重置。
 
 **警告：较低的值（非0）会严重损害测试的性能**
+
+---
 
 `ignoreFailures` —默认值：false
 
     
 
-如果此属性为`true`，则在测试完成后，即使其中一些失败，Gradle也会继续进行项目的构建。请注意，默认情况下`Test`，无论此设置如何，任务始终执行其检测到的每个测试。
+如果此属性为`true`，则在测试完成后，即使其中一些失败，Gradle也会继续进行项目的构建
+。请注意，默认情况下，无论此设置如何，任务始终执行其检测到的每个`Test`测试。
+
+---
 
 `failFast` —（自Gradle 4.6起）默认值：false
 
     
-
-`true`如果您希望构建失败并在其中一项测试失败后立即完成，则将其设置为。当您拥有长期运行的测试套件时，这可以节省大量时间，并且在连续集成服务器上运行构建时特别有用。如果在运行所有测试之前构建失败，则测试报告仅包括已成功完成或未成功完成的测试结果。
+如果您希望构建失败并在其中一项测试失败后立即完成，则将其设置为`true`。当
+您拥有长期运行的测试套件时，这可以节省大量时间，并且在连续集成服务器上运行构建时特别有用。
+如果在运行所有测试之前构建失败，则测试报告仅包括已成功完成或未成功完成的测试结果。
 
 您还可以通过使用`--fail-fast`命令行选项来启用此行为。
+
+---
 
 `testLogging`—默认值： _未设置_
 
     
 
-此属性表示一组选项，用于控制记录哪些测试事件以及记录在哪个级别。您还可以通过此属性配置其他日志记录行为。有关更多详细信息，请参见[TestLoggingContainer](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/testing/logging/TestLoggingContainer.html)。
+此属性表示一组选项，用于控制记录哪些测试事件以及记录在哪个级别。您还可以通过此属性配置其他日志记录行为。
+有关更多详细信息，请参见[TestLoggingContainer](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/testing/logging/TestLoggingContainer.html)。
+
+---
 
 有关所有可用配置选项的详细信息，请参见[测试](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)。
 
@@ -143,8 +163,9 @@ Gradle在独立于主构建过程的单独（“分叉”）JVM中执行测试�
 
 如果配置不正确，测试过程可能会意外退出。例如，如果Java可执行文件不存在或提供了无效的JVM参数，则测试过程将无法启动。同样，如果测试对测试过程进行程序化更改，这也会导致意外失败。
 
-例如，如果`[SecurityManager](https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityManager.html)`在测试中修改了a
-，则可能会出现问题，因为Gradle的内部消息传递取决于反射和套接字通信，如果安全管理器上的权限发生更改，则可能会中断该通信。在这种特殊情况下，您应该`SecurityManager`在测试后还原原始文件，以便gradle测试工作程序进程可以继续运行。  
+例如，如果在测试中修改了[SecurityManager](https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityManager.html)
+，则可能会出现问题，因为Gradle的内部消息传递取决于反射和套接字通信，如果安全管理器上的权限发生更改，则可能会中断该通信。
+在这种特殊情况下，您应该在测试后还原原始`SecurityManager`文件，以便gradle测试工作程序进程可以继续运行。  
   
 ╚═════════════════════════════    
   
@@ -208,7 +229,7 @@ build.gradle.kts
 
 有关在构建脚本中声明过滤器的更多详细信息和示例，请参见[TestFilter](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/testing/TestFilter.html)参考。
 
-命令行选项对于执行单个测试方法特别有用。使用时`--tests`，请注意仍会尊重构建脚本中声明的包含。也可以提供多个`--tests`选项，所有选项都会生效。以下各节提供了几个使用命令行选项的示例。
+命令行选项对于执行单个测试方法特别有用。使用`--tests`时，请注意仍会尊重构建脚本中声明的包含。也可以提供多个`--tests`选项，所有选项都会生效。以下各节提供了几个使用命令行选项的示例。
 
 ╔═════════════════════════════  
 
@@ -263,7 +284,7 @@ build.gradle.kts
     # the second iteration of a parameterized test
     gradle test --tests '*ParameterizedTest.*[2]'
 
-请注意，通配符“ *”对“。”没有特殊的了解。包装分离器。它是纯粹基于文本的。因此`--tests
+请注意，通配符`*`对`.`没有特殊的了解。包装分离器。它是纯粹基于文本的。因此`--tests
 *.SomeTestClass`将匹配任何程序包，无论其“深度”如何。
 
 您还可以将在命令行中定义的过滤器与[连续构建结合使用，](/md/命令行界面.md#持续构建)以在每次对生产或测试源文件进行更改后立即重新执行测试的子集。每当更改触发测试运行时，以下命令将执行“
@@ -460,14 +481,15 @@ conventions`将项目的测试结果暴露给Gradle的[变体感知依赖管理�
 
 请注意，不执行抽象类。另外，请注意Gradle会将继承树扫描到测试类路径上的jar文件中。因此，如果这些JAR包含测试类，它们也将运行。
 
-如果你不想使用测试类的检测，你可以通过设置禁用它`scanForTestClasses`的性能[测试](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)到`false`。执行此操作时，测试任务仅使用`includes`和`excludes`属性来查找测试类。
+如果你不想使用测试类的检测，你可以通过在[Test](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html) 设置 `scanForTestClasses`为`false`来禁用性能。
+执行此操作时，测试任务仅使用`includes`和`excludes`属性来查找测试类。
 
-如果`scanForTestClasses`为false并且未指定包含或排除模式，则Gradle默认运行任何与模式`**/*Tests.class`和匹配的类，但`**/*Test.class`不包括与匹配的类`**/Abstract*.class`。
+如果`scanForTestClasses`为false并且未指定包含或排除模式，
+则Gradle默认运行任何与模式`**/*Tests.class`和`**/*Test.class`匹配的类，但不包括与`**/Abstract*.class`匹配的类。
 
 ╔═════════════════════════════  
 
-对于[JUnit Platform](http://junit.org/junit5/docs/current/user-
-guide)，仅`includes`和`excludes`用于过滤测试类-`scanForTestClasses`无效。  
+对于[JUnit Platform](http://junit.org/junit5/docs/current/user-guide)，仅`includes`和`excludes`用于过滤测试类 - `scanForTestClasses`无效。  
   
 ╚═════════════════════════════    
   
@@ -475,7 +497,10 @@ guide)，仅`includes`和`excludes`用于过滤测试类-`scanForTestClasses`无
 
 JUnit，JUnit Platform和TestNG允许对测试方法进行复杂的分组。
 
-JUnit 4.8引入了将JUnit 4测试类和方法分组的类别的概念。[[1](#_footnotedef_1"查看脚注。") ][Test.useJUnit（org.gradle.api.Action）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:useJUnit\(org.gradle.api.Action\))允许您指定要包括和排除的JUnit类别。例如，以下配置在任务中包括测试`CategoryA`，但不包括测试：`CategoryB``test`
+JUnit 4.8引入了将JUnit 4测试类和方法分组的类别的概念
+。[[1](#_footnotedef_1"查看脚注。") ]
+[Test.useJUnit（org.gradle.api.Action）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:useJUnit\(org.gradle.api.Action\))允许您指定要包括和排除的JUnit类别。
+例如，以下配置在`test`任务中包括测试`CategoryA`，但不包括测试`CategoryB`
 
 例子5. JUnit类别
 
@@ -566,12 +591,11 @@ build.gradle.kts
 
     
     
-    JUnit 5 = JUnit平台+ JUnit Jupiter + JUnit Vintage
+    JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage
 
 JUnit平台是在JVM上启动测试框架的基础。JUnit
-Jupiter是新[编程模型](http://junit.org/junit5/docs/current/user-guide/#writing-
-tests) 和[扩展模型](http://junit.org/junit5/docs/current/user-
-guide/#extensions)的组合，用于在JUnit 5中编写测试和扩展。JUnit
+Jupiter是新[编程模型](http://junit.org/junit5/docs/current/user-guide/#writing-tests) 
+和[扩展模型](http://junit.org/junit5/docs/current/user-guide/#extensions)的组合，用于在JUnit 5中编写测试和扩展。JUnit
 Vintage提供了一种`TestEngine`在平台上运行基于JUnit 3和JUnit 4的测试的功能。
 
 以下代码在中启用JUnit Platform支持`build.gradle`：
@@ -705,7 +729,9 @@ build.gradle.kts
 当您使用 _testng.xml_
 文件时，TestNG允许显式控制测试的执行顺序。没有这样的文件（或由[TestNGOptions.getSuiteXmlBuilder（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html#getSuiteXmlBuilder--)配置的等效文件[）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html#getSuiteXmlBuilder--)，您将无法指定测试执行顺序。但是，您
 _可以_ 做的是控制
-在下一个测试开始之前是否执行了测试的所有方面，包括其关联的方法`@BeforeXXX`和`@AfterXXX`方法，例如用`@Before/AfterClass`和注释的那些方法`@Before/AfterMethod`。您可以通过将[TestNGOptions.getPreserveOrder（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html#getPreserveOrder--)属性设置为来实现`true`。如果你把它设置为`false`，您可能会遇到的情况，其中执行顺序是这样的：`TestA.doBeforeClass()`→交通`TestB.doBeforeClass()`→交通`TestA`测试。
+在下一个测试开始之前是否执行了测试的所有方面，包括其关联的方法`@BeforeXXX`和`@AfterXXX`方法，例如用`@Before/AfterClass`和注释的那些方法`@Before/AfterMethod`。
+您可以通过将[TestNGOptions.getPreserveOrder（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html#getPreserveOrder--)属性设置为`true`来实现。
+如果你把它设置为`false`，您可能会遇到的情况，其中执行顺序是这样的：`TestA.doBeforeClass()`→`TestB.doBeforeClass()`→`TestA`测试。
 
 直接使用 _testng.xml_ 文件时，保留测试顺序是默认行为，而Gradle的TestNG集成所使用的[TestNG API](https://jitpack.io/com/github/cbeust/testng/master/javadoc/org/testng/TestNG.html)默认以不可预测的顺序执行测试。[[3](#_footnotedef_3"查看脚注。") ]
 TestNG版本5.14.5引入了保留测试执行顺序的功能。将`preserveOrder`属性设置`true`为较旧的TestNG版本将导致构建失败。
@@ -734,7 +760,8 @@ build.gradle.kts
         }
     }
 
-该`groupByInstance`属性控制测试是否应按实例而不是按类别分组。在[TestNG的文档](http://testng.org/doc/documentation-main.html#dependencies-with-annotations)详细解释了区别，但本质上，如果你有一个测试方法`A()`依赖于`B()`，每个AB配对，例如，通过例如确保分组`B(1)`\-
+该`groupByInstance`属性控制测试是否应按实例而不是按类别分组。在[TestNG的文档](http://testng.org/doc/documentation-main.html#dependencies-with-annotations)详细解释了区别，但本质上，如果你有一个测试方法`A()`依赖于`B()`，
+每个AB配对，例如，通过例如确保分组`B(1)`\-
 `A(1)`，在下一配对之前执行。通过按组分组，所有`B()`方法都将运行，然后所有方法都将运行`A()`。
 
 请注意，如果您使用数据提供程序对其进行参数化，则通常只有一个以上的测试实例。此外，TestNG版本6.1引入了按实例对测试进行分组的功能。将`groupByInstances`属性设置`true`为较旧的TestNG版本将导致构建失败。
@@ -765,11 +792,11 @@ build.gradle.kts
 
 ### [TestNG参数化方法和报告](#TestNG参数化方法和报告)
 
-TestNG支持[参数化测试方法](http://testng.org/doc/documentation-
-main.html#parameters)，允许使用不同的输入多次执行特定的测试方法。Gradle在其测试方法执行的报告中包括参数值。
+TestNG支持[参数化测试方法](http://testng.org/doc/documentation-main.html#parameters)，
+允许使用不同的输入多次执行特定的测试方法。Gradle在其测试方法执行的报告中包括参数值。
 
-给定名为的参数化测试方法`aTestMethod`，该方法带有两个参数，将以name报告`aTestMethod(toStringValueOfParam1,
-toStringValueOfParam2)`。这使得识别特定迭代的参数值变得​​容易。
+给定名为的参数化测试方法`aTestMethod`，该方法带有两个参数，将以`aTestMethod(toStringValueOfParam1,
+toStringValueOfParam2)`名称报告。这使得识别特定迭代的参数值变得​​容易。
 
 ## [配置集成测试](#配置集成测试)
 
@@ -787,7 +814,7 @@ toStringValueOfParam2)`。这使得识别特定迭代的参数值变得​​容
 
 您可能还需要执行一些其他配置，具体取决于集成测试采用的形式。我们将在讨论过程中进行讨论。
 
-让我们从一个实际示例开始，该示例以新的源集为中心在构建脚本中实现前三个步骤`intTest`：
+让我们从一个实际示例开始，该示例以新的源集`intTest`为中心在构建脚本中实现前三个步骤：
 
 例子14.设置工作的集成测试
 
@@ -838,7 +865,7 @@ build.gradle.kts
 
   * `intTestImplementation`，`intTestCompileOnly`，`intTestRuntimeOnly`配置（以及[其他一些](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_source_set_configurations)不那么常见的需要）
 
-  * 一`compileIntTestJava`，将编译下的所有源文件任务 _的src / intTest / JAVA_
+  * `compileIntTestJava`，将编译下的所有源文件任务 _的src / intTest / JAVA_
 
 该示例还执行以下操作，并非特定集成测试可能需要全部操作：
 
@@ -855,9 +882,9 @@ testImplementation`-将所有单元测试依赖项附加到集成测试中，但
 
 您还应注意该示例的其他两个方面：
 
-  * `+=`允许您向其添加路径和路径集合，`compileClasspath`而`runtimeClasspath`不是覆盖它们
+  * `+=`允许您向`compileClasspath`和`runtimeClasspath`添加路径和路径集合，而不是覆盖它们
 
-  * 如果要使用基于约定的配置（例如）`intTestImplementation`，则 _必须_ 在新的源集 _之后_ 声明依赖项
+  * 如果要使用基于约定的配置（例如`intTestImplementation`），则 _必须_ 在新的源集 _之后_ 声明依赖项
 
 创建和配置源集会自动设置编译阶段，但是对于运行集成测试没有任何作用。因此，最后一个难题是一个自定义测试任务，该任务使用来自新源集的信息来配置其运行时类路径和测试类：
 
@@ -896,7 +923,7 @@ build.gradle.kts
     tasks.check { dependsOn(integrationTest) }
 
 同样，我们正在访问源集以获取相关信息，即，已编译的测试类的位置（`testClassesDirs`属性）以及运行它们时需要在类路径上的内容
-`classpath`。
+（`classpath`）。
 
 用户通常希望在单元测试之后运行集成测试，因为它们通常运行速度较慢，并且您希望构建在单元测试之前失败而不是在集成测试之后失败。这就是上面的示例添加一个`shouldRunAfter()`声明的原因。相对`mustRunAfter()`于此，它是首选的，以便Gradle在并行执行构建时具有更大的灵活性。
 
@@ -909,8 +936,8 @@ _白盒测试”_ （停用或放宽模块边界）和“ _黑盒测试”_ （�
 
 ### [在类路径上执行白盒单元测试](#在类路径上执行白盒单元测试)
 
-为模块中的函数或类编写单元测试的最简单设置是在测试执行期间 _不_ 使用模块规范。为此，您只需要以与普通库一样的方式编写测试即可。如果您`module-
-info.java`的测试源集中（`src/test/java`）中没有文件，则在编译和测试运行时，该源集将被视为传统Java库。这意味着，所有依赖项（包括带有模块信息的Jar）都放在类路径上。好处是，您（或其他）模块的所有内部类都可以在测试中直接访问。对于单元测试，这可能是完全有效的设置，在这里，我们不必关心较大的模块结构，而只关心测试单个功能。
+为模块中的函数或类编写单元测试的最简单设置是在测试执行期间 _不_ 使用模块规范。为此，您只需要以与普通库一样的方式编写测试即可。如果您的测试源集（`src/test/java`）中中没有`module-info.java`文件，
+则在编译和测试运行时，该源集将被视为传统Java库。这意味着，所有依赖项（包括带有模块信息的Jar）都放在类路径上。好处是，您（或其他）模块的所有内部类都可以在测试中直接访问。对于单元测试，这可能是完全有效的设置，在这里，我们不必关心较大的模块结构，而只关心测试单个功能。
 
 ╔═════════════════════════════  
 
@@ -941,7 +968,8 @@ info.java`）中的方式类似于将主要源变成模块的方式。
 
 但是，您可以为以下测试设置模块补丁：
 
-  * `module-info.java`在您的测试源集中添加一个，它是主要版本的副本，其中`module-info.java`包含测试所需的其他依赖项（例如`requires org.junit.jupiter.api`）。
+  * 在您的测试源集中添加一个`module-info.java`，它是主要版本的副本，
+  其中`module-info.java`包含测试所需的其他依赖项（例如`requires org.junit.jupiter.api`）。
 
   * 用参数配置`testCompileJava`和`test`任务，以用测试类修补主类，如下所示。
 
@@ -993,7 +1021,8 @@ task`选项，如下所示：
 这排除了该`test`任务及其 _唯一_
 依赖的任何其他任务，即没有其他任务依赖于同一任务。这些任务不会被Gradle标记为“跳过”，而只会出现在已执行任务的列表中。
 
-通过构建脚本跳过测试可以通过几种方法完成。一种常见的方法是通过[Task.onlyIf（org.gradle.api.specs.Spec）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Task.html#org.gradle.api.Task:onlyIf\(org.gradle.api.specs.Spec\))方法使测试执行有条件。`test`如果项目具有名为的属性，以下示例将跳过任务`mySkipTests`：
+通过构建脚本跳过测试可以通过几种方法完成。一种常见的方法是通过[Task.onlyIf（org.gradle.api.specs.Spec）](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Task.html#org.gradle.api.Task:onlyIf\(org.gradle.api.specs.Spec\))方法使测试执行有条件。
+如果项目具有名为`mySkipTests`的属性，以下示例将跳过`test`任务：
 
 例子17.跳过基于项目属性的单元测试
 
@@ -1050,12 +1079,12 @@ jvm`命令行选项。
 
 使用此配置，测试JVM的行为就像传递`--debug-jvm`参数时一样，但是它将侦听端口4455。
 
-## [使用测试治具](#使用测试治具)
+## [使用测试夹具](#使用测试夹具)
 
 ### [在单个项目中生产和使用测试夹具](#在单个项目中生产和使用测试夹具)
 
-测试装置通常用于设置被测代码，或提供旨在促进组件测试的实用程序。`java-test-
-fixtures`除了`java`或插件，Java项目还可以通过应用插件来启用测试装置支持`java-library`：
+测试装置通常用于设置被测代码，或提供旨在促进组件测试的实用程序。除了`java`或`java-library`插件，
+Java项目还可以通过应用`java-test-fixtures`插件来启用测试装置支持：
 
 例子18.应用Java测试装置插件
 
@@ -1221,11 +1250,9 @@ build.gradle.kts
 
 ### [发布测试装置](#发布测试装置)
 
-使用该`java-test-fixtures`插件的优点之一是发布了测试装置。按照惯例，测试装置将与具有`test-
-fixtures`分类器的工件一起发布。对于Maven和Ivy，带有该分类器的工件都将与常规工件一起简单发布。但是，如果使用`maven-
-publish`或`ivy-
-publish`插件，则测试夹具会作为其他变体发布在[Gradle模块元数据中，](https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-
-module-metadata-1.0-specification.md)并且您可以直接依赖另一个Gradle项目中外部库的测试夹具：
+使用该`java-test-fixtures`插件的优点之一是发布了测试装置。
+按照惯例，测试装置将与具有`test-fixtures`分类器的工件一起发布。对于Maven和Ivy，带有该分类器的工件都将与常规工件一起简单发布。
+但是，如果使用`maven-publish`或`ivy-publish`插件，则测试夹具会作为其他变体发布在[Gradle模块元数据中，](https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-module-metadata-1.0-specification.md)并且您可以直接依赖另一个Gradle项目中外部库的测试夹具：
 
 例子21.添加对外部库测试装置的依赖
 

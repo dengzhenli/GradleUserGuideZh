@@ -47,13 +47,13 @@ build.gradle.kts
 
 通过应用这两个Swift插件，您可以获得许多功能：
 
-  * `compileDebugSwift`以及分别`compileReleaseSwift`为 _src / main / swift_ 编译Swift源文件的任务，以分别用于著名的调试和发布构建类型。
+  * `compileDebugSwift`以及`compileReleaseSwift`分别为 _src / main / swift_ 编译Swift源文件的任务，以分别用于著名的调试和发布构建类型。
 
-  * `linkDebug`以及`linkRelease`将编译后的Swift对象文件链接到应用程序的可执行文件或共享库的库，这些库具有调试和发布构建类型的共享链接。
+  * `linkDebug`以及`linkRelease`，将编译后的Swift对象文件链接到应用程序的可执行文件或共享库的库，这些库具有调试和发布构建类型的共享链接。
 
-  * `createDebug`以及`createRelease`将编译后的Swift对象文件组装到静态库中的任务，这些库具有针对调试和发布构建类型的静态链接。
+  * `createDebug`以及`createRelease`。将编译后的Swift对象文件组装到静态库中的任务，这些库具有针对调试和发布构建类型的静态链接。
 
-对于任何不平凡的斯威夫特项目，你可能有一些文件相关的和额外的配置具体到 _你的_ 项目。
+对于任何不平凡的Swift项目，你可能有一些文件相关的和额外的配置具体到 _你的_ 项目。
 
 Swift插件还将上述任务集成到标准[生命周期任务中](https://docs.gradle.org/6.7.1/userguide/base_plugin.html#sec:base_tasks)。产生开发二进制文件的任务附加到`assemble`。默认情况下，开发二进制文件是调试变量。
 
@@ -72,7 +72,7 @@ Gradle内置支持多个维度以及每个维度中的多个值。您可以在�
 
 ## [声明您的源文件](#声明您的源文件)
 
-Gradle的Swift支持使用`ConfigurableFileCollection`直接来自[应用程序](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.SwiftApplication.html)或[库](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.SwiftLibrary.html)脚本块的代码来配置要编译的源集。
+Gradle的Swift支持使用来自[应用程序](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.SwiftApplication.html)或[库](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.SwiftLibrary.html)脚本块的`ConfigurableFileCollection`代码来配置要编译的源集。
 
 库区分私有（实现细节）和公共（导出到用户）头。
 
@@ -96,8 +96,7 @@ Gradle提供了对使用Gradle [[1](#_footnotedef_1"查看脚注。") ]发布的
 
   * 它需要什么，例如编译，链接，运行时或以上所有。
 
-此信息`dependencies
-{}`在Swift`application`或`library`脚本块的块中指定。例如，要告诉Gradle您的项目需要库`common`来编译和链接生产代码，可以使用以下片段：
+此信息在Swift`application`或`library`脚本块的`dependencies{}`块中指定。例如，要告诉Gradle您的项目需要`common`库来编译和链接生产代码，可以使用以下片段：
 
 例子2.声明依赖
 
@@ -143,7 +142,8 @@ build.gradle.kts
 
 您可以在本[机插件参考章节中](/md/插件参考.md#native_languages)了解有关它们的更多信息以及它们之间的关系。
 
-请注意，[Swift库插件](https://docs.gradle.org/6.7.1/userguide/swift_library_plugin.html)`api`为编译和链接模块以及依赖该模块的任何模块所需的依赖项创建了一个附加配置。
+请注意，[Swift库插件](https://docs.gradle.org/6.7.1/userguide/swift_library_plugin.html) 为依赖关系创建了一个额外的配置--
+api --这些依赖关系是编译和链接该模块和任何依赖它的模块所需要的
 
 我们仅在此处进行了介绍，因此，一旦您熟悉使用Gradle构建Swift项目的基础知识，我们建议您阅读[专用的依赖管理章节](/md/Gradle中的依赖管理.md)。
 
@@ -189,9 +189,8 @@ Gradle将使用系统PATH发现工具链。
   
 ### [自定义文件和目录位置](#自定义文件和目录位置)
 
-假设您要迁移遵循Swift Package
-Manager布局的库项目（例如，生产代码目录）。传统的目录结构不起作用，因此您需要告诉Gradle在哪里可以找到源文件。您可以通过或脚本块执行此操作。`Sources/
-_ModuleName_ _``application``library`
+假设您要迁移遵循Swift Package Manager布局的库项目（例如，生产代码目录`Sources/ModuleName`）。
+传统的目录结构不起作用，因此您需要告诉Gradle在哪里可以找到源文件。您可以通过`application`或`library`脚本块执行此操作。
 
 每个组件脚本块以及每个二进制文件都定义了其源代码所在的位置。您可以使用以下语法覆盖约定值：
 
@@ -219,9 +218,16 @@ build.gradle.kts
 
 ### [更改编译器和链接器选项](#更改编译器和链接器选项)
 
-大多数的编译器和连接选项是通过相应的任务访问，如，和。这些任务分别为[SwiftCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.tasks.SwiftCompile.html)，[LinkSharedLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.LinkSharedLibrary.html)和[CreateStaticLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.CreateStaticLibrary.html)类型。阅读任务参考以获取最新，最全面的选项列表。`compile
-_Variant_ Swift``link _Variant_``create
-_Variant_`[](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.tasks.SwiftCompile.html)[](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.LinkSharedLibrary.html)[](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.CreateStaticLibrary.html)
+大多数的编译器和连接选项是通过相应的任务访问，如
+[`compile_Variant_ Swift`](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.tasks.SwiftCompile.html)，
+[`link _Variant_`](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.LinkSharedLibrary.html)和
+[`create_Variant_`](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.CreateStaticLibrary.html)。这
+些任务分别为[SwiftCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.swift.tasks.SwiftCompile.html)，
+[LinkSharedLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.LinkSharedLibrary.html)
+和[CreateStaticLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.CreateStaticLibrary.html)类型。
+阅读任务参考以获取最新，最全面的选项列表。
+
+
 
 例如，如果要更改编译器为所有变体生成的警告级别，则可以使用以下配置：
 
@@ -326,7 +332,7 @@ build.gradle.kts
 
 ## [清理构建](#清理构建)
 
-Swift应用程序和库插件`clean`通过使用[基本插件](https://docs.gradle.org/6.7.1/userguide/base_plugin.html)将任务添加到您的项目中。此任务只是删除`$buildDir`目录中的所有内容，因此为什么要始终将构建生成的文件放在其中。该任务是Delete的一个实例，您可以通过设置其`dir`属性来更改其删除的目录。
+Swift应用程序和库插件通过使用[基本插件](https://docs.gradle.org/6.7.1/userguide/base_plugin.html)将`clean`任务添加到您的项目中。此任务只是删除`$buildDir`目录中的所有内容，因此为什么要始终将构建生成的文件放在其中。该任务是Delete的一个实例，您可以通过设置其`dir`属性来更改其删除的目录。
 
 ## [构建Swift库](#构建Swift库)
 
@@ -334,9 +340,10 @@ Swift应用程序和库插件`clean`通过使用[基本插件](https://docs.grad
 Module元数据的形式）至关重要。特别是，库的使用者应能够区分两种不同类型的依赖关系：仅依赖于编译库的依赖关系和也依赖于编译使用者的依赖关系。
 
 Gradle通过[Swift Library Plugin](https://docs.gradle.org/6.7.1/userguide/swift_library_plugin.html)来管理这种区别，
-[Swift Library Plugin](https://docs.gradle.org/6.7.1/userguide/swift_library_plugin.html)在本章中曾经介绍过的
-_实现_ 之外，还引入了 _api_ 配置。如果依赖项的类型显示为静态库的未解析符号或在公共头文件中，则该依赖项通过库的公共API公开，因此应将其添加到
-_api_ 配置中。否则，依赖项是内部实现细节，应将其添加到 _Implementation中_ 。 __ __ __
+在本章中曾经介绍过的
+_implementation_ 之外，还引入了 _api_ 配置。
+如果依赖项的类型显示为静态库的未解析符号或在公共头文件中，则该依赖项通过库的公共API公开，因此应将其添加到
+_api_ 配置中。否则，依赖项是内部实现细节，应将其添加到 _Implementation中_ 。
 
 如果不确定API和实现依赖项之间的区别，请参阅[Swift库插件](https://docs.gradle.org/6.7.1/userguide/swift_library_plugin.html#sec:swift_library_api_vs_implementation)一章中的详细说明。另外，您可以在相应的[样本中](https://docs.gradle.org/6.7.1/samples/sample_building_swift_libraries.html)看到构建Swift库的基本，实际[示例](https://docs.gradle.org/6.7.1/samples/sample_building_swift_libraries.html)。
 

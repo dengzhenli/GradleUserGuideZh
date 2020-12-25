@@ -9,7 +9,8 @@
   * [使Gradle模块元数据可重现](#使Gradle模块元数据可重现)
   * [禁用Gradle模块元数据发布](#禁用Gradle模块元数据发布)
 
-Gradle模块元数据是用于序列化Gradle组件模型的格式。它类似于[Apache Maven™的POM文件](https://maven.apache.org/pom.html)
+Gradle模块元数据是用于序列化Gradle组件模型的格式。
+它类似于[Apache Maven™的POM文件](https://maven.apache.org/pom.html)
 或[Apache Ivy™ivy.xml](http://ant.apache.org/ivy/)文件。元数据文件的目标是向 _消费者_ 提供存储库中发布内容的合理模型。
 
 Gradle模块元数据是一种独特的格式，旨在通过使其具有多平台和变体感知功能来提高依赖性解析。

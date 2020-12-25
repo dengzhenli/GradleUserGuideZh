@@ -158,7 +158,8 @@ Maven的限制`groupId`和`artifactId`有限字符集（`[A-Za-z0-9_\\-.]+`）�
 
 ### [自定义生成的POM](#自定义生成的POM)
 
-可以在发布之前自定义生成的POM文件。例如，将库发布到Maven Central时，您需要设置某些元数据。Maven发布插件为此提供了DSL。请参阅《
+可以在发布之前自定义生成的POM文件。例如，将库发布到Maven Central时，您需要设置某些元数据。Maven发布插件为此提供了DSL。
+请参阅《
 DSL参考》中的[MavenPom](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.publish.maven.MavenPom.html)，以获取可用属性和方法的完整文档。下面的示例演示如何使用最常见的方法：
 
 例子3.定制POM文件

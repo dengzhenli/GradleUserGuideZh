@@ -264,7 +264,10 @@ API](/md/Gradle和第三方工具.md#使用Tooling_API嵌入Gradle)执行构建�
 ### [使用JavaGradle插件开发插件自动注入](#使用JavaGradle插件开发插件自动注入)
 
 在[Java的Gradle插件开发的插件](https://docs.gradle.org/6.7.1/userguide/java_gradle_plugin.html#java_gradle_plugin)可以用来协助Gradle插件的开发。从Gradle
-2.13版本开始，该插件提供了与TestKit的直接集成。当应用于项目时，该插件会自动将`gradleTestKit()`依赖项添加到测试编译配置中。此外，它会自动为测试中的代码生成类路径，并通过[GradleRunner.withPluginClasspath（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath--)将其注入`GradleRunner`用户创建的任何实例。重要的是要注意，该机制当前
+2.13版本开始，该插件提供了与TestKit的直接集成。当应用于项目时，该插件会自动将`gradleTestKit()`依赖项添加到测试编译配置中。
+此外，它会自动为测试中的代码生成类路径，并通过
+[GradleRunner.withPluginClasspath（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath--)
+将其注入用户创建的任何`GradleRunner`实例。重要的是要注意，该机制当前
 _仅_
 在使用[插件DSL](/md/使用Gradle插件.md#通过插件DSL应用插件)应用被测插件
 _时才_
@@ -485,8 +488,9 @@ build.gradle.kts
         testRuntimeOnly(files(tasks["createClasspathManifest"]))
     }
 
-然后，测试可以读取该值，并使用[GradleRunner.withPluginClasspath（java.lang.Iterable）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath-
-java.lang.Iterable-)方法将类路径注入测试版本。然后可以使用该类路径通过插件DSL在测试版本中定位插件（请参阅[插件](/md/使用Gradle插件.md#plugins)）。通过插件DSL应用插件需要定义插件标识符。以下是在Spock
+然后，测试可以读取该值，并使用
+[GradleRunner.withPluginClasspath（java.lang.Iterable）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath-java.lang.Iterable-)
+方法将类路径注入测试版本。然后可以使用该类路径通过插件DSL在测试版本中定位插件（请参阅[插件](/md/使用Gradle插件.md#plugins)）。通过插件DSL应用插件需要定义插件标识符。以下是在Spock
 Framework`setup()`方法中执行此操作的示例（在Groovy中），该方法类似于JUnit`@Before`方法。
 
 ### [示例：将测试类下的代码注入测试版本](#示例：将测试类下的代码注入测试版本)
@@ -529,15 +533,19 @@ src / test / groovy / org / gradle / sample / BuildLogicFunctionalTest.groovy
             result.task(":helloWorld").outcome == SUCCESS
         }
 
-当作为Gradle构建的一部分执行功能测试时，此方法效果很好。从IDE执行功能测试时，还有一些额外的注意事项。即，类路径清单文件指向Gradle而不是IDE生成的类文件等。这意味着在更改被测代码的源代码之后，必须由Gradle重新编译源代码。同样，如果被测代码的有效类路径发生变化，则必须重新生成清单。无论哪种情况，执行`testClasses`构建任务都将确保一切都是最新的。
+当作为Gradle构建的一部分执行功能测试时，此方法效果很好。从IDE执行功能测试时，还有一些额外的注意事项。
+即，类路径清单文件指向Gradle而不是IDE生成的类文件等。这意味着在更改被测代码的源代码之后，必须由Gradle重新编译源代码。
+同样，如果被测代码的有效类路径发生变化，则必须重新生成清单。无论哪种情况，执行`testClasses`构建任务都将确保一切都是最新的。
 
-一些IDE提供了一个方便的选项，可以将“测试类路径的生成和执行”委派给构建。在IntelliJ中，您可以在``偏好设置...''>``构建，执行，部署''>``构建工具''>``Gradle''>``Runner''>``委派IDE生成/运行操作''中找到该选项。请查阅IDE的文档以获取更多信息。
+一些IDE提供了一个方便的选项，可以将“测试类路径的生成和执行”委派给构建。
+在IntelliJ中，您可以在`Preferences…​ > Build, Execution, Deployment > Build Tools > Gradle > Runner > Delegate IDE build/run`中找到该选项。
+请查阅IDE的文档以获取更多信息。
 
 ### [使用2_8之前的Gradle版本](#使用2_8之前的Gradle版本)
 
-当使用早于2.8的Gradle版本执行构建时，[GradleRunner.withPluginClasspath（java.lang.Iterable）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath-
-java.lang.Iterable-)方法将不起作用（请参阅[用于测试的版本](#sub:gradle-
-runner-gradle-version)），因为在此类Gradle版本中不支持此功能。
+当使用早于2.8的Gradle版本执行构建时，
+[GradleRunner.withPluginClasspath（java.lang.Iterable）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withPluginClasspath-java.lang.Iterable-)
+方法将不起作用（请参阅[用于测试的版本](#用于测试的Gradle版本)），因为在此类Gradle版本中不支持此功能。
 
 相反，必须通过构建脚本本身注入代码。下面的示例演示了如何完成此操作。
 
@@ -591,7 +599,9 @@ src / test / groovy / org / gradle / sample / BuildLogicFunctionalTest.groovy
 
 ## [控制构建环境](#控制构建环境)
 
-运行程序通过在JVM的temp目录内的目录（即`java.io.tmpdir`，通常由system属性指定的位置）中指定专用的“工作目录”，在隔离的环境中执行测试构建`/tmp`。默认的Gradle用户主目录（例如`~/.gradle/gradle.properties`）中的任何配置都不会用于测试执行。TestKit并未公开对环境的各个方面进行细粒度控制的机制（例如JDK）。未来版本的TestKit将提供改进的配置选项。
+运行程序通过在JVM的temp目录内的目录（即`/tmp`，通常由`java.io.tmpdir`system属性指定的位置）中指定专用的“工作目录”，
+在隔离的环境中执行测试构建。默认的Gradle用户主目录（例如`~/.gradle/gradle.properties`）中的任何配置都不会用于测试执行。
+TestKit并未公开对环境的各个方面进行细粒度控制的机制（例如JDK）。未来版本的TestKit将提供改进的配置选项。
 
 TestKit使用专用的守护程序进程，这些进程在测试执行后会自动关闭。
 
@@ -599,9 +609,9 @@ TestKit使用专用的守护程序进程，这些进程在测试执行后会自�
 
 Gradle运行器需要Gradle发行版才能执行构建。TestKit并不依赖于Gradle的所有实现。
 
-默认情况下，运行程序将尝试根据从何处`GradleRunner`加载类来查找Gradle发行版。也就是说，期望该类是从Gradle发行版加载的，就像使用`gradleTestKit()`依赖声明时一样。
+默认情况下，运行程序将尝试根据从何处加载`GradleRunner`类来查找Gradle发行版。也就是说，期望该类是从Gradle发行版加载的，就像使用`gradleTestKit()`依赖声明时一样。
 
-当将跑步者用作 _Gradle执行_ 的测试的一部分（例如执行`test`插件项目的任务）时，跑步者将使用与执行测试相同的发行版。当将运行程序用作
+当将Runner用作 _Gradle执行_ 的测试的一部分（例如执行`test`插件项目的任务）时，Runner将使用与执行测试相同的发行版。当将运行程序用作
 _IDE执行_ 的测试的一部分时，将使用与导入项目时相同的Gradle发行版。这意味着该插件将使用与其构建时相同的Gradle版本进行有效测试。
 
 另外，可以通过以下任何一种`GradleRunner`方法指定要使用的Gradle的不同版本和特定版本：
@@ -667,7 +677,7 @@ BuildLogicFunctionalTest.groovy
 ### [使用不同的Gradle版本进行测试时的功能支持](#使用不同的Gradle版本进行测试时的功能支持)
 
 可以使用GradleRunner在Gradle
-1.0及更高版本中执行构建。但是，早期版本不支持某些运行器功能。在这种情况下，跑步者在尝试使用功能时会抛出异常。
+1.0及更高版本中执行构建。但是，早期版本不支持某些运行器功能。在这种情况下，Runner在尝试使用功能时会抛出异常。
 
 下表列出了对使用的Gradle版本敏感的功能。
 
@@ -683,13 +693,13 @@ BuildLogicFunctionalTest.groovy
   
 ## [调试构建逻辑](#调试构建逻辑)
 
-跑步者使用[Tooling API](/md/Gradle和第三方工具.md#使用Tooling_API嵌入Gradle)执行构建。这意味着构建是在单独的过程中执行的（即，执行测试的过程不是同一过程）。因此，以调试方式执行
+Runner使用[Tooling API](/md/Gradle和第三方工具.md#使用Tooling_API嵌入Gradle)执行构建。这意味着构建是在单独的过程中执行的（即，执行测试的过程不是同一过程）。因此，以调试方式执行
 _测试_ 不允许您调试调试逻辑。在IDE中设置的任何断点都不会因测试版本执行的代码而跳闸。
 
 TestKit提供了两种不同的方式来启用调试模式：
 
-  * 设置“`org.gradle.testkit.debug`系统属性”来`true`为JVM _使用_ 的`GradleRunner`（与所述流道执行即不生成）;
-
+  * 在使用GradleRunner的JVM中设置`org.gradle.testkit.debug`系统属性为`true`（与所述流道执行即不生成）;
+  
   * 调用[GradleRunner.withDebug（boolean）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/testkit/runner/GradleRunner.html#withDebug-boolean-)方法。
 
 当需要启用调试支持而不对流道配置进行临时更改时，可以使用系统属性方法。大多数IDE提供了设置JVM系统属性以执行测试的功能，并且可以使用此功能来设置此系统属性。
