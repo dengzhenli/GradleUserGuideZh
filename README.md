@@ -130,6 +130,9 @@
   - [gradle wrapper](/md/gradle_wrapper.md) 
   - [Gradle管理的目录](/md/Gradle目录和文件的使用.md) 
 
+## 注意
+翻译仅供参与，若对内容存疑，请访问[Gradle](https://docs.gradle.org/current/userguide/userguide.html) 同级目录查看
+
 ## 致谢
 * 感谢[Gradle](https://docs.gradle.org/) 提供优秀的工具与文档
 * 感谢我的好友郑PP提供翻译咨询
