@@ -42,9 +42,8 @@ build.gradle.kts
 标准Java插件和Java库插件之间的主要区别在于，后者引入了向消费者公开的 _API_
 的概念。库是一个Java组件，打算由其他组件使用。在多项目构建中，这是一个非常常见的用例，但在您具有外部依赖关系时也是如此。
 
-该插件公开了两个[配置](/md/声明依赖.md#sec:what-
-are-dependency-
-configurations)可用于声明的依赖性：`api`和`implementation`。该`api`配置应用于声明由库API导出的依赖关系，而该`implementation`配置应用于声明组件内部的依赖关系。
+该插件公开了两个[配置](/md/声明依赖.md#什么是依赖项配置)可用于声明的依赖性：`api`和`implementation`。
+`api`配置应用于声明由库API导出的依赖关系，而`implementation`配置应用于声明组件内部的依赖关系。
 
 例子2.声明API和实现依赖
 
@@ -68,7 +67,8 @@ build.gradle.kts
         implementation("org.apache.commons:commons-lang3:3.5")
     }
 
-`api`配置中出现的依赖关系将传递给库的使用者，并因此出现在使用者的编译类路径上。`implementation`另一方面，在配置中找到的依赖项不会暴露给使用者，因此不会泄漏到使用者的编译类路径中。这有几个好处：
+`api`配置中出现的依赖关系将传递给库的使用者，并因此出现在使用者的编译类路径上。
+另一方面，在`implementation`配置中找到的依赖项不会暴露给使用者，因此不会泄漏到使用者的编译类路径中。这有几个好处：
 
   * 依赖项不会再泄漏到使用者的编译类路径中，因此您永远不会意外地依赖于传递性依赖项
 
@@ -88,8 +88,7 @@ build.gradle.kts
 
 这通常对用Maven发布的模块没有影响，在Maven中，定义项目的POM直接作为元数据发布。在那里，编译范围既包括编译项目所需的依赖关系（即，实现依赖关系），又包括针对已发布库进行编译所需要的依赖关系（即API依赖关系）。对于大多数已发布的库，这意味着所有依赖项都属于编译范围。如果现有库遇到此类问题，则可以考虑使用[组件元数据规则](/md/使用组件元数据规则修复元数据.md#sec:component_metadata_rules)来修复构建中不正确的元数据。但是，如上所述，如果该库与Gradle一起发布，则生成的POM文件只会将`api`依赖项放入编译范围，而将其余`implementation`依赖项放入运行时范围。
 
-如果您的构建使用带有Ivy元数据的模块，则如果所有模块都遵循特定的结构，则可以按[此处](/md/使用变体属性.md#sub:ivy-
-mapping-to-variants)所述激活api和实现分离。
+如果您的构建使用带有Ivy元数据的模块，则如果所有模块都遵循特定的结构，则可以按[此处](/md/使用变体属性.md#sub:ivy-mapping-to-variants)所述激活api和实现分离。
 
 ╔═════════════════════════════  
 
@@ -182,13 +181,13 @@ src / main / java / org / gradle / HttpClientWrapper.java
         }
     }
 
-用途的 _公共_ 构造函数作为参数，因此它对使用者公开，因此属于API。请注意，和用于 _私有_
-方法的签名中，因此它们不计入使HttpClient成为API依赖项。`HttpClientWrapper``HttpClient``HttpGet``HttpEntity`
-__
+HttpClientWrapper的公共构造函数使用HttpClient作为参数，所以它是暴露给使用者的API。
+请注意，HttpGet和HttpEntity是在私有方法的签名中使用的，因此它们不计入使HttpClient成为API依赖项。
 
-另一方面，`ExceptionUtils`来自`commons-lang`库的类型仅用于方法主体（而不用于其签名），因此它是实现依赖项。
 
-因此，我们可以推断出这`httpclient`是API依赖性，而是`commons-lang`实现依赖性。该结论转化为构建脚本中的以下声明：
+另一方面，来自`commons-lang`库的`ExceptionUtils`类型仅用于方法主体（而不用于其签名），因此它是implementation依赖项。
+
+因此，我们可以推断出这`httpclient`是API依赖性，而`commons-lang`是implementation依赖。该结论转化为构建脚本中的以下声明：
 
 例子3.声明API和实现依赖
 
@@ -273,8 +272,8 @@ testRuntimeClasspath|用于执行此库的测试|没有|是|此配置包含此�
 从Java 9开始，Java本身提供了一个
  [模块系统](https://www.oracle.com/corporate/features/understanding-java-9-modules.html),
 该[模块系统](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)
-允许在编译和运行时进行严格的封装。您可以通过在源文件夹中创建文件将Java库变成 _Java模块_
-。`module-info.java``main/java`
+允许在编译和运行时进行严格的封装。您可以通过在`main/java`源文件夹中创建`module-info.java`文件将Java库变成 _Java模块_
+。
 
     
     
@@ -346,14 +345,14 @@ Java模块指令 | Gradle配置 | 目的
   
 Gradle当前不会自动检查依赖项声明是否同步。这可能会在将来的版本中添加。
 
-有关声明模块依赖关系的更多详细信息，请参阅[Java Module
-System上的文档](https://www.oracle.com/corporate/features/understanding-
-java-9-modules.html)。
+有关声明模块依赖关系的更多详细信息，请参阅
+[Java Module System上的文档](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)。
 
 ### [声明包的可见性和服务](#声明包的可见性和服务)
 
-与Gradle本身相比，Java模块系统支持更多更精细的颗粒封装概念。例如，您明确需要声明哪些包是API的一部分，哪些仅在模块内部可见。其中一些功能可能会在将来的版本中添加到Gradle本身。现在，请参阅[Java模块系统上的文档](https://www.oracle.com/corporate/features/understanding-
-java-9-modules.html)以了解如何在Java模块中使用这些功能。
+与Gradle本身相比，Java模块系统支持更多更精细的颗粒封装概念。
+例如，您明确需要声明哪些包是API的一部分，哪些仅在模块内部可见。其中一些功能可能会在将来的版本中添加到Gradle本身。
+现在，请参阅[Java模块系统上的文档](https://www.oracle.com/corporate/features/understanding-java-9-modules.html)以了解如何在Java模块中使用这些功能。
 
 ### [声明模块版本](#声明模块版本)
 
@@ -390,13 +389,13 @@ build.gradle.kts
 您可能想在模块化Java项目中使用外部库，例如Maven
 Central的OSS库。某些较新版本的库已经是带有模块描述符的完整模块。例如，`com.google.code.gson:gson:2.8.6`具有模块名`com.google.gson`。
 
-其他的（例如`org.apache.commons:commons-lang3:3.10`）可能不提供完整的模块描述符，但至少会`Automatic-
-Module-
-Name`在其清单文件中包含一个条目以定义模块的名称（`org.apache.commons.lang3`在示例中）。此类模块仅以模块描述的名称命名，称为
+其他的（例如`org.apache.commons:commons-lang3:3.10`）可能不提供完整的模块描述符，但至少会
+在其清单文件中包含一个`Automatic-Module-Name`条目以定义模块的名称（`org.apache.commons.lang3`在示例中）。
+此类模块仅以模块描述的名称命名，称为
 _自动模块_ ，该 _模块_ 导出 **所有** 软件包并可以读取模块路径上的 **所有** 模块。
 
-第三种情况是传统的库，例如根本不提供模块信息`commons-cli:commons-
-cli:1.4`。Gradle将此类库放在类路径而不是模块路径上。然后，Java将类路径视为一个模块（所谓的 _未命名_ 模块）。
+第三种情况是传统的库，例如根本不提供模块信息`commons-cli:commons-cli:1.4`。
+Gradle将此类库放在类路径而不是模块路径上。然后，Java将类路径视为一个模块（所谓的 _未命名_ 模块）。
 
 例子6.对在构建文件中声明的模块和库的依赖
 
@@ -488,8 +487,9 @@ library`插件的一个特点是，使用该库的项目只需要使用classes�
 
 ╔═════════════════════════════  
 
-班输出，而不是JAR中的使用与否是 _消费者_ 决定。例如，Groovy使用者将请求类 _和已_ 处理资源，因为在编译过程中执行AST转换可能需要这些类
-_和已_ 处理资源。  
+
+是否使用输出的类是由消费者而不是JAR决定的。
+例如，Groovy消费者会请求类和处理过的资源，因为作为编译过程的一部分，执行AST转换可能需要这些资源。
   
 ╚═════════════════════════════    
   
@@ -499,9 +499,14 @@ _和已_ 处理资源。
 
 ### [Windows上大型项目的构建性能显着下降](#Windows上大型项目的构建性能显着下降)
 
-单个类文件快照的另一个副作用，仅影响W​​indows系统，是在编译类路径上处理大量类文件时，性能可能会大大下降。这仅涉及非常大的多项目，其中通过使用多个`api`（不推荐使用）`compile`依赖项在类路径上存在很多类。为了减轻这种情况，您可以将`org.gradle.java.compile-
-classpath-packaging`system属性设置`true`为更改Java
-Library插件的行为，以对编译类路径上的所有内容使用jar代替类文件夹。请注意，由于这会带来其他性能影响和潜在的副作用，因此通过在编译时触发所有jar任务，只有在Windows上遇到上述性能问题时，才建议激活此功能。
+单个类文件快照的另一个副作用，仅影响W​​indows系统，是在编译类路径上处理大量类文件时，性能可能会大大下降。
+这仅涉及非常大的多项目，其中通过使用多个`api`或`compile`（已废弃的）依赖项在classpath上存在很多类。
+为了减轻这种情况，您可以将`org.gradle.java.compile-classpath-packaging`system属性设置为`true`以更改Java
+Library插件的行为，
+使其对编译classpath上的所有东西都使用jars而不是类文件夹。
+请注意，由于这在编译时触发所有的jar任务，会对性能产生其他影响和潜在的副作用，因此只有在Windows上遇到上述性能问题时才建议激活这个属性。
+
+
 
 ## [分发库](#分发库)
 

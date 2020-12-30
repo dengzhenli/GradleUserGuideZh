@@ -9,7 +9,8 @@
   * [使Gradle模块元数据可重现](#使Gradle模块元数据可重现)
   * [禁用Gradle模块元数据发布](#禁用Gradle模块元数据发布)
 
-Gradle模块元数据是用于序列化Gradle组件模型的格式。它类似于[Apache Maven™的POM文件](https://maven.apache.org/pom.html)
+Gradle模块元数据是用于序列化Gradle组件模型的格式。
+它类似于[Apache Maven™的POM文件](https://maven.apache.org/pom.html)
 或[Apache Ivy™ivy.xml](http://ant.apache.org/ivy/)文件。元数据文件的目标是向 _消费者_ 提供存储库中发布内容的合理模型。
 
 Gradle模块元数据是一种独特的格式，旨在通过使其具有多平台和变体感知功能来提高依赖性解析。
@@ -46,7 +47,7 @@ Gradle模块元数据会自动发布在Maven或Ivy存储库中。但是，它不
 
 Gradle尽其所能将Gradle特定的概念映射到Maven或Ivy。当构建文件使用只能在Gradle模块元数据中表示的功能时，Gradle会在发布时警告您。下表总结了如何将某些Gradle特定功能映射到Maven和Ivy：
 
-表1. Gradle特定概念到Maven和Ivy的映射 Gradle | 马文 | Ivy | 描述  
+表1. Gradle特定概念到Maven和Ivy的映射 Gradle | Maven | Ivy | 描述  
 ---|---  |---|---    
 [依赖约束](/md/升级传递依赖的版本.md#在传递依赖项上添加约束)|`<dependencyManagement>` 依存关系|未发表|Gradle依赖项约束是可 _传递的_ ，而Maven的依赖项管理块 _不是_  
 [丰富的版本限制](/md/声明丰富版本.md#rich-version-constraints)|发布 _需求_ 版本|发布了 _需求_ 版本|  

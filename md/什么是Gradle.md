@@ -33,7 +33,7 @@ IDE支持
 
 几个主要的IDE允许您导入Gradle构建并与其进行交互：Android Studio，IntelliJ IDEA，Eclipse和NetBeans。Gradle还支持生成将项目加载到Visual Studio所需的解决方案文件。
 
-洞悉
+Insight
 
 [构建扫描](https://scans.gradle.com/)提供了有关构建运行的广泛信息，可用于识别构建问题。他们特别擅长帮助您确定构建性能的问题。您还可以与其他人共享构建扫描，如果您需要咨询以解决构建问题，这将特别有用。
 

@@ -1,3 +1,5 @@
+> 本文未勘误，请参考原文阅读[https://docs.gradle.org/6.7.1/userguide/custom_gradle_types.html](https://docs.gradle.org/6.7.1/userguide/custom_gradle_types.html)
+
 # 开发自定义Gradle类型
 
 

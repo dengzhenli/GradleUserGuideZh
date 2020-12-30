@@ -9,7 +9,7 @@
   * [编译代码](#编译代码)
   * [管理资源](#管理资源)
   * [运行测试](#运行测试)
-  * [包装出版](#包装出版)
+  * [打包发布](#打包发布)
   * [生成API文档](#生成API文档)
   * [清理构建](#清理构建)
   * [构建JVM组件](#构建JVM组件)
@@ -24,9 +24,9 @@
 Gradle使用基于配置的约定方法来构建基于JVM的项目，该方法借鉴了Apache
 Maven的几种约定。特别是，它对源文件和资源使用相同的默认目录结构，并且可与Maven兼容的存储库一起使用。
 
-我们将在本章中详细介绍Java项目，但是大多数主题也适用于其他受支持的JVM语言，例如[Kotlin](https://kotlinlang.org/docs/reference/using-
-gradle.html#targeting-the-
-jvm)，[Groovy](/md/Groovy插件.md#groovy_plugin)和[Scala](/md/Scala插件.md#scala_plugin)。如果您没有使用Gradle构建基于JVM的项目的丰富经验，请查看[Java示例](https://docs.gradle.org/6.7.1/samples/index.html#java)以获取有关如何构建各种类型的基本Java项目的逐步说明。
+我们将在本章中详细介绍Java项目，但是大多数主题也适用于其他受支持的JVM语言，例如[Kotlin](https://kotlinlang.org/docs/reference/using-gradle.html#targeting-the-jvm) ，
+[Groovy](/md/Groovy插件.md#groovy_plugin)和[Scala](/md/Scala插件.md#scala_plugin)。
+如果您没有使用Gradle构建基于JVM的项目的丰富经验，请查看[Java示例](https://docs.gradle.org/6.7.1/samples/index.html#java)以获取有关如何构建各种类型的基本Java项目的逐步说明。
 
 ╔═════════════════════════════  
 
@@ -86,11 +86,11 @@ build.gradle.kts
 
 通过应用Java库插件，您可以获得许多功能：
 
-  * `compileJava`，编译src/main/java下的所有Java源文件任务  
-  * 对src/test/java在下的源文件`compileTestJava`任务 
-  *`test`任务 ， 运行src/test/java的测试
-  * 一个将src/main/resources中的主要编译类和资源打包成一个名为<project>-<version>.jar的JAR任务。
-  * `javadoc`为`main`类生成Javadoc的任务
+  * `compileJava`任务，编译src/main/java下的所有Java源文件  
+  * `compileTestJava`任务 ,编译src/test/java下的源文件
+  * `test`任务 ， 运行src/test/java的测试
+  * 一个JAR任务，将src/main/resources中的主要编译类和资源打包成一个名为<project>-<version>.jar的JAR。
+  * `javadoc`任务，为`main`类生成Javadoc
 
 这还不足以构建任何重要的Java项目-至少，您可能会有一些文件依赖性。但它意味着你的构建脚本只需要特定于信息 _的_ 项目。
 
@@ -110,7 +110,7 @@ Java库插件还将上述任务集成到标准的[基础插件生命周期任务
 
 ## [通过源集声明源文件](#通过源集声明源文件)
 
-Gradle对Java的支持是第一个引入用于构建基于源代码的项目的新概念的方法： _源代码集_
+Gradle对Java的支持是第一个引入用于构建基于源代码的项目的新概念的方法： _源代码集( source sets)_
 。主要思想是源文件和资源通常按类型进行逻辑分组，例如应用程序代码，单元测试和集成测试。每个逻辑组通常都有其自己的文件依赖项集，类路径等。重要的是，构成源集的文件
 _不必位于同一目录中_ ！
 
@@ -128,18 +128,25 @@ _不必位于同一目录中_ ！
 
 图1.源集和Java编译
 
-阴影框表示源集本身的属性。最重要的是，Java库插件会自动为您或插件定义的每个源集（名为）以及几个[依赖项配置](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_source_set_configurations)创建一个编译任务。`compile_SourceSet_Java`[](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_source_set_configurations)
+阴影框代表源集本身的属性。除此之外，Java库插件会自动为你或插件定义的每个源集创建一个名为compileSourceSetJava的编译任务以及几个[依赖关系](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#java_source_set_configurations)。  
 
 ╔═════════════════════════════  
 
 该`main`源集
 
-大多数语言插件（包括Java）会自动创建一个名为的源集`main`，该源集用于项目的生产代码。此源组的特殊之处在于它的名字没有在配置和任务的名称包括在内，因此为什么你只是一个`compileJava`任务，`compileOnly`和`implementation`配置，而不是`compileMainJava`，`mainCompileOnly`和`mainImplementation`分别。  
+大多数语言插件（包括Java）会自动创建一个名为`main`的源集，该源集用于项目的生产代码。
+此源组的特殊之处在于它的名字并不包含在配置和任务的名称中，这也是为什么只有一个`compileJava`任务，`compileOnly`和`implementation`配置，
+而不是分别编译`compileMainJava`，`mainCompileOnly`和`mainImplementation`。  
+
+
   
 ╚═════════════════════════════    
   
-Java项目通常包含源文件以外的资源（例如属性文件），这些资源可能需要处理（例如，通过替换文件中的标记）并打包在最终JAR中。Java库插件自动创建一个名为每个定义的源组的专用任务处理这个（或为源集）。下图显示了源集如何适合此任务：`process
-_SourceSet_ Resources``processResources``main`
+Java项目通常包含源文件以外的资源（例如属性文件），
+这些资源可能需要处理（例如，通过替换文件中的标记）并打包在最终JAR中。
+Java库插件通过为每个定义的源集自动创建一个名为`processSourceSetResources`（或`main`源集的`processResources`）的专用任务来处理这个问题。
+下图显示了源集如何适合此任务：
+
 
 ![java资源集处理资源](img/java-sourcesets-process-resources.png)
 
@@ -517,9 +524,7 @@ build.gradle.kts
 
 许多Java项目都使用源文件以外的资源，例如图像，配置文件和本地化数据。有时，这些文件只需要原封不动地打包，有时需要将它们作为模板文件或以其他方式进行处理。无论哪种方式，Java库插件都会为处理其相关资源处理的每个源集添加特定的[复制](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.Copy.html)任务。
 
-任务名称如下的约定-或为源集-它会自动复制任何文件 _的src / [sourceSet] /资源_
-到将被包括在生产JAR的目录。该目标目录也将包含在测试的运行时类路径中。`process _SourceSet_
-Resources``processResources``main` __
+该任务的名称遵循了processSourceSetResources（--或主源集的processResources）的惯例--它将自动把src/[sourceSet]/resources中的任何文件复制到一个将包含在生产JAR中的目录。这个目标目录也将包含在测试的运行时classpath中。
 
 由于`processResources`是`Copy`任务的一个实例，因此您可以执行“[使用文件”](/md/编写构建脚本.md#sec:copying_files)一章中描述的任何处理。
 
@@ -539,15 +544,14 @@ API也会每次生成一个唯一的文件，因为注释中包括了时间戳�
 有时可能需要在不同的计算机上以字节为单位重新创建档案。您要确保从源代码构建工件，无论在何时何地构建，都逐字节产生相同的结果。这对于诸如reproducible-
 builds.org之类的项目是必需的。
 
-这些调整不仅可以导致更好的增量构建集成，而且还有助于可[复制的构建](https://reproducible-
-builds.org/)。本质上，可重现的构建可确保您无论在何时何地在什么系统上运行，都可以从构建执行中看到相同的结果，包括测试结果和生产二进制文件。
+这些调整不仅可以导致更好的增量构建集成，而且还有助于可[复制的构建](https://reproducible-builds.org/)。
+本质上，可重现的构建可确保您无论在何时何地在什么系统上运行，都可以从构建执行中看到相同的结果，包括测试结果和生产二进制文件。
 
 ## [运行测试](#运行测试)
 
 除了在 _src / test / java中_ 提供单元测试的自动编译功能外，Java库插件还对运行使用JUnit
-3、4和5的测试提供了本机支持（[Gradle 4.6中](https://docs.gradle.org/4.6/release-
-notes.html#junit-5-support)提供[了对](https://docs.gradle.org/4.6/release-
-notes.html#junit-5-support)JUnit 5的支持）和TestNG。你得到：
+3、4和5的测试提供了本机支持（[Gradle 4.6中](https://docs.gradle.org/4.6/release-notes.html#junit-5-support)提供
+了对 [JUnit5](https://docs.gradle.org/4.6/release-notes.html#junit-5-support) 的支持）和TestNG。你得到：
 
   * 使用源集的[Test](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)`test`类型的自动任务[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)`test`
 
@@ -576,7 +580,7 @@ _不会_`Test`为声明的每个源集获得任务，因为不是每个源集都
 
 您还可以在DSL参考中的[Test上](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.testing.Test.html)了解有关配置测试的更多信息。
 
-## [包装出版](#包装出版)
+## [打包发布](#打包发布)
 
 如何打包和潜在地发布Java项目取决于它是什么类型的项目。库，应用程序，Web应用程序和企业应用程序都有不同的要求。在本节中，我们将重点介绍Java库插件提供的基础知识。
 
@@ -796,7 +800,7 @@ build.gradle.kts
         }
     }
 
-清单按照`from`语句中声明的顺序合并。如果基本清单和合并清单都为同一个键定义值，则默认情况下，合并清单将获胜。您可以通过添加`eachEntry`操作来完全自定义合并行为，在操作中您可以访问结果清单的每个条目的[ManifestMergeDetails](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/java/archives/ManifestMergeDetails.html)实例。请注意，合并是懒洋洋地生成JAR时或完成后，无论是在`Manifest.writeTo()`或`Manifest.getEffectiveManifest()`调用。
+清单按照`from`语句中声明的顺序合并。如果基本清单和合并清单都为同一个键定义值，则默认情况下，合并清单将获胜。您可以通过添加`eachEntry`操作来完全自定义合并行为，在操作中您可以访问结果清单的每个条目的[ManifestMergeDetails](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/java/archives/ManifestMergeDetails.html)实例。请注意，合并是惰性地生成JAR时或完成后，无论是在`Manifest.writeTo()`或`Manifest.getEffectiveManifest()`调用。
 
 说到`writeTo()`，您可以使用它随时轻松地将清单写入磁盘，如下所示：
 
@@ -818,10 +822,17 @@ build.gradle.kts
 
 ## [生成API文档](#生成API文档)
 
-Java库插件提供了[Javadoc](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.javadoc.Javadoc.html)`javadoc`类型的任务，它将为您的所有生产代码（即，源集中的任何源代码）生成标准Javadocs
-。该任务支持[Javadoc参考文档中](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#options)描述的核心Javadoc和标准doclet选项。有关这些选项的完整列表，请参见[CoreJavadocOptions](https://docs.gradle.org/6.7.1/javadoc/org/gradle/external/javadoc/CoreJavadocOptions.html)和[StandardJavadocDocletOptions](https://docs.gradle.org/6.7.1/javadoc/org/gradle/external/javadoc/StandardJavadocDocletOptions.html)。[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.javadoc.Javadoc.html)`main`[](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#options)[](https://docs.gradle.org/6.7.1/javadoc/org/gradle/external/javadoc/CoreJavadocOptions.html)[](https://docs.gradle.org/6.7.1/javadoc/org/gradle/external/javadoc/StandardJavadocDocletOptions.html)
+Java库插件提供了[Javadoc](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.javadoc.Javadoc.html)`javadoc`类型的任务，
+它将为您的所有生产代码（即，`main`源集中的任何源代码）生成标准Javadocs
+。该任务支持[Javadoc参考文档中](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#options)描述的核心Javadoc和标准doclet选项。
+有关这些选项的完整列表，请参见[CoreJavadocOptions](https://docs.gradle.org/6.7.1/javadoc/org/gradle/external/javadoc/CoreJavadocOptions.html)
+和[StandardJavadocDocletOptions](https://docs.gradle.org/6.7.1/javadoc/org/gradle/external/javadoc/StandardJavadocDocletOptions.html)。
+[](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.javadoc.Javadoc.html)
+[](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#options)
+[](https://docs.gradle.org/6.7.1/javadoc/org/gradle/external/javadoc/CoreJavadocOptions.html)
+[](https://docs.gradle.org/6.7.1/javadoc/org/gradle/external/javadoc/StandardJavadocDocletOptions.html)
 
-作为您可以做的事的一个例子，想象一下您想在Javadoc注释中使用Asciidoc语法。为此，您需要将Asciidoclet添加到Javadoc的doclet路径。这是一个执行此操作的示例：
+举个例子，想象一下您想在Javadoc注释中使用Asciidoc语法。为此，您需要将Asciidoclet添加到Javadoc的doclet路径。这是一个执行此操作的示例：
 
 例子13.将自定义doclet与Javadoc一起使用
 
@@ -930,14 +941,12 @@ _api_ 配置中。否则，依赖项是内部实现细节，应将其添加到 _
 
   * `assemble` 创建应用程序的ZIP和TAR发行版，其中包含运行它所需的一切
 
-  * 一个`run`是开始从构建的应用程序（简单的测试）的任务
+  * `run` ，开始从构建的应用程序（简单的测试）的任务
 
   * Shell和Windows Batch脚本启动应用程序
 
-您可以在相应的[示例中](https://docs.gradle.org/6.7.1/samples/building-
-java-
-applications.html)看到构建Java应用程序的基本[示例](https://docs.gradle.org/6.7.1/samples/building-
-java-applications.html)。
+您可以在相应的[示例中](https://docs.gradle.org/6.7.1/samples/building-java-applications.html)
+看到构建Java应用程序的基本[示例](https://docs.gradle.org/6.7.1/samples/building-java-applications.html)。
 
 ## [构建JavaWeb应用程序](#构建JavaWeb应用程序)
 
@@ -962,8 +971,8 @@ Gradle仅直接支持部署为WAR文件的传统基于Servlet的Web应用程序�
 
 ## [构建Java平台](#构建Java平台)
 
-Java平台代表了一组依赖项声明和约束，这些声明和约束形成了要在消费项目上应用的内聚单元。该平台没有来源，也没有自己的工件。它在Maven世界中映射到[BOM](https://maven.apache.org/guides/introduction/introduction-
-to-dependency-mechanism.html#Dependency_Management)。
+Java平台代表了一组依赖项声明和约束，这些声明和约束形成了要在消费项目上应用的内聚单元。该平台没有来源，也没有自己的工件。
+它在Maven世界中映射到[BOM](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Dependency_Management)。
 
 该支持来自[Java
 Platform插件](/md/Java平台插件.md)，该[插件](/md/Java平台插件.md)设置了不同的配置和发布组件。

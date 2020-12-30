@@ -56,17 +56,18 @@ build.gradle.kts
     }
 
 该[Project.dependencies
-{}](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies\(groovy.lang.Closure\))代码块声明了Hibernate的核心3.6.7.Final需要编译该项目生产的源代码。它还指出，要编译项目的测试，需要junit>
+{}](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies\(groovy.lang.Closure\)) 代码块声明了Hibernate的核心3.6.7.Final需要编译该项目生产的源代码。它还指出，要编译项目的测试，需要junit>
 = 4.0。所有依赖项都应该在[Project.repositories
-{}](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories\(groovy.lang.Closure\))定义的Maven
+{}](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories\(groovy.lang.Closure\)) 定义的Maven
 Central存储库中进行查找。以下各节将更详细地说明每个方面。
 
 ## [声明模块依赖性](#声明模块依赖性)
 
-有多种[类型的依赖关系](/md/声明依赖.md#sec:dependency-
-types)，你可以声明。一种这样的类型是 _模块依赖性_
-。一个[模块依赖](/md/声明依赖.md#模块依赖)代表与当前构建建外特定版本模块的依赖关系。模块通常存储在存储库中，例如Maven
-Central，公司Maven或Ivy存储库或本地文件系统中的目录。
+
+你可以声明各种类型的[依赖关系](/md/声明依赖.md#不同种类的依赖)。
+其中一种类型是[模块依赖](/md/声明依赖.md#模块依赖)。
+模块依赖表示对当前构建之外的特定版本模块的依赖。
+模块通常存储在一个仓库中，如Maven Central、企业的Maven或Ivy仓库，或本地文件系统中的一个目录。
 
 要定义模块依赖项，请将其添加到[依赖项配置中](#使用依赖项配置)：
 
@@ -110,7 +111,7 @@ Web框架依赖项来编译源代码。
 
 插件使用配置来查找（并可能下载）对其定义的任务的输入。例如，Gradle需要从Maven Central下载Spring Web框架JAR文件。
 
-暴露文物以供消费
+暴露Artifact以供消费
 
     
 
@@ -141,8 +142,7 @@ api
 ## [声明通用Java存储库](#声明通用Java存储库)
 
 Gradle如何知道在哪里可以找到外部依赖文件？Gradle在 _存储库中_
-查找它们。库是模块，通过组织的集合`group`，`name`和`version`。Gradle了解不同的[存储库类型](/md/声明存储库.md#sec:repository-
-types)，例如Maven和Ivy，并支持通过HTTP或其他协议访问存储库的各种方式。
+查找它们。库是模块，通过组织的集合`group`，`name`和`version`。Gradle了解不同的[存储库类型](/md/声明存储库.md#支持的存储库类型)，例如Maven和Ivy，并支持通过HTTP或其他协议访问存储库的各种方式。
 
 默认情况下，Gradle不定义任何存储库。您需要在[Project.repositories{}](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories\(groovy.lang.Closure\))的帮助下定义至少一个，然后才能使用模块依赖项。一种选择是使用MavenCentral存储库：
 

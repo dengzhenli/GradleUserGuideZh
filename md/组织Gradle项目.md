@@ -68,11 +68,11 @@ Gradle会在每次调用构建时尝试找到一个`settings.gradle`（Groovy
 DSL）或`settings.gradle.kts`（Kotlin
 DSL）文件。为此，运行时将目录树的层次结构移至根目录。一旦找到设置文件，该算法即停止搜索。
 
-始终将a添加`settings.gradle`到构建的根目录中，以避免对最初的性能产生影响。此建议适用于单个项目构建以及多个项目构建。该文件可以为空，也可以定义所需的项目名称。
+始终将`settings.gradle`添加到构建的根目录中，以避免对初始化的性能产生影响。此建议适用于单个项目构建以及多个项目构建。该文件可以为空，也可以定义所需的项目名称。
 
 具有设置文件的典型Gradle项目如下所示：
 
-`Groovy``Kotlin`
+`Groovy`
 
     
     
@@ -84,6 +84,8 @@ DSL）文件。为此，运行时将目录树的层次结构移至根目录。�
         └── build.gradle
     
     
+`Kotlin`
+
     .
     ├── settings.gradle.kts
     ├── subproject-one
@@ -131,7 +133,7 @@ buildSrc/build.gradle.kts
 
 一个典型的项目包括`buildSrc`以下布局。下面的任何代码`buildSrc`都应使用类似于应用程序代码的包。（可选）`buildSrc`如果需要其他配置（例如，应用插件或声明依赖项），该目录可以托管构建脚本。
 
-`Groovy``Kotlin`
+`Groovy`
 
     
     
@@ -157,6 +159,8 @@ buildSrc/build.gradle.kts
         └── build.gradle.kts
     
     
+`Kotlin`
+
     .
     ├── buildSrc
     │   ├── build.gradle.kts
@@ -191,7 +195,7 @@ rebuild`命令行选项](/md/命令行界面.md#执行选项)通常有助于获�
 
 典型的项目设置将`gradle.properties`文件放置在构建的根目录中。另外，`GRADLE_USER_HOME`如果您想将该文件应用于计算机上的所有内部版本，则该文件也可以位于目录中。
 
-`Groovy``Kotlin`
+`Groovy`
 
     
     
@@ -204,6 +208,8 @@ rebuild`命令行选项](/md/命令行界面.md#执行选项)通常有助于获�
         └── build.gradle
     
     
+`Kotlin`
+
     .
     ├── gradle.properties
     └── settings.gradle.kts

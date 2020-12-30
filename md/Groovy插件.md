@@ -54,7 +54,7 @@ Groovy插件将以下任务添加到项目中。在[此处](/md/构建Java和JVM
 
     
 
-_取决于_ ：`compileJava`
+_Depends on_ ：`compileJava`
 
 编译生产Groovy源文件。
 
@@ -63,16 +63,16 @@ _取决于_ ：`compileJava`
 
     
 
-_取决于_ ：`compileTestJava`
+_Depends on_ ：`compileTestJava`
 
 编译测试Groovy源文件。
 
-`compile _SourceSet_ Groovy`—
+`compile _SourceSet_Groovy`—
 [GroovyCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.api.tasks.compile.GroovyCompile.html)
 
     
 
-_取决于_ ：`compile _SourceSet_ Java`
+_Depends on_ ：`compile _SourceSet_ Java`
 
 编译给定源集的Groovy源文件。
 
@@ -330,13 +330,17 @@ build.gradle.kts
 
 ## [groovyClasspath的自动配置](#groovyClasspath的自动配置)
 
-在`GroovyCompile`和`Groovydoc`任务消耗两个方面Groovy代码：对他们`classpath`，以及他们`groovyClasspath`。前者用于查找源代码引用的类，通常将包含Groovy库以及其他库。后者分别用于加载和执行Groovy编译器和Groovydoc工具，并且应仅包含Groovy库及其依赖项。
+`GroovyCompile`和`Groovydoc`任务通过两种方式消耗Groovy代码：
+对他们`classpath`，以及他们`groovyClasspath`。
+前者用于查找源代码引用的类，通常将包含Groovy库以及其他库。
+后者分别用于加载和执行Groovy编译器和Groovydoc工具，并且应仅包含Groovy库及其依赖项。
 
 除非`groovyClasspath`明确配置了任务的，否则Groovy（基本）插件将尝试从任务的推断出它`classpath`。这样做如下：
 
-  * 如果在`groovy-all(-indy)`上找到了一个Jar `classpath`，则该jar将添加到中`groovyClasspath`。
+  * 如果在`classpath`上找到了一个`groovy-all(-indy)`Jar ，则该jar将添加到`groovyClasspath`中。
 
-  * 如果在`groovy(-indy)`上找到了jar `classpath`，并且项目中至少声明了一个存储库，`groovy(-indy)`则将向中添加相应的存储库依赖项`groovyClasspath`。
+  * 如果在 `classpath`上找到了`groovy(-indy)`jar，并且项目中至少声明了一个存储库，
+    则将向`groovyClasspath`中添加相应的`groovy(-indy)`存储库依赖项。
 
   * 否则，任务的执行将失败，并显示一条消息，提示`groovyClasspath`无法推断。
 
@@ -406,7 +410,7 @@ Groovy插件为项目中的每个源集添加了一个[GroovyCompile](https://do
 
 _注意：自Gradle 5.6起，避免Groovy编译是一个令人振奋的功能。 存在已知的错误，因此请自行承担风险。_
 
-要启用避免Groovy编译的孵化支持，请[`enableFeaturePreview`](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/initialization/Settings.html#enableFeaturePreview-java.lang.String-)在您的设置文件中添加：
+要启用避免Groovy编译的孵化支持，请在您的设置文件中添加[`enableFeaturePreview`](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/initialization/Settings.html#enableFeaturePreview-java.lang.String-)：
 
 `Groovy``Kotlin`
 
@@ -420,11 +424,16 @@ settings.gradle.kts
     
     enableFeaturePreview("GROOVY_COMPILATION_AVOIDANCE")
 
-如果从属项目以与[ABI](https://en.wikipedia.org/wiki/Application_binary_interface)兼容的方式进行了更改（仅更改了其专用API），那么Groovy编译任务将是最新的。这意味着，如果project`A`依赖于project`B`并且inclass中的类以`B`ABI兼容的方式更改（通常仅更改方法的主体），则Gradle将不会重新编译`A`。
+如果从属项目以与[ABI](https://en.wikipedia.org/wiki/Application_binary_interface)兼容的方式进行了更改（仅更改了其专用API），
+那么Groovy编译任务将是最新的。这意味着，如果project`A`依赖于project`B`并且`B`中的类以ABI-compatible的方式更改
+（通常仅更改方法的主体），则Gradle将不会重新编译`A`。
 
 有关不影响ABI且被忽略的更改类型的详细列表，请参见[Java避免编译](https://docs.gradle.org/6.7.1/userguide/java_plugin.html#sec:java_compile_avoidance)。
 
-但是，类似于Java的注释处理，有多种方法可以[定制Groovy编译过程](https://melix.github.io/blog/2011/05/12/customizing_groovy_compilation_process.html)，而实现细节很重要。一些著名的例子是[GroovyAST转换](https://groovy-lang.org/metaprogramming.html#_code_generation_transformations)。在这些情况下，必须在称为的类路径中分别声明这些依赖项`astTransformationClasspath`：
+但是，类似于Java的注释处理，
+有多种方法可以[定制Groovy编译过程](https://melix.github.io/blog/2011/05/12/customizing_groovy_compilation_process.html)，而实现细节很重要。
+一些著名的例子是[GroovyAST转换](https://groovy-lang.org/metaprogramming.html#_code_generation_transformations)。
+在这些情况下，必须在称为`astTransformationClasspath`的类路径中分别声明这些依赖项：
 
 例子7.声明AST转换
 
@@ -502,7 +511,7 @@ buildSrc/src/main/kotlin/myproject.groovy-conventions.gradle.kts
 
 ## [针对Java_6或Java_7进行编译和测试](#针对Java_6或Java_7进行编译和测试)
 
-Groovy编译器将始终与用于启动Gradle的Java版本一起执行。您应该将`sourceCompatibility`和设置`targetCompatibility`为`1.6`或`1.7`。如果您还具有Java源文件，则可以按照与[Java插件](/md/构建Java和JVM项目.md#定位特定的Java版本)相同的步骤进行操作，以确保使用正确的Java编译器。
+Groovy编译器将始终与用于启动Gradle的Java版本一起执行。您应该将`sourceCompatibility`和`targetCompatibility`设置为`1.6`或`1.7`。如果您还具有Java源文件，则可以按照与[Java插件](/md/构建Java和JVM项目.md#定位特定的Java版本)相同的步骤进行操作，以确保使用正确的Java编译器。
 
 ### [示例：为Groovy配置Java_6构建](#示例：为Groovy配置Java_6构建)
 

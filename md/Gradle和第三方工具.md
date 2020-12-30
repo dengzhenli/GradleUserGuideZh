@@ -39,7 +39,7 @@ NetBeans
 
     
 
-将[Gradle支持](http://plugins.netbeans.org/plugin/44510/gradle- support)插件添加到NetBeans中，以便使用Gradle构建导入和运行项目。
+将[Gradle支持](http://plugins.netbeans.org/plugin/44510/gradle-support)插件添加到NetBeans中，以便使用Gradle构建导入和运行项目。
 
 Visual Studio
 
@@ -65,11 +65,11 @@ JetBrains支持[使用Gradle](https://blog.jetbrains.com/clion/2018/05/clion-sta
 
 我们有专门的指南，向您展示如何将Gradle项目与以下CI平台集成：
 
-  * [詹金斯](https://guides.gradle.org/executing-gradle-builds-on-jenkins)
+  * [Jenkins](https://guides.gradle.org/executing-gradle-builds-on-jenkins)
 
-  * [团队城市](https://guides.gradle.org/executing-gradle-builds-on-teamcity)
+  * [TeamCity](https://guides.gradle.org/executing-gradle-builds-on-teamcity)
 
-  * [特拉维斯CI](https://guides.gradle.org/executing-gradle-builds-on-travisci)
+  * [Travis CI](https://guides.gradle.org/executing-gradle-builds-on-travisci)
 
 即使您不使用上述方法之一，您也几乎可以确定将CI平台配置为使用[Gradle Wrapper](/md/gradle_wrapper.md)脚本。
 
@@ -165,8 +165,12 @@ build.gradle.kts
     }
 
 Tooling
-API的主要入口点是[GradleConnector](https://docs.gradle.org/6.7.1/javadoc/org/gradle/tooling/GradleConnector.html)。您可以从那里导航以找到代码示例，并浏览可用的Tooling
-API模型。您可以使用[GradleConnector.connect（）](https://docs.gradle.org/nightly/javadoc/org/gradle/tooling/GradleConnector.html#connect--)创建一个[ProjectConnection](https://docs.gradle.org/6.7.1/javadoc/org/gradle/tooling/ProjectConnection.html)。A`ProjectConnection`连接到单个Gradle项目。使用该连接，您可以执行任务，测试并检索与该项目相关的模型。
+API的主要入口点是[GradleConnector](https://docs.gradle.org/6.7.1/javadoc/org/gradle/tooling/GradleConnector.html) 。
+您可以从那里导航以找到代码示例，并浏览可用的Tooling
+API模型。您可以使用[GradleConnector.connect（）](https://docs.gradle.org/nightly/javadoc/org/gradle/tooling/GradleConnector.html#connect--) 
+创建一个[ProjectConnection](https://docs.gradle.org/6.7.1/javadoc/org/gradle/tooling/ProjectConnection.html) 。
+`ProjectConnection`连接到单个Gradle项目。
+使用该连接，您可以执行任务，测试并检索与该项目相关的模型。
 
 ### [Java和Gradle版本的兼容性](#Java和Gradle版本的兼容性)
 

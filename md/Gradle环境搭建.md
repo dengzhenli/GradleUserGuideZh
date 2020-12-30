@@ -39,7 +39,7 @@ Gradle提供了多个选项，可以轻松配置将用于执行构建的Java流�
 为构建建立一致的环境就像将这些设置放入`gradle.properties`文件一样简单。该配置是您所有`gradle.properties`文件的组合，但是如果在多个位置配置了一个选项，则
 _取第一个_ ：
 
-  * 系统属性，例如在`-Dgradle.user.home`命令行上设置的时间。
+  * 系统属性，例如在命令行上设置了 `-Dgradle.user.home`   
 
   * `GRADLE_USER_HOME`目录中的`gradle.properties`。
 

@@ -8,7 +8,7 @@
   * [声明您的源文件](#声明您的源文件)
   * [管理你的依赖](#管理你的依赖)
   * [编译和链接代码](#编译和链接代码)
-  * [包装出版](#包装出版)
+  * [包装出版](#打包)
   * [清理构建](#清理构建)
   * [构建C ++库](#构建C++库)
   * [构建C ++应用程序](#构建C++应用程序)
@@ -50,7 +50,7 @@ build.gradle.kts
 
 通过应用这两个C ++插件，您可以获得许多功能：
 
-  * `compileDebugCpp`以及分别`compileReleaseCpp`编译 _src / main / cpp_ 下的C ++源文件以得到众所周知的调试和发行版本的任务。
+  * `compileDebugCpp`以及`compileReleaseCpp`分别编译 _src / main / cpp_ 下的C++源文件以得到众所周知的调试和发行版本的任务。
 
   * `linkDebug`以及`linkRelease`将已编译的C ++对象文件链接到应用程序的可执行文件或共享库的库的任务，这些库具有调试和发行版本类型的共享链接。
 
@@ -75,7 +75,7 @@ Gradle内置支持多个维度以及每个维度中的多个值。您可以在�
 
 ## [声明您的源文件](#声明您的源文件)
 
-Gradle的C++支持使用`ConfigurableFileCollection`直接来自[应用程序](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.cpp.CppApplication.html)或[库](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.cpp.CppLibrary.html)脚本块的代码来配置要编译的源集。
+Gradle的C++支持使用来自[应用程序](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.cpp.CppApplication.html)或[库](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.cpp.CppLibrary.html)脚本块的`ConfigurableFileCollection`代码来配置要编译的源集。
 
 库区分私有（实现细节）和公共（导出到用户）头。
 
@@ -102,8 +102,8 @@ Gradle提供了对使用Gradle [[1](#_footnotedef_1"查看脚注。") ]发布的
 
   * 它需要什么，例如编译，链接，运行时或以上所有。
 
-此信息`dependencies {}`在C
-++`application`或`library`脚本块的块中指定。例如，要告诉Gradle您的项目需要库`common`来编译和链接生产代码，可以使用以下片段：
+此信息在C
+++`application`或`library`脚本块的`dependencies {}`块中指定。例如，要告诉Gradle您的项目需要`common`库来编译和链接生产代码，可以使用以下片段：
 
 例子2.声明依赖
 
@@ -198,7 +198,7 @@ Gradle对主要操作系统上的三个主要工具链具有普遍支持：Clang
 [4](#_footnotedef_4
 "查看脚注。") ]（仅Windows）。据报道，使用Macports和Homebrew安装的GCC和Clang可以正常工作，但是尚未对此进行持续测试。
 
-#### [视窗](#视窗)
+#### [windows](#windows)
 
 要在Windows上构建，请安装兼容版本的Visual Studio。C ++插件将发现Visual
 Studio安装并选择最新版本。无需弄乱环境变量或批处理脚本。在Cygwin Shell或Windows命令行中，此功能正常运行。
@@ -214,7 +214,7 @@ C ++插件还可以与Macports或Homebrew [
 "查看脚注。") ]一起安装的GCC和Clang一起使用。要使用Macports或Homebrew之一，您需要将Macports /
 Homebrew添加到系统PATH。
 
-#### [的Linux](#的Linux)
+#### [Linux](#Linux)
 
 要在Linux上构建，请安装兼容版本的GCC或Clang。C ++插件将使用系统PATH发现GCC或Clang。
 
@@ -253,9 +253,14 @@ build.gradle.kts
 
 ### [更改编译器和链接器选项](#更改编译器和链接器选项)
 
-大多数的编译器和连接选项是通过相应的任务访问，如，和。这些任务分别为[CppCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.cpp.tasks.CppCompile.html)，[LinkSharedLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.LinkSharedLibrary.html)和[CreateStaticLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.CreateStaticLibrary.html)类型。阅读任务参考以获取最新，最全面的选项列表。`compile
-_Variant_ Cpp``link _Variant_``create
-_Variant_`[](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.cpp.tasks.CppCompile.html)[](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.LinkSharedLibrary.html)[](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.CreateStaticLibrary.html)
+大多数的编译器和连接选项是通过相应的任务访问，如[`compile_Variant_ Cpp`](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.cpp.tasks.CppCompile.html)
+[`link _Variant_`](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.LinkSharedLibrary.html)
+和
+[`create_Variant_`](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.CreateStaticLibrary.html) 。
+这些任务分别为[CppCompile](https://docs.gradle.org/6.7.1/dsl/org.gradle.language.cpp.tasks.CppCompile.html)，
+[LinkSharedLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.LinkSharedLibrary.html)
+和[CreateStaticLibrary](https://docs.gradle.org/6.7.1/dsl/org.gradle.nativeplatform.tasks.CreateStaticLibrary.html)类型。
+阅读任务参考以获取最新，最全面的选项列表。
 
 例如，如果要更改编译器为所有变体生成的警告级别，则可以使用以下配置：
 
@@ -382,7 +387,7 @@ build.gradle.kts
         targetMachines.set(listOf(machines.windows.x86, machines.windows.x86_64, machines.macOS.x86_64, machines.linux.x86_64))
     }
 
-## [包装出版](#包装出版)
+## [打包](#打包)
 
 在本地环境中，打包和发布C ++项目的方式差异很大。Gradle带有默认值，但是可以实现自定义打包而没有任何问题。
 
@@ -394,7 +399,7 @@ build.gradle.kts
 
 ## [清理构建](#清理构建)
 
-C++应用程序和库插件`clean`通过使用[基本插件](https://docs.gradle.org/6.7.1/userguide/base_plugin.html)将任务添加到项目中。此任务只是删除`$buildDir`目录中的所有内容，因此为什么要始终将构建生成的文件放在其中。该任务是Delete的一个实例，您可以通过设置其`dir`属性来更改其删除的目录。
+C++应用程序和库插件通过使用[基本插件](https://docs.gradle.org/6.7.1/userguide/base_plugin.html)将`clean`任务添加到项目中。此任务只是删除`$buildDir`目录中的所有内容，因此为什么要始终将构建生成的文件放在其中。该任务是Delete的一个实例，您可以通过设置其`dir`属性来更改其删除的目录。
 
 ## [构建C++库](#构建C++库)
 
@@ -402,7 +407,7 @@ C++应用程序和库插件`clean`通过使用[基本插件](https://docs.gradle
 Module元数据的形式）至关重要。特别是，库的使用者应能够区分两种不同类型的依赖关系：仅依赖于编译库的依赖关系和也依赖于编译使用者的依赖关系。
 
 Gradle通过[C++库插件](https://docs.gradle.org/6.7.1/userguide/cpp_library_plugin.html)管理此区别，该[插件](https://docs.gradle.org/6.7.1/userguide/cpp_library_plugin.html)除了本章介绍的
-_实现_ 之外，还引入了 _api_ 配置。如果依赖项的类型显示为静态库的未解析符号或在公共头文件中，则该依赖项通过库的公共API公开，因此应将其添加到
+_implementation_ 之外，还引入了 _api_ 配置。如果依赖项的类型显示为静态库的未解析符号或在公共头文件中，则该依赖项通过库的公共API公开，因此应将其添加到
 _api_ 配置中。否则，依赖项是内部实现细节，应将其添加到 _Implementation中_ 。 __ __ __
 
 如果不确定API和实现依赖项之间的区别，请参阅[C++库插件](https://docs.gradle.org/6.7.1/userguide/cpp_library_plugin.html#sec:cpp_library_api_vs_implementation)一章的详细说明。另外，您可以在相应的[样本中](https://docs.gradle.org/6.7.1/samples/sample_building_cpp_libraries.html)看到构建C++库的基本，实际[示例](https://docs.gradle.org/6.7.1/samples/sample_building_cpp_libraries.html)。

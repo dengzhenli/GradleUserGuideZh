@@ -1,3 +1,5 @@
+> 本文未勘误，请参考原文阅读[https://docs.gradle.org/6.7.1/userguide/custom_tasks.html](https://docs.gradle.org/6.7.1/userguide/custom_tasks.html)
+
 # 开发自定义Gradle任务类型
 
 
@@ -73,7 +75,7 @@ build.gradle.kts
 
 该任务没有做任何有用的事情，因此让我们添加一些行为。为此，我们向任务添加一个方法，并使用[TaskAction](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskAction.html)批注对其进行标记。任务执行时，Gradle将调用该方法。您不必使用方法来定义任务的行为。例如，您可以在任务构造函数中调用`doFirst()`或`doLast()`使用闭包来添加行为。
 
-例子2.你好世界任务
+例子2.hello world任务
 
 `Groovy``Kotlin`
 
@@ -644,8 +646,7 @@ _所有_
 
 使用Gradle`InputChanges`并不是创建自上次执行以来仅对更改起作用的任务的唯一方法。诸如Kotlin编译器之类的工具将增量性作为内置功能提供。通常的实现方式是该工具将有关先前执行状态的分析数据存储在某个文件中。如果此类状态文件可[重定位](/md/构建缓存.md#声明任务输入和输出)，则可以将其声明为任务的输出。这样，当从缓存加载任务的结果时，下一次执行也可以使用从缓存加载的分析数据。
 
-但是，如果状态文件不可重定位，则无法通过构建缓存共享它们。确实，从高速缓存加载任务时，必须清除所有此类状态文件，以防止过时的状态在下一次执行期间使工具混乱。如果通过[task.localState.register（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskLocalState.html#register-
-java.lang.Object...-)声明了旧文件，或者使用[@LocalState](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/LocalState.html)批注标记了属性，Gradle可以确保删除这些旧文件。
+但是，如果状态文件不可重定位，则无法通过构建缓存共享它们。确实，从高速缓存加载任务时，必须清除所有此类状态文件，以防止过时的状态在下一次执行期间使工具混乱。如果通过[task.localState.register（）](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/TaskLocalState.html#register-java.lang.Object...-)声明了旧文件，或者使用[@LocalState](https://docs.gradle.org/6.7.1/javadoc/org/gradle/api/tasks/LocalState.html)批注标记了属性，Gradle可以确保删除这些旧文件。
 
 ## [声明和使用命令行选项](#声明和使用命令行选项)
 

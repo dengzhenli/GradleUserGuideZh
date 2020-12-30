@@ -36,7 +36,7 @@ Wrapper”）的帮助下。 Wrap是一个脚本，可调用Gradle的声明版�
 
 生成Wrapper文件需要在计算机上安装Gradle运行时的安装版本，如[Installation中所述](/md/安装Gradle.md#installation)。幸运的是，生成初始Wrapper文件是一个一次性的过程。
 
-每个普通的Gradle构建都带有一个称为的内置任务`wrapper`。列出任务时，您将可以在“构建安装程序任务”组下找到列出[的任务](/md/命令行界面.md#上市任务)。执行`wrapper`任务会在项目目录中生成必要的Wrapper文件。
+每个普通的Gradle构建都带有一个称为的内置任务`wrapper`。列出任务时，您将可以在“构建安装程序任务”组下找到列出[的任务](/md/命令行界面.md#列出任务)。执行`wrapper`任务会在项目目录中生成必要的Wrapper文件。
 
 运行 Wrap任务
 

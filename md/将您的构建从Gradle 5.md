@@ -515,7 +515,7 @@ Framework插件](https://gradle.github.io/playframework)。
 
   * `TaskInputs.getProperties()`现在返回的地图不可修改。尝试修改它会导致`UnsupportedOperationException`被抛出。
 
-  * 5.6中引入的孵化[功能解析](/md/处理互斥依赖性.md#在候选人之间进行选择)API进行了细微更改，以允许根据变体名称选择变体
+  * 5.6中引入的孵化[功能解析](/md/处理互斥依赖性.md#在候选（candidates）之间进行选择)API进行了细微更改，以允许根据变体名称选择变体
 
 ## [从5_5或更早版本升级](#从5_5或更早版本升级)
 
@@ -615,7 +615,7 @@ test-sources)的属性。此更改需要Buildship 3.1.1或更高版本。
        resolutionStrategy.capabilitiesResolution.all { selectHighestVersion() }
     }
 
-有关更多选项，请参见[文档的功能部分](/md/处理互斥依赖性.md#组件功能介绍)。
+有关更多选项，请参见[文档的功能部分](/md/处理互斥依赖性.md#组件capability介绍)。
 
 #### [文件删除操作不遵循符号链接目录](#文件删除操作不遵循符号链接目录)
 
