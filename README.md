@@ -9,6 +9,9 @@
 ## 翻译效果
 因笔者个人能力及精力原因，部分翻译还是机器翻译。后续会陆续优化，欢迎提交issue优化  
 
+## 注意
+翻译仅供参与，若对内容存疑，请访问[Gradle](https://docs.gradle.org/current/userguide/userguide.html) 同级目录查看
+
 ## 目录
 - [首页](/md/首页.md)  
 - [发行说明](/md/Gradle发行说明.md) 
@@ -130,8 +133,6 @@
   - [gradle wrapper](/md/gradle_wrapper.md) 
   - [Gradle管理的目录](/md/Gradle目录和文件的使用.md) 
 
-## 注意
-翻译仅供参与，若对内容存疑，请访问[Gradle](https://docs.gradle.org/current/userguide/userguide.html) 同级目录查看
 
 ## 致谢
 * 感谢[Gradle](https://docs.gradle.org/) 提供优秀的工具与文档
