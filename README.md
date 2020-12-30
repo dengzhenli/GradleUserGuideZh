@@ -4,7 +4,7 @@
 本仓库提供Gradle文档的翻译，主要内容为常见文章翻译。原文见[Gradle](https://docs.gradle.org/current/userguide/userguide.html) 
 
 ## 如何保证时效性
-考虑到Gradle的更新速度，会以月为周期及时更新文档
+考虑到Gradle的更新速度，只会跟进稳定版本的更新，目前版本6.7.1
 
 ## 翻译效果
 因笔者个人能力及精力原因，部分翻译还是机器翻译。后续会陆续优化，欢迎提交issue优化  
