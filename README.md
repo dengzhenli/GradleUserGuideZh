@@ -18,7 +18,7 @@
   - [什么是Gradle](/md/什么是Gradle.md) 
   - [入门](/md/入门.md)  
   - [安装Gradle](/md/安装Gradle.md) 
-  - 升级Gradler
+  - 升级Gradle
     - [将您的构建从Gradle 4.x升级到5.0](/md/将您的构建从Gradle%204.md) 
     - [将您的构建从Gradle 5.x升级到6.0](/md/将您的构建从Gradle%205.md) 
     - [将您的构建从Gradle 6.x升级到最新](/md/将您的构建从Gradle%206.md) 
